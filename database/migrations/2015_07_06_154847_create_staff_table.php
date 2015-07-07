@@ -23,7 +23,7 @@ class CreateStaffTable extends Migration
             $table->string('email', 75)->nullable();
             $table->string('phone_ext', 10)->nullable();
             $table->text('bio')->nullable();
-            $table->tinyInteger('sort')->unsigned()->default(255);
+            $table->integer('sort')->unsigned()->default(99999);
             $table->timestamps();
             $table->softDeletes();
         });
