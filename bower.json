@@ -1,0 +1,26 @@
+{
+  "name": "faithpromise.org",
+  "version": "0.0.0",
+  "authors": [
+    "Brad Roberts <bradr@faithpromise.org>",
+    "Kyle Gilbert <kyleg@faithpromise.org>"
+  ],
+  "homepage": "http://faithpromise.org",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-bootstrap": "https://github.com/angular-ui/bootstrap.git#master",
+    "bootstrap": "~3.3.4",
+    "cardinal": "~3.1.0",
+    "suit": "~0.6.0",
+    "waypoints": "~3.1.1",
+    "angular-local-storage": "~0.2.2",
+    "svg4everybody": "~1.0.0",
+    "angular-google-maps": "~2.1.5"
+  }
+}
