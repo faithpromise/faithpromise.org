@@ -6,64 +6,75 @@ module.exports = function (grunt) {
     // Show elapsed time
     require('time-grunt')(grunt);
 
-    // Paths
-    var jsDir = '_js';
-    var lessDir = '_less';
+    // Temp paths
+    var temp_dir = 'temp';
 
-    // Source JS files
-    var jsOutput_dev = 'build/main.dev.js',
-        jsOutput_temp = 'build/main.tmp.js',
-        jsOutput_production = 'build/main.min.js',
-        jsInput = [
-            // TODO: Remove waypoints if we are not using it for nav
-            'bower_components/waypoints/lib/noframework.waypoints.js',
-            'bower_components/angular-ui-bootstrap/src/position/position.js',
-            'bower_components/angular-ui-bootstrap/src/dropdown/dropdown.js',
-            'bower_components/angular-local-storage/dist/angular-local-storage.js',
-            'bower_components/angular-ui-bootstrap/src/modal/modal.js',
-            'build/template-cache.tmp',
-            'build/angular-ui-template-cache.tmp',
-            jsDir + '/app.module.js',
-            jsDir + '/**/*.js'
-        ];
+    // Roots
+    var srcroot = '.';
+    var webroot = 'public';
+    var buildroot = 'public/build';
 
-    // Source LESS files
-    var lessOutput_dev = 'build/main.dev.css',
-        lessOutput_production = 'build/main.min.css',
-        lessInput = [
-            lessDir + '/main.less'
-        ];
+    // JS Paths
+    var js_src_dir = srcroot + '/js';
+    var js_output_dir = buildroot + '/js';
+    var js_output_file_dev = js_output_dir + '/main.dev.js';
+    var js_output_file_production = js_output_dir + '/main.min.js';
+    var js_output_file_temp = temp_dir + '/main.tmp.js';
+    var js_input = [
+        // TODO: Remove waypoints if we are not using it for nav
+        'bower_components/waypoints/lib/noframework.waypoints.js',
+        'bower_components/angular-ui-bootstrap/src/position/position.js',
+        'bower_components/angular-ui-bootstrap/src/dropdown/dropdown.js',
+        'bower_components/angular-local-storage/dist/angular-local-storage.js',
+        'bower_components/angular-ui-bootstrap/src/modal/modal.js',
+        temp_dir + '/template-cache.tmp',
+        temp_dir + '/angular-ui-template-cache.tmp',
+        js_src_dir + '/app.module.js',
+        js_src_dir + '/**/*.js'
+    ];
+
+    // LESS Paths
+    var less_src_dir = srcroot + '/less';
+    var less_output_dir = buildroot + '/css';
+    var less_output_file_dev = less_output_dir + '/main.dev.css';
+    var less_output_file_production = less_output_dir + '/main.min.css';
+    var lessInput = [
+        less_src_dir + '/main.less'
+    ];
+
+    // Image paths
+    var image_src_dir = srcroot + '/images';
+    var image_output_dir = buildroot + '/images';
+
+    // Font paths
+    var font_src_dir = srcroot + '/assets';
+    var font_output_dir = buildroot + '/fonts';
 
     var mozjpeg = require('imagemin-mozjpeg');
 
     // Project configuration.
     grunt.initConfig(
         {
-            shell: {
-                jekyllClean: {
-                    command: 'jekyll clean'
-                },
-                jekyllBuild: {
-                    command: 'jekyll build'
-                },
-                jekyllServe: {
-                    command: 'jekyll serve --no-watch'
-                }
-            },
             clean: {
-                build: ['build/**/*.*', '!build/.gitkeep', '!build/images/**/*.{png,jpg,gif}']
+                build: [
+                    js_output_dir + '/**/*.*',
+                    less_output_dir + '/**/*.*',
+                    temp_dir + '/**/*.*',
+                    '!' + temp_dir + '/.gitkeep',
+                    '!public/**/*.{png,jpg,gif}'
+                ]
             },
             concat: {
                 options: {
                     separator: '\n;'
                 },
                 js_dev: {
-                    src: jsInput,
-                    dest: jsOutput_dev
+                    src: js_input,
+                    dest: js_output_file_dev
                 },
                 js_production: {
-                    src: jsInput,
-                    dest: jsOutput_temp
+                    src: js_input,
+                    dest: js_output_file_temp
                 }
             },
             uglify: {
@@ -72,21 +83,21 @@ module.exports = function (grunt) {
                         mangle: false // TODO - remove once it works - mangling breaks the JS
                     },
                     files: [{
-                        src: jsOutput_temp,
-                        dest: jsOutput_production
+                        src: js_output_file_temp,
+                        dest: js_output_file_production
                     }]
                 }
             },
             removelogging: {
                 production: {
-                    src: [jsOutput_temp]
+                    src: [js_output_file_temp]
                 }
             },
             less: {
                 dev: {
                     files: [{
                         src: lessInput,
-                        dest: lessOutput_dev
+                        dest: less_output_file_dev
                     }],
                     options: {
                         compress: false
@@ -95,7 +106,7 @@ module.exports = function (grunt) {
                 production: {
                     files: [{
                         src: lessInput,
-                        dest: lessOutput_production
+                        dest: less_output_file_production
                     }],
                     options: {
                         compress: true
@@ -119,7 +130,7 @@ module.exports = function (grunt) {
                         patterns: [
                             {
                                 match: '../font/',
-                                replacement: '/build/fontello/font/'
+                                replacement: '/build/fonts/fontello/font/'
                             },
                             {
                                 match: '[class^="icon-"]',
@@ -132,8 +143,8 @@ module.exports = function (grunt) {
                         {
                             expand: false,
                             flatten: true,
-                            src: ['assets/fontello/css/fontello.css'],
-                            dest: 'build/fontello.css.tmp'
+                            src: [font_src_dir + '/fontello/css/fontello.css'],
+                            dest: temp_dir + '/fontello.css.tmp'
                         }
                     ]
                 },
@@ -150,7 +161,7 @@ module.exports = function (grunt) {
                     files: [
                         {
                             expand: false,
-                            src: ['public/**/*.html'],
+                            src: [webroot + '/**/*.html'],
                             dest: './'
                         }
                     ]
@@ -158,19 +169,19 @@ module.exports = function (grunt) {
             },
             htmlbuild: {
                 production: {
-                    src: 'public/**/*.html',
-                    dest: 'public/',
+                    src: webroot + '/**/*.html',
+                    dest: webroot + '/',
                     options: {
                         replace: true,
                         prefix: '/',
                         scripts: {
                             main: [
-                                'public/build/main.min.js'
+                                js_output_dir + '/main.min.js'
                             ]
                         },
                         styles: {
                             main: [
-                                'public/build/main.min.css'
+                                less_output_dir + '/main.min.css'
                             ]
                         }
                     }
@@ -178,13 +189,13 @@ module.exports = function (grunt) {
             },
             cacheBust: {
                 options: {
-                    baseDir: 'public',
+                    baseDir: webroot,
                     rename: false
                 },
                 production: {
                     files: [
                         {
-                            src: ['public/**/*.html']
+                            src: [webroot + '/**/*.html']
                         }
                     ]
                 }
@@ -194,40 +205,32 @@ module.exports = function (grunt) {
                     browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
                 },
                 dev: {
-                    src: lessOutput_dev
+                    src: less_output_file_dev
                 },
                 production: {
-                    src: lessOutput_production
+                    src: less_output_file_production
                 }
             },
             watch: {
                 css: {
-                    files: [lessDir + '/**/*.less', 'assets/fontello/**/*.*'],
-                    tasks: ['css_dev', 'copy:css_dev']
+                    files: [less_src_dir + '/**/*.less', 'assets/fontello/**/*.*'],
+                    tasks: ['css_dev']
                 },
                 js: {
-                    files: jsDir + '/**/*.js',
-                    tasks: ['concat:js_dev', 'shell:jekyllBuild']
-                },
-                html: {
-                    files: ['{_includes,_layouts,_pages,_posts}/**/*.html'],
-                    tasks: ['shell:jekyllBuild']
-                },
-                collections: {
-                    files: ['{_campuses_events,_ministries,_series,_staff,_topics,_videos}/**/*.html'],
-                    tasks: ['shell:jekyllClean','shell:jekyllBuild']
+                    files: js_src_dir + '/**/*.js',
+                    tasks: ['concat:js_dev']
                 },
                 images: {
-                    files: ['_images/**/*.{png,jpg,gif}'],
-                    tasks: ['optimize_images', 'shell:jekyllClean', 'shell:jekyllBuild']
+                    files: [srcroot + '/**/*.{png,jpg,gif}'],
+                    tasks: ['optimize_images']
                 },
                 svg: {
-                    files: ['_images/**/*.svg'],
-                    tasks: ['svgstore:default', 'shell:jekyllBuild']
+                    files: [srcroot + '/**/*.svg'],
+                    tasks: ['svgstore:default']
                 },
                 templates: {
-                    files: jsDir + '/**/*.html',
-                    tasks: ['html2js:templates', 'concat:js_dev', 'shell:jekyllBuild']
+                    files: js_src_dir + '/**/*.html',
+                    tasks: ['html2js:templates', 'concat:js_dev']
                 }
             },
             imagemin: {
@@ -240,9 +243,9 @@ module.exports = function (grunt) {
                     files: [
                         {
                             expand: true,
-                            cwd: '_images/',
+                            cwd: image_src_dir,
                             src: ['**/*.{png,jpg,gif}'],
-                            dest: 'build/images/'
+                            dest: image_output_dir
                         }
                     ]
                 }
@@ -250,40 +253,36 @@ module.exports = function (grunt) {
             copy: {
                 fontello: {
                     expand: true,
-                    cwd: 'assets/',
+                    cwd: font_src_dir + '/',
                     src: ['fontello/font/*.*'],
-                    dest: 'build/'
+                    dest: font_output_dir + '/'
                 },
                 svg4everybody: {
                     src: 'bower_components/svg4everybody/svg4everybody.min.js',
-                    dest: 'build/svg4everybody.min.js'
+                    dest: js_output_dir + '/svg4everybody.min.js'
                 },
                 appTemplates: {
                     expand: true,
-                    cwd: '_js/',
+                    cwd: js_src_dir,
                     src: 'directives/**/*.html',
-                    dest: 'build/'
-                },
-                css_dev: {
-                    src: lessOutput_dev,
-                    dest: 'public/build/main.dev.css'
+                    dest: js_output_dir
                 }
             },
             html2js: {
                 templates: {
                     options: {
-                        base:'_js'
+                        base: js_src_dir
                     },
-                    src: ['_js/**/*.html'],
-                    dest: 'build/template-cache.tmp',
+                    src: [js_src_dir + '/**/*.html'],
+                    dest: temp_dir + '/template-cache.tmp',
                     module: 'template-cache'
                 },
                 angularUi: {
                     options: {
-                        base:'bower_components/angular-ui-bootstrap'
+                        base: 'bower_components/angular-ui-bootstrap'
                     },
                     src: ['bower_components/angular-ui-bootstrap/template/modal/*.html'],
-                    dest: 'build/angular-ui-template-cache.tmp',
+                    dest: temp_dir + '/angular-ui-template-cache.tmp',
                     module: 'angular-ui-template-cache'
                 }
             },
@@ -295,19 +294,16 @@ module.exports = function (grunt) {
                     }
                 },
                 default: {
-                    files: {
-                        'build/images/general.svg': ['_images/sprites/general/*.svg'],
-                        'build/images/video.svg': ['_images/sprites/video/*.svg']
-                    }
-                }
-            },
-            'gh-pages': {
-                deploy: {
-                    options: {
-                        base: 'public',
-                        message: 'Deploy'
-                    },
-                    src: ['**/*']
+                    files: [
+                        {
+                            src: image_src_dir + '/sprites/general/*.svg',
+                            dest: image_output_dir + '/general.svg'
+                        },
+                        {
+                            src: image_src_dir + '/sprites/video/*.svg',
+                            dest: image_output_dir + '/video.svg'
+                        }
+                    ]
                 }
             }
         }
@@ -317,7 +313,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['build_dev']);
 
     grunt.registerTask('build_common', [
-        'clean:build',
         'optimize_images',
         'copy',
         'html2js',
@@ -327,17 +322,13 @@ module.exports = function (grunt) {
     grunt.registerTask('build_dev', [
         'build_common',
         'css_dev',
-        'concat:js_dev',
-        'shell:jekyllClean',
-        'shell:jekyllBuild'
+        'concat:js_dev'
     ]);
 
     grunt.registerTask('build_production', [
         'build_common',
         'js_production',
         'css_production',
-        'shell:jekyllClean',
-        'shell:jekyllBuild',
         'replace:facebook_id',
         'htmlbuild:production',
         'cacheBust:production'
@@ -347,8 +338,6 @@ module.exports = function (grunt) {
         'build_common',
         'js_production',
         'css_production',
-        'shell:jekyllClean',
-        'shell:jekyllBuild',
         'htmlbuild:production',
         'cacheBust:production'
     ]);
@@ -375,23 +364,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('serve', [
         'shell:jekyllServe'
-    ]);
-
-    grunt.registerTask('startup', [
-        'build_dev',
-        'serve'
-    ]);
-
-    grunt.registerTask('deploy_production', [
-        'build_production',
-        'gh-pages',
-        'build_dev'
-    ]);
-
-    grunt.registerTask('deploy_staging', [
-        'build_staging',
-        'gh-pages',
-        'build_dev'
     ]);
 
 };
