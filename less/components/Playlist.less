@@ -1,0 +1,123 @@
+// Font sizes
+@playlist_root_font_size: 18;
+@playlist_font_size_headers: 14;
+@playlist_font_size_rows: @playlist_root_font_size;
+
+// Padding
+@playlist_horizontal_padding: 10;
+@playlist_vertical_padding: 14;
+
+.Playlist {
+
+  .to-rem(font-size, @playlist_root_font_size);
+  border-top: 1px solid #dedede;
+
+  th {
+    .to-em(font-size, @playlist_font_size_headers, @playlist_root_font_size);
+    .to-em(padding, @playlist_vertical_padding, @playlist_font_size_headers);
+    text-transform: uppercase;
+    color:          #b5b5b5;
+    white-space:    nowrap;
+    font-weight:    @font-weight-light;
+  }
+
+  tbody > tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+
+  td {
+    .to-em(padding, @playlist_vertical_padding @playlist_horizontal_padding, @playlist_font_size_rows);
+    white-space: nowrap;
+  }
+
+}
+
+.Playlist .Playlist-iconColumn {
+  width:      40px;
+  padding:    0;
+  text-align: right;
+}
+
+.PlayList-iconLink {
+  .to-rem(padding, 6 10);
+  .link-color(#999, #555);
+  display: block;
+  cursor:  pointer;
+}
+
+.Playlist-playIcon {
+  &:extend(.icon all);
+  &:extend(.icon-play-circled all);
+}
+
+.Playlist-listenIcon {
+  &:extend(.icon all);
+  &:extend(.icon-headphones all);
+}
+
+.Dropdown-wrapper {
+  position: relative;
+}
+
+.Dropdown {
+  position:         absolute;
+  top:              0;
+  left:             0;
+  z-index:          @z-index-nav-dropdown;
+  min-width:        240px;
+  padding:          10px 20px;
+  background-color: #36383f;
+  border-radius:    5px;
+  display:          none;
+  text-align:       left;
+
+  .open > & {
+    display: block;
+  }
+
+  &--topLeft {
+    top:    auto;
+    left:   auto;
+    bottom: 0;
+    right:  0;
+  }
+
+  &--topRight {
+    top:    auto;
+    bottom: 0;
+  }
+
+  &--bottomLeft {
+    left:  auto;
+    right: 0;
+  }
+
+}
+
+.Dropdown-menu {
+  list-style: none;
+  margin:     0;
+}
+
+.Dropdown-item {
+  margin: 0;
+}
+
+.Dropdown-link {
+  .link-color(#dddee1, #fff);
+  display:         block;
+  padding:         5px 0;
+  font-size:       14px;
+  text-decoration: none;
+  white-space:     nowrap;
+  cursor:          pointer;
+}
+
+.Dropdown-title {
+  .to-rem(font-size, 18);
+  .to-rem(padding, 8 0);
+  .to-rem(margin-bottom, 8);
+  font-weight:   @font-weight-light;
+  border-bottom: 1px solid lighten(#36383f, 10%);
+  color:         #dddee1;
+}

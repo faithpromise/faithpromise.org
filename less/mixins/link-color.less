@@ -1,0 +1,11 @@
+.link-color(@color, @hover_color: @color) {
+  &,
+  &:link,
+  &:visited,
+  &:active {
+    color: @color;
+  }
+  &:hover {
+    color: @hover_color;
+  }
+}

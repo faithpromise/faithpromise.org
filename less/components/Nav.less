@@ -1,0 +1,203 @@
+.Nav {
+  user-select: none;
+}
+
+.MobileNav-background,
+.MobileNav-dismiss {
+  display: none;
+}
+
+/**
+ * ==========================================================
+ * Medium screen
+ * ==========================================================
+ */
+
+@media (max-width: @Nav-mobile-max) {
+
+  // TODO: Mobile nav styles
+  .Nav {
+    position:           absolute;
+    top:                0;
+    left:               0;
+    z-index:            @z-index-mobile-nav;
+    width:              17em;
+    min-height:         100%;
+    padding-bottom:     70px;
+    background-color:   #2e2e2e;
+    color:              #cac9c9;
+
+    // Transition
+    -webkit-transform:  scale(1.1);
+    -webkit-transition: -webkit-transform 350ms ease;
+    //    -webkit-backface-visibility: hidden;
+
+    body.is-navOpen & {
+      -webkit-transform: scale(1);
+    }
+
+    // Nav background
+    &:before {
+      content:          " ";
+      display:          block;
+      position:         fixed;
+      top:              0;
+      right:            17em;
+      bottom:           0;
+      left:             0;
+      z-index:          @z-index-mobile-nav-background;
+      background-color: #2e2e2e;
+    }
+  }
+
+  .Nav-logo {
+    display: none;
+  }
+
+  .is-navOpen .MobileNav-background {
+    display:          block;
+    position:         fixed;
+    top:              0;
+    bottom:           0;
+    left:             0;
+    z-index:          @z-index-mobile-nav-background-open;
+    width:            17em;
+    background-color: #2e2e2e;
+  }
+
+  .is-navOpen .MobileNav-dismiss {
+    display:  block;
+    position: fixed;
+    z-index:  @z-index-mobile-nav-dismiss;
+    top:      0;
+    right:    0;
+    bottom:   0;
+    left:     17em;
+    cursor:   pointer;
+  }
+
+  .Nav-menu {
+    margin:  0;
+    padding: 0;
+  }
+
+  .Nav-link {
+    .to-rem(font-size, 14);
+    display:        block;
+    height:         48px;
+    line-height:    48px;
+    padding:        0 15px;
+    border-bottom:  1px solid #262626;
+    text-transform: uppercase;
+    overflow:       hidden;
+    text-overflow:  ellipsis;
+    white-space:    nowrap;
+    box-shadow:     0 1px 0 0 #363636;
+
+    &,
+    &:hover {
+      color:           #cac9c9;
+      text-decoration: none;
+    }
+  }
+
+}
+
+/**
+ * ==========================================================
+ * Large screen
+ * ==========================================================
+ */
+
+@media (min-width: @Nav-desktop-min) {
+
+  // Solid nav
+  body.navStyle--solid {
+    .Nav {
+      background-color: #fff;
+    }
+    .Nav-background {
+      display: none;
+    }
+    .Nav-logo {
+      fill: #222;
+    }
+    .Nav-link {
+      color: #555;
+    }
+  }
+
+  .Nav {
+    position: absolute;
+    z-index:  @z-index-nav;
+    left:     0;
+    right:    0;
+    height:   @Nav-height-lg;
+    width:    100%;
+    padding:  @Nav-vPadding-lg 0;
+  }
+
+  .Nav-menu {
+    margin: 0;
+  }
+
+  .Nav-container {
+    .to-rem(max-width, @ContainerMaxWidth);
+    .to-rem(padding, 0 @ContainerHorizontalPadding);
+    position: relative;
+    margin:   0 auto;
+  }
+
+  .Nav-logoWrap {
+    float:        left;
+    display:      inline-block;
+    height:       @Nav-logoHeight-lg;
+    margin-right: 12px;
+  }
+
+  .Nav-logo {
+    width:  191px;
+    height: 100%;
+    fill:   #fff;
+  }
+
+  .Nav-menu {
+    float:      right;
+    margin:     0;
+    padding:    0;
+    list-style: none;
+  }
+
+  .Nav-item {
+    position:    relative;
+    float:       left;
+    margin-left: 25px;
+    cursor:      pointer;
+  }
+
+  .Nav-link {
+    .to-rem(font-size, 14);
+    .link-color(#fff);
+    display:        block;
+    line-height:    @Nav-logoHeight-lg;
+    text-transform: uppercase;
+
+    &,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .Nav-background {
+    position: absolute;
+    top:      0;
+    right:    0;
+    left:     0;
+    z-index:  @z-index-nav-background;
+    display:  block;
+    width:    100%;
+    height:   (@Nav-height-lg * 1.6);
+    #gradient> .vertical(rgba(0, 0, 0, 0.34), transparent, 0%, 100%); // Shows behind nav
+  }
+
+}

@@ -1,0 +1,66 @@
+@BackgroundSection-float-width: 48em;
+// 768px
+
+.BackgroundSection {
+  &:extend(.Section all);
+  &:extend(.has-background all);
+
+  position:   relative;
+  text-align: center;
+
+  // Gradient
+
+  &:after {
+    content:    '';
+    position:   absolute;
+    bottom:     0;
+    left:       0;
+    width:      100%;
+    height:     100%;
+    background: rgba(0, 0, 0, .75);
+  }
+
+  @media (min-width: @BackgroundSection-float-width) {
+
+    text-align: left;
+
+    &--right {
+      text-align: right;
+    }
+
+    &:after {
+      width:      90%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 35%, transparent 90%);
+    }
+
+    &--right {
+
+      &:after {
+        left:       auto;
+        right:      0;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.75) 35%, transparent 90%);
+      }
+    }
+  }
+
+}
+
+.BackgroundSection-container {
+  &:extend(.Container all);
+
+  position: relative;
+  z-index:  1;
+}
+
+.BackgroundSection-text {
+
+  @media (min-width: @BackgroundSection-float-width) {
+    .to-em(max-width, 390, @Section-font-size);
+    display:    inline-block;
+    text-align: left;
+  }
+}
+
+.BackgroundSection-title {
+  &:extend(.Section-title);
+}

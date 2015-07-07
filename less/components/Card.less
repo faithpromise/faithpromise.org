@@ -1,0 +1,86 @@
+@Card-font-size: 18;
+@Card-gutter: (@grid-gutter-base * 1.5);
+
+.Card-grid {
+  &:extend(.grid);
+  .to-rem(margin-left, -@Card-gutter);
+  text-align: center;
+}
+
+.Card-item {
+  &:extend(.grid-item);
+  .to-rem(padding-left, @Card-gutter);
+  .to-rem(font-size, @Card-font-size);
+
+  @media (min-width: 42rem) {
+    width: 50%;
+  }
+
+  @media (min-width: 65rem) {
+    width: 33.3333333%;
+  }
+}
+
+.Card {
+  .to-em(margin-bottom, @Card-gutter, @Card-font-size);
+  background-color: #fff;
+
+  .box-shadow-helper(1);
+
+  &.clickable {
+    transition: all 250ms;
+    cursor:     pointer;
+  }
+
+  &.clickable:hover {
+    .box-shadow-helper(3);
+    transform: translateY(-3px);
+  }
+}
+
+.Card-image {
+  display:             block;
+  height:              0;
+  overflow:            hidden;
+  padding-bottom:      56.25%;
+  background-size:     cover;
+  background-position: top center;
+}
+
+.Card-body {
+  .to-em(padding, 36 30 0, @Card-font-size);
+  text-align: center;
+}
+
+.Card-footer {
+  .to-em(padding, 0 30 36, @Card-font-size);
+  text-align: center;
+}
+
+.Card-title {
+  &:extend(.h4);
+  .to-em(margin-bottom, 20, @font-size-heading-4);
+
+  > a {
+    .link-color(@root-text-color, #000);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.Card-subtitle {
+  .to-em(font-size, @Card-font-size, @Card-font-size);
+  .to-em(margin, -20 0 20, @font-size-heading-4);
+  font-weight: @font-weight-bold;
+}
+
+.Card-link {
+  .to-em(font-size, 22, @Card-font-size);
+  font-weight: @font-weight-bold;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,122 @@
+// Normalize the gallery for all screen sizes
+
+.SeriesGallery-list {
+  margin:     0;
+  padding:    0;
+  list-style: none;
+}
+
+.SeriesGallery-item {
+  margin: 0;
+}
+
+.SeriesGallery-title,
+.SeriesGallery-subtitle {
+  margin: 0;
+}
+
+.SeriesGallery-link {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Small screen
+@media (max-width: 599px) {
+
+  .SeriesGallery-list {
+    border-top: 1px solid #efefef;
+  }
+
+  .SeriesGallery-item {
+    padding:       5px 10px;
+    border-bottom: 1px solid #efefef;
+  }
+
+  .SeriesGallery-link {
+    .link-color(@root-text-color);
+    display: block;
+  }
+
+  .SeriesGallery-thumb {
+    width:          25%;
+    margin-right:   5px;
+    vertical-align: middle;
+  }
+
+  .SeriesGallery-titles {
+    display:        inline-block;
+    line-height:    1.3;
+    vertical-align: middle;
+
+  }
+
+  .SeriesGallery-title {
+    .to-rem(font-size, @font-size);
+    .text-truncate();
+    font-weight: @font-weight-regular;
+  }
+
+  .SeriesGallery-subtitle {
+    .to-rem(font-size, 13);
+    font-weight: @font-weight-light;
+  }
+
+}
+
+@media (min-width: 600px) {
+
+  .SeriesGallery {
+    .to-rem(max-width, @ContainerMaxWidth);
+    .to-rem(padding, @ContainerHorizontalPadding);
+    margin:    0 auto;
+  }
+
+  .SeriesGallery-list {
+    .to-rem(margin-left, -@grid-gutter-base);
+    font-size: 0;
+  }
+
+  .SeriesGallery-item {
+    .to-rem(font-size, @font-size);
+    .to-rem(padding-left, @grid-gutter-base);
+    .to-rem(padding-bottom, @grid-gutter-base);
+    display:        inline-block;
+    width:          33.333333%;
+    vertical-align: top;
+  }
+
+  .SeriesGallery-titles {
+    .to-rem(padding, 14 0);
+    line-height: 1.1;
+  }
+
+  .SeriesGallery-title {
+    .to-rem(margin-bottom, 3);
+    .to-rem(font-size, 16);
+    .text-truncate();
+    display:        block;
+    text-transform: uppercase;
+    font-weight:    @font-weight-regular;
+  }
+
+  .SeriesGallery-subtitle {
+    .to-rem(font-size, 14);
+    display:     block;
+    font-weight: @font-weight-regular;
+    color:       @black-40;
+  }
+
+}
+
+@media (min-width: 800px) {
+  .SeriesGallery-item {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .SeriesGallery-item {
+    width: 20%;
+  }
+}

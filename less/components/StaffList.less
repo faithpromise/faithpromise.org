@@ -1,0 +1,61 @@
+@StaffListPadding: 30;
+
+.StaffList {
+  margin-bottom: 3rem;
+  margin-top:    1rem;
+  border-top:    1px solid #eaeaea;
+}
+
+.StaffList-row {
+  cursor: pointer;
+}
+
+.StaffList-column {
+  padding:        1rem;
+  border-bottom:  1px solid #eaeaea;
+  vertical-align: middle;
+  white-space:    nowrap;
+}
+
+.StaffList-column--email,
+.StaffList-column--phone {
+  text-align: right;
+}
+
+.StaffList-column--email {
+  @media (max-width: 760px) {
+    display: none;
+  }
+}
+
+.StaffList-column--name {
+  padding-left: 0;
+}
+
+.StaffList-column--photo {
+  width:        80px;
+  padding-left: 0;
+}
+
+.StaffList-photo {
+  display:             block;
+  width:               60px;
+  height:              60px;
+  background-position: center;
+  background-size:     cover;
+  transition:          opacity .25s ease-in-out;
+}
+
+.StaffList-name {
+  .to-rem(font-size, 18);
+  display: block;
+}
+
+.StaffList-title {
+  .to-rem(font-size, 14);
+  display:     block;
+  line-height: 1;
+  font-weight: 400;
+  color:       @black-40;
+  white-space: normal;
+}

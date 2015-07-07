@@ -1,0 +1,62 @@
+@Section-font-size: 22;
+@Section-vertical-padding-top: 100;
+@Section-vertical-padding-bottom: (@Section-vertical-padding-top - @grid-gutter-base);
+@Section-title-font-size: @font-size-heading-2;
+
+.Section {
+  .to-rem(font-size, @Section-font-size);
+  .to-em(padding, @Section-vertical-padding-top 0 @Section-vertical-padding-bottom, @Section-font-size);
+
+  &--lightGrey {
+    background-color: #f9f9f9;
+  }
+}
+
+.Section--center {
+  text-align: center;
+}
+
+.Section-text {
+  &:extend(.text-constrain);
+}
+
+.Section-text--center {
+  text-align:   center;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+.Section-container {
+  &:extend(.Container all);
+}
+
+.Section-titles {
+  .to-em(margin, 0 0 @line-height, @Section-title-font-size);
+}
+
+.Section-title {
+  .to-em(font-size, @Section-title-font-size, @Section-font-size);
+  .to-em(margin, 0 0 @line-height, @Section-title-font-size);
+  font-weight: @font-weight-bold;
+
+  .Section-titles > & {
+    margin:      0;
+    line-height: 1.3;
+  }
+}
+
+.Section-title--push {
+  .to-em(margin-top, 10, @Section-title-font-size);
+  .to-em(margin-bottom, 90, @Section-title-font-size);
+}
+
+.Section-subtitle {
+  .to-rem(font-size, 16);
+  line-height: 1;
+  font-weight: @font-weight-light;
+}
+
+.Section-hr {
+  .to-rem(margin, 80 0);
+  border-top: 4px solid #ededed;
+}

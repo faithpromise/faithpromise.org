@@ -1,0 +1,27 @@
+@ContainerMaxWidth: 1680;
+@Container-padding-mobile: 30;
+@Container-padding-tablet: 60;
+@Container-padding-desktop: 120;
+
+@ContainerMaxInnerWidth: (@ContainerMaxWidth - (@ContainerHorizontalPadding * 2));
+@ContainerHorizontalPadding: 30;
+
+.Container {
+  .to-rem(max-width, @ContainerMaxWidth);
+  .to-rem(padding, 0 @Container-padding-mobile);
+  margin: 0 auto;
+
+  @media (min-width: 35rem) {
+    .to-rem(padding, 0 @Container-padding-tablet);
+  }
+
+  @media (min-width: 46.5rem) {
+    .to-rem(padding, 0 @Container-padding-desktop);
+  }
+}
+
+.Container--wide {
+  @media (min-width: 46.5rem) {
+    .to-rem(padding, 0 @Container-padding-tablet);
+  }
+}

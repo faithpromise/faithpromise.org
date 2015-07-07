@@ -1,0 +1,31 @@
+.TextSection {
+  &:extend(.Section all);
+}
+
+.TextSection-container {
+  &:extend(.Container all);
+}
+
+.TextSection-text {
+  &:extend(.text-constrain);
+  text-align: justify;
+
+  .TextSection--center & {
+    text-align: center;
+  }
+
+  .TextSection--compact & {
+    &:extend(.text-constrain-compact);
+  }
+}
+
+.TextSection-title {
+  &:extend(.Section-title all);
+  .to-em(margin-bottom, 50, @Section-title-font-size);
+  text-align: center;
+}
+
+.TextSection-title--push {
+  .to-em(margin-top, 10, @Section-title-font-size);
+  .to-em(margin-bottom, 70, @Section-title-font-size);
+}

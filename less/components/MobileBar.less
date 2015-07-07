@@ -1,0 +1,89 @@
+/**
+ * ==========================================================
+ * Small screen
+ * ==========================================================
+ */
+
+.MobileBar {
+  //  position: absolute;
+  z-index:          @z-index-mobile-bar;
+  top:              0;
+  left:             0;
+  right:            0;
+  height:           @Nav-height-sm;
+  width:            100%;
+  padding:          @Nav-vPadding-sm @Nav-hPadding-sm;
+  background-color: #222;
+}
+
+.MobileBar-navToggle {
+  .to-rem(font-size, 46);
+  position:    absolute;
+  top:         0;
+  right:       0;
+  height:      @Nav-height-sm;
+  width:       75px;
+  line-height: @Nav-height-sm;
+  display:     block;
+  text-align:  center;
+  color:       #fff;
+  cursor:      pointer;
+}
+
+.MobileBar-logo {
+  height: @Nav-logoHeight-sm;
+  width:  192px;
+  fill:   #fff;
+}
+
+.MobileBar-background {
+  position: absolute;
+  top:      0;
+  right:    0;
+  left:     0;
+  z-index:  @z-index-nav-background;
+  display:  block;
+  width:    100%;
+  height:   (@Nav-height-sm * 1.6);
+  #gradient> .vertical(rgba(0, 0, 0, 0.34), transparent, 0%, 100%); // Shows behind nav
+}
+
+/**
+ * ==========================================================
+ * Medium screen
+ * ==========================================================
+ */
+
+@media (min-width: 621px) {
+
+  .MobileBar {
+    height:  (@Nav-logoHeight-md + @Nav-vPadding-md + @Nav-vPadding-md);
+    padding: @Nav-vPadding-md @Nav-hPadding-md;
+  }
+
+  .MobileBar-navToggle {
+//    font-size: (@Nav-logoHeight-md - 6px);
+  }
+
+  .MobileBar-logo {
+    height: @Nav-logoHeight-md;
+  }
+
+  .MobileBar-background {
+    height: (@Nav-height-md * 1.6);
+  }
+
+}
+
+/**
+ * ==========================================================
+ * Large screen
+ * ==========================================================
+ */
+
+@media (min-width: @Nav-desktop-min) {
+  .MobileBar,
+  .MobileBar-background {
+    display: none;
+  }
+}

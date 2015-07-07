@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+/*
+  Fonts
+*/
+@import "fonts";
+/*
+  Icon fonts
+*/
+@import (less) "../temp/fontello.css.tmp";
+/*
+  Third party
+*/
+@import "cardinal";
+@import "../bower_components/bootstrap/less/mixins/gradients";
+/*
+  Variables
+*/
+@import "variables/colors";
+@import "variables/text";
+@import "variables/modals";
+@import "variables/z-index";
+@import "variables/Nav";
+/*
+  Mixins
+*/
+@import "mixins/box-shadow-helper";
+@import "mixins/link-color";
+@import "mixins/to-em";
+/*
+  Utilities
+*/
+@import "utilities/text-alignment";
+/*
+  Base
+*/
+@import "components/headings";
+/*
+  Components
+*/
+@import "components/Card";
+@import "components/Container";
+@import "components/Content";
+@import "components/Hero";
+@import "components/HeroVideo";
+@import "components/Layout";
+@import "components/LocationFinder";
+@import "components/LocationList";
+@import "components/LocationWindow";
+@import "components/MobileBar";
+@import "components/modals";
+@import "components/Nav";
+@import "components/Nav-animation";
+@import "components/NavDropdown";
+@import "components/PageFilters";
+@import "components/PageHeader";
+@import "components/Playlist";
+@import "components/SeriesGallery";
+@import "components/SocialButtons";
+@import "components/StaffGallery";
+@import "components/StaffHeader";
+@import "components/StaffList";
+@import "components/StaffProfile";
+/*
+  Section Components
+*/
+@import "components/Section";
+@import "components/BackgroundSection";
+@import "components/Faq";
+@import "components/GridSection";
+@import "components/IntroSection";
+@import "components/StorySection";
+@import "components/TextSection";
+@import "components/VisitSection";
+
+[publish-on]:not(.publish-on-show) {
+  display: none !important;
+}
+
+[expire-on]:not(.expire-on-show) {
+  display: none !important;
+}
+
+.clearfix {
+  .clearfix();
+}
+
+html {
+  //  font-size: 112.5%; // 18px
+  font-size: 100%; // 16px
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size: 81.25%; // 14px
+  }
+}
+
+body {
+  //  .to-rem(font-size, 20);
+  //  line-height: 1.5;
+  //  font-weight: @font-weight-light;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.has-background {
+
+  background-position: top center;
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  color:               #fff;
+
+  a {
+    .link-color(#fff);
+  }
+
+  p > a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+  }
+}
+
+li {
+  .to-rem(margin-bottom, @spacing-half);
+}
+
+p {
+  .to-rem(margin-bottom, 30);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+@max-text-width: 38.2em;
+.text-constrain {
+  max-width:    @max-text-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@max-text-width-compact: 24.5em;
+.text-constrain-compact {
+  max-width:    @max-text-width-compact;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+@root-text-color: #444;
+@anchor-text-color: #2176a9;
+
+@font-weight-light: 300;
+@font-weight-regular: 400;
+@font-weight-bold: 500;
+@font-weight-heavy: 500;
+
+.PageTitles {
+  .to-rem(margin, 43 0);
+}
+
+.HeroPlayer {
+  box-shadow: 0 0 16px rgba(0, 0, 0, .4);
+}
+
+/*
+ Fill 100% of wrapper
+ Needs wrapper with a max width
+ */
+.VideoPlayer {
+  position:       relative;
+  display:        block;
+  padding-bottom: 56.25%;
+  height:         0;
+  overflow:       hidden;
+  max-width:      100%;
+}
+
+.VideoPlayer iframe,
+.VideoPlayer object,
+.VideoPlayer embed,
+.VideoPlayer image {
+  position: absolute;
+  top:      0;
+  left:     0;
+  width:    100%;
+  height:   100%;
+}
+
+.MoreIcon {
+  &:extend(.icon all);
+  &:extend(.icon-dot-3 all);
+  cursor: pointer;
+}
+
+//.VideoPopup {
+//  position:         absolute;
+//  top:              0;
+//  left:             0;
+//  z-index:          100;
+//  height:           100%;
+//  width:            100%;
+//}
+//
+//.VideoPopup-container {
+//  &:extend(.Container);
+//}
+
+/* ---------- */
+
+.Button {
+  .to-rem(font-size, 20);
+  .to-em(padding, 15 40, 22);
+  .to-em(border-radius, 70, 22);
+  .link-color(@root-text-color);
+  display:        inline-block;
+  border:         2px solid @root-text-color;
+  text-transform: uppercase;
+
+  transition:     all .2s ease-in-out;
+
+  &:hover {
+    background-color: @anchor-text-color;
+    border-color:     @anchor-text-color;
+    color:            #fff;
+    text-decoration:  none;
+  }
+
+  .has-background & {
+    .link-color(#fff);
+    border-color:     #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-decoration:  none;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+      text-decoration:  none;
+    }
+  }
+}

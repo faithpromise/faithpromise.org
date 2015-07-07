@@ -1,0 +1,59 @@
+/**
+  CSS classes are added by a directive that monitors the scroll position of .Content
+**/
+
+@media (min-width: @Nav-desktop-min) {
+
+  /*
+    ===================================
+    Nav enter
+    ===================================
+  */
+  .Nav.sticky-yes {
+    z-index:          @z-index-nav-sticky;
+    background-color: @NavStickyBackgroundColor !important;
+
+    .Nav-logo {
+      fill: #fff !important;
+    }
+
+    .Nav-link {
+      .link-color(#fff);
+    }
+  }
+
+  // From
+  .Nav.sticky-yes-add {
+    transition: top .5s ease-in-out;
+    top:        -@Nav-height-lg;
+  }
+
+  // To
+  .Nav.sticky-yes-add.sticky-yes-add-active {
+    top: 0;
+  }
+
+  /*
+    ===================================
+    Nav leave
+    ===================================
+  */
+  body.navStyle--transparent .Nav.sticky-no {
+    background-color: transparent;
+  }
+  body.navStyle--solid .Nav.sticky-no {
+    background-color: #fff;
+  }
+
+  // From
+  .Nav.sticky-no-add {
+    transition:       background-color .5s ease-in-out;
+    background-color: @NavStickyBackgroundColor;
+  }
+
+  // To
+  .Nav.sticky-no-add.sticky-no-add-active {
+    background-color: transparent;
+  }
+
+}
