@@ -2,11 +2,11 @@
 
 use Flynsarmy\CsvSeeder\CsvSeeder;
 
-class StaffMinistriesSeeder extends CsvSeeder
+class StaffMinistrySeeder extends CsvSeeder
 {
 
     public function __construct() {
-        $this->table = 'staff_ministries';
+        $this->table = 'staff_ministry';
         $this->filename = base_path() . '/database/seeds/csv/' . $this->table . '.csv';
     }
 

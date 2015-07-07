@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStaffMinistriesTable extends Migration
+class CreateStaffTeamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateStaffMinistriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('staff_ministries', function (Blueprint $table) {
+        Schema::create('staff_team', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('staff_id')->unsigned();
-            $table->integer('ministry_id')->unsigned();
+            $table->integer('team_id')->unsigned();
 
-            $table->unique(['staff_id', 'ministry_id']);
+            $table->unique(['staff_id', 'team_id']);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateStaffMinistriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('staff_ministries');
+        Schema::drop('staff_team');
     }
 }

@@ -28,6 +28,7 @@ class CreateCampusesTable extends Migration
             $table->string('directions_url', 255)->nullable();
             $table->tinyInteger('sort');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

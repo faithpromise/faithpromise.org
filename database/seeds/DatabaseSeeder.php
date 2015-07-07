@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call('VideosSeeder');
         $this->call('TeamsSeeder');
         $this->call('StaffSeeder');
-        $this->call('StaffTeamsSeeder');
-        $this->call('StaffMinistriesSeeder');
+        $this->call('StaffTeamSeeder');
+        $this->call('StaffMinistrySeeder');
 
         Model::reguard();
     }
