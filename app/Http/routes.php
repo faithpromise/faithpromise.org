@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Catchall for pages
+Route::get('/{page}', function($page) {
+    return $page;
+    return view($page);
+})->where('page', '^.*');
