@@ -1,9 +1,7 @@
 <?php
-
     $has_hero_image = isset($hero_image);
     $hero_image = $has_hero_image ? $hero_image : 'hero-placeholder.png';
     $hero_image_tall = str_replace('-wide.jpg', '-tall.jpg', $hero_image);
-
 ?>
 
 @extends('layouts.default')
@@ -32,7 +30,7 @@
 </div>
 
 <div class="Content">
-    @yield('content')
+    @yield('page')
 </div>
 
 @endsection
