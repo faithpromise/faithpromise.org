@@ -8,5 +8,6 @@ return [
     'github_username'    => 'faithpromise',
     'images_root'        => '/build/images',
     'series_images_root' => '/build/images/series',
-    'staff_images_root'  => '/build/images/staff'
+    'staff_images_root'  => '/build/images/staff',
+    'staff_images_dir'   => base_path() . '/public/build/images/staff'
 ];

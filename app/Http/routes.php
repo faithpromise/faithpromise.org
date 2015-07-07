@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/staff', 'MainController@staff');
+
 // Catchall for pages
 Route::get('/{page}', function($page) {
     return $page;
