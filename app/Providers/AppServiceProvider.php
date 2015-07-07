@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->share('site', config('site'));
+        view()->share('nav', config('nav'));
     }
 
     /**
