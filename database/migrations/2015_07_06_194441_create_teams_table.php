@@ -18,6 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string('title', 50);
             $table->tinyInteger('sort')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
