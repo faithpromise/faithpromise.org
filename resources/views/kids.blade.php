@@ -1,25 +1,27 @@
+<?php
 
+    $faq = [
+            [
+                    'q' => 'I\'m new. What do I do?',
+                    'a' => '<p>First, we\'re so glad to have you join us. There\'s a special place at Faith Promise for your child to worship and grow in Christ. Please see our <a href="/fpkids/welcome/">welcome page</a> for an overview of what to expect when you visit.</p>'
+            ],
+            [
+                    'q' => 'Where can I get more information about child dedications?',
+                    'a' => '<p>Please visit out our <a href="/dedications/">child dedications</a> page for more information.</p>'
+            ],
+            [
+                    'q' => 'When will my child move from one room to the next?',
+                    'a' => '<p><strong>Nursery / Crawlers / Walkers</strong> - Generally these room transitions are based upon whether or not your baby is proficiently crawling/walking. For example, a toddler will remain in the Crawler room until he/she is walking the majority of the time without assistance.</p><p><strong>2 Years to PreK</strong> - Once your child turns 2 years old, their room transitions are based upon age. For example, the day your child turns 3 years old he/she will move to the 3 year old room.</p><p><strong>Kindergarten to 5th grade</strong> - Transitions change in elementary and follow the Knox County School calendar. When the new school year begins for Knox County, then we transition all our elementary students from one grade to the next.</p>'
+            ],
+            [
+                    'q' => 'I want to serve in Kid\'s Ministry! What do I do?',
+                    'a' => '<p>We\'d love to explore the best fit for you within in fpKIDS. To apply to serve in fpKIDS, contact the <a href="mailto:fpKids@faithpromise.org">fpKids office</a>.</p>'
+            ]
+    ];
 
----
-permalink: /fpkids/
-layout: page
-title: fpKids
-hero_image: /build/images/kids/fpkids-wide.jpg
-body_class: fpkids
+?>
 
-faq:
-- q: 'I''m new. What do I do?'
-a: '<p>First, we''re so glad to have you join us. There''s a special place at Faith Promise for your child to worship and grow in Christ. Please see our <a href="/fpkids/welcome/">welcome page</a> for an overview of what to expect when you visit.</p>'
-
-- q: 'Where can I get more information about child dedications?'
-a: '<p>Please visit out our <a href="/dedications/">child dedications</a> page for more information.</p>'
-
-- q: 'When will my child move from one room to the next?'
-a: '<p><strong>Nursery / Crawlers / Walkers</strong> - Generally these room transitions are based upon whether or not your baby is proficiently crawling/walking. For example, a toddler will remain in the Crawler room until he/she is walking the majority of the time without assistance.</p><p><strong>2 Years to PreK</strong> - Once your child turns 2 years old, their room transitions are based upon age. For example, the day your child turns 3 years old he/she will move to the 3 year old room.</p><p><strong>Kindergarten to 5th grade</strong> - Transitions change in elementary and follow the Knox County School calendar. When the new school year begins for Knox County, then we transition all our elementary students from one grade to the next.</p>'
-
-- q: 'I want to serve in Kid''s Ministry! What do I do?'
-a: '<p>We''d love to explore the best fit for you within in fpKIDS. To apply to serve in fpKIDS, contact the <a href="mailto:fpKids@faithpromise.org">fpKids office</a>.</p>'
----
+@extends('layouts.page', ['title' => 'fpKids', 'hero_image' => '/build/images/kids/fpkids-wide.jpg'])
 
 {% assign events = site.events | where_contains: 'ministries', 'kids' | where_greater: 'expire_on', site.time | sort: 'starts_on' %}
 {% assign staff = site.staff | where_contains: 'ministries', 'kids' | sort: 'sort' %}
