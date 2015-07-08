@@ -1,9 +1,6 @@
----
-permalink: /fpkids/welcome/
-layout: page
-hero_image: /build/images/kids/coloring-wide.jpg
-title: Welcome to fpKids
----
+@extends('layouts.page', ['title' => 'Welcome to fpKids', 'hero_image' => '/build/images/kids/coloring-wide.jpg'])
+
+@section('page')
 
 <div class="StorySection StorySection--right">
   <div class="StorySection-container">
@@ -90,11 +87,7 @@ title: Welcome to fpKids
   </div>
 </div>
 
-{% include visit.html %}
+@include('partials.visit')
+@include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you still have questions about fpKids, please contact', 'class' => 'Section--lightGrey'])
 
-{%
-include have-questions.html
-email='fpkids@faithpromise.org'
-text='If you still have questions about fpKids, please contact'
-class='Section--lightGrey'
-%}
+@endsection

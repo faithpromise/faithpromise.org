@@ -14,9 +14,14 @@ class MinistriesController extends BaseController
         $ministry = Ministry::with('Staff')->with('Event')->where('ident', $ministry_ident)->first();
 
         return view($ministry_ident, [
-            'staff' => $ministry->staff,
+            'staff'  => $ministry->staff,
             'events' => $ministry->event
         ]);
+    }
+
+    public function fpKidsWelcome()
+    {
+        return view('fpkids-welcome');
     }
 
 }
