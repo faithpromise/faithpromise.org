@@ -23,8 +23,7 @@
 
 @extends('layouts.page', ['title' => 'fpKids', 'hero_image' => '/build/images/kids/fpkids-wide.jpg'])
 
-{% assign events = site.events | where_contains: 'ministries', 'kids' | where_greater: 'expire_on', site.time | sort: 'starts_on' %}
-{% assign staff = site.staff | where_contains: 'ministries', 'kids' | sort: 'sort' %}
+@section('page')
 
 <div class="IntroSection">
     <div class="IntroSection-container">
@@ -40,10 +39,7 @@
 
             <p class="text-constrain-compact text-center">See what your kids are learning and stay current on fpKids events by following us on social media.</p>
 
-            {% include social-buttons.html
-            facebook='//www.facebook.com/fpkids'
-            twitter='//twitter.com/fp_kids'
-            %}
+            @include('partials.social_buttons', ['facebook' => '//www.facebook.com/fpkids', 'twitter' => '//twitter.com/fp_kids'])
 
         </div>
     </div>
@@ -66,7 +62,7 @@
     </div>
 </div>
 
-{% include event-grid.html events=events title='Upcoming Events' %}
+@include('partials.event_grid', ['events' => $events])
 
 <style type="text/css" scoped>
     .kids_faq {
@@ -89,3 +85,4 @@ text='If you still have questions about fpKids, please contact'
 
 {% include staff-gallery.html staff=staff title='Meet the fpKids Staff' class='Section--lightGrey' %}
 
+@endsection
