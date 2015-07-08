@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/staff', 'MainController@staff');
+Route::get('/staff', 'StaffController@index');
+Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
+Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
 // Catchall for pages
 Route::get('/{page}', function($page) {

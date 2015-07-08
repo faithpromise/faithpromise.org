@@ -1,0 +1,16 @@
+.TableSection {
+  &:extend(.Section all);
+}
+
+.TableSection-container {
+  &:extend(.Container all);
+
+  @media (min-width: 46.5rem) {
+    .to-rem(padding, 0 @Container-padding-mobile);
+  }
+}
+
+.TableSection-title {
+  &:extend(.Section-title all);
+  &:extend(.Section-title--push all);
+}

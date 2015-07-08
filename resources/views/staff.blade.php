@@ -20,17 +20,17 @@
 
 </div>
 
-<div ng-show="!staff_sort_method">
+<div ng-if="!staff_sort_method">
     @foreach ($teams as $team)
         <?php $staff_gallery_class = (($grey_bg = 1-$grey_bg) === 0) ? 'StaffSection--square Section--lightGrey' : 'StaffSection--square'; ?>
-        @include('partials.staff_gallery', ['staff' => $team['staff'], 'title' => $team['title'], 'class' => $staff_gallery_class])
+        @include('partials.staff_gallery', ['staff' => $team->staff, 'title' => $team->title, 'class' => $staff_gallery_class])
     @endforeach
 </div>
-<div ng-show="staff_sort_method === 'campus'">
-    <ng-include src="'/partials/staff-by-campus.html'"></ng-include>
+<div ng-if="staff_sort_method === 'campus'">
+    <ng-include src="'/partials/staff-by-campus'"></ng-include>
 </div>
-<div ng-show="staff_sort_method === 'name'">
-    <ng-include src="'/partials/staff-by-name.html'"></ng-include>
+<div ng-if="staff_sort_method === 'name'">
+    <ng-include src="'/partials/staff-by-name'"></ng-include>
 </div>
 
 @endsection

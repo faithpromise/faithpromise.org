@@ -17,4 +17,14 @@ class Staff extends Model
     public function staff() {
         return $this->belongsToMany('App\Team');
     }
+
+    public function getThumbnail() {
+
+        $default_thumbnail = 'https://placekitten.com/g/200/300';
+        $staff_photo = config('site.staff_images_root') . '/' . $this->ident . '-1.jpg';
+        $staff_photo_path = config('site.staff_images_dir') . '/' . $this->ident . '-1.jpg';
+        $photo_url = file_exists($staff_photo_path) ? $staff_photo : $default_thumbnail;
+
+        return $photo_url;
+    }
 }
