@@ -21,6 +21,8 @@ Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
 Route::get('/{ministry}', 'MinistriesController@index')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|missions|prayer|women|worship|youngadults');
 
+Route::get('/fpkids/welcome', 'MinistriesController@fpKidsWelcome');
+
 // Catchall for pages
 Route::get('/{page}', function($page) {
     return $page;
