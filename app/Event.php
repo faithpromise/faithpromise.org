@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = ['starts_at', 'ends_at', 'publish_at', 'expires_at', 'created_at', 'updated_at'];
 
     public function ministry() {
         return $this->belongsTo('App\Ministry');
