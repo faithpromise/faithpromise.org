@@ -2,26 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use App\Ministry;
+use App\Missionary;
+use View;
+use DB;
+use \Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class MinistriesController extends BaseController
 {
 
-    public function index($ministry_ident)
+    public function __construct(Request $request)
     {
 
-        $ministry = Ministry::with('Staff')->with('Event')->where('ident', $ministry_ident)->first();
+        $route_params = $request->route()->parameters();
 
-        return view($ministry_ident, [
-            'staff'  => $ministry->staff,
-            'events' => $ministry->event
-        ]);
+        $ministry_ident = isset($route_params['ministry']) ? $route_params['ministry'] : $request->route()->uri();
+
+        $ministry = Ministry::whereIdent($ministry_ident)->with('Staff')->first();
+        $events = Event::where('ministry_id', '=', $ministry->id)->where('expires_at', '>', Carbon::now())->get();
+
+        View::share('staff', $ministry->staff);
+        View::share('events', $events);
     }
 
-    public function fpKidsWelcome()
+    public function index($ministry_ident)
     {
-        return view('fpkids-welcome');
+        return view($ministry_ident);
+    }
+
+    public function missions()
+    {
+        $missionaries = Missionary::all();
+        return view('missions', ['missionaries' => $missionaries]);
     }
 
 }
