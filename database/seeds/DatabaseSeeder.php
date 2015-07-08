@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call('StaffSeeder');
         $this->call('StaffTeamSeeder');
         $this->call('StaffMinistrySeeder');
+        $this->call('MissionariesSeeder');
 
         Model::reguard();
     }
