@@ -76,13 +76,7 @@
 </style>
 
 @include('partials.faq', ['faq' => $faq, 'class' => 'has-background kids_faq'])
-
-{%
-include have-questions.html
-email='fpkids@faithpromise.org'
-text='If you still have questions about fpKids, please contact'
-%}
-
-{% include staff-gallery.html staff=staff title='Meet the fpKids Staff' class='Section--lightGrey' %}
+@include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you still have questions about fpKids, please contact'])
+@include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey'])
 
 @endsection
