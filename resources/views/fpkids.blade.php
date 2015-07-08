@@ -75,7 +75,7 @@
     }
 </style>
 
-{% include faq.html faq=page.faq class='has-background kids_faq' %}
+@include('partials.faq', ['faq' => $faq, 'class' => 'has-background kids_faq'])
 
 {%
 include have-questions.html
