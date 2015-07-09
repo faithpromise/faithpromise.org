@@ -14,11 +14,11 @@ class CreateMissionTripsTable extends Migration
     {
         Schema::create('mission_trips', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('location_id')->unsigned()->nullable();
+            $table->integer('missionlocation_id')->unsigned()->nullable();
             $table->string('title', 50);
             $table->string('dates', 50)->nullable();
-            $table->text('cost')->nullable();
-            $table->text('seats')->nullable();
+            $table->string('cost', 100)->nullable();
+            $table->string('seats', 10)->nullable();
             $table->text('description')->nullable();
             $table->text('contact')->nullable();
             $table->text('contact_email')->nullable();
@@ -26,6 +26,7 @@ class CreateMissionTripsTable extends Migration
             $table->tinyInteger('sort')->unsigned()->default(255);
             $table->date('starts_at')->nullable();
             $table->date('ends_at')->nullable();
+            $table->dateTime('expire_at')->nullable();
             $table->timestamps();
         });
     }

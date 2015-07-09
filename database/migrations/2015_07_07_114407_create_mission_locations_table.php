@@ -16,6 +16,7 @@ class CreateMissionLocationsTable extends Migration
             $table->increments('id');
             $table->string('ident', 35)->unique();
             $table->string('name', 35);
+            $table->integer('sort')->unsigned()->default(99999);
             $table->timestamps();
         });
     }
