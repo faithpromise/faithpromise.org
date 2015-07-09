@@ -75,10 +75,10 @@
 <!--TODO: Need photo for fpKids security -->
 <style type="text/css" scoped>
   .secure {
-    background-image: url(/build/images/kids/prek-wide.jpg);
+    background-image: url(/build/images/fpkids/security-wide.jpg);
   }
 </style>
-<div class="BackgroundSection secure">
+<div class="BackgroundSection BackgroundSection--right secure">
   <div class="BackgroundSection-container">
     <div class="BackgroundSection-text">
       <h2 class="BackgroundSection-title">Secure Environment</h2>
