@@ -6,10 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class MissionLocation extends Model
 {
-    use SoftDeletes;
+
     protected $dates = ['created_at', 'updated_at'];
 
-    public function staff() {
+    public function missionary() {
         return $this->hasMany('App\Missionary');
+    }
+
+    public function mission_trip() {
+        return $this->hasMany('App\MissionTrip');
+    }
+
+    public function getUrl() {
+        return '/missions/' . $this->ident;
     }
 }

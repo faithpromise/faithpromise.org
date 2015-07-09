@@ -10,7 +10,7 @@
 
     <!--TODO: Confirm missionary areas-->
     <!--TODO: Hero image - missions -->
-    <!--TODO: Add page content-->
+    <!--TODO: Finish content-->
 
     <div class="IntroSection">
         <div class="IntroSection-container">
@@ -23,15 +23,20 @@
         </div>
     </div>
 
-    <?php
-        $upcoming_text = <<<EOT
-        <p>
-            We're in the process of finalizing dates for 2015 and will be posting them here as soon as they're ready. In the meantime, feel free to contact us at <a href="mailto:missions@faithpromise.org">missions@faithpromise.org</a> if you have any questions.
-        </p>
-EOT;
-?>
-
-    @include('partials.event_grid', ['events' => $events, 'title' => 'Upcoming Trips', 'text' => $upcoming_text, 'class' => 'Section--lightGrey'])
+    <div class="GridSection Section--lightGrey">
+        <div class="GridSection-container">
+            <h2 class="GridSection-title">Upcoming Trips</h2>
+            @if (count($trips))
+            <ul class="Card-grid" card-grid>
+                @foreach($trips as $trip)
+                    <li class="Card-item">
+                        @include('partials.card', ['title' => (! is_null($trip->missionlocation) ? $trip->missionlocation->name : $trip->title), 'subtitle' => $trip->dates, 'image' => '', 'text' => '', 'url' => (! is_null($trip->missionlocation) ? $trip->missionlocation->getUrl() : null), 'url_text' => ''])
+                    </li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
+    </div>
 
     <div class="StaffSection">
         <div class="StaffSection-container">
@@ -50,7 +55,7 @@ EOT;
         </div>
     </div>
 
-    <div class="GridSection">
+    <div class="GridSection Section--lightGrey">
         <div class="GridSection-container">
             <div class="GridSection-title">Serving our Community</div>
             Community logos here
@@ -64,7 +69,7 @@ EOT;
         </div>
     </div>
 
-    <div class="TextSection">
+    <div class="TextSection TextSection--center Section--lightGrey">
         <div class="TextSection-container">
             <div class="TextSection-title">Get Updates</div>
             <div class="TextSection-text">

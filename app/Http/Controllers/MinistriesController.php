@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\Ministry;
 use App\Missionary;
+use App\MissionTrip;
 use View;
 use DB;
 use \Carbon\Carbon;
@@ -22,7 +23,7 @@ class MinistriesController extends BaseController
         $ministry_ident = isset($route_params['ministry']) ? $route_params['ministry'] : $request->route()->uri();
 
         $ministry = Ministry::whereIdent($ministry_ident)->with('Staff')->first();
-        $events = Event::where('ministry_id', '=', $ministry->id)->where('expires_at', '>', Carbon::now())->get();
+        $events = Event::where('ministry_id', '=', $ministry->id)->where('expire_at', '>', Carbon::now())->get();
 
         View::share('staff', $ministry->staff);
         View::share('events', $events);
@@ -35,8 +36,10 @@ class MinistriesController extends BaseController
 
     public function missions()
     {
-        $missionaries = Missionary::all();
-        return view('missions', ['missionaries' => $missionaries]);
+        $trips = MissionTrip::with('MissionLocation')->whereNull('expire_at')->orWhere('expire_at', '>', Carbon::now())->get();
+        $missionaries = Missionary::with('MissionLocation')->get();
+
+        return view('missions', ['missionaries' => $missionaries, 'trips' => $trips]);
     }
 
 }

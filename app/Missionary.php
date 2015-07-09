@@ -10,7 +10,7 @@ class Missionary extends Model
     use SoftDeletes;
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    public function mission_location() {
+    public function missionlocation() {
         return $this->belongsTo('App\MissionLocation');
     }
 

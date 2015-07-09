@@ -14,10 +14,10 @@
         <h4 class="Card-subtitle">{{ isset($subtitle) ? $subtitle : '' }}</h4>
         <p class="Card-text">{{ isset($text) ? $text : '' }}</p>
     </div>
-    @if (isset($url))
-        <div class="Card-footer">
+    <div class="Card-footer">
+        @if (isset($url))
             <a class="Card-link" href="{{ $url }}">{{ (isset($url_text) && strlen($url_text)) ? $url_text : 'More Details' }}
                 <i class="icon-right-open-big"></i></a>
-        </div>
-    @endif
+        @endif
+    </div>
 </div>
