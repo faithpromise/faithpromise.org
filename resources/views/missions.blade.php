@@ -38,7 +38,18 @@
         </div>
     </div>
 
-    <div class="StaffSection">
+    <div class="TextSection TextSection--center">
+        <div class="TextSection-container">
+            <div class="TextSection-title">Get Updates</div>
+            <div class="TextSection-text">
+                <p>Sign up for email notifications and we'll let you know when new trips are planned.</p>
+                <a class="Button">Sign Up</a>
+                <!--TODO: Get url for missions updates-->
+            </div>
+        </div>
+    </div>
+
+    <div class="StaffSection Section--lightGrey">
         <div class="StaffSection-container">
             <h2 class="StaffSection-title">Missionaries</h2>
             <ul class="StaffSection-grid">
@@ -47,18 +58,11 @@
                     <a class="StaffSection-card" href="{{ $missionary->url }}">
                         <span class="StaffSection-photo" style="background-image:url('{{ $missionary->getThumbnail() }}');"></span>
                         <span class="StaffSection-name">{{ $missionary->name }}</span>
-                        <span class="StaffSection-staffTitle">{{ $missionary->area }}</span>
+                        <span class="StaffSection-staffTitle">{{ ! is_null($missionary->missionlocation) ? $missionary->missionlocation->name : '' }}</span>
                     </a>
                 </li>
                 @endforeach
             </ul>
-        </div>
-    </div>
-
-    <div class="GridSection Section--lightGrey">
-        <div class="GridSection-container">
-            <div class="GridSection-title">Serving our Community</div>
-            Community logos here
         </div>
     </div>
 
@@ -69,15 +73,7 @@
         </div>
     </div>
 
-    <div class="TextSection TextSection--center Section--lightGrey">
-        <div class="TextSection-container">
-            <div class="TextSection-title">Get Updates</div>
-            <div class="TextSection-text">
-                <p>Sign up for email notifications and we'll let you know when new trips are planned.</p>
-                <a class="Button">Sign Up</a>
-                <!--TODO: Get url for missions updates-->
-            </div>
-        </div>
-    </div>
+    @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey'])
+    @include('partials.have_questions', ['email' => 'missions@faithpromise.org', 'text' => 'If you still have questions about a trip or ways to get involved, please contact'])
 
 @endsection
