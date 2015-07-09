@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => 'Welcome to fpKids', 'hero_image' => '/build/images/kids/coloring-wide.jpg'])
+@extends('layouts.page', ['title' => 'Welcome to fpKids', 'hero_image' => '/build/images/fpkids/coloring-wide.jpg'])
 
 @section('page')
 
@@ -19,7 +19,7 @@
 <!--TODO: Need photo for preK-->
 <style type="text/css" scoped>
   .prek {
-    background-image: url(/build/images/kids/prek-wide.jpg);
+    background-image: url(/build/images/fpkids/prek-wide.jpg);
   }
 </style>
 <div class="BackgroundSection prek">
@@ -34,7 +34,7 @@
 <!--TODO: Need photo for K-3rd -->
 <style type="text/css" scoped>
   .k-3 {
-    background-image: url(/build/images/kids/k-3rd-wide.jpg);
+    background-image: url(/build/images/fpkids/k-3rd-wide.jpg);
   }
 </style>
 
@@ -50,7 +50,7 @@
 <!--TODO: Need photo for club45 -->
 <style type="text/css" scoped>
   .club45 {
-    background-image: url(/build/images/kids/prek-wide.jpg);
+    background-image: url(/build/images/fpkids/prek-wide.jpg);
   }
 </style>
 <div class="BackgroundSection club45">
