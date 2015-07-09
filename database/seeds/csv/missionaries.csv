@@ -1,4 +1,4 @@
-"id","name","mission_location_id","url","image","created_at","updated_at","deleted_at"
+"id","name","missionlocation_id","url","image","created_at","updated_at","deleted_at"
 1,"The Beukemas",NULL,"http://bkbeukema.org","beukemas.jpg","2015-07-08 19:11:31","2015-07-08 19:11:31",NULL
 2,"The Coplands",NULL,"http://nickandshannan.org","coplands.jpg","2015-07-08 19:12:12","2015-07-08 19:12:12",NULL
 3,"Chris Ladd",NULL,"http://chrisleeladd.com","chris-ladd.jpg","2015-07-08 19:12:34","2015-07-08 19:12:34",NULL
