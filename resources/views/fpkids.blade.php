@@ -21,7 +21,7 @@
 
 ?>
 
-@extends('layouts.page', ['title' => 'fpKids', 'hero_image' => '/build/images/kids/fpkids-wide.jpg'])
+@extends('layouts.page', ['title' => 'fpKids'])
 
 @section('page')
 

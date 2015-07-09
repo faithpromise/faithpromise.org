@@ -1,5 +1,5 @@
 <?php
-    $hero_image = isset($hero_image) ? $hero_image : 'hero-placeholder.png';
+    $hero_image = isset($hero_image) ? $hero_image : '/build/images/hero/' . Request::path() . '-wide.jpg';
     $hero_image_tall = str_replace('-wide.jpg', '-tall.jpg', $hero_image);
 ?>
 

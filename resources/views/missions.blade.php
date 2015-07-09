@@ -4,7 +4,7 @@
 
 ?>
 
-@extends('layouts.page', ['title' => 'Missions', 'hero_image' => '/build/images/kids/pellissippi-wide.jpg'])
+@extends('layouts.page', ['title' => 'Missions'])
 
 @section('page')
 
