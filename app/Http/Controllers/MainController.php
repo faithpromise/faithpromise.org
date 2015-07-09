@@ -8,6 +8,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
+use App\Ministry;
+use \Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;
 
 class MainController extends BaseController
@@ -28,4 +31,14 @@ class MainController extends BaseController
         ]);
     }
 
+    public function defaultMinistryPage($ministry_ident)
+    {
+        {
+            $ministry = Ministry::whereIdent($ministry_ident)->with('Staff')->first();
+            $events = Event::where('ministry_id', '=', $ministry->id)->where('expire_at', '>', Carbon::now())->get();
+
+            return view($ministry_ident, ['events' => $events, 'staff' => $ministry->staff]);
+        }
+
+    }
 }

@@ -16,19 +16,18 @@ Route::get('/', function () {
 });
 
 Route::get('/staff', 'StaffController@index');
-Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
-Route::get('/partials/staff-by-name', 'StaffController@staffByName');
-
-
-Route::get('/missions', 'MinistriesController@missions');
-Route::get('/{ministry}', 'MinistriesController@index')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
-
-Route::get('/fpkids/welcome', function() {
+Route::get('/missions/', 'MissionsController@index');
+Route::get('/missions/{location_ident}', 'MissionsController@location');
+Route::get('/fpkids/welcome', function () {
     return view('fpkids-welcome');
 });
 
+Route::get('/{ministry}', 'MainController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
+
+Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
+Route::get('/partials/staff-by-name', 'StaffController@staffByName');
+
 // Catchall for pages
-Route::get('/{page}', function($page) {
-    return $page;
+Route::get('/{page}', function ($page) {
     return view($page);
 })->where('page', '^.*');
