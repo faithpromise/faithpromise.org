@@ -8,12 +8,7 @@
 
 @section('page')
 
-
     <!--TODO: Confirm missionary areas-->
-
-    <!--TODO: Input events-->
-    {% assign events = site.events | where_contains: 'ministries', 'kids' | where_greater: 'expire_on', site.time | sort: 'starts_on' %}
-
     <!--TODO: Hero image - missions -->
     <!--TODO: Add page content-->
 
@@ -28,28 +23,29 @@
         </div>
     </div>
 
-    {% capture upcoming_text %}
-    <p>We're in the process of finalizing dates for 2015 and will be posting them here as soon as they're ready. In the meantime, feel free to contact us at
-        <a href="mailto:missions@faithpromise.org">missions@faithpromise.org</a> if you have any questions.</p>
-    {% endcapture %}
+    <?php
+        $upcoming_text = <<<EOT
+        <p>
+            We're in the process of finalizing dates for 2015 and will be posting them here as soon as they're ready. In the meantime, feel free to contact us at <a href="mailto:missions@faithpromise.org">missions@faithpromise.org</a> if you have any questions.
+        </p>
+EOT;
+?>
 
-    {% include event-grid.html events=events title='Upcoming Trips' text=upcoming_text class='Section--lightGrey' %}
+    @include('partials.event_grid', ['events' => $events, 'title' => 'Upcoming Trips', 'text' => $upcoming_text, 'class' => 'Section--lightGrey'])
 
     <div class="StaffSection">
         <div class="StaffSection-container">
             <h2 class="StaffSection-title">Missionaries</h2>
             <ul class="StaffSection-grid">
-                {% for member in page.missionaries %}
-
+                @foreach($missionaries as $missionary)
                 <li class="StaffSection-item">
-                    <a class="StaffSection-card" href="{{ member.url }}">
-                        <span class="StaffSection-photo" style="background-image:url('/build/images/missionaries/{{ member.image }}');"></span>
-                        <span class="StaffSection-name">{{ member.name }}</span>
-                        <span class="StaffSection-staffTitle">{{ member.area }}</span>
+                    <a class="StaffSection-card" href="{{ $missionary->url }}">
+                        <span class="StaffSection-photo" style="background-image:url('{{ $missionary->getThumbnail() }}');"></span>
+                        <span class="StaffSection-name">{{ $missionary->name }}</span>
+                        <span class="StaffSection-staffTitle">{{ $missionary->area }}</span>
                     </a>
                 </li>
-
-                {% endfor %}
+                @endforeach
             </ul>
         </div>
     </div>
