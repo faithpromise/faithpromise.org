@@ -1,5 +1,9 @@
 <?php
 
+if ($events->isEmpty()) {
+    return;
+}
+
 $css_class = trim('GridSection ' . (isset($class) ? $class : ''));
 $title = isset($title) ? $title : 'Upcoming Events';
 
