@@ -8,7 +8,6 @@ use App\Missionary;
 use App\MissionTrip;
 use View;
 use DB;
-use \Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -23,7 +22,7 @@ class MinistriesController extends BaseController
         $ministry_ident = isset($route_params['ministry']) ? $route_params['ministry'] : $request->route()->uri();
 
         $ministry = Ministry::whereIdent($ministry_ident)->with('Staff')->first();
-        $events = Event::where('ministry_id', '=', $ministry->id)->where('expire_at', '>', Carbon::now())->get();
+        $events = Event::where('ministry_id', '=', $ministry->id)->get();
 
         View::share('staff', $ministry->staff);
         View::share('events', $events);
