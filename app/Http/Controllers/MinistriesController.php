@@ -33,12 +33,4 @@ class MinistriesController extends BaseController
         return view($ministry_ident);
     }
 
-    public function missions()
-    {
-        $trips = MissionTrip::with('MissionLocation')->whereNull('expire_at')->orWhere('expire_at', '>', Carbon::now())->get();
-        $missionaries = Missionary::with('MissionLocation')->get();
-
-        return view('missions', ['missionaries' => $missionaries, 'trips' => $trips]);
-    }
-
 }
