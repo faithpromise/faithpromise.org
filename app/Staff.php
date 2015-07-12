@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Staff extends Model
 {
     use SoftDeletes;
+
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function campus() {
@@ -16,6 +17,10 @@ class Staff extends Model
 
     public function teams() {
         return $this->belongsToMany('App\Team');
+    }
+
+    public function ministries() {
+        return $this->belongsToMany('App\Ministry', 'staff_ministry');
     }
 
     public function getThumbnail() {
