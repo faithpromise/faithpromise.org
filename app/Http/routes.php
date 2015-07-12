@@ -27,7 +27,8 @@ Route::get('/{ministry}', 'MainController@defaultMinistryPage')->where('ministry
 Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
 Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
+// TODO: Uncomment after figuring out how debugbar can work with this catchall
 // Catchall for pages
-Route::get('/{page}', function ($page) {
-    return view($page);
-})->where('page', '^.*');
+//Route::get('/{page}', function ($page) {
+//    return view($page);
+//})->where('page', '^.*');
