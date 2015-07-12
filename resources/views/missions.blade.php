@@ -1,9 +1,3 @@
-<?php
-
-
-
-?>
-
 @extends('layouts.page', ['title' => 'Missions'])
 
 @section('page')
@@ -26,11 +20,19 @@
     <div class="GridSection Section--lightGrey">
         <div class="GridSection-container">
             <h2 class="GridSection-title">Upcoming Trips</h2>
-            @if (count($trips))
+            @if (count($locations))
             <ul class="Card-grid" card-grid>
-                @foreach($trips as $trip)
+                @foreach($locations as $location)
                     <li class="Card-item">
-                        @include('partials.card', ['title' => (! is_null($trip->missionlocation) ? $trip->missionlocation->name : $trip->title), 'subtitle' => $trip->dates, 'image' => '', 'text' => '', 'url' => (! is_null($trip->missionlocation) ? $trip->missionlocation->getUrl() : null), 'url_text' => ''])
+                        <?php
+                        if ($location->missiontrips->count() > 0) {
+                            $trip = $location->missiontrips->first();
+                            $dates = $trip->is_happening_now ? 'We\'re there right now' : $trip->dates;
+                        } else {
+                            $dates = 'TBD';
+                        }
+                        ?>
+                        @include('partials.card', ['title' => $location->name, 'subtitle' => $dates, 'image' => '', 'text' => '', 'url' => $location->url])
                     </li>
                 @endforeach
             </ul>
@@ -73,7 +75,7 @@
         </div>
     </div>
 
-    @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey'])
+    {{--@include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey'])--}}
     @include('partials.have_questions', ['email' => 'missions@faithpromise.org', 'text' => 'If you still have questions about a trip or ways to get involved, please contact'])
 
 @endsection
