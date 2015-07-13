@@ -24,15 +24,7 @@
             <ul class="Card-grid" card-grid>
                 @foreach($locations as $location)
                     <li class="Card-item">
-                        <?php
-                        if ($location->missiontrips->count() > 0) {
-                            $trip = $location->missiontrips->first();
-                            $dates = $trip->is_happening_now ? 'We\'re there right now' : $trip->dates;
-                        } else {
-                            $dates = 'TBD';
-                        }
-                        ?>
-                        @include('partials.card', ['title' => $location->name, 'subtitle' => $dates, 'image' => '', 'text' => '', 'url' => $location->url])
+                        @include('partials.card', ['title' => $location->name, 'subtitle' => (strlen($location->dates_prose) ? $location->dates_prose : 'Check out our recent trip'), 'image' => '', 'text' => '', 'url' => $location->url])
                     </li>
                 @endforeach
             </ul>
