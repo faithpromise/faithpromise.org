@@ -1,14 +1,10 @@
 <?php
 
-use Flynsarmy\CsvSeeder\CsvSeeder;
+use App\MissionLocation;
+use Illuminate\Database\Seeder;
 
-class MissionariesSeeder extends CsvSeeder
+class MissionariesSeeder extends Seeder
 {
-
-    public function __construct() {
-        $this->table = 'missionaries';
-        $this->filename = base_path() . '/database/seeds/csv/' . $this->table . '.csv';
-    }
 
     /**
      * Run the database seeds.
@@ -17,10 +13,44 @@ class MissionariesSeeder extends CsvSeeder
      */
     public function run()
     {
-        DB::disableQueryLog();
 
-        DB::table($this->table)->truncate();
+        DB::table('missionaries')->truncate();
 
-        parent::run();
+        DB::table('missionaries')->insert([
+            'name'                => 'The Beukemas',
+            'mission_location_id' => MissionLocation::findByIdent('jamaica')->id,
+            'url'                 => 'http://bkbeukema.org',
+            'image'               => 'beukemas.jpg',
+            'created_at'          => Carbon::now(),
+            'updated_at'          => Carbon::now()
+        ]);
+
+        DB::table('missionaries')->insert([
+            'name'                => 'The Coplands',
+            'mission_location_id' => MissionLocation::findByIdent('italy')->id,
+            'url'                 => 'http://nickandshannan.org',
+            'image'               => 'coplands.jpg',
+            'created_at'          => Carbon::now(),
+            'updated_at'          => Carbon::now()
+        ]);
+
+        DB::table('missionaries')->insert([
+            'name'                => 'Chris Ladd',
+            'mission_location_id' => MissionLocation::findByIdent('south-africa')->id,
+            'url'                 => 'http://chrisleeladd.com',
+            'image'               => 'chris-ladd.jpg',
+            'created_at'          => Carbon::now(),
+            'updated_at'          => Carbon::now()
+        ]);
+
+        DB::table('missionaries')->insert([
+            'name'                => 'Julie Rumph',
+            'mission_location_id' => MissionLocation::findByIdent('south-africa')->id,
+            'url'                 => 'http://julierumph.org',
+            'image'               => 'julie-rumph.jpg',
+            'created_at'          => Carbon::now(),
+            'updated_at'          => Carbon::now()
+        ]);
+
     }
 }
