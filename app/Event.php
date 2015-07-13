@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\PublishedTrait;
-use App\EventEndsTrait;
+use App\ExpiredTrait;
 
 class Event extends Model
 {
 
     use PublishedTrait;
-    use EventEndsTrait;
+    use ExpiredTrait;
 
     protected $dates = ['publish_at', 'expires_at', 'created_at', 'updated_at'];
 
