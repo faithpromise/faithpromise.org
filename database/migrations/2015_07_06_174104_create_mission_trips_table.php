@@ -14,7 +14,7 @@ class CreateMissionTripsTable extends Migration
     {
         Schema::create('mission_trips', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('missionlocation_id')->unsigned()->nullable();
+            $table->integer('mission_location_id')->unsigned()->nullable();
             $table->string('title', 50);
             $table->string('dates', 50)->nullable();
             $table->string('cost', 100)->nullable();
