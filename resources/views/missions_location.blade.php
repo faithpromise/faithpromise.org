@@ -4,7 +4,7 @@
 
 ?>
 
-@extends('layouts.page', ['hero_image' => ''])
+@extends('layouts.page', ['hero_image' => '/build/images/missions/locations/' . $location->ident . '-wide.jpg'])
 
 @section('page')
 
