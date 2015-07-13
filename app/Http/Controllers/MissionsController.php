@@ -22,14 +22,13 @@ class MissionsController extends BaseController
 
         return view('missions', ['events' => $events, 'missionaries' => $missionaries, 'staff' => $staff, 'locations' => $locations]);
     }
-
     public function location($location_ident)
     {
 
         $location = MissionLocation::whereIdent($location_ident)->first();
         $trips = MissionTrip::where('mission_location_id', '=', $location->id)->get();
 
-        return view('missions_location', ['location' => $location]);
+        return view('missions_location', ['location' => $location, 'trips' => $trips]);
 
     }
 
