@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use App\Event;
 use App\Ministry;
 use App\Missionary;
@@ -28,8 +27,7 @@ class MissionsController extends BaseController
     {
 
         $location = MissionLocation::whereIdent($location_ident)->first();
-        $trips = MissionTrip::where('missionlocation_id', '=', $location->id)->get();
-        dd($past_trips->toArray());
+        $trips = MissionTrip::where('mission_location_id', '=', $location->id)->get();
 
         return view('missions_location', ['location' => $location]);
 
