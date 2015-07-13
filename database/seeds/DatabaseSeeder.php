@@ -14,19 +14,19 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call('BiblePlanSeeder');
+//        $this->call('BiblePlanSeeder');
         $this->call('CampusesSeeder');
         $this->call('EventsSeeder');
         $this->call('MinistriesSeeder');
-        $this->call('MissionLocationsSeeder');
-        $this->call('MissionTripsSeeder');
-        $this->call('SeriesSeeder');
-        $this->call('VideosSeeder');
-        $this->call('TeamsSeeder');
-        $this->call('StaffSeeder');
-        $this->call('StaffTeamSeeder');
-        $this->call('StaffMinistrySeeder');
-        $this->call('MissionariesSeeder');
+//        $this->call('MissionLocationsSeeder');
+//        $this->call('MissionTripsSeeder');
+//        $this->call('SeriesSeeder');
+//        $this->call('VideosSeeder');
+//        $this->call('TeamsSeeder');
+//        $this->call('StaffSeeder');
+//        $this->call('StaffTeamSeeder');
+//        $this->call('StaffMinistrySeeder');
+//        $this->call('MissionariesSeeder');
 
         Model::reguard();
     }
