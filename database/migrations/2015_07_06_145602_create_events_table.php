@@ -15,16 +15,15 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ministry_id')->nullable();
-            $table->string('ident', 50)->unique();
             $table->string('title', 50);
+            $table->string('dates', 35)->nullable();
             $table->string('image', 35)->nullable();
             $table->text('excerpt')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_featured');
             $table->string('url', 75)->nullable();
-            $table->dateTime('starts_at')->nullable();
-            $table->dateTime('ends_at')->nullable();
-            $table->dateTime('publish_at')->nullable();
+            $table->dateTime('publish_at');
+            $table->dateTime('expire_at');
             $table->tinyInteger('sort')->unsigned();
             $table->timestamps();
         });
