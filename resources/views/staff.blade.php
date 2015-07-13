@@ -23,7 +23,7 @@
 <div ng-if="!staff_sort_method">
     @foreach ($teams as $team)
         <?php $staff_gallery_class = (($grey_bg = 1-$grey_bg) === 0) ? 'StaffSection--square Section--lightGrey' : 'StaffSection--square'; ?>
-        @include('partials.staff_gallery', ['staff' => $team->staff, 'title' => $team->title, 'class' => $staff_gallery_class])
+        @include('partials.staff_gallery', ['staff' => $team->Staff, 'title' => $team->title, 'class' => $staff_gallery_class])
     @endforeach
 </div>
 <div ng-if="staff_sort_method === 'campus'">
