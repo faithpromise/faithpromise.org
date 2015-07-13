@@ -24,7 +24,7 @@
             <ul class="Card-grid" card-grid>
                 @foreach($locations as $location)
                     <li class="Card-item">
-                        @include('partials.card', ['title' => $location->name, 'subtitle' => (strlen($location->dates_prose) ? $location->dates_prose : 'Check out our recent trip'), 'image' => '', 'text' => '', 'url' => $location->url])
+                        @include('partials.card', ['title' => $location->name, 'subtitle' => $location->dates_prose, 'image' => $location->card_image, 'text' => '', 'url' => $location->url])
                     </li>
                 @endforeach
             </ul>
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey'])
+    @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the Missions Staff', 'class' => 'Section--lightGrey'])
     @include('partials.have_questions', ['email' => 'missions@faithpromise.org', 'text' => 'If you still have questions about a trip or ways to get involved, please contact'])
 
 @endsection
