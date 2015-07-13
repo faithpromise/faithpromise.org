@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->text('excerpt')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_featured');
+            $table->string('url', 75)->nullable();
             $table->dateTime('starts_at')->nullable();
             $table->dateTime('ends_at')->nullable();
             $table->dateTime('publish_at')->nullable();
