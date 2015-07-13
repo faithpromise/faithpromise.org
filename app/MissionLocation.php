@@ -28,7 +28,7 @@ class MissionLocation extends Model
             $dates[] = $trip->date_range;
         }
 
-        return implode(' &amp; ', $dates);
+        return count($dates) ? implode(' &amp; ', $dates) : 'We\'re working on dates';;
     }
 
     public function missionaries()
