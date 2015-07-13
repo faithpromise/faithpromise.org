@@ -27,7 +27,7 @@ class MainController extends BaseController
         $staff_by_teams = \App\Team::with('Staff')->get();
 
         return view('staff', [
-            'teams' => $staff_by_teams->toArray()
+            'teams' => $staff_by_teams
         ]);
     }
 
