@@ -2,8 +2,6 @@
 
 namespace App;
 
-use DB;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class MissionLocation extends Model
@@ -26,15 +24,6 @@ class MissionLocation extends Model
 
         return implode(' &amp; ', $dates);
     }
-
-//<?php
-//if ($location->missiontrips->count() > 0) {
-//$trip = $location->missiontrips->first();
-//$dates = $trip->is_happening_now ? 'We\'re there right now' : $trip->dates;
-//} else {
-//    $dates = 'TBD';
-//}
-//
 
     public function missionaries()
     {
