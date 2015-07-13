@@ -7,12 +7,6 @@ use Illuminate\Database\Seeder;
 class MissionTripsSeeder extends Seeder
 {
 
-    public function __construct()
-    {
-        $this->table = 'mission_trips';
-        $this->filename = base_path() . '/database/seeds/csv/' . $this->table . '.csv';
-    }
-
     /**
      * Run the database seeds.
      *
