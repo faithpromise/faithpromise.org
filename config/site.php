@@ -11,6 +11,6 @@ return [
     'series_images_root'     => '/build/images/series',
     'staff_images_root'      => '/build/images/staff',
     'staff_images_dir'       => base_path() . '/public/build/images/staff',
-    'missionary_images_root' => '/build/images/missionaries',
-    'missionary_images_dir'  => base_path() . '/public/build/images/missionaries'
+    'missionary_images_root' => '/build/images/missions/missionaries',
+    'missionary_images_dir'  => base_path() . '/public/build/images/missions/missionaries'
 ];
