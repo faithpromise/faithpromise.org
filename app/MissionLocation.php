@@ -50,13 +50,7 @@ class MissionLocation extends Model
     {
         $query->where('is_continual', '=', 1)
             ->orWhereRaw(DB::raw('id in (select mission_location_id from mission_trips where ends_at > NOW() or ends_at IS NULL)'))
-            ->with(['missiontrips' => function ($query) {
-                $query->where(function ($query) {
-                    $query
-                        ->whereNull('ends_at')
-                        ->orWhere('ends_at', '>', Carbon::now());
-                });
-            }]);
+            ->with('missiontrips');
     }
 }
 
