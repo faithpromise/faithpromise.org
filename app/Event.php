@@ -12,7 +12,7 @@ class Event extends Model
     use PublishedTrait;
     use EventEndsTrait;
 
-    protected $dates = ['starts_at', 'ends_at', 'publish_at', 'expires_at', 'created_at', 'updated_at'];
+    protected $dates = ['publish_at', 'expires_at', 'created_at', 'updated_at'];
 
     public function ministry() {
         return $this->belongsTo('App\Ministry');
