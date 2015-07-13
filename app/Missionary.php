@@ -14,7 +14,7 @@ class Missionary extends Model
         return $this->belongsTo('App\MissionLocation');
     }
 
-    public function getThumbnail() {
+    public function getThumbnailAttribute() {
 
         $default_thumbnail = 'https://placekitten.com/g/300/300';
         $missionary_photo = config('site.missionary_images_root') . '/' . $this->image;

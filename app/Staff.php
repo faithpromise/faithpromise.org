@@ -23,7 +23,7 @@ class Staff extends Model
         return $this->belongsToMany('App\Ministry', 'staff_ministry');
     }
 
-    public function getThumbnail() {
+    public function getThumbnailAttribute() {
 
         $default_thumbnail = 'https://placekitten.com/g/200/300';
         $staff_photo = config('site.staff_images_root') . '/' . $this->ident . '-square.jpg';

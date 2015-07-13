@@ -16,7 +16,7 @@ $title = isset($title) ? $title : 'Upcoming Events';
         <ul class="Card-grid" card-grid>
             @foreach($events as $event)
                 <li class="Card-item">
-                    @include('partials.card', ['title' => $event->title, 'subtitle' => '', 'image' => $event->getThumbnail(), 'text' => $event->excerpt, 'url' => '', 'url_text' => ''])
+                    @include('partials.card', ['title' => $event->title, 'subtitle' => '', 'image' => $event->thumbnail, 'text' => $event->excerpt, 'url' => '', 'url_text' => ''])
                 </li>
             @endforeach
         </ul>

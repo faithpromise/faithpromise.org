@@ -16,7 +16,7 @@ $title = isset($title) ? $title : '';
 
                 <li class="StaffSection-item">
                     <a class="StaffSection-card" href="/staff/{{ $member->ident }}/">
-                        <span class="StaffSection-photo" style="background-image:url('{{ $member->getThumbnail() }}');"></span>
+                        <span class="StaffSection-photo" style="background-image:url('{{ $member->thumbnail }}');"></span>
                         <span class="StaffSection-name">{{ $member->display_name }}</span>
                         <span class="StaffSection-staffTitle">{{ $member->title }}</span>
                     </a>

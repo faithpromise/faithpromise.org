@@ -8,7 +8,7 @@
                 @foreach ($staff as $member)
                     <tr class="StaffList-row" onclick="window.document.location='/staff/{{ $member->ident }}';">
                         <td class="StaffList-column StaffList-column--photo">
-                            <span class="StaffList-photo" style="background-image:url('{{ $member->getThumbnail() }}');"></span>
+                            <span class="StaffList-photo" style="background-image:url('{{ $member->thumbnail }}');"></span>
                         </td>
                         <td class="StaffList-column StaffList-column--name">
                             <span class="StaffList-name">{{ $member->display_name }}</span>

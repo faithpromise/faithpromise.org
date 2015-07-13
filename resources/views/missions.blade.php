@@ -58,7 +58,7 @@
                 @foreach($missionaries as $missionary)
                 <li class="StaffSection-item">
                     <a class="StaffSection-card" href="{{ $missionary->url }}">
-                        <span class="StaffSection-photo" style="background-image:url('{{ $missionary->getThumbnail() }}');"></span>
+                        <span class="StaffSection-photo" style="background-image:url('{{ $missionary->thumbnail }}');"></span>
                         <span class="StaffSection-name">{{ $missionary->name }}</span>
                         <span class="StaffSection-staffTitle">{{ ! is_null($missionary->missionlocation) ? $missionary->missionlocation->name : '' }}</span>
                     </a>
