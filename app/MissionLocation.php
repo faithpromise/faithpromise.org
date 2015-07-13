@@ -15,6 +15,11 @@ class MissionLocation extends Model
         return '/missions/' . $this->ident;
     }
 
+    public function getCardImageAttribute()
+    {
+        return '/build/images/missions/locations/' . $this->ident . '-wide.jpg';
+    }
+
     public function getDatesProseAttribute()
     {
         $dates = [];
