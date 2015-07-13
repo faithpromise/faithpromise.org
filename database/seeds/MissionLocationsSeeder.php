@@ -43,7 +43,7 @@ class MissionLocationsSeeder extends Seeder
         DB::table('mission_locations')->insert([
             'ident'        => 'bahamas',
             'name'         => 'Bahamas',
-            'is_continual' => 1,
+            'is_continual' => 0,
             'created_at'   => Carbon::now(),
             'updated_at'   => Carbon::now()
         ]);
@@ -59,7 +59,7 @@ class MissionLocationsSeeder extends Seeder
         DB::table('mission_locations')->insert([
             'ident'        => 'portugal',
             'name'         => 'Portugal',
-            'is_continual' => 1,
+            'is_continual' => 0,
             'created_at'   => Carbon::now(),
             'updated_at'   => Carbon::now()
         ]);
