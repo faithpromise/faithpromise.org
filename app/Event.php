@@ -18,7 +18,7 @@ class Event extends Model
         return $this->belongsTo('App\Ministry');
     }
 
-    public function getThumbnail() {
+    public function getThumbnailAttribute() {
 
         if (strlen($this->image)) {
             return '/build/images/events/' . $this->image;
