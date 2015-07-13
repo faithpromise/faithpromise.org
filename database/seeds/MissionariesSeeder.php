@@ -21,7 +21,7 @@ class MissionariesSeeder extends Seeder
             'name'                => 'The Beukemas',
             'mission_location_id' => MissionLocation::where('ident', '=', 'jamaica')->first()->id,
             'url'                 => 'http://bkbeukema.org',
-            'image'               => 'beukemas.jpg',
+            'image'               => 'beukemas-square.jpg',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()
         ]);
@@ -30,7 +30,7 @@ class MissionariesSeeder extends Seeder
             'name'                => 'The Coplands',
             'mission_location_id' => MissionLocation::where('ident', '=', 'italy')->first()->id,
             'url'                 => 'http://nickandshannan.org',
-            'image'               => 'coplands.jpg',
+            'image'               => 'coplands-square.jpg',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()
         ]);
@@ -39,7 +39,7 @@ class MissionariesSeeder extends Seeder
             'name'                => 'Chris Ladd',
             'mission_location_id' => MissionLocation::where('ident', '=', 'south-africa')->first()->id,
             'url'                 => 'http://chrisleeladd.com',
-            'image'               => 'chris-ladd.jpg',
+            'image'               => 'chris-ladd-square.jpg',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()
         ]);
@@ -48,7 +48,7 @@ class MissionariesSeeder extends Seeder
             'name'                => 'Julie Rumph',
             'mission_location_id' => MissionLocation::where('ident', '=', 'south-africa')->first()->id,
             'url'                 => 'http://julierumph.org',
-            'image'               => 'julie-rumph.jpg',
+            'image'               => 'julie-rumph-square.jpg',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()
         ]);
