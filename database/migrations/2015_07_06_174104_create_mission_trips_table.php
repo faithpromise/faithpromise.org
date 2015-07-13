@@ -26,7 +26,6 @@ class CreateMissionTripsTable extends Migration
             $table->tinyInteger('sort')->unsigned()->default(255);
             $table->date('starts_at')->nullable();
             $table->date('ends_at')->nullable();
-            $table->dateTime('expire_at')->nullable();
             $table->timestamps();
         });
     }
