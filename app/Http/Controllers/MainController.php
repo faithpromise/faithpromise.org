@@ -35,7 +35,7 @@ class MainController extends BaseController
     {
         {
             $ministry = Ministry::whereIdent($ministry_ident)->with('Staff')->first();
-            $events = Event::where('ministry_id', '=', $ministry->id)->where('expire_at', '>', Carbon::now())->get();
+            $events = Event::where('ministry_id', '=', $ministry->id)->get();
 
             return view($ministry_ident, ['events' => $events, 'staff' => $ministry->staff]);
         }
