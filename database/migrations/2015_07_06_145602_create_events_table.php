@@ -24,7 +24,6 @@ class CreateEventsTable extends Migration
             $table->dateTime('starts_at')->nullable();
             $table->dateTime('ends_at')->nullable();
             $table->dateTime('publish_at')->nullable();
-            $table->dateTime('expire_at')->nullable();
             $table->tinyInteger('sort')->unsigned();
             $table->timestamps();
         });
