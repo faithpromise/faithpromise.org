@@ -6,7 +6,7 @@ class SeriesSeeder extends CsvSeeder
 {
 
     public function __construct() {
-        $this->table = 'mission_trips';
+        $this->table = 'series';
         $this->filename = base_path() . '/database/seeds/csv/' . $this->table . '.csv';
     }
 
