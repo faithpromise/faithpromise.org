@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MissionTrip extends Model
 {
-    protected $dates = ['starts_at', 'ends_at', 'expire_at', 'created_at', 'updated_at'];
+    protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at'];
 
     public function getIsHappeningNowAttribute() {
         return
