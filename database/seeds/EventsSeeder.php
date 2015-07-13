@@ -32,7 +32,7 @@ class EventsSeeder extends Seeder
         ]);
 
         DB::table('events')->insert([
-            'ministry_id' => Ministry::whereIdent('fpstudents')->first()->id,
+            'ministry_id' => Ministry::where('ident', '=', 'fpstudents')->first()->id,
             'title'       => 'Student Conference',
             'dates'       => 'dates will go here',
             'image'       => 'student-conference.jpg',
@@ -62,7 +62,7 @@ class EventsSeeder extends Seeder
         ]);
 
         DB::table('events')->insert([
-            'ministry_id' => Ministry::whereIdent('groups')->first()->id,
+            'ministry_id' => Ministry::where('ident', '=', 'groups')->first()->id,
             'title'       => 'Groups Conference',
             'dates'       => 'dates will go here',
             'image'       => 'groups-conference.jpg',
@@ -77,7 +77,7 @@ class EventsSeeder extends Seeder
         ]);
 
         DB::table('events')->insert([
-            'ministry_id' => Ministry::whereIdent('fpkids')->first()->id,
+            'ministry_id' => Ministry::where('ident', '=', 'fpkids')->first()->id,
             'title'       => 'Child Dedications',
             'dates'       => 'dates will go here',
             'image'       => 'child-dedications.jpg',
@@ -92,7 +92,7 @@ class EventsSeeder extends Seeder
         ]);
 
         DB::table('events')->insert([
-            'ministry_id' => Ministry::whereIdent('fpkids')->first()->id,
+            'ministry_id' => Ministry::where('ident', '=', 'fpkids')->first()->id,
             'title'       => 'fpKids Summer Camp',
             'dates'       => 'dates will go here',
             'image'       => 'child-dedications.jpg',

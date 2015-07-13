@@ -1,14 +1,10 @@
 <?php
 
-use Flynsarmy\CsvSeeder\CsvSeeder;
+use Carbon\Carbon;
+use Illuminate\Database\Seeder;
 
-class TeamsSeeder extends CsvSeeder
+class TeamsSeeder extends Seeder
 {
-
-    public function __construct() {
-        $this->table = 'teams';
-        $this->filename = base_path() . '/database/seeds/csv/' . $this->table . '.csv';
-    }
 
     /**
      * Run the database seeds.
@@ -17,10 +13,71 @@ class TeamsSeeder extends CsvSeeder
      */
     public function run()
     {
-        DB::disableQueryLog();
 
-        DB::table($this->table)->truncate();
+        DB::table('teams')->truncate();
 
-        parent::run();
+        DB::table('teams')->insert([
+            'ident'       => 'executive',
+            'title'       => 'Executive Team',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
+
+        DB::table('teams')->insert([
+            'ident'       => 'pastors',
+            'title'       => 'Campus Pastors',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
+
+        DB::table('teams')->insert([
+            'ident'       => 'fpkids',
+            'title'       => 'fpKids',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
+
+        DB::table('teams')->insert([
+            'ident'       => 'fpstudents',
+            'title'       => 'fpStudents',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
+
+        DB::table('teams')->insert([
+            'ident'       => 'groups',
+            'title'       => 'Groups Ministry',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
+
+        DB::table('teams')->insert([
+            'ident'       => 'worship',
+            'title'       => 'Worship Ministry',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
+
+        DB::table('teams')->insert([
+            'ident'       => 'leadership',
+            'title'       => 'Leadership Development and Stewardship',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
+
+        DB::table('teams')->insert([
+            'ident'       => 'administration',
+            'title'       => 'Administration',
+            'sort'        => 1,
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now()
+        ]);
     }
 }
