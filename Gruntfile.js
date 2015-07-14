@@ -21,8 +21,6 @@ module.exports = function (grunt) {
     var js_output_file_production = js_output_dir + '/main.min.js';
     var js_output_file_temp = temp_dir + '/main.tmp.js';
     var js_input = [
-        // TODO: Remove waypoints if we are not using it for nav
-        'bower_components/waypoints/lib/noframework.waypoints.js',
         'bower_components/angular-ui-bootstrap/src/position/position.js',
         'bower_components/angular-ui-bootstrap/src/dropdown/dropdown.js',
         'bower_components/angular-local-storage/dist/angular-local-storage.js',
