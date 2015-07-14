@@ -204,6 +204,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
         $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'missions')->first()->id);
 
 
@@ -431,7 +432,7 @@ class StaffSeeder extends CsvSeeder
             'first_name' => 'Miles',
             'last_name' => 'Creasman',
             'display_name' => 'Miles Creasman',
-            'title' => "Next Steps Pastor\/Blount Groups Pastor",
+            'title' => "Next Steps Pastor & Blount Groups Pastor",
             'email' => 'MilesC@faithpromise.org',
             'phone_ext' => '1005',
             'bio' => "<p>Miles Creasman has been on staff as the Blount Campus Groups Director since June 2010 and also took on the role of Pastor of Next Steps in the middle of 2011. Originally from Riceville, TN, Miles is a graduate of Carson-Newman College and Southern Baptist Theological Seminary in Louisville, KY. He has been in ministry for 15 years and has served on church staffs as Recreation Minister, Middle & High School Pastor, and Singles Pastor.<\/p><p>Miles has a passion to help people grow in their relationship with the Lord, and he believes that the context of community found in groups is the best place for that to happen.<\/p><p>Miles has been married to Katy for 13 years, and they have 3 children - Jess (9), Will (7), and Leah (3).<\/p><p>Miles' favorite hobby is playing with his kids. He loves playing Frisbee golf & fantasy sports. Miles and Katy are both very big UT Vols fans and love to go to games whenever they can.<\/p>",
@@ -608,6 +609,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
         $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'missions')->first()->id);
 
 
