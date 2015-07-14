@@ -63,9 +63,8 @@ $group_types = [
     </style>
     <div class="BackgroundSection community_groups_bg">
         <div class="BackgroundSection-container">
-            <h2 class="BackgroundSection-title">Community Groups</h2>
-
             <div class="BackgroundSection-text">
+                <h2 class="BackgroundSection-title">Community Groups</h2>
                 <p>A group at Faith Promise is an environment where three or more people can connect to develop and grow in their relationship with Christ. We want to help you find a group that meets near your home or work.</p>
                 <p>
                     <a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7079&weekday=&start_time=">Find a Group</a>
@@ -91,7 +90,9 @@ $group_types = [
             <h2 class="TextSection-title">Need Help?</h2>
 
             <div class="TextSection-text">
-                <p>If none of the other options have been helpful to you, we'd be glad to help you find a group. Email Jennifer Patrick at <a href="mailto:jenniferp@faithpromise.org">jenniferp@faithpromise.org</a> . Please include the nights that work best for you and a little about yourself (where you live, children, marital status, etc.).</p>
+                <p>If none of the other options have been helpful to you, we'd be glad to help you find a group. Email Jennifer Patrick at
+                    <a href="mailto:jenniferp@faithpromise.org">jenniferp@faithpromise.org</a> . Please include the nights that work best for you and a little about yourself (where you live, children, marital status, etc.).
+                </p>
             </div>
         </div>
     </div>
@@ -104,9 +105,8 @@ $group_types = [
     </style>
     <div class="BackgroundSection BackgroundSection--right become_group_leader_bg">
         <div class="BackgroundSection-container">
-            <h2 class="BackgroundSection-title">Group Leaders</h2>
-
             <div class="BackgroundSection-text">
+                <h2 class="BackgroundSection-title">Group Leaders</h2>
                 <p>Interesting in leading a group? <!-- TODO: change text -->Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life.</p>
             </div>
             <p>
