@@ -19,7 +19,7 @@ class CreateStaffTable extends Migration
             $table->string('first_name', 35);
             $table->string('last_name', 35);
             $table->string('display_name', 50);
-            $table->string('title', 50)->nullable();
+            $table->string('title', 100)->nullable();
             $table->text('bio')->nullable();
             $table->string('email', 75)->nullable();
             $table->string('phone_ext', 10)->nullable();
