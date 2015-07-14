@@ -1,5 +1,3 @@
-<!--TODO: Add page content-->
-
 @extends('layouts.page', ['title' => 'Men\'s Groups'])
 
 @section('page')
@@ -14,7 +12,7 @@
                 <!-- TODO: change date --><p>In 2013, our focus is on connecting men in groups as we learn practical ways to be a man of God in a fallen world.</p>
                 <p>Growth happens in groups. You may find that your monthly table group fits your needs and schedule, or you may choose to find a group that meets more frequently.</p>
                 <p class="Footnote">*stats from No Man Left Behind by Pat Morley</p>
-                <p class="text-center"><a class="Button" href="Men, are you experiencing the growth, significance, adventure, purpose, and blessings God has for you? fpMen helps us in the journey to be a man of God in today's world as we connect, serve our community, grow spiritually, and win the battle for our character, families, and legacy.">Find a Men's Group</a></p>
+                <p class="text-center"><a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7078&weekday=&start_time=">Find a Men's Group</a></p>
             </div>
         </div>
     </div>
