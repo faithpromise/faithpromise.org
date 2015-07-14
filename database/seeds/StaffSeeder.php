@@ -104,7 +104,7 @@ class StaffSeeder extends CsvSeeder
             'first_name' => 'Marti',
             'last_name' => 'Willen',
             'display_name' => 'Marti Willen',
-            'title' => "Assistant to the Executive Pastor & First Impressi",
+            'title' => "Assistant to the Executive Pastor & First Impressions Director",
             'email' => 'MartiW@faithpromise.org',
             'phone_ext' => '1700',
             'bio' => "<p>I came on staff in 2007, and I absolutely love working at FPC! I have a fantastic life, thanks to my awesome husband, Tim, and our boys, Jacob and Caleb. I love hanging out with my family, reading, singing, and most of all, I love laughing.<\/p><p>Some random facts about me are that I moved 15 times as a kid, feet gross me out, and I got to hold the Olympic Torch while in China! Both of my boys weighed 10 pounds at birth, and they were both 22 ¾ inches long! I'm a perfectionist by nature, but by His Spirit I am learning that continuously perfecting my relationship with God is the most important thing I could ever do. FPC has given more opportunities than I could have ever dreamed of, and I am so grateful that God led me to a place where He is constantly moving.<\/p><p>Follow me on <a href=\"http:\/\/twitter.com\/mwillen\" target=\"_blank\">Twitter<\/a>, or friend me on <a href=\"http:\/\/www.facebook.com\/profile.php?id=1628694786&ref=ts\" target=\"_blank\">Facebook<\/a>.<\/p>",
@@ -277,6 +277,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
+        $staff_member->teams()->attach(\App\Team::where('ident', '=', 'pastors')->first()->id);
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'administration')->first()->id);
 
 
@@ -296,7 +297,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -315,7 +316,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -333,7 +334,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'prayer')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -440,7 +441,8 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'administration')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -459,7 +461,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -514,7 +516,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -588,7 +590,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'prayer')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -606,7 +608,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'men')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'missions')->first()->id);
 
 
         $staff_member = new Staff([
@@ -772,7 +774,7 @@ class StaffSeeder extends CsvSeeder
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
         $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'celebrate')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -827,7 +829,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'prayer')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -862,6 +864,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
+        $staff_member->teams()->attach(\App\Team::where('ident', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -899,7 +903,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'prayer')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -990,7 +994,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1027,7 +1031,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'prayer')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1045,6 +1049,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
+        $staff_member->teams()->attach(\App\Team::where('ident', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1100,7 +1105,7 @@ class StaffSeeder extends CsvSeeder
         ]);
         $staff_member->save();
         $staff_member->teams()->attach(\App\Team::where('ident', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1128,7 +1133,7 @@ class StaffSeeder extends CsvSeeder
             'last_name' => 'Roberts',
             'display_name' => 'Brad Roberts',
             'title' => "Web Developer",
-            'email' => 'BradR@faithpromise.org',
+            'email' => 'bradr@faithpromise.org',
             'phone_ext' => '',
             'bio' => "",
             'sort' => 765,
@@ -1153,6 +1158,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
+        $staff_member->teams()->attach(\App\Team::where('ident', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\App\Ministry::where('ident', '=', 'fpstudents')->first()->id);
 
     }
 }
