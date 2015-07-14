@@ -48,7 +48,7 @@
 <!--TODO: Resize / optimize image for this section-->
 <style type="text/css" scoped>
     .im_new_bg {
-        background-image: url(/build/images/kids/rocket-wide.jpg);
+        background-image: url(/build/images/fpkids/rocket-wide.jpg);
     }
 </style>
 
@@ -66,7 +66,7 @@
 
 <style type="text/css" scoped>
     .kids_faq {
-        background-image: url(/build/images/kids/pattern.png);
+        background-image: url(/build/images/fpkids/pattern.png);
     }
 
     .kids_faq a:hover {
