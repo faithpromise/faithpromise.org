@@ -67,7 +67,6 @@
         </div>
     </div>
 
-    @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the Missions Staff', 'class' => 'Section--lightGrey'])
-    @include('partials.have_questions', ['email' => 'missions@faithpromise.org', 'text' => 'If you still have questions about a trip or ways to get involved, please contact'])
+    @include('partials.have_questions', ['email' => 'missions@faithpromise.org', 'text' => 'If you still have questions about a trip or ways to get involved, please contact', 'class' => 'Section--lightGrey'])
 
 @endsection
