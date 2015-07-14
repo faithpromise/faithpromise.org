@@ -324,7 +324,7 @@ class StaffSeeder extends CsvSeeder
             'first_name' => 'Zac',
             'last_name' => 'Stephens',
             'display_name' => 'Zac Stephens',
-            'title' => "Pastor of Student Ministries\/Pellissippi Campus St",
+            'title' => "Pastor of Student Ministries & Pellissippi Campus Student Pastor",
             'email' => 'ZacS@faithpromise.org',
             'phone_ext' => '1304',
             'bio' => "",
