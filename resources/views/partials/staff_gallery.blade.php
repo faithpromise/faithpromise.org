@@ -15,8 +15,8 @@ $title = isset($title) ? $title : '';
             @foreach ($staff as $member)
 
                 <li class="StaffSection-item">
-                    <a class="StaffSection-card" href="/staff/{{ $member->ident }}/">
-                        <span class="StaffSection-photo" style="background-image:url('{{ $member->thumbnail }}');"></span>
+                    <a class="StaffSection-card" href="/staff/{{ $member->ident }}">
+                        <span class="StaffSection-photo" data-layzr="{{ $member->thumbnail }}" data-layzr-bg></span>
                         <span class="StaffSection-name">{{ $member->display_name }}</span>
                         <span class="StaffSection-staffTitle">{{ $member->title }}</span>
                     </a>
