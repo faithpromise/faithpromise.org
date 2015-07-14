@@ -20,4 +20,21 @@
 
     @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpStudents Staff'])
 
+    <style type="text/css" scoped>
+        .get_involved_bg {
+            background-image: url(/build/images/fpstudents/worship-2-wide.jpg);
+        }
+    </style>
+
+    <div class="BackgroundSection get_involved_bg">
+        <div class="BackgroundSection-container">
+            <div class="BackgroundSection-text">
+                <h2 class="BackgroundSection-title">Get Involved</h2>
+                <p><!-- TODO: change text -->Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
+                <!-- TODO: Change link -->
+                <p><a class="Button" href="http://fpstudents.com">Learn more</a></p>
+            </div>
+        </div>
+    </div>
+
 @endsection
