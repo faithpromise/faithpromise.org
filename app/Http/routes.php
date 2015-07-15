@@ -15,14 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/staff-seed', function() {
-
-    $staff = App\Staff::all();
-
-    return view('staff-seed', ['staff' => $staff]);
-
-});
-
 // Events
 Route::get('/events', 'EventsController@index');
 
