@@ -32,5 +32,6 @@ Route::get('/missions/{location_ident}', 'MissionsController@location');
 Route::get('/staff', 'StaffController@index');
 Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
 Route::get('/partials/staff-by-name', 'StaffController@staffByName');Route::get('/test', function () {
+Route::get('/test', function () {
     \Illuminate\Support\Facades\Artisan::call('events:import');
 });
