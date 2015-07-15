@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 // Events
 Route::get('/events', 'EventsController@index');
+Route::get('/events/calendar', 'EventsController@calendar');
+Route::get('/events/calendar/{year}/{month}', 'EventsController@calendarMonth');
 
 // Ministries
 Route::get('/{ministry}', 'MainController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
