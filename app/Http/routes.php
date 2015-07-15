@@ -15,20 +15,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/staff', 'StaffController@index');
-Route::get('/missions/', 'MissionsController@index');
-Route::get('/missions/{location_ident}', 'MissionsController@location');
+Route::get('/staff-seed', function() {
+
+    $staff = App\Staff::all();
+
+    return view('staff-seed', ['staff' => $staff]);
+
+});
+
+// Events
+Route::get('/events', 'EventsController@index');
+
+// Ministries
+Route::get('/{ministry}', 'MainController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
 Route::get('/fpkids/welcome', function () {
     return view('fpkids-welcome');
 });
 
-Route::get('/{ministry}', 'MainController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
+// Missions
+Route::get('/missions', 'MissionsController@index');
+Route::get('/missions/{location_ident}', 'MissionsController@location');
 
+// Staff
+Route::get('/staff', 'StaffController@index');
 Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
 Route::get('/partials/staff-by-name', 'StaffController@staffByName');
-
-// TODO: Uncomment after figuring out how debugbar can work with this catchall
-// Catchall for pages
-//Route::get('/{page}', function ($page) {
-//    return view($page);
-//})->where('page', '^.*');
