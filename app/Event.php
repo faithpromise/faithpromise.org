@@ -18,6 +18,10 @@ class Event extends Model
         return $this->belongsTo('App\Ministry');
     }
 
+    public function calendar() {
+        return $this->hasMany('App\CalendarEvent', 'event_number', 'calendar_event_number');
+    }
+
     public function getThumbnailAttribute() {
 
         if (strlen($this->image)) {
