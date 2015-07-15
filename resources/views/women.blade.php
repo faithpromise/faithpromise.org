@@ -11,7 +11,7 @@
             <div class="TextSection-text">
                 <p>fp Women's Groups exist to help women become who God created them to be in order that they can fulfill their destiny. We will equip and encourage women to connect with other women, grow into a deeper relationship with Jesus Christ, and serve one another, our community, and the world.</p>
 
-                <blockquote>
+                <blockquote class="BlockQuote">
                     "Therefore, as you received Christ Jesus the Lord, so walk in Him, rooted and built up in Him and established in the faith, just as you were taught, abounding in thanksgiving." - Colossians 2:6-7
                 </blockquote>
             </div>
@@ -35,6 +35,16 @@
             <div class="TextSection-text">
                 <p>Spring Semester Bible Studies begin on April 8 at 10:00 am and April 9 at 6:30 pm at the Pellissippi Campus.</p>
                 <p class="text-center"><a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7077&weekday=&start_time=">Find a Group or Bible Study</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="TextSection TextSection--center Section--lightGrey">
+        <div class="TextSection-container">
+            <h2 class="TextSection-title">Need Help?</h2>
+            <div class="TextSection-text">
+                <p>We'd love to help you find a group. Please email Jennifer Patrick at <a href="mailto:jenniferp@faithpromise.org?subject=Young adult group">jenniferp@faithpromise.org</a>.
+                </p>
             </div>
         </div>
     </div>

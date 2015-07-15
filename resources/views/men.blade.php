@@ -17,4 +17,14 @@
         </div>
     </div>
 
+    <div class="TextSection TextSection--center Section--lightGrey">
+        <div class="TextSection-container">
+            <h2 class="TextSection-title">Need Help?</h2>
+            <div class="TextSection-text">
+                <p>We'd love to help you find a group. Please email Jennifer Patrick at <a href="mailto:jenniferp@faithpromise.org?subject=Young adult group">jenniferp@faithpromise.org</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
 @endsection
