@@ -95,7 +95,7 @@ class EventsSeeder extends Seeder
             'ministry_id' => Ministry::where('ident', '=', 'fpkids')->first()->id,
             'title'       => 'fpKids Summer Camp',
             'dates'       => 'dates will go here',
-            'image'       => 'child-dedications.jpg',
+            'image'       => 'kids-camp.jpg',
             'excerpt'     => 'Want your child to be dedicated in a worship service?',
             'description' => '<p>We\'re packing up fpKIDS and heading to Dayton, TN!  We can\'t wait to take your child for a fun-filled week of summer camp, June 23-26.  Make sure your fpKID doesn\'t miss out!  <a href="http://blog.faithpromise.org/2014/03/fpkids-summer-camp-2014/" target="_blank"">Register here!</a>',
             'is_featured' => 1,
