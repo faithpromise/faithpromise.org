@@ -13,7 +13,7 @@ class Ministry extends Model
         return $this->belongsToMany('App\Staff', 'staff_ministry')->orderBy('sort');
     }
 
-    public function event() {
+    public function events() {
         return $this->hasMany('App\Event')->orderBy('sort');
     }
 }
