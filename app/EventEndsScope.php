@@ -102,14 +102,16 @@ class EventEndsScope implements ScopeInterface {
      */
     protected function isEventEndConstraint(array $where, $column)
     {
-        $removeAfter = Carbon::now()->endOfDay();
-        dd($where['query']->whereas(1)); // TODO: Figure out how to identify constraint
+        $remove_after = Carbon::now()->endOfDay();
+        $where_string = 'Null_' . $column . '_and';
+
         return (
             $where['type'] == 'Nested'
-            && $where['query']['whereas'][0]['column'] == $column
-            && $where['query']['whereas'][1]['column'] == $column
-            && $where['query']['whereas'][0]['value'] > $removeAfter
-            && $where['query']['whereas'][1]['value'] > $removeAfter);
+            && count($where['query']->wheres) === 2)
+            && (strcasecmp(implode('_', $where['query']->wheres[0]), $where_string) === 0)
+            && $where['query']->wheres[1]['column'] == $column
+            && $where['query']->wheres[1]['operator'] === '>'
+            && $where['query']->wheres[1]['value'] == $remove_after;
     }
 
     /**
