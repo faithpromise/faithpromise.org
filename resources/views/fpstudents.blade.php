@@ -12,7 +12,8 @@
 
             <div class="TextSection-text">
                 <p>fpStudents is the connection point for 6th-12th grade students at Faith Promise Church. Join us each Wednesday night for a worship service like no other! Loaded with exciting videos, live music, new friendships, and relevant teaching that connects the Bible to your life. fpStudents is a can't-miss experience that will kick-start your world!</p>
-                <p>Check out what's going on this week and in the future at <a href="http://fpStudents.com">fpStudents.com</a>!</p>
+                <p>Check out what's going on this week and in the future at
+                    <a href="http://fpStudents.com">fpStudents.com</a>!</p>
             </div>
         </div>
     </div>
