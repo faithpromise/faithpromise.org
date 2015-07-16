@@ -36,21 +36,28 @@ class EventsController extends BaseController
     public function calendarMonth($year, $month)
     {
 
-        $beginningOfMonth = Carbon::create($year, $month, 1);
+        $beginningOfMonth = Carbon::create($year, $month, 1)->firstOfMonth();
         $endOfMonth = $beginningOfMonth->copy()->endOfMonth();
 
-        $days = CalendarEvent::where('starts_at', '>', $beginningOfMonth)
-            ->where('ends_at', '<', $endOfMonth)
-            ->orderBy('starts_at')
+        $prevMonth = $beginningOfMonth->copy()->subMonth(1);
+        $nextMonth = $beginningOfMonth->copy()->addMonth(1);
+
+        $nextMonthHasEvents = CalendarEvent::monthHasEvents($nextMonth->year, $nextMonth->month);
+
+        $days = CalendarEvent::withinRange($beginningOfMonth, $endOfMonth)
+            ->where('title', '<>', 'Worship Service')
             ->get()
             ->groupBy(function ($event) {
                 return $event->starts_at->format('Y-m-d');
             });
 
         return view('events_calendar', [
-            'start' => $beginningOfMonth,
-            'end'   => $endOfMonth,
-            'days'  => $days
+            'start'      => $beginningOfMonth,
+            'days'       => $days,
+            'prev_url'   => '/events/calendar/' . $prevMonth->year . '/' . $prevMonth->month,
+            'next_url'   => '/events/calendar/' . $nextMonth->year . '/' . $nextMonth->month,
+            'allow_prev' => $beginningOfMonth->gt(Carbon::now()->firstOfMonth()),
+            'allow_next' => $nextMonthHasEvents
         ]);
     }
 
