@@ -39,9 +39,7 @@ class EventsController extends BaseController
         $beginningOfMonth = Carbon::create($year, $month, 1);
         $endOfMonth = $beginningOfMonth->copy()->endOfMonth();
 
-        // TODO: Remove withPast after figuring out how to make it work
-        $days = CalendarEvent::withPast()
-            ->where('starts_at', '>', $beginningOfMonth)
+        $days = CalendarEvent::where('starts_at', '>', $beginningOfMonth)
             ->where('ends_at', '<', $endOfMonth)
             ->orderBy('starts_at')
             ->get()
