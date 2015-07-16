@@ -12,16 +12,13 @@ use App\Ministry;
 use App\Team;
 use Illuminate\Routing\Controller as BaseController;
 
-class MainController extends BaseController
-{
+class MainController extends BaseController {
 
-    public function index()
-    {
+    public function index() {
 
     }
 
-    public function staff()
-    {
+    public function staff() {
 
         $staff_by_teams = Team::with('Staff')->get();
 
@@ -30,8 +27,7 @@ class MainController extends BaseController
         ]);
     }
 
-    public function defaultMinistryPage($ministry_ident)
-    {
+    public function defaultMinistryPage($ministry_ident) {
 
         return view($ministry_ident, [
             'ministry' => Ministry::whereIdent($ministry_ident)->first()
