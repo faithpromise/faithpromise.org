@@ -1,5 +1,6 @@
 <!--TODO: Add page content-->
 
+@inject('snippets', 'App\Services\SnippetsService')
 
 @extends('layouts.page', ['title' => 'fpStudents'])
 
@@ -16,9 +17,8 @@
         </div>
     </div>
 
-    @include('partials.event_grid', ['events' => $events, 'class' => 'Section--lightGrey'])
-
-    @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpStudents Staff'])
+    {!! $snippets->ministryEvents($ministry, 'Upcoming Events', 'Section--lightGrey') !!}
+    {!! $snippets->ministryStaff($ministry, 'Meet the fpStudents Staff') !!}
 
     <style type="text/css" scoped>
         .get_involved_bg {
