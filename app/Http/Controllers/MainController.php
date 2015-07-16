@@ -8,9 +8,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
 use App\Ministry;
-use \Carbon\Carbon;
+use App\Team;
 use Illuminate\Routing\Controller as BaseController;
 
 class MainController extends BaseController
@@ -24,7 +23,7 @@ class MainController extends BaseController
     public function staff()
     {
 
-        $staff_by_teams = \App\Team::with('Staff')->get();
+        $staff_by_teams = Team::with('Staff')->get();
 
         return view('staff', [
             'teams' => $staff_by_teams
@@ -33,12 +32,10 @@ class MainController extends BaseController
 
     public function defaultMinistryPage($ministry_ident)
     {
-        {
-            $ministry = Ministry::whereIdent($ministry_ident)->with('Staff')->first();
-            $events = Event::where('ministry_id', '=', $ministry->id)->get();
 
-            return view($ministry_ident, ['events' => $events, 'staff' => $ministry->Staff]);
-        }
+        return view($ministry_ident, [
+            'ministry' => Ministry::whereIdent($ministry_ident)->first()
+        ]);
 
     }
 }

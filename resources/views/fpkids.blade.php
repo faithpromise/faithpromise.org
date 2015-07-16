@@ -21,6 +21,8 @@
 
 ?>
 
+@inject('snippets', 'App\Services\SnippetsService')
+
 @extends('layouts.page', ['title' => 'fpKids'])
 
 @section('page')
@@ -62,7 +64,7 @@
     </div>
 </div>
 
-@include('partials.event_grid', ['events' => $events])
+    {!! $snippets->ministryEvents($ministry) !!}
 
 <style type="text/css" scoped>
     .kids_faq {
@@ -77,6 +79,6 @@
 
 @include('partials.faq', ['faq' => $faq, 'class' => 'has-background kids_faq'])
 @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you still have questions about fpKids, please contact'])
-@include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey'])
+    {!! $snippets->ministryStaff($ministry, 'Meet the fpKids Staff', 'Section--lightGrey') !!}
 
 @endsection
