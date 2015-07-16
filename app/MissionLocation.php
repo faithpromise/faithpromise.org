@@ -10,14 +10,19 @@ class MissionLocation extends Model
 
     protected $dates = ['created_at', 'updated_at'];
 
+    public function missionaries()
+    {
+        return $this->hasMany('App\Missionary');
+    }
+
+    public function missionTrips()
+    {
+        return $this->hasMany('App\MissionTrip');
+    }
+
     public function getUrlAttribute()
     {
         return '/missions/' . $this->ident;
-    }
-
-    public function getCardImageAttribute()
-    {
-        return '/build/images/missions/locations/' . $this->ident . '-wide.jpg';
     }
 
     public function getDatesProseAttribute()
@@ -31,14 +36,25 @@ class MissionLocation extends Model
         return count($dates) ? implode(' &amp; ', $dates) : 'We\'re working on dates';;
     }
 
-    public function missionaries()
-    {
-        return $this->hasMany('App\Missionary');
+    public function getCardTitleAttribute() {
+        return $this->name;
     }
 
-    public function missionTrips()
+    public function getCardSubtitleAttribute() {
+        return $this->getDatesProseAttribute();
+    }
+
+    public function getCardImageAttribute()
     {
-        return $this->hasMany('App\MissionTrip');
+        return '/build/images/missions/locations/' . $this->ident . '-wide.jpg';
+    }
+
+    public function getCardUrlTextAttribute() {
+        return 'Details';
+    }
+
+    public function getCardUrlAttribute() {
+        return $this->getUrlAttribute();
     }
 
     public function scopeUpcoming($query)
@@ -48,4 +64,3 @@ class MissionLocation extends Model
             ->with('missiontrips');
     }
 }
-
