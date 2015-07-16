@@ -40,6 +40,7 @@ $group_types = [
 
 ?>
 
+@inject('snippets', 'App\Services\SnippetsService')
 
 @extends('layouts.page', ['title' => 'Groups'])
 
@@ -116,6 +117,7 @@ $group_types = [
         </div>
     </div>
 
-    @include('partials.staff_gallery', ['staff' => $staff, 'title' => 'Groups Staff'])
+    {!! $snippets->ministryEvents($ministry, 'Upcoming Events', 'Section--lightGrey') !!}
+    {!! $snippets->ministryStaff($ministry, 'Groups Staff') !!}
 
 @endsection
