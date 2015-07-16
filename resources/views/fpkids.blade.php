@@ -27,47 +27,46 @@ $faq = [
 
 @section('page')
 
-    <div class="IntroSection">
-        <div class="IntroSection-container">
+    {{--
+        ========================================
+        Intro
+        ========================================
+    --}}
+    @introsection(['title' => 'What is fpKids?'])
+    <p>Each weekend at Faith Promise hundreds of children (birth through 5th grade) are having a blast learning about Christ in safe, age-appropriate environments. Through creative biblical teaching, we work together to teach kids how to do the greatest thing they can possibly do with their lives... love Jesus with all their heart, mind, and strength.
+        <a class="BibleRef" href="https://www.bible.com/bible/100/Mark.12.30" target="_blank">Mark 12:30</a>
+    </p>
+    <p>We'd love to see you and your family this weekend as we discover all God has for us in an exciting new way.</p>
 
-            <h1 class="IntroSection-title IntroSection-title--push">What is fpKids?</h1>
+    <hr class="Section-hr">
 
-            <div class="IntroSection-text">
+    <p class="text-constrain-compact text-center">See what your kids are learning and stay current on fpKids events by following us on social media.</p>
 
-                <p>Each weekend at Faith Promise hundreds of children (birth through 5th grade) are having a blast learning about Christ in safe, age-appropriate environments. Through creative biblical teaching, we work together to teach kids how to do the greatest thing they can possibly do with their lives... love Jesus with all their heart, mind, and strength.
-                    <a class="BibleRef" href="https://www.bible.com/bible/100/Mark.12.30" target="_blank">Mark 12:30</a>
-                </p>
-                <p>We'd love to see you and your family this weekend as we discover all God has for us in an exciting new way.</p>
+    @include('partials.social_buttons', ['facebook' => '//www.facebook.com/fpkids', 'twitter' => '//twitter.com/fp_kids'])
+    @endintrosection
 
-                <hr class="Section-hr">
+    {{--
+        ========================================
+        I'm new
+        ========================================
+    --}}
+    @bgsection(['title' => 'I\'m New', 'image' => '/build/images/fpkids/rocket-wide.jpg'])
+    <p>We're so glad to have you as our guest at Faith Promise. We want your experience in fpKIDS to be one worth talking about. Please visit our welcome page designed just for you.</p>
+    <p><a class="Button" href="/fpkids/welcome/">Learn more</a></p>
+    @endbgsection
 
-                <p class="text-constrain-compact text-center">See what your kids are learning and stay current on fpKids events by following us on social media.</p>
-
-                @include('partials.social_buttons', ['facebook' => '//www.facebook.com/fpkids', 'twitter' => '//twitter.com/fp_kids'])
-
-            </div>
-        </div>
-    </div>
-
-    <!--TODO: Resize / optimize image for this section-->
-    <style type="text/css" scoped>
-        .im_new_bg {
-            background-image: url(/build/images/fpkids/rocket-wide.jpg);
-        }
-    </style>
-
-    <div class="BackgroundSection im_new_bg">
-        <div class="BackgroundSection-container">
-            <div class="BackgroundSection-text">
-                <h2 class="BackgroundSection-title">I'm New</h2>
-                <p>We're so glad to have you as our guest at Faith Promise. We want your experience in fpKIDS to be one worth talking about. Please visit our welcome page designed just for you.</p>
-                <p><a class="Button" href="/fpkids/welcome/">Learn more</a></p>
-            </div>
-        </div>
-    </div>
-
+    {{--
+        ========================================
+        Events
+        ========================================
+    --}}
     {!! $snippets->ministryEvents($ministry) !!}
 
+    {{--
+        ========================================
+        FAQ
+        ========================================
+    --}}
     <style type="text/css" scoped>
         .kids_faq {
             background-image: url(/build/images/fpkids/pattern.png);
@@ -81,8 +80,18 @@ $faq = [
 
     @include('partials.faq', ['faq' => $faq, 'class' => 'has-background kids_faq'])
 
+    {{--
+        ========================================
+        Contact
+        ========================================
+    --}}
     @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you still have questions about fpKids, please contact'])
 
+    {{--
+        ========================================
+        Staff
+        ========================================
+    --}}
     {!! $snippets->ministryStaff($ministry, 'Meet the fpKids Staff', 'Section--lightGrey') !!}
 
 @endsection

@@ -6,55 +6,33 @@
     <!--TODO: Hero image - missions -->
     <!--TODO: Finish content-->
 
-    <div class="IntroSection">
-        <div class="IntroSection-container">
-            <h1 class="IntroSection-title">Faith Promise Missions</h1>
+    @introsection(['title' => 'Faith Promise Missions', 'class' => '', 'image' => ''])
+    <p>Each year our church plans multiple international mission trips. You can find contact information and details by selecting a trip below. All donations made to Faith Promise Church to support mission trips are fully tax deductible.</p>
+    <p>We also engage the world around us, sharing the hope of Christ in tangible ways. Below you will find several opportunities to serve our community.</p>
+    @endintrosection
 
-            <div class="IntroSection-text">
-                <p>Each year our church plans multiple international mission trips. You can find contact information and details by selecting a trip below. All donations made to Faith Promise Church to support mission trips are fully tax deductible.</p>
-                <p>We also engage the world around us, sharing the hope of Christ in tangible ways. Below you will find several opportunities to serve our community.</p>
-            </div>
-        </div>
-    </div>
+    @cardsection(['title' => 'Upcoming Trips', 'class' => 'Section--lightGrey', 'cards' => $locations, 'no_text' => true])
+    @endcardsection
 
-    <div class="GridSection Section--lightGrey">
-        <div class="GridSection-container">
-            <h2 class="GridSection-title">Upcoming Trips</h2>
-            @if (count($locations))
-            <ul class="Card-grid" card-grid>
-                @foreach($locations as $location)
-                    <li class="Card-item">
-                        @include('partials.card', ['title' => $location->name, 'subtitle' => $location->dates_prose, 'image' => $location->card_image, 'text' => '', 'url' => $location->url])
-                    </li>
-                @endforeach
-            </ul>
-            @endif
-        </div>
-    </div>
+    @textsection(['title' => 'Get Updates', 'class' => '', 'image' => ''])
+    <p>Sign up for email notifications and we'll let you know when new trips are planned.</p>
+    <a class="Button">Sign Up</a>
+    <!--TODO: Get url for missions updates-->
+    @endtextsection
 
-    <div class="TextSection TextSection--center">
-        <div class="TextSection-container">
-            <div class="TextSection-title">Get Updates</div>
-            <div class="TextSection-text">
-                <p>Sign up for email notifications and we'll let you know when new trips are planned.</p>
-                <a class="Button">Sign Up</a>
-                <!--TODO: Get url for missions updates-->
-            </div>
-        </div>
-    </div>
 
     <div class="StaffSection Section--lightGrey">
         <div class="StaffSection-container">
             <h2 class="StaffSection-title">Missionaries</h2>
             <ul class="StaffSection-grid">
                 @foreach($missionaries as $missionary)
-                <li class="StaffSection-item">
-                    <a class="StaffSection-card" href="{{ $missionary->url }}">
-                        <span class="StaffSection-photo" style="background-image:url('{{ $missionary->thumbnail }}');"></span>
-                        <span class="StaffSection-name">{{ $missionary->name }}</span>
-                        <span class="StaffSection-staffTitle">{{ ! is_null($missionary->missionlocation) ? $missionary->missionlocation->name : '' }}</span>
-                    </a>
-                </li>
+                    <li class="StaffSection-item">
+                        <a class="StaffSection-card" href="{{ $missionary->url }}">
+                            <span class="StaffSection-photo" style="background-image:url('{{ $missionary->thumbnail }}');"></span>
+                            <span class="StaffSection-name">{{ $missionary->name }}</span>
+                            <span class="StaffSection-staffTitle">{{ ! is_null($missionary->missionlocation) ? $missionary->missionlocation->name : '' }}</span>
+                        </a>
+                    </li>
                 @endforeach
             </ul>
         </div>
