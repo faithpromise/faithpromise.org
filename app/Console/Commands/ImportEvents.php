@@ -40,28 +40,16 @@ class ImportEvents extends Command
     public function handle()
     {
 
-
-
-        CalendarEvent::unguard();
-
-        $record = CalendarEvent::where('id', '=', 304394821)->first();
-
-        dd($record);
-
-
-
         $client = new Client();
         $end_point = 'http://api.serviceu.com/rest/events/occurrences?orgKey=b96cd642-acbb-4eb7-95a2-f18c0f01d5b1&format=json';
         $response = $client->get($end_point);
-
         $data = json_decode($response->getBody(true));
 
+        CalendarEvent::unguard();
 
         foreach ($data as $event) {
 
-            $record = CalendarEvent::where('id', '=', $event->OccurrenceId)->withPast()->first();
-
-            dd($record->id);
+            $record = CalendarEvent::withPast()->where('id', '=', $event->OccurrenceId)->first() ?: new CalendarEvent;
 
             $record->{'id'} = $event->OccurrenceId;
             $record->{'event_number'} = $event->EventId;
