@@ -1,0 +1,44 @@
+
+@calendar_root_font_size: 18;
+
+// Padding
+@calendar_horizontal_padding: 10;
+@calendar_vertical_padding: 14;
+
+.Calendar-heading {
+  .to-rem(margin-top, 60);
+  &:extend(h5);
+}
+
+.Calendar {
+  .to-rem(font-size, @calendar_root_font_size);
+  width: 100%;
+
+  td {
+    .to-em(padding, @calendar_vertical_padding @calendar_horizontal_padding, @calendar_root_font_size);
+    white-space: nowrap;
+  }
+}
+
+.Calendar-row {
+  &:nth-child(even) {
+    background-color: @table-stripe-background-color;
+  }
+}
+
+.Calendar-locationColumn {
+  text-align: right;
+}
+
+.Calendar-timeColumn {
+  .to-rem(width, 120);
+}
+
+.Calendar-nav {
+
+  .link-color(@root-text-color);
+
+  &.is-disabled {
+    opacity: .3;
+  }
+}
