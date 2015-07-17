@@ -16,10 +16,9 @@ class Missionary extends Model
 
     public function getThumbnailAttribute() {
 
-        $default_thumbnail = 'https://placekitten.com/g/300/300';
         $missionary_photo = config('site.missionary_images_root') . '/' . $this->image;
         $missionary_photo_path = config('site.missionary_images_dir') . '/' . $this->image;
-        $photo_url = file_exists($missionary_photo_path) ? $missionary_photo : $default_thumbnail;
+        $photo_url = file_exists($missionary_photo_path) ? $missionary_photo : 'https://randomuser.me/api/portraits/lego/' . $this->id .'.jpg';
 
         return $photo_url;
     }
