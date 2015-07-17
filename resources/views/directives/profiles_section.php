@@ -1,19 +1,16 @@
 <?php
 
-/* @var $site array */
 /* @var $directive array */
 
-$args = $directive['args'];
+if ($directive['execution_mode'] == 'start'):
 
-$css_class = trim('ProfilesSection ' . (isset($args['class']) ? $args['class'] : ''));
-$args['title'] = isset($args['title']) ? $args['title'] : ''; // TODO: Try ?:
+    $args = $directive['args'];
+    $css_class = trim('ProfilesSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-?>
-
-<?php if ($directive['execution_mode'] == 'start'): ?>
     <div class="<?= $css_class ?>">
     <div class="ProfilesSection-container">
     <h2 class="ProfilesSection-title"><?= $args['title'] ?></h2>
+
 <?php endif; ?>
 
 <?php if ($directive['execution_mode'] == 'end'): ?>
