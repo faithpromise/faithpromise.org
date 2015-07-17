@@ -22,9 +22,10 @@ if ($directive['execution_mode'] == 'start'):
 
     <div class="<?= $args['class'] ?>">
     <div class="GridSection-container">
+    <?php if (strlen($args['title'])): ?>
     <h2 class="GridSection-title"><?= $args['title'] ?></h2>
-
-    <?php ob_start(); ?>
+<?php endif;
+    ob_start(); ?>
 
 <?php endif; ?>
 
