@@ -2,6 +2,11 @@
 
 /* @var $directive array */
 
+// Exit if no cards
+if (!isset($directive["args"]['cards']) OR count($directive["args"]['cards']) === 0) {
+    return;
+}
+
 if ($directive['execution_mode'] == 'start'):
 
     $args = array_merge(
@@ -11,7 +16,9 @@ if ($directive['execution_mode'] == 'start'):
             'cards' => []
         ], $directive["args"]
     );
-    $args['class'] = trim('GridSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
+    $args['class'] = trim('GridSection ' . (isset($args['class']) ? $args['class'] : ''));
+
+    ?>
 
     <div class="<?= $args['class'] ?>">
     <div class="GridSection-container">

@@ -2,6 +2,11 @@
 
 /* @var $directive array */
 
+// Exit if no faq
+if (!isset($directive["args"]['faq']) OR count($directive["args"]['faq']) === 0) {
+    return;
+}
+
 if ($directive['execution_mode'] == 'start'):
 
     $args = array_merge(

@@ -2,6 +2,11 @@
 
 /* @var $directive array */
 
+// Exit if no profiles
+if (!isset($directive["args"]['profiles']) OR count($directive["args"]['profiles']) === 0) {
+    return;
+}
+
 if ($directive['execution_mode'] == 'start'):
 
     $args = array_merge(
