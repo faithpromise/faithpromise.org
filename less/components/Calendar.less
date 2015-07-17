@@ -1,4 +1,3 @@
-
 @calendar_root_font_size: 18;
 
 // Padding
@@ -12,11 +11,11 @@
 
 .Calendar {
   .to-rem(font-size, @calendar_root_font_size);
-  width: 100%;
+  width:      100%;
+  text-align: left; // Reset in case we're inside centered text
 
   td {
     .to-em(padding, @calendar_vertical_padding @calendar_horizontal_padding, @calendar_root_font_size);
-    white-space: nowrap;
   }
 }
 
@@ -27,11 +26,13 @@
 }
 
 .Calendar-locationColumn {
-  text-align: right;
+  text-align:  right;
+  white-space: nowrap;
 }
 
 .Calendar-timeColumn {
   .to-rem(width, 120);
+  white-space: nowrap;
 }
 
 .Calendar-nav {

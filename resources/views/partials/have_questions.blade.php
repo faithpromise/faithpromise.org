@@ -2,9 +2,10 @@
 
 $css_class = trim('TextSection TextSection--center ' . (isset($class) ? $class : ''));
 $title = isset($title) ? $title : 'Have Questions?';
-$text = isset($text) ? $text : 'If you still have questions, please contact';
-$email = isset($email) ? $email : config('site.email');
 $contact = isset($contact) ? $contact : $email;
+$email_link = '<a href="mailto:' . $email . '">' . $contact . '</a>';
+$text = str_replace('#email#', $email_link, (isset($text) ? $text : 'If you still have questions, please contact #email#.'));
+$email = isset($email) ? $email : config('site.email');
 
 ?>
 
@@ -14,8 +15,7 @@ $contact = isset($contact) ? $contact : $email;
 
         <div class="TextSection-text">
             <p>
-                {{ $text }}
-                <a href="mailto:{{ $email }}">{{ $email }}</a>.
+                <?= $text ?>
             </p>
         </div>
     </div>

@@ -4,10 +4,16 @@
 
 if ($directive['execution_mode'] == 'start'):
 
-    $args = $directive['args'];
-    $css_class = trim('ProfilesSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
+    $args = array_merge(
+        [
+            'title' => '',
+            'class' => '',
+            'profiles' => []
+        ], $directive["args"]
+    );
+    $args['class'] = trim('ProfilesSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-    <div class="<?= $css_class ?>">
+    <div class="<?= $args['class'] ?>">
     <div class="ProfilesSection-container">
     <h2 class="ProfilesSection-title"><?= $args['title'] ?></h2>
 

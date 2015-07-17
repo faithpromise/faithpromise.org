@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider {
             return '
                 <?php
                     $directive = ["execution_mode" => "start"];
-                    $directive["args"] = array_merge(["title" => "", "class" => "", "image" => "", "buttons" => []], ' . ($expression ?: '[]') . ');
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
                     include(base_path("resources/views/directives/background_section.php")); ?>';
         });
         Blade::directive('endbgsection', function () {
@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider {
             return '
                 <?php
                     $directive = ["execution_mode" => "start"];
-                    $directive["args"] = array_merge(["title" => "", "class" => "", "buttons" => []], ' . ($expression ?: '[]') . ');
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
                     include(base_path("resources/views/directives/intro_section.php")); ?>';
         });
         Blade::directive('endintrosection', function () {
@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider {
             return '
                 <?php
                     $directive = ["execution_mode" => "start"];
-                    $directive["args"] = array_merge(["title" => "", "class" => "", "video" => ""], ' . ($expression ?: '[]') . ');
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
                     include(base_path("resources/views/directives/video_section.php")); ?>';
         });
         Blade::directive('endvideosection', function () {
@@ -57,7 +57,7 @@ class AppServiceProvider extends ServiceProvider {
             return '
                 <?php
                     $directive = ["execution_mode" => "start"];
-                    $directive["args"] = array_merge(["title" => "", "class" => "", "buttons" => []], ' . ($expression ?: '[]') . ');
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
                     include(base_path("resources/views/directives/text_section.php")); ?>';
         });
         Blade::directive('endtextsection', function () {
@@ -69,7 +69,7 @@ class AppServiceProvider extends ServiceProvider {
             return '
                 <?php
                     $directive = ["execution_mode" => "start"];
-                    $directive["args"] = array_merge(["title" => "", "class" => "", "cards" => []], ' . ($expression ?: '[]') . ');
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
                     include(base_path("resources/views/directives/cards_section.php")); ?>';
         });
         Blade::directive('endcardsection', function () {
@@ -81,7 +81,7 @@ class AppServiceProvider extends ServiceProvider {
             return '
                 <?php
                     $directive = ["execution_mode" => "start"];
-                    $directive["args"] = array_merge(["title" => "", "class" => "", "profiles" => []], ' . ($expression ?: '[]') . ');
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
                     include(base_path("resources/views/directives/profiles_section.php")); ?>';
         });
         Blade::directive('endprofilessection', function () {
@@ -93,7 +93,7 @@ class AppServiceProvider extends ServiceProvider {
             return '
                 <?php
                     $directive = ["execution_mode" => "start"];
-                    $directive["args"] = array_merge(["title" => "", "class" => "", "faq" => []], ' . ($expression ?: '[]') . ');
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
                     include(base_path("resources/views/directives/faq_section.php")); ?>';
         });
         Blade::directive('endfaqsection', function () {

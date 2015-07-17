@@ -5,7 +5,15 @@
 if ($directive['execution_mode'] == 'start'):
 
     $args = $directive['args'];
-    $args["image_class"] =  uniqid('bg_');
+    $args = array_merge(
+        [
+            'title' => '',
+            'class' => '',
+            'image' => '',
+            'image_class' => uniqid('bg_'),
+            'buttons' => []
+        ], $directive["args"]
+    );
     $args['class'] = trim('BackgroundSection ' . $args["image_class"] . ' ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
     <style type="text/css" scoped>

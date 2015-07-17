@@ -4,10 +4,16 @@
 
 if ($directive['execution_mode'] == 'start'):
 
-    $args = $directive['args'];
-    $css_class = trim('GridSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
+    $args = array_merge(
+        [
+            'title' => '',
+            'class' => '',
+            'cards' => []
+        ], $directive["args"]
+    );
+    $args['class'] = trim('GridSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-    <div class="<?= $css_class ?>">
+    <div class="<?= $args['class'] ?>">
     <div class="GridSection-container">
     <h2 class="GridSection-title"><?= $args['title'] ?></h2>
 

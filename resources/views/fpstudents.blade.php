@@ -28,15 +28,6 @@
 
     {{--
     ================================================================================
-        Staff
-    ================================================================================ --}}
-
-    @profilessection(['title' => 'Meet the fpStudents Staff', 'class' => 'Section--lightGrey', 'profiles' => $ministry->Staff])
-    @endprofilessection
-
-
-    {{--
-    ================================================================================
         Serve
     ================================================================================ --}}
 
@@ -45,5 +36,14 @@
     <!-- TODO: Change link -->
     <p><a class="Button" href="http://fpstudents.com">Learn more</a></p>
     @endbgsection
+
+
+    {{--
+    ================================================================================
+        Staff
+    ================================================================================ --}}
+
+    @profilessection(['title' => 'Meet the fpStudents Staff', 'profiles' => $ministry->Staff])
+    @endprofilessection
 
 @endsection

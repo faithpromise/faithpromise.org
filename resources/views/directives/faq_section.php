@@ -4,7 +4,13 @@
 
 if ($directive['execution_mode'] == 'start'):
 
-    $args = $directive['args'];
+    $args = array_merge(
+        [
+            'title' => '',
+            'class' => '',
+            'faq' => []
+        ], $directive["args"]
+    );
     $css_class = trim('Faq ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
     <div class="<?= $css_class ?>">

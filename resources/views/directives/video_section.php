@@ -4,10 +4,16 @@
 
 if ($directive['execution_mode'] == 'start'):
 
-    $args = $directive['args'];
-    $css_class = trim('VideoSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
+    $args = array_merge(
+        [
+            'title' => '',
+            'class' => '',
+            'video' => ''
+        ], $directive["args"]
+    );
+    $args['class'] = trim('VideoSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-    <div class="<?= $css_class ?>">
+    <div class="<?= $args['class'] ?>">
     <div class="VideoSection-container">
     <div class="VideoSection-wrap">
     <div class="VideoSection-text">
