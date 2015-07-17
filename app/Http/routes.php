@@ -35,6 +35,11 @@ Route::get('/staff', 'StaffController@index');
 Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
 Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
+// About
+Route::get('/what-to-expect', function () {
+    return view('what-to-expect');
+});
+
 Route::get('/test', function () {
     \Illuminate\Support\Facades\Artisan::call('events:import');
 });
