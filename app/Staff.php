@@ -36,4 +36,21 @@ class Staff extends Model
 
         return $photo_url;
     }
+
+    public function getProfileNameAttribute() {
+        return $this->display_name;
+    }
+
+    public function getProfileTitleAttribute() {
+        return $this->title;
+    }
+
+    public function getProfileUrlAttribute() {
+        return '/staff/' . $this->ident;
+    }
+
+    public function getProfileImageAttribute() {
+        return $this->getThumbnailAttribute();
+    }
+
 }
