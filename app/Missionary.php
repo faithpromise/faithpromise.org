@@ -23,4 +23,20 @@ class Missionary extends Model
 
         return $photo_url;
     }
+
+    public function getProfileNameAttribute() {
+        return $this->name;
+    }
+
+    public function getProfileTitleAttribute() {
+        return $this->missionlocation->name;
+    }
+
+    public function getProfileUrlAttribute() {
+        return $this->url;
+    }
+
+    public function getProfileImageAttribute() {
+        return $this->getThumbnailAttribute();
+    }
 }
