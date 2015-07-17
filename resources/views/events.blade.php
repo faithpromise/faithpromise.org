@@ -5,6 +5,7 @@
 
 @section('page')
 
-    @include('partials.event_grid', ['events' => $events])
+    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $events])
+    @endcardsection
 
 @endsection

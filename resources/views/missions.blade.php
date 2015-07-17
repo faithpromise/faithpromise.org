@@ -20,23 +20,8 @@
     <!--TODO: Get url for missions updates-->
     @endtextsection
 
-
-    <div class="StaffSection Section--lightGrey">
-        <div class="StaffSection-container">
-            <h2 class="StaffSection-title">Missionaries</h2>
-            <ul class="StaffSection-grid">
-                @foreach($missionaries as $missionary)
-                    <li class="StaffSection-item">
-                        <a class="StaffSection-card" href="{{ $missionary->url }}">
-                            <span class="StaffSection-photo" style="background-image:url('{{ $missionary->thumbnail }}');"></span>
-                            <span class="StaffSection-name">{{ $missionary->name }}</span>
-                            <span class="StaffSection-staffTitle">{{ ! is_null($missionary->missionlocation) ? $missionary->missionlocation->name : '' }}</span>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
+    @profilessection(['title' => 'Missionaries', 'class' => 'Section--lightGrey', 'profiles' => $missionaries])
+    @endprofilessection
 
     <div class="GridSection">
         <div class="GridSection-container">
