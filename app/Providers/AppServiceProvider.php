@@ -88,6 +88,18 @@ class AppServiceProvider extends ServiceProvider {
             return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/profiles_section.php")); ?>';
         });
 
+        // FaqSection
+        Blade::directive('faqsection', function ($expression) {
+            return '
+                <?php
+                    $directive = ["execution_mode" => "start"];
+                    $directive["args"] = array_merge(["title" => "", "class" => "", "faq" => []], ' . ($expression ?: '[]') . ');
+                    include(base_path("resources/views/directives/faq_section.php")); ?>';
+        });
+        Blade::directive('endfaqsection', function () {
+            return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/faq_section.php")); ?>';
+        });
+
     }
 
     /**

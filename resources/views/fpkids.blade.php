@@ -77,8 +77,8 @@ $faq = [
             color:            #4e2b57;
         }
     </style>
-
-    @include('partials.faq', ['faq' => $faq, 'class' => 'has-background kids_faq'])
+    @faqsection(['faq' => $faq, 'class' => 'has-background kids_faq'])
+    @endfaqsection
 
     {{--
         ========================================
