@@ -1,7 +1,5 @@
 <!--TODO: Add page content-->
 
-@inject('snippets', 'App\Services\SnippetsService')
-
 @extends('layouts.page', ['title' => 'Worship Ministry'])
 
 @section('page')
@@ -20,7 +18,9 @@
         Events
     ================================================================================ --}}
 
-    {!! $snippets->ministryEvents($ministry, 'Upcoming Events', 'Section--lightGrey') !!}
+    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
+    @endcardsection
+
 
     {{--
     ================================================================================

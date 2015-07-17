@@ -21,8 +21,6 @@ $faq = [
 
 ?>
 
-@inject('snippets', 'App\Services\SnippetsService')
-
 @extends('layouts.page', ['title' => 'fpKids'])
 
 @section('page')
@@ -60,7 +58,9 @@ $faq = [
         Events
         ========================================
     --}}
-    {!! $snippets->ministryEvents($ministry) !!}
+
+    @cardsection(['title' => 'Upcoming Events', 'cards' => $ministry->Events])
+    @endcardsection
 
     {{--
         ========================================

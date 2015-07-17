@@ -39,8 +39,6 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
 
 ?>
 
-@inject('snippets', 'App\Services\SnippetsService')
-
 @extends('layouts.page', ['title' => 'Groups'])
 
 @section('page')
@@ -121,7 +119,8 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
         Events
     ================================================================================ --}}
 
-    {!! $snippets->ministryEvents($ministry, 'Upcoming Events', 'Section--lightGrey') !!}
+    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
+    @endcardsection
 
 
     {{--
