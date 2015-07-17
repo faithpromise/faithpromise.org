@@ -31,4 +31,25 @@ class Event extends Model
         return 'https://placekitten.com/g/200/300';
     }
 
+    public function getCardTitleAttribute() {
+        return $this->title;
+    }
+
+    public function getCardSubtitleAttribute() {
+        return $this->dates_text;
+    }
+
+    public function getCardImageAttribute()
+    {
+        return $this->getThumbnailAttribute();
+    }
+
+    public function getCardUrlTextAttribute() {
+        return 'More Details';
+    }
+
+    public function getCardUrlAttribute() {
+        return strlen($this->url) ? $this->url : '/events/' . $this->id;
+    }
+
 }
