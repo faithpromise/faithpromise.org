@@ -40,6 +40,11 @@ Route::get('/what-to-expect', function () {
     return view('what-to-expect');
 });
 
+// About
+Route::get('/baptism', function () {
+    return view('baptism');
+});
+
 Route::get('/test', function () {
     \Illuminate\Support\Facades\Artisan::call('events:import');
 });
