@@ -135,6 +135,18 @@ class AppServiceProvider extends ServiceProvider {
                 </div><!-- // END .GridSection -->';
         });
 
+        // ProfilesSection
+        Blade::directive('profilessection', function ($expression) {
+            return '
+                <?php
+                    $directive = ["execution_mode" => "start"];
+                    $directive["args"] = array_merge(["title" => "", "class" => "", "profiles" => []], ' . ($expression ?: '[]') . ');
+                    include(base_path("resources/views/directives/profile_grid.php")); ?>';
+        });
+        Blade::directive('endprofilessection', function () {
+            return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/profile_grid.php")); ?>';
+        });
+
     }
 
     /**
