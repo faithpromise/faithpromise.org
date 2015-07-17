@@ -92,6 +92,7 @@ $faq = [
         Staff
         ========================================
     --}}
-    {!! $snippets->ministryStaff($ministry, 'Meet the fpKids Staff', 'Section--lightGrey') !!}
+    @profilessection(['title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey', 'profiles' => $ministry->Staff])
+    @endprofilessection
 
 @endsection

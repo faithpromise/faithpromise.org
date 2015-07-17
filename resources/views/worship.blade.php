@@ -45,6 +45,8 @@
     ================================================================================
         Staff
     ================================================================================ --}}
-    {!! $snippets->ministryStaff($ministry, 'Meet the Worship Team Staff') !!}
+
+    @profilessection(['title' => 'Meet the Worship Team Staff', 'profiles' => $ministry->Staff])
+    @endprofilessection
 
 @endsection

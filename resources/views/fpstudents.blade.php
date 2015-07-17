@@ -30,7 +30,9 @@
     ================================================================================
         Staff
     ================================================================================ --}}
-    {!! $snippets->ministryStaff($ministry, 'Meet the fpStudents Staff') !!}
+
+    @profilessection(['title' => 'Meet the fpStudents Staff', 'class' => 'Section--lightGrey', 'profiles' => $ministry->Staff])
+    @endprofilessection
 
 
     {{--

@@ -129,6 +129,7 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
         Staff
     ================================================================================ --}}
 
-    {!! $snippets->ministryStaff($ministry, 'Groups Staff') !!}
+    @profilessection(['title' => 'Groups Staff', 'profiles' => $ministry->Staff])
+    @endprofilessection
 
 @endsection

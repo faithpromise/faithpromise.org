@@ -1,0 +1,81 @@
+@ProfilesSection-grid-gutter: 30;
+@ProfilesSection-item-max-width: 240;
+@ProfilesSection-max-columns: 4;
+@ProfilesSection-max-width: (@ProfilesSection-max-columns * @ProfilesSection-item-max-width) + ((@ProfilesSection-max-columns - 1) * @ProfilesSection-grid-gutter);
+
+.ProfilesSection {
+  &:extend(.Section all);
+  &:extend(.Section--center all);
+}
+
+.ProfilesSection-container {
+  &:extend(.Container all);
+  &:extend(.Container--wide all);
+  .to-rem(max-width, @ProfilesSection-max-width);
+}
+
+.ProfilesSection-title {
+  &:extend(.Section-title all);
+  &:extend(.Section-title--push all);
+  text-align: center;
+}
+
+.ProfilesSection-grid {
+  &:extend(.grid all);
+  .to-rem(margin-left, -@ProfilesSection-grid-gutter);
+  text-align: center;
+}
+
+.ProfilesSection-item {
+  &:extend(.grid-item all);
+  .to-rem(padding-left, @ProfilesSection-grid-gutter);
+  .to-rem(margin-bottom, 60);
+  .to-rem(max-width, 240);
+  width:      50%;
+  text-align: center;
+}
+
+.ProfilesSection-card {
+  color: @root-text-color;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.ProfilesSection-photo {
+  .to-rem(margin-bottom, 12);
+  display:             inline-block;
+  width:               70%;
+  height:              0;
+  padding-top:         70%;
+  background-position: center;
+  background-size:     cover;
+  opacity:             1;
+  transition:          opacity .25s ease-in-out;
+  border-radius:       100em;
+
+  .ProfilesSection--large & {
+    width:       100%;
+    padding-top: 100%;
+  }
+}
+
+.ProfilesSection-name {
+  .to-em(font-size, 24, @font-size);
+  display:       block;
+  margin-bottom: 0;
+
+  @media (max-width: 459px) {
+    .to-rem(font-size, 18);
+    font-weight: @font-weight-bold;
+  }
+
+}
+
+.ProfilesSection-profileTitle {
+  display: block;
+
+  @media (max-width: 459px) {
+    .to-rem(font-size, 14);
+  }
+}
