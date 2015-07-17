@@ -38,10 +38,10 @@ if ($directive['execution_mode'] == 'start'):
     <ul class="Faq-grid">
         <?php foreach ($args['faq'] as $f): ?>
         <li class="Faq-item">
-            <h3 class="Faq-question"><?= $f['q']; ?></h3>
+            <h3 class="Faq-question"><?= $f->q; ?></h3>
 
             <div class="Faq-answer">
-                <?= $f['a']; ?>
+                <?= $f->a; ?>
             </div>
         </li>
         <?php endforeach; ?>

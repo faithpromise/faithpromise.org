@@ -3,38 +3,38 @@
 <?php
 
 $teams = [
-        [
+        (object)[
                 'q' => 'Pastor\'s Prayer Partners',
                 'a' => 'Meets Sunday mornings in the large conference room (Room 114) one hour before the first service. During this prayer session, the team will join Pastor Chris in praying for his anointing and for the upcoming worship services.'
         ],
-        [
+        (object)[
                 'q' => 'Prayer Covering',
                 'a' => 'These teams pray in the Worship Centers of each campus and provide prayer coverage for the upcoming weekend services, including volunteers and attendees.'
         ]
 ];
 
 $intercessory_teams = [
-        [
+        (object)[
                 'q' => 'Prayer Support',
                 'a' => 'Members of this team pray with individuals as requested: after church services and other times.'
         ],
-        [
+        (object)[
                 'q' => 'Celebrate',
                 'a' => 'This ministry meets at 6:00 on Monday nights in Satellite-1 at Faith Promise. Teams are needed to pray individually and corporately for people as needs arise. These teams will also participate in group prayer for overall protection and guidance during the service and prayer time.'
         ],
-        [
+        (object)[
                 'q' => 'Outreach Ministries',
                 'a' => 'These prayer teams are formed as needed in order to provide prayer for the special functions of the church.'
         ],
-        [
+        (object)[
                 'q' => 'Email Network',
                 'a' => 'Members of this prayer team will be contacted through email and commit to pray specifically over personal prayer requests coming into the church every week by card, website, email, and phone, as well as specific prayer requests from Faith Promise staff. This requires daily monitoring of email.'
         ],
-        [
+        (object)[
                 'q' => 'Prayer Walkers',
                 'a' => 'This team walks and prays in specific locations, addressing the prayer needs of the church or location.'
         ],
-        [
+        (object)[
                 'q' => 'Prayer Wall',
                 'a' => 'A group of volunteers who regularly monitor the Prayer Wall and provide prayer support for the requests listed.'
         ]
