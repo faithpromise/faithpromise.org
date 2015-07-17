@@ -141,10 +141,10 @@ class AppServiceProvider extends ServiceProvider {
                 <?php
                     $directive = ["execution_mode" => "start"];
                     $directive["args"] = array_merge(["title" => "", "class" => "", "profiles" => []], ' . ($expression ?: '[]') . ');
-                    include(base_path("resources/views/directives/profile_grid.php")); ?>';
+                    include(base_path("resources/views/directives/profile_section.php")); ?>';
         });
         Blade::directive('endprofilessection', function () {
-            return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/profile_grid.php")); ?>';
+            return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/profile_section.php")); ?>';
         });
 
     }
