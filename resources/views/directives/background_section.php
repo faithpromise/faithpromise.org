@@ -10,16 +10,12 @@ if ($directive['execution_mode'] == 'start'):
             'title' => '',
             'class' => '',
             'image' => '',
-            'image_class' => uniqid('bg_'),
             'buttons' => []
         ], $directive["args"]
     );
-    $args['class'] = trim('BackgroundSection ' . $args["image_class"] . ' ' . (isset($args['class']) ? $args['class'] : '')); ?>
+    $args['class'] = trim('BackgroundSection b-lazy ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-    <style type="text/css" scoped>
-        .<?= $args["image_class"]; ?> { background-image: url(<?= $args["image"]; ?>); }
-    </style>
-    <div class="<?= $args['class'] ?>">
+    <div class="<?= $args['class'] ?>" data-src="<?= $args["image"]; ?>">
     <div class="BackgroundSection-container">
     <div class="BackgroundSection-text">
     <h2 class="BackgroundSection-title"><?= $args['title'] ?></h2>

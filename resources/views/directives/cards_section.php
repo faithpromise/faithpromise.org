@@ -43,7 +43,7 @@ if ($directive['execution_mode'] == 'start'):
             <li class="Card-item">
                 <div class="Card" link-to="<?= isset($card->card_url) ? $card->card_url : ""; ?>">
                     <?php if (isset($card->card_url)): ?>
-                        <a class="Card-image" href="<?= $card->card_url; ?>" data-layzr="<?= $card->card_image ?>" data-layzr-bg></a>
+                        <a class="Card-image b-lazy" href="<?= $card->card_url; ?>" data-src="<?= $card->card_image ?>"></a>
                     <?php else: ?>
                         <span class="Card-image" style="background-image: url(<?= $card->card_image ?>);"></span>
                     <?php endif; ?>
