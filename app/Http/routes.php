@@ -45,6 +45,10 @@ Route::get('/baptism', function () {
     return view('baptism');
 });
 
+// Images
+Route::get('/images/staff-thumbs/{ident}.jpg', 'ImagesController@staffThumbnail');
+
 Route::get('/test', function () {
     \Illuminate\Support\Facades\Artisan::call('events:import');
 });
+
