@@ -27,6 +27,11 @@ class Staff extends Model
         return profile_image_url('images/staff/' . $this->ident . '-square.jpg');
     }
 
+    public function getHeroImageAttribute() {
+        return hero_image_url('images/staff/' . $this->ident . '-square.jpg');
+        // TODO: Change to wide when we have wide images for staff
+    }
+
     public function getProfileNameAttribute() {
         return $this->display_name;
     }
