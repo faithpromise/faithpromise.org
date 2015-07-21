@@ -1,62 +1,47 @@
----
-layout: default
-title: Sermons
-permalink: /sermons/
-nav_style: solid
----
+@extends('layouts.default', ['title' => 'Sermons', 'nav_style' => 'solid'])
 
-<!-- Series -->
-{% assign series = site.series | where:'is_official_series', true | sort: 'publish_on' | reverse %}
+@section('content')
 
-<!-- Latest sermon -->
-{% assign latest_sermon = site.videos | where:'type', 'sermon' | sort: 'publish_on' | reverse | first %}
+    @include('partials.hero_video', [
+        'video' => $latest_sermon,
+        'series' => $latest_sermon->Series,
+        'hero_image' => $hero_image,
+        'heading' => 'Latest Sermon:',
+        'permalink' => $permalink
+    ])
 
-<!-- Series the latest sermon belongs to -->
-{% assign latest_sermon_series = site.series | where:'ident', latest_sermon.series | first %}
+    <div class="Content">
 
-<!-- Output hero -->
-{% include hero-video.html video=latest_sermon series=latest_sermon_series heading='Latest Sermon:' %}
+        <div class="Container">
 
-<div class="Content">
+            {{--{% include sermons-filter.html active='series' %}--}}
 
-  <div class="Container">
+            <h2 class="Section-title" ng-hide="false">Sermon Series</h2>
 
-    {% include sermons-filter.html active='series' %}
+        </div>
 
-    <h2 class="Section-title" ng-hide="false">Sermon Series</h2>
+        <div class="SeriesGallery">
+            <ul class="SeriesGallery-list">
+                <?php $next_series_starts = null; ?>
+                @foreach($series as $item)
+                    <li class="SeriesGallery-item">
+                        <a class="SeriesGallery-link" href="{{ route('video', $item->ident) }}/">
+                            <img class="SeriesGallery-thumb b-lazy" data-src="{{ $item->album_image }}">
 
-  </div>
+                            <div class="SeriesGallery-titles">
+                                <h3 class="SeriesGallery-title">{{ $item->title }}</h3>
+                                <h4 class="SeriesGallery-subtitle">
+                                    {{ $item->when }}
+                                </h4>
+                            </div>
+                        </a>
+                    </li>
+                    <?php $next_series_starts = $item->starts_at; ?>
+                @endforeach
+            </ul>
 
-  <div class="SeriesGallery">
-    <ul class="SeriesGallery-list">
-      {% assign next_series_starts = null %}
-      {% for item in series %}
-      <li class="SeriesGallery-item"{% if item.publish_on > site.time %} foo="bar" publish-on="{{ item.publish_on }}{% endif %}">
-        <a class="SeriesGallery-link" href="/series/{{ item.ident }}/">
-          <img class="SeriesGallery-thumb" src="{{ site.paths.series_images}}{{ item.ident }}-square.jpg">
+        </div>
 
-          <div class="SeriesGallery-titles">
-            <h3 class="SeriesGallery-title">{{ item.title }}</h3>
-            <h4 class="SeriesGallery-subtitle">
+    </div>
 
-              {% if item.starts_on > site.time or latest_sermon_series.ident == item.ident %}
-                <series-date starts="{{ item.starts_on }}" next-series-starts="{{ next_series_starts }}"></series-date>
-              {% else %}
-                {{ item.starts_on | date: "%b, %Y" }}
-              {% endif %}
-
-              {% assign videos = site.videos | where:"series", item.ident | where:"type", "sermon" | sort:"publish_on" %}
-              {% if videos.size > 0 %}
-              &nbsp;&middot;&nbsp; {{ videos.size }} message{% if videos.size <> 1 %}s{% endif %}
-              {% endif %}
-            </h4>
-          </div>
-        </a>
-      </li>
-      {% assign next_series_starts = item.starts_on %}
-      {% endfor %}
-    </ul>
-
-  </div>
-
-</div>
+@endsection

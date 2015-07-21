@@ -34,7 +34,6 @@
                             <use xlink:href="/build/images/general.svg#logo-faith-promise"></use>
                         </svg>
                     </a>
-                    <!--<a class="Nav-logoWrap" href="/"><img class="Nav-logo" src="{{ $site['images_root'] }}logo-faith-promise.svg"></a>-->
 
                     <ul class="Nav-menu">
                         @foreach ($nav as $topnav)
@@ -68,7 +67,6 @@
                         <svg class="MobileBar-logo" role="img" title="Faith Promise Logo">
                             <use xlink:href="/build/images/general.svg#logo-faith-promise"></use>
                         </svg>
-                        <!--<img class="MobileBar-logo" src="{{ $site['images_root']}}logo-faith-promise.svg">-->
                     </a>
                     <span class="MobileBar-navToggle"><i class="icon-menu" nav-toggle></i></span>
                 </div>
