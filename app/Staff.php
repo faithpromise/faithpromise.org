@@ -26,7 +26,7 @@ class Staff extends Model
 
     public function getThumbnailAttribute() {
 
-        $staff_photo = config('site.staff_images_root') . '/' . $this->ident . '-square.jpg';
+        $staff_photo = '/images/staff-thumbs/' . $this->ident . '.jpg';
         $staff_photo_path = config('site.staff_images_dir') . '/' . $this->ident . '-square.jpg';
         $photo_url = file_exists($staff_photo_path) ? $staff_photo : 'https://randomuser.me/api/portraits/lego/' . self::$random_id++ .'.jpg';
 
