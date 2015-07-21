@@ -24,7 +24,12 @@ class ImagesController extends BaseController {
     }
 
     public function album($img_path) {
-        $img = Image::make($this->imagePath($img_path))->resize(600, 600)->encode(null, 80);
+        $img = Image::make($this->imagePath($img_path))->resize(400, 400)->encode(null, 80);
+        return $this->returnImage($img);
+    }
+
+    public function hero($img_path) {
+        $img = Image::make($this->imagePath($img_path))->encode(null, 80);
         return $this->returnImage($img);
     }
 
