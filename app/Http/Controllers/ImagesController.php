@@ -13,15 +13,27 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class ImagesController extends BaseController {
 
-    public function staffThumbnail($staff_ident) {
-
-        $img = Image::cache(function($image) use ($staff_ident) {
-            $src_path = base_path('images/staff/' . $staff_ident . '-square.jpg');
-            $image->make($src_path)->resize(400, 400)->encode(null, 80);
-        }, 5, false);
-
-        return response($img)->header('Content-Type', 'image/jpg');;
+    public function profile($img_path) {
+        $img = Image::make($this->imagePath($img_path))->resize(400, 400)->encode(null, 80);
+        return $this->returnImage($img);
     }
 
+    public function card($img_path) {
+        $img = Image::make($this->imagePath($img_path))->resize(740, 270)->encode(null, 80);
+        return $this->returnImage($img);
+    }
 
+    public function album($img_path) {
+        $img = Image::make($this->imagePath($img_path))->resize(600, 600)->encode(null, 80);
+        return $this->returnImage($img);
+    }
+
+    private function imagePath($img_path) {
+        return base_path($img_path);
+    }
+
+    private function returnImage($img) {
+        // TODO: add expires header
+        return response($img)->header('Content-Type', 'image/jpg');
+    }
 }

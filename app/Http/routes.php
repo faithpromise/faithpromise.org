@@ -46,7 +46,9 @@ Route::get('/baptism', function () {
 });
 
 // Images
-Route::get('/images/staff-thumbs/{ident}.jpg', 'ImagesController@staffThumbnail');
+Route::get('/cdn/card/{path}', ['as' => 'card_image', 'uses' => 'ImagesController@card'])->where('path', '.*');
+Route::get('/cdn/profile/{path}', ['as' => 'profile_image', 'uses' => 'ImagesController@profile'])->where('path', '.*');
+Route::get('/cdn/album/{path}', ['as' => 'album_image', 'uses' => 'ImagesController@album'])->where('path', '.*');
 
 Route::get('/test', function () {
     \Illuminate\Support\Facades\Artisan::call('events:import');
