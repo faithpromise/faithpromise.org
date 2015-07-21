@@ -15,12 +15,7 @@ class Missionary extends Model
     }
 
     public function getThumbnailAttribute() {
-
-        $missionary_photo = config('site.missionary_images_root') . '/' . $this->image;
-        $missionary_photo_path = config('site.missionary_images_dir') . '/' . $this->image;
-        $photo_url = file_exists($missionary_photo_path) ? $missionary_photo : 'https://randomuser.me/api/portraits/lego/' . $this->id .'.jpg';
-
-        return $photo_url;
+        return profile_image_url('images/missions/missionaries/' . $this->ident . '-square.jpg');
     }
 
     public function getProfileNameAttribute() {
