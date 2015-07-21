@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/sermons', 'SermonsController@index');
+Route::get('/series/{series}/{video}', ['as' => 'video', 'uses' => 'SermonsController@video']);
+
 // Events
 Route::get('/events', 'EventsController@index');
 Route::get('/events/calendar', 'EventsController@calendar');
@@ -46,6 +49,7 @@ Route::get('/baptism', function () {
 });
 
 // Images
+Route::get('/cdn/hero/{path}', ['as' => 'hero_image', 'uses' => 'ImagesController@hero'])->where('path', '.*');
 Route::get('/cdn/card/{path}', ['as' => 'card_image', 'uses' => 'ImagesController@card'])->where('path', '.*');
 Route::get('/cdn/profile/{path}', ['as' => 'profile_image', 'uses' => 'ImagesController@profile'])->where('path', '.*');
 Route::get('/cdn/album/{path}', ['as' => 'album_image', 'uses' => 'ImagesController@album'])->where('path', '.*');
