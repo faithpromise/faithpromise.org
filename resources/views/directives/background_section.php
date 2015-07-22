@@ -29,9 +29,9 @@ if ($directive['execution_mode'] == 'start'):
 
 <?php if ($directive['execution_mode'] == 'end'): ?>
     </div><!-- // END .BackgroundSection-text -->
-    <?php if(count($args["buttons"])): ?>
+    <?php if (count($args["buttons"])): ?>
         <p>
-            <?php foreach($args["buttons"] as $button): ?>
+            <?php foreach ($args["buttons"] as $button): ?>
                 <a class="Button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
             <?php endforeach; ?>
         </p>
