@@ -1,7 +1,9 @@
+.DS_Store
+.env
+.idea
 /vendor
 /node_modules
 /bower_components
 /temp
 /public/build
 Homestead.yaml
-.env
