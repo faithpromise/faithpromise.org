@@ -43,8 +43,14 @@ if ($directive['execution_mode'] == 'start'):
             <li class="Card-item">
                 <div class="Card" link-to="<?= isset($card->card_url) ? $card->card_url : ""; ?>">
                     <?php if (isset($card->card_url)): ?>
-                        <a class="Card-image b-lazy" href="<?= $card->card_url; ?>" data-src="<?= $card->card_image ?>"></a>
+                        <a class="Card-image b-lazy"
+                            href="<?= $card->card_url; ?>"
+                            data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
+                            data-src-md="<?= cdn_image('md', 'full', $card->card_image) ?>"
+                            data-src-lg="<?= cdn_image('lg', 'full', $card->card_image) ?>"
+                            data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></a>
                     <?php else: ?>
+                        <!-- TODO: Add diff images to this span too -->
                         <span class="Card-image" style="background-image: url(<?= $card->card_image ?>);"></span>
                     <?php endif; ?>
                     <div class="Card-body">

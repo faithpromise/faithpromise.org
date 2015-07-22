@@ -24,12 +24,15 @@ class Staff extends Model
     }
 
     public function getThumbnailAttribute() {
-        return profile_image_url('images/staff/' . $this->ident . '-square.jpg');
+        $img = 'images/staff/' . $this->ident . '-square.jpg';
+        return asset_exists($img) ? $img : 'https://randomuser.me/api/portraits/lego/' . rand(0, 9) .'.jpg';
+
     }
 
     public function getHeroImageAttribute() {
-        return hero_image_url('images/staff/' . $this->ident . '-square.jpg');
+        return 'images/staff/' . $this->ident . '-square.jpg';
         // TODO: Change to wide when we have wide images for staff
+        // TODO: Add a default hero image if one doesn't exist?
     }
 
     public function getProfileNameAttribute() {

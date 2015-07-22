@@ -25,7 +25,7 @@ class Event extends Model
     public function getThumbnailAttribute() {
 
         if (strlen($this->image)) {
-            return '/build/images/events/' . $this->image;
+            return 'images/events/' . $this->image;
         }
 
         return 'https://placekitten.com/g/200/300';

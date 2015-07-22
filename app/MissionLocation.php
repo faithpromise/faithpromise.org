@@ -46,7 +46,7 @@ class MissionLocation extends Model
 
     public function getCardImageAttribute()
     {
-        return '/build/images/missions/locations/' . $this->ident . '-wide.jpg';
+        return 'images/missions/locations/' . $this->ident . '-tall.jpg';
     }
 
     public function getCardUrlTextAttribute() {

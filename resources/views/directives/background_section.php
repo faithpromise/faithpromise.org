@@ -7,15 +7,20 @@ if ($directive['execution_mode'] == 'start'):
     $args = $directive['args'];
     $args = array_merge(
         [
-            'title' => '',
-            'class' => '',
-            'image' => '',
+            'title'   => '',
+            'class'   => '',
+            'image'   => '',
             'buttons' => []
         ], $directive["args"]
     );
     $args['class'] = trim('BackgroundSection b-lazy ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-    <div class="<?= $args['class'] ?>" data-src="<?= $args["image"]; ?>">
+    <div
+    class="<?= $args['class'] ?>"
+    data-src-sm="<?= cdn_image('sm', 'full', $args["image"]) ?>"
+    data-src-md="<?= cdn_image('md', 'full', $args["image"]) ?>"
+    data-src-lg="<?= cdn_image('lg', 'full', $args["image"]) ?>"
+    data-src="<?= cdn_image('xl', 'full', $args["image"]) ?>">
     <div class="BackgroundSection-container">
     <div class="BackgroundSection-text">
     <h2 class="BackgroundSection-title"><?= $args['title'] ?></h2>

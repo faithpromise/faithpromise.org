@@ -1,5 +1,5 @@
 <!-- TODO: replace hero image -->
-@extends('layouts.page', ['title' => 'Calendar', 'hero_image' => '/build/images/worship/jesus-wide.jpg'])
+@extends('layouts.page', ['title' => 'Calendar', 'hero_image' => 'images/worship/jesus-wide.jpg'])
 
 @section('page')
 

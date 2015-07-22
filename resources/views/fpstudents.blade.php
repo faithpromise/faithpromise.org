@@ -31,7 +31,7 @@
         Serve
     ================================================================================ --}}
 
-    @bgsection(['title' => 'Get Involved', 'image' => '/build/images/fpstudents/worship-2-wide.jpg'])
+    @bgsection(['title' => 'Get Involved', 'image' => 'images/fpstudents/worship-2-wide.jpg'])
     <p><!-- TODO: change text -->Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
     <!-- TODO: Change link -->
     <p><a class="Button" href="http://fpstudents.com">Learn more</a></p>

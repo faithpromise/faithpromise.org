@@ -48,7 +48,7 @@ $faq = [
         I'm new
         ========================================
     --}}
-    @bgsection(['title' => 'I\'m New', 'image' => '/build/images/fpkids/rocket-wide.jpg'])
+    @bgsection(['title' => 'I\'m New', 'image' => 'images/fpkids/rocket-wide.jpg'])
     <p>We're so glad to have you as our guest at Faith Promise. We want your experience in fpKIDS to be one worth talking about. Please visit our welcome page designed just for you.</p>
     <p><a class="Button" href="/fpkids/welcome/">Learn more</a></p>
     @endbgsection
@@ -68,16 +68,12 @@ $faq = [
         ========================================
     --}}
     <style type="text/css" scoped>
-        .kids_faq {
-            background-image: url(/build/images/fpkids/pattern.png);
-        }
-
         .kids_faq a:hover {
             background-color: #fff;
             color:            #4e2b57;
         }
     </style>
-    @faqsection(['faq' => $faq, 'class' => 'has-background kids_faq'])
+    @faqsection(['faq' => $faq, 'class' => 'has-background kids_faq', 'image' => 'images/fpkids/pattern.png'])
     @endfaqsection
 
     {{--

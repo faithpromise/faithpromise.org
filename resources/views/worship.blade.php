@@ -30,7 +30,7 @@
     @bgsection([
         'title' => 'Join Our Team',
         'class' => 'get_involved',
-        'image' => '/build/images/fpkids/rocket-wide.jpg',
+        'image' => 'images/fpkids/rocket-wide.jpg',
         'buttons' => [
             [
                 'title' => 'Learn more',

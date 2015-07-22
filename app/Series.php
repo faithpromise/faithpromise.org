@@ -16,11 +16,11 @@ class Series extends Model {
     }
 
     public function getHeroImageAttribute() {
-        return hero_image_url('images/series/' . $this->ident . '-wide.jpg');
+        return 'images/series/' . $this->ident . '-wide.jpg';
     }
 
     public function getAlbumImageAttribute() {
-        return album_image_url('images/series/' . $this->ident . '-square.jpg');
+        return 'images/series/' . $this->ident . '-square.jpg';
     }
 
     public function getWhenAttribute() {

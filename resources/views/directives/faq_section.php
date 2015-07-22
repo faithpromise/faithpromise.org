@@ -13,12 +13,22 @@ if ($directive['execution_mode'] == 'start'):
         [
             'title' => '',
             'class' => '',
-            'faq' => []
+            'image' => '',
+            'faq'   => []
         ], $directive["args"]
     );
     $css_class = trim('Faq ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
+    <?php if (strlen($args['image'])): ?>
+    <div
+    class="<?= $css_class ?> b-lazy"
+    data-src-sm="<?= cdn_image('sm', 'full', $args["image"]) ?>"
+    data-src-md="<?= cdn_image('md', 'full', $args["image"]) ?>"
+    data-src-lg="<?= cdn_image('lg', 'full', $args["image"]) ?>"
+    data-src="<?= cdn_image('xl', 'full', $args["image"]) ?>">
+<?php else: ?>
     <div class="<?= $css_class ?>">
+<?php endif; ?>
     <div class="Faq-container">
     <h2 class="Faq-title"><?= $args['title'] ?: 'Common Questions' ?></h2>
 
@@ -44,7 +54,7 @@ if ($directive['execution_mode'] == 'start'):
                 <?= $f->a; ?>
             </div>
         </li>
-        <?php endforeach; ?>
+    <?php endforeach; ?>
     </ul>
     </div><!-- // END .Faq-container -->
     </div><!-- // END .Faq -->

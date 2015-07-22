@@ -29,7 +29,11 @@ if ($directive['execution_mode'] == 'start'):
         <?php foreach ($args['profiles'] as $profile): ?>
             <li class="ProfilesSection-item">
                 <a class="ProfilesSection-card" href="<?= $profile->profile_url ?>">
-                    <span class="ProfilesSection-photo b-lazy" data-src="<?= $profile->profile_image ?>"></span>
+                    <span class="ProfilesSection-photo b-lazy"
+                        data-src-sm="<?= cdn_image('sm', 'half', $profile->profile_image) ?>"
+                        data-src-md="<?= cdn_image('md', 'half', $profile->profile_image) ?>"
+                        data-src-lg="<?= cdn_image('lg', 'half', $profile->profile_image) ?>"
+                        data-src="<?= cdn_image('xl', 'third', $profile->profile_image) ?>"></span>
                     <span class="ProfilesSection-name"><?= $profile->profile_name ?></span>
                     <span class="ProfilesSection-profileTitle"><?= $profile->profile_title ?></span>
                 </a>

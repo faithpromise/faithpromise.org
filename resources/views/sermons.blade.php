@@ -26,7 +26,13 @@
                 @foreach($series as $item)
                     <li class="SeriesGallery-item">
                         <a class="SeriesGallery-link" href="{{ route('video', $item->ident) }}/">
-                            <img class="SeriesGallery-thumb b-lazy" data-src="{{ $item->album_image }}">
+                            <img
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    class="SeriesGallery-thumb b-lazy"
+                                    data-src-sm="{{ cdn_image('sm', 'quarter', $item->album_image) }}"
+                                    data-src-md="{{ cdn_image('md', 'quarter', $item->album_image) }}"
+                                    data-src-lg="{{ cdn_image('lg', 'quarter', $item->album_image) }}"
+                                    data-src="{{ cdn_image('xl', 'quarter', $item->album_image) }}">
 
                             <div class="SeriesGallery-titles">
                                 <h3 class="SeriesGallery-title">{{ $item->title }}</h3>

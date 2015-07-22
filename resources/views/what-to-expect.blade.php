@@ -4,21 +4,21 @@
 $cards = collect([
         (object)[
                 'card_title'    => 'Children',
-                'card_image'    => '/build/images/kids/fpkids-wide.jpg',
+                'card_image'    => 'images/fpkids/logo-tall.jpg',
                 'card_text'     => 'Our children\'s ministry meets during each adult service. Children learn and grow through large group teaching, crafts, stories, drama, and small group interaction.',
                 'card_url_text' => 'About fpKids',
                 'card_url'      => '/fpkids/'
         ],
         (object)[
                 'card_title'    => 'Students',
-                'card_image'    => '/build/images/students/worship-wide.jpg',
+                'card_image'    => 'images/fpstudents/worship-tall.jpg',
                 'card_text'     => '6-12th grade students have a chance to grow closer to God and each other in a high-energy atmosphere that will change them each week.',
                 'card_url_text' => 'About fpStudents',
                 'card_url'      => '/fpstudents/'
         ],
         (object)[
                 'card_title'    => 'Worship',
-                'card_image'    => '/build/images/worship/blount-worship-2-wide.jpg',
+                'card_image'    => 'images/worship/blount-worship-2-tall.jpg',
                 'card_text'     => 'Our overall mission and purpose of the Worship Ministry of Faith Promise Church is to provide tools for engaging the hearts of men and women to the heart of God.',
                 'card_url_text' => 'Worship',
                 'card_url'      => '/worship/'
@@ -45,7 +45,7 @@ $faq = collect([
 ]);
 ?>
 
-@extends('layouts.page', ['title' => 'Worship Ministry', 'hero_image' => '/build/images/general/invite-cards-wide.jpg'])
+@extends('layouts.page', ['title' => 'Worship Ministry', 'hero_image' => 'images/general/invite-cards-wide.jpg'])
 
 @section('page')
 

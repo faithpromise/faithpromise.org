@@ -1,6 +1,6 @@
 <?php
     $title = 'Meet Our Staff';
-    $hero_image = '/build/images/temp/hero-placeholder.png';
+    $hero_image = 'images/temp/hero-placeholder.png';
     $staff_gallery_class = 'StaffSection--square Section--lightGrey';
     $grey_bg = 0;
 ?>
