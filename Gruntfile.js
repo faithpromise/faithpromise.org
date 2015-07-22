@@ -333,9 +333,4 @@ module.exports = function (grunt) {
         'less:dev',
         'autoprefixer:dev'
     ]);
-
-    grunt.registerTask('serve', [
-        'shell:jekyllServe'
-    ]);
-
 };
