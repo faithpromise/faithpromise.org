@@ -37,7 +37,11 @@
                             <div class="SeriesGallery-titles">
                                 <h3 class="SeriesGallery-title">{{ $item->title }}</h3>
                                 <h4 class="SeriesGallery-subtitle">
+                                    @if ($item->starts_at->isFuture() OR $latest_sermon->Series->ident === $item->ident)
+                                    {{ $item->getDate($next_series_starts) }}
+                                    @else
                                     {{ $item->when }}
+                                    @endif
                                 </h4>
                             </div>
                         </a>
