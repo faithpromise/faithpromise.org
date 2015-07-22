@@ -5,7 +5,7 @@
     @include('partials.hero_video', [
         'video' => $latest_sermon,
         'series' => $latest_sermon->Series,
-        'hero_image' => $hero_image,
+        'hero_images' => $hero_images,
         'heading' => 'Latest Sermon:',
         'permalink' => $permalink
     ])

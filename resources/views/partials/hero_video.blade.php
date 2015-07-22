@@ -1,7 +1,7 @@
 <style type="text/css" scoped>
     @media (max-width: 499px) {
         .HeroVideo-imageWrap {
-            background-image: url({{ $hero_image }});
+            background-image: url({{ $hero_images['sm'] }});
         }
 
         /* -square */
@@ -9,7 +9,7 @@
 
     @media (min-width: 500px) {
         .HeroVideo-imageWrap {
-            background-image: url({{ $hero_image }});
+            background-image: url({{ $hero_images['md'] }});
         }
 
         /* -tall */
@@ -17,7 +17,7 @@
 
     @media (min-width: 900px) {
         .HeroVideo-imageWrap {
-            background-image: url({{ $hero_image }});
+            background-image: url({{ $hero_images['xl'] }});
         }
 
         /* -fade-out */
