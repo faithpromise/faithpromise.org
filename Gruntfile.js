@@ -48,8 +48,6 @@ module.exports = function (grunt) {
     var font_src_dir = srcroot + '/assets';
     var font_output_dir = buildroot + '/fonts';
 
-    var mozjpeg = require('imagemin-mozjpeg');
-
     // Project configuration.
     grunt.initConfig(
         {
@@ -193,7 +191,7 @@ module.exports = function (grunt) {
                 production: {
                     files: [
                         {
-                            src: [webroot + '/**/*.html']
+                            src: [webroot + '/**/*.php']
                         }
                     ]
                 }
@@ -218,10 +216,6 @@ module.exports = function (grunt) {
                     files: js_src_dir + '/**/*.js',
                     tasks: ['concat:js_dev']
                 },
-                images: {
-                    files: [srcroot + '/**/*.{png,jpg,gif}'],
-                    tasks: ['optimize_images']
-                },
                 svg: {
                     files: [srcroot + '/**/*.svg'],
                     tasks: ['svgstore:default']
@@ -229,23 +223,6 @@ module.exports = function (grunt) {
                 templates: {
                     files: js_src_dir + '/**/*.html',
                     tasks: ['html2js:templates', 'concat:js_dev']
-                }
-            },
-            imagemin: {
-                main: {
-                    options: {
-                        optimizationLevel: 3,
-                        svgoPlugins: [{removeViewBox: false}],
-                        use: [mozjpeg()]
-                    },
-                    files: [
-                        {
-                            expand: true,
-                            cwd: image_src_dir,
-                            src: ['**/*.{png,jpg,gif}'],
-                            dest: image_output_dir
-                        }
-                    ]
                 }
             },
             copy: {
@@ -311,7 +288,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['build_dev']);
 
     grunt.registerTask('build_common', [
-        'optimize_images',
         'copy',
         'html2js',
         'svgstore:default',
@@ -357,8 +333,6 @@ module.exports = function (grunt) {
         'less:dev',
         'autoprefixer:dev'
     ]);
-
-    grunt.registerTask('optimize_images', ['newer:imagemin:main']);
 
     grunt.registerTask('serve', [
         'shell:jekyllServe'
