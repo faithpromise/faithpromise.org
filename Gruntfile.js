@@ -295,8 +295,8 @@ module.exports = function (grunt) {
         'build_common',
         'js_production',
         'css_production',
-        'replace:facebook_id',
         'htmlbuild:production',
+        'replace:remove_public',
         'cacheBust:production'
     ]);
 
