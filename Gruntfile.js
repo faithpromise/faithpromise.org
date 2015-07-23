@@ -143,24 +143,36 @@ module.exports = function (grunt) {
                             dest: temp_dir + '/fontello.css.tmp'
                         }
                     ]
+                },
+                remove_public: {
+                    options: {
+                        patterns: [
+                            {
+                                match: 'public/build',
+                                replacement: '/build'
+                            }
+                        ],
+                        usePrefix: false
+                    },
+                    files: [
+                        {
+                            expand: false,
+                            src: [viewsroot + '/layouts/**/*.php'],
+                            dest: './'
+                        }
+                    ]
                 }
             },
             htmlbuild: {
                 production: {
-                    src: webroot + '/**/*.html',
-                    dest: webroot + '/',
+                    src: viewsroot + '/layouts/**/*.php',
                     options: {
                         replace: true,
-                        prefix: '/',
                         scripts: {
-                            main: [
-                                js_output_dir + '/main.min.js'
-                            ]
+                            main: 'public/build/js/main.min.js'
                         },
                         styles: {
-                            main: [
-                                less_output_dir + '/main.min.css'
-                            ]
+                            main: 'public/build/css/main.min.css'
                         }
                     }
                 }
