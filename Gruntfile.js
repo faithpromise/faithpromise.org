@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     // Roots
     var srcroot = '.';
     var webroot = 'public';
+    var viewsroot = 'resources/views';
     var buildroot = 'public/build';
 
     // JS Paths
