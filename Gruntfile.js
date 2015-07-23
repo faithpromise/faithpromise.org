@@ -143,24 +143,6 @@ module.exports = function (grunt) {
                             dest: temp_dir + '/fontello.css.tmp'
                         }
                     ]
-                },
-                facebook_id: {
-                    options: {
-                        patterns: [
-                            {
-                                match: '1592691894327442',
-                                replacement: '1592675454329086'
-                            }
-                        ],
-                        usePrefix: false
-                    },
-                    files: [
-                        {
-                            expand: false,
-                            src: [webroot + '/**/*.html'],
-                            dest: './'
-                        }
-                    ]
                 }
             },
             htmlbuild: {
