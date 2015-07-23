@@ -4,3 +4,5 @@ TODO: Add a getDateRangeAttribute to event model
 
 TODO: Contemplating removing expire_at from mission trips. If there's no dates, it doesn't help to have a record in the trips table. The trips table is pretty much a "dates" table that compliments the "locations" table.
 TODO: But how would general dates work? Like "Fall" or "June"?
+
+TODO: Search for .pdf links and link them to the assets project
