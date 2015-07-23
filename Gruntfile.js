@@ -272,6 +272,15 @@ module.exports = function (grunt) {
                         }
                     ]
                 }
+            },
+            git_deploy: {
+                production: {
+                    options: {
+                        url: 'git@github.faithpromise.org:faithpromise/faithpromise.org.git',
+                        branch: 'release'
+                    },
+                    src: ['_release']
+                }
             }
         }
     );
