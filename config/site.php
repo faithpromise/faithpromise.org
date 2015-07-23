@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\App;
-
 return [
     'title'              => 'Faith Promise Church',
     'description'        => 'A contemporary church with locations in Knoxville, Maryville, Clinton, and La Follette, TN',
@@ -12,8 +10,8 @@ return [
     'twitter_username'   => 'faithpromise',
     'pinterest_username' => 'faithpromise',
     'github_username'    => 'faithpromise',
-    'facebook_app_id'    => App::environment('production') ? '1592675454329086' : '1592691894327442',
+    'facebook_app_id'    => (env('APP_ENV', 'local') === 'production') ? '1592675454329086' : '1592691894327442',
     'audio_url'          => 'http://fpcresources.org/audio/',
-    'cdn_url'            => App::environment('local') ? '//assets.faithpromise.192.168.10.10.xip.io' : 'd3m6gouty6q7nm.cloudfront.net',
+    'cdn_url'            => (env('APP_ENV', 'local') === 'local') ? '//assets.faithpromise.192.168.10.10.xip.io' : 'd3m6gouty6q7nm.cloudfront.net',
     'assets_path'        => env('ASSETS_PATH', base_path('../assets.faithpromise.org/public'))
 ];
