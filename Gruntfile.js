@@ -231,16 +231,15 @@ module.exports = function (grunt) {
                     expand: true,
                     src: [
                         './**/*.*',
+                        './artisan',
                         '!./_release/**/*.*',
                         '!./bower_components/**/*.*',
-                        '!./database/**/*.*',
                         '!./images/**/*.*',
                         '!./js/**/*.*',
                         '!./less/**/*.*',
                         '!./node_modules/**/*.*',
                         '!./storage/**/*.*',
                         '!./temp/**/*.*',
-                        '!./tests/**/*.*',
                         '!./vendor/**/*.*',
                         '!./.env',
                         '!./.gitattributes',
@@ -248,11 +247,8 @@ module.exports = function (grunt) {
                         '!./bower.json',
                         '!./Gruntfile.js',
                         '!./gulpfile.js',
-                        '!./gulpfile.js',
                         '!./Homestead.yaml.example',
                         '!./package.json',
-                        '!./phpspec.yml',
-                        '!./phpunit.xml',
                         '!./readme.md',
                         '!./TODO.txt'
                     ],
@@ -320,7 +316,7 @@ module.exports = function (grunt) {
         'htmlbuild:production',
         'replace:remove_public',
         'cacheBust:production',
-        //'git_deploy_production',
+        'git_deploy:production',
         'build_dev' // Restore dev files
     ]);
 
