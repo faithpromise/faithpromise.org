@@ -42,13 +42,9 @@ module.exports = function (grunt) {
         less_src_dir + '/main.less'
     ];
 
-    // Image paths
-    var image_src_dir = src_root + '/images';
-    var image_output_dir = build_root + '/images';
-
-    // Font paths
-    var font_src_dir = src_root + '/assets';
-    var font_output_dir = build_root + '/fonts';
+    // Assets paths
+    var assets_src_dir = src_root + '/assets';
+    var assets_output_dir = build_root;
 
     // Project configuration.
     grunt.initConfig(
@@ -120,7 +116,7 @@ module.exports = function (grunt) {
                         patterns: [
                             {
                                 match: '../font/',
-                                replacement: '/build/fonts/fontello/font/'
+                                replacement: '/build/fonts/'
                             },
                             {
                                 match: '[class^="icon-"]',
@@ -133,7 +129,7 @@ module.exports = function (grunt) {
                         {
                             expand: false,
                             flatten: true,
-                            src: [font_src_dir + '/fontello/css/fontello.css'],
+                            src: [assets_src_dir + '/fontello/css/fontello.css'],
                             dest: temp_dir + '/fontello.css.tmp'
                         }
                     ]
@@ -216,9 +212,10 @@ module.exports = function (grunt) {
             copy: {
                 fontello: {
                     expand: true,
-                    cwd: font_src_dir + '/',
+                    flatten: true,
+                    cwd: assets_src_dir + '/',
                     src: ['fontello/font/*.*'],
-                    dest: font_output_dir + '/'
+                    dest: assets_output_dir + '/fonts'
                 },
                 svg4everybody: {
                     src: 'bower_components/svg4everybody/svg4everybody.min.js',
@@ -290,12 +287,12 @@ module.exports = function (grunt) {
                 default: {
                     files: [
                         {
-                            src: image_src_dir + '/sprites/general/*.svg',
-                            dest: image_output_dir + '/general.svg'
+                            src: assets_src_dir + '/sprites/general/*.svg',
+                            dest: assets_output_dir + '/svg/general.svg'
                         },
                         {
-                            src: image_src_dir + '/sprites/video/*.svg',
-                            dest: image_output_dir + '/video.svg'
+                            src: assets_src_dir + '/sprites/video/*.svg',
+                            dest: assets_output_dir + '/svg/video.svg'
                         }
                     ]
                 }
@@ -323,7 +320,7 @@ module.exports = function (grunt) {
         'htmlbuild:production',
         'replace:remove_public',
         'cacheBust:production',
-        'git_deploy_production',
+        //'git_deploy_production',
         'build_dev' // Restore dev files
     ]);
 

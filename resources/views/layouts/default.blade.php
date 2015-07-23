@@ -31,7 +31,7 @@
 
                     <a class="Nav-logoWrap" href="/">
                         <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
-                            <use xlink:href="/build/images/general.svg#logo-faith-promise"></use>
+                            <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
                         </svg>
                     </a>
 
@@ -65,7 +65,7 @@
                 <div class="MobileBar">
                     <a class="MobileBar-logoWrap" href="/">
                         <svg class="MobileBar-logo" role="img" title="Faith Promise Logo">
-                            <use xlink:href="/build/images/general.svg#logo-faith-promise"></use>
+                            <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
                         </svg>
                     </a>
                     <span class="MobileBar-navToggle"><i class="icon-menu" nav-toggle></i></span>
