@@ -10,7 +10,7 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/websites/laravel.faithpromise.org
+    - map: ~/websites/faithpromise.org
       to: /home/vagrant/faithpromise.org
 
     - map: ~/websites/assets.faithpromise.org
