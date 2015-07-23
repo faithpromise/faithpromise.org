@@ -1,3 +1,44 @@
+
+## Setting up Github / SSH Keys
+
+```
+cd ~/.ssh
+```
+
+```
+ssh-keygen -t rsa -C "you@your-email.com"
+```
+
+Name the file something like id_rsa_faithpromise_org
+
+```
+pbcopy < ~/.ssh/id_rsa_faithpromise.pub
+```
+
+Login to Github and add the SSH key in settings for faithpromise.org
+
+Config file
+
+```
+nano ~/.ssh/config
+```
+
+File contents:
+
+    Host github.com
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_rsa
+    
+    Host github.faithpromise.org
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_rsa_faithpromise_org
+
+Use the following URLs to push using your Faith Promise SSH key:
+
+git@github.faithpromise.org:faithpromise/faithpromise.org.git
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
