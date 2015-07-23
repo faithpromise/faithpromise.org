@@ -1,6 +1,7 @@
 .DS_Store
 .env
 .idea
+/_release
 /vendor
 /node_modules
 /bower_components
