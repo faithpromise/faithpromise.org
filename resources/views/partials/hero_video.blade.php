@@ -62,7 +62,7 @@
         </div>
 
         <div class="HeroVideo-actions">
-            <a class="HeroVideo-actionsItem" href="https://www.facebook.com/dialog/share?app_id=1592691894327442&display=popup&href={{ $permalink }}&redirect_uri={{ $permalink }}">
+            <a class="HeroVideo-actionsItem" href="https://www.facebook.com/dialog/share?app_id={{ $site['facebook_app_id'] }}&display=popup&href={{ $permalink }}&redirect_uri={{ $permalink }}">
                 <svg class="HeroVideo-action" role="img" title="Share on Facebook">
                     <use xlink:href="/build/images/video.svg#facebook"></use>
                 </svg>
