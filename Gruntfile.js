@@ -54,8 +54,8 @@ module.exports = function (grunt) {
     grunt.initConfig(
         {
             clean: {
-                build: [build_root + '/**/*.*'],
-                release: [release_root + '/**/*.*']
+                build: [build_root + '/*', '!' + build_root + '/.gitkeep'],
+                release: [release_root + '/*', '!' + release_root + '/.gitkeep']
             },
             concat: {
                 options: {
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
                     files: [
                         {
                             expand: false,
-                            src: [views_root + '/layouts/**/*.php'],
+                            src: [release_root + '/' + views_root + '/layouts/**/*.php'],
                             dest: './'
                         }
                     ]
@@ -159,7 +159,7 @@ module.exports = function (grunt) {
             },
             htmlbuild: {
                 production: {
-                    src: views_root + '/layouts/**/*.php',
+                    src: release_root + '/' + views_root + '/layouts/**/*.php',
                     options: {
                         replace: true,
                         scripts: {
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
                 production: {
                     files: [
                         {
-                            src: [views_root + '/layouts/**/*.php']
+                            src: [release_root + '/' + views_root + '/layouts/**/*.php']
                         }
                     ]
                 }
@@ -319,7 +319,10 @@ module.exports = function (grunt) {
         'clean:build',
         '_build_production',
         'clean:release',
-        'copy:release',
+        'copy:release_files',
+        'htmlbuild:production',
+        'replace:remove_public',
+        'cacheBust:production',
         'git_deploy_production',
         'build_dev' // Restore dev files
     ]);
@@ -339,13 +342,9 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('_build_production', [
-        'clean:build',
         '_build_common',
         '_js_production',
-        '_css_production',
-        'htmlbuild:production',
-        'replace:remove_public',
-        'cacheBust:production'
+        '_css_production'
     ]);
 
     grunt.registerTask('_js_production', [
