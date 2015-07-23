@@ -76,9 +76,6 @@ module.exports = function (grunt) {
             },
             uglify: {
                 production: {
-                    options: {
-                        mangle: false // TODO - remove once it works - mangling breaks the JS
-                    },
                     files: [{
                         src: js_output_file_temp,
                         dest: js_output_file_production
