@@ -10,14 +10,15 @@ module.exports = function (grunt) {
     var temp_dir = 'temp';
 
     // Roots
-    var srcroot = '.';
-    var webroot = 'public';
-    var viewsroot = 'resources/views';
-    var buildroot = 'public/build';
+    var src_root = '.';
+    var web_root = 'public';
+    var views_root = 'resources/views';
+    var build_root = 'public/build';
+    var release_root = '_release';
 
     // JS Paths
-    var js_src_dir = srcroot + '/js';
-    var js_output_dir = buildroot + '/js';
+    var js_src_dir = src_root + '/js';
+    var js_output_dir = build_root + '/js';
     var js_output_file_dev = js_output_dir + '/main.dev.js';
     var js_output_file_production = js_output_dir + '/main.min.js';
     var js_output_file_temp = temp_dir + '/main.tmp.js';
@@ -33,8 +34,8 @@ module.exports = function (grunt) {
     ];
 
     // LESS Paths
-    var less_src_dir = srcroot + '/less';
-    var less_output_dir = buildroot + '/css';
+    var less_src_dir = src_root + '/less';
+    var less_output_dir = build_root + '/css';
     var less_output_file_dev = less_output_dir + '/main.dev.css';
     var less_output_file_production = less_output_dir + '/main.min.css';
     var lessInput = [
@@ -42,24 +43,19 @@ module.exports = function (grunt) {
     ];
 
     // Image paths
-    var image_src_dir = srcroot + '/images';
-    var image_output_dir = buildroot + '/images';
+    var image_src_dir = src_root + '/images';
+    var image_output_dir = build_root + '/images';
 
     // Font paths
-    var font_src_dir = srcroot + '/assets';
-    var font_output_dir = buildroot + '/fonts';
+    var font_src_dir = src_root + '/assets';
+    var font_output_dir = build_root + '/fonts';
 
     // Project configuration.
     grunt.initConfig(
         {
             clean: {
-                build: [
-                    js_output_dir + '/**/*.*',
-                    less_output_dir + '/**/*.*',
-                    temp_dir + '/**/*.*',
-                    '!' + temp_dir + '/.gitkeep',
-                    '!public/**/*.{png,jpg,gif}'
-                ]
+                build: [build_root + '/**/*.*'],
+                release: [release_root + '/**/*.*']
             },
             concat: {
                 options: {
@@ -155,7 +151,7 @@ module.exports = function (grunt) {
                     files: [
                         {
                             expand: false,
-                            src: [viewsroot + '/layouts/**/*.php'],
+                            src: [views_root + '/layouts/**/*.php'],
                             dest: './'
                         }
                     ]
@@ -163,7 +159,7 @@ module.exports = function (grunt) {
             },
             htmlbuild: {
                 production: {
-                    src: viewsroot + '/layouts/**/*.php',
+                    src: views_root + '/layouts/**/*.php',
                     options: {
                         replace: true,
                         scripts: {
@@ -177,13 +173,13 @@ module.exports = function (grunt) {
             },
             cacheBust: {
                 options: {
-                    baseDir: webroot,
+                    baseDir: web_root,
                     rename: false
                 },
                 production: {
                     files: [
                         {
-                            src: [viewsroot + '/layouts/**/*.php']
+                            src: [views_root + '/layouts/**/*.php']
                         }
                     ]
                 }
@@ -209,7 +205,7 @@ module.exports = function (grunt) {
                     tasks: ['concat:js_dev']
                 },
                 svg: {
-                    files: [srcroot + '/**/*.svg'],
+                    files: [src_root + '/**/*.svg'],
                     tasks: ['svgstore:default']
                 },
                 templates: {
@@ -233,6 +229,37 @@ module.exports = function (grunt) {
                     cwd: js_src_dir,
                     src: 'directives/**/*.html',
                     dest: js_output_dir
+                },
+                release_files: {
+                    expand: true,
+                    src: [
+                        './**/*.*',
+                        '!./_release/**/*.*',
+                        '!./bower_components/**/*.*',
+                        '!./database/**/*.*',
+                        '!./images/**/*.*',
+                        '!./js/**/*.*',
+                        '!./less/**/*.*',
+                        '!./node_modules/**/*.*',
+                        '!./storage/**/*.*',
+                        '!./temp/**/*.*',
+                        '!./tests/**/*.*',
+                        '!./vendor/**/*.*',
+                        '!./.env',
+                        '!./.gitattributes',
+                        '!./.gitignore',
+                        '!./bower.json',
+                        '!./Gruntfile.js',
+                        '!./gulpfile.js',
+                        '!./gulpfile.js',
+                        '!./Homestead.yaml.example',
+                        '!./package.json',
+                        '!./phpspec.yml',
+                        '!./phpunit.xml',
+                        '!./readme.md',
+                        '!./TODO.txt'
+                    ],
+                    dest: release_root
                 }
             },
             html2js: {
@@ -279,7 +306,7 @@ module.exports = function (grunt) {
                         url: 'git@github.faithpromise.org:faithpromise/faithpromise.org.git',
                         branch: 'release'
                     },
-                    src: ['_release']
+                    src: release_root
                 }
             }
         }
@@ -288,48 +315,52 @@ module.exports = function (grunt) {
     // Register tasks
     grunt.registerTask('default', ['build_dev']);
 
-    grunt.registerTask('build_common', [
-        'copy',
+    grunt.registerTask('deploy_production', [
+        'clean:build',
+        '_build_production',
+        'clean:release',
+        'copy:release',
+        'git_deploy_production',
+        'build_dev' // Restore dev files
+    ]);
+
+    grunt.registerTask('_build_common', [
+        'copy:fontello',
+        'copy:svg4everybody',
+        'copy:appTemplates',
         'html2js',
-        'svgstore:default',
+        'svgstore:default'
     ]);
 
     grunt.registerTask('build_dev', [
-        'build_common',
-        'css_dev',
+        '_build_common',
+        '_css_dev',
         'concat:js_dev'
     ]);
 
-    grunt.registerTask('build_production', [
-        'build_common',
-        'js_production',
-        'css_production',
+    grunt.registerTask('_build_production', [
+        'clean:build',
+        '_build_common',
+        '_js_production',
+        '_css_production',
         'htmlbuild:production',
         'replace:remove_public',
         'cacheBust:production'
     ]);
 
-    grunt.registerTask('build_staging', [
-        'build_common',
-        'js_production',
-        'css_production',
-        'htmlbuild:production',
-        'cacheBust:production'
-    ]);
-
-    grunt.registerTask('js_production', [
+    grunt.registerTask('_js_production', [
         'concat:js_production',
         'removelogging',
         'uglify:production'
     ]);
 
-    grunt.registerTask('css_production', [
+    grunt.registerTask('_css_production', [
         'replace:fontello',
         'less:production',
         'autoprefixer:production'
     ]);
 
-    grunt.registerTask('css_dev', [
+    grunt.registerTask('_css_dev', [
         'replace:fontello',
         'less:dev',
         'autoprefixer:dev'
