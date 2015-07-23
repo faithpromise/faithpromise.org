@@ -183,7 +183,7 @@ module.exports = function (grunt) {
                 production: {
                     files: [
                         {
-                            src: [webroot + '/**/*.php']
+                            src: [viewsroot + '/layouts/**/*.php']
                         }
                     ]
                 }
