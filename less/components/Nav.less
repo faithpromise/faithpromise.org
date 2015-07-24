@@ -13,10 +13,13 @@
  * ==========================================================
  */
 
+@Nav-mobile-font-size: 14;
+
 @media (max-width: @Nav-mobile-max) {
 
   // TODO: Mobile nav styles - need to style sub nav
   .Nav {
+    font-size:          100%; // 14px;
     position:           absolute;
     top:                0;
     left:               0;
@@ -81,12 +84,14 @@
     padding: 0;
   }
 
+  .Nav-item {
+    margin: 0;
+  }
+
   .Nav-link {
-    .to-rem(font-size, 14);
     display:        block;
-    height:         48px;
     line-height:    48px;
-    padding:        0 15px;
+    padding:        5px 15px;
     border-bottom:  1px solid #262626;
     text-transform: uppercase;
     overflow:       hidden;
