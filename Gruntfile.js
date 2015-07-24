@@ -230,28 +230,47 @@ module.exports = function (grunt) {
                 release_files: {
                     expand: true,
                     src: [
+                        // Include
                         './**/*.*',
                         './artisan',
-                        '!./_release/**/*.*',
-                        '!./bower_components/**/*.*',
-                        '!./images/**/*.*',
-                        '!./js/**/*.*',
-                        '!./less/**/*.*',
-                        '!./node_modules/**/*.*',
-                        '!./storage/**/*.*',
-                        '!./temp/**/*.*',
-                        '!./vendor/**/*.*',
-                        '!./.env',
-                        '!./.gitattributes',
-                        '!./.gitignore',
+                        './storage/.gitkeep', // Note: keep storage dir or Envoyer will not create symlink
+                        // Exclude
+                        '!./**/*.log',
+                        '!./assets/**/*',
+                        '!./bower_components/**/*',
+                        '!./js/**/*',
+                        '!./less/**/*',
+                        '!./node_modules/**/*',
+                        '!./storage/debugbar/**/*',
+                        '!./temp/**/*',
+                        '!./vendor/**/*',
                         '!./bower.json',
                         '!./Gruntfile.js',
-                        '!./gulpfile.js',
-                        '!./Homestead.yaml.example',
                         '!./package.json',
-                        '!./readme.md',
                         '!./TODO.txt'
                     ],
+                    //src: [
+                    //    './**/*',
+                    //    './artisan',
+                    //    '!./_release/**/*',
+                    //    '!./bower_components/**/*',
+                    //    '!./images/**/*',
+                    //    '!./js/**/*',
+                    //    '!./less/**/*',
+                    //    '!./node_modules/**/*',
+                    //    '!./storage/{app,debugbar,framework,logs}/**/*', // keep storage dir or Envoyer will not create symlink
+                    //    '!./temp/**/*',
+                    //    '!./vendor/**/*',
+                    //    '!./.env',
+                    //    '!./.gitattributes',
+                    //    '!./.gitignore',
+                    //    '!./bower.json',
+                    //    '!./Gruntfile.js',
+                    //    '!./Homestead.yaml.example',
+                    //    '!./package.json',
+                    //    '!./readme.md',
+                    //    '!./TODO.txt'
+                    //],
                     dest: release_root
                 }
             },
@@ -317,7 +336,8 @@ module.exports = function (grunt) {
         'replace:remove_public',
         'cacheBust:production',
         'git_deploy:production',
-        'build_dev' // Restore dev files
+        'build_dev', // Restore dev files
+        'clean:release' // Clean release so we don't mistakenly work on release files
     ]);
 
     grunt.registerTask('_build_common', [
