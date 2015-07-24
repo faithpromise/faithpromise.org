@@ -5,3 +5,5 @@ TODO: Search for .pdf links and link them to the assets project
 TODO: Migrate data from current site
 
 TODO: Change APP_ENV var on server to production pre-launch, before changing DNS on faithpromise.org
+
+TODO: Change Pellissippi ident from `pel` to `pellissippi` in campuses table
