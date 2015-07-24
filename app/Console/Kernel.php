@@ -24,6 +24,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('events:import')->hourly();
+        $schedule->command('events:import')->hourly()->thenPing(env('HEARTBEAT_EVENTS_UPDATED', 'http://127.0.0.1'));
     }
 }
