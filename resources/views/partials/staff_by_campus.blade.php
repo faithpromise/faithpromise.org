@@ -1,6 +1,7 @@
 <?php
     $staff_gallery_class = 'StaffSection--square Section--lightGrey';
     $grey_bg = 0;
+        // TODO: delete this once campus pages are set up
 ?>
 
 @foreach ($campuses as $campus)

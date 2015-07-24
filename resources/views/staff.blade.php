@@ -1,37 +1,22 @@
 <?php
-    $title = 'Meet Our Staff';
-    $hero_image = 'images/temp/hero-placeholder.png';
     $staff_gallery_class = 'StaffSection--square Section--lightGrey';
     $grey_bg = 0;
+
+    // IMAGE: Need hero image for staff
 ?>
 
-@extends('layouts.page')
+@extends('layouts.page', ['title' => 'Meet Our Staff'])
 
 @section('page')
 
 <div class="Container Container--wide">
-
-    <div class="PageFilters">
-        <span class="PageFilters-label">Sort by:</span>
-        <span class="PageFilters-option" ng-class="{ 'is-active': !staff_sort_method }" ng-click="staff_sort_method = null">Ministry Area</span>
-        <span class="PageFilters-option" ng-class="{ 'is-active': staff_sort_method === 'campus' }" ng-click="staff_sort_method = 'campus'">Campus</span>
-        <span class="PageFilters-option" ng-class="{ 'is-active': staff_sort_method === 'name' }" ng-click="staff_sort_method = 'name'">Name</span>
-    </div>
-
+    @include('partials.staff_nav', ['campuses' => $campuses, 'active' => 'ministry'])
 </div>
 
-<div ng-if="!staff_sort_method">
-    @foreach ($teams as $team)
-        <?php $staff_gallery_class = 'ProfilesSection--large ' . ((($grey_bg = 1-$grey_bg) === 0) ? 'Section--lightGrey' : ''); ?>
-        @profilessection(['title' => $team->title, 'class' => $staff_gallery_class, 'profiles' => $team->Staff])
-        @endprofilessection
-    @endforeach
-</div>
-<div ng-if="staff_sort_method === 'campus'">
-    <ng-include src="'/partials/staff-by-campus'"></ng-include>
-</div>
-<div ng-if="staff_sort_method === 'name'">
-    <ng-include src="'/partials/staff-by-name'"></ng-include>
-</div>
+@foreach ($teams as $team)
+    <?php $staff_gallery_class = 'ProfilesSection--large ' . ((($grey_bg = 1-$grey_bg) === 0) ? 'Section--lightGrey' : ''); ?>
+    @profilessection(['title' => $team->title, 'class' => $staff_gallery_class, 'profiles' => $team->Staff])
+    @endprofilessection
+@endforeach
 
 @endsection

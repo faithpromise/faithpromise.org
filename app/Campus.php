@@ -13,4 +13,8 @@ class Campus extends Model
     public function staff() {
         return $this->hasMany('App\Staff')->orderBy('sort');
     }
+
+    public function getUrlAttribute() {
+        return '/locations/' . $this->ident;
+    }
 }

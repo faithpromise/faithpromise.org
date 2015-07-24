@@ -10,11 +10,18 @@
 
 .PageFilters-option {
   display: inline-block;
-  margin:  0 .25rem;
+  padding: .5rem .25rem;
   cursor:  pointer;
   color:   @color-gray-dark;
 
   &.is-active {
     font-weight: @font-weight-bold;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }

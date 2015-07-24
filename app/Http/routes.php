@@ -31,6 +31,7 @@ Route::get('/missions/{location_ident}', 'MissionsController@location');
 
 // Staff
 Route::get('/staff', 'StaffController@index');
+Route::get('/staff/directory', 'StaffController@directory');
 Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
 Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
