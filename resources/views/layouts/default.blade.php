@@ -1,6 +1,6 @@
 <?php
 
-    $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style) ? 'navStyle--' . $nav_style : '');
+$body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style) ? 'navStyle--' . $nav_style : '');
 
 ?><!DOCTYPE html>
 <html ng-app="app">
@@ -19,6 +19,8 @@
         <!-- /build -->
 
         <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current()  }}">
+
+        @include('includes.google_analytics')
     </head>
 
     <body class="{{ $body_class }}" ng-controller="page">

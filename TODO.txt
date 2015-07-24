@@ -9,9 +9,9 @@ TODO: Search for .pdf links and link them to the assets project
 
 TODO: Set up schedule for event imports on server
 
-TODO: Set up healthcheck in Envoyer for faithpromise.org
-TODO: Set up healthcheck in Envoyer for assets.faithpromise.org
+LATER: Set up healthcheck in Envoyer for faithpromise.org
+LATER: Set up healthcheck in Envoyer for assets.faithpromise.org
 
-TODO: Backup and restore plan
+LATER: Backup and restore plan
 
-TODO: Install Google Analytics
+TODO: Change APP_ENV var on server to production pre-launch, before changing DNS on faithpromise.org
