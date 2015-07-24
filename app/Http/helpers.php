@@ -1,7 +1,5 @@
 <?php
 
-// TODO: add second argument $size that uses a different route
-
 function asset_path($path) {
     return config('site.assets_path') . '/' . $path;
 }
