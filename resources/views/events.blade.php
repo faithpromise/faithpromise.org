@@ -1,5 +1,5 @@
 <!--PAGE: Add content-->
-<!-- TODO: need hero graphic -->
+<!-- IMAGE: need hero graphic -->
 
 @extends('layouts.page', ['title' => 'Events', 'hero_image' => 'images/campuses/pellissippi-wide.jpg'])
 

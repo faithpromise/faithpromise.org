@@ -2,7 +2,7 @@
 
 @section('page')
 
-    <!-- TODO: Need to replace with real video -->
+    <!-- IMAGE: Need to replace with real video -->
     @videosection(['title' => 'Welcome to fpKids', 'class' => 'VideoSection--right', 'video' => '127442991'])
     <p>If you're new to Faith Promise or want to learn more about fpKids, this page was created with you in mind.</p>
     @endvideosection
@@ -16,7 +16,7 @@
     <p>The best leaders on the planet will engage your kids to connect the Bible to their personal lives through dramas, interactive games, and dynamic worship. They'll learn how to trust God, make wise choices, and treat others the way they want to be treated.</p>
     @endbgsection
 
-            <!--TODO: Need photo for club45-->
+            <!-- IMAGE: Need photo for club45 -->
     @bgsection(['title' => '4th & 5th Grade', 'class' => '', 'image' => 'images/fpkids/prek-wide.jpg'])
     <p>Club 45 is an innovative environment for your preteen. They'll focus on their relationship with Christ as well as their relationship with their peers, parents, and adult leaders through creative teaching, interactive games, and engaging worship.</p>
     @endbgsection

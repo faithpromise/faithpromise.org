@@ -1,4 +1,4 @@
-<!--TODO: Need to finish out this page. Not sure how to make this page work. -->
+<!-- PAGE: Need to finish out this page. Not sure how to make this page work. -->
 
 <?php
 
@@ -42,7 +42,7 @@ $intercessory_teams = [
 
 ?>
 
-<!-- TODO: Need hero image -->
+<!-- IMAGE: Need hero image -->
 @extends('layouts.page', ['title' => 'Prayer Ministry'])
 
 @section('page')

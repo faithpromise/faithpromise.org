@@ -50,7 +50,7 @@ if ($directive['execution_mode'] == 'start'):
                             data-src-lg="<?= cdn_image('lg', 'full', $card->card_image) ?>"
                             data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></a>
                     <?php else: ?>
-                        <!-- TODO: Add diff images to this span too -->
+                        <!-- IMAGE: Add diff images to this span too -->
                         <span class="Card-image" style="background-image: url(<?= $card->card_image ?>);"></span>
                     <?php endif; ?>
                     <div class="Card-body">

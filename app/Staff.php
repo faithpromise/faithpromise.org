@@ -30,8 +30,8 @@ class Staff extends Model {
 
     public function getHeroImageAttribute() {
         return 'images/staff/' . $this->ident . '-square.jpg';
-        // TODO: Change to wide when we have wide images for staff
-        // TODO: Add a default hero image if one doesn't exist?
+        // IMAGE: Change to wide when we have wide images for staff
+        // IMAGE: Add a default hero image if one doesn't exist?
     }
 
     public function getProfileNameAttribute() {

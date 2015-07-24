@@ -28,7 +28,7 @@ class Event extends Model
             return 'images/events/' . $this->image;
         }
 
-        // TODO: Create a placeholder image for events
+        // IMAGE: Create a placeholder image for events
         return 'https://placekitten.com/g/200/300';
     }
 

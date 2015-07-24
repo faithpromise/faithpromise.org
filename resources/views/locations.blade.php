@@ -7,9 +7,9 @@ hero_image: /build/images/locations/pellissippi-wide.jpg
 
 {% assign locations = site.campuses | sort: 'location' %}
 
-<!--TODO: add hero image-->
-<!--TODO: add location photos-->
-<!--PAGE: Add content-->
+<!-- IMAGE: add hero image -->
+<!-- IMAGE: add location photos -->
+<!-- PAGE: Add content -->
 
 <div class="GridSection GridSection--center">
   <div class="GridSection-container">

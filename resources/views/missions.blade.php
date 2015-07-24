@@ -2,9 +2,9 @@
 
 @section('page')
 
-    <!--TODO: Confirm missionary areas-->
-    <!--TODO: Hero image - missions -->
-    <!--TODO: Finish content-->
+    <!-- REVIEW: Confirm missionary areas -->
+    <!-- IMAGE: Hero image - missions -->
+    <!-- PAGE: Finish content -->
 
     @introsection(['title' => 'Faith Promise Missions', 'class' => '', 'image' => ''])
     <p>Each year our church plans multiple international mission trips. You can find contact information and details by selecting a trip below. All donations made to Faith Promise Church to support mission trips are fully tax deductible.</p>
@@ -17,7 +17,7 @@
     @textsection(['title' => 'Get Updates', 'class' => '', 'image' => ''])
     <p>Sign up for email notifications and we'll let you know when new trips are planned.</p>
     <a class="Button">Sign Up</a>
-    <!--TODO: Get url for missions updates-->
+    <!-- REVIEW: Get url for missions updates -->
     @endtextsection
 
     @profilessection(['title' => 'Missionaries', 'class' => 'Section--lightGrey', 'profiles' => $missionaries])

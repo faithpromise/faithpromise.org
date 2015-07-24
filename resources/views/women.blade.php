@@ -1,6 +1,6 @@
 @extends('layouts.page', ['title' => 'Women\'s Groups'])
 
-<!-- TODO: Needs hero image -->
+<!-- IMAGE: Needs hero image -->
 
 @section('page')
 
