@@ -11,11 +11,12 @@ namespace App\Http\Controllers;
 use App\Ministry;
 use App\Team;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Route;
 
 class MainController extends BaseController {
 
     public function index() {
-
+        return view('welcome');
     }
 
     public function staff() {
@@ -27,11 +28,9 @@ class MainController extends BaseController {
         ]);
     }
 
-    public function defaultMinistryPage($ministry_ident) {
-
-        return view($ministry_ident, [
-            'ministry' => Ministry::whereIdent($ministry_ident)->first()
-        ]);
-
+    public function defaultPage() {
+        $view = Route::getCurrentRoute()->getUri();
+        return view($view);
     }
+
 }

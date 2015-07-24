@@ -11,26 +11,22 @@ use DB;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
-class MinistriesController extends BaseController
-{
+class MinistriesController extends BaseController {
 
-    public function __construct(Request $request)
-    {
-
-        $route_params = $request->route()->parameters();
-
-        $ministry_ident = isset($route_params['ministry']) ? $route_params['ministry'] : $request->route()->uri();
-
-        $ministry = Ministry::whereIdent($ministry_ident)->with('Staff')->first();
-        $events = Event::where('ministry_id', '=', $ministry->id)->get();
-
-        View::share('staff', $ministry->staff);
-        View::share('events', $events);
+    public function index($ministry_ident) {
+        return view($ministry_ident);
     }
 
-    public function index($ministry_ident)
-    {
-        return view($ministry_ident);
+    public function fpKidsWelcome() {
+        return view('fpkids-welcome');
+    }
+
+    public function defaultMinistryPage($ministry_ident) {
+
+        return view($ministry_ident, [
+            'ministry' => Ministry::whereIdent($ministry_ident)->first()
+        ]);
+
     }
 
 }
