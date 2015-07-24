@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@index');
 
 Route::get('/sermons', 'SermonsController@index');
 Route::get('/series/{series}/{video}', ['as' => 'video', 'uses' => 'SermonsController@video']);
@@ -24,10 +22,8 @@ Route::get('/events/calendar', 'EventsController@calendar');
 Route::get('/events/calendar/{year}/{month}', 'EventsController@calendarMonth');
 
 // Ministries
-Route::get('/{ministry}', 'MainController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
-Route::get('/fpkids/welcome', function () {
-    return view('fpkids-welcome');
-});
+Route::get('/{ministry}', 'MinistriesController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
+Route::get('/fpkids/welcome', 'MinistriesController@fpKidsWelcome');
 
 // Missions
 Route::get('/missions', 'MissionsController@index');
@@ -38,15 +34,9 @@ Route::get('/staff', 'StaffController@index');
 Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
 Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
-// About
-Route::get('/what-to-expect', function () {
-    return view('what-to-expect');
-});
-
-// About
-Route::get('/baptism', function () {
-    return view('baptism');
-});
+// General pages
+Route::get('/what-to-expect', 'MainController@defaultPage');
+Route::get('/baptism', 'MainController@defaultPage');
 
 // Images
 Route::get('/cdn/hero/{path}', ['as' => 'hero_image', 'uses' => 'ImagesController@hero'])->where('path', '.*');
@@ -54,7 +44,4 @@ Route::get('/cdn/card/{path}', ['as' => 'card_image', 'uses' => 'ImagesControlle
 Route::get('/cdn/profile/{path}', ['as' => 'profile_image', 'uses' => 'ImagesController@profile'])->where('path', '.*');
 Route::get('/cdn/album/{path}', ['as' => 'album_image', 'uses' => 'ImagesController@album'])->where('path', '.*');
 
-Route::get('/test', function () {
-    \Illuminate\Support\Facades\Artisan::call('events:import');
-});
 
