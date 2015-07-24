@@ -37,11 +37,3 @@ Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 // General pages
 Route::get('/what-to-expect', 'MainController@defaultPage');
 Route::get('/baptism', 'MainController@defaultPage');
-
-// Images
-Route::get('/cdn/hero/{path}', ['as' => 'hero_image', 'uses' => 'ImagesController@hero'])->where('path', '.*');
-Route::get('/cdn/card/{path}', ['as' => 'card_image', 'uses' => 'ImagesController@card'])->where('path', '.*');
-Route::get('/cdn/profile/{path}', ['as' => 'profile_image', 'uses' => 'ImagesController@profile'])->where('path', '.*');
-Route::get('/cdn/album/{path}', ['as' => 'album_image', 'uses' => 'ImagesController@album'])->where('path', '.*');
-
-
