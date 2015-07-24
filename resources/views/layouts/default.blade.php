@@ -80,10 +80,6 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-animate.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.1/angular-moment.min.js"></script>
-        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/twix.js/0.3.0/twix.min.js"></script>-->
-        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>-->
 
         <script>
             (function () {
