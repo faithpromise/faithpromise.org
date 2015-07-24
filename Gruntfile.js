@@ -194,7 +194,7 @@ module.exports = function (grunt) {
             watch: {
                 css: {
                     files: [less_src_dir + '/**/*.less', 'assets/fontello/**/*.*'],
-                    tasks: ['css_dev']
+                    tasks: ['_css_dev']
                 },
                 js: {
                     files: js_src_dir + '/**/*.js',
