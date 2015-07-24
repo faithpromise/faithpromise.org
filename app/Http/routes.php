@@ -21,6 +21,9 @@ Route::get('/events', 'EventsController@index');
 Route::get('/events/calendar', 'EventsController@calendar');
 Route::get('/events/calendar/{year}/{month}', 'EventsController@calendarMonth');
 
+// Campuses / Locations
+Route::get('/locations', 'CampusesController@index');
+
 // Ministries
 Route::get('/{ministry}', 'MinistriesController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
 Route::get('/fpkids/welcome', 'MinistriesController@fpKidsWelcome');
