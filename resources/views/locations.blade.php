@@ -9,7 +9,7 @@ hero_image: /build/images/locations/pellissippi-wide.jpg
 
 <!--TODO: add hero image-->
 <!--TODO: add location photos-->
-<!--TODO: add page content-->
+<!--PAGE: Add content-->
 
 <div class="GridSection GridSection--center">
   <div class="GridSection-container">

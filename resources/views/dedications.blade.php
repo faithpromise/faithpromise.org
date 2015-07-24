@@ -4,4 +4,4 @@ title: Dedications
 permalink: /dedications/
 ---
 
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->

@@ -1,4 +1,4 @@
-<!--TODO: Add page content-->
+<!-- PAGE: add content -->
 
 @extends('layouts.page', ['title' => 'Worship Ministry'])
 

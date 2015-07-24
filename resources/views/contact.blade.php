@@ -4,4 +4,4 @@ title: Contact
 permalink: /contact/
 ---
 
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->

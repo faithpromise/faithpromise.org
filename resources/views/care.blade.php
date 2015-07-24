@@ -1,4 +1,4 @@
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->
 
 @extends('layouts.page', ['title' => 'Care Ministries'])
 

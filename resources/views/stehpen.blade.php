@@ -4,4 +4,4 @@ title: Stephen Ministry
 permalink: /stephen/
 ---
 
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->

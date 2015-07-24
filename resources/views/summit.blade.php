@@ -4,4 +4,4 @@ title: Baptism
 permalink: /baptism/
 ---
 
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->

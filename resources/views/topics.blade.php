@@ -5,7 +5,7 @@ title: Topics
 hero_image: /build/images/temp/hero-placeholder.png
 ---
 
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->
 
 {% assign topics = site.topics | sort: 'sort' %}
 

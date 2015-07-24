@@ -1,4 +1,4 @@
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->
 <?php
 
 $cards = collect([

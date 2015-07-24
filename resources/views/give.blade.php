@@ -4,4 +4,4 @@ title: Giving
 permalink: /give/
 ---
 
-<!--TODO: Add page content-->
+<!--PAGE: Add content-->
