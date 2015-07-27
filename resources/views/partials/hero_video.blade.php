@@ -64,7 +64,7 @@
         <div class="HeroVideo-actions">
             <a class="HeroVideo-actionsItem" href="https://www.facebook.com/dialog/share?app_id={{ $site['facebook_app_id'] }}&display=popup&href={{ $permalink }}&redirect_uri={{ $permalink }}">
                 <svg class="HeroVideo-action" role="img" title="Share on Facebook">
-                    <use xlink:href="/build/images/video.svg#facebook"></use>
+                    <use xlink:href="/build/svg/video.svg#facebook"></use>
                 </svg>
                 <span class="HeroVideo-actionText">share</span>
             </a>
@@ -72,19 +72,19 @@
             <!-- We are using the "Limited Dependencies" code -->
             <a href="https://twitter.com/intent/tweet?text=Check+it+out&url={{ $permalink }}" class="HeroVideo-actionsItem">
                 <svg class="HeroVideo-action" role="img" title="Tweet it">
-                    <use xlink:href="/build/images/video.svg#twitter"></use>
+                    <use xlink:href="/build/svg/video.svg#twitter"></use>
                 </svg>
                 <span class="HeroVideo-actionText">tweet</span>
             </a>
       <span class="HeroVideo-actionsItem">
         <svg class="HeroVideo-action" role="img" title="Email a friend">
-            <use xlink:href="/build/images/video.svg#email"></use>
+            <use xlink:href="/build/svg/video.svg#email"></use>
         </svg>
         <span class="HeroVideo-actionText">email</span>
       </span>
       <span class="HeroVideo-actionsItem">
         <svg class="HeroVideo-action" role="img" title="More">
-            <use xlink:href="/build/images/video.svg#more"></use>
+            <use xlink:href="/build/svg/video.svg#more"></use>
         </svg>
         <span class="HeroVideo-actionText">more</span>
       </span>
