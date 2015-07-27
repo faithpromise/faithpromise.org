@@ -1,4 +1,5 @@
 LATER: Backup and restore plan
+LATER: Make sure we're not hardcoding URLs. Use route() helper method
 
 TODO: Search for .pdf links and link them to the assets project
 
