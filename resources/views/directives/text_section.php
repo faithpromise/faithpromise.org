@@ -6,6 +6,7 @@ if ($directive['execution_mode'] == 'start'):
 
     $args = array_merge(
         [
+            'id' => 'id_' . uniqid(),
             'title' => '',
             'class' => '',
             'buttons' => []
@@ -13,7 +14,7 @@ if ($directive['execution_mode'] == 'start'):
     );
     $args['class'] = trim('TextSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-    <div class="<?= $args['class'] ?>">
+    <div id="<?= $args['id'] ?>" class="<?= $args['class'] ?>">
     <div class="TextSection-container">
     <div class="TextSection-text">
     <h2 class="TextSection-title"><?= $args['title'] ?></h2>
@@ -22,6 +23,13 @@ if ($directive['execution_mode'] == 'start'):
 
 <?php if ($directive['execution_mode'] == 'end'): ?>
     </div><!-- // END .TextSection-text -->
+    <?php if (count($args["buttons"])): ?>
+        <p>
+            <?php foreach ($args["buttons"] as $button): ?>
+                <a class="Button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
+            <?php endforeach; ?>
+        </p>
+    <?php endif; ?>
     </div><!-- // END .TextSection-container -->
     </div><!-- // END .TextSection -->
 <?php endif; ?>

@@ -45,6 +45,7 @@ Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
 // General pages
 Route::get('/what-to-expect', 'MainController@defaultPage');
+Route::get('/beliefs-and-values', 'MainController@defaultPage');
 Route::get('/baptism', 'MainController@defaultPage');
 
 // Redirects
