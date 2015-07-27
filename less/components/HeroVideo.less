@@ -1,6 +1,6 @@
 
 .HeroVideo-imageWrap {
-  background-size:     cover;
+  background-size:     contain;
   background-position: center;
 }
 
@@ -146,6 +146,26 @@
     height:              100%;
     background-position: 90% 0;
     background-repeat:   no-repeat;
+
+    &:before,
+    &:after {
+      content:  '';
+      display:  block;
+      position: absolute;
+      top:      0;
+      height:   100%;
+      width:    150px;
+    }
+
+    &:before {
+      left:             0;
+      background-image: linear-gradient(to right, #000 50%, transparent)
+    }
+
+    &:after {
+      right:            0;
+      background-image: linear-gradient(to right, transparent, #000)
+    }
   }
 
   .HeroVideo-image {
@@ -278,6 +298,14 @@
 
   .HeroVideo-play .test {
     fill: red;
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  .HeroVideo-imageWrap {
+    .to-rem(width, 1110);
   }
 
 }

@@ -12,30 +12,39 @@ class SermonsController extends BaseController {
 
         $latest_sermon = Video::where('type', '=', 'sermon')->orderBy('publish_at', 'desc')->first();
 
-        if ($latest_sermon->Series->is_official) {
-            $hero_images = [
-                'sm' => cdn_image('sm', 'full', 'images/series/' . $latest_sermon->Series->ident . '-tall.jpg'),
-                'md' => cdn_image('md', 'full', 'images/series/' . $latest_sermon->Series->ident . '-wide.jpg'),
-                'lg' => cdn_image('lg', 'full', 'images/series/' . $latest_sermon->Series->ident . '-wide.jpg'),
-                'xl' => series_fade_image($latest_sermon->Series->ident)
-            ];
-        } else {
-            $hero_images = [
-                'sm' => cdn_image('sm', 'full', $latest_sermon->Speaker->hero_image),
-                'md' => cdn_image('md', 'full', $latest_sermon->Speaker->hero_image),
-                'lg' => cdn_image('lg', 'full', $latest_sermon->Speaker->hero_image),
-                'xl' => cdn_image('xl', 'full', $latest_sermon->Speaker->hero_image)
-            ];
-        }
-
         $series = Series::where('is_official', '=', 1)->orderBy('publish_at', 'desc')->get();
 
         return view('sermons', [
             'series'        => $series,
             'latest_sermon' => $latest_sermon,
-            'hero_images'    => $hero_images,
-            'permalink'     => route('video', $latest_sermon->Series->ident, $latest_sermon->ident)
+            'permalink'     => route('seriesVideo', $latest_sermon->Series->ident, $latest_sermon->ident)
         ]);
+    }
+
+    public function series($series_ident) {
+
+        $series = Series::where('ident', '=', $series_ident)->first();
+
+        return view('series', [
+            'series' => $series
+        ]);
+
+    }
+
+    public function video($series_ident, $video_ident) {
+
+        $video = Video::where('ident', '=', $video_ident)->with('Series')->first();
+
+        // TODO: Change to just get video with series
+
+        if ($video->Series->ident !== $series_ident) {
+            abort(404);
+        }
+
+        return view('series_video', [
+            'video' => $video
+        ]);
+
     }
 
 }

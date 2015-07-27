@@ -13,8 +13,10 @@
 
 Route::get('/', 'MainController@index');
 
+// Sermons
 Route::get('/sermons', 'SermonsController@index');
-Route::get('/series/{series}/{video}', ['as' => 'video', 'uses' => 'SermonsController@video']);
+Route::get('/series/{series}', ['as' => 'series', 'uses' => 'SermonsController@series']);
+Route::get('/series/{series}/{video}', ['as' => 'seriesVideo', 'uses' => 'SermonsController@video']);
 
 // Events
 Route::get('/events', 'EventsController@index');

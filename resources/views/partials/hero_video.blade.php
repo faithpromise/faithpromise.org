@@ -1,7 +1,7 @@
 <style type="text/css" scoped>
     @media (max-width: 499px) {
         .HeroVideo-imageWrap {
-            background-image: url({{ $hero_images['sm'] }});
+            background-image: url({{ cdn_image('sm', 'full', $video->hero_image) }});
         }
 
         /* -square */
@@ -9,7 +9,7 @@
 
     @media (min-width: 500px) {
         .HeroVideo-imageWrap {
-            background-image: url({{ $hero_images['md'] }});
+            background-image: url({{ cdn_image('md', 'full', $video->hero_image, 'tall') }});
         }
 
         /* -tall */
@@ -17,7 +17,15 @@
 
     @media (min-width: 900px) {
         .HeroVideo-imageWrap {
-            background-image: url({{ $hero_images['xl'] }});
+            background-image: url({{ cdn_image('xl', 'half', $video->hero_image, 'tall') }});
+        }
+
+        /* -fade-out */
+    }
+
+    @media (min-width: 1200px) {
+        .HeroVideo-imageWrap {
+            background-image: url({{ cdn_image('xl', 'half', $video->hero_image, 'wide') }});
         }
 
         /* -fade-out */
@@ -25,8 +33,8 @@
 </style>
 
 <div class="HeroVideo" hero-video>
-    <div class="HeroVideo-container">
 
+    <div class="HeroVideo-container">
 
         <div class="HeroVideo-imageWrap"></div>
 
@@ -43,8 +51,8 @@
                         <span class="HeroVideo-speaker">{{ $video->speaker_name }}</span>
                         <span class="HeroVideo-metaSeparator">&middot;</span>
                     @endif
-                    <span class="HeroVideo-date">{{ $video->publish_at->format('b d Y') }}</span>
-                    <!--<span class="HeroVideo-series">&quot;{{ $series->title }}&quot; series</span>-->
+                    <span class="HeroVideo-date">{{ $video->publish_at->format('F d Y') }}</span>
+                    <!--<span class="HeroVideo-series">&quot;{{ $video->Series->title }}&quot; series</span>-->
                 </div>
             </div>
 
@@ -62,7 +70,7 @@
         </div>
 
         <div class="HeroVideo-actions">
-            <a class="HeroVideo-actionsItem" href="https://www.facebook.com/dialog/share?app_id={{ $site['facebook_app_id'] }}&display=popup&href={{ $permalink }}&redirect_uri={{ $permalink }}">
+            <a class="HeroVideo-actionsItem" href="https://www.facebook.com/dialog/share?app_id={{ $site['facebook_app_id'] }}&display=popup&href={{ $video->url }}&redirect_uri={{ $video->url }}">
                 <svg class="HeroVideo-action" role="img" title="Share on Facebook">
                     <use xlink:href="/build/svg/video.svg#facebook"></use>
                 </svg>
@@ -70,7 +78,7 @@
             </a>
             <!-- https://dev.twitter.com/web/intents -->
             <!-- We are using the "Limited Dependencies" code -->
-            <a href="https://twitter.com/intent/tweet?text=Check+it+out&url={{ $permalink }}" class="HeroVideo-actionsItem">
+            <a href="https://twitter.com/intent/tweet?text=Check+it+out&url={{ $video->url }}" class="HeroVideo-actionsItem">
                 <svg class="HeroVideo-action" role="img" title="Tweet it">
                     <use xlink:href="/build/svg/video.svg#twitter"></use>
                 </svg>

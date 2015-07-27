@@ -4,20 +4,15 @@
 
     @include('partials.hero_video', [
         'video' => $latest_sermon,
-        'series' => $latest_sermon->Series,
-        'hero_images' => $hero_images,
-        'heading' => 'Latest Sermon:',
-        'permalink' => $permalink
+        'heading' => 'Latest Sermon:'
     ])
 
     <div class="Content">
 
-        <div class="Container">
+        <!-- TODO: Style this heading -->
 
-            {{--{% include sermons-filter.html active='series' %}--}}
-
-            <h2 class="Section-title" ng-hide="false">Sermon Series</h2>
-
+        <div class="Container Container--wide">
+            <h2 class="Section-title">Sermon Series</h2>
         </div>
 
         <div class="SeriesGallery">
@@ -25,7 +20,7 @@
                 <?php $next_series_starts = null; ?>
                 @foreach($series as $item)
                     <li class="SeriesGallery-item">
-                        <a class="SeriesGallery-link" href="{{ route('video', $item->ident) }}/">
+                        <a class="SeriesGallery-link" href="{{ route('seriesVideo', $item->ident) }}/">
                             <img
                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                     class="SeriesGallery-thumb b-lazy"
@@ -38,9 +33,9 @@
                                 <h3 class="SeriesGallery-title">{{ $item->title }}</h3>
                                 <h4 class="SeriesGallery-subtitle">
                                     @if ($item->starts_at->isFuture() OR $latest_sermon->Series->ident === $item->ident)
-                                    {{ $item->getDate($next_series_starts) }}
+                                        {{ $item->getDate($next_series_starts) }}
                                     @else
-                                    {{ $item->when }}
+                                        {{ $item->when }}
                                     @endif
                                 </h4>
                             </div>
