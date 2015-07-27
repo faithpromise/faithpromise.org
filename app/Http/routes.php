@@ -28,6 +28,9 @@ Route::get('/locations', 'CampusesController@index');
 Route::get('/{ministry}', 'MinistriesController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
 Route::get('/fpkids/welcome', 'MinistriesController@fpKidsWelcome');
 
+// Next Steps
+Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MainController@defaultPage']);
+
 // Missions
 Route::get('/missions', 'MissionsController@index');
 Route::get('/missions/{location_ident}', 'MissionsController@location');
@@ -41,3 +44,7 @@ Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 // General pages
 Route::get('/what-to-expect', 'MainController@defaultPage');
 Route::get('/baptism', 'MainController@defaultPage');
+
+// Redirects
+Route::get('/nextsteps', 'RedirectController@nextSteps');
+Route::get('/series', 'RedirectController@sermons');
