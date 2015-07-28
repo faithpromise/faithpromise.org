@@ -51,6 +51,9 @@ Route::get('/baptism', 'MainController@defaultPage');
 Route::get('/h4h', 'MainController@defaultPage');
 Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
 
+// iCampus
+Route::get('/countdown', 'InternetCampusController@countdown');
+
 // Redirects
 Route::get('/nextsteps', 'RedirectController@nextSteps');
 Route::get('/series', 'RedirectController@sermons');
