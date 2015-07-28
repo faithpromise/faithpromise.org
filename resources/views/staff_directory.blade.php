@@ -11,7 +11,7 @@
 </div>
 
 <div class="TableSection">
-    <div class="TableSection-container">
+    <div class="TableSection-container Container--wide">
         <h2 class="TableSection-title">Staff Directory</h2>
         <table class="StaffList">
             <tbody>
