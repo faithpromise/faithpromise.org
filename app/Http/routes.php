@@ -46,7 +46,10 @@ Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 // General pages
 Route::get('/what-to-expect', 'MainController@defaultPage');
 Route::get('/beliefs-and-values', 'MainController@defaultPage');
+Route::get('/salvation', 'MainController@defaultPage');
 Route::get('/baptism', 'MainController@defaultPage');
+Route::get('/h4h', 'MainController@defaultPage');
+Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
 
 // Redirects
 Route::get('/nextsteps', 'RedirectController@nextSteps');
