@@ -3,8 +3,7 @@
 @section('content')
 
     @include('partials.hero_video', [
-        'video' => $video,
-        'heading' => 'Latest Sermon:'
+        'video' => $video
     ])
 
     <div class="TableSection">

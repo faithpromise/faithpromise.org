@@ -13,7 +13,7 @@ class Series extends Model {
     protected $dates = ['starts_at', 'publish_at', 'created_at', 'updated_at'];
 
     public function videos() {
-        return $this->hasMany('App\Video');
+        return $this->hasMany('App\Video')->orderBy('sermon_date');
     }
 
     public function getHeroImageAttribute() {

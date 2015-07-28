@@ -32,7 +32,7 @@
 
                 <div class="HeroVideo-info">
 
-                    @if (strlen($heading))
+                    @if (! empty($heading))
                         <h2 class="HeroVideo-heading">{{ $heading }}</h2>
                     @endif
                     <h3 class="HeroVideo-title">{{ $video->title }}</h3>

@@ -16,7 +16,7 @@ class Video extends Model {
     }
 
     public function speaker() {
-        return $this->belongsTo('App\Staff', 'id', 'speaker_id');
+        return $this->belongsTo('App\Staff', 'speaker_id', 'id');
     }
 
     public function getHeroImageAttribute() {
@@ -26,6 +26,20 @@ class Video extends Model {
         } else {
             return $this->Speaker->hero_image;
         }
+    }
+
+    public function getSpeakerDisplayNameAttribute() {
+        if (strlen($this->speaker_name)) {
+            return $this->speaker_name;
+        }
+        if (! is_null($this->Speaker)) {
+            return $this->Speaker->display_name;
+        }
+        return '';
+    }
+
+    public function getSermonDateFormattedAttribute() {
+        return is_null($this->sermon_date) ? '' : $this->sermon_date->format('M d, Y');
     }
 
 }

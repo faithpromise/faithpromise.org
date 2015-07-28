@@ -12,8 +12,8 @@
         @foreach ($series->videos as $v)
             <tr class="{% if v.ident == include.selected %}Playlist-selected{% endif %}">
                 <td><a href="{{ route('seriesVideo', ['series' => $series->ident, 'video' => $v->ident]) }}" title="Learn more">{{ $v->title }}</a></td>
-                <td>{{ $v->speaker_name }}</td>
-                <td>{{ $v->sermon_date->format('M d, Y') }}</td>
+                <td>{{ $v->speaker_display_name }}</td>
+                <td>{{ $v->sermon_date_formatted }}</td>
                 <td class="Playlist-iconColumn">
                     <div class="Dropdown-wrapper" dropdown>
                                     <span class="PlayList-iconLink" title="More options" dropdown-toggle>

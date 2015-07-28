@@ -27,7 +27,6 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
 
         <div class="Layout">
 
-            <div class="Nav-background"></div>
             <div id="js-nav" class="Nav">
                 <div class="Nav-container">
 
