@@ -115,30 +115,15 @@
 
 @media (min-width: @Nav-desktop-min) {
 
-  // Solid nav
-  body.navStyle--solid {
-    .Nav {
-      background-color: #fff;
-    }
-    .Nav-background {
-      display: none;
-    }
-    .Nav-logo {
-      fill: #222;
-    }
-    .Nav-link {
-      color: #555;
-    }
-  }
-
   .Nav {
-    position: absolute;
-    z-index:  @z-index-nav;
-    left:     0;
-    right:    0;
-    height:   @Nav-height-lg;
-    width:    100%;
-    padding:  @Nav-vPadding-lg 0;
+    position:         absolute;
+    z-index:          @z-index-nav;
+    left:             0;
+    right:            0;
+    height:           @Nav-height-lg;
+    width:            100%;
+    padding:          @Nav-vPadding-lg 0;
+    background-color: #000;
   }
 
   .Nav-menu {
@@ -190,18 +175,6 @@
     &:hover {
       text-decoration: none;
     }
-  }
-
-  .Nav-background {
-    position: absolute;
-    top:      0;
-    right:    0;
-    left:     0;
-    z-index:  @z-index-nav-background;
-    display:  block;
-    width:    100%;
-    height:   (@Nav-height-lg * 1.6);
-    #gradient> .vertical(rgba(0, 0, 0, 0.34), transparent, 0%, 100%); // Shows behind nav
   }
 
 }
