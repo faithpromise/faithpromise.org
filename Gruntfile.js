@@ -91,7 +91,7 @@ module.exports = function (grunt) {
                 },
                 production: {
                     files: [{
-                        src: lessInput,
+                        src: [lessInput, less_src_dir + '/variables/production.less'],
                         dest: less_output_file_production
                     }],
                     options: {
