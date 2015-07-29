@@ -91,9 +91,21 @@
       "src": "entypo"
     },
     {
+      "uid": "91daf8fde1042a363514ca7e42d89570",
+      "css": "github-circled",
+      "code": 59416,
+      "src": "entypo"
+    },
+    {
       "uid": "538531af0e023b15882c505ee2297cbe",
       "css": "vimeo",
       "code": 59411,
+      "src": "entypo"
+    },
+    {
+      "uid": "6569bd1801e232180221ba0f6a4b8b27",
+      "css": "vimeo-circled",
+      "code": 59413,
       "src": "entypo"
     },
     {
@@ -103,15 +115,33 @@
       "src": "entypo"
     },
     {
+      "uid": "0419da6446cb4f31093e2022793571ca",
+      "css": "twitter-circled",
+      "code": 59414,
+      "src": "entypo"
+    },
+    {
       "uid": "bc50457410acf467b8b5721240768742",
       "css": "facebook",
       "code": 59392,
       "src": "entypo"
     },
     {
+      "uid": "ce1d525f3f31024c6a6b38f5e9a88953",
+      "css": "facebook-circled",
+      "code": 59415,
+      "src": "entypo"
+    },
+    {
       "uid": "689febe699d74bc8862965555503e445",
       "css": "pinterest",
       "code": 59408,
+      "src": "entypo"
+    },
+    {
+      "uid": "2e9c0fdd4d59598cb122801ab80222e7",
+      "css": "pinterest-circled",
+      "code": 59417,
       "src": "entypo"
     },
     {
