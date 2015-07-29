@@ -1,6 +1,6 @@
 
 /* campuses */
-SELECT c.CampusID as id, IF(c.CampusIdent = 'pel', 'pellissippi', c.CampusIdent) AS ident,c.CampusName AS `name`,c.CampusLocation AS location,c.CampusStreet AS address,c.CampusCity AS city,c.CampusState AS state,c.CampusZip As zip,c.CampusLatitude AS lat,c.CampusLongitude AS lng,c.times,c.map_url,c.directions_url,c.CampusDisplayOrder AS sort, NOW() as created_at, NOW() as updated_at
+SELECT c.CampusID as id, IF(c.CampusIdent = 'pel', 'pellissippi', c.CampusIdent) AS ident, REPLACE(c.CampusName, ' Campus', '') AS `name`,c.CampusLocation AS location,c.CampusStreet AS address,c.CampusCity AS city,c.CampusState AS state,c.CampusZip As zip,c.CampusLatitude AS lat,c.CampusLongitude AS lng,c.times,c.map_url,c.directions_url,c.CampusDisplayOrder AS sort, NOW() as created_at, NOW() as updated_at
 FROM campus c;
 
 /* events */
