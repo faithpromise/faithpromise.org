@@ -52,7 +52,7 @@ Route::get('/h4h', 'MainController@defaultPage');
 Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
 
 // iCampus
-Route::get('/countdown', 'InternetCampusController@countdown');
+Route::get('/countdown.js', 'InternetCampusController@countdown');
 
 // Redirects
 Route::get('/nextsteps', 'RedirectController@nextSteps');
