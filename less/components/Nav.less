@@ -117,10 +117,6 @@
 @media (min-width: @Nav-desktop-min) {
 
   .Nav {
-    position:         absolute;
-    z-index:          @z-index-nav;
-    left:             0;
-    right:            0;
     height:           @Nav-height-lg;
     width:            100%;
     padding:          @Nav-vPadding-lg 0;
@@ -159,9 +155,9 @@
   }
 
   .Nav-item {
+    .to-rem(margin, 0 0 0 25);
     position:    relative;
     float:       left;
-    margin-left: 25px;
     cursor:      pointer;
   }
 
