@@ -73,6 +73,59 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
                 </div>
                 <!--<div class="Hero-shim"></div>-->
                 @yield('content')
+                <div class="Footer">
+                    <div class="Footer-container">
+                        <div class="Footer-social">
+                            <h5 class="Footer-socialHeading">Connect with us</h5>
+                            <ul class="Footer-socialList">
+                                <li class="Footer-socialItem">
+                                    <a class="Footer-socialLink" href="https://www.facebook.com/faithpromise"><i class="Footer-socialIcon icon-facebook-circled"></i></a>
+                                </li>
+                                <li class="Footer-socialItem">
+                                    <a class="Footer-socialLink" href="https://twitter.com/faithpromise"><i class="Footer-socialIcon icon-twitter-circled"></i></a>
+                                </li>
+                                <li class="Footer-socialItem">
+                                    <a class="Footer-socialLink" href="https://instagram.com/faithpromise"><i class="Footer-socialIcon icon-instagram"></i></a>
+                                </li>
+                                <li class="Footer-socialItem">
+                                    <a class="Footer-socialLink" href="https://vimeo.com/faithpromise"><i class="Footer-socialIcon icon-vimeo-circled"></i></a>
+                                </li>
+                                <li class="Footer-socialItem">
+                                    <a class="Footer-socialLink" href="https://www.pinterest.com/faithpromise/"><i class="Footer-socialIcon icon-pinterest-circled"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Footer-grid">
+                            <div class="Footer-item">
+                                <ul class="Footer-linkList">
+                                    <li class="Footer-linkItem">
+                                        <a class="Footer-link" href="/locations">Times and locations</a>
+                                    </li>
+                                    <li class="Footer-linkItem">
+                                        <a class="Footer-link" href="/events">Upcoming events</a>
+                                    </li>
+                                    <li class="Footer-linkItem">
+                                        <a class="Footer-link" href="/updates">Get email updates</a>
+                                    </li>
+                                    <li class="Footer-linkItem">
+                                        <a class="Footer-link" href="http://blog.faithpromise.org/">Blog</a>
+                                    </li>
+                                    <li class="Footer-linkItem">
+                                        <a class="Footer-link" href="/jobs">Jobs</a>
+                                    </li>
+                                    <li class="Footer-linkItem">
+                                        <a class="Footer-link" href="/give">Give Online</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="Footer-item">
+                                <p class="Footer-addressLine">Mailing address:</p>
+                                <p class="Footer-addressLine">10740 Faith Promise Lane, Knoxville, TN 37931</p>
+                                <p class="Footer-addressLine"><a href="mailto:office@faithpromise.org">office@faithpromise.org</a>  &nbsp;|&nbsp;  <a href="tel:1-865-251-2590">(865) 251-2590</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
