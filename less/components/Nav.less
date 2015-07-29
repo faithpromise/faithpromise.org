@@ -117,9 +117,8 @@
 @media (min-width: @Nav-desktop-min) {
 
   .Nav {
-    height:           @Nav-height-lg;
+    .to-rem(padding, @Nav-vPadding-lg 0);
     width:            100%;
-    padding:          @Nav-vPadding-lg 0;
     background-color: #000;
   }
 
@@ -130,6 +129,7 @@
   .Nav-container {
     .to-rem(max-width, @ContainerMaxWidth);
     .to-rem(padding, 0 @ContainerHorizontalPadding);
+    .clearfix();
     position: relative;
     margin:   0 auto;
   }
@@ -156,9 +156,9 @@
 
   .Nav-item {
     .to-rem(margin, 0 0 0 25);
-    position:    relative;
-    float:       left;
-    cursor:      pointer;
+    position: relative;
+    float:    left;
+    cursor:   pointer;
   }
 
   .Nav-link {
