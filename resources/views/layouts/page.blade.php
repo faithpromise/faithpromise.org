@@ -13,16 +13,20 @@
 
     /* medium >= 321px */
     @media (min-width: 20.0625rem) {
-        .hero_image { background-image: url({{ cdn_image('md', 'full', $hero_image_wide) }}); }
+        .hero_image { background-image: url({{ cdn_image('md', 'full', $hero_image_tall) }}); }
     }
 
     /* large >= 601px */
     @media (min-width: 30.0625rem) {
-        .hero_image { background-image: url({{ cdn_image('lg', 'full', $hero_image_wide) }}); }
+        .hero_image { background-image: url({{ cdn_image('lg', 'full', $hero_image_tall) }}); }
     }
 
     /* x-large >= 481px */
     @media (min-width: 37.5625rem) {
+        .hero_image { background-image: url({{ cdn_image('xl', 'full', $hero_image_tall) }}); }
+    }
+
+    @media (min-width: 47.5rem) {
         .hero_image { background-image: url({{ cdn_image('xl', 'full', $hero_image_wide) }}); }
     }
 </style>

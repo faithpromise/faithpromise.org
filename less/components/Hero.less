@@ -1,30 +1,18 @@
 // Square format
 .Hero {
-  position:            relative;
   height:              0;
   width:               100%;
   padding-top:         56.25%;
   overflow:            hidden;
   background-size:     cover;
-  background-color:    #fff;
+  background-color:    @NavBackgroundColor;
   background-position: top;
   background-repeat:   no-repeat;
 }
 
 // Wide format
 @media (min-width: 47.5rem) {
-
   .Hero {
     padding-top: 36.48%;
   }
-}
-
-.Hero-container {
-  position: absolute;
-  top:      @Nav-height-lg;
-  right:    0;
-  bottom:   0;
-  left:     0;
-  width:    100%;
-  height:   ~"calc(100% - @{Nav-height-lg})";
 }
