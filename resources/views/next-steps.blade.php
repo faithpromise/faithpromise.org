@@ -35,7 +35,7 @@ $cards = collect([
                 'card_image'    => 'images/pages/groups-tall.jpg',
                 'card_text'     => 'At Faith Promise, we believe spiritual formation occurs primarily in the context of community.',
                 'card_url_text' => 'Learn More',
-                'card_url'      => '/baptism/'
+                'card_url'      => '/groups/'
         ],
         (object)[
                 'card_title'    => 'Serving',
