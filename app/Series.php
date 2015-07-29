@@ -28,6 +28,10 @@ class Series extends Model {
         return $this->starts_at->format('M Y');
     }
 
+    public function scopeCurrentSeries($query) {
+        $query->orderBy('publish_at', 'desc')->take(1);
+    }
+
     public function getDate($next_series_starts) {
 
         $today = Carbon::today();
