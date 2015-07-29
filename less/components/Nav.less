@@ -27,7 +27,7 @@
     min-height:         100%;
     padding-bottom:     70px;
     background-color:   @NavBackgroundColor;
-    color:              #cac9c9;
+    color:              @NavTextColor;
 
     // Transition
     -webkit-transform:  scale(1.1);
@@ -144,7 +144,7 @@
   .Nav-logo {
     width:  191px;
     height: 100%;
-    fill:   #fff;
+    fill:   @NavTextColor;
   }
 
   .Nav-menu {
@@ -163,7 +163,7 @@
 
   .Nav-link {
     .to-rem(font-size, 14);
-    .link-color(#fff);
+    .link-color(@NavTextColor);
     display:        block;
     line-height:    @Nav-logoHeight-lg;
     text-transform: uppercase;
