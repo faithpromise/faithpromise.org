@@ -2,12 +2,10 @@
 
 $css_class = trim('TextSection TextSection--center ' . (isset($class) ? $class : ''));
 $title = isset($title) ? $title : 'Have Questions?';
-$email = isset($email) ? $email : 'office@faithpromise.org';
+$email = isset($email) ? $email : config('site.email');
 $contact = isset($contact) ? $contact : $email;
 $email_link = '<a href="mailto:' . $email . '">' . $contact . '</a>';
 $text = str_replace('#email#', $email_link, (isset($text) ? $text : 'If you still have questions, please contact #email#.'));
-$email = isset($email) ? $email : config('site.email');
-
 ?>
 
 <div class="{{ $css_class }}">
