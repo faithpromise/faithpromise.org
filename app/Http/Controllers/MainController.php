@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
+use App\Series;
 use App\Team;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
@@ -9,7 +11,14 @@ use Illuminate\Support\Facades\Route;
 class MainController extends BaseController {
 
     public function index() {
-        return view('welcome');
+
+        $current_series = Series::currentSeries()->first();
+        $events = Event::orderBy('sort', 'asc')->take(3)->get();
+
+        return view('welcome', [
+            'current_series' => $current_series,
+            'events' => $events
+        ]);
     }
 
     public function staff() {
