@@ -1,0 +1,30 @@
+<div>
+
+  <div class="Countdown" ng-if="!countdown.isLive" ng-cloak>
+        <span class="Countdown-title" ng-hide="countdown.isLoaded">
+            Loading...
+        </span>
+
+        <span class="Countdown-title" ng-show="countdown.isLoaded">
+            <span ng-if="days !== '00'">{{ countdown.days }} days :</span> {{ countdown.hours }} Hrs : {{ countdown.minutes }} Min : {{ countdown.seconds }} Sec
+        </span>
+
+    <p class="Countdown-text">
+      Our next online broadcast begins this {{ countdown.next | date : 'EEEE' }} at {{ countdown.next | date : 'h a' }} (see full list). Or, join us at one of our {{ numLocations }} locations<span ng-show="seriesTitle"> for our current series, “{{ seriesTitle }}”</span>.
+    </p>
+  </div>
+
+  <div class="Countdown" ng-if="countdown.isLive" ng-cloak>
+    <span class="Countdown-title">We're live!</span>
+
+    <p class="Countdown-text">
+      Join us right now online. Or, visit one of our {{ numLocations }} locations<span ng-show="seriesTitle"> for our current series, “{{ seriesTitle }}”</span>.
+    </p>
+  </div>
+
+  <div class="CurrentSeries-buttons">
+    <a class="ActionButton" href="#">Watch Live</a>
+    <a class="ActionButton" href="#">Visit This Weekend</a>
+  </div>
+
+</div>
