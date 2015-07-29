@@ -23,14 +23,12 @@ class Campus extends Model
     }
 
     public function getCardTitleAttribute() {
-        return $this->name;
+        return $this->location;
     }
 
     public function getCardSubtitleAttribute() {
-        if ($this->ident === 'online') {
-            return '<p>Join us from wherever you are</p>';
-        }
-        return '<p>' . $this->address . '<br>' . $this->city . ', ' . $this->state . ' ' . $this->zip . '</p>';
+        $times = json_decode($this->times);
+        return '<p>' . implode('<br>', $times) . '</p>';
     }
 
     public function getCardImageAttribute()
