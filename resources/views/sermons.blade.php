@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => 'Sermons', 'nav_style' => 'solid'])
+@extends('layouts.page', ['title' => 'Sermons'])
 
 @section('content')
 

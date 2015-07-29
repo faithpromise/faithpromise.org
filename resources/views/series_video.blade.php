@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => $video->title, 'hero_image' => $video->Series->hero_image, 'nav_style' => 'solid'])
+@extends('layouts.default', ['title' => $video->title, 'hero_image' => $video->Series->hero_image])
 
 @section('content')
 

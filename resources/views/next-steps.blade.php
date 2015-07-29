@@ -55,7 +55,7 @@ $cards = collect([
 
 ?>
 
-@extends('layouts.page', ['title' => 'Next Steps', 'nav_style' => 'solid'])
+@extends('layouts.page', ['title' => 'Next Steps'])
 
 @section('page')
 
