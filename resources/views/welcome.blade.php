@@ -5,13 +5,13 @@
 @section('content')
 
     <div class="CurrentSeries">
-
         <div class="CurrentSeries-buttons">
-            <a class="CurrentSeries-button icon-play" href=""><span class="CurrentSeries-buttonText">Play Promo</span></a>
+            @if (! is_null($current_series->promo))
+            <span class="CurrentSeries-button icon-play" ng-click="openVideo({{ $current_series->promo->vimeo_id }})"><span class="CurrentSeries-buttonText">Play Promo</span></span>
+            @endif
             <a class="CurrentSeries-button icon-twitter" href="" title="Tweet"></a>
             <a class="CurrentSeries-button icon-facebook" href="" title="Share on Facebook"></a>
         </div>
-
     </div>
 
     @introsection(['title' => $title, 'class' => '', 'image' => '', 'buttons' => [
