@@ -9,8 +9,8 @@
             @if (! is_null($current_series->promo))
             <span class="CurrentSeries-button icon-play" ng-click="openVideo({{ $current_series->promo->vimeo_id }})"><span class="CurrentSeries-buttonText">Play Promo</span></span>
             @endif
-            <a class="CurrentSeries-button icon-twitter" href="" title="Tweet"></a>
-            <a class="CurrentSeries-button icon-facebook" href="" title="Share on Facebook"></a>
+            <a class="CurrentSeries-button icon-twitter" href="<?= share_twitter($current_series->url); ?>" title="Tweet"></a>
+            <a class="CurrentSeries-button icon-facebook" href="<?= share_facebook($current_series->url); ?>" title="Share on Facebook"></a>
         </div>
     </div>
 

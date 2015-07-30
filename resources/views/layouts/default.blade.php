@@ -12,7 +12,19 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
 
         <title>{{ isset($title) ? $title : $site['title'] }}</title>
         <meta name="description" content="{{ isset($description) ? $description : $site['description'] }}">
+        <meta property="fb:app_id" content="{{ $site['facebook_app_id'] }}">
+        @if (isset($og_type))
+        <meta property="og:type" content="{{ $og_type }}">
+        @endif
+        <meta property="article:author" content="{{ isset($article_author) ? $article_author : facebook_url(config('site.facebook_username')) }}">
         <meta property="og:description" content="{{ isset($facebook_description) ? $facebook_description : isset($title) ? $title : $site['title'] }}">
+        <meta property="og:locale" content="en_US">
+        @if (isset($og_image))
+        <meta property="og:image" content="{!! $og_image !!}">
+        @endif
+
+        <meta name="twitter:card" content="{{ isset($twitter_card) ? $twitter_card : 'summary' }}">
+        <meta name="twitter:site" content="{{ '@' . config('site.twitter_username') }}">
 
         <!-- build:style main -->
         <link rel="stylesheet" href="/build/css/main.dev.css">

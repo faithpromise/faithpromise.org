@@ -1,4 +1,9 @@
-@extends('layouts.page', ['title' => $series->title, 'hero_image' => $series->image])
+@extends('layouts.page', [
+    'title' => $series->title,
+    'hero_image' => $series->image,
+    'og_image' => cdn_image_raw($series->image, 'tall'),
+    'og_type' => 'article'
+])
 
 @section('page')
 

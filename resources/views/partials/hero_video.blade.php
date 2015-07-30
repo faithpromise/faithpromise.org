@@ -57,12 +57,12 @@
                                 <i class="icon-headphones"></i>
                             </a>
                         @endif
-                            <a class="HeroVideo-button" href="https://www.facebook.com/dialog/share?app_id={{ $site['facebook_app_id'] }}&display=popup&href={{ $video->url }}&redirect_uri={{ $video->url }}">
+                            <a class="HeroVideo-button" href="<?= share_facebook($video->url); ?>">
                                 <i class="icon-facebook"></i>
                             </a>
-                            {{--<a class="HeroVideo-button" href="https://twitter.com/intent/tweet?text=Check+it+out&url={{ $video->url }}">--}}
-                                {{--<i class="icon-twitter"></i>--}}
-                            {{--</a>--}}
+                            <a class="HeroVideo-button" href="<?= share_twitter($video->url); ?>">
+                                <i class="icon-twitter"></i>
+                            </a>
                     </div>
 
                 </div>

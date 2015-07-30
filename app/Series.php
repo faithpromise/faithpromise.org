@@ -28,6 +28,10 @@ class Series extends Model {
         return 'images/home/' . $this->ident . '-square.jpg';
     }
 
+    public function getUrlAttribute() {
+        return route('series', ['series' => $this->ident]);
+    }
+
     public function getHomeCssAttribute() {
         return '/build/css/' . $this->ident . '.css';
     }

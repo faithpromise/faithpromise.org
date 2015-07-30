@@ -17,10 +17,16 @@ function asset_exists($path) {
     return $exists;
 }
 
-function cdn_image_raw($image_path) {
+function cdn_image_raw($image_path, $format = null) {
 
     $query_string = asset_exists($image_path) ? '?v=' . filemtime(asset_path($image_path)) : '';
-    return config('site.cdn_url') . '/' . $image_path . $query_string;
+
+    if ($format !== null) {
+        $format_suffix = '-' . $format . '.jpg';
+        $image_path = preg_replace('/(-(square|tall|wide))?\.jpg$/', $format_suffix, $image_path);
+    }
+
+    return 'http:' . config('site.cdn_url') . '/' . $image_path . $query_string;
 }
 
 function cdn_image($display_width, $image_width, $image_path, $format = null) {
@@ -80,4 +86,18 @@ function bible_verses($scriptures) {
 
     return implode(', ', $links);
 
+}
+
+function share_facebook($url, $redirect_url = null) {
+    $app_id = config('site.facebook_app_id');
+    $redirect_url = is_null($redirect_url) ? $url : $redirect_url;
+    return 'https://www.facebook.com/dialog/share?app_id=' . $app_id . '&display=popup&href=' . $url . '&redirect_uri=' . $redirect_url;
+}
+
+function share_twitter($url) {
+    return 'https://twitter.com/intent/tweet?text=Check+it+out&url=' . $url;
+}
+
+function facebook_url($username) {
+    return 'https://www.facebook.com/' . $username;
 }
