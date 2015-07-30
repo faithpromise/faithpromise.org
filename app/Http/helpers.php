@@ -8,6 +8,10 @@ function asset_exists($path) {
     return file_exists(asset_path($path));
 }
 
+function cdn_image_raw($image_path) {
+    return config('site.cdn_url') . '/' . $image_path . '?v=' . filemtime(asset_path($image_path));
+}
+
 function cdn_image($display_width, $image_width, $image_path, $format = null) {
 
     // Not a local image. Return
