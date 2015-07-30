@@ -81,7 +81,7 @@ $faq = [
         Contact
         ========================================
     --}}
-    @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you still have questions about fpKids, please contact'])
+    @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you still have questions about fpKids, please contact #email#'])
 
     {{--
         ========================================
