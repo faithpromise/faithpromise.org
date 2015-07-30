@@ -1,26 +1,31 @@
+@CurrentSeries-font-size: 32;
+
 .CurrentSeries {
+  font-size:           ~"@{font-size}px";
   position:            relative;
-  height:              56.25vw;
 
   background-position: center;
   background-repeat:   no-repeat;
   background-size:     cover;
 }
 
+.CurrentSeries-buttons {
+  .to-em(font-size, @CurrentSeries-font-size, @font-size);
+}
+
 .CurrentSeries-button {
-  .to-rem(font-size, 32);
-  .to-rem(margin, 0 10 0 0);
+  .to-rem(margin, 0 7 0 0);
   .to-rem(border-radius, 70);
-
-
+  .to-em(min-width, 59, @CurrentSeries-font-size);
+  .to-em(line-height, 50, @CurrentSeries-font-size);
+  .to-em(border-width, 4, @CurrentSeries-font-size);
 
   display:        inline-block;
-  border:         4px solid @root-text-color;
+  border-style:   solid;
+  border-color:   @root-text-color;
   text-transform: uppercase;
 
-  min-width: 59px;
-  text-align: center;
-  line-height: 50px;
+  text-align:     center;
   vertical-align: middle;
 
   &:before {
@@ -38,7 +43,7 @@
 }
 
 .CurrentSeries-buttonText {
-  .to-rem(font-size, 18);
+  .to-em(font-size, 18, @CurrentSeries-font-size);
   display:        inline-block;
   vertical-align: middle;
 }

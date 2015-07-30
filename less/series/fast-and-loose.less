@@ -1,28 +1,80 @@
+@import "../variables/text";
 @import "../variables/paths";
 @import "../mixins/link-color";
+@import "../mixins/to-em";
+@import "../../bower_components/cardinal/core/mixins/to-rem.less";
 
 @series_ident: 'fast-and-loose';
 @button_color: #4B3774;
 
 .CurrentSeries {
   background-color: #555;
-  background-image: url(~"@{cdn_url}/images/home/@{series_ident}/@{series_ident}-home-tall.jpg");
 }
 
 .CurrentSeries-buttons {
+  .to-em(font-size, 26, @font-size);
   position: absolute;
-  bottom:   12%;
-  left:     6%;
+
 }
 
 .CurrentSeries-button {
   .link-color(@button_color);
   border-color: @button_color;
   transition:   opacity .2s ease-in-out;
-  opacity: .63;
+  opacity:      .63;
 
   &:hover {
-    opacity: 1;
+    opacity:         1;
     text-decoration: none;
+  }
+
+}
+
+// 530 +
+@media(min-width: 33.125em) {
+  .CurrentSeries-buttons {
+    .to-em(font-size, 32, @font-size);
+  }
+}
+
+// Up to 639px
+@media (max-width: 39.9375em) {
+  .CurrentSeries {
+    height:           100vw; // Square
+    background-image: url(~"@{cdn_url}/images/home/@{series_ident}/@{series_ident}-home-square.jpg");
+  }
+
+  .CurrentSeries-buttons {
+    bottom:     12%;
+    width:      100%;
+    text-align: center;
+  }
+}
+
+// 640px +
+@media (min-width: 40em) {
+  .CurrentSeries {
+    height:           56.25vw; // Tall (1920x1080)
+    background-image: url(~"@{cdn_url}/images/home/@{series_ident}/@{series_ident}-home-tall.jpg");
+  }
+
+  .CurrentSeries-buttons {
+    .to-em(font-size, 22, @font-size);
+    bottom: 12%;
+    left:   6%;
+  }
+}
+
+// 820px +
+@media (min-width: 51.25em) {
+  .CurrentSeries-buttons {
+    .to-em(font-size, 26, @font-size);
+  }
+}
+
+// 930px +
+@media (min-width: 58.125em) {
+  .CurrentSeries-buttons {
+    .to-em(font-size, 32, @font-size);
   }
 }
