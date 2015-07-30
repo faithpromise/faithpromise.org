@@ -27,8 +27,12 @@ class Campus extends Model
     }
 
     public function getCardSubtitleAttribute() {
+        return $this->name . ' Campus';
+    }
+
+    public function getCardTextAttribute() {
         $times = json_decode($this->times);
-        return '<p>' . implode('<br>', $times) . '</p>';
+        return is_array($times) ? implode('<br>', $times) : '';
     }
 
     public function getCardImageAttribute()
