@@ -40,6 +40,10 @@ class Event extends Model
         return $this->dates_text;
     }
 
+    public function getCardTextAttribute() {
+        return $this->excerpt;
+    }
+
     public function getCardImageAttribute()
     {
         return $this->getThumbnailAttribute();
