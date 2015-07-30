@@ -58,7 +58,7 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
         Community Groups
     ================================================================================ --}}
 
-    @bgsection(['title' => 'Community Groups', 'class' => '', 'image' => 'images/fpstudents/worship-2-wide.jpg'])
+    @bgsection(['title' => 'Community Groups', 'class' => '', 'image' => 'images/general/groups-wide.jpg'])
     <p>A group at Faith Promise is an environment where three or more people can connect to develop and grow in their relationship with Christ. We want to help you find a group that meets near your home or work.</p>
     <p>
         <a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7079&weekday=&start_time=">Find a Group</a>
@@ -96,7 +96,7 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
     @bgsection([
         'title' => 'Group Leaders',
         'class' => 'BackgroundSection--right',
-        'image' => 'images/worship/jesus-wide.jpg',
+        'image' => 'images/general/group-leaders-wide.jpg',
         'buttons' => [
             [
                 'title' => 'Lead a group',
@@ -108,7 +108,7 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
             ]
         ]
     ])
-    <p>Interesting in leading a group? Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life.</p>
+    <p>Interesting in leading a group? We want to help you as you help others grow in their relationship with Christ.</p>
     @endbgsection
 
 
