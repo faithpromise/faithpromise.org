@@ -8,6 +8,7 @@
 @button_color: #4B3774;
 
 .CurrentSeries {
+  height:           100vw; // Square
   background-color: #555;
 }
 
@@ -31,7 +32,7 @@
 }
 
 // 530 +
-@media(min-width: 33.125em) {
+@media (min-width: 33.125em) {
   .CurrentSeries-buttons {
     .to-em(font-size, 32, @font-size);
   }
@@ -40,7 +41,6 @@
 // Up to 639px
 @media (max-width: 39.9375em) {
   .CurrentSeries {
-    height:           100vw; // Square
     background-image: url(~"@{cdn_url}/images/home/@{series_ident}/@{series_ident}-home-square.jpg?v=1");
   }
 
@@ -54,27 +54,32 @@
 // 640px +
 @media (min-width: 40em) {
   .CurrentSeries {
-    height:           56.25vw; // Tall (1920x1080)
-    background-image: url(~"@{cdn_url}/images/home/@{series_ident}/@{series_ident}-home-tall.jpg?v=1");
+    height:           36.4583333vw; // Tall (1920x1080)
+    background-image: url(~"@{cdn_url}/images/home/@{series_ident}/@{series_ident}-home-wide.jpg?v=1");
   }
 
   .CurrentSeries-buttons {
-    .to-em(font-size, 22, @font-size);
-    bottom: 12%;
-    left:   6%;
+    .to-em(font-size, 18, @font-size);
+    bottom: 9%;
+    left:   15%;
   }
 }
 
 // 820px +
 @media (min-width: 51.25em) {
   .CurrentSeries-buttons {
-    .to-em(font-size, 26, @font-size);
+    .to-em(font-size, 24, @font-size);
+  }
+
+  .CurrentSeries-buttons {
+    .to-em(font-size, 22, @font-size);
+    bottom: 8%;
   }
 }
 
 // 930px +
 @media (min-width: 58.125em) {
   .CurrentSeries-buttons {
-    .to-em(font-size, 32, @font-size);
+    .to-em(font-size, 28, @font-size);
   }
 }
