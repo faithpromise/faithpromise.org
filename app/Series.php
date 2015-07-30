@@ -23,6 +23,9 @@ class Series extends Model {
     public function getHomeImageAttribute() {
         return 'images/home/' . $this->ident . '-square.jpg';
     }
+
+    public function getHomeCssAttribute() {
+        return 'images/home/' . $this->ident . '.css';
     }
 
     public function getWhenAttribute() {
