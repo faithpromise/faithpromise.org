@@ -26,7 +26,7 @@ class CampusesController extends BaseController {
                 'lng' => $campus->lng,
                 'map_url' => $campus->map_url,
                 'directions_url' => $campus->directions_url,
-                'thumbnail' => cdn_image('sm', 'full', $campus->thumbnail),
+                'thumbnail' => cdn_image('sm', 'full', $campus->image, 'wide'),
                 'url' => $campus->url,
                 'times' => json_decode($campus->times)
             ];

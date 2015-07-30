@@ -16,12 +16,13 @@ class Series extends Model {
         return $this->hasMany('App\Video')->orderBy('sermon_date');
     }
 
-    public function getHeroImageAttribute() {
+    public function getImageAttribute() {
         return 'images/series/' . $this->ident . '-wide.jpg';
     }
 
-    public function getAlbumImageAttribute() {
-        return 'images/series/' . $this->ident . '-square.jpg';
+    public function getHomeImageAttribute() {
+        return 'images/home/' . $this->ident . '-square.jpg';
+    }
     }
 
     public function getWhenAttribute() {

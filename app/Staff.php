@@ -22,16 +22,10 @@ class Staff extends Model {
         return $this->belongsToMany('App\Ministry', 'staff_ministry');
     }
 
-    public function getThumbnailAttribute() {
+    public function getImageAttribute() {
         $img = 'images/staff/' . $this->ident . '-square.jpg';
         return asset_exists($img) ? $img : 'https://randomuser.me/api/portraits/lego/' . rand(0, 9) .'.jpg';
-
-    }
-
-    public function getHeroImageAttribute() {
-        return 'images/staff/' . $this->ident . '-square.jpg';
-        // IMAGE: Change to wide when we have wide images for staff
-        // IMAGE: Add a default hero image if one doesn't exist?
+        // IMAGE: Make a (local) default photo for staff
     }
 
     public function getProfileNameAttribute() {
@@ -47,7 +41,7 @@ class Staff extends Model {
     }
 
     public function getProfileImageAttribute() {
-        return $this->getThumbnailAttribute();
+        return $this->getImageAttribute();
     }
 
 }

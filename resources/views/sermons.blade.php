@@ -23,10 +23,10 @@
                                     <img
                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                             class="SeriesGallery-thumb b-lazy"
-                                            data-src-sm="{{ cdn_image('sm', 'quarter', $item->album_image) }}"
-                                            data-src-md="{{ cdn_image('md', 'quarter', $item->album_image) }}"
-                                            data-src-lg="{{ cdn_image('lg', 'quarter', $item->album_image) }}"
-                                            data-src="{{ cdn_image('xl', 'quarter', $item->album_image) }}">
+                                            data-src-sm="{{ cdn_image('sm', 'quarter', $item->image, 'square') }}"
+                                            data-src-md="{{ cdn_image('md', 'quarter', $item->image, 'square') }}"
+                                            data-src-lg="{{ cdn_image('lg', 'quarter', $item->image, 'square') }}"
+                                            data-src="{{ cdn_image('xl', 'quarter', $item->image, 'square') }}">
 
                                     <div class="SeriesGallery-titles">
                                         <h3 class="SeriesGallery-title">{{ $item->title }}</h3>

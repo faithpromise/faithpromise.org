@@ -1,7 +1,7 @@
 <style type="text/css" scoped>
     @media (max-width: 499px) {
         .HeroVideo-image {
-            background-image: url({{ cdn_image('sm', 'full', $video->hero_image) }});
+            background-image: url({{ cdn_image('sm', 'full', $video->image) }});
         }
 
         /* -square */
@@ -9,7 +9,7 @@
 
     @media (min-width: 500px) {
         .HeroVideo-image {
-            background-image: url({{ cdn_image('md', 'full', $video->hero_image, 'square') }});
+            background-image: url({{ cdn_image('md', 'full', $video->image, 'square') }});
         }
 
         /* -tall */
@@ -17,7 +17,7 @@
 
     @media (min-width: 1300px) {
         .HeroVideo-image {
-            background-image: url({{ cdn_image('xl', 'half', $video->hero_image, 'tall') }});
+            background-image: url({{ cdn_image('xl', 'half', $video->image, 'tall') }});
         }
     }
 </style>

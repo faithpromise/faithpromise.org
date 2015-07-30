@@ -22,10 +22,10 @@ class Event extends Model
         return $this->hasMany('App\CalendarEvent', 'event_number', 'calendar_event_number');
     }
 
-    public function getThumbnailAttribute() {
+    public function getImageAttribute() {
 
-        if (strlen($this->image)) {
-            return 'images/events/' . $this->image;
+        if (strlen($this->getOriginal('image'))) {
+            return 'images/events/' . $this->getOriginal('image');
         }
 
         // IMAGE: Create a placeholder image for events
@@ -46,7 +46,7 @@ class Event extends Model
 
     public function getCardImageAttribute()
     {
-        return $this->getThumbnailAttribute();
+        return $this->image;
     }
 
     public function getCardUrlTextAttribute() {

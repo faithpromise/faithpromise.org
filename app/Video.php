@@ -19,12 +19,12 @@ class Video extends Model {
         return $this->belongsTo('App\Staff', 'speaker_id', 'id');
     }
 
-    public function getHeroImageAttribute() {
+    public function getImageAttribute() {
         $series = $this->Series;
         if ($series->is_official) {
             return 'images/series/' . $series->ident . '-tall.jpg';
         } else {
-            return $this->Speaker->hero_image;
+            return $this->Speaker->image;
         }
     }
 

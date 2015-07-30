@@ -2,7 +2,7 @@
     // IMAGE: Need hero image for staff
 ?>
 
-@extends('layouts.page', ['title' => 'Staff Directory'])
+@extends('layouts.page', ['title' => 'Staff Directory', 'hero_image' => 'images/pages/staff-wide.jpg'])
 
 @section('page')
 
@@ -19,10 +19,10 @@
                     <tr class="StaffList-row" onclick="window.document.location='/staff/{{ $member->ident }}';">
                         <td class="StaffList-column StaffList-column--photo">
                             <span class="StaffList-photo b-lazy"
-                                    data-src-sm="{{ cdn_image('sm', 'quarter', $member->thumbnail) }}"
-                                    data-src-md="{{ cdn_image('md', 'quarter', $member->thumbnail) }}"
-                                    data-src-lg="{{ cdn_image('lg', 'quarter', $member->thumbnail) }}"
-                                    data-src="{{ cdn_image('xl', 'quarter', $member->thumbnail) }}"></span>
+                                    data-src-sm="{{ cdn_image('sm', 'quarter', $member->image, 'square') }}"
+                                    data-src-md="{{ cdn_image('md', 'quarter', $member->image, 'square') }}"
+                                    data-src-lg="{{ cdn_image('lg', 'quarter', $member->image, 'square') }}"
+                                    data-src="{{ cdn_image('xl', 'quarter', $member->image, 'square') }}"></span>
                         </td>
                         <td class="StaffList-column StaffList-column--name">
                             <span class="StaffList-name">{{ $member->display_name }}</span>

@@ -14,7 +14,7 @@ class Missionary extends Model
         return $this->belongsTo('App\MissionLocation');
     }
 
-    public function getThumbnailAttribute() {
+    public function getImageAttribute() {
         $img = 'images/missions/missionaries/' . $this->ident . '-square.jpg';
         return asset_exists($img) ? $img : 'https://randomuser.me/api/portraits/lego/' . rand(0, 9) .'.jpg';
     }
@@ -32,6 +32,6 @@ class Missionary extends Model
     }
 
     public function getProfileImageAttribute() {
-        return $this->getThumbnailAttribute();
+        return $this->getImageAttribute();
     }
 }

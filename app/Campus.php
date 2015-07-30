@@ -18,7 +18,7 @@ class Campus extends Model
         return '/locations/' . $this->ident;
     }
 
-    public function getThumbnailAttribute() {
+    public function getImageAttribute() {
         return 'images/campuses/' . $this->ident . '-wide.jpg';
     }
 
@@ -37,7 +37,7 @@ class Campus extends Model
 
     public function getCardImageAttribute()
     {
-        return $this->getThumbnailAttribute();
+        return $this->getImageAttribute();
     }
 
     public function getCardUrlTextAttribute() {
