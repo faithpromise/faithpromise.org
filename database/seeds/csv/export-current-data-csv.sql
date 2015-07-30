@@ -7,6 +7,7 @@ FROM campus c;
 select
 REPLACE(REPLACE(REPLACE(REPLACE(NewsTitle, ' ', '-'), '"', ''), '''', '') , ':', '') as ident,
 NewsTitle as title,
+NewsDates as dates_text,
 concat(NewsIdent, '.jpg') as image, NewsShortDescription as excerpt, NewsDescription as description, NewsPublishDate as publish_at, NewsExpireDate as expire_at, NewsPlaceOnHomePage as is_featured, NewsSort as sort, NewsDateCreated as created_at, NewsDateModified as updated_at
 from newsupdate;
 
