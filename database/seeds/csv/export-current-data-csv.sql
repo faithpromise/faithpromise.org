@@ -12,7 +12,7 @@ concat(NewsIdent, '.jpg') as image, NewsShortDescription as excerpt, NewsDescrip
 from newsupdate;
 
 /* series */
-SELECT  s.SeriesID as id,s.SeriesIdent AS ident,s.SeriesTitle as title,s.SeriesDescription as description,s.is_official_series as is_official,s.begin_date as starts_at,s.begin_date AS publish_at,s.SeriesDateCreated as created_at,s.SeriesDateModified as updated_at
+SELECT  s.SeriesID as id,s.SeriesIdent AS ident,s.SeriesTitle as title,s.SeriesDescription as description,s.is_official_series as is_official,s.begin_date as starts_at,s.SeriesDateCreated AS publish_at,s.SeriesDateCreated as created_at,s.SeriesDateModified as updated_at
 FROM series s JOIN seriesMedia m ON s.SeriesID = m.SeriesID
 WHERE s.SeriesDateCreated IS NOT NULL
 	AND (m.MediaVimeoID IS NOT NULL OR m.MediaAudioURL IS NOT NULL)
