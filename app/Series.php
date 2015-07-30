@@ -16,6 +16,10 @@ class Series extends Model {
         return $this->hasMany('App\Video')->orderBy('sermon_date');
     }
 
+    public function promo() {
+        return $this->hasOne('App\Video')->where('type', '=', 'promo');
+    }
+
     public function getImageAttribute() {
         return 'images/series/' . $this->ident . '-wide.jpg';
     }
