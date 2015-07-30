@@ -13,7 +13,8 @@ if ($directive['execution_mode'] == 'start'):
         [
             'title' => '',
             'class' => '',
-            'cards' => []
+            'cards' => [],
+            'buttons' => []
         ], $directive["args"]
     );
     $args['class'] = trim('GridSection ' . (isset($args['class']) ? $args['class'] : ''));
@@ -31,9 +32,16 @@ if ($directive['execution_mode'] == 'start'):
 
 <?php if ($directive['execution_mode'] == 'end'): ?>
     <?php $args['content'] = ob_get_clean();
-    if (strlen(trim($args['content']))): ?>
+    if (strlen(trim($args['content'])) OR count($args["buttons"])): ?>
         <div class="GridSection-text">
             <?= $args['content'] ?>
+            <?php if (count($args["buttons"])): ?>
+                <p class="text-center">
+                    <?php foreach ($args["buttons"] as $button): ?>
+                        <a class="Button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
+                    <?php endforeach; ?>
+                </p>
+            <?php endif; ?>
         </div>
     <?php
     endif;
