@@ -54,13 +54,17 @@ if ($directive['execution_mode'] == 'start'):
                         <span class="Card-image" style="background-image: url(<?= $card->card_image ?>);"></span>
                     <?php endif; ?>
                     <div class="Card-body">
-                        <?php if (isset($card->card_url)): ?>
+                        <?php if (! empty($card->card_url)): ?>
                             <h3 class="Card-title"><a href="<?= $card->card_url ?>"><?= $card->card_title ?></a></h3>
                         <?php else: ?>
                             <h3 class="Card-title"><?= $card->card_title ?></h3>
                         <?php endif; ?>
-                        <h4 class="Card-subtitle"><?= isset($card->card_subtitle) ? $card->card_subtitle : ""; ?></h4>
-                        <p class="Card-text"><?= isset($card->card_text) ? $card->card_text : ""; ?></p>
+                        <?php if (! empty($card->card_subtitle)): ?>
+                            <h4 class="Card-subtitle"><?= $card->card_subtitle ?></h4>
+                        <?php endif; ?>
+                        <?php if (! empty($card->card_text)): ?>
+                            <p class="Card-text"><?= $card->card_text; ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="Card-footer">
                         <?php if (isset($card->card_url)): ?>
