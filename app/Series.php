@@ -25,7 +25,7 @@ class Series extends Model {
     }
 
     public function getHomeCssAttribute() {
-        return 'images/home/' . $this->ident . '.css';
+        return '/build/css/' . $this->ident . '.css';
     }
 
     public function getWhenAttribute() {
