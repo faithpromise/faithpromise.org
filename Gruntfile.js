@@ -90,7 +90,7 @@ module.exports = function (grunt) {
                 dev: {
                     files: [
                         {
-                            src: lessInput,
+                            src: [lessInput],
                             dest: less_output_file_dev
                         },
                         series_less
@@ -102,7 +102,7 @@ module.exports = function (grunt) {
                 production: {
                     files: [
                         {
-                            src: [lessInput, less_src_dir + '/variables/production.less'],
+                            src: [lessInput],
                             dest: less_output_file_production
                         },
                         series_less
@@ -144,6 +144,24 @@ module.exports = function (grunt) {
                             flatten: true,
                             src: [assets_src_dir + '/fontello/css/fontello.css'],
                             dest: temp_dir + '/fontello.css.tmp'
+                        }
+                    ]
+                },
+                cdn_url: {
+                    options: {
+                        patterns: [
+                            {
+                                match: 'assets.faithpromise.192.168.10.10.xip.io',
+                                replacement: 'd3m6gouty6q7nm.cloudfront.net'
+                            }
+                        ],
+                        usePrefix: false
+                    },
+                    files: [
+                        {
+                            expand: false,
+                            src: [release_root + '/' + build_root + '/**/*.css'],
+                            dest: './'
                         }
                     ]
                 },
@@ -341,16 +359,21 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['build_dev']);
 
     grunt.registerTask('deploy_production', [
+        '_build_release',
+        'git_deploy:production',
+        'clean:release' // Clean release so we don't mistakenly work on release files
+    ]);
+
+    grunt.registerTask('_build_release', [
         'clean:build',
         '_build_production',
         'clean:release',
         'copy:release_files',
         'htmlbuild:production',
+        'replace:cdn_url',
         'replace:remove_public',
         'cacheBust:production',
-        'git_deploy:production',
-        'build_dev', // Restore dev files
-        'clean:release' // Clean release so we don't mistakenly work on release files
+        'build_dev' // Restore dev files
     ]);
 
     grunt.registerTask('_build_common', [
