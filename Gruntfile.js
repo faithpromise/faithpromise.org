@@ -41,6 +41,13 @@ module.exports = function (grunt) {
     var lessInput = [
         less_src_dir + '/main.less'
     ];
+    var series_less = {
+        src: less_src_dir + '/series/*.less',
+        dest: less_output_dir + '/',
+        expand: true,
+        flatten: true,
+        ext: '.css'
+    };
 
     // Assets paths
     var assets_src_dir = src_root + '/assets';
@@ -81,19 +88,25 @@ module.exports = function (grunt) {
             },
             less: {
                 dev: {
-                    files: [{
-                        src: lessInput,
-                        dest: less_output_file_dev
-                    }],
+                    files: [
+                        {
+                            src: lessInput,
+                            dest: less_output_file_dev
+                        },
+                        series_less
+                    ],
                     options: {
                         compress: false
                     }
                 },
                 production: {
-                    files: [{
-                        src: [lessInput, less_src_dir + '/variables/production.less'],
-                        dest: less_output_file_production
-                    }],
+                    files: [
+                        {
+                            src: [lessInput, less_src_dir + '/variables/production.less'],
+                            dest: less_output_file_production
+                        },
+                        series_less
+                    ],
                     options: {
                         compress: true
                     }
