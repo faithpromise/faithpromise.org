@@ -52,7 +52,7 @@ class EventsController extends BaseController {
 
         if ($days->count() === 0 && $current_month->eq($beginning_of_month)) {
             $redirect_to_month = $beginning_of_month->addMonth(1);
-            return redirect(route('calendarMonth', ['year' => $redirect_to_month->year, 'month' => $redirect_to_month->month]));
+            return redirect()->route('calendarMonth', ['year' => $redirect_to_month->year, 'month' => $redirect_to_month->month]);
         }
 
         return view('events_calendar', [
