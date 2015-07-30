@@ -20,8 +20,8 @@ Route::get('/series/{series}/{video}', ['as' => 'seriesVideo', 'uses' => 'Sermon
 
 // Events
 Route::get('/events', 'EventsController@index');
-Route::get('/events/calendar', 'EventsController@calendar');
-Route::get('/events/calendar/{year}/{month}', 'EventsController@calendarMonth');
+Route::get('/events/calendar', ['as' => 'calendar', 'uses' => 'EventsController@calendar']);
+Route::get('/events/calendar/{year}/{month}', ['as' => 'calendarMonth', 'uses' => 'EventsController@calendarMonth']);
 
 // Campuses / Locations
 Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@index']);
