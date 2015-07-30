@@ -1,4 +1,3 @@
-<!-- REVIEW: Make this section superfly -->
 <div class="VisitSection">
     <div class="VisitSection-container">
         <h2 class="VisitSection-title">Join us this Weekend</h2>

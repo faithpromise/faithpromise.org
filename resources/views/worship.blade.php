@@ -1,5 +1,3 @@
-<!-- PAGE: add content -->
-
 @extends('layouts.page', ['title' => 'Worship Ministry'])
 
 @section('page')

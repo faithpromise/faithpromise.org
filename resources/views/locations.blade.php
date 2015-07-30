@@ -1,7 +1,3 @@
-<?php
-// IMAGE: Need hero image
-?>
-
 @extends('layouts.page', ['title' => 'Locations'])
 
 @section('page')

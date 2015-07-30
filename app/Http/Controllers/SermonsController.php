@@ -35,8 +35,6 @@ class SermonsController extends BaseController {
 
         $video = Video::where('ident', '=', $video_ident)->with('Series')->first();
 
-        // TODO: Change to just get video with series
-
         if ($video->Series->ident !== $series_ident) {
             abort(404);
         }

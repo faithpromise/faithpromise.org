@@ -1,7 +1,3 @@
-<?php
-    // IMAGE: Need hero image for staff
-?>
-
 @extends('layouts.page', ['title' => 'Staff Directory', 'hero_image' => 'images/pages/staff-wide.jpg'])
 
 @section('page')

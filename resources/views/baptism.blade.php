@@ -1,5 +1,3 @@
-<!--PAGE: Add content-->
-
 <?php
 
         $faq = collect([

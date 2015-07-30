@@ -1,4 +1,3 @@
-<!--PAGE: Add content-->
 <?php
 
 $cards = collect([

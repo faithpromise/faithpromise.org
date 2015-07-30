@@ -1,5 +1,3 @@
-<!--PAGE: Add content-->
-
 @extends('layouts.page', ['title' => 'fpStudents'])
 
 @section('page')
@@ -31,11 +29,10 @@
         Serve
     ================================================================================ --}}
 
-    @bgsection(['title' => 'Get Involved', 'image' => 'images/fpstudents/worship-2-wide.jpg'])
-    <p><!-- REVIEW: change text -->Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
-    <!-- REVIEW: Change link -->
-    <p><a class="Button" href="http://fpstudents.com">Learn more</a></p>
-    @endbgsection
+    {{--@bgsection(['title' => 'Get Involved', 'image' => 'images/fpstudents/worship-2-wide.jpg'])--}}
+    {{--<p>Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>--}}
+    {{--<p><a class="Button" href="http://fpstudents.com">Learn more</a></p>--}}
+    {{--@endbgsection--}}
 
 
     {{--

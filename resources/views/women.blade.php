@@ -1,7 +1,5 @@
 @extends('layouts.page', ['title' => 'Women\'s Groups'])
 
-<!-- IMAGE: Needs hero image -->
-
 @section('page')
 
     <div class="TextSection">

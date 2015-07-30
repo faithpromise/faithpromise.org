@@ -1,6 +1,4 @@
-<!--PAGE: Add content-->
-
-@extends('layouts.page', ['title' => 'fpCelebrate'])
+@extends('layouts.page', ['title' => 'fp Celebrate'])
 
 @section('page')
 
@@ -8,7 +6,6 @@
     ================================================================================
         Intro
     ================================================================================ --}}
-<!-- REVIEW: Is it fpCelebrate or fp Celebrate? -->
     @introsection(['title' => 'fpCelebrate'])
     <p>Celebrate Recovery takes place each week on our Pellissippi Campus and fp Celebrate exists to create a culture where you can connect, heal, and grow at Faith Promise Church.  Celebrate meets on Mondays at the FPC Pellissippi Campus. You can always expect a challenging message from a variety of engaging speakers, such as our very own Chad Funk, the leader of our fp Celebrate Ministry. Following our corporate time together, we provide a time for you to take  your journey and recovery to the next level in round table break out or small groups.  </p>
     <p>Bring a friend, family member, neighbor, or co-worker. We can't wait to see you there!</p>

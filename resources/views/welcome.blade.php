@@ -28,7 +28,7 @@
             'url' => '//icampus.faithpromise.org'
         ]
     ]])
-    <p class="sentence-compact"><!-- TODO: change text -->Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
+    <p class="sentence-compact">Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
     @endintrosection
 
     @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $events])

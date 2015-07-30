@@ -28,8 +28,7 @@ class Event extends Model
             return 'images/events/' . $this->getOriginal('image');
         }
 
-        // IMAGE: Create a placeholder image for events
-        return 'https://placekitten.com/g/200/300';
+        return 'images/general/default-wide.jpg';
     }
 
     public function getCardTitleAttribute() {

@@ -1,8 +1,6 @@
 <?php
     $staff_gallery_class = 'StaffSection--square Section--lightGrey';
     $grey_bg = 0;
-
-    // IMAGE: Need hero image for staff
 ?>
 
 @extends('layouts.page', ['title' => 'Meet Our Staff'])

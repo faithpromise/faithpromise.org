@@ -1,10 +1,7 @@
-<!--PAGE: Add content-->
-
 @extends('layouts.page', ['title' => 'Beliefs and Values', 'hero_image' => 'images/general/bible-wide.jpg'])
 
 @section('page')
 
-    <!-- TODO: Get rid of these hardcoded URLS -->
     @introsection(['title' => 'Our Vision', 'class' => '', 'buttons' => [
         [
             'title' => 'Beliefs',

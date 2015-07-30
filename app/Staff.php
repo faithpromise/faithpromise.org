@@ -24,8 +24,7 @@ class Staff extends Model {
 
     public function getImageAttribute() {
         $img = 'images/staff/' . $this->ident . '-square.jpg';
-        return asset_exists($img) ? $img : 'https://randomuser.me/api/portraits/lego/' . rand(0, 9) .'.jpg';
-        // IMAGE: Make a (local) default photo for staff
+        return asset_exists($img) ? $img : 'images/staff/default-square.jpg';
     }
 
     public function getProfileNameAttribute() {

@@ -12,7 +12,7 @@ $women->card_title = 'Women\'s Groups';
 $women->card_text = 'Join with other women as you grow in Christ.';
 $women->card_url = '/women';
 $women->card_url_text = 'Learn more';
-$women->card_image = 'images/pages/women-tall.jpg'; // IMAGE: Need this image
+$women->card_image = 'images/pages/women-tall.jpg';
 
 $young = new stdClass();
 $young->card_title = 'Young Adult Groups';
@@ -58,7 +58,6 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
         Community Groups
     ================================================================================ --}}
 
-    <!-- IMAGE: change this image -->
     @bgsection(['title' => 'Community Groups', 'class' => '', 'image' => 'images/fpstudents/worship-2-wide.jpg'])
     <p>A group at Faith Promise is an environment where three or more people can connect to develop and grow in their relationship with Christ. We want to help you find a group that meets near your home or work.</p>
     <p>
@@ -94,7 +93,6 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
         Leaders
     ================================================================================ --}}
 
-    <!-- IMAGE: change this image -->
     @bgsection([
         'title' => 'Group Leaders',
         'class' => 'BackgroundSection--right',
@@ -110,7 +108,7 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
             ]
         ]
     ])
-    <p>Interesting in leading a group? <!-- REVIEW: change text -->Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life.</p>
+    <p>Interesting in leading a group? Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life.</p>
     @endbgsection
 
 

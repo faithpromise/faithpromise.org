@@ -73,7 +73,6 @@ $faq = [
             color:            #4e2b57;
         }
     </style>
-    <!-- TODO: Fix or remove lazy loading of bg image. PNG is over 1mb. Needs to be 2 color PNG -->
     @faqsection(['faq' => $faq, 'class' => 'has-background kids_faq', 'image' => cdn_image_raw('images/fpkids/pattern-optimized.png')])
     @endfaqsection
 

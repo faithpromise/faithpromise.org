@@ -1,5 +1,3 @@
-<!-- PAGE: Need to finish out this page. Not sure how to make this page work. -->
-
 <?php
 
 $teams = [
@@ -42,7 +40,6 @@ $intercessory_teams = [
 
 ?>
 
-<!-- IMAGE: Need hero image -->
 @extends('layouts.page', ['title' => 'Prayer Ministry'])
 
 @section('page')

@@ -2,8 +2,6 @@
 
 @section('page')
 
-    <!-- TODO: Getting JS error - vimeo not loading because of it -->
-    <!-- IMAGE: Need to replace with real video -->
     @videosection(['title' => 'Welcome to fpKids', 'class' => 'VideoSection--right', 'video' => '127442991'])
     <p>If you're new to Faith Promise or want to learn more about fpKids, this page was created with you in mind.</p>
     @endvideosection

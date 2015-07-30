@@ -1,4 +1,3 @@
-<!-- IMAGE: replace hero image -->
 @extends('layouts.page', ['title' => 'Calendar', 'hero_image' => 'images/worship/jesus-wide.jpg'])
 
 @section('page')

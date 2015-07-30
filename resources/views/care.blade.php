@@ -1,5 +1,3 @@
-<!--PAGE: Add content-->
-
 @extends('layouts.page', ['title' => 'Care Ministries'])
 
 @section('page')
@@ -10,7 +8,7 @@
     </p>
     @endintrosection
 
-    @profilessection(['title' => 'Staff Councelors', 'class' => 'Section--lightGrey', 'profiles' => $ministry->Staff])
+    @profilessection(['title' => 'Staff Counselors', 'class' => 'Section--lightGrey', 'profiles' => $ministry->Staff])
     @endprofilessection
 
     @textsection(['title' => 'Christian Counseling'])

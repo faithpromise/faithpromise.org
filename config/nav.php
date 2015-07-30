@@ -64,7 +64,7 @@ return [
                 'url' => '/care'
             ],
             [
-                'title' => 'fpCelebrate',
+                'title' => 'fp Celebrate',
                 'url' => '/celebrate'
             ]
         ]
