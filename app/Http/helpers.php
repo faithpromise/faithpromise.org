@@ -8,19 +8,21 @@ function asset_exists($path) {
     return file_exists(asset_path($path));
 }
 
-function cdn_image($display_width, $image_width, $image_path, $format = null, $url_params = '') {
+function cdn_image($display_width, $image_width, $image_path, $format = null) {
 
     // Not a local image. Return
     if ('images/' !== substr($image_path, 0, 7)) {
         return $image_path;
     }
 
+    $image_path_parts = parse_url($image_path);
+    $image_path = $image_path_parts['path'];
+    $url_params = explode('&', empty($image_path_parts['query']) ? '' : $image_path_parts['query']);
+
     if ($format !== null) {
         $format_suffix = '-' . $format . '.jpg';
-        $image_path = preg_replace('/(-(square|tall|wide))?\.jpg$/', $format_suffix, $image_path);
+        $image_path = preg_replace('/(-(square|tall|wide))?\.jpg$/', $format_suffix, $image_path_parts['path']);
     }
-
-    $url_params = explode('&', $url_params);
 
     if (asset_exists($image_path)) {
         array_unshift($url_params, 'v=' . filemtime(asset_path($image_path)));
