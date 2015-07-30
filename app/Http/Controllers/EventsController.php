@@ -23,6 +23,24 @@ class EventsController extends BaseController {
         ]);
     }
 
+    public function event($event_id) {
+
+        $event = Event::find($event_id);
+        $events = Event::orderBy('sort', 'asc')->take(3)->get();
+
+        if (is_null($event)) {
+            // LATER: Serve up another view that suggests events
+            abort(404);
+        }
+
+        return view('event_detail', [
+            'event'      => $event,
+            'events'      => $events
+        ]);
+
+
+    }
+
     public function calendar() {
 
         $year = Carbon::now()->year;

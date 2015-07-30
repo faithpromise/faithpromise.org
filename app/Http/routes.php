@@ -19,9 +19,10 @@ Route::get('/series/{series}', ['as' => 'series', 'uses' => 'SermonsController@s
 Route::get('/series/{series}/{video}', ['as' => 'seriesVideo', 'uses' => 'SermonsController@video']);
 
 // Events
-Route::get('/events', 'EventsController@index');
+Route::get('/events', ['as' => 'events', 'uses' => 'EventsController@index']);
 Route::get('/events/calendar', ['as' => 'calendar', 'uses' => 'EventsController@calendar']);
 Route::get('/events/calendar/{year}/{month}', ['as' => 'calendarMonth', 'uses' => 'EventsController@calendarMonth']);
+Route::get('/events/{id}-{slug}', ['as' => 'event', 'uses' => 'EventsController@event']);
 
 // Campuses / Locations
 Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@index']);
