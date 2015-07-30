@@ -14,4 +14,8 @@ class RedirectController extends BaseController {
         return redirect()->route('nextSteps');
     }
 
+    public function locations() {
+        return redirect()->route('locations');
+    }
+
 }

@@ -24,7 +24,7 @@ Route::get('/events/calendar', 'EventsController@calendar');
 Route::get('/events/calendar/{year}/{month}', 'EventsController@calendarMonth');
 
 // Campuses / Locations
-Route::get('/locations', 'CampusesController@index');
+Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@index']);
 
 // Ministries
 Route::get('/{ministry}', 'MinistriesController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
@@ -57,3 +57,4 @@ Route::get('/countdown.js', 'InternetCampusController@countdown');
 // Redirects
 Route::get('/nextsteps', 'RedirectController@nextSteps');
 Route::get('/series', 'RedirectController@sermons');
+Route::get('/times-and-directions', 'RedirectController@locations');
