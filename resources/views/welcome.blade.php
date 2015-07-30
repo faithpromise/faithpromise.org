@@ -1,8 +1,18 @@
-@extends('layouts.page', ['hero_image' => $current_series->hero_image])
+@extends('layouts.default')
 
 <?php $title = 'Join us for our current sermon series <span class="no-wrap">"' . $current_series->title . '"</span>'; ?>
 
-@section('page')
+@section('content')
+
+    <div class="CurrentSeries">
+
+        <div class="CurrentSeries-buttons">
+            <a class="CurrentSeries-button icon-play" href=""><span class="CurrentSeries-buttonText">Play Promo</span></a>
+            <a class="CurrentSeries-button icon-twitter" href="" title="Tweet"></a>
+            <a class="CurrentSeries-button icon-facebook" href="" title="Share on Facebook"></a>
+        </div>
+
+    </div>
 
     @introsection(['title' => $title, 'class' => '', 'image' => '', 'buttons' => [
         [

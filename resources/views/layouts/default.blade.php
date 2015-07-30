@@ -18,6 +18,12 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         <link rel="stylesheet" href="/build/css/main.dev.css">
         <!-- /build -->
 
+        @if (isset($stylesheets))
+            @foreach($stylesheets as $s)
+                <link rel="stylesheet" href="{{ $s }}">
+            @endforeach
+        @endif
+
         <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current()  }}">
 
         @include('includes.google_analytics')

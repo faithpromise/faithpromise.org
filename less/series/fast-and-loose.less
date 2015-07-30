@@ -1,0 +1,28 @@
+@import "../variables/paths";
+@import "../mixins/link-color";
+
+@series_ident: 'fast-and-loose';
+@button_color: #4B3774;
+
+.CurrentSeries {
+  background-color: #555;
+  background-image: url(~"@{cdn_url}/images/home/@{series_ident}/@{series_ident}-home-tall.jpg");
+}
+
+.CurrentSeries-buttons {
+  position: absolute;
+  bottom:   12%;
+  left:     6%;
+}
+
+.CurrentSeries-button {
+  .link-color(@button_color);
+  border-color: @button_color;
+  transition:   opacity .2s ease-in-out;
+  opacity: .63;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+}

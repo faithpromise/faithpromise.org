@@ -1,0 +1,44 @@
+.CurrentSeries {
+  position:            relative;
+  height:              56.25vw;
+
+  background-position: center;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
+
+.CurrentSeries-button {
+  .to-rem(font-size, 32);
+  .to-rem(margin, 0 10 0 0);
+  .to-rem(border-radius, 70);
+
+
+
+  display:        inline-block;
+  border:         4px solid @root-text-color;
+  text-transform: uppercase;
+
+  min-width: 59px;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+
+  &:before {
+    vertical-align: middle;
+  }
+
+  & > i {
+    .to-rem(font-size, 28);
+  }
+
+  &.icon-play {
+    .to-rem(padding-left, 10);
+    .to-rem(padding-right, 20);
+  }
+}
+
+.CurrentSeries-buttonText {
+  .to-rem(font-size, 18);
+  display:        inline-block;
+  vertical-align: middle;
+}

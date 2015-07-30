@@ -17,7 +17,10 @@ class MainController extends BaseController {
 
         return view('welcome', [
             'current_series' => $current_series,
-            'events' => $events
+            'events' => $events,
+            'stylesheets' => [
+                $current_series->home_css
+            ]
         ]);
     }
 
