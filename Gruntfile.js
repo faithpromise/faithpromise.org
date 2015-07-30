@@ -74,6 +74,9 @@ module.exports = function (grunt) {
                 }
             },
             uglify: {
+                options: {
+                    mangle: false // getting Angular errors when mangled
+                },
                 production: {
                     files: [{
                         src: js_output_file_temp,
