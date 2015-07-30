@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => 'Calendar', 'hero_image' => 'images/worship/jesus-wide.jpg'])
+@extends('layouts.page', ['title' => 'Calendar', 'hero_image' => 'images/pages/calendar-wide.jpg'])
 
 @section('page')
 

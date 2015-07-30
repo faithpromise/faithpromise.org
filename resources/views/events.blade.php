@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => 'Events', 'hero_image' => 'images/campuses/pellissippi-wide.jpg'])
+@extends('layouts.page', ['title' => 'Events'])
 
 @section('page')
 
