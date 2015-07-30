@@ -1,15 +1,26 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
+
 function asset_path($path) {
     return config('site.assets_path') . '/' . $path;
 }
 
 function asset_exists($path) {
-    return file_exists(asset_path($path));
+
+    $exists = file_exists(asset_path($path));
+
+    if (! $exists) {
+        Log::critical('Image not found: ' . $path . '. May need to upload it to assets.faithpromise.org');
+    }
+
+    return $exists;
 }
 
 function cdn_image_raw($image_path) {
-    return config('site.cdn_url') . '/' . $image_path . '?v=' . filemtime(asset_path($image_path));
+
+    $query_string = asset_exists($image_path) ? '?v=' . filemtime(asset_path($image_path)) : '';
+    return config('site.cdn_url') . '/' . $image_path . $query_string;
 }
 
 function cdn_image($display_width, $image_width, $image_path, $format = null) {
