@@ -74,6 +74,6 @@ class ImportEvents extends Command
         CalendarEvent::reguard();
 
         // Purge old events
-        CalendarEvent::where('ends_at', '<', Carbon::now()->subMonth(2));
+        CalendarEvent::where('ends_at', '<', Carbon::now()->subMonth(2))->delete();
     }
 }
