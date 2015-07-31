@@ -52,7 +52,11 @@
             (object)[
                     'q' => 'After my baptism has been scheduled through the office, what other information do I need to know?',
                     'a' => '<p>All those being baptized, will need to meet in the baptism room 20 minutes prior to the service in which you\'re being baptized. The Baptism Room is located on the left hand side of the worship center. As you enter the main lobby, follow the preschool hallway around the back of the worship center and it will lead you straight into the baptism room.</p>'
-                        . '<p>You will need to bring a dark colored t-shirt and dark colored shorts to change into prior to the service. We will have a baptism assistant in the Baptism Room to make sure all your needs are taken care of and to provide towels and a plastic bag for your wet clothes.</p>'
+                            . '<p>You will need to bring a dark colored t-shirt and dark colored shorts to change into prior to the service. We will have a baptism assistant in the Baptism Room to make sure all your needs are taken care of and to provide towels and a plastic bag for your wet clothes.</p>'
+            ],
+            (object)[
+                    'q' => 'My child wants to be baptized. What should I do?',
+                    'a' => 'We\'ve provided some helpful resources to help you talk to your kids about <a href="/kidssteps">baptism and salvation</a>.'
             ]
         ]);
 
