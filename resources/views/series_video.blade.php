@@ -9,7 +9,7 @@
     <div class="TableSection">
         <div class="TableSection-container">
             <h1 class="TableSection-title">Messages</h1>
-            @include ('partials.series_playlist', ['series' => $video->Series])
+            @include ('partials.series_playlist', ['videos' => $video->Series])
         </div>
     </div>
 

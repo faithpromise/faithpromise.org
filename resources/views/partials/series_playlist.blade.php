@@ -9,9 +9,9 @@
     </thead>
     <!-- TODO: Highlight currently selected video -->
     <tbody>
-        @foreach ($series->videos as $v)
+        @foreach ($videos as $v)
             <tr class="{% if v.ident == include.selected %}Playlist-selected{% endif %}">
-                <td><a href="{{ route('seriesVideo', ['series' => $series->ident, 'video' => $v->ident]) }}" title="Learn more">{{ $v->title }}</a></td>
+                <td><a href="{{ $v->url }}" title="Learn more">{{ $v->title }}</a></td>
                 <td>{{ $v->speaker_display_name }}</td>
                 <td>{{ $v->sermon_date_formatted }}</td>
                 {{--<td class="Playlist-iconColumn">--}}

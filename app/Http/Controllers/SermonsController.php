@@ -24,9 +24,11 @@ class SermonsController extends BaseController {
     public function series($series_ident) {
 
         $series = Series::where('ident', '=', $series_ident)->first();
+        $videos = Video::with('Series')->with('Speaker')->where('series_id', '=', $series->id)->get();
 
         return view('series', [
-            'series' => $series
+            'series' => $series,
+            'videos' => $videos
         ]);
 
     }
@@ -34,14 +36,17 @@ class SermonsController extends BaseController {
     public function video($series_ident, $video_ident) {
 
         $series = Series::where('ident', '=', $series_ident)->first();
-        $video = Video::where('series_id', '=', $series->id)->where('ident', '=', $video_ident)->first();
+        $videos = Video::with('Series')->where('series_id', '=', $series->id)->get();
+        $video = $videos->where('ident', '=', $video_ident)->first();
 
         if (is_null($video)) {
             abort(404);
         }
 
         return view('series_video', [
-            'video' => $video
+            'series' => $series,
+            'video' => $video,
+            'videos' => $videos
         ]);
 
     }
