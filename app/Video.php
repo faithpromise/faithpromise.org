@@ -28,6 +28,10 @@ class Video extends Model {
         }
     }
 
+    public function getUrlAttribute() {
+        return route('seriesVideo', ['series' => $this->Series->ident, 'video' => $this->ident]);
+    }
+
     public function getSpeakerDisplayNameAttribute() {
         if (strlen($this->speaker_name)) {
             return $this->speaker_name;
