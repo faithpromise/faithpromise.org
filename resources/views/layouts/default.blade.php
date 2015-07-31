@@ -117,16 +117,16 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
                             <div class="Footer-item">
                                 <ul class="Footer-linkList">
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="/locations">Times and locations</a>
+                                        <a class="Footer-link" href="/locations">Times &amp; locations</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="/events">Upcoming events</a>
+                                        <a class="Footer-link" href="/updates">Get updates</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="/updates">Get email updates</a>
+                                        <a class="Footer-link" href="/events">Events</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="http://blog.faithpromise.org/">Blog</a>
+                                        <a class="Footer-link" href="http://blog.faithpromise.org/" target="_blank">Blog</a>
                                     </li>
                                     {{--<li class="Footer-linkItem">--}}
                                         {{--<a class="Footer-link" href="/jobs">Jobs</a>--}}
@@ -138,8 +138,8 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
                             </div>
                             <div class="Footer-item">
                                 <p class="Footer-addressLine">Mailing address:</p>
-                                <p class="Footer-addressLine">10740 Faith Promise Lane, Knoxville, TN 37931</p>
-                                <p class="Footer-addressLine"><a href="mailto:office@faithpromise.org">office@faithpromise.org</a>  &nbsp;|&nbsp;  <a href="tel:1-865-251-2590">(865) 251-2590</a></p>
+                                <p class="Footer-addressLine">10740 Faith Promise Lane, <span class="no-wrap">Knoxville, TN 37931</span></p>
+                                <p class="Footer-addressLine"><a href="mailto:office@faithpromise.org">office@faithpromise.org</a>  &nbsp;|&nbsp;  <a href="tel:1-865-251-2590" class="no-wrap">(865) 251-2590</a></p>
                             </div>
                         </div>
                     </div>

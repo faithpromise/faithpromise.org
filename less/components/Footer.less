@@ -31,9 +31,6 @@
 
 .Footer-socialHeading {
   .to-em(font-size, 20, @Footer-font-size);
-  .to-em(margin, 0 25 0 0, 20);
-  display:        inline-block;
-  vertical-align: middle;
   color:          @Footer-text-color;
   text-transform: uppercase;
 }
@@ -55,34 +52,19 @@
   .to-em(font-size, 32, @Footer-font-size);
 }
 
-.Footer-grid {
-  &:extend(.grid);
-  .to-rem(padding-top, 28);
-  .to-rem(margin-left, -@Footer-gutter);
-}
-
-.Footer-item {
-  &:extend(.grid-item);
-  .to-rem(padding-left, @Footer-gutter);
-  .to-rem(font-size, @Footer-font-size);
-  width: 50%;
-
-  &:first-child {
-    border-right: 1px solid @Footer-border-color;
-  }
-}
-
 .Footer-linkList {
+  .clearfix();
   margin:     0;
   padding:    0;
   list-style: none;
 }
 
 .Footer-linkItem {
-  display: inline-block;
-  margin:  0;
-  float:   left;
-  width:   50%;
+  display:       inline-block;
+  margin:        0;
+  float:         left;
+  width:         50%;
+  padding-right: 1em;
 }
 
 .Footer-link {
@@ -93,4 +75,72 @@
 .Footer-addressLine {
   margin:  0;
   padding: .4em;
+}
+
+// <= 439px
+@media (max-width: 27.4375em) {
+
+  .Footer-socialHeading {
+    //    .to-em(margin, 0 25 0 0, 20);
+  }
+
+  .Footer-social {
+    text-align: center;
+  }
+}
+
+// 440px +
+@media (min-width: 27.5em) {
+
+  .Footer-socialHeading {
+    .to-em(margin, 0 25 0 0, 20);
+    display:        inline-block;
+    vertical-align: middle;
+  }
+
+  .Footer-socialList {
+    display: inline-block;
+  }
+}
+
+// <= 519px
+@media (max-width: 32.4375em) {
+
+  .Footer-item {
+
+    .to-rem(padding, 45 0);
+
+    &:first-child {
+      border-bottom: 1px solid @Footer-border-color;
+    }
+  }
+
+  .Footer-link {
+    padding: 1em .4em;
+  }
+
+}
+
+// 520px +
+@media (min-width: 32.5em) {
+
+  .Footer-grid {
+    .to-rem(padding-top, 28);
+    .to-rem(margin-left, -@Footer-gutter);
+    font-size: @font-size-0;
+  }
+
+  .Footer-item {
+    &:extend(.grid-item);
+    .to-rem(padding-left, @Footer-gutter);
+    .to-rem(font-size, @Footer-font-size);
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+
+    &:first-child {
+      width: 60%;
+      border-right: 1px solid @Footer-border-color;
+    }
+  }
 }
