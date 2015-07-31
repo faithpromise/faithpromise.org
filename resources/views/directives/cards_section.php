@@ -36,9 +36,9 @@ if ($directive['execution_mode'] == 'start'):
         <div class="GridSection-text">
             <?= $args['content'] ?>
             <?php if (count($args["buttons"])): ?>
-                <p class="text-center">
+                <p class="GridSection-buttons">
                     <?php foreach ($args["buttons"] as $button): ?>
-                        <a class="Button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
+                        <a class="Button GridSection-button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
                     <?php endforeach; ?>
                 </p>
             <?php endif; ?>

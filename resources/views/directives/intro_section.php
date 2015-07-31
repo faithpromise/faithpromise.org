@@ -33,9 +33,9 @@ if ($directive['execution_mode'] == 'end'):
             </div>
             <!-- // END .IntroSection-text -->
             <?php if (count($args["buttons"])): ?>
-                <p class="text-center">
+                <p class="IntroSection-buttons">
                     <?php foreach ($args["buttons"] as $button): ?>
-                        <a class="Button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
+                        <a class="Button IntroSection-button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
                     <?php endforeach; ?>
                 </p>
             <?php endif; ?>

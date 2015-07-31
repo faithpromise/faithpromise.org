@@ -24,9 +24,9 @@ if ($directive['execution_mode'] == 'start'):
 <?php if ($directive['execution_mode'] == 'end'): ?>
     </div><!-- // END .TextSection-text -->
     <?php if (count($args["buttons"])): ?>
-        <p>
+        <p class="TextSection-buttons">
             <?php foreach ($args["buttons"] as $button): ?>
-                <a class="Button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
+                <a class="Button TextSection-button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
             <?php endforeach; ?>
         </p>
     <?php endif; ?>
