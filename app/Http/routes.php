@@ -45,7 +45,7 @@ Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
 Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
 // General pages
-Route::get('/what-to-expect', 'MainController@defaultPage');
+Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
 Route::get('/beliefs-and-values', 'MainController@defaultPage');
 Route::get('/salvation', 'MainController@defaultPage');
 Route::get('/baptism', 'MainController@defaultPage');

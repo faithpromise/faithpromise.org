@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+// Angular
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}
+
 /*
   Fonts
 */
@@ -79,6 +82,7 @@
 @import "components/VideoSection";
 @import "components/VisitSection";
 @import "components/Footer";
+@import "components/SquareSection";
 
 [publish-on]:not(.publish-on-show) {
   display: none !important;
@@ -242,7 +246,8 @@ p {
 
 .Button {
   .to-rem(font-size, 20);
-  .to-em(padding, 15 40, 22);
+  .to-em(padding, 15 30, 20);
+  .to-em(margin, 0 5 20, 20);
   .to-em(border-radius, 70, 22);
   .link-color(@root-text-color);
   display:        inline-block;
@@ -252,9 +257,7 @@ p {
   transition:     all .2s ease-in-out;
 
   &:hover {
-    background-color: @anchor-text-color;
-    border-color:     @anchor-text-color;
-    color:            #fff;
+    background-color: rgba(0, 0, 0, 0.3);
     text-decoration:  none;
   }
 
@@ -268,6 +271,15 @@ p {
       background-color: rgba(0, 0, 0, 0.9);
       text-decoration:  none;
     }
+  }
+}
+
+.Button-light {
+  .link-color(#fff);
+  border-color: #fff;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 

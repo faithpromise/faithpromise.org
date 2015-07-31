@@ -16,7 +16,7 @@
 
     Controller.$inject = ['$scope', 'countdownService'];
 
-    function Controller(scope, countdownService, campusesService) {
+    function Controller(scope, countdownService) {
         scope.countdown = countdownService.data;
     }
 
