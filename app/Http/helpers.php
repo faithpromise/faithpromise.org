@@ -82,7 +82,7 @@ function bible_verses($scriptures) {
             }
 
             $verse = substr(strstr($ref, ':'), 1); // 26-28
-            $links[] = '<a href="https://www.bible.com/bible/100/' . $book_abbrev . '.' . $chapter . '.' . $verse . '" target="_blank">' . ($key === 0 ? $book_abbrev . ' ' : '') . $chapter . ':' . $verse . '</a>';
+            $links[] = '<a class="BibleRef" href="https://www.bible.com/bible/100/' . $book_abbrev . '.' . $chapter . '.' . $verse . '" target="_blank">' . ($key === 0 ? $book_abbrev . ' ' : '') . $chapter . ':' . $verse . '</a>';
 
         }
 
