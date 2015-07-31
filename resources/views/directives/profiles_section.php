@@ -34,8 +34,8 @@ if ($directive['execution_mode'] == 'start'):
                         data-src-md="<?= cdn_image('md', 'half', $profile->image, 'square') ?>"
                         data-src-lg="<?= cdn_image('lg', 'half', $profile->image, 'square') ?>"
                         data-src="<?= cdn_image('xl', 'third', $profile->image, 'square') ?>"></span>
-                    <span class="ProfilesSection-name"><?= $profile->image, 'square' ?></span>
-                    <span class="ProfilesSection-profileTitle"><?= $profile->image, 'square' ?></span>
+                    <span class="ProfilesSection-name"><?= $profile->profile_name ?></span>
+                    <span class="ProfilesSection-profileTitle"><?= $profile->profile_title ?></span>
                 </a>
             </li>
         <?php endforeach; ?>
