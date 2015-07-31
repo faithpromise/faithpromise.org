@@ -37,7 +37,7 @@ class SermonsController extends BaseController {
 
         $series = Series::where('ident', '=', $series_ident)->first();
         $videos = Video::with('Series')->where('series_id', '=', $series->id)->get();
-        $video = $videos->where('ident', '=', $video_ident)->first();
+        $video = $videos->where('ident', $video_ident)->first();
 
         if (is_null($video)) {
             abort(404);
