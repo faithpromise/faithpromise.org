@@ -34,8 +34,10 @@ if ($directive['execution_mode'] == 'end'):
             <!-- // END .IntroSection-text -->
             <?php if (count($args["buttons"])): ?>
                 <p class="IntroSection-buttons">
-                    <?php foreach ($args["buttons"] as $button): ?>
-                        <a class="Button IntroSection-button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
+                    <?php foreach ($args["buttons"] as $button):
+                        $button['target'] = isset($button['target']) ? $button['target'] : '_self';
+                        ?>
+                        <a class="Button IntroSection-button" href="<?= $button["url"]; ?>" target="<?= $button["target"]; ?>"><?= $button["title"]; ?></a>
                     <?php endforeach; ?>
                 </p>
             <?php endif; ?>

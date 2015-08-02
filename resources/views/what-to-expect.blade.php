@@ -1,5 +1,6 @@
 <?php
 
+// LATER: Put these in a central location. They're duplicated on the campus detail page
 $cards = collect([
         (object)[
                 'card_title'    => 'Children',

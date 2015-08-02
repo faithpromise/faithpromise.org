@@ -28,7 +28,7 @@ class CampusesController extends BaseController {
                 'directions_url' => $campus->directions_url,
                 'thumbnail' => cdn_image('sm', 'full', $campus->image, 'wide'),
                 'url' => $campus->url,
-                'times' => json_decode($campus->times)
+                'times' => str_replace('; ', '<br>', $campus->times)
             ];
         }
 
@@ -38,8 +38,14 @@ class CampusesController extends BaseController {
         ]);
     }
 
-    public function detail() {
-        return view('locations_detail');
+    public function detail($campus_ident) {
+
+        $campus = Campus::whereIdent($campus_ident)->first();
+
+        return view('locations_detail', [
+            'campus' => $campus
+        ]);
+
     }
 
 }

@@ -22,6 +22,11 @@ class Campus extends Model
         return 'images/campuses/' . $this->ident . '-wide.jpg';
     }
 
+    public function getTimesAttribute() {
+        $times = json_decode($this->getOriginal('times'));
+        return is_array($times) ? implode('; ', $times) : '';
+    }
+
     public function getCardTitleAttribute() {
         return $this->location;
     }
@@ -31,8 +36,7 @@ class Campus extends Model
     }
 
     public function getCardTextAttribute() {
-        $times = json_decode($this->times);
-        return is_array($times) ? implode('<br>', $times) : '';
+        return str_replace('; ', '<br>', $this->times);
     }
 
     public function getCardImageAttribute()

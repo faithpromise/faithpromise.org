@@ -140,7 +140,7 @@
                             '</p>' +
                             '<h2 class="LocationWindow-subtitle">Service Times</h2>' +
                             '<p>' +
-                            campus.times.join('<br>') +
+                            campus.times +
                             '</p>' +
                             '</div>' +
                             '<div class="LocationWindow-footer">' +
