@@ -31,7 +31,7 @@ class StaffController extends BaseController
     public function directory()
     {
         $campuses = Campus::all();
-        $staff_by_name = Staff::all();
+        $staff_by_name = Staff::orderBy('first_name')->get();
 
         return view('staff_directory', [
             'staff' => $staff_by_name,
