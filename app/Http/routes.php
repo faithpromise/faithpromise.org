@@ -28,8 +28,17 @@ Route::get('/events/{id}-{slug}', ['as' => 'event', 'uses' => 'EventsController@
 Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@index']);
 
 // Ministries
-Route::get('/{ministry}', 'MinistriesController@defaultMinistryPage')->where('ministry', 'care|celebrate|family|fpkids|fpstudents|groups|men|prayer|women|worship|youngadults');
+Route::get('/care', 'MinistriesController@defaultMinistryPage');
+Route::get('/family', 'MinistriesController@defaultMinistryPage');
+Route::get('/fpkids', 'MinistriesController@defaultMinistryPage');
 Route::get('/fpkids/welcome', 'MinistriesController@fpKidsWelcome');
+Route::get('/fpstudents', 'MinistriesController@defaultMinistryPage');
+Route::get('/groups', 'MinistriesController@defaultMinistryPage');
+Route::get('/men', 'MinistriesController@defaultMinistryPage');
+Route::get('/prayer', 'MinistriesController@defaultMinistryPage');
+Route::get('/women', 'MinistriesController@defaultMinistryPage');
+Route::get('/worship', 'MinistriesController@defaultMinistryPage');
+Route::get('/youngadults', 'MinistriesController@defaultMinistryPage');
 
 // Next Steps
 Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MainController@defaultPage']);
