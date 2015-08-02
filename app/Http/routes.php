@@ -34,6 +34,7 @@ Route::get('/care', 'MinistriesController@defaultMinistryPage');
 Route::get('/family', 'MinistriesController@defaultMinistryPage');
 Route::get('/fpkids', 'MinistriesController@defaultMinistryPage');
 Route::get('/fpkids/welcome', 'MinistriesController@fpKidsWelcome');
+Route::get('/kidsteps', 'MinistriesController@kidsteps');
 Route::get('/fpstudents', 'MinistriesController@defaultMinistryPage');
 Route::get('/groups', 'MinistriesController@defaultMinistryPage');
 Route::get('/men', 'MinistriesController@defaultMinistryPage');
