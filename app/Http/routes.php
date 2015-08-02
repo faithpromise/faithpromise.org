@@ -53,13 +53,16 @@ Route::get('/missions/{location_ident}', 'MissionsController@location');
 Route::get('/staff', 'StaffController@index');
 Route::get('/staff/directory', 'StaffController@directory');
 
+// Next Steps
+Route::get('/core', ['as' => 'core', 'uses' => 'MainController@defaultPage']);
+Route::get('/baptism', ['as' => 'baptism', 'uses' => 'MainController@defaultPage']);
+Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
+Route::get('/salvation', ['as' => 'salvation', 'uses' => 'MainController@defaultPage']);
+
 // General pages
 Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
 Route::get('/beliefs-and-values', 'MainController@defaultPage');
-Route::get('/salvation', 'MainController@defaultPage');
-Route::get('/baptism', 'MainController@defaultPage');
 Route::get('/h4h', 'MainController@defaultPage');
-Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
 
 // iCampus
 Route::get('/countdown.js', 'InternetCampusController@countdown');
