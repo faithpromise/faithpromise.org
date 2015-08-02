@@ -50,8 +50,6 @@ Route::get('/missions/{location_ident}', 'MissionsController@location');
 // Staff
 Route::get('/staff', 'StaffController@index');
 Route::get('/staff/directory', 'StaffController@directory');
-Route::get('/partials/staff-by-campus', 'StaffController@staffByCampus');
-Route::get('/partials/staff-by-name', 'StaffController@staffByName');
 
 // General pages
 Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
