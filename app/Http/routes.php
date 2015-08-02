@@ -63,6 +63,7 @@ Route::get('/salvation', ['as' => 'salvation', 'uses' => 'MainController@default
 Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
 Route::get('/beliefs-and-values', 'MainController@defaultPage');
 Route::get('/h4h', 'MainController@defaultPage');
+Route::get('/weddings', 'MainController@defaultPage');
 
 // iCampus
 Route::get('/countdown.js', 'InternetCampusController@countdown');
