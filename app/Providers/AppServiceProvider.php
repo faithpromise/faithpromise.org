@@ -100,6 +100,11 @@ class AppServiceProvider extends ServiceProvider {
             return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/faq_section.php")); ?>';
         });
 
+        // Dropdown
+        Blade::directive('dropdown', function ($expression) {
+            return '<?php $dropdown_directive = []; $dropdown_directive["args"] = ' . ($expression ?: '[]') . '; include(base_path("resources/views/directives/dropdown.php")); ?>';
+        });
+
     }
 
     /**
