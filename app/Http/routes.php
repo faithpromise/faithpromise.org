@@ -44,9 +44,6 @@ Route::get('/women', ['as' => 'women', 'uses' => 'MinistriesController@defaultMi
 Route::get('/worship', ['as' => 'worship', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/youngadults', ['as' => 'youngAdults', 'uses' => 'MinistriesController@defaultMinistryPage']);
 
-// Next Steps
-Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MainController@defaultPage']);
-
 // Missions
 Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
 Route::get('/missions/{location_ident}', ['as' => 'missionsLocation', 'uses' => 'MissionsController@location']);
@@ -59,6 +56,7 @@ Route::get('/staff/directory', ['as' => 'staffDirectory', 'uses' => 'StaffContro
 Route::get('/core', ['as' => 'core', 'uses' => 'MainController@defaultPage']);
 Route::get('/baptism', ['as' => 'baptism', 'uses' => 'MainController@defaultPage']);
 Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
+Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MainController@defaultPage']);
 Route::get('/salvation', ['as' => 'salvation', 'uses' => 'MainController@defaultPage']);
 
 // General pages
