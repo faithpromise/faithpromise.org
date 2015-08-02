@@ -15,7 +15,7 @@ Route::get('/routes', 'MainController@routes');
 Route::get('/', 'MainController@index');
 
 // Sermons
-Route::get('/sermons', 'SermonsController@index');
+Route::get('/sermons', ['as' => 'sermons', 'uses' => 'SermonsController@index']);
 Route::get('/series/{series}', ['as' => 'series', 'uses' => 'SermonsController@series']);
 Route::get('/series/{series}/{video}', ['as' => 'seriesVideo', 'uses' => 'SermonsController@video']);
 
@@ -30,29 +30,29 @@ Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@ind
 Route::get('/locations/{location}', ['as' => 'location', 'uses' => 'CampusesController@detail']);
 
 // Ministries
-Route::get('/care', 'MinistriesController@defaultMinistryPage');
-Route::get('/family', 'MinistriesController@defaultMinistryPage');
-Route::get('/fpkids', 'MinistriesController@defaultMinistryPage');
-Route::get('/fpkids/welcome', 'MinistriesController@fpKidsWelcome');
-Route::get('/kidsteps', 'MinistriesController@kidsteps');
-Route::get('/fpstudents', 'MinistriesController@defaultMinistryPage');
-Route::get('/groups', 'MinistriesController@defaultMinistryPage');
-Route::get('/men', 'MinistriesController@defaultMinistryPage');
-Route::get('/prayer', 'MinistriesController@defaultMinistryPage');
-Route::get('/women', 'MinistriesController@defaultMinistryPage');
-Route::get('/worship', 'MinistriesController@defaultMinistryPage');
-Route::get('/youngadults', 'MinistriesController@defaultMinistryPage');
+Route::get('/care', ['as' => 'care', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/family', ['as' => 'family', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/fpkids', ['as' => 'fpKids', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/fpkids/welcome', ['as' => 'fpKidsWelcome', 'uses' => 'MinistriesController@fpKidsWelcome']);
+Route::get('/kidsteps', ['as' => 'kidSteps', 'uses' => 'MinistriesController@kidsteps']);
+Route::get('/fpstudents', ['as' => 'fpStudents', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/groups', ['as' => 'groups', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/men', ['as' => 'men', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/prayer', ['as' => 'prayer', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/women', ['as' => 'women', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/worship', ['as' => 'worship', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/youngadults', ['as' => 'youngAdults', 'uses' => 'MinistriesController@defaultMinistryPage']);
 
 // Next Steps
 Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MainController@defaultPage']);
 
 // Missions
-Route::get('/missions', 'MissionsController@index');
-Route::get('/missions/{location_ident}', 'MissionsController@location');
+Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
+Route::get('/missions/{location_ident}', ['as' => 'missionsLocation', 'uses' => 'MissionsController@location']);
 
 // Staff
-Route::get('/staff', 'StaffController@index');
-Route::get('/staff/directory', 'StaffController@directory');
+Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);
+Route::get('/staff/directory', ['as' => 'staffDirectory', 'uses' => 'StaffController@directory']);
 
 // Next Steps
 Route::get('/core', ['as' => 'core', 'uses' => 'MainController@defaultPage']);
@@ -62,12 +62,12 @@ Route::get('/salvation', ['as' => 'salvation', 'uses' => 'MainController@default
 
 // General pages
 Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
-Route::get('/beliefs-and-values', 'MainController@defaultPage');
-Route::get('/h4h', 'MainController@defaultPage');
-Route::get('/weddings', 'MainController@defaultPage');
+Route::get('/beliefs-and-values', ['as' => 'beliefs', 'uses' => 'MainController@defaultPage']);
+Route::get('/h4h', ['as' => 'h4h', 'uses' => 'MainController@defaultPage']);
+Route::get('/weddings', ['as' => 'weddings', 'uses' => 'MainController@defaultPage']);
 
 // iCampus
-Route::get('/countdown.js', 'InternetCampusController@countdown');
+Route::get('/countdown.js', ['as' => 'countdown', 'uses' => 'InternetCampusController@countdown']);
 
 // Redirects
 Route::get('/nextsteps', 'RedirectController@nextSteps');
