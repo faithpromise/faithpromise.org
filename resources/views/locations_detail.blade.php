@@ -1,6 +1,6 @@
 <?php
 
-// LATER: Put these in a central location. They're duplicated on the what-to-expect page
+// LATER: Put these in a central location. They're duplicated in other places. Search '$what_to_expect_cards'
 $what_to_expect_cards = collect([
         (object)[
                 'card_title'    => 'Children',

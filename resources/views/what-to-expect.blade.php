@@ -1,7 +1,7 @@
 <?php
 
-// LATER: Put these in a central location. They're duplicated on the campus detail page
-$cards = collect([
+// LATER: Put these in a central location. They're duplicated in other places. Search '$what_to_expect_cards'
+$what_to_expect_cards = collect([
         (object)[
                 'card_title'    => 'Children',
                 'card_image'    => 'images/fpkids/logo-tall.jpg',

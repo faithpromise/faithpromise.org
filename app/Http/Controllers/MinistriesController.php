@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
 use App\Ministry;
-use App\Missionary;
-use App\MissionTrip;
+use Illuminate\Support\Facades\Route;
 use View;
-use DB;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class MinistriesController extends BaseController {
@@ -21,7 +17,9 @@ class MinistriesController extends BaseController {
         return view('fpkids-welcome');
     }
 
-    public function defaultMinistryPage($ministry_ident) {
+    public function defaultMinistryPage() {
+
+        $ministry_ident = Route::getCurrentRoute()->getUri();
 
         return view($ministry_ident, [
             'ministry' => Ministry::whereIdent($ministry_ident)->first()
