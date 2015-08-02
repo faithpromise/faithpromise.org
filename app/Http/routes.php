@@ -34,7 +34,7 @@ Route::get('/care', ['as' => 'care', 'uses' => 'MinistriesController@defaultMini
 Route::get('/family', ['as' => 'family', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/fpkids', ['as' => 'fpKids', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/fpkids/welcome', ['as' => 'fpKidsWelcome', 'uses' => 'MinistriesController@fpKidsWelcome']);
-Route::get('/kidsteps', ['as' => 'kidSteps', 'uses' => 'MinistriesController@kidsteps']);
+Route::get('/kidsteps', ['as' => 'kidSteps', 'uses' => 'MainController@defaultPage']);
 Route::get('/fpstudents', ['as' => 'fpStudents', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/groups', ['as' => 'groups', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/men', ['as' => 'men', 'uses' => 'MinistriesController@defaultMinistryPage']);
