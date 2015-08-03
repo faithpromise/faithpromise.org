@@ -86,26 +86,3 @@ $faq = [
     @endfaqsection
 
 @endsection
-
-{{--<span class="Dropdown-wrapper" dropdown>--}}
-            {{--<a href="#" dropdown-toggle>online application</a>--}}
-            {{--<div class="Dropdown Dropdown--topLeft">--}}
-                {{--<ul class="Dropdown-menu">--}}
-                    {{--<li class="Dropdown-item">--}}
-                        {{--<a class="Dropdown-link" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=bR7QNpT/9N2eck513mFDbg==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">Pellissippi</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="Dropdown-item">--}}
-                        {{--<a class="Dropdown-link" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=VAbtZ3YvowGFSi/UiBQdkA==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">Blount</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="Dropdown-item">--}}
-                        {{--<a class="Dropdown-link" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=O3MuVsfv4zSsJalzVuPGag==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">North</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="Dropdown-item">--}}
-                        {{--<a class="Dropdown-link" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=rilhvQWwmgRFkTNcG9NfPw==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">Anderson</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="Dropdown-item">--}}
-                        {{--<a class="Dropdown-link" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=g+AZMmGLZNJhs/6PAPIzvA==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">Campbell Campus</a>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</span>--}}
