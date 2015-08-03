@@ -3,9 +3,17 @@
     $grey_bg = 0;
 ?>
 
-@extends('layouts.page', ['title' => 'Meet Our Staff'])
+@extends('layouts.default', ['title' => 'Meet Our Staff'])
 
-@section('page')
+@section('content')
+
+<div class="Staff8bit">
+    @foreach($staff_8bit as $i)
+        <a class="Staff8bit-item" href="{{ $i->url }}">
+            <img class="Staff8bit-image" src="{{ cdn_image('sm', 'quarter', $i->{"8bitPath"}) }}">
+        </a>
+    @endforeach
+</div>
 
 <div class="Container Container--wide">
     @include('partials.staff_nav', ['campuses' => $campuses, 'active' => 'ministry'])

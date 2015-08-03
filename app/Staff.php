@@ -22,9 +22,17 @@ class Staff extends Model {
         return $this->belongsToMany('App\Ministry', 'staff_ministry');
     }
 
+    public function getUrlAttribute() {
+        return '/staff/' . $this->ident;
+    }
+
     public function getImageAttribute() {
         $img = 'images/staff/' . $this->ident . '-square.jpg';
         return asset_exists($img) ? $img : 'images/staff/default-square.jpg';
+    }
+
+    public function get8bitPathAttribute() {
+        return 'images/staff/' . $this->ident . '-8bit-square.jpg';
     }
 
     public function getProfileNameAttribute() {
@@ -36,7 +44,7 @@ class Staff extends Model {
     }
 
     public function getProfileUrlAttribute() {
-        return '/staff/' . $this->ident;
+        return $this->getUrlAttribute();
     }
 
     public function getProfileImageAttribute() {
