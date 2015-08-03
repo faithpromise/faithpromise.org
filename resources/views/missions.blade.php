@@ -10,14 +10,15 @@
     @cardsection(['title' => 'Upcoming Trips', 'class' => 'Section--lightGrey', 'cards' => $locations, 'no_text' => true])
     @endcardsection
 
-    @textsection(['title' => 'Get Updates', 'class' => '', 'image' => ''])
+    @textsection(['title' => 'Get Updates', 'class' => 'TextSection--center TextSection--compact', 'image' => ''])
     <p>Sign up for email notifications and we'll let you know when new trips are planned.</p>
-    <a class="Button">Sign Up</a>
+    <a class="Button" target="_blank" href="http://faithpromise.us9.list-manage.com/subscribe?u=a2d18e426cb386730bf3010ca&id=37b27d5bb3&group[17705][64]=1">Sign Up</a>
     @endtextsection
 
     @profilessection(['title' => 'Missionaries', 'class' => 'Section--lightGrey', 'profiles' => $missionaries])
     @endprofilessection
 
+    <!-- TODO: Create Love Local section -->
     <div class="GridSection">
         <div class="GridSection-container">
             <div class="GridSection-title">Serving our Community</div>
