@@ -38,7 +38,6 @@ $faq = [
 
 ?>
 
-<!-- IMAGE: Need new header image -->
 @extends('layouts.page', ['title' => 'Child Dedications', 'hero_image' => 'images/fpkids/coloring-wide.jpg'])
 
 @section('page')
