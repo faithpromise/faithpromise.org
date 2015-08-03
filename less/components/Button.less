@@ -1,0 +1,39 @@
+.Button {
+  .to-rem(font-size, 20);
+  .to-em(padding, 15 30, 20);
+  .to-em(margin, 0 5 20, 20);
+  .to-em(border-radius, 70, 22);
+  .link-color(@root-text-color);
+  display:        inline-block;
+  border:         2px solid @root-text-color;
+  text-transform: uppercase;
+  cursor:         pointer;
+
+  transition:     all .2s ease-in-out;
+
+  &:hover {
+    background-color: #f5f5f5;
+    text-decoration:  none;
+  }
+
+  .has-background & {
+    .link-color(#fff);
+    border-color:     #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-decoration:  none;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+      text-decoration:  none;
+    }
+  }
+}
+
+.Button-light {
+  .link-color(#fff);
+  border-color: #fff;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
