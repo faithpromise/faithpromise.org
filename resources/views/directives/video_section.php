@@ -8,7 +8,8 @@ if ($directive['execution_mode'] == 'start'):
         [
             'title' => '',
             'class' => '',
-            'video' => ''
+            'video' => '',
+            'buttons' => []
         ], $directive["args"]
     );
     $args['class'] = trim('VideoSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
@@ -21,6 +22,13 @@ if ($directive['execution_mode'] == 'start'):
 <?php endif; ?>
 
 <?php if ($directive['execution_mode'] == 'end'): ?>
+    <?php if (count($args["buttons"])): ?>
+        <p class="VideoSection-buttons">
+            <?php foreach ($args["buttons"] as $button): ?>
+                <a class="Button VideoSection-button" href="<?= $button["url"]; ?>"><?= $button["title"]; ?></a>
+            <?php endforeach; ?>
+        </p>
+    <?php endif; ?>
     </div><!-- // END .VideoSection-text -->
     <div class="VideoSection-video">
         <vimeo id="<?= $args['video']; ?>"></vimeo>
