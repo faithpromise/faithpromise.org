@@ -65,6 +65,7 @@ Route::get('/beliefs-and-values', ['as' => 'beliefs', 'uses' => 'MainController@
 Route::get('/h4h', ['as' => 'h4h', 'uses' => 'MainController@defaultPage']);
 Route::get('/weddings', ['as' => 'weddings', 'uses' => 'MainController@defaultPage']);
 Route::get('/stephen', ['as' => 'stephen', 'uses' => 'MainController@defaultPage']);
+Route::get('/summit', ['as' => 'summit', 'uses' => 'MainController@defaultPage']);
 
 // iCampus
 Route::get('/countdown.js', ['as' => 'countdown', 'uses' => 'InternetCampusController@countdown']);

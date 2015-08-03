@@ -244,6 +244,14 @@ p {
 
 /* ---------- */
 
+.link {
+  .link-color(@anchor-text-color);
+  &:hover {
+    text-decoration: underline;
+    cursor:          pointer;
+  }
+}
+
 .Button {
   .to-rem(font-size, 20);
   .to-em(padding, 15 30, 20);
@@ -253,6 +261,7 @@ p {
   display:        inline-block;
   border:         2px solid @root-text-color;
   text-transform: uppercase;
+  cursor:         pointer;
 
   transition:     all .2s ease-in-out;
 
