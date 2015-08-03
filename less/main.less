@@ -311,3 +311,65 @@ p {
   border-color: #dedede;
   text-align:   center;
 }
+
+.SocialList {
+  margin:     0;
+  padding:    0;
+  list-style: none;
+}
+
+.SocialList-item {
+  display: inline-block;
+  margin:  0;
+  padding: 0;
+}
+
+.SocialList-icon {
+  .to-rem(font-size, 48);
+  display: inline-block;
+
+  transition: transform .2s ease-in-out;
+  transform: scale(1) rotate(0);
+
+  &:hover {
+    transform: scale(1.5) rotate(-15deg);
+  }
+}
+
+@facebook-color: #3b5998;
+@twitter-color: #00aced;
+@youtube-color: #bb0000;
+@instagram-color: #517fa4;
+@pinterest-color: #cb2027;
+@vimeo-color: #aad450;
+
+.social-color(@color) {
+  color: @color;
+  &a {
+    .link-color(@color);
+  }
+}
+
+.facebook {
+  .social-color(@facebook-color);
+}
+
+.twitter {
+  .social-color(@twitter-color);
+}
+
+.youtube {
+  .social-color(@youtube-color);
+}
+
+.instagram {
+  .social-color(@instagram-color);
+}
+
+.pinterest {
+  .social-color(@pinterest-color);
+}
+
+.vimeo {
+  .social-color(@vimeo-color);
+}
