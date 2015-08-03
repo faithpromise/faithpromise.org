@@ -14,41 +14,37 @@ use App\Team;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Cache;
 
-class StaffController extends BaseController
-{
+class StaffController extends BaseController {
 
-    public function index()
-    {
+    public function index() {
 
         $campuses = Campus::all();
         $staff_by_teams = Team::with('Staff')->get();
 
-        $staff_8bit = Cache::remember('staff_8bits', 7200, function() {
-            return Staff::all()->filter(function($item) {
+        $staff_8bit = Cache::remember('staff_8bits', 7200, function () {
+            return Staff::all()->filter(function ($item) {
                 return asset_exists($item->{"8bitPath"});
             });
         });
 
         return view('staff', [
-            'teams' => $staff_by_teams,
-            'campuses' => $campuses,
+            'teams'      => $staff_by_teams,
+            'campuses'   => $campuses,
             'staff_8bit' => $staff_8bit->shuffle()
         ]);
     }
 
-    public function directory()
-    {
+    public function directory() {
         $campuses = Campus::all();
         $staff_by_name = Staff::orderBy('first_name')->get();
 
         return view('staff_directory', [
-            'staff' => $staff_by_name,
+            'staff'    => $staff_by_name,
             'campuses' => $campuses
         ]);
     }
 
-    public function staffByCampus()
-    {
+    public function staffByCampus() {
         $staff_by_campus = Campus::with('Staff')->orderBy('name')->get();
 
         return view('partials.staff_by_campus', [
