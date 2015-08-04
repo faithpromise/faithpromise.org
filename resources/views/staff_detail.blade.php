@@ -17,13 +17,23 @@
     <div class="StaffContact">
         <div class="StaffContact-container">
             <div class="StaffContact-content">
-                <div class="StaffContact-social">
-                    <a class="StaffContact-socialIcon icon-facebook-circled" href="{{ $member->facebook }}"></a>
-                    <a class="StaffContact-socialIcon icon-twitter-circled" href="{{ $member->twitter }}"></a>
-                    <a class="StaffContact-socialIcon icon-instagram" href="{{ $member->instagram }}"></a>
+                <div class="StaffContact-info">
+                    @if ($member->has_social_links)
+                        <div class="StaffContact-social">
+                            @if (!empty($member->facebook))
+                                <a class="StaffContact-socialIcon icon-facebook-circled" href="{{ $member->facebook_url }}"></a>
+                            @endif
+                            @if (!empty($member->twitter))
+                                <a class="StaffContact-socialIcon icon-twitter-circled" href="{{ $member->twitter_url }}"></a>
+                            @endif
+                            @if (!empty($member->instagram))
+                                <a class="StaffContact-socialIcon icon-instagram" href="{{ $member->instagram_url }}"></a>
+                            @endif
+                        </div>
+                    @endif
+                    <a class="StaffContact-email" href="mailto::{{ $member->email }}">{{ $member->email }}</a>
+                    <a class="StaffContact-phone" href="tel:{{ $site['phone'] }}{{ $member->phone_ext }}">{{ $site['phone'] }} x {{ $member->phone_ext }}</a>
                 </div>
-                <a class="StaffContact-email" href="mailto::{{ $member->email }}">{{ $member->email }}</a>
-                <a class="StaffContact-phone" href="tel:{{ $site['phone'] }}{{ $member->phone_ext }}">{{ $site['phone'] }} x {{ $member->phone_ext }}</a>
             </div>
         </div>
     </div>

@@ -3,14 +3,14 @@
 // 401px
 @StaffHeader-md-min: 25.0625em;
 
-// 569px
-@StaffHeader-md-max: 35.5625em;
+// 619px
+@StaffHeader-md-max: 38.6875em;
 
-// 570px
-@StaffHeader-lg-min: 35.625em;
+// 620px
+@StaffHeader-lg-min: 38.75em;
 
-// 700px
-@StaffHeader-xl-min: 43.75em;
+// 900px
+@StaffHeader-xl-min: 56.25em;
 
 // 1040px
 @StaffHeader-xxl-min: 65em;
@@ -42,11 +42,11 @@
   }
 
   .StaffHeader-profilePhoto {
-    .to-em(width, 145, @StaffHeader-font-size);
-    .to-em(height, 145, @StaffHeader-font-size);
-    display: block;
-    margin:  0 auto 2em;
-    border:  2px solid #fff;
+    width:     50%;
+    max-width: 175px;
+    display:   block;
+    margin:    0 auto 2em;
+    border:    2px solid #fff;
   }
 
   .StaffHeader-titles {
@@ -67,7 +67,7 @@
 
 }
 
-// 570px
+// 620px
 @media (min-width: @StaffHeader-lg-min) {
 
   .StaffHeader {
@@ -75,27 +75,28 @@
   }
 
   .StaffHeader-content {
+    .to-rem(max-width, 840);
     position:     relative;
-    height:       300px;
-    max-width:    @max-text-width;
+    height:       240px;
     margin-left:  auto;
     margin-right: auto;
   }
 
   .StaffHeader-profilePhoto {
-    .to-em(width, 175, @StaffHeader-font-size);
-    .to-em(height, 175, @StaffHeader-font-size);
-    .to-em(bottom, -32, @StaffHeader-font-size);
+    width:            190px;
+    height:           190px;
     position:         absolute;
+    bottom:           -32px;
     border:           4px solid #fff;
     box-shadow:       0 3px 15px -4px rgba(0, 0, 0, 0.4);
     background-color: #fff;
   }
 
   .StaffHeader-titles {
-    .to-em(bottom, 32, @StaffHeader-font-size);
-    .to-em(margin-left, 200, @StaffHeader-font-size);
-    position: absolute;
+    position:     absolute;
+    bottom:       2em;
+    margin-left:  190px;
+    padding-left: 24px;
   }
 
   .StaffHeader-name,
@@ -117,16 +118,31 @@
   }
 }
 
-// 700px
+//900px
 @media (min-width: @StaffHeader-xl-min) {
   .StaffHeader {
     font-size: 120%;
   }
+
+  .StaffHeader-content {
+    height: 300px;
+  }
+
+  .StaffHeader-profilePhoto {
+    width:  245px;
+    height: 245px;
+    bottom: -48px;
+  }
+
+  .StaffHeader-titles {
+    margin-left: 245px;
+  }
+
 }
 
 // 1040px
-@media (min-width: @StaffHeader-xxl-min) {
-  .StaffHeader {
-    font-size: 140%;
-  }
-}
+//@media (min-width: @StaffHeader-xxl-min) {
+//  .StaffHeader {
+//    font-size: 140%;
+//  }
+//}

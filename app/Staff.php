@@ -42,6 +42,22 @@ class Staff extends Model {
         return 'images/staff/' . $this->ident . '-8bit-square.jpg';
     }
 
+    public function getHasSocialLinksAttribute() {
+        return !empty($this->facebook) OR !empty($this->twitter) OR !empty($this->instagram);
+    }
+
+    public function getFacebookUrlAttribute() {
+        return empty($this->facebook) ? null : facebook_url($this->facebook);
+    }
+
+    public function getTwitterUrlAttribute() {
+        return empty($this->twitter) ? null : twitter_url($this->twitter);
+    }
+
+    public function getInstagramUrlAttribute() {
+        return empty($this->instagram) ? null : instagram_url($this->instagram);
+    }
+
     public function getProfileNameAttribute() {
         return $this->display_name;
     }

@@ -105,3 +105,11 @@ function share_twitter($url) {
 function facebook_url($username) {
     return 'https://www.facebook.com/' . $username;
 }
+
+function twitter_url($username) {
+    return 'https://twitter.com/' . $username;
+}
+
+function instagram_url($username) {
+    return 'https://instagram.com/' . $username;
+}
