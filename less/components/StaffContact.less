@@ -1,0 +1,80 @@
+// 401px
+@StaffHeader-md-min: 25.0625em;
+
+// 569px
+@StaffHeader-md-max: 35.5625em;
+
+// 570px
+@StaffHeader-lg-min: 35.625em;
+
+// 700px
+@StaffHeader-xl-min: 43.75em;
+
+// 1040px
+@StaffHeader-xxl-min: 65em;
+
+.StaffContact {
+  .to-em(padding, 10 0, @StaffHeader-font-size);
+  font-size:        130%;
+  background-color: #dfdfdf;
+}
+
+.StaffContact-container {
+  &:extend(.Container);
+}
+
+.StaffContact-content {
+  max-width: @max-text-width;
+  a {
+    .link-color(@root-text-color);
+  }
+}
+
+@media (max-width: @StaffHeader-md-max) {
+
+  .StaffContact {
+    text-align: center;
+  }
+
+}
+
+// 570px
+@media (min-width: @StaffHeader-lg-min) {
+
+  .StaffContact-content {
+    .to-em(padding-left, 192, 20.8);
+  }
+
+}
+
+.StaffContact-email,
+.StaffContact-phone {
+  display:        inline-block;
+  margin:         0 .5em;
+  font-size:      75%;
+  vertical-align: middle;
+}
+
+.StaffContact-socialIcon {
+  display:        inline-block;
+  font-size:      140%;
+  vertical-align: middle;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// 700px
+@media (min-width: @StaffHeader-xl-min) {
+  .StaffContact {
+    font-size: 154%;
+  }
+}
+
+// 1040px
+@media (min-width: @StaffHeader-xxl-min) {
+  .StaffContact {
+    font-size: 140%;
+  }
+}
