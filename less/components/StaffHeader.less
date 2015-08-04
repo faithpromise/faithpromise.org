@@ -1,29 +1,41 @@
-.StaffHeader {
-  &:extend(.Hero all);
+// Font size needs to be same as text section
+// in order for max-width (@max-text-width-compact)
+// to work. Uses ems.
+@StaffHeader-font-size: @Section-font-size;
 
-  // Gradient overlay
-  &:after {
-    content:    '';
-    position:   absolute;
-    top:        auto;
-    bottom:     0;
-    left:       0;
-    width:      100%;
-    height:     70%;
-    background: linear-gradient(to bottom, transparent 0%, #000 100%);
-  }
+.StaffHeader {
+  .to-rem(font-size, @StaffHeader-font-size);
+  .to-em(height, 288, @StaffHeader-font-size);
+  background:    #242424 url(~"@{cdn_url}/images/patterns/footer_lodyas/footer_lodyas.png") repeat center;
+  border-bottom: 4px solid #fff;
+}
+
+.StaffHeader-container {
+  &:extend(.Container);
 }
 
 .StaffHeader-content {
-  position: absolute;
-  z-index:  2;
-  bottom:   0;
-  width:    100%;
+  .to-em(height, 288, @StaffHeader-font-size);
+  position:     relative;
+  max-width:    @max-text-width;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+.StaffHeader-profilePhoto {
+  .to-em(width, 256, @StaffHeader-font-size);
+  .to-em(height, 256, @StaffHeader-font-size);
+  .to-em(bottom, -64, @StaffHeader-font-size);
+  position:         absolute;
+  border:           4px solid #fff;
+  box-shadow:       0 3px 15px -4px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
 }
 
 .StaffHeader-titles {
-  &:extend(.Container);
-  margin-bottom: 3rem;
+  .to-em(bottom, 32, @StaffHeader-font-size);
+  .to-em(margin-left, 288, @StaffHeader-font-size);
+  position: absolute;
 }
 
 .StaffHeader-name,
@@ -33,13 +45,13 @@
 }
 
 .StaffHeader-name {
-  .to-rem(font-size, 36);
+  .to-em(font-size, 36, @StaffHeader-font-size);
   line-height: 1;
   font-weight: @font-weight-light;
 }
 
 .StaffHeader-title {
-  .to-rem(font-size, 26);
+  .to-em(font-size, 26, @StaffHeader-font-size);
   font-weight: @font-weight-light;
 }
 

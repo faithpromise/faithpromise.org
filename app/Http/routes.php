@@ -51,6 +51,7 @@ Route::get('/missions/{location_ident}', ['as' => 'missionsLocation', 'uses' => 
 // Staff
 Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);
 Route::get('/staff/directory', ['as' => 'staffDirectory', 'uses' => 'StaffController@directory']);
+Route::get('/staff/{staff}', ['as' => 'staffDetail', 'uses' => 'StaffController@detail']);
 
 // Next Steps
 Route::get('/core', ['as' => 'core', 'uses' => 'MainController@defaultPage']);

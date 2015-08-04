@@ -52,4 +52,18 @@ class StaffController extends BaseController {
         ]);
     }
 
+    public function detail($staff) {
+
+        $member = Staff::whereIdent($staff)->first();
+
+        if (is_null($member)) {
+            abort(404); // TODO: Suggest the staff page
+        }
+
+        return view('staff_detail', [
+            'member' => $member
+        ]);
+
+    }
+
 }
