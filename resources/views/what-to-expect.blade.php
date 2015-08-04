@@ -58,7 +58,7 @@ $faq = collect([
     <p>When you come, the only thing we ask of you is simple... relax. You're with friends. Whether you've never been to church before or you're a seasoned church veteran, you can anticipate an encouraging and enlightening experience.</p>
     @endintrosection
 
-    @cardsection(['cards' => $cards, 'class' => 'Section--lightGrey'])
+    @cardsection(['cards' => $what_to_expect_cards, 'class' => 'Section--lightGrey'])
     @endcardsection
 
     @faqsection(['class' => '', 'faq' => $faq])
