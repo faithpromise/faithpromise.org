@@ -18,7 +18,7 @@
     <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 
     <script>
-        var fpMap = (function (window, locations) {
+        var fpMap = (function (window, fp) {
 
             var map,
                 markers = {},
@@ -55,18 +55,15 @@
             function createMap() {
                 map = new google.maps.Map(document.getElementById('LocationsMap'), {
                     zoom: 10,
+                    draggable: !fp.isMobile(),
                     scrollwheel: false,
                     center: new google.maps.LatLng(36.0706850, -84.0721176),
                     styles: map_styles
                 });
-
-                google.maps.event.addListener(map, 'dragend', function() {
-                    console.log(map.getCenter());
-                });
             }
 
             function createInfoWindow() {
-                var firstCampus = locations[Object.keys(locations)[0]];
+                var firstCampus = fp.locations[Object.keys(fp.locations)[0]];
                 campusWindow = new InfoBox({
                     content: createCampusContent(firstCampus),
                     alignBottom: true,
@@ -77,15 +74,14 @@
                     disableAutoPan: false,
                     closeBoxURL: ''
                 });
-                console.log(campusWindow);
             }
 
             function createCampusMarkers() {
                 var campus_ident;
-                for (var campus in locations) {
-                    if (locations.hasOwnProperty(campus)) {
-                        campus_ident = locations[campus].ident;
-                        markers[campus_ident] = createMarker(map, locations[campus]);
+                for (var campus in fp.locations) {
+                    if (fp.locations.hasOwnProperty(campus)) {
+                        campus_ident = fp.locations[campus].ident;
+                        markers[campus_ident] = createMarker(map, fp.locations[campus]);
                     }
                 }
             }
@@ -107,14 +103,11 @@
 
             function openCampusWindow(campus_ident) {
 
-                var campus = locations[campus_ident],
+                var campus = fp.locations[campus_ident],
                     marker = markers[campus_ident],
                     content;
 
                 content = createCampusContent(campus);
-
-                console.log('content', content);
-
                 campusWindow.setContent(content);
                 campusWindow.open(map, marker);
             }
@@ -155,7 +148,7 @@
                 return content;
             }
 
-        }(window, window.fp.locations));
+        }(window, window.fp));
 
     </script>
 
