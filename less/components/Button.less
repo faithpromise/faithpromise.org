@@ -1,15 +1,16 @@
+@Button-font-size: 20;
 .Button {
-  .to-rem(font-size, 20);
+  .to-rem(font-size, @Button-font-size);
   .to-em(padding, 15 30, 20);
   .to-em(margin, 0 5 20, 20);
-  .to-em(border-radius, 70, 22);
+  .to-em(border-radius, 20, 22);
   .link-color(@root-text-color);
   display:        inline-block;
   border:         2px solid @root-text-color;
   text-transform: uppercase;
   cursor:         pointer;
 
-  transition:     all .2s ease-in-out;
+  transition:     background-color .2s ease-in-out;
 
   &:hover {
     background-color: #f5f5f5;

@@ -1,0 +1,72 @@
+// Square format - mobile
+.WelcomeHero {
+  position:        relative;
+  height:          100vw;
+  background:      #1f1f1f url(~"@{cdn_url}/images/pages/home-square.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+// Tall format - 570px
+@media (min-width: 35.625em) {
+  .WelcomeHero {
+    height:           56.25vw;
+    background-image: url(~"@{cdn_url}/images/pages/home-tall.jpg");
+  }
+}
+
+// Wide format - 1200px
+@media (min-width: 75rem) {
+  .WelcomeHero {
+    height:           36.4583333vw;
+    background-image: url(~"@{cdn_url}/images/pages/home-wide.jpg");
+  }
+}
+
+.WelcomeHero-buttons {
+  position:   absolute;
+  bottom:     1em;
+  width:      100%;
+  padding:    0 1.2em;
+  text-align: center;
+}
+
+.WelcomeHero-button {
+  &:extend(.Button all);
+  &:extend(.Button-light all);
+  .to-rem(font-size, 13);
+  min-width:        13em;
+  max-width:        40%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+}
+
+// Over 360px
+@media (min-width: 22.5em) {
+  .WelcomeHero-buttons {
+    bottom: 2em;
+  }
+}
+
+// Over 400px
+@media (min-width: 25em) {
+  .WelcomeHero-button {
+    .to-rem(font-size, 14);
+  }
+}
+
+// Over 480px
+@media (min-width: 30em) {
+  .WelcomeHero-button {
+    .to-rem(font-size, 16);
+  }
+}
+
+// Over 760px
+@media (min-width: 47.5em) {
+  .WelcomeHero-button {
+    .to-rem(font-size, 20);
+  }
+}
