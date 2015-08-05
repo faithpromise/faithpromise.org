@@ -8,6 +8,7 @@ function asset_path($path) {
 
 function asset_exists($path) {
 
+    // TODO: Optimize for multiple calls to this method in a single request
     $exists = file_exists(asset_path($path));
 
     if (! $exists) {
