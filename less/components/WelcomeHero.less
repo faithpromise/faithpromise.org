@@ -2,23 +2,33 @@
 .WelcomeHero {
   position:        relative;
   height:          100vw;
-  background:      #1f1f1f url(~"@{cdn_url}/images/pages/home-square.jpg") 0 0 no-repeat;
   background-size: cover;
+}
+
+@media(max-width: 35.5625em) {
+  .WelcomeHero {
+    background:      #1f1f1f url(~"@{cdn_url}/sm/full/images/pages/home-square.jpg") 0 0 no-repeat;
+  }
 }
 
 // Tall format - 570px
 @media (min-width: 35.625em) {
   .WelcomeHero {
     height:           56.25vw;
-    background-image: url(~"@{cdn_url}/images/pages/home-tall.jpg");
+    background-image: url(~"@{cdn_url}/lg/full/images/pages/home-tall.jpg");
   }
+}
+
+// 600px
+@media (min-width: 37.5em) {
+  background-image: url(~"@{cdn_url}/xl/full/images/pages/home-tall.jpg");
 }
 
 // Wide format - 1200px
 @media (min-width: 75rem) {
   .WelcomeHero {
     height:           36.4583333vw;
-    background-image: url(~"@{cdn_url}/images/pages/home-wide.jpg");
+    background-image: url(~"@{cdn_url}/xl/full/images/pages/home-wide.jpg");
   }
 }
 
