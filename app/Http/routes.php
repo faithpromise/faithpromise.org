@@ -51,6 +51,8 @@ Route::get('/missions/{location_ident}', ['as' => 'missionsLocation', 'uses' => 
 // Staff
 Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);
 Route::get('/staff/directory', ['as' => 'staffDirectory', 'uses' => 'StaffController@directory']);
+Route::get('/staff/8bit.json', 'StaffController@eightBitJson');
+Route::get('/staff/8bit.css', 'StaffController@eightBitCss');
 Route::get('/staff/{staff}', ['as' => 'staffDetail', 'uses' => 'StaffController@detail']);
 
 // Next Steps
