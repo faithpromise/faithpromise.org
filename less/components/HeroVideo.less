@@ -1,3 +1,55 @@
+
+.HeroVideo2 {
+  padding:    2em 1em;
+  background: #242424 url(~"@{cdn_url}/images/patterns/footer_lodyas/footer_lodyas.png") repeat center;
+}
+
+.HeroVideo2-container {
+  //  &:extend(.Container);
+}
+
+.HeroVideo2-heading {
+  .to-rem(font-size, 13);
+  text-align:     center;
+  text-transform: uppercase;
+  color:          #fff;
+  opacity:        0.8;
+}
+
+.HeroVideo-image {
+  width:       100%;
+  height:      0;
+  overflow:    hidden;
+  padding-top: ~"@{ratio-tall}%";
+}
+
+.HeroVideo2-title {
+  .to-rem(font-size, 30);
+  .to-rem(margin, 16 0 5);
+  text-align:  center;
+  font-weight: @font-weight-light;
+  color:       #fff;
+}
+
+.HeroVideo2-meta {
+  margin-bottom: 1.3em;
+  text-align:    center;
+  color:         #fff;
+}
+
+.HeroVideo2-buttons {
+  text-align: center;
+}
+
+/*
+
+
+
+
+
+
+*/
+
 .HeroVideo-image {
   background-size:     contain;
   background-position: center;
@@ -17,6 +69,7 @@
   border-radius: 2em;
   color:         #999;
   cursor:        pointer;
+  user-select:   none;
 
   transition:    all .15s ease-in-out;
 
