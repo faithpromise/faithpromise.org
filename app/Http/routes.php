@@ -10,8 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/routes', 'MainController@routes');
-
 Route::get('/', 'MainController@index');
 
 // Sermons
@@ -72,6 +70,9 @@ Route::get('/updates', ['as' => 'updates', 'uses' => 'MainController@defaultPage
 
 // iCampus
 Route::get('/countdown.js', ['as' => 'countdown', 'uses' => 'InternetCampusController@countdown']);
+
+// Sitemap JSON for UNCSS
+Route::get('/_sitemap.json', 'SiteMapController@index');
 
 // Redirects
 Route::get('/nextsteps', 'RedirectController@nextSteps');

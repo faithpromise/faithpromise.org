@@ -56,6 +56,11 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig(
         {
+            exec: {
+                get_grunt_sitemap: {
+                    command: 'curl --silent --output public/build/sitemap.json http://faithpromise.192.168.10.10.xip.io/_sitemap.json'
+                }
+            },
             clean: {
                 build: [build_root + '/*', '!' + build_root + '/.gitkeep'],
                 release: [release_root + '/*', '!' + release_root + '/.gitkeep']
@@ -116,16 +121,17 @@ module.exports = function (grunt) {
                 }
             },
             // LATER: Can't get this to work. It crashes
-            //uncss: {
-            //    options: {
-            //        htmlroot: 'public'
-            //    },
-            //    production: {
-            //        files: {
-            //            'public/build/main.tidy.css': ['public/**/*.html', '!public/assets/**/*.html']
-            //        }
-            //    }
-            //},
+            uncss: {
+                production: {
+                    files: {
+                        'public/build/main.tidy.css': []
+                    },
+                    options: {
+                        ignoreSheets : ['/fonts.googleapis/'],
+                        urls: []
+                    }
+                }
+            },
             replace: {
                 fontello: {
                     options: {
@@ -415,5 +421,16 @@ module.exports = function (grunt) {
         'replace:fontello',
         'less:dev',
         'autoprefixer:dev'
+    ]);
+
+    grunt.registerTask('load_sitemap_json', function() {
+        var sitemap_urls = grunt.file.readJSON('./public/build/sitemap.json');
+        grunt.config.set('uncss.dist.options.urls', sitemap_urls);
+    });
+
+    grunt.registerTask('run_uncss', [
+        'exec:get_grunt_sitemap',
+        'load_sitemap_json',
+        'uncss:production'
     ]);
 };

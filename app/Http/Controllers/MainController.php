@@ -38,14 +38,4 @@ class MainController extends BaseController {
         return view($view);
     }
 
-    public function routes() {
-        $routes = Route::getRoutes();
-        $urls = [];
-        foreach($routes as $route) {
-            $urls[] = $route->getPath();
-        }
-        return $urls;
-        // http://laravel.com/api/5.0/Illuminate/Routing/Route.html#method_getPath
-    }
-
 }
