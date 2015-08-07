@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
+use ReflectionClass;
+use ReflectionFunction;
 
 class SiteMapController extends BaseController {
 
@@ -25,8 +27,6 @@ class SiteMapController extends BaseController {
 
             if (count($params)):
 
-                // Get all the urls for the given route
-                dd($route);
                 $urls = array_merge($urls, $this->get_urls($path, $params));
 
             else:
@@ -40,13 +40,45 @@ class SiteMapController extends BaseController {
 
     private function get_urls($path, $params) {
 
-        dd(class_basename($params[0]));
-        dd($params[0]);
+        $param = $params[0];
+        $binders = $this->getRouteBinders();
+
+        if (array_key_exists($param, $binders)):
+            $binder = $binders[$param];
+            $class = (new ReflectionFunction($binder))->getStaticVariables()['class'];
+            $model = app($class);
+            $items = $model->get();
+
+            foreach($items as $item) {
+                
+            }
+
+            dd($items);
+        endif;
+
+        dd($path);
+
+
         return [url($path)];
 
     }
 
     private function replace_params($path, $param) {
+
+    }
+
+    private function getRouteBinders() {
+
+        if (!isset($this->binders)):
+            $router = app('router');
+            $reflectionRouter = new ReflectionClass($router);
+            $binders = $reflectionRouter->getProperty('binders');
+            $binders->setAccessible(true);
+            $binders = $binders->getValue($router);
+            $this->binders = $binders;
+        endif;
+
+        return $this->binders;
 
     }
 }
