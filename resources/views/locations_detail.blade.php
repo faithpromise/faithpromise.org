@@ -31,7 +31,7 @@ $what_to_expect_cards = collect([
 
 @section('page')
 
-    @if($campus->ident === 'online')
+    @if($campus->slug === 'online')
 
         @introsection([
             'title' => $campus->name . ' Campus',

@@ -77,11 +77,11 @@
             }
 
             function createCampusMarkers() {
-                var campus_ident;
+                var campus_slug;
                 for (var campus in fp.locations) {
                     if (fp.locations.hasOwnProperty(campus)) {
-                        campus_ident = fp.locations[campus].ident;
-                        markers[campus_ident] = createMarker(map, fp.locations[campus]);
+                        campus_slug = fp.locations[campus].slug;
+                        markers[campus_slug] = createMarker(map, fp.locations[campus]);
                     }
                 }
             }
@@ -94,17 +94,17 @@
                 });
 
                 google.maps.event.addListener(marker, 'click', function () {
-                    openCampusWindow(campus.ident);
+                    openCampusWindow(campus.slug);
                 });
 
                 return marker;
 
             }
 
-            function openCampusWindow(campus_ident) {
+            function openCampusWindow(campus_slug) {
 
-                var campus = fp.locations[campus_ident],
-                    marker = markers[campus_ident],
+                var campus = fp.locations[campus_slug],
+                    marker = markers[campus_slug],
                     content;
 
                 content = createCampusContent(campus);

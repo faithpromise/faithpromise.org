@@ -1,5 +1,5 @@
 
-@extends('layouts.page', ['hero_image' => 'images/missions/locations/' . $location->ident . '-wide.jpg'])
+@extends('layouts.page', ['hero_image' => 'images/missions/locations/' . $location->slug . '-wide.jpg'])
 
 @section('page')
 

@@ -4,12 +4,21 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\PublishedTrait;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Video extends Model {
+class Video extends Model implements SluggableInterface {
 
     use PublishedTrait;
+    use SluggableTrait;
 
     protected $dates = ['sermon_date', 'publish_at', 'created_at', 'updated_at'];
+
+    protected $sluggable = [
+        'build_from'      => 'title',
+        'save_to'         => 'slug',
+        'unique'          => false
+    ];
 
     public function series() {
         return $this->belongsTo('App\Series');
@@ -22,14 +31,14 @@ class Video extends Model {
     public function getImageAttribute() {
         $series = $this->Series;
         if ($series->is_official) {
-            return 'images/series/' . $series->ident . '-tall.jpg';
+            return 'images/series/' . $series->slug . '-tall.jpg';
         } else {
             return $this->Speaker->image;
         }
     }
 
     public function getUrlAttribute() {
-        return route('seriesVideo', ['series' => $this->Series->ident, 'video' => $this->ident]);
+        return route('seriesVideo', ['series' => $this->Series->slug, 'video' => $this->slug]);
     }
 
     public function getSpeakerDisplayNameAttribute() {

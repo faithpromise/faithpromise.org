@@ -15,7 +15,7 @@ class Missionary extends Model
     }
 
     public function getImageAttribute() {
-        $img = 'images/missions/missionaries/' . $this->ident . '-square.jpg';
+        $img = 'images/missions/missionaries/' . $this->slug . '-square.jpg';
         return asset_exists($img) ? $img : 'https://randomuser.me/api/portraits/lego/' . rand(0, 9) .'.jpg';
     }
 

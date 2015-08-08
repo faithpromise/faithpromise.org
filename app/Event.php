@@ -5,14 +5,22 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\PublishedTrait;
 use App\ExpiredTrait;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Event extends Model
-{
+class Event extends Model implements SluggableInterface {
 
     use PublishedTrait;
     use ExpiredTrait;
+    use SluggableTrait;
 
     protected $dates = ['publish_at', 'expires_at', 'created_at', 'updated_at'];
+
+    protected $sluggable = [
+        'build_from'      => 'title',
+        'save_to'         => 'slug',
+        'unique'          => false
+    ];
 
     public function ministry() {
         return $this->belongsTo('App\Ministry');

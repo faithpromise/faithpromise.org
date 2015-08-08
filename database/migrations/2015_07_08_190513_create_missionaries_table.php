@@ -14,7 +14,7 @@ class CreateMissionariesTable extends Migration
     {
         Schema::create('missionaries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ident', 50)->unique();
+            $table->string('slug', 50)->unique();
             $table->string('name', 50)->nullable();
             $table->integer('mission_location_id')->unsigned()->nullable();
             $table->string('url', 75)->nullable();

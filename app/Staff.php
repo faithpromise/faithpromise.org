@@ -4,11 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Staff extends Model {
+class Staff extends Model implements SluggableInterface {
+
     use SoftDeletes;
+    use SluggableTrait;
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
+    protected $sluggable = [
+        'build_from'      => 'display_name',
+        'save_to'         => 'slug',
+        'unique'          => true,
+        'include_trashed' => true
+    ];
 
     public function campus() {
         return $this->belongsTo('App\Campus');
@@ -23,11 +34,11 @@ class Staff extends Model {
     }
 
     public function getUrlAttribute() {
-        return '/staff/' . $this->ident;
+        return '/staff/' . $this->slug;
     }
 
     public function getImageAttribute() {
-        $img = 'images/staff/' . $this->ident . '-square.jpg';
+        $img = 'images/staff/' . $this->slug . '-square.jpg';
         return asset_exists($img) ? $img : 'images/staff/default-square.jpg';
     }
 
@@ -39,7 +50,7 @@ class Staff extends Model {
     }
 
     public function get8bitPathAttribute() {
-        return 'images/staff/' . $this->ident . '-8bit-square.jpg';
+        return 'images/staff/' . $this->slug . '-8bit-square.jpg';
     }
 
     public function getHasSocialLinksAttribute() {

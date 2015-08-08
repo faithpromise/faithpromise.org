@@ -10,7 +10,7 @@
     <!-- TODO: Highlight currently selected video -->
     <tbody>
         @foreach ($videos as $v)
-            <tr class="{% if v.ident == include.selected %}Playlist-selected{% endif %}">
+            <tr class="{% if v.slug == include.selected %}Playlist-selected{% endif %}">
                 <td><a href="{{ $v->url }}" title="Learn more">{{ $v->title }}</a></td>
                 <td>{{ $v->speaker_display_name }}</td>
                 <td>{{ $v->sermon_date_formatted }}</td>

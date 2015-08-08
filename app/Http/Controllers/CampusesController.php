@@ -13,8 +13,8 @@ class CampusesController extends BaseController {
 
         $campus_obj = [];
         foreach($campuses as $campus) {
-            $campus_obj[$campus->ident] = [
-                'ident' => $campus->ident,
+            $campus_obj[$campus->slug] = [
+                'slug' => $campus->slug,
                 'name' => $campus->name,
                 'title' => $campus->name . ' Campus',
                 'location' => $campus->location,
@@ -38,9 +38,9 @@ class CampusesController extends BaseController {
         ]);
     }
 
-    public function detail($campus_ident) {
+    public function detail($campus_slug) {
 
-        $campus = Campus::whereIdent($campus_ident)->first();
+        $campus = Campus::whereSlug($campus_slug)->first();
 
         return view('locations_detail', [
             'campus' => $campus

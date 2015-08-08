@@ -16,7 +16,7 @@ class CreateVideosTable extends Migration
             $table->increments('id');
             $table->integer('series_id')->unsigned()->nullable();
             $table->integer('speaker_id')->unsigned()->nullable();
-            $table->string('ident', 100);
+            $table->string('slug', 100);
             $table->string('type', 20);
             $table->string('title', 100);
             $table->text('description')->nullable();
@@ -28,7 +28,7 @@ class CreateVideosTable extends Migration
             $table->dateTime('publish_at')->nullable();
             $table->timestamps();
 
-            $table->unique(['series_id', 'ident']);
+            $table->unique(['series_id', 'slug']);
         });
     }
 

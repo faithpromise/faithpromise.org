@@ -14,7 +14,7 @@ class CreateMinistriesTable extends Migration
     {
         Schema::create('ministries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ident', 20)->unique();
+            $table->string('slug', 50)->unique();
             $table->string('title', 50);
             $table->timestamps();
         });

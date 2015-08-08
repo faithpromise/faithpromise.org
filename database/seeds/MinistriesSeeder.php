@@ -3,16 +3,14 @@
 use App\Ministry;
 use Illuminate\Database\Seeder;
 
-class MinistriesSeeder extends Seeder
-{
+class MinistriesSeeder extends Seeder {
 
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
         DB::table('ministries')->truncate();
 
         $this->makeRecord('care', 'Care Ministries');
@@ -29,11 +27,10 @@ class MinistriesSeeder extends Seeder
         $this->makeRecord('youngadults', 'Young Adults');
     }
 
-    private function makeRecord($ident, $title)
-    {
+    private function makeRecord($slug, $title) {
         (new Ministry([
-            'ident'          => $ident,
-            'title'           => $title
+            'slug'  => $slug,
+            'title' => $title
         ]))->save();
     }
 }

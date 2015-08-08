@@ -16,36 +16,36 @@ class MissionariesSeeder extends Seeder {
         DB::table('missionaries')->truncate();
 
         DB::table('missionaries')->insert([
-            'ident'               => 'beukemas',
+            'slug'                => 'beukemas',
             'name'                => 'The Beukemas',
-            'mission_location_id' => MissionLocation::where('ident', '=', 'jamaica')->first()->id,
+            'mission_location_id' => MissionLocation::where('slug', '=', 'jamaica')->first()->id,
             'url'                 => 'http://bkbeukema.org',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()
         ]);
 
         DB::table('missionaries')->insert([
-            'ident'               => 'coplands',
+            'slug'                => 'coplands',
             'name'                => 'The Coplands',
-            'mission_location_id' => MissionLocation::where('ident', '=', 'italy')->first()->id,
+            'mission_location_id' => MissionLocation::where('slug', '=', 'italy')->first()->id,
             'url'                 => 'http://nickandshannan.org',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()
         ]);
 
         DB::table('missionaries')->insert([
-            'ident'               => 'chris-ladd',
+            'slug'                => 'chris-ladd',
             'name'                => 'Chris Ladd',
-            'mission_location_id' => MissionLocation::where('ident', '=', 'south-africa')->first()->id,
+            'mission_location_id' => MissionLocation::where('slug', '=', 'south-africa')->first()->id,
             'url'                 => 'http://chrisleeladd.com',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()
         ]);
 
         DB::table('missionaries')->insert([
-            'ident'               => 'julie-rumph',
+            'slug'                => 'julie-rumph',
             'name'                => 'Julie Rumph',
-            'mission_location_id' => MissionLocation::where('ident', '=', 'south-africa')->first()->id,
+            'mission_location_id' => MissionLocation::where('slug', '=', 'south-africa')->first()->id,
             'url'                 => 'http://julierumph.org',
             'created_at'          => Carbon::now(),
             'updated_at'          => Carbon::now()

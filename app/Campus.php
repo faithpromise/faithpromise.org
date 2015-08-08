@@ -4,22 +4,33 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Campus extends Model
-{
+class Campus extends Model implements SluggableInterface {
+
     use SoftDeletes;
+    use SluggableTrait;
+
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
+    protected $sluggable = [
+        'build_from'      => 'name',
+        'save_to'         => 'slug',
+        'unique'          => true,
+        'include_trashed' => true
+    ];
 
     public function staff() {
         return $this->hasMany('App\Staff')->orderBy('sort');
     }
 
     public function getUrlAttribute() {
-        return '/locations/' . $this->ident;
+        return '/locations/' . $this->slug;
     }
 
     public function getImageAttribute() {
-        return 'images/campuses/' . $this->ident . '-wide.jpg';
+        return 'images/campuses/' . $this->slug . '-wide.jpg';
     }
 
     public function getTimesAttribute() {
@@ -39,8 +50,7 @@ class Campus extends Model
         return str_replace('; ', '<br>', $this->times);
     }
 
-    public function getCardImageAttribute()
-    {
+    public function getCardImageAttribute() {
         return $this->getImageAttribute();
     }
 

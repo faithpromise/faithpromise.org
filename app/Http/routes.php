@@ -44,7 +44,7 @@ Route::get('/youngadults', ['as' => 'youngAdults', 'uses' => 'MinistriesControll
 
 // Missions
 Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
-Route::get('/missions/{location_ident}', ['as' => 'missionsLocation', 'uses' => 'MissionsController@location']);
+Route::get('/missions/{location_slug}', ['as' => 'missionsLocation', 'uses' => 'MissionsController@location']);
 
 // Staff
 Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);

@@ -17,13 +17,13 @@ class SermonsController extends BaseController {
         return view('sermons', [
             'series'        => $series,
             'latest_sermon' => $latest_sermon,
-            'permalink'     => route('seriesVideo', $latest_sermon->Series->ident, $latest_sermon->ident)
+            'permalink'     => route('seriesVideo', $latest_sermon->Series->slug, $latest_sermon->slug)
         ]);
     }
 
-    public function series($series_ident) {
+    public function series($series_slug) {
 
-        $series = Series::where('ident', '=', $series_ident)->first();
+        $series = Series::where('slug', '=', $series_slug)->first();
         $videos = Video::with('Series')->with('Speaker')->where('series_id', '=', $series->id)->get();
 
         return view('series', [
@@ -33,11 +33,11 @@ class SermonsController extends BaseController {
 
     }
 
-    public function video($series_ident, $video_ident) {
+    public function video($series_slug, $video_slug) {
 
-        $series = Series::where('ident', '=', $series_ident)->first();
+        $series = Series::whereSlug($series_slug)->first();
         $videos = Video::with('Series')->where('series_id', '=', $series->id)->get();
-        $video = $videos->where('ident', $video_ident)->first();
+        $video = $videos->whereSlug($video_slug)->first();
 
         if (is_null($video)) {
             abort(404);

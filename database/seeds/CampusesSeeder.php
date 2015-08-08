@@ -4,15 +4,13 @@ use App\Campus;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
-class CampusesSeeder extends Seeder
-{
+class CampusesSeeder extends Seeder {
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
 
         DB::table('campuses')->truncate();
 
@@ -24,10 +22,9 @@ class CampusesSeeder extends Seeder
         $this->makeRecord("campbell", "Campbell Campus", "LaFollette, TN", "2301 Jacksboro Pike Suite 3", "LaFollette", "TN", "37766", 36.34477, -84.16185, "['Sundays at 10:30 am']", "https://goo.gl/maps/ypsrw", "https://goo.gl/maps/gWW6y", 5);
     }
 
-    private function makeRecord($ident, $name, $location, $address, $city, $state, $zip, $lat, $lng, $times, $map_url, $directions_url, $sort)
-    {
+    private function makeRecord($slug, $name, $location, $address, $city, $state, $zip, $lat, $lng, $times, $map_url, $directions_url, $sort) {
         (new Campus([
-            'ident'          => $ident,
+            'slug'           => $slug,
             'name'           => $name,
             'location'       => $location,
             'address'        => $address,

@@ -54,7 +54,7 @@ class StaffController extends BaseController {
 
     public function detail($staff) {
 
-        $member = Staff::whereIdent($staff)->first();
+        $member = Staff::whereSlug($staff)->first();
 
         if (is_null($member)) {
             abort(404); // TODO: Suggest the staff page

@@ -16,6 +16,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->integer('ministry_id')->nullable();
             $table->integer('calendar_event_number')->nullable();
+            $table->string('slug', 50);
             $table->string('title', 50);
             $table->string('dates_text', 35)->nullable();
             $table->string('image', 35)->nullable();

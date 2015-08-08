@@ -16,10 +16,10 @@ foreach ($staff as $member):
     echo "\$staff_member = new Staff([\n";
 
     if (!is_null($campus)) {
-        echo "'campus_id' => Campus::where('ident', '=', '" . $campus->ident . "')->first()->id,\n";
+        echo "'campus_id' => Campus::where('slug', '=', '" . $campus->slug . "')->first()->id,\n";
     }
 
-    echo "'ident' => '" . $member->ident . "',\n";
+    echo "'slug' => '" . $member->slug . "',\n";
     echo "'first_name' => '" . $member->first_name . "',\n";
     echo "'last_name' => '" . $member->last_name . "',\n";
     echo "'display_name' => '" . $member->display_name . "',\n";
@@ -36,13 +36,13 @@ foreach ($staff as $member):
 
     foreach ($teams as $team) {
         echo "\$staff_member->teams()->attach(";
-        echo "\\App\\Team::where('ident', '=', '" . $team->ident . "')->first()->id";
+        echo "\\App\\Team::where('slug', '=', '" . $team->slug . "')->first()->id";
         echo ");\n";
     }
 
     foreach ($ministries as $ministry) {
         echo "\$staff_member->ministries()->attach(";
-        echo "\\App\\Ministry::where('ident', '=', '" . $ministry->ident . "')->first()->id";
+        echo "\\App\\Ministry::where('slug', '=', '" . $ministry->slug . "')->first()->id";
         echo ");\n";
     }
 

@@ -3,11 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Ministry extends Model
-{
+class Ministry extends Model implements SluggableInterface {
+
+    use SluggableTrait;
+
     protected $dates = ['created_at', 'updated_at'];
+
+    protected $sluggable = [
+        'build_from'      => 'name',
+        'save_to'         => 'slug',
+        'unique'          => true,
+        'include_trashed' => true
+    ];
 
     public function staff() {
         return $this->belongsToMany('App\Staff', 'staff_ministry')->orderBy('sort');

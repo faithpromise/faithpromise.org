@@ -14,7 +14,7 @@ class CreateCampusesTable extends Migration
     {
         Schema::create('campuses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ident', 20)->unique();
+            $table->string('slug', 50)->unique();
             $table->string('name', 50);
             $table->string('location', 35);
             $table->string('address', 50)->nullable();

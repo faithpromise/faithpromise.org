@@ -19,7 +19,7 @@
                         <?php $next_series_starts = null; ?>
                         @foreach($series as $item)
                             <li class="SeriesGallery-item">
-                                <a class="SeriesGallery-link" href="{{ route('seriesVideo', $item->ident) }}/">
+                                <a class="SeriesGallery-link" href="{{ route('seriesVideo', $item->slug) }}/">
                                     <img
                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                             class="SeriesGallery-thumb b-lazy"
@@ -31,7 +31,7 @@
                                     <div class="SeriesGallery-titles">
                                         <h3 class="SeriesGallery-title">{{ $item->title }}</h3>
                                         <h4 class="SeriesGallery-subtitle">
-                                            @if ($item->starts_at->isFuture() OR $latest_sermon->Series->ident === $item->ident)
+                                            @if ($item->starts_at->isFuture() OR $latest_sermon->Series->slug === $item->slug)
                                                 {{ $item->getDate($next_series_starts) }}
                                             @else
                                                 {{ $item->when }}

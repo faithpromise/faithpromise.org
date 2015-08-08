@@ -9,8 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 
 class MinistriesController extends BaseController {
 
-    public function index($ministry_ident) {
-        return view($ministry_ident);
+    public function index($ministry_slug) {
+        return view($ministry_slug);
     }
 
     public function fpKidsWelcome() {
@@ -19,10 +19,10 @@ class MinistriesController extends BaseController {
 
     public function defaultMinistryPage() {
 
-        $ministry_ident = Route::getCurrentRoute()->getUri();
+        $ministry_slug = Route::getCurrentRoute()->getUri();
 
-        return view($ministry_ident, [
-            'ministry' => Ministry::whereIdent($ministry_ident)->first()
+        return view($ministry_slug, [
+            'ministry' => Ministry::whereSlug($ministry_slug)->first()
         ]);
 
     }

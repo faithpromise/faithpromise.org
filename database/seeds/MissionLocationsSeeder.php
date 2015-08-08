@@ -3,21 +3,19 @@
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
-class MissionLocationsSeeder extends Seeder
-{
+class MissionLocationsSeeder extends Seeder {
 
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
 
         DB::table('mission_locations')->truncate();
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'east-asia',
+            'slug'         => 'east-asia',
             'name'         => 'East Asia',
             'is_continual' => 1,
             'created_at'   => Carbon::now(),
@@ -25,7 +23,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'south-africa',
+            'slug'         => 'south-africa',
             'name'         => 'South Africa',
             'is_continual' => 1,
             'created_at'   => Carbon::now(),
@@ -33,7 +31,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'honduras',
+            'slug'         => 'honduras',
             'name'         => 'Honduras',
             'is_continual' => 1,
             'created_at'   => Carbon::now(),
@@ -41,7 +39,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'bahamas',
+            'slug'         => 'bahamas',
             'name'         => 'Bahamas',
             'is_continual' => 0,
             'created_at'   => Carbon::now(),
@@ -49,7 +47,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'haiti',
+            'slug'         => 'haiti',
             'name'         => 'Haiti',
             'is_continual' => 1,
             'created_at'   => Carbon::now(),
@@ -57,7 +55,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'portugal',
+            'slug'         => 'portugal',
             'name'         => 'Portugal',
             'is_continual' => 0,
             'created_at'   => Carbon::now(),
@@ -65,7 +63,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'jamaica',
+            'slug'         => 'jamaica',
             'name'         => 'Jamaica',
             'is_continual' => 1,
             'created_at'   => Carbon::now(),
@@ -73,7 +71,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'new-york-city',
+            'slug'         => 'new-york-city',
             'name'         => 'New York City',
             'is_continual' => 0,
             'created_at'   => Carbon::now(),
@@ -81,7 +79,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'mexico',
+            'slug'         => 'mexico',
             'name'         => 'Mexico',
             'is_continual' => 1,
             'created_at'   => Carbon::now(),
@@ -89,7 +87,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'costa-rica',
+            'slug'         => 'costa-rica',
             'name'         => 'Costa Rica',
             'is_continual' => 1,
             'created_at'   => Carbon::now(),
@@ -97,7 +95,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'big-creek-ky',
+            'slug'         => 'big-creek-ky',
             'name'         => 'Big Creek, KY',
             'is_continual' => 0,
             'created_at'   => Carbon::now(),
@@ -105,7 +103,7 @@ class MissionLocationsSeeder extends Seeder
         ]);
 
         DB::table('mission_locations')->insert([
-            'ident'        => 'italy',
+            'slug'         => 'italy',
             'name'         => 'Italy',
             'is_continual' => 0,
             'created_at'   => Carbon::now(),

@@ -14,7 +14,7 @@ class CreateSeriesTable extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ident', 100)->unique();
+            $table->string('slug', 100)->unique();
             $table->string('title', 100);
             $table->text('description');
             $table->boolean('is_official')->default(1);

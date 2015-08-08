@@ -4,29 +4,34 @@ namespace App;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class MissionLocation extends Model
-{
+class MissionLocation extends Model implements SluggableInterface {
+
+    use SluggableTrait;
 
     protected $dates = ['created_at', 'updated_at'];
 
-    public function missionaries()
-    {
+    protected $sluggable = [
+        'build_from'      => 'name',
+        'save_to'         => 'slug',
+        'unique'          => true
+    ];
+
+    public function missionaries() {
         return $this->hasMany('App\Missionary');
     }
 
-    public function missionTrips()
-    {
+    public function missionTrips() {
         return $this->hasMany('App\MissionTrip');
     }
 
-    public function getUrlAttribute()
-    {
-        return '/missions/' . $this->ident;
+    public function getUrlAttribute() {
+        return '/missions/' . $this->slug;
     }
 
-    public function getDatesProseAttribute()
-    {
+    public function getDatesProseAttribute() {
         $dates = [];
 
         foreach ($this->missiontrips as $trip) {
@@ -44,9 +49,8 @@ class MissionLocation extends Model
         return $this->getDatesProseAttribute();
     }
 
-    public function getCardImageAttribute()
-    {
-        return 'images/missions/locations/' . $this->ident . '-tall.jpg';
+    public function getCardImageAttribute() {
+        return 'images/missions/locations/' . $this->slug . '-tall.jpg';
     }
 
     public function getCardUrlTextAttribute() {
@@ -57,8 +61,7 @@ class MissionLocation extends Model
         return $this->getUrlAttribute();
     }
 
-    public function scopeUpcoming($query)
-    {
+    public function scopeUpcoming($query) {
         $query->where('is_continual', '=', 1)
             ->orWhereRaw(DB::raw('id in (select mission_location_id from mission_trips where ends_at > NOW() or ends_at IS NULL)'))
             ->with('missiontrips');

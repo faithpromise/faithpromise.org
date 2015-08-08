@@ -5,12 +5,21 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\PublishedTrait;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Series extends Model {
+class Series extends Model implements SluggableInterface {
 
     use PublishedTrait;
+    use SluggableTrait;
 
     protected $dates = ['starts_at', 'publish_at', 'created_at', 'updated_at'];
+
+    protected $sluggable = [
+        'build_from'      => 'title',
+        'save_to'         => 'slug',
+        'unique'          => true
+    ];
 
     public function videos() {
         return $this->hasMany('App\Video')->orderBy('sermon_date');
@@ -21,19 +30,19 @@ class Series extends Model {
     }
 
     public function getImageAttribute() {
-        return 'images/series/' . $this->ident . '-wide.jpg';
+        return 'images/series/' . $this->slug . '-wide.jpg';
     }
 
     public function getHomeImageAttribute() {
-        return 'images/home/' . $this->ident . '-square.jpg';
+        return 'images/home/' . $this->slug . '-square.jpg';
     }
 
     public function getUrlAttribute() {
-        return route('series', ['series' => $this->ident]);
+        return route('series', ['series' => $this->slug]);
     }
 
     public function getHomeCssAttribute() {
-        return '/build/css/' . $this->ident . '.css';
+        return '/build/css/' . $this->slug . '.css';
     }
 
     public function getWhenAttribute() {

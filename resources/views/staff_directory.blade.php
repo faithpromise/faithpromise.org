@@ -12,7 +12,7 @@
         <table class="StaffList">
             <tbody>
                 @foreach ($staff as $member)
-                    <tr class="StaffList-row" onclick="window.document.location='/staff/{{ $member->ident }}';">
+                    <tr class="StaffList-row" onclick="window.document.location='/staff/{{ $member->slug }}';">
                         <td class="StaffList-column StaffList-column--photo">
                             <span class="StaffList-photo b-lazy"
                                     data-src-sm="{{ cdn_image('sm', 'quarter', $member->image, 'square') }}"

@@ -14,7 +14,7 @@ class MissionsController extends BaseController
 
     public function index()
     {
-        $ministry = Ministry::whereIdent('missions')->first();
+        $ministry = Ministry::whereSlug('missions')->first();
         $staff = $ministry->staff;
         $events = Event::where('ministry_id', '=', $ministry->id)->get();
         $locations = MissionLocation::upcoming()->get();
@@ -22,10 +22,10 @@ class MissionsController extends BaseController
 
         return view('missions', ['events' => $events, 'missionaries' => $missionaries, 'staff' => $staff, 'locations' => $locations]);
     }
-    public function location($location_ident)
+    public function location($location_slug)
     {
 
-        $location = MissionLocation::whereIdent($location_ident)->first();
+        $location = MissionLocation::whereSlug($location_slug)->first();
         $trips = MissionTrip::where('mission_location_id', '=', $location->id)->get();
 
         return view('missions_location', ['location' => $location, 'trips' => $trips]);
