@@ -1,1 +1,3 @@
 TODO: Implement responsive font sizes per component
+TODO: Check to make sure service times are correct
+TODO: Make sure Pel campus staff includes pastor, etc.
