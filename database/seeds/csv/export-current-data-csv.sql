@@ -1,25 +1,25 @@
 
 /* campuses */
-SELECT c.CampusID as id, IF(c.CampusIdent = 'pel', 'pellissippi', c.CampusIdent) AS ident, REPLACE(c.CampusName, ' Campus', '') AS `name`,REPLACE(c.CampusLocation, ', TN', '') AS location,c.CampusStreet AS address,c.CampusCity AS city,c.CampusState AS state,c.CampusZip As zip,c.CampusLatitude AS lat,c.CampusLongitude AS lng,c.times,c.map_url,c.directions_url,c.CampusDisplayOrder AS sort, NOW() as created_at, NOW() as updated_at
+SELECT c.CampusID as id, IF(c.CampusIdent = 'pel', 'pellissippi', c.CampusIdent) AS slug, REPLACE(c.CampusName, ' Campus', '') AS `name`,REPLACE(c.CampusLocation, ', TN', '') AS location,c.CampusStreet AS address,c.CampusCity AS city,c.CampusState AS state,c.CampusZip As zip,c.CampusLatitude AS lat,c.CampusLongitude AS lng,c.times,c.map_url,c.directions_url,c.CampusDisplayOrder AS sort, NOW() as created_at, NOW() as updated_at
 FROM campus c;
 
 /* events */
 select
-REPLACE(REPLACE(REPLACE(REPLACE(NewsTitle, ' ', '-'), '"', ''), '''', '') , ':', '') as ident,
+REPLACE(REPLACE(REPLACE(REPLACE(NewsTitle, ' ', '-'), '"', ''), '''', '') , ':', '') as slug,
 NewsTitle as title,
 NewsDates as dates_text,
 concat(NewsIdent, '.jpg') as image, NewsShortDescription as excerpt, NewsDescription as description, NewsPublishDate as publish_at, NewsExpireDate as expire_at, NewsPlaceOnHomePage as is_featured, NewsSort as sort, NewsDateCreated as created_at, NewsDateModified as updated_at
 from newsupdate;
 
 /* series */
-SELECT  s.SeriesID as id,s.SeriesIdent AS ident,s.SeriesTitle as title,s.SeriesDescription as description,s.is_official_series as is_official,s.begin_date as starts_at,s.SeriesDateCreated AS publish_at,s.SeriesDateCreated as created_at,s.SeriesDateModified as updated_at
+SELECT  s.SeriesID as id,s.SeriesIdent AS slug,s.SeriesTitle as title,s.SeriesDescription as description,s.is_official_series as is_official,s.begin_date as starts_at,s.SeriesDateCreated AS publish_at,s.SeriesDateCreated as created_at,s.SeriesDateModified as updated_at
 FROM series s JOIN seriesMedia m ON s.SeriesID = m.SeriesID
 WHERE s.SeriesDateCreated IS NOT NULL
 	AND (m.MediaVimeoID IS NOT NULL OR m.MediaAudioURL IS NOT NULL)
 GROUP BY s.SeriesID;
 
 /* videos */
-        SELECT  m.SeriesID as series_id,s.StaffID as speaker_id,m.MediaIdent AS ident,m.MediaType AS type,m.MediaTitle AS title,m.MediaDescription AS description,m.MediaVimeoID AS vimeo_id,m.MediaVimeoASL AS vimeo_id_asl,m.MediaAudioURL AS audio_file,DATE_FORMAT(m.MediaDateTime, '%Y-%m-%d') AS sermon_date,p.PersonDisplayName AS speaker_name,m.MediaDateTime AS publish_at,coalesce(m.MediaDateCreated, m.MediaDateTime) as created_at, coalesce(m.MediaDateModified, m.MediaDateTime) as updated_at
+        SELECT  m.SeriesID as series_id,s.StaffID as speaker_id,m.MediaIdent AS slug,m.MediaType AS type,m.MediaTitle AS title,m.MediaDescription AS description,m.MediaVimeoID AS vimeo_id,m.MediaVimeoASL AS vimeo_id_asl,m.MediaAudioURL AS audio_file,DATE_FORMAT(m.MediaDateTime, '%Y-%m-%d') AS sermon_date,p.PersonDisplayName AS speaker_name,m.MediaDateTime AS publish_at,coalesce(m.MediaDateCreated, m.MediaDateTime) as created_at, coalesce(m.MediaDateModified, m.MediaDateTime) as updated_at
         FROM seriesmedia m
         LEFT JOIN person p ON m.MediaAuthorID = p.PersonID
         LEFT JOIN staff s ON p.PersonID = s.StaffID
@@ -30,7 +30,7 @@ GROUP BY s.SeriesID;
 
 /* staff */
 SELECT
-s.StaffID as id,c.campusid as campus_id,TRIM(s.StaffIdent) AS ident,p.PersonFirstName AS first_name,p.PersonLastName AS last_name,p.PersonDisplayName AS display_name,s.StaffTitle AS title,p.PersonEmail AS email,s.StaffOfficeExt AS phone_ext,
+s.StaffID as id,c.campusid as campus_id,TRIM(s.StaffIdent) AS slug,p.PersonFirstName AS first_name,p.PersonLastName AS last_name,p.PersonDisplayName AS display_name,s.StaffTitle AS title,p.PersonEmail AS email,s.StaffOfficeExt AS phone_ext,
 s.StaffBio AS bio,s.new_sort AS sort,s.StaffDateCreated as created_at,s.StaffDateModified as updated_at,(IF(ISNULL(s.StaffDateDeleted) AND s.StaffActive = 1, null, coalesce(s.StaffDateDeleted, NOW()))) AS deleted_at
 FROM staff s JOIN person p ON s.PersonID = p.PersonID LEFT JOIN campus c on s.campuses = c.CampusIdent;
 
@@ -46,7 +46,7 @@ from staff_teams st
  JOIN teams t ON st.team_ident = t.ident;
  
 /* mission_locations */
-select id, ident, title, NOW() as created_at, NOW() as updated_at
+select id, ident as slug, title, NOW() as created_at, NOW() as updated_at
 from mission_locations
 where export = 1;
 
@@ -57,8 +57,8 @@ MissionTitle as title, MissionDate as dates, MissionCost as cost, MissionSize as
 from missions m left join mission_locations l on m.MissionTitle = l.title and l.export = 1;
 
 /* ministries */
-select id, ident, title, NOW() as created_at, NOW() as updated_at from ministries;
+select id, ident as slug, title, NOW() as created_at, NOW() as updated_at from ministries;
 
 /* teams */
-select id, ident, title, sort, NOW() as created_at, NOW() as updated_at from teams;
+select id, ident as slug, title, sort, NOW() as created_at, NOW() as updated_at from teams;
 
