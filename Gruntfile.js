@@ -2,6 +2,7 @@ module.exports = function (grunt) {
 
     // Load all tasks
     require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-exec');
 
     // Show elapsed time
     require('time-grunt')(grunt);
@@ -124,9 +125,10 @@ module.exports = function (grunt) {
             uncss: {
                 production: {
                     files: {
-                        'public/build/main.tidy.css': []
+                        'public/build/css/main.tidy.css': ['public/foo.html']
                     },
                     options: {
+                        stylesheets: ['public/build/css/main.dev.css'],
                         ignoreSheets : ['/fonts.googleapis/'],
                         urls: []
                     }
@@ -425,7 +427,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('load_sitemap_json', function() {
         var sitemap_urls = grunt.file.readJSON('./public/build/sitemap.json');
-        grunt.config.set('uncss.dist.options.urls', sitemap_urls);
+        grunt.config.set('uncss.production.files', {'public/build/css/main.tidy.css': sitemap_urls});
     });
 
     grunt.registerTask('run_uncss', [
