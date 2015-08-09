@@ -38,9 +38,7 @@ class CampusesController extends BaseController {
         ]);
     }
 
-    public function detail($campus_slug) {
-
-        $campus = Campus::whereSlug($campus_slug)->first();
+    public function detail($campus) {
 
         return view('locations_detail', [
             'campus' => $campus

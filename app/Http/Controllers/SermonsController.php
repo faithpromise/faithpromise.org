@@ -21,9 +21,8 @@ class SermonsController extends BaseController {
         ]);
     }
 
-    public function series($series_slug) {
+    public function series($series) {
 
-        $series = Series::where('slug', '=', $series_slug)->first();
         $videos = Video::with('Series')->with('Speaker')->where('series_id', '=', $series->id)->get();
 
         return view('series', [
@@ -33,15 +32,9 @@ class SermonsController extends BaseController {
 
     }
 
-    public function video($series_slug, $video_slug) {
+    public function video($series, $video) {
 
-        $series = Series::whereSlug($series_slug)->first();
         $videos = Video::with('Series')->where('series_id', '=', $series->id)->get();
-        $video = $videos->whereSlug($video_slug)->first();
-
-        if (is_null($video)) {
-            abort(404);
-        }
 
         return view('series_video', [
             'series' => $series,
