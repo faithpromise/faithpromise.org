@@ -100,11 +100,11 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
         'buttons' => [
             [
                 'title' => 'Lead a group',
-                'url' => '/newleader'
+                'url' => route('newGroupLeader')
             ],
             [
                 'title' => 'Resources',
-                'url' => '/groupleaders'
+                'url' => route('groupLeaders')
             ]
         ]
     ])
