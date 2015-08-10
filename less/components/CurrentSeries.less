@@ -1,52 +1,121 @@
-@CurrentSeries-font-size: 32;
-
 .CurrentSeries {
-  font-size:           ~"@{font-size}px";
-  position:            relative;
-
-  background-position: center;
-  background-repeat:   no-repeat;
-  background-size:     cover;
+  .to-rem(margin, @Card-gutter);
 }
 
-.CurrentSeries-buttons {
-  .to-em(font-size, @CurrentSeries-font-size, @font-size);
+.CurrentSeries-container {
+  position:        relative;
+  height:          0;
+  padding-top:     100%;
+  overflow:        hidden;
+  background-size: cover;
 }
 
-.CurrentSeries-button {
-  .to-rem(margin, 0 7 0 0);
-  .to-rem(border-radius, 70);
-  .to-em(min-width, 59, @CurrentSeries-font-size);
-  .to-em(line-height, 50, @CurrentSeries-font-size);
-  .to-em(border-width, 4, @CurrentSeries-font-size);
+@media (min-width: 53.75em) {
+  .CurrentSeries-container {
+    padding-top: 24.9479167%;
+  }
+}
 
-  display:        inline-block;
-  border-style:   solid;
-  border-color:   @root-text-color;
-  text-transform: uppercase;
+@Countdown-font-size: @font-size;
+@Countdown-bg-color: rgba(113, 117, 113, .8);
+@Countdown-arrow-size: 30;
+@Countdown-arrow-offset: (@Countdown-arrow-size / 2);
 
-  text-align:     center;
-  vertical-align: middle;
+.Countdown {
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  position:         absolute;
+  bottom:           0;
+  left:             0;
+  width:            100%;
+  height:           40%;
+  padding:          1.4em 1em;
+  text-align:       center;
+  background-color: @Countdown-bg-color;
+  color:            #fff;
 
-  cursor:         pointer;
-  user-select:    none;
+  &:hover {
+    text-decoration: none;
+  }
 
+  // Arrow
+  &:after,
   &:before {
-    vertical-align: middle;
+    content:          ' ';
+    display:          block;
+    position:         absolute;
+    top:              ~"-@{Countdown-arrow-offset}px";
+    left:             ~"-@{Countdown-arrow-size}px";
+    width:            ~"@{Countdown-arrow-size}px";
+    height:           50%;
+    background-color: @Countdown-bg-color;
+    transform:        skew(0deg, 45deg);
+    border-bottom:    20px;
   }
 
-  & > i {
-    .to-rem(font-size, 28);
-  }
-
-  &.icon-play {
-    .to-rem(padding-left, 10);
-    .to-rem(padding-right, 20);
+  &:after {
+    top:       auto;
+    bottom:    ~"-@{Countdown-arrow-offset}px";
+    transform: skew(0deg, -45deg);
   }
 }
 
-.CurrentSeries-buttonText {
-  .to-em(font-size, 18, @CurrentSeries-font-size);
-  display:        inline-block;
-  vertical-align: middle;
+@media (min-width: 53.75em) {
+  .Countdown {
+    top:    0;
+    right:  0;
+    left:   auto;
+    height: 100%;
+    width:  55%;
+  }
+}
+
+.Countdown-title {
+  .to-em(font-size, 36, @Countdown-font-size);
+  margin-bottom:  0;
+  color:          inherit;
+  text-transform: uppercase;
+}
+
+.Countdown-title,
+.Countdown-digits {
+  text-align: right;
+}
+
+.Countdown-digits {
+  .to-em(font-size, 22, @Countdown-font-size);
+}
+
+.Countdown-digit.is-disabled {
+  opacity: .5;
+}
+
+.Countdown-play {
+  .to-em(font-size, 54, @Countdown-font-size);
+  margin-left: 0.2em;
+}
+
+.Countdown-buttons {
+  margin-top: 1em;
+}
+
+.Countdown-button {
+  &:extend(.Button all);
+  &:extend(.Button--light all);
+  margin-bottom: 0;
+}
+
+// 860px
+//@media (min-width: 53.75em) {
+//  .Countdown {
+//    font-size: 111%;
+//  }
+//}
+
+//1080px
+@media (min-width: 67.5em) {
+  .Countdown {
+    font-size: 111%;
+  }
 }

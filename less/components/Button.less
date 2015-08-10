@@ -1,14 +1,15 @@
-@Button-font-size: 20;
+@Button-font-size: 18;
 .Button {
   .to-rem(font-size, @Button-font-size);
-  .to-em(padding, 15 30, 20);
-  .to-em(margin, 0 5 20, 20);
-  .to-em(border-radius, 20, 22);
+  .to-em(padding, 15 30, @Button-font-size);
+  .to-em(margin, 0 5 20, @Button-font-size);
+  .to-em(border-radius, 28, @Button-font-size);
   .link-color(@root-text-color);
   display:        inline-block;
   border:         2px solid @root-text-color;
   text-transform: uppercase;
   cursor:         pointer;
+  user-select:    none;
 
   transition:     background-color .2s ease-in-out;
 
@@ -30,7 +31,7 @@
   }
 }
 
-.Button-light {
+.Button--light {
   .link-color(#fff);
   border-color: #fff;
 
