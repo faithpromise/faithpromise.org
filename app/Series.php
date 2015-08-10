@@ -34,7 +34,7 @@ class Series extends Model implements SluggableInterface {
     }
 
     public function getHomeImageAttribute() {
-        return 'images/home/' . $this->slug . '-square.jpg';
+        return 'images/home/' . $this->slug . '/' . $this->slug . '-wide.jpg';
     }
 
     public function getUrlAttribute() {
