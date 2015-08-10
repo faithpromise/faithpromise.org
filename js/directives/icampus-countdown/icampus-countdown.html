@@ -1,30 +1,27 @@
-<div>
+<div class="Countdown">
 
-  <div class="Countdown" ng-if="!countdown.isLive" ng-cloak>
-        <span class="Countdown-title" ng-hide="countdown.isLoaded">
-            Loading...
-        </span>
+  <div ng-if="!countdown.isLive" ng-cloak>
+    <h3 class="Countdown-title" ng-hide="countdown.isLoaded">Loading...</h3>
+    <h3 class="Countdown-title" ng-show="countdown.isLoaded">Watch Online In</h3>
 
-        <span class="Countdown-title" ng-show="countdown.isLoaded">
-            <span ng-if="days !== '00'">{{ countdown.days }} days :</span> {{ countdown.hours }} Hrs : {{ countdown.minutes }} Min : {{ countdown.seconds }} Sec
-        </span>
-
-    <p class="Countdown-text">
-      Our next online broadcast begins this {{ countdown.next | date : 'EEEE' }} at {{ countdown.next | date : 'h a' }} (see full list). Or, join us at one of our {{ numLocations }} locations<span ng-show="seriesTitle"> for our current series, “{{ seriesTitle }}”</span>.
-    </p>
+    <div class="Countdown-digits" ng-cloak>
+      <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_days }">{{ countdown.days }} days, </span>
+      <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_hours }">{{ countdown.hours }} hrs, </span>
+      <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_minutes }">{{ countdown.minutes }} min, </span>
+      <span class="Countdown-digit">{{ countdown.seconds }} sec </span>
+    </div>
   </div>
 
-  <div class="Countdown" ng-if="countdown.isLive" ng-cloak>
-    <span class="Countdown-title">We're live!</span>
-
-    <p class="Countdown-text">
-      Join us right now online. Or, visit one of our {{ numLocations }} locations<span ng-show="seriesTitle"> for our current series, “{{ seriesTitle }}”</span>.
-    </p>
+  <div class="Countdown-play" ng-if="!countdown.isLive" ng-cloak>
+    <i class="icon-play-circled"></i>
   </div>
 
-  <div class="CurrentSeries-buttons">
-    <a class="ActionButton" href="#">Watch Live</a>
-    <a class="ActionButton" href="#">Visit This Weekend</a>
+  <div ng-if="countdown.isLive" ng-cloak>
+    <h3 class="Countdown-title">We're live!</h3>
+
+    <div class="Countdown-buttons">
+      <a class="Countdown-button" href="#">Watch Online <i class="icon-play-circled"></i></a>
+    </div>
   </div>
 
 </div>

@@ -5,11 +5,8 @@
     function directive() {
         return {
             restrict: 'E',
-            scope: {
-                seriesTitle: '='
-            },
             controller: Controller,
-            templateUrl: '/app/directives/icampus-countdown/icampus-countdown.html',
+            templateUrl: '/build/js/directives/icampus-countdown/icampus-countdown.html',
             replace: true
         };
     }

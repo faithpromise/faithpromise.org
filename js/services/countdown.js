@@ -1,13 +1,14 @@
-(function(module) {
+(function (module) {
     'use strict';
 
     module.factory('countdownService', countdownService);
 
-    countdownService.$inject = ['$http', '$interval'];
+    countdownService.$inject = ['$http', '$timeout'];
 
-    function countdownService($http, $interval) {
+    function countdownService($http, $timeout) {
 
         var interval,
+            live_interval,
             data = {
                 isLoaded: false
             };
@@ -23,13 +24,13 @@
         }
 
         function icampusFetch() {
-            return $http.get('/countdown.js');
+            return $http.get('/countdown.js?v=' + (new Date().getTime()));
         }
 
         function icampusLoadCountdown(response) {
             data.next = response.data.start;
             data.start = new Date(response.data.start_utc);
-            interval = $interval(icampusTick, 1000);
+            icampusTick();
         }
 
         function icampusTick() {
@@ -40,16 +41,25 @@
             var seconds = Math.floor(secondsTill % 60);
 
             if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
+                live_interval = $timeout(activate, 300000); /* 5 min = 300000 ms */
                 data.isLive = true;
-                return clearInterval(interval);
+                data.isLoaded = true;
+                return;
             }
 
-            data.isLoaded = true;
-            data.days = days > 9 ? days : ('0' + days);
-            data.hours = hours > 9 ? hours : ('0' + hours);
+            data.has_days = days > 0;
+            data.has_hours = hours > 0; // TODO: Include days
+            data.has_minutes = minutes > 0; // TODO: Include days and hours
+
+            data.days = days;
+            data.hours = hours;
             data.minutes = minutes > 9 ? minutes : ('0' + minutes);
             data.seconds = seconds > 9 ? seconds : ('0' + seconds);
 
+            data.isLive = false;
+            data.isLoaded = true;
+
+            interval = $timeout(icampusTick, 1000);
         }
 
     }
