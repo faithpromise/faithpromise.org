@@ -18,4 +18,16 @@ class RedirectController extends BaseController {
         return redirect()->route('locations');
     }
 
+    public function biblePlan() {
+        return redirect()->route('biblePlan');
+    }
+
+    public function youngAdults() {
+        return redirect()->route('youngAdults');
+    }
+
+    public function newGroupLeader() {
+        return redirect()->route('newGroupLeader');
+    }
+
 }
