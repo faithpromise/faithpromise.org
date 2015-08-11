@@ -21,6 +21,13 @@
   }
 }
 
+.Card-grid.gutter-half {
+  .to-rem(margin-left, -@grid-gutter-half);
+  & .Card-item {
+    .to-rem(padding-left, @grid-gutter-half);
+  }
+}
+
 .Card {
   .to-em(margin-bottom, @Card-gutter, @Card-font-size);
   background-color: #fff;

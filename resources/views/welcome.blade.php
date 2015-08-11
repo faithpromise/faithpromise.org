@@ -61,8 +61,10 @@
         </div>
     </div>
 
-    @cardsection(['cards' => $events, 'class' => 'Section--lightGrey'])
-
-    @endcardsection
+    <div class="HomeSection">
+        <div class="HomeSection-container">
+            @include('partials.cards', ['cards' => $events, 'class' => 'gutter-half'])
+        </div>
+    </div>
 
 @endsection
