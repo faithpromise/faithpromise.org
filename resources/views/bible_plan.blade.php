@@ -9,11 +9,13 @@
 
                 <h2>{{ $selected_date->format('l, F j') }}</h2>
 
-                @foreach($passages as $passage)
-
-                    <div>{{ $passage->passage }}</div>
-
-                @endforeach
+                <ul>
+                    @foreach($passages as $key => $passage)
+                        <li>
+                            <a href="#passage-{{ $key+1 }}">{{ $passage->passage }}</a>
+                        </li>
+                    @endforeach
+                </ul>
 
                 <p>Get ready to walk with God and thousands of your church family on a journey through the Bible over the course of a year.</p>
                 <p>Download the <a href="http://blog.faithpromise.org/wp-content/uploads/2015/01/fasting-booklet-inside-2015.pdf" target="_blank">21 Day Devotional</a>.<br>Also, check out <a href="http://youversion.com" target="_blank">YouVersion</a>, a Bible app for your phone or tablet.</p>
@@ -49,14 +51,17 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
 
-            <div class="BiblePassages">
-                @foreach($passages as $passage)
-
-                    <div>{{ $passage->passage }}</div>
-
-                @endforeach
-            </div>
+    <div class="BiblePassages">
+        <div class="BiblePassages-container">
+            @foreach($passages as $key => $passage)
+                <div id="passage-{{ $key+1 }}">
+                    <h2>{{ $passage->passage }}</h2>
+                    {!! $passage->passage_text !!}
+                </div>
+            @endforeach
         </div>
     </div>
 
