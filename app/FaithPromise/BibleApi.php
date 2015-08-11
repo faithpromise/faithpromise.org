@@ -9,7 +9,7 @@ class BibleApi {
         $passages->each(
 
             function ($item) use (&$result) {
-                if (empty($item->text)) {
+                if (empty($item->passage_text)) {
                     $text = self::fetchPassage(str_replace(' ', '.', $item->passage));
                     $item->passage_text = $text[0]->text;
                     $item->save();
