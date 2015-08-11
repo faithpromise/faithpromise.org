@@ -16,6 +16,7 @@ class CreateBiblePlanTable extends Migration
             $table->increments('id');
             $table->tinyInteger('day')->unsigned();
             $table->string('passage', 35);
+            $table->text('passage_text');
             $table->tinyInteger('sort')->unsigned();
         });
     }

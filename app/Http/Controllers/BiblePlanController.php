@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BiblePlan;
+use App\FaithPromise\BibleApi;
 use Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -18,9 +19,10 @@ class BiblePlanController extends BaseController {
         $date_str = date('Y') . '/' . $month . '/' . $day;
         $selected_date = Carbon::createFromFormat('Y/F/j', $date_str)->startOfDay();
         $day_of_year = $selected_date->dayOfYear + 1; // Zero based
+        $calendar_data = $this->getCalendarData($selected_date->month);
         $passages = BiblePlan::where('day', '=', $day_of_year)->get();
 
-        $calendar_data = $this->getCalendarData($selected_date->month);
+        BibleApi::loadPassages($passages);
 
         return view('bible_plan', [
             'passages'      => $passages,
