@@ -1,17 +1,46 @@
 .CurrentSeries {
-  .to-rem(margin, @Card-gutter);
+  //  .to-rem(margin, @Card-gutter);
+  //  margin: 1em;
 }
 
-.CurrentSeries-container {
-  position:        relative;
-  height:          0;
-  padding-top:     100%;
-  overflow:        hidden;
-  background-size: cover;
+.CurrentSeries {
+  position:            relative;
+  height:              0;
+  padding-top:         90%;
+  overflow:            hidden;
+  background-size:     100% auto;
+  background-position: top center;
+  user-select:         none;
 }
 
+.CurrentSeries-link {
+  position: absolute;
+  z-index:  1;
+  top:      0;
+  left:     0;
+  height:   100%;
+  width:    100%;
+}
+
+// 430px
+@media (min-width: 26.875em) {
+  .CurrentSeries {
+    padding-top: 80%;
+  }
+}
+
+// Tall - 640px
+@media (min-width: 40em) {
+
+  .CurrentSeries {
+    padding-top: 56.25%;
+  }
+
+}
+
+/* 860px */
 @media (min-width: 53.75em) {
-  .CurrentSeries-container {
+  .CurrentSeries {
     padding-top: 24.9479167%;
   }
 }
@@ -26,14 +55,12 @@
   align-items:      center;
   justify-content:  center;
   position:         absolute;
-  bottom:           0;
-  left:             0;
-  width:            100%;
-  height:           40%;
-  padding:          1.4em 1em;
+  z-index:          2;
+  //  height:           40%;
   text-align:       center;
   background-color: @Countdown-bg-color;
   color:            #fff;
+  font-size:        60%;
 
   &:hover {
     text-decoration: none;
@@ -45,29 +72,123 @@
     content:          ' ';
     display:          block;
     position:         absolute;
-    top:              ~"-@{Countdown-arrow-offset}px";
-    left:             ~"-@{Countdown-arrow-size}px";
-    width:            ~"@{Countdown-arrow-size}px";
-    height:           50%;
     background-color: @Countdown-bg-color;
-    transform:        skew(0deg, 45deg);
-    border-bottom:    20px;
   }
 
-  &:after {
-    top:       auto;
-    bottom:    ~"-@{Countdown-arrow-offset}px";
-    transform: skew(0deg, -45deg);
+}
+
+// Vertical
+@media (max-width: 53.6875em) {
+
+  .Countdown {
+
+    bottom:  0;
+    left:    0;
+    height:  28%;
+    width:   100%;
+    padding: ~"0.5em 1em 1em";
+
+    &:after,
+    &:before {
+      top:       ~"-@{Countdown-arrow-size}px";
+      left:      -32px;
+      height:    ~"@{Countdown-arrow-size}px";
+      width:     50%;
+      transform: skew(64deg, 0deg);
+    }
+
+    &:after {
+      left:      auto;
+      right:     -32px;
+      transform: skew(-64deg, 0deg);
+    }
+
+  }
+
+}
+
+// 360px
+@media (min-width: 22.5em) {
+  .Countdown {
+    font-size: 68%;
   }
 }
 
+// 400px
+@media (min-width: 25em) {
+  .Countdown {
+    font-size: 76%;
+  }
+}
+
+// 430px
+@media (min-width: 26.875em) {
+  .Countdown {
+    font-size: 76%;
+  }
+}
+
+// 450px
+@media (min-width: 28.125em) {
+  .Countdown {
+    font-size: 86%;
+  }
+}
+
+// 500px
+@media (min-width: 31.25em) {
+  .Countdown {
+    font-size: 96%;
+  }
+}
+
+// 550px
+@media (min-width: 34.375em) {
+  .Countdown {
+    font-size: 106%;
+  }
+}
+
+// 680px
+@media (min-width: 42.5em) {
+  .Countdown {
+    //    font-size: 70%;
+  }
+}
+
+// 640px
+@media (min-width: 40em) {
+  .Countdown {
+    height: 35%;
+  }
+}
+
+// Horizontal
+/* 860px */
 @media (min-width: 53.75em) {
   .Countdown {
-    top:    0;
-    right:  0;
-    left:   auto;
-    height: 100%;
-    width:  55%;
+    top:     0;
+    right:   0;
+    left:    auto;
+    height:  100%;
+    width:   55%;
+    padding: 1.4em 1em;
+
+    // Arrow
+    &:after,
+    &:before {
+      top:       ~"-@{Countdown-arrow-offset}px";
+      left:      ~"-@{Countdown-arrow-size}px";
+      height:    50%;
+      width:     ~"@{Countdown-arrow-size}px";
+      transform: skew(0deg, 45deg);
+    }
+
+    &:after {
+      top:       auto;
+      bottom:    ~"-@{Countdown-arrow-offset}px";
+      transform: skew(0deg, -45deg);
+    }
   }
 }
 
@@ -118,4 +239,12 @@
   .Countdown {
     font-size: 111%;
   }
+}
+
+.HomeSection {
+  .to-rem(margin, @grid-gutter-half 0);
+}
+
+.HomeSection-container {
+  .to-rem(margin, 0 @grid-gutter-half);
 }

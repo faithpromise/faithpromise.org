@@ -1,10 +1,10 @@
-<div class="Countdown">
+<a class="Countdown" href="http://icampus.faithpromise.org">
 
-  <div ng-if="!countdown.isLive" ng-cloak>
-    <h3 class="Countdown-title" ng-hide="countdown.isLoaded">Loading...</h3>
-    <h3 class="Countdown-title" ng-show="countdown.isLoaded">Watch Online In</h3>
+  <div ng-if="!countdown.isLive">
+    <h3 class="Countdown-title">Watch Online In</h3>
 
-    <div class="Countdown-digits" ng-cloak>
+    <div class="Countdown-digits" ng-hide="countdown.isLoaded">...</div>
+    <div class="Countdown-digits" ng-show="countdown.isLoaded">
       <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_days }">{{ countdown.days }} days, </span>
       <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_hours }">{{ countdown.hours }} hrs, </span>
       <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_minutes }">{{ countdown.minutes }} min, </span>
@@ -12,16 +12,16 @@
     </div>
   </div>
 
-  <div class="Countdown-play" ng-if="!countdown.isLive" ng-cloak>
+  <div class="Countdown-play" ng-if="!countdown.isLive">
     <i class="icon-play-circled"></i>
   </div>
 
-  <div ng-if="countdown.isLive" ng-cloak>
+  <div ng-if="countdown.isLive">
     <h3 class="Countdown-title">We're live!</h3>
 
     <div class="Countdown-buttons">
-      <a class="Countdown-button" href="#">Watch Online <i class="icon-play-circled"></i></a>
+      <span class="Countdown-button">Watch Online <i class="icon-play-circled"></i></span>
     </div>
   </div>
 
-</div>
+</a>

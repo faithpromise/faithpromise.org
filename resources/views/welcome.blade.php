@@ -1,7 +1,5 @@
 @extends('layouts.default')
 
-<?php $title = 'Join us for our current sermon series <span class="no-wrap">"' . $current_series->title . '"</span>'; ?>
-
 @section('content')
 
     <div class="WelcomeHero">
@@ -15,49 +13,54 @@
     <style type="text/css" scoped>
         /* 320px */
         @media (max-width: 20em) {
-            .CurrentSeries-container {
+            .CurrentSeries {
                 background-image: url(<?= cdn_image('sm', 'full', $current_series->home_image, 'square') ?>);
             }
         }
-        /* 480px */
-        @media (max-width: 30em) {
-            .CurrentSeries-container {
+
+        /* 321px */
+        @media (min-width: 20.0625em) {
+            .CurrentSeries {
                 background-image: url(<?= cdn_image('md', 'full', $current_series->home_image, 'square') ?>);
             }
         }
-        /* 600px */
-        @media (max-width: 37.5em) {
-            .CurrentSeries-container {
+
+        /* 481px */
+        @media (min-width: 30.0625em) {
+            .CurrentSeries {
                 background-image: url(<?= cdn_image('lg', 'full', $current_series->home_image, 'square') ?>);
             }
         }
-        /* 859px */
-        @media (max-width: 53.6875em) {
-            .CurrentSeries-container {
+
+        /* 601px */
+        @media (min-width: 37.5625em) {
+            .CurrentSeries {
                 background-image: url(<?= cdn_image('xl', 'full', $current_series->home_image, 'square') ?>);
             }
         }
+
+        /* 640px */
+        @media (min-width: 40em) {
+            .CurrentSeries {
+                background-image: url(<?= cdn_image('xl', 'full', $current_series->home_image, 'tall') ?>);
+            }
+        }
+
         /* 860px */
         @media (min-width: 53.75em) {
-            .CurrentSeries-container {
+            .CurrentSeries {
                 background-image: url(<?= cdn_image('xl', 'full', $current_series->home_image, 'wide') ?>);
             }
         }
     </style>
-    <div class="CurrentSeries">
-        <div class="CurrentSeries-container">
 
-            <icampus-countdown></icampus-countdown>
-
-            {{--<div class="CurrentSeries-watch" href="http://icampus.faithpromise.org">--}}
-            {{--<div class="CurrentSeries-watchContainer">--}}
-            {{--<h3 class="CurrentSeries-watchHeading">Watch Online</h3>--}}
-
-            {{--<div class="CurrentSeries-countdown">--}}
-            {{--3days, 4hrs, 32 min, 5secs--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
+    <div class="HomeSection">
+        <div class="HomeSection-container">
+            <div class="CurrentSeries">
+                <a class="CurrentSeries-link" href="{{ $current_series->url }}"></a>
+                <icampus-countdown></icampus-countdown>
+            </div>
+        </div>
         </div>
     </div>
 
