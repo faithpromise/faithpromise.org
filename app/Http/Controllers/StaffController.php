@@ -21,9 +21,9 @@ class StaffController extends BaseController {
         $campuses = Campus::all();
         $staff_by_teams = Team::with('Staff')->get();
 
-        $staff_8bit = Cache::remember('staff_8bits', 7200, function () {
+        $staff_8bit = Cache::remember('staff_8bit_images', 7200, function () {
             return Staff::all()->filter(function ($item) {
-                return asset_exists($item->{"8bitPath"});
+                return asset_exists($item->{"eight_bit_path"});
             });
         });
 

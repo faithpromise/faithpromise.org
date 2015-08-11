@@ -49,7 +49,7 @@ class Staff extends Model implements SluggableInterface {
         return $str;
     }
 
-    public function get8bitPathAttribute() {
+    public function getEightBitPathAttribute() {
         return 'images/staff/' . $this->slug . '-8bit-square.jpg';
     }
 
