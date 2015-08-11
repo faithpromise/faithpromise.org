@@ -1,0 +1,112 @@
+@BibleCalendar-color : #999;
+@BibleCalendar-selected-color : #38393e;
+
+.BibleCalendar-grid {
+  width: 100%;
+  color: @BibleCalendar-color;
+}
+
+.BibleCalendar-dow {
+  .to-rem(font-size, 12);
+  text-align:     center;
+  text-transform: uppercase;
+}
+
+.BibleCalendar-day {
+  .to-rem(padding, 12 0);
+  text-align: center;
+}
+
+.BibleCalendar-dayNumber {
+  .to-rem(font-size, 14);
+  .to-rem(width, 30);
+  .to-rem(line-height, 30);
+  .to-rem(border-radius, 15);
+  .link-color(@BibleCalendar-color);
+  display:     inline-block;
+  font-weight: bold;
+
+  .is-outside-month > & {
+    color: lighten(@BibleCalendar-color, 20%);
+  }
+
+  .is-selected > & {
+    background-color: @BibleCalendar-selected-color;
+    color:            #fff;
+  }
+}
+
+.BibleCalendar-mobileNav {
+
+  .clearfix();
+  display:    block;
+  margin:     0 0 1em;
+  list-style: none;
+
+  // 400px
+  @media (min-width: 25em) {
+    display: none;
+  }
+
+  > li {
+    float:          left;
+    display:        inline-block;
+    width:          33.3333%;
+    min-height:     10px;
+    margin:         0;
+    padding:        0;
+    text-transform: uppercase;
+
+    &.BibleCalendar-mobileCurrent {
+      text-align: center;
+    }
+
+    &.BibleCalendar-mobileNext {
+      text-align: right;
+    }
+
+  }
+}
+
+// TODO: Mobile nav
+.BibleCalendar-mobileMonth {
+  font-size: 13px;
+  color:     @BibleCalendar-color;
+
+  .BibleCalendar-mobileCurrent & {
+    font-weight: bold;
+    color:       darken(@BibleCalendar-color, 20%);
+  }
+}
+
+.BibleCalendar-months {
+  display:    table;
+  width:      100%;
+  margin:     0;
+  padding:    0 6px;
+  list-style: none;
+
+  // 399px
+  @media (max-width: 24.9375em) {
+    display: none;
+  }
+}
+
+.BibleCalendar-month {
+  display:        table-cell;
+  padding-bottom: 12px;
+  text-align:     center;
+}
+
+.BibleCalendar-monthText {
+  text-transform: uppercase;
+  color:          @BibleCalendar-color;
+  font-size:      9px;
+
+  .is-active > & {
+    font-size:   13px;
+    font-weight: bold;
+    color:       darken(@BibleCalendar-color, 20%);
+  }
+}
+

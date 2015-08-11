@@ -1,0 +1,74 @@
+
+.BiblePlan {
+  margin: 1em;
+}
+
+.BiblePlan-container {
+  font-size: 0;
+}
+
+.BiblePlan-info,
+.BiblePlan-calendarWrap {
+  .to-rem(font-size, @font-size);
+  display:        inline-block;
+  width:          100%;
+  vertical-align: top;
+
+  @media (min-width: 50em) {
+    width: 50%;
+  }
+}
+
+.BiblePlan-calendarWrap {
+  padding: 2.5em 2em;
+}
+
+.BiblePlan-info {
+  background-color: #38393e;
+  color:            #fff;
+}
+
+.BiblePlan-today {
+  padding: 2.5em 2em;
+}
+
+.BiblePlan-infoHeading {
+  .to-rem(font-size, 30);
+  color: inherit;
+}
+
+.BiblePlan-refsList {
+  margin-left: 0;
+  padding:     0;
+  list-style:  none;
+}
+
+.BiblePlan-refsItem {
+  margin: 0;
+}
+
+.BiblePlan-refsLink {
+  .link-color(#fff);
+  display: inline-block;
+  padding: .4em 0;
+}
+
+.BiblePlan-rule {
+  border-top:    1px solid #202023;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.BiblePlan-more {
+  margin:           0;
+  padding:          2em 2em;
+  font-size:        87.5%;
+  background-color: #202023;
+
+  a {
+    .link-color(#8dd7f7);
+  }
+}
+
+.BiblePlan-readButton {
+  margin-bottom: 0;
+}

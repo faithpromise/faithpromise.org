@@ -37,10 +37,13 @@ class BiblePlanController extends BaseController {
         $data = [
             'days_of_week' => ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'],
             'months'       => [],
-            'weeks'        => []
+            'weeks'        => [],
         ];
         $month = Carbon::create(null, $month, 1);
         $start_of_year = $month->copy()->startOfYear();
+
+        $data['next_month'] = $month->copy()->addMonth(1);
+        $data['previous_month'] = $month->copy()->subMonth(1);
 
         for ($i = 0; $i < 12; ++$i) {
             array_push($data['months'], $start_of_year->copy()->addMonth($i));
