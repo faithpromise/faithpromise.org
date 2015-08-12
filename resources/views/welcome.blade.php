@@ -11,62 +11,53 @@
     </div>
 
     <style type="text/css" scoped>
-        /* 320px */
-        @media (max-width: 20em) {
-            .CurrentSeries {
-                background-image: url(<?= cdn_image('sm', 'full', $current_series->home_image, 'square') ?>);
+
+        /* 569px */
+        @media (max-width: 35.5625em) {
+            .CurrentSeries-thumb {
+                background-image: url(<?= cdn_image('md', 'full', $current_series->image, 'tall') ?>);
             }
         }
 
-        /* 321px */
-        @media (min-width: 20.0625em) {
-            .CurrentSeries {
-                background-image: url(<?= cdn_image('md', 'full', $current_series->home_image, 'square') ?>);
+        /* 570px */
+        @media (min-width: 35.625em) {
+            .CurrentSeries-thumb {
+                background-image: url(<?= cdn_image('lg', 'full', $current_series->image, 'wide') ?>);
             }
         }
 
-        /* 481px */
-        @media (min-width: 30.0625em) {
-            .CurrentSeries {
-                background-image: url(<?= cdn_image('lg', 'full', $current_series->home_image, 'square') ?>);
+        /* 768px */
+        @media (min-width: 48em) {
+            .CurrentSeries-thumb {
+                background-image: url(<?= cdn_image('xl', 'quarter', $current_series->image, 'square') ?>);
             }
         }
 
-        /* 601px */
-        @media (min-width: 37.5625em) {
-            .CurrentSeries {
-                background-image: url(<?= cdn_image('xl', 'full', $current_series->home_image, 'square') ?>);
-            }
-        }
-
-        /* 640px */
-        @media (min-width: 40em) {
-            .CurrentSeries {
-                background-image: url(<?= cdn_image('xl', 'full', $current_series->home_image, 'tall') ?>);
-            }
-        }
-
-        /* 860px */
-        @media (min-width: 53.75em) {
-            .CurrentSeries {
-                background-image: url(<?= cdn_image('xl', 'full', $current_series->home_image, 'wide') ?>);
+        /* 1024px */
+        @media (min-width: 64em) {
+            .CurrentSeries-thumb {
+                background-image: url(<?= cdn_image('xl', 'half', $current_series->image, 'tall') ?>);
             }
         }
     </style>
 
-    <div class="HomeSection">
-        <div class="HomeSection-container">
-            <div class="CurrentSeries">
-                <a class="CurrentSeries-link" href="{{ $current_series->url }}"></a>
-                <icampus-countdown></icampus-countdown>
-            </div>
+    {{--<div class="HomeSection">--}}
+    {{--<div class="HomeSection-container">--}}
+    <div class="CurrentSeries">
+        <div class="CurrentSeries-thumbWrap">
+            <!-- TODO: Switch to wide at 570px -->
+            <div class="CurrentSeries-thumb"></div>
         </div>
+        <div class="CurrentSeries-countdownWrap">
+            <icampus-countdown></icampus-countdown>
         </div>
     </div>
+    {{--</div>--}}
+    {{--</div>--}}
 
     <div class="HomeSection">
         <div class="HomeSection-container">
-            @include('partials.cards', ['cards' => $events, 'class' => 'gutter-half'])
+            @include('partials.cards', ['cards' => $events])
         </div>
     </div>
 

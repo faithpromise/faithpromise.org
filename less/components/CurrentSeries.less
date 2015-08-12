@@ -1,54 +1,117 @@
-.CurrentSeries {
-  //  .to-rem(margin, @Card-gutter);
-  //  margin: 1em;
-}
+@CurrentSeries-font-size: @font-size;
 
 .CurrentSeries {
-  position:            relative;
+  font-size: 0;
+}
+
+.CurrentSeries-thumbWrap,
+.CurrentSeries-countdownWrap {
+  .to-rem(font-size, @CurrentSeries-font-size);
+  display:        inline-block;
+  width:          100%;
+  padding:        4% 4% 0;
+  vertical-align: middle;
+  text-align:     center;
+}
+
+/* 768px */
+@media (min-width: 48em) {
+  .CurrentSeries-thumbWrap {
+    width:   36%;
+    padding: 4% 0 4% 4%;
+  }
+
+  .CurrentSeries-countdownWrap {
+    width: 64%;
+  }
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  .CurrentSeries-thumbWrap,
+  .CurrentSeries-countdownWrap {
+    width: 50%;
+  }
+}
+
+.CurrentSeries-countdownWrap {
+  padding-top:    6%;
+  padding-bottom: 6%;
+}
+
+.CurrentSeries-thumb {
   height:              0;
-  padding-top:         90%;
+  padding-top:         ~"@{ratio-tall}%";
   overflow:            hidden;
-  background-size:     100% auto;
-  background-position: top center;
-  user-select:         none;
-}
+  background-color:    #28292a;
+  background-size:     cover;
+  background-position: center;
 
-.CurrentSeries-link {
-  position: absolute;
-  z-index:  1;
-  top:      0;
-  left:     0;
-  height:   100%;
-  width:    100%;
-}
+  /* 570px */
+  @media (min-width: 35.625em) {
+    padding-top: ~"@{ratio-wide}%";
+  }
 
-// 430px
-@media (min-width: 26.875em) {
-  .CurrentSeries {
-    padding-top: 80%;
+  /* 760px */
+  @media (min-width: 48em) {
+    padding-top: 100%;
+  }
+
+  /* 1024px */
+  @media (min-width: 64em) {
+    padding-top: ~"@{ratio-tall}%";
   }
 }
 
-// Tall - 640px
-@media (min-width: 40em) {
+// Horizontal format
 
-  .CurrentSeries {
-    padding-top: 56.25%;
-  }
-
-}
-
-/* 860px */
-@media (min-width: 53.75em) {
-  .CurrentSeries {
-    padding-top: 24.9479167%;
-  }
-}
-
-
-//1080px
-@media (min-width: 67.5em) {
-  .Countdown {
-    font-size: 111%;
-  }
-}
+//
+//.CurrentSeries {
+//  position:            relative;
+//  height:              0;
+//  padding-top:         90%;
+//  overflow:            hidden;
+//  background-size:     100% auto;
+//  background-position: top center;
+//  user-select:         none;
+//}
+//
+//.CurrentSeries-link {
+//  position: absolute;
+//  z-index:  1;
+//  top:      0;
+//  left:     0;
+//  height:   100%;
+//  width:    100%;
+//}
+//
+//// 430px
+//@media (min-width: 26.875em) {
+//  .CurrentSeries {
+//    padding-top: 80%;
+//  }
+//}
+//
+//// Tall - 640px
+//@media (min-width: 40em) {
+//
+//  .CurrentSeries {
+//    padding-top: 56.25%;
+//  }
+//
+//}
+//
+///* 860px */
+//@media (min-width: 53.75em) {
+//  .CurrentSeries {
+//    padding-top: 24.9479167%;
+//  }
+//}
+//
+//
+////1080px
+//@media (min-width: 67.5em) {
+//  .Countdown {
+//    font-size: 111%;
+//  }
+//}

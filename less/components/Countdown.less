@@ -1,181 +1,52 @@
 @Countdown-font-size: @font-size;
-@Countdown-bg-color: rgba(113, 117, 113, .8);
-@Countdown-arrow-size: 30;
-@Countdown-arrow-offset: (@Countdown-arrow-size / 2);
 
 .Countdown {
-  display:          flex;
-  align-items:      center;
-  justify-content:  center;
-  position:         absolute;
-  z-index:          2;
-  //  height:           40%;
-  text-align:       center;
-  background-color: @Countdown-bg-color;
-  color:            #fff;
-  font-size:        60%;
+  font-size: 5vw; /* 16px font at 320px viewport */
+  color:     #fff;
 
-  &:hover {
-    text-decoration: none;
+  /* 768px */
+  @media (min-width: 48em) {
+    font-size: 3.7vw;
   }
 
-  // Arrow
-  &:after,
-  &:before {
-    content:          ' ';
-    display:          block;
-    position:         absolute;
-    background-color: @Countdown-bg-color;
-  }
-
-}
-
-// Vertical
-@media (max-width: 53.6875em) {
-
-  .Countdown {
-
-    bottom:  0;
-    left:    0;
-    height:  28%;
-    width:   100%;
-    padding: ~"0.5em 1em 1em";
-
-    &:after,
-    &:before {
-      top:       ~"-@{Countdown-arrow-size}px";
-      left:      -32px;
-      height:    ~"@{Countdown-arrow-size}px";
-      width:     50%;
-      transform: skew(64deg, 0deg);
-    }
-
-    &:after {
-      left:      auto;
-      right:     -32px;
-      transform: skew(-64deg, 0deg);
-    }
-
-  }
-
-}
-
-// 360px
-@media (min-width: 22.5em) {
-  .Countdown {
-    font-size: 68%;
-  }
-}
-
-// 400px
-@media (min-width: 25em) {
-  .Countdown {
-    font-size: 76%;
-  }
-}
-
-// 430px
-@media (min-width: 26.875em) {
-  .Countdown {
-    font-size: 76%;
-  }
-}
-
-// 450px
-@media (min-width: 28.125em) {
-  .Countdown {
-    font-size: 86%;
-  }
-}
-
-// 500px
-@media (min-width: 31.25em) {
-  .Countdown {
-    font-size: 96%;
-  }
-}
-
-// 550px
-@media (min-width: 34.375em) {
-  .Countdown {
-    font-size: 106%;
-  }
-}
-
-// 680px
-@media (min-width: 42.5em) {
-  .Countdown {
-    //    font-size: 70%;
-  }
-}
-
-// 640px
-@media (min-width: 40em) {
-  .Countdown {
-    height: 35%;
-  }
-}
-
-// Horizontal
-/* 860px */
-@media (min-width: 53.75em) {
-  .Countdown {
-    top:     0;
-    right:   0;
-    left:    auto;
-    height:  100%;
-    width:   55%;
-    padding: 1.4em 1em;
-
-    // Arrow
-    &:after,
-    &:before {
-      top:       ~"-@{Countdown-arrow-offset}px";
-      left:      ~"-@{Countdown-arrow-size}px";
-      height:    50%;
-      width:     ~"@{Countdown-arrow-size}px";
-      transform: skew(0deg, 45deg);
-    }
-
-    &:after {
-      top:       auto;
-      bottom:    ~"-@{Countdown-arrow-offset}px";
-      transform: skew(0deg, -45deg);
-    }
+  /* 1024px */
+  @media (min-width: 64em) {
+    font-size: 3vw;
   }
 }
 
 .Countdown-title {
-  .to-em(font-size, 36, @Countdown-font-size);
+  font-size:      1.5625em;
   margin-bottom:  0;
   color:          inherit;
   text-transform: uppercase;
+
+  /* 470px */
+  @media (min-width: 29.375em) {
+    font-size: 1.3625em;
+  }
+
 }
 
-.Countdown-title,
 .Countdown-digits {
-  text-align: right;
-}
-
-.Countdown-digits {
-  .to-em(font-size, 22, @Countdown-font-size);
-}
-
-.Countdown-digit.is-disabled {
-  opacity: .5;
-}
-
-.Countdown-play {
-  .to-em(font-size, 54, @Countdown-font-size);
-  margin-left: 0.2em;
+  margin-bottom: 2%;
+  font-size:     0.9em;
 }
 
 .Countdown-buttons {
-  margin-top: 1em;
+  text-align: center;
 }
 
 .Countdown-button {
   &:extend(.Button all);
   &:extend(.Button--light all);
   margin-bottom: 0;
+  margin-top:    1em;
+  max-width:     40%;
+  min-width:     12em;
+  font-size:     4.1vw;
+
+  @media (min-width: 390px) {
+    .to-rem(font-size, 16);
+  }
 }

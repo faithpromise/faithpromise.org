@@ -46,13 +46,17 @@
 .WelcomeHero-button {
   &:extend(.Button all);
   &:extend(.Button--light all);
-  .to-rem(font-size, 13);
   min-width:        13em;
   max-width:        40%;
   background-color: rgba(0, 0, 0, 0.7);
+  font-size:        4.1vw;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.95);
+  }
+
+  @media (min-width: 390px) {
+    .to-rem(font-size, 16);
   }
 }
 
@@ -60,26 +64,5 @@
 @media (min-width: 22.5em) {
   .WelcomeHero-buttons {
     bottom: 2em;
-  }
-}
-
-// Over 400px
-@media (min-width: 25em) {
-  .WelcomeHero-button {
-    .to-rem(font-size, 14);
-  }
-}
-
-// Over 480px
-@media (min-width: 30em) {
-  .WelcomeHero-button {
-    .to-rem(font-size, 16);
-  }
-}
-
-// Over 760px
-@media (min-width: 47.5em) {
-  .WelcomeHero-button {
-    .to-rem(font-size, 20);
   }
 }

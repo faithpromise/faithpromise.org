@@ -1,7 +1,8 @@
 .HomeSection {
-  .to-rem(margin, @grid-gutter-half 0);
+  .to-rem(margin, @Card-gutter 0 0);
 }
 
 .HomeSection-container {
-  .to-rem(margin, 0 @grid-gutter-half);
+  &:extend(.Container all);
+  .to-rem(padding, 0 @Card-gutter);
 }
