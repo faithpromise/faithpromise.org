@@ -49,6 +49,12 @@
       "src": "entypo"
     },
     {
+      "uid": "91426c82d94428a33353e495418435e3",
+      "css": "share-1",
+      "code": 59419,
+      "src": "entypo"
+    },
+    {
       "uid": "749e7d90a9182938180f1d2d8c33584e",
       "css": "right-open",
       "code": 59406,
@@ -149,6 +155,12 @@
       "css": "instagram",
       "code": 59410,
       "src": "entypo"
+    },
+    {
+      "uid": "d5937c5767642d0336ad599af0e9c992",
+      "css": "share",
+      "code": 59418,
+      "src": "elusive"
     },
     {
       "uid": "7480a298ce334eef70193895e799c3fd",
