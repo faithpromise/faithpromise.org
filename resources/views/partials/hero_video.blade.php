@@ -43,7 +43,7 @@
 
         <div class="HeroVideo2-buttons">
             @if ($video->vimeo_id)
-                <span class="HeroVideo-button" ng-click="openVideo({{ $video->vimeo_id }})"><i class="icon-play"></i> Watch</span>
+                <span class="HeroVideo-button" ng-click="openVideo({{ $video->vimeo_id }})"><i class="icon-play"></i></span>
             @endif
             @if ($video->audio_file)
                 <a class="HeroVideo-button" href="{{ $site['audio_url'] }}{{ $video->audio_file }}" target="_blank">
@@ -52,7 +52,7 @@
             @endif
             <span class="Dropdown-wrapper" dropdown>
                 <span class="HeroVideo-button" dropdown-toggle>
-                    <i class="icon-dot-3"></i>
+                    <i class="icon-share"></i> Share
                 </span>
                 <div class="Dropdown Dropdown--light Dropdown--bottomLeft">
                     <ul class="Dropdown-menu">
@@ -80,7 +80,7 @@
     </div>
 </div>
 
-<div class="HeroVideo" style="display: none;">
+<div class="HeroVideo">
 
     <div class="HeroVideo-container">
 
