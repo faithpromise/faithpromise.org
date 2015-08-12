@@ -77,7 +77,7 @@
         <div class="BiblePassages-container">
             @foreach($passages as $key => $passage)
                 <div id="passage-{{ $key+1 }}">
-                    <h2>{{ $passage->passage }}</h2>
+                    <h2 class="BiblePassages-title">{{ $passage->passage }}</h2>
                     {!! $passage->passage_text !!}
                 </div>
             @endforeach
