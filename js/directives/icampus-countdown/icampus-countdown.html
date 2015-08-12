@@ -1,10 +1,9 @@
-<div class="Countdown">
+<div class="Countdown" ng-show="countdown.isLoaded">
 
-  <div ng-if="!countdown.isLive">
+  <div ng-if="!countdown.isLive" ng-cloak>
     <h3 class="Countdown-title">Join Us Online In</h3>
 
-    <div class="Countdown-digits" ng-hide="countdown.isLoaded">...</div>
-    <div class="Countdown-digits" ng-show="countdown.isLoaded">
+    <div class="Countdown-digits">
       <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_days }">{{ countdown.days }} days, </span>
       <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_hours }">{{ countdown.hours }} hrs, </span>
       <span class="Countdown-digit" ng-class="{ 'is-disabled' : !countdown.has_minutes }">{{ countdown.minutes }} min, </span>
@@ -17,8 +16,8 @@
   </div>
 
   <div class="Countdown-buttons">
-    <span class="Countdown-button">Watch Online</span>
-    <span class="Countdown-button">Past Sermons</span>
+    <a class="Countdown-button" href="http://icampus.faithpromise.org">Watch Online</a>
+    <a class="Countdown-button" href="/sermons">Past Sermons</a>
   </div>
 
 </div>
