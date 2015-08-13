@@ -16,7 +16,7 @@ use Illuminate\Routing\Controller as BaseController;
 class EventsController extends BaseController {
 
     public function index() {
-        $events = Event::all();
+        $events = Event::orderBy('sort')->get();
 
         return view('events', [
             'events' => $events
