@@ -16,7 +16,7 @@ class CreateMissionTripsTable extends Migration
             $table->increments('id');
             $table->integer('mission_location_id')->unsigned()->nullable();
             $table->string('title', 50);
-            $table->string('dates', 50)->nullable();
+            $table->string('dates_text', 50)->nullable();
             $table->string('cost', 100)->nullable();
             $table->string('seats', 10)->nullable();
             $table->text('description')->nullable();
