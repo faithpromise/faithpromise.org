@@ -88,3 +88,7 @@ Route::get('/times-and-directions', 'RedirectController@locations');
 Route::get('/bibleplan', 'RedirectController@biblePlan');
 Route::get('/youngadults', 'RedirectController@youngAdults');
 Route::get('/newleader', 'RedirectController@newGroupLeader');
+
+
+Route::get('/migrate', 'MigrateController@index');
+Route::get('/migrate/migrate', ['as' => 'migrate', 'uses' => 'MigrateController@migrate']);
