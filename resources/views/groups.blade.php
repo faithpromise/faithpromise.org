@@ -33,7 +33,7 @@ $starting->card_title = 'Starting Point Groups';
 $starting->card_text = 'Starting Point helps participants explore the Bible and begin to understand key truths of the Christian faith.';
 $starting->card_url = '/starting-point';
 $starting->card_url_text = 'Learn more';
-$starting->card_image = 'images/pages/worship-tall.jpg';
+$starting->card_image = 'images/pages/starting-point-tall.jpg';
 
 $group_types = collect([$men, $women, $young, $support, $starting]);
 
