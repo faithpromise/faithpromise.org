@@ -11,9 +11,9 @@
 
         <!-- TODO: Style this heading -->
 
-        <div class="GridSection">
-            <div class="GridSection-container Container--wide">
-                <h2 class="GridSection-title text-left">Past Sermon Series</h2>
+        <div class="SeriesSection">
+            <div class="SeriesSection-container">
+                <h2 class="SeriesSection-title text-left">Past Sermon Series</h2>
                 <div class="SeriesGallery">
                     <ul class="SeriesGallery-list">
                         <?php $next_series_starts = null; ?>

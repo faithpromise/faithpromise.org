@@ -1,0 +1,24 @@
+.SeriesSection {
+  &:extend(.Section all);
+  &:extend(.Section--center all);
+}
+
+.SeriesSection-container {
+  &:extend(.Container all);
+  .to-rem(padding, 0 10);
+
+  /* 600px */
+  @media (min-width: 37.5em) {
+    .to-rem(padding, 0 @Container-padding-mobile);
+  }
+}
+
+.SeriesSection-title {
+  &:extend(.Section-title all);
+  &:extend(.Section-title--push all);
+  text-align: center;
+
+  &:empty {
+    display: none;
+  }
+}
