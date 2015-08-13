@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Campus;
+use App\Event;
+use App\Ministry;
+use App\MissionLocation;
+use App\MissionTrip;
+use App\Series;
+use App\Staff;
+use App\Video;
+use App\Team;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 
@@ -15,6 +23,16 @@ class MigrateController extends BaseController {
     public function migrate() {
 
         $this->importCampuses();
+        $this->importEvents();
+        $this->importSeries();
+        $this->importVideos();
+        $this->importStaff();
+        $this->importMinistries();
+        $this->importTeams();
+        $this->importStaffMinistries();
+        $this->importStaffTeams();
+        $this->importMissionLocations();
+        $this->importMissionTrips();
 
         return 'done';
 
@@ -28,8 +46,183 @@ class MigrateController extends BaseController {
 
         DB::table($table)->truncate();
 
-        foreach($items as $item) {
+        foreach ($items as $item) {
             $model = new Campus(get_object_vars($item));
+            $model->save();
+        }
+    }
+
+    private function importEvents() {
+
+        $table = 'events';
+        $items = $this->getEvents();
+        Event::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+            $model = new Event(get_object_vars($item));
+            $model->save();
+        }
+    }
+
+    private function importSeries() {
+
+        $table = 'series';
+        $items = $this->getSeries();
+        Series::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+            $model = new Series(get_object_vars($item));
+            $model->save();
+        }
+    }
+
+    private function importVideos() {
+
+        $table = 'videos';
+        $items = $this->getVideos();
+        Video::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+
+            $series = Series::findBySlug($item->series_slug);
+            $speaker = Staff::findBySlug($item->speaker_slug);
+
+            $data = get_object_vars($item);
+            unset($data['series_slug']);
+            unset($data['speaker_slug']);
+
+            $model = new Video($data);
+            $model->series_id = $series->id;
+            $model->speaker_id = is_null($speaker) ? null : $speaker->id;
+            $model->save();
+
+        }
+    }
+
+    private function importStaff() {
+
+        $table = 'staff';
+        $items = $this->getStaff();
+        Staff::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+
+            $campus = Campus::findBySlug($item->campus_slug);
+
+            $data = get_object_vars($item);
+            unset($data['campus_slug']);
+
+            $model = new Staff($data);
+            $model->campus_id = is_null($campus) ? null : $campus->id;
+            $model->save();
+        }
+    }
+
+    private function importMinistries() {
+
+        $table = 'ministries';
+        $items = $this->getMinistries();
+        Ministry::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+            $model = new Ministry(get_object_vars($item));
+            $model->save();
+        }
+    }
+
+    private function importTeams() {
+
+        $table = 'teams';
+        $items = $this->getTeams();
+        Team::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+            $model = new Team(get_object_vars($item));
+            $model->save();
+        }
+    }
+
+    private function importStaffMinistries() {
+
+        $table = 'staff_ministry';
+        $items = $this->getStaffMinistries();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+
+            if (is_null($item->ministry_slug)) {
+                continue;
+            }
+
+            $staff = Staff::withTrashed()->where('slug', '=', $item->staff_slug)->first();
+            $ministry = Ministry::findBySlug($item->ministry_slug);
+            $staff->ministries()->attach($ministry->id);
+        }
+    }
+
+    private function importStaffTeams() {
+
+        $table = 'staff_team';
+        $items = $this->getStaffTeams();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+
+            if (is_null($item->team_slug)) {
+                continue;
+            }
+
+            $staff = Staff::withTrashed()->where('slug', '=', $item->staff_slug)->first();
+            $team = Team::findBySlug($item->team_slug);
+            $staff->teams()->attach($team->id);
+        }
+    }
+
+    private function importMissionLocations() {
+
+        $table = 'mission_locations';
+        $items = $this->getMissionLocations();
+        MissionLocation::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+            $model = new MissionLocation(get_object_vars($item));
+            $model->save();
+        }
+    }
+
+    private function importMissionTrips() {
+
+        $table = 'mission_trips';
+        $items = $this->getMissionTrips();
+        MissionTrip::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+
+            $location = MissionLocation::findBySlug($item->location_slug);
+
+            $data = get_object_vars($item);
+            unset($data['location_slug']);
+
+            $model = new MissionTrip($data);
+            $model->mission_location_id = is_null($location) ? null : $location->id;
             $model->save();
         }
     }
@@ -37,9 +230,7 @@ class MigrateController extends BaseController {
     private function getCampuses() {
         $sql = <<<EOT
             SELECT
-                c.CampusID as id
-                ,IF(c.CampusIdent = 'pel'
-                ,'pellissippi', c.CampusIdent) AS slug
+                IF(c.CampusIdent = 'pel','pellissippi', c.CampusIdent) AS slug
                 ,REPLACE(c.CampusName, ' Campus', '') AS `name`
                 ,REPLACE(c.CampusLocation, ', TN', '') AS location
                 ,c.CampusStreet AS address
@@ -54,13 +245,14 @@ class MigrateController extends BaseController {
                 ,c.CampusDisplayOrder AS sort
             FROM campus c;
 EOT;
+
         return $this->runSql($sql);
     }
 
     private function getEvents() {
         $sql = <<<EOT
             SELECT
-                REPLACE(REPLACE(REPLACE(REPLACE(NewsTitle, ' ', '-'), '"', ''), '''', '') , ':', '') as slug
+                COALESCE(NewsIdent, LOWER(REPLACE(REPLACE(REPLACE(REPLACE(NewsTitle, ' ', '-'), '"', ''), '''', '') , ':', ''))) as slug
                 ,NewsTitle as title
                 ,NewsDates as dates_text
                 ,CONCAT(NewsIdent, '.jpg') as image
@@ -74,14 +266,14 @@ EOT;
                 ,NewsDateModified as updated_at
             FROM newsupdate;
 EOT;
+
         return $this->runSql($sql);
     }
 
     private function getSeries() {
         $sql = <<<EOT
             SELECT
-                s.SeriesID as id
-                ,s.SeriesIdent AS slug
+                s.SeriesIdent AS slug
                 ,s.SeriesTitle as title
                 ,s.SeriesDescription as description
                 ,s.is_official_series as is_official
@@ -95,15 +287,15 @@ EOT;
 	            AND (m.MediaVimeoID IS NOT NULL OR m.MediaAudioURL IS NOT NULL)
             GROUP BY s.SeriesID;
 EOT;
+
         return $this->runSql($sql);
     }
 
     private function getVideos() {
         $sql = <<<EOT
             SELECT
-                m.MediaID as id
-                ,m.SeriesID as series_id
-                ,s.StaffID as speaker_id
+                sr.SeriesIdent AS series_slug
+                ,TRIM(s.StaffIdent) as speaker_slug
                 ,m.MediaIdent AS slug
                 ,m.MediaType AS type
                 ,m.MediaTitle AS title
@@ -117,20 +309,21 @@ EOT;
                 ,coalesce(m.MediaDateCreated, m.MediaDateTime) as created_at
                 ,coalesce(m.MediaDateModified, m.MediaDateTime) as updated_at
             FROM seriesmedia m
+                JOIN series sr ON m.SeriesID = sr.SeriesID
                 LEFT JOIN person p ON m.MediaAuthorID = p.PersonID
                 LEFT JOIN staff s ON p.PersonID = s.StaffID
             WHERE m.SeriesID IN (select seriesid from series where SeriesDateCreated IS NOT NULL)
         	    AND (m.MediaVimeoID IS NOT NULL OR m.MediaAudioURL IS NOT NULL)
             ORDER BY m.MediaDateTime ASC;
 EOT;
+
         return $this->runSql($sql);
     }
 
     private function getStaff() {
         $sql = <<<EOT
             SELECT
-                s.StaffID as id
-                ,c.campuses as campus_slug
+                IF(s.campuses = 'pel','pellissippi', s.campuses) AS campus_slug
                 ,TRIM(s.StaffIdent) AS slug
                 ,p.PersonFirstName AS first_name
                 ,p.PersonLastName AS last_name
@@ -146,6 +339,7 @@ EOT;
             FROM staff s
                 JOIN person p ON s.PersonID = p.PersonID;
 EOT;
+
         return $this->runSql($sql);
     }
 
@@ -156,6 +350,7 @@ EOT;
                 ,ministry_ident AS ministry_slug
             FROM staff_ministries;
 EOT;
+
         return $this->runSql($sql);
     }
 
@@ -166,18 +361,19 @@ EOT;
                 ,team_ident AS team_slug
             FROM staff_teams;
 EOT;
+
         return $this->runSql($sql);
     }
 
     private function getMissionLocations() {
         $sql = <<<EOT
             SELECT
-                id
-                ,ident as slug
-                ,title
+                ident as slug
+                ,title as name
             FROM mission_locations
             WHERE export = 1;
 EOT;
+
         return $this->runSql($sql);
     }
 
@@ -196,33 +392,34 @@ EOT;
                 ,MissionSort as sort
                 ,NULL as starts_at
                 ,NULL as ends_at
-                ,IF(MissionArchive = 1, NOW(), null) as expire_at
+                ,IF(MissionArchive = 1, NOW(), null) as ends_at
             FROM missions m
                 LEFT JOIN mission_locations l on m.MissionTitle = l.title and l.export = 1;
 EOT;
+
         return $this->runSql($sql);
     }
 
     private function getMinistries() {
         $sql = <<<EOT
             SELECT
-                id
-                ,ident as slug
+                ident as slug
                 ,title
             FROM ministries;
 EOT;
+
         return $this->runSql($sql);
     }
 
     private function getTeams() {
         $sql = <<<EOT
             SELECT
-                id
-                ,ident as slug
+                ident as slug
                 ,title
                 ,sort
             FROM teams;
 EOT;
+
         return $this->runSql($sql);
     }
 
