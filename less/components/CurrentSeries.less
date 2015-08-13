@@ -4,12 +4,16 @@
   font-size: 0;
 }
 
+.CurrentSeries-container {
+  &:extend(.HomeSection-container);
+}
+
 .CurrentSeries-thumbWrap,
 .CurrentSeries-countdownWrap {
   .to-rem(font-size, @CurrentSeries-font-size);
   display:        inline-block;
   width:          100%;
-  padding:        4% 4% 0;
+  padding:        4% 0;
   vertical-align: middle;
   text-align:     center;
 }
@@ -17,8 +21,7 @@
 /* 768px */
 @media (min-width: 48em) {
   .CurrentSeries-thumbWrap {
-    width:   36%;
-    padding: 4% 0 4% 4%;
+    width: 36%;
   }
 
   .CurrentSeries-countdownWrap {
@@ -28,9 +31,12 @@
 
 /* 1024px */
 @media (min-width: 64em) {
-  .CurrentSeries-thumbWrap,
+  .CurrentSeries-thumbWrap {
+    width: 44%;
+  }
+
   .CurrentSeries-countdownWrap {
-    width: 50%;
+    width: 56%;
   }
 }
 
@@ -60,5 +66,56 @@
   /* 1024px */
   @media (min-width: 64em) {
     padding-top: ~"@{ratio-tall}%";
+  }
+}
+
+.CurrentSeries-countdown {
+  font-size: 5vw; /* 16px font at 320px viewport */
+  color:     #fff;
+
+  /* 768px */
+  @media (min-width: 48em) {
+    font-size: 3.7vw;
+  }
+
+  /* 1024px */
+  @media (min-width: 64em) {
+    .to-rem(font-size, 36);
+  }
+}
+
+.CurrentSeries-title {
+  font-size:      1.5625em;
+  margin-bottom:  0;
+  color:          inherit;
+  text-transform: uppercase;
+
+  /* 470px */
+  @media (min-width: 29.375em) {
+    font-size: 1.3625em;
+  }
+
+}
+
+.CurrentSeries-digits {
+  margin-bottom: 2%;
+  font-size:     0.9em;
+}
+
+.CurrentSeries-buttons {
+  text-align: center;
+}
+
+.CurrentSeries-button {
+  &:extend(.Button all);
+  &:extend(.Button--light all);
+  margin-bottom: 0;
+  margin-top:    1em;
+  max-width:     40%;
+  min-width:     12em;
+  font-size:     4.1vw;
+
+  @media (min-width: 390px) {
+    .to-rem(font-size, 16);
   }
 }
