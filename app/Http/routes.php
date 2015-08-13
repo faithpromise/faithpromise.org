@@ -45,6 +45,7 @@ Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'MainController
 Route::get('/men', ['as' => 'men', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/women', ['as' => 'women', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/young-adults', ['as' => 'youngAdults', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/starting-point', ['as' => 'startingPoint', 'uses' => 'MainController@defaultPage']);
 
 // Missions
 Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
