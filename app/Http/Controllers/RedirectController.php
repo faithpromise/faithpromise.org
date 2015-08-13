@@ -30,4 +30,8 @@ class RedirectController extends BaseController {
         return redirect()->route('newGroupLeader');
     }
 
+    public function loveLocal() {
+        return redirect()->route('loveLocal');
+    }
+
 }

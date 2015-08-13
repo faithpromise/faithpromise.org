@@ -50,6 +50,7 @@ Route::get('/starting-point', ['as' => 'startingPoint', 'uses' => 'MainControlle
 // Missions
 Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
 Route::get('/missions/{location_slug}', ['as' => 'missionsLocation', 'uses' => 'MissionsController@location']);
+Route::get('/love-local', ['as' => 'loveLocal', 'uses' => 'MainController@defaultPage']);
 
 // Staff
 Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);
@@ -89,6 +90,7 @@ Route::get('/times-and-directions', 'RedirectController@locations');
 Route::get('/bibleplan', 'RedirectController@biblePlan');
 Route::get('/youngadults', 'RedirectController@youngAdults');
 Route::get('/newleader', 'RedirectController@newGroupLeader');
+Route::get('/lovelocal', 'RedirectController@loveLocal');
 
 
 Route::get('/migrate', 'MigrateController@index');
