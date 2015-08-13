@@ -12,13 +12,14 @@ if ($directive['execution_mode'] == 'start'):
     $args = array_merge(
         [
             'title' => '',
+            'id' => '',
             'class' => '',
             'profiles' => []
         ], $directive["args"]
     );
     $args['class'] = trim('ProfilesSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
 
-    <div class="<?= $args['class'] ?>">
+    <div id="<?= $args['id'] ?>" class="<?= $args['class'] ?>">
     <div class="ProfilesSection-container">
     <h2 class="ProfilesSection-title"><?= $args['title'] ?></h2>
 
