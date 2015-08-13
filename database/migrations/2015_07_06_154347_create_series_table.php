@@ -16,7 +16,7 @@ class CreateSeriesTable extends Migration
             $table->increments('id');
             $table->string('slug', 100)->unique();
             $table->string('title', 100);
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->boolean('is_official')->default(1);
             $table->date('starts_at');
             $table->dateTime('publish_at');
