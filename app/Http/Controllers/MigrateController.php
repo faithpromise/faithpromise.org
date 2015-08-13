@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\BiblePlan;
 use App\Campus;
 use App\Event;
 use App\Ministry;
+use App\Missionary;
 use App\MissionLocation;
 use App\MissionTrip;
 use App\Series;
@@ -22,6 +24,7 @@ class MigrateController extends BaseController {
 
     public function migrate() {
 
+        $this->importBiblePlan();
         $this->importCampuses();
         $this->importEvents();
         $this->importSeries();
@@ -33,9 +36,24 @@ class MigrateController extends BaseController {
         $this->importStaffTeams();
         $this->importMissionLocations();
         $this->importMissionTrips();
+        $this->importMissionaries();
 
         return 'done';
 
+    }
+
+    private function importBiblePlan() {
+
+        $table = 'bible_plan';
+        $items = $this->getBiblePlan();
+        BiblePlan::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+            $model = new BiblePlan(get_object_vars($item));
+            $model->save();
+        }
     }
 
     private function importCampuses() {
@@ -225,6 +243,56 @@ class MigrateController extends BaseController {
             $model->mission_location_id = is_null($location) ? null : $location->id;
             $model->save();
         }
+    }
+
+    private function importMissionaries() {
+
+        $table = 'missionaries';
+
+        Missionary::unguard();
+
+        DB::table($table)->truncate();
+
+        $missionary = new Missionary([
+            'slug'                => 'beukemas',
+            'name'                => 'The Beukemas',
+            'mission_location_id' => MissionLocation::where('slug', '=', 'jamaica')->first()->id,
+            'url'                 => 'http://bkbeukema.org'
+        ]);
+        $missionary->save();
+
+        $missionary = new Missionary([
+            'slug'                => 'coplands',
+            'name'                => 'The Coplands',
+            'mission_location_id' => MissionLocation::where('slug', '=', 'italy')->first()->id,
+            'url'                 => 'http://nickandshannan.org'
+        ]);
+        $missionary->save();
+
+        $missionary = new Missionary([
+            'slug'                => 'chris-ladd',
+            'name'                => 'Chris Ladd',
+            'mission_location_id' => MissionLocation::where('slug', '=', 'south-africa')->first()->id,
+            'url'                 => 'http://chrisleeladd.com'
+        ]);
+        $missionary->save();
+
+        $missionary = new Missionary([
+            'slug'                => 'julie-rumph',
+            'name'                => 'Julie Rumph',
+            'mission_location_id' => MissionLocation::where('slug', '=', 'south-africa')->first()->id,
+            'url'                 => 'http://julierumph.org'
+        ]);
+        $missionary->save();
+    }
+
+    private function getBiblePlan() {
+        $sql = <<<EOT
+            SELECT day, passage, sort
+            FROM bibleplan;
+EOT;
+
+        return $this->runSql($sql);
     }
 
     private function getCampuses() {
