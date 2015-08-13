@@ -16,15 +16,8 @@
         </div>
     </div>
 
-    <div class="TextSection Section--lightGrey">
-        <div class="TextSection-container">
-            <h2 class="TextSection-title">Women's Conference</h2>
-
-            <div class="TextSection-text">
-                <p>The 2015 Bold Conference will be held on Friday, September 18, in the Worship Center at the Pellissippi Campus. We will experience an incredible time as we learn more about the ROAR - the BOLDNESS we have in Christ. More details to come as the event draws nearer.</p>
-            </div>
-        </div>
-    </div>
+    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
+    @endcardsection
 
     <div class="TextSection">
         <div class="TextSection-container">
