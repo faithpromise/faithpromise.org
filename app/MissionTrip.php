@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\EventEndsTrait;
 
 class MissionTrip extends Model
 {
+
+    use EventEndsTrait;
+
     protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at'];
 
     public function missionlocation() {
@@ -23,7 +27,7 @@ class MissionTrip extends Model
     public function getDateRangeAttribute() {
 
         if (is_null($this->starts_at) OR is_null($this->ends_at)) {
-            return strlen($this->approximate_date) ? $this->approximate_date : '';
+            return strlen($this->dates_text) ? $this->dates_text : '';
         }
 
         if ($this->starts_at->month != $this->ends_at->month) {
