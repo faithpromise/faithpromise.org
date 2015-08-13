@@ -18,13 +18,19 @@
     @profilessection(['title' => 'Missionaries', 'class' => 'Section--lightGrey', 'profiles' => $missionaries])
     @endprofilessection
 
-    <!-- TODO: Create Love Local section -->
-    <div class="GridSection">
-        <div class="GridSection-container">
-            <div class="GridSection-title">Serving our Community</div>
-            KidsHope, Clothing ministry, Angel Tree
-        </div>
-    </div>
+    @bgsection([
+        'title' => 'Love Local',
+        'class' => 'BackgroundSection--right',
+        'image' => 'images/missions/love-local-wide.jpg',
+        'buttons' => [
+            [
+                'title' => 'Find Opportunities',
+                'url' => route('loveLocal')
+            ]
+        ]
+    ])
+    <p>Opportunities abound for us to lend a hand, say a prayer, give a hug, and to be the hands and feet of God's love in our community.</p>
+    @endbgsection
 
     @include('partials.have_questions', ['email' => 'missions@faithpromise.org', 'text' => 'If you still have questions about a trip or ways to get involved, please contact', 'class' => 'Section--lightGrey'])
 
