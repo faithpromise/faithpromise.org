@@ -55,7 +55,7 @@ $faq = collect([
     ================================================================================ --}}
 
     @introsection(['title' => 'What To Expect', 'class' => 'IntroSection--compact'])
-    <p>When you come, the only thing we ask of you is simple... relax. You're with friends. Whether you've never been to church before or you're a seasoned church veteran, you can anticipate an encouraging and enlightening experience.</p>
+    <p>Faith Promise is a church with multiple locations, that exists to impact the unchurched of the world, starting with Knoxville, Tennessee, and the surrounding counties.</p>
     @endintrosection
 
     @cardsection(['cards' => $what_to_expect_cards, 'class' => 'Section--lightGrey'])
