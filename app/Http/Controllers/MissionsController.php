@@ -9,11 +9,9 @@ use App\MissionTrip;
 use App\MissionLocation;
 use Illuminate\Routing\Controller as BaseController;
 
-class MissionsController extends BaseController
-{
+class MissionsController extends BaseController {
 
-    public function index()
-    {
+    public function index() {
         $ministry = Ministry::whereSlug('missions')->first();
         $staff = $ministry->staff;
         $events = Event::where('ministry_id', '=', $ministry->id)->get();
@@ -22,8 +20,8 @@ class MissionsController extends BaseController
 
         return view('missions', ['events' => $events, 'missionaries' => $missionaries, 'staff' => $staff, 'locations' => $locations]);
     }
-    public function location($location_slug)
-    {
+
+    public function location($location_slug) {
 
         $location = MissionLocation::whereSlug($location_slug)->first();
         $trips = MissionTrip::where('mission_location_id', '=', $location->id)->get();
