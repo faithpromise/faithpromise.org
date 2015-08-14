@@ -41,8 +41,8 @@ Route::get('/celebrate', ['as' => 'celebrate', 'uses' => 'MinistriesController@d
 
 // Groups
 Route::get('/groups', ['as' => 'groups', 'uses' => 'MinistriesController@defaultMinistryPage']);
-Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'MainController@defaultPage']);
-Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'MainController@defaultPage']); // TODO: Create this page
+Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'GroupsController@newLeader']);
+Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'GroupsController@leaders']);
 Route::get('/men', ['as' => 'men', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/women', ['as' => 'women', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/young-adults', ['as' => 'youngAdults', 'uses' => 'MinistriesController@defaultMinistryPage']);
@@ -95,9 +95,8 @@ Route::get('/times-and-directions', 'RedirectController@locations');
 Route::get('/bibleplan', 'RedirectController@biblePlan');
 Route::get('/youngadults', 'RedirectController@youngAdults');
 Route::get('/newleader', 'RedirectController@newGroupLeader');
+Route::get('/groupleaders', 'RedirectController@groupLeaders');
 Route::get('/lovelocal', 'RedirectController@loveLocal');
-Route::get('/kidshope', 'RedirectController@kidsHope');
-Route::get('/kids-hope', 'RedirectController@kidsHope');
 
 
 Route::get('/migrate', 'MigrateController@index');

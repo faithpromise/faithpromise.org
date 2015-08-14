@@ -26,6 +26,10 @@ class RedirectController extends BaseController {
         return redirect()->route('youngAdults');
     }
 
+    public function groupLeaders() {
+        return redirect()->route('groupLeaders');
+    }
+
     public function newGroupLeader() {
         return redirect()->route('newGroupLeader');
     }

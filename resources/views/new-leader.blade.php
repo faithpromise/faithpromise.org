@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => 'Group Leaders'])
+@extends('layouts.page', ['title' => 'New Group Leader', 'hero_image' => 'images/pages/group-leaders-wide.jpg'])
 
 @section('page')
 
