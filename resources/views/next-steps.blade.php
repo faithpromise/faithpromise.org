@@ -17,7 +17,7 @@ $cards = collect([
         ],
         (object)[
                 'card_title'    => 'Baptism',
-                'card_image'    => 'images/general/baptism-3-tall.jpg',
+                'card_image'    => 'images/pages/baptism-tall.jpg',
                 'card_text'     => 'The Bible teaches that once a person is saved, his or her next step is to make that commitment to Jesus public through baptism.',
                 'card_url_text' => 'Learn More',
                 'card_url'      => '/baptism/'

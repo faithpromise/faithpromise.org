@@ -62,7 +62,7 @@
 
 ?>
 
-@extends('layouts.page', ['title' => 'Baptism', 'hero_image' => 'images/general/baptism-4-wide.jpg'])
+@extends('layouts.page', ['title' => 'Baptism'])
 
 @section('page')
 
