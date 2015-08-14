@@ -23,12 +23,6 @@ class Organization extends Model implements SluggableInterface {
     ];
 
     public function getUrlAttribute() {
-
-        /* We may have a custom page */
-        if (Route::has($this->slug)) {
-            return route($this->slug);
-        }
-
         return route('localOutreachOrganization', ['slug' => $this->slug]);
     }
 
