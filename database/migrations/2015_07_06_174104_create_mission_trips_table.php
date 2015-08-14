@@ -20,8 +20,8 @@ class CreateMissionTripsTable extends Migration
             $table->string('cost', 100)->nullable();
             $table->string('seats', 10)->nullable();
             $table->text('description')->nullable();
-            $table->text('contact')->nullable();
-            $table->text('contact_email')->nullable();
+            $table->string('contact', 50)->nullable();
+            $table->string('contact_email', 75)->nullable();
             $table->boolean('is_full')->default(0);
             $table->tinyInteger('sort')->unsigned()->default(255);
             $table->date('starts_at')->nullable();
