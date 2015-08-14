@@ -1,10 +1,10 @@
-@extends('layouts.page', ['title' => 'Kids Hope USA'])
+@extends('layouts.page', ['title' => $kids_hope->name, 'hero_image' => 'images/pages/kids-hope-wide.jpg'])
 
 @section('page')
 
     @introsection(
         [
-            'title' => 'Kids Hope USA',
+            'title' => $kids_hope->name,
             'buttons' => [
                 [
                     'title' => 'Ministry Overview (pdf)',
@@ -13,14 +13,9 @@
             ]
         ]
     )
-    <p>One child, one hour is the heart of KIDS HOPE USA. One caring adult mentoring an at-risk child one hour every week. Because when kids feel loved and valued, they are better able to learn, grow, and succeed.  Faith Promise has adopted Beaumont Elementary School in the Western Heights area of Knoxville. The opportunity is vast. The need is great. The idea is simple. One Child, One Hour, One Church, One School. You could be the one.</p>
+    {!! $kids_hope->description !!}
     @endintrosection
 
-    {{--
-        ========================================
-        Contact
-        ========================================
-    --}}
-    @include('partials.have_questions', ['class' => 'Section--lightGrey', 'title' => 'Need more info?', 'email' => 'colelisa@charter.net', 'text' => 'For more information, contact Lisa Cole at #email#'])
+    @include('partials.have_questions', ['class' => 'Section--lightGrey', 'title' => 'Need more info?', 'contact' => $kids_hope->contact, 'email' => $kids_hope->email, 'phone' => $kids_hope->phone, 'website' => $kids_hope->website, 'text' => $kids_hope->more_info])
 
 @endsection

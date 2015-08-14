@@ -51,8 +51,9 @@ Route::get('/starting-point', ['as' => 'startingPoint', 'uses' => 'MainControlle
 // Missions
 Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
 Route::get('/missions/{location_slug}', ['as' => 'missionsLocation', 'uses' => 'MissionsController@location']);
-Route::get('/love-local', ['as' => 'loveLocal', 'uses' => 'MainController@defaultPage']);
-Route::get('/kids-hope', ['as' => 'kidsHope', 'uses' => 'MainController@defaultPage']);
+Route::get('/love-local', ['as' => 'loveLocal', 'uses' => 'MissionsController@loveLocal']);
+Route::get('/love-local/kids-hope-usa', ['as' => 'kidsHope', 'uses' => 'MissionsController@kidsHope']);
+Route::get('/love-local/{organization}', ['as' => 'localOutreachOrganization', 'uses' => 'MissionsController@organization']);
 
 // Staff
 Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);
@@ -94,6 +95,8 @@ Route::get('/bibleplan', 'RedirectController@biblePlan');
 Route::get('/youngadults', 'RedirectController@youngAdults');
 Route::get('/newleader', 'RedirectController@newGroupLeader');
 Route::get('/lovelocal', 'RedirectController@loveLocal');
+Route::get('/kidshope', 'RedirectController@kidsHope');
+Route::get('/kids-hope', 'RedirectController@kidsHope');
 
 
 Route::get('/migrate', 'MigrateController@index');
