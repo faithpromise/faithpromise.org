@@ -25,6 +25,7 @@
         .hero_image { background-image: url({{ cdn_image('xl', 'full', $hero_image, 'tall') }}); }
     }
 
+    /* 760px */
     @media (min-width: 47.5rem) {
         .hero_image { background-image: url({{ cdn_image('xl', 'full', $hero_image, 'wide') }}); }
     }
