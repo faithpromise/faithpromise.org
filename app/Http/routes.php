@@ -52,6 +52,7 @@ Route::get('/starting-point', ['as' => 'startingPoint', 'uses' => 'MainControlle
 Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
 Route::get('/missions/{location_slug}', ['as' => 'missionsLocation', 'uses' => 'MissionsController@location']);
 Route::get('/love-local', ['as' => 'loveLocal', 'uses' => 'MainController@defaultPage']);
+Route::get('/kids-hope', ['as' => 'kidsHope', 'uses' => 'MainController@defaultPage']);
 
 // Staff
 Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);
