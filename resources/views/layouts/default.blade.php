@@ -10,7 +10,7 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ isset($title) ? $title : $site['title'] }}</title>
+        <title>{{ isset($title) ? ($title . ' - '. $site['title']) : $site['title'] }}</title>
         <meta name="description" content="{{ isset($description) ? $description : $site['description'] }}">
         <meta property="fb:app_id" content="{{ $site['facebook_app_id'] }}">
         @if (isset($og_type))
