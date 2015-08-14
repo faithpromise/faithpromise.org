@@ -35,6 +35,6 @@
 
     @include('partials.visit')
 
-    @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you still have questions about fpKids, please contact #email#', 'class' => 'Section--lightGrey'])
+    @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you have questions about fpKids, please contact #email#', 'class' => 'Section--lightGrey'])
 
 @endsection

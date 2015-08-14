@@ -29,6 +29,6 @@
         Contact
         ========================================
     --}}
-    @include('partials.have_questions', ['class' => 'Section--lightGrey', 'title' => 'Need more info?', 'email' => 'stephenministry@faithpromise.org', 'text' => 'If you still have questions about Stephen Ministry, please contact #email#'])
+    @include('partials.have_questions', ['class' => 'Section--lightGrey', 'title' => 'Need more info?', 'email' => 'stephenministry@faithpromise.org', 'text' => 'If you have questions about Stephen Ministry, please contact #email#'])
 
 @endsection
