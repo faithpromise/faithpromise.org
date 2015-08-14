@@ -412,6 +412,9 @@ EOT;
                 ,p.PersonFirstName AS first_name
                 ,p.PersonLastName AS last_name
                 ,p.PersonDisplayName AS display_name
+                ,p.PersonTwitter AS twitter
+                ,p.PersonFacebook AS facebook
+                ,p.PersonInstagram AS instagram
                 ,s.StaffTitle AS title
                 ,p.PersonEmail AS email
                 ,s.StaffOfficeExt AS phone_ext
