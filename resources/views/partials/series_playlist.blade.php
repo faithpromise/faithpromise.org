@@ -7,7 +7,7 @@
             {{--<th></th>--}}
         </tr>
     </thead>
-    <!-- TODO: Highlight currently selected video -->
+    <!-- LATER: Highlight currently selected video -->
     <tbody>
         @foreach ($videos as $v)
             <tr class="{% if v.slug == include.selected %}Playlist-selected{% endif %}">

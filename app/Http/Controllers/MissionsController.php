@@ -54,7 +54,6 @@ class MissionsController extends BaseController {
 
     }
 
-    // TODO: Should we remove this in favor of organization page above?
     public function kidsHope() {
 
         $kids_hope = Organization::whereSlug('kids-hope-usa')->first();

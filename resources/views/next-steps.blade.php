@@ -6,7 +6,7 @@ $cards = collect([
                 'card_image'    => 'images/pages/next-steps-tall.jpg',
                 'card_text'     => 'Come meet some of our staff and learn about spiritual next steps as well as our vision and values. Childcare is available when you pre-register.',
                 'card_url_text' => 'Register',
-                'card_url'      => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=FwSjgirIem15IuwQ7IZo2w==&cCode=RtKBDolfiPuZJp8o1+0ARA==' // TODO: Add URL
+                'card_url'      => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=FwSjgirIem15IuwQ7IZo2w==&cCode=RtKBDolfiPuZJp8o1+0ARA=='
         ],
         (object)[
                 'card_title'    => 'Salvation',
@@ -72,5 +72,5 @@ $cards = collect([
     @profilessection(['title' => 'Meet the Next Steps Staff', 'class' => '', 'profiles' => $ministry->Staff])
     @endprofilessection
 
-    <!-- TODO: Need contact info here? -->
+    <!-- LATER: Need contact info here? -->
 @endsection

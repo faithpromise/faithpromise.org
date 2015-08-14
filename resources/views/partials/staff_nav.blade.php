@@ -6,7 +6,6 @@
         <div class="Dropdown">
             <ul class="Dropdown-menu">
                 @foreach ($campuses as $campus)
-                    <!-- TODO: Make sure link jumps to staff on location page -->
                     <li class="Dropdown-item"><a href="{{ $campus->url }}#staff" class="Dropdown-link">{{ $campus->name }} ({{ $campus->location }})</a></li>
                 @endforeach
             </ul>

@@ -8,7 +8,7 @@ function asset_path($path) {
 
 function asset_exists($path) {
 
-    // TODO: Optimize for multiple calls to this method in a single request
+    // LATER: Optimize for multiple calls to this method in a single request
     $exists = file_exists(asset_path($path));
 
     if (! $exists) {
@@ -19,8 +19,6 @@ function asset_exists($path) {
 }
 
 function cdn_image_raw($image_path, $format = null) {
-
-    // TODO: If image does not exist, return default image so it's not cached in CDN
 
     $query_string = asset_exists($image_path) ? '?v=' . filemtime(asset_path($image_path)) : '';
 
@@ -33,8 +31,6 @@ function cdn_image_raw($image_path, $format = null) {
 }
 
 function cdn_image($display_width, $image_width, $image_path, $format = null) {
-
-    // TODO: If image does not exist, return default image so it's not cached in CDN
 
     // Not a local image. Return
     if ('images/' !== substr($image_path, 0, 7)) {

@@ -16,7 +16,7 @@ class InternetCampusController extends BaseController {
             \Debugbar::disable();
         }
 
-        // TODO: Test out the cache
+        // LATER: Test out the cache
 
         $api_uri = 'http://icampus.faithpromise.org/api/v1/events/current';
         $key = 'icampus_countdown3';
@@ -40,7 +40,7 @@ class InternetCampusController extends BaseController {
                 $data = json_decode($icampus_result->getBody());
 
                 if ($icampus_result->getStatusCode() !== 200 OR !isset($data->meta->status) OR $data->meta->status !== 200) {
-                    //  TODO: Log this
+                    //  LATER: Log this
                     throw new \Exception('Call to iCampus API was not successful');
                 }
             } catch (\Exception $e) {

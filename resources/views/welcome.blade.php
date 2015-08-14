@@ -44,7 +44,6 @@
     <div class="CurrentSeries">
         <div class="CurrentSeries-container">
             <div class="CurrentSeries-thumbWrap">
-                <!-- TODO: Switch to wide at 570px -->
                 <div class="CurrentSeries-thumb"></div>
             </div>
             <div class="CurrentSeries-countdownWrap">

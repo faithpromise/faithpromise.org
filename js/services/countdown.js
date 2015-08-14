@@ -48,8 +48,8 @@
             }
 
             data.has_days = days > 0;
-            data.has_hours = hours > 0; // TODO: Include days
-            data.has_minutes = minutes > 0; // TODO: Include days and hours
+            data.has_hours = hours > 0 || data.has_days;
+            data.has_minutes = minutes > 0 || data.has_hours;
 
             data.days = days;
             data.hours = hours;
