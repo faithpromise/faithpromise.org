@@ -46,8 +46,8 @@ function cdn_image($display_width, $image_width, $image_path, $format = null) {
     $url_params = explode('&', empty($image_path_parts['query']) ? '' : $image_path_parts['query']);
 
     if ($format !== null) {
-        $format_suffix = '-' . $format . '.jpg';
-        $image_path = preg_replace('/(-(square|tall|wide))?\.jpg$/', $format_suffix, $image_path_parts['path']);
+        $format_suffix = '-' . $format . '.${3}';
+        $image_path = preg_replace('/(-(square|tall|wide))?\.(jpg|png)$/', $format_suffix, $image_path_parts['path']);
     }
 
     if (asset_exists($image_path)) {
