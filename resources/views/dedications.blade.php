@@ -38,7 +38,7 @@ $faq = [
 
 ?>
 
-@extends('layouts.page', ['title' => 'Child Dedications', 'hero_image' => 'images/fpkids/coloring-wide.jpg'])
+@extends('layouts.page', ['title' => 'Child Dedications'])
 
 @section('page')
 
