@@ -55,6 +55,9 @@
     <div class="HomeSection">
         <div class="HomeSection-container">
             @include('partials.cards', ['cards' => $events])
+            <p class="text-center">
+                <a class="Button" href="{{ route('events') }}">See All Events</a>
+            </p>
         </div>
     </div>
 
