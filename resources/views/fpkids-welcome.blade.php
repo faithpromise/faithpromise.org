@@ -7,8 +7,8 @@
     @endvideosection
 
 
-    @bgsection(['title' => 'Under 2 years', 'image' => 'images/fpkids/prek-wide.jpg'])
-    <p>Before Kindergarten, your kids will learn how God made them, loves them, and wants to be their friend through fun and engaging activities such as dramas, storytelling, puppetry and worship. Check out what we're learning right now.</p>
+    @bgsection(['title' => 'Preschool', 'image' => 'images/fpkids/prek-wide.jpg'])
+    <p>Before Kindergarten, your kids will learn how God made them, loves them, and wants to be their friend through fun and engaging activities such as dramas, storytelling, puppetry and worship.</p>
     @endbgsection
 
     @bgsection(['title' => 'K-3rd Grade', 'class' => 'BackgroundSection--right', 'image' => 'images/fpkids/k-3rd-wide.jpg'])
