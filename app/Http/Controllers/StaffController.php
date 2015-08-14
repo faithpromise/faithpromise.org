@@ -54,8 +54,17 @@ class StaffController extends BaseController {
 
     public function detail($member) {
 
+        $teams = $member->teams;
+        $team = $teams->last(); // LATER: Figure out what to do for multiple teams. Last because exec vs worship (ex. Michele)
+        $staff = $team->Staff->filter(function($item) use ($member) {
+            return $item->id <> $member->id;
+        });
+
         return view('staff_detail', [
-            'member' => $member
+            'member' => $member,
+            'teams' => $teams,
+            'team' => $team,
+            'staff' => $staff
         ]);
 
     }

@@ -31,15 +31,24 @@
                             @endif
                         </div>
                     @endif
+                    @if (!empty($member->email))
                     <a class="StaffContact-email" href="mailto::{{ $member->email }}">{{ $member->email }}</a>
+                    @endif
+                    @if (!empty($member->phone_ext))
                     <a class="StaffContact-phone" href="tel:{{ $site['phone'] }}{{ $member->phone_ext }}">{{ $site['phone'] }} x {{ $member->phone_ext }}</a>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 
+    @if (!empty($member->bio))
     @textsection(['title' => 'My Story', 'image' => ''])
     {!! $member->bio !!}
     @endtextsection
+    @endif
+
+    @profilessection(['title' => 'Meet the Rest of the Team', 'profiles' => $staff])
+    @endprofilessection
 
 @endsection
