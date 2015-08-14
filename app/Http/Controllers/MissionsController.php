@@ -45,7 +45,12 @@ class MissionsController extends BaseController {
 
     public function organization($organization) {
 
-        return view('organization', ['organization' => $organization]);
+        $organizations = Organization::localOutreach()->get();
+
+        return view('organization', [
+            'organizations' => $organizations,
+            'organization'  => $organization
+        ]);
 
     }
 
