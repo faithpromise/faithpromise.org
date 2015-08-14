@@ -16,8 +16,8 @@ class CreateCalendarEventsTable extends Migration
             $table->integer('id')->primary()->comment('EventU\'s OccurrenceId');
             $table->integer('event_number')->comment('Groups multiple OccurrenceIds of the same event');
             $table->string('title', 255);
-            $table->dateTime('starts_at', 255);
-            $table->dateTime('ends_at', 255);
+            $table->dateTime('starts_at');
+            $table->dateTime('ends_at');
             $table->string('location', 100)->nullable();
             $table->string('address', 50)->nullable();
             $table->string('address2', 50)->nullable();
