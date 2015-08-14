@@ -60,7 +60,9 @@ $intercessory_teams = [
     @faqsection(['title' => 'Intercessory Prayer Teams', 'faq' => $intercessory_teams])
     @endfaqsection
 
-    <iframe src="http://pray.faithpromiseweb.com/prayers.php" width="100%" height="3500" frameborder="0" scrolling="auto" name="prayerWall">&lt;a href="http://pray.faithpromiseweb.com/prayers.php" target="_blank"&gt;Prayer Wall&lt;/a&gt;</iframe>
+    <div id="prayer-wall">
+        <iframe src="http://pray.faithpromiseweb.com/prayers.php" width="100%" height="3500" frameborder="0" scrolling="auto" name="prayerWall">&lt;a href="http://pray.faithpromiseweb.com/prayers.php" target="_blank"&gt;Prayer Wall&lt;/a&gt;</iframe>
+    </div>
 
 
 @endsection
