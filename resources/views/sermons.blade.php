@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => 'Sermons'])
+@extends('layouts.default', ['title' => 'Sermons'])
 
 @section('content')
 
@@ -8,8 +8,6 @@
     ])
 
     <div class="Content">
-
-        <!-- TODO: Style this heading -->
 
         <div class="SeriesSection">
             <div class="SeriesSection-container">
