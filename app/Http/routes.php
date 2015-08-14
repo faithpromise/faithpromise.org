@@ -32,7 +32,7 @@ Route::get('/care', ['as' => 'care', 'uses' => 'MinistriesController@defaultMini
 Route::get('/family', ['as' => 'family', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/fpkids', ['as' => 'fpKids', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/fpkids/welcome', ['as' => 'fpKidsWelcome', 'uses' => 'MinistriesController@fpKidsWelcome']);
-Route::get('/kidsteps', ['as' => 'kidSteps', 'uses' => 'MainController@defaultPage']);
+Route::get('/kid-steps', ['as' => 'kidSteps', 'uses' => 'MainController@defaultPage']);
 Route::get('/dedications', ['as' => 'dedications', 'uses' => 'MainController@defaultPage']);
 Route::get('/fpstudents', ['as' => 'fpStudents', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/prayer', ['as' => 'prayer', 'uses' => 'MinistriesController@defaultMinistryPage']);
@@ -97,6 +97,7 @@ Route::get('/youngadults', 'RedirectController@youngAdults');
 Route::get('/newleader', 'RedirectController@newGroupLeader');
 Route::get('/groupleaders', 'RedirectController@groupLeaders');
 Route::get('/lovelocal', 'RedirectController@loveLocal');
+Route::get('/kidsteps', 'RedirectController@kidSteps');
 
 
 Route::get('/migrate', 'MigrateController@index');

@@ -38,6 +38,10 @@ class RedirectController extends BaseController {
         return redirect()->route('loveLocal');
     }
 
+    public function kidSteps() {
+        return redirect()->route('kidSteps');
+    }
+
     public function kidsHope() {
         return redirect()->route('localOutreachOrganization', ['organization' => 'kids-hope-usa']);
     }
