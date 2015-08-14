@@ -9,6 +9,7 @@ use App\Ministry;
 use App\Missionary;
 use App\MissionLocation;
 use App\MissionTrip;
+use App\Organization;
 use App\Series;
 use App\Staff;
 use App\Video;
@@ -37,6 +38,7 @@ class MigrateController extends BaseController {
         $this->importMissionLocations();
         $this->importMissionTrips();
         $this->importMissionaries();
+        $this->importOrganizations();
 
         return 'done';
 
@@ -52,6 +54,20 @@ class MigrateController extends BaseController {
 
         foreach ($items as $item) {
             $model = new BiblePlan(get_object_vars($item));
+            $model->save();
+        }
+    }
+
+    private function importOrganizations() {
+
+        $table = 'organizations';
+        $items = $this->getOrganizations();
+        Organization::unguard();
+
+        DB::table($table)->truncate();
+
+        foreach ($items as $item) {
+            $model = new Organization(get_object_vars($item));
             $model->save();
         }
     }
@@ -487,6 +503,12 @@ EOT;
                 ,sort
             FROM teams;
 EOT;
+
+        return $this->runSql($sql);
+    }
+
+    private function getOrganizations() {
+        $sql = 'SELECT * FROM organizations';
 
         return $this->runSql($sql);
     }
