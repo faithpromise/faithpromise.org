@@ -3,15 +3,9 @@
 
 @section('page')
 
-    <div class="TextSection TextSection--center">
-        <div class="TextSection-container">
-            <h2 class="TextSection-title">{{ $location->name }}</h2>
-
-            <div class="TextSection-text">
-                <p>Should we put some text here?</p>
-            </div>
-        </div>
-    </div>
+    @introsection(['title' => $location->name, 'class' => '', 'image' => ''])
+    <!-- LATER: Add some text here -->
+    @endintrosection
 
     @foreach ($trips as $trip)
     <div class="TextSection TextSection--compact Section--lightGrey">
