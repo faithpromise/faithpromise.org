@@ -450,7 +450,7 @@ EOT;
             SELECT
                 l.ident as location_slug
                 ,MissionTitle as title
-                ,MissionDate as dates
+                ,MissionDate as dates_text
                 ,MissionCost as cost
                 ,MissionSize as seats
                 ,REPLACE(REPLACE(MissionDescription, '\n', ' '), '\r', '') as description
