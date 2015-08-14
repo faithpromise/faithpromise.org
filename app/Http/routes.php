@@ -64,7 +64,7 @@ Route::get('/staff/{staff}', ['as' => 'staffDetail', 'uses' => 'StaffController@
 Route::get('/core', ['as' => 'core', 'uses' => 'MainController@defaultPage']);
 Route::get('/baptism', ['as' => 'baptism', 'uses' => 'MainController@defaultPage']);
 Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
-Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MainController@defaultPage']);
+Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/salvation', ['as' => 'salvation', 'uses' => 'MainController@defaultPage']);
 
 // General pages

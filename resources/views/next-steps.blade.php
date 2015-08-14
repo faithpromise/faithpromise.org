@@ -66,4 +66,11 @@ $cards = collect([
     @cardsection(['title' => 'Take the Next Step', 'class' => 'Section--lightGrey', 'cards' => $cards])
     @endcardsection
 
+    @cardsection(['title' => 'Upcoming Events', 'cards' => $ministry->Events])
+    @endcardsection
+
+    @profilessection(['title' => 'Meet the Next Steps Staff', 'class' => '', 'profiles' => $ministry->Staff])
+    @endprofilessection
+
+    <!-- TODO: Need contact info here? -->
 @endsection
