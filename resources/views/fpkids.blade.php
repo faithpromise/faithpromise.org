@@ -14,6 +14,10 @@ $faq = [
                 'a' => '<p><strong>Nursery / Crawlers / Walkers</strong> - Generally these room transitions are based upon whether or not your baby is proficiently crawling/walking. For example, a toddler will remain in the Crawler room until he/she is walking the majority of the time without assistance.</p><p><strong>2 Years to PreK</strong> - Once your child turns 2 years old, their room transitions are based upon age. For example, the day your child turns 3 years old he/she will move to the 3 year old room.</p><p><strong>Kindergarten to 5th grade</strong> - Transitions change in elementary and follow the Knox County School calendar. When the new school year begins for Knox County, then we transition all our elementary students from one grade to the next.</p>'
         ],
         (object)[
+                'q' => 'Is my child ready for salvation? What about baptism?',
+                'a' => '<p>We\'ve prepared a page that deals specifically with this topic. Check out <a href="' . route('kidSteps') . '">Kid Steps</a>.</p>'
+        ],
+        (object)[
                 'q' => 'I want to serve in Kid\'s Ministry! What do I do?',
                 'a' => '<p>We\'d love to explore the best fit for you within in fpKIDS. To apply to serve in fpKIDS, contact the <a href="mailto:fpKids@faithpromise.org">fpKids office</a>.</p>'
         ]
