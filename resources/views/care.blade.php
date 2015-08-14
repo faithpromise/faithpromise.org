@@ -16,7 +16,7 @@
     <p>Because of limited resources, counseling for people who do not attend Faith Promise will be limited to one consultation appointment.</p>
     <p>The counselors at Faith Promise encourage people to identify specific goals for counseling, and counseling sessions are focused on these goals. We provide individual counseling to adults, adolescents, and children, as well as premarital and couple's counseling. We also work closely with the Celebrate and Stephen Ministries at Faith Promise Church.</p>
     <p>Sessions are available on an appointment basis and are offered Monday-Friday from 9 am-2 pm, as well as Mondays from 4-8 pm. Evening hours are the most requested appointments and can book very quickly. We do not have appointment times available on the weekends. To make an appointment, please call the church office at 251-2590, ext. 0, and request an appointment. Everyone is asked to complete an Intake Questionnaire before their first appointment. These are available at the office when you arrive but can also be printed at home before the first session by
-        <a href="../../uploads/ministries/counseling_form2.pdf" target="_blank">clicking here</a>.</p>
+        <a href="{{ doc_url('counseling_form2.pdf') }}" target="_blank">clicking here</a>.</p>
     <p>*** Please realize that our counseling ministry is not staffed to serve as a crisis center after regular appointment hours. Emergencies should be directed to 911, Mobile Crisis Unit at 539-2409 or go to the hospital emergency room of your choice. ***</p>
     @endtextsection
 

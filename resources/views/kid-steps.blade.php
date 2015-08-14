@@ -10,11 +10,11 @@ $baptism_registration = [
 $faq = [
         (object)[
                 'q' => 'Talking to Your Child About Salvation',
-                'a' => '<p><a href="../../assets/ministries/salvation.pdf" target="_blank">Click here</a> for a series of questions you can ask to explore whether a child is ready for a decision of Salvation.</p>'
+                'a' => '<p><a href="' . doc_url('salvation.pdf') . '" target="_blank">Click here</a> for a series of questions you can ask to explore whether a child is ready for a decision of Salvation.</p>'
         ],
         (object)[
                 'q' => 'Talking to Your Child About Baptism',
-                'a' => '<p><a href="../../assets/ministries/Baptism.pdf" target="_blank">Click here</a> for a series of questions you can ask to explore whether a child is ready for the step of Baptism</p>'
+                'a' => '<p><a href="' . doc_url('Baptism.pdf') . '" target="_blank">Click here</a> for a series of questions you can ask to explore whether a child is ready for the step of Baptism</p>'
         ],
         (object)[
                 'q' => 'Register for the Baptism Class',

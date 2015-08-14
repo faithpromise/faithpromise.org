@@ -29,7 +29,7 @@ $faq = [
         ],
         (object)[
                 'q' => 'Professional Counseling',
-                'a' => '<p>Counseling is available to regular attenders of Faith Promise who are experiencing marital or family discord, adjustment issues, personal development, and a variety of mental health issues. The service is confidential and short-term in nature and is provided by qualified professionals who integrate sound Christian principles and psychological strategies.  The counseling ministry is provided as part of the ministry of the church.</p><p>Before your first appointment, everyone is asked to complete an <a href="../../uploads/ministries/counseling_form2.pdf" target="_blank">intake questionnaire</a>. You are welcome to complete it at the church office at the time of your appointment or print a hard copy and bring it with you to your first appointment.</p>'
+                'a' => '<p>Counseling is available to regular attenders of Faith Promise who are experiencing marital or family discord, adjustment issues, personal development, and a variety of mental health issues. The service is confidential and short-term in nature and is provided by qualified professionals who integrate sound Christian principles and psychological strategies.  The counseling ministry is provided as part of the ministry of the church.</p><p>Before your first appointment, everyone is asked to complete an <a href="' . doc_url('counseling_form2.pdf') . '" target="_blank">intake questionnaire</a>. You are welcome to complete it at the church office at the time of your appointment or print a hard copy and bring it with you to your first appointment.</p>'
         ],
         (object)[
                 'q' => 'Suggested Resources',
@@ -37,7 +37,7 @@ $faq = [
         ],
         (object)[
                 'q' => 'Family Ministry Milestones',
-                'a' => '<p>Our plan for impacting families at Faith Promise. <a href="/assets/ministries/family/milestones.pdf" target="_blank">View it here</a>.</p>'
+                'a' => '<p>Our plan for impacting families at Faith Promise. <a href="' . doc_url('milestones.pdf') . '" target="_blank">View it here</a>.</p>'
         ]
 ];
 

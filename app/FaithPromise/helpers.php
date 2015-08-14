@@ -18,6 +18,10 @@ function asset_exists($path) {
     return $exists;
 }
 
+function doc_url($file_name) {
+    return 'http:' . config('site.cdn_url') . '/docs/' . $file_name;
+}
+
 function cdn_image_raw($image_path, $format = null) {
 
     $query_string = asset_exists($image_path) ? '?v=' . filemtime(asset_path($image_path)) : '';
