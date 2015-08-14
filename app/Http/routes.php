@@ -87,6 +87,7 @@ Route::get('/_sitemap.json', 'SiteMapController@index');
 // Redirects
 Route::get('/nextsteps', 'RedirectController@nextSteps');
 Route::get('/series', 'RedirectController@sermons');
+Route::get('/contact', 'RedirectController@locations');
 Route::get('/times-and-directions', 'RedirectController@locations');
 Route::get('/bibleplan', 'RedirectController@biblePlan');
 Route::get('/youngadults', 'RedirectController@youngAdults');
