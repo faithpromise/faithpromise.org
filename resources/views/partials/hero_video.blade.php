@@ -38,8 +38,8 @@
             <div class="HeroVideo-info">
                 @if (! empty($heading))
                     <span class="HeroVideo-heading">{{ $heading }}</span>
-                    <h1 class="HeroVideo-title">{{ $video->title }}</h1>
                 @endif
+                <h1 class="HeroVideo-title">{{ $video->title }}</h1>
 
                 <div class="HeroVideo-meta">
                     @if (strlen($video->speaker_display_name))
