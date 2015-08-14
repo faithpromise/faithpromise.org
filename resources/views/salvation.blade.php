@@ -15,7 +15,7 @@
                 ],
                 (object)[
                         'q' => 'What about my kids?',
-                        'a' => '<p>Our Director of Children\'s Ministries has put together some information to help you share the gospel with your kids.  <a href="/kidsteps">Click here</a>.</p>'
+                        'a' => '<p>Our Director of Children\'s Ministries has put together some information to help you share the gospel with your kids.  <a href="/kid-steps">Click here</a>.</p>'
                 ]
         ]);
 
