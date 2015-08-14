@@ -114,3 +114,23 @@ function twitter_url($username) {
 function instagram_url($username) {
     return 'https://instagram.com/' . $username;
 }
+
+function excerpt($str, $desired_length, $ellipses = '...') {
+    $parts = preg_split('/([\s\n\r]+)/', strip_tags($str), null, PREG_SPLIT_DELIM_CAPTURE);
+    $parts_count = count($parts);
+
+    $length = 0;
+
+    for ($last_part = 0; $last_part < $parts_count; ++$last_part) {
+        $length += strlen($parts[$last_part]);
+        if ($length > $desired_length) { break; }
+    }
+
+    $new_str = trim(implode(array_slice($parts, 0, $last_part)));
+
+    if (strlen($str) > strlen($new_str)) {
+        $new_str .= $ellipses;
+    }
+
+    return $new_str;
+}
