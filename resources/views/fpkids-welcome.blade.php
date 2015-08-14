@@ -2,9 +2,10 @@
 
 @section('page')
 
-    @videosection(['title' => 'Welcome to fpKids', 'class' => 'VideoSection--right', 'video' => '127442991'])
+    <!-- LATER: Add welcome video -->
+    @introsection(['title' => 'Welcome to fpKids'])
     <p>If you're new to Faith Promise or want to learn more about fpKids, this page was created with you in mind.</p>
-    @endvideosection
+    @endintrosection
 
 
     @bgsection(['title' => 'Preschool', 'image' => 'images/fpkids/prek-wide.jpg'])
