@@ -8,10 +8,7 @@
     </p>
     @endintrosection
 
-    @profilessection(['title' => 'Staff Counselors', 'class' => 'Section--lightGrey', 'profiles' => $ministry->Staff])
-    @endprofilessection
-
-    @textsection(['title' => 'Christian Counseling'])
+    @textsection(['title' => 'Christian Counseling', 'class' => 'Section--lightGrey'])
     <p>The Counseling Ministry is designed to offer short-term Christian counseling to members and regular attenders of Faith Promise Church. Our ministry team includes Ann O'Connor Slimp, Ph.D. and Sara Fulton, M.A. Also, graduate student interns may also provide some counseling services.</p>
     <p>Because of limited resources, counseling for people who do not attend Faith Promise will be limited to one consultation appointment.</p>
     <p>The counselors at Faith Promise encourage people to identify specific goals for counseling, and counseling sessions are focused on these goals. We provide individual counseling to adults, adolescents, and children, as well as premarital and couple's counseling. We also work closely with the Celebrate and Stephen Ministries at Faith Promise Church.</p>
@@ -19,6 +16,9 @@
         <a href="{{ doc_url('counseling_form2.pdf') }}" target="_blank">clicking here</a>.</p>
     <p>*** Please realize that our counseling ministry is not staffed to serve as a crisis center after regular appointment hours. Emergencies should be directed to 911, Mobile Crisis Unit at 539-2409 or go to the hospital emergency room of your choice. ***</p>
     @endtextsection
+
+    @profilessection(['title' => 'Staff Counselors', 'profiles' => $ministry->Staff])
+    @endprofilessection
 
     @textsection(['title' => 'fpCelebrate', 'class' => 'Section--lightGrey'])
     <p>fp Celebrate meets on Monday nights at the FPC Pellissippi Campus starting at 6:00 pm and is a time of helping people connect, heal, and grow.
