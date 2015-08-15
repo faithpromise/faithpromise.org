@@ -13,7 +13,6 @@
 
 .GridSection-title {
   &:extend(.Section-title all);
-  &:extend(.Section-title--push all);
   text-align: center;
 
   &:empty {
@@ -23,9 +22,6 @@
 
 .GridSection-text {
   &:extend(.text-constrain);
-
-  .to-em(margin-top, -(90 - @line-height), @Section-font-size);
-  .to-em(margin-bottom, 90, @Section-font-size);
 
   text-align: justify;
 
@@ -40,6 +36,10 @@
   .GridSection--compact & {
     &:extend(.text-constrain-compact);
   }
+}
+
+.GridSection-cardsWrap {
+  .to-em(margin-top, 90, @Section-font-size);
 }
 
 .GridSection-buttons {

@@ -46,7 +46,9 @@ if ($directive['execution_mode'] == 'start'):
     <?php
     endif;
     ?>
-    <?= view('partials.cards', ['cards' => $args['cards']])->render(); ?>
+    <div class="GridSection-cardsWrap">
+        <?= view('partials.cards', ['cards' => $args['cards']])->render(); ?>
+    </div>
     </div><!-- // END .GridSection-container -->
     </div><!-- // END .GridSection -->
 <?php endif; ?>
