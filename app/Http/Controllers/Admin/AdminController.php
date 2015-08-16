@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class AdminController extends Controller {
 
     public function index() {
-        return 'Welcome to admin!';
+        return view('admin');
     }
 
 }

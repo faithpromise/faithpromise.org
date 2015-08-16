@@ -42,7 +42,9 @@ module.exports = function (grunt) {
     ];
 
     var admin_js_input = [
-        admin_js_src_dir + '/app.module.js',
+        admin_js_src_dir + '/admin.module.js',
+        admin_js_src_dir + '/admin.config.js',
+        admin_js_src_dir + '/admin.routes.js',
         admin_js_src_dir + '/**/*.js'
     ];
 
