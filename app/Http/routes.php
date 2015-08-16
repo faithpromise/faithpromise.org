@@ -15,6 +15,9 @@ Route::get('/', 'MainController@index');
 // Sermons
 Route::get('/sermons', ['as' => 'sermons', 'uses' => 'SermonsController@index']);
 Route::get('/series/{series}', ['as' => 'series', 'uses' => 'SermonsController@series']);
+Route::get('/series/{series_slug}/trailer', 'RedirectController@seriesPromo');
+Route::get('/series/{series_slug}/series-promo', 'RedirectController@seriesPromo');
+Route::get('/series/{series_slug}/series-promo-2', 'RedirectController@seriesPromo2');
 Route::get('/series/{series}/{series_video}', ['as' => 'seriesVideo', 'uses' => 'SermonsController@video']);
 
 // Events

@@ -380,9 +380,9 @@ EOT;
             SELECT
                 sr.SeriesIdent AS series_slug
                 ,TRIM(s.StaffIdent) as speaker_slug
-                ,m.MediaIdent AS slug
+                ,IF(m.MediaIdent = 'trailer', 'promo', m.MediaIdent) AS slug
                 ,m.MediaType AS type
-                ,m.MediaTitle AS title
+                ,IF(m.MediaTitle = 'Trailer', 'Series Promo', m.MediaTitle) AS title
                 ,m.MediaDescription AS description
                 ,m.MediaVimeoID AS vimeo_id
                 ,m.MediaVimeoASL AS vimeo_id_asl

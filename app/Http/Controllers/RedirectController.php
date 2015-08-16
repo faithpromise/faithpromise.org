@@ -10,6 +10,14 @@ class RedirectController extends BaseController {
         return redirect()->route('sermons');
     }
 
+    public function seriesPromo($series_slug) {
+        return redirect()->route('seriesVideo', ['series' => $series_slug, 'series_video' => 'promo']);
+    }
+
+    public function seriesPromo2($series_slug) {
+        return redirect()->route('seriesVideo', ['series' => $series_slug, 'series_video' => 'promo-2']);
+    }
+
     public function nextSteps() {
         return redirect()->route('nextSteps');
     }
