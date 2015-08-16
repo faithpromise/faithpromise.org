@@ -105,3 +105,16 @@ Route::get('/kidsteps', 'RedirectController@kidSteps');
 
 Route::get('/migrate', 'MigrateController@index');
 Route::get('/migrate/migrate', ['as' => 'migrate', 'uses' => 'MigrateController@migrate']);
+
+// Admin
+Route::get('/admin', ['as' => 'admin', 'uses' => 'Admin\AdminController@index', 'middleware' => 'auth']);
+Route::get('/admin/login', ['as' => 'adminLogin', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('/admin/login', ['as' => 'adminLogin', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('/admin/logout', ['as' => 'adminLogout', 'uses' => 'Auth\AuthController@getLogout']);
+
+Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
+
+    Route::resource('authenticate', 'Admin\AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'Admin\AuthenticateController@authenticate');
+
+});
