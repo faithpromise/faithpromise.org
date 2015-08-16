@@ -18,11 +18,18 @@ module.exports = function (grunt) {
     var release_root = '_release';
 
     // JS Paths
-    var js_src_dir = src_root + '/js';
-    var js_output_dir = build_root + '/js';
+    var js_src_dir = src_root + '/js/main';
+    var js_output_dir = build_root + '/js/main';
     var js_output_file_dev = js_output_dir + '/main.dev.js';
     var js_output_file_production = js_output_dir + '/main.min.js';
     var js_output_file_temp = temp_dir + '/main.tmp.js';
+
+    var admin_js_src_dir = src_root + '/js/admin';
+    var admin_js_output_dir = build_root + '/js/admin';
+    var admin_js_output_file_dev = admin_js_output_dir + '/admin.dev.js';
+    var admin_js_output_file_production = admin_js_output_dir + '/admin.min.js';
+    var admin_js_output_file_temp = temp_dir + '/admin.tmp.js';
+
     var js_input = [
         'bower_components/angular-ui-bootstrap/src/position/position.js',
         'bower_components/angular-ui-bootstrap/src/dropdown/dropdown.js',
@@ -34,14 +41,27 @@ module.exports = function (grunt) {
         js_src_dir + '/**/*.js'
     ];
 
+    var admin_js_input = [
+        admin_js_src_dir + '/app.module.js',
+        admin_js_src_dir + '/**/*.js'
+    ];
+
     // LESS Paths
-    var less_src_dir = src_root + '/less';
+    var less_src_dir = src_root + '/less/main';
     var less_output_dir = build_root + '/css';
     var less_output_file_dev = less_output_dir + '/main.dev.css';
     var less_output_file_production = less_output_dir + '/main.min.css';
-    var lessInput = [
+    var less_input = [
         less_src_dir + '/main.less'
     ];
+
+    var admin_less_src_dir = src_root + '/less/admin';
+    var admin_less_output_file_dev = less_output_dir + '/admin.dev.css';
+    var admin_less_output_file_production = less_output_dir + '/admin.min.css';
+    var admin_less_input = [
+        admin_less_src_dir + '/admin.less'
+    ];
+
     var series_less = {
         src: less_src_dir + '/series/*.less',
         dest: less_output_dir + '/',
@@ -77,29 +97,51 @@ module.exports = function (grunt) {
                 js_production: {
                     src: js_input,
                     dest: js_output_file_temp
+                },
+                js_admin_dev: {
+                    src: admin_js_input,
+                    dest: admin_js_output_file_dev
+                },
+                js_admin_production: {
+                    src: admin_js_input,
+                    dest: admin_js_output_file_temp
                 }
             },
             uglify: {
                 options: {
                     mangle: false // getting Angular errors when mangled
                 },
-                production: {
-                    files: [{
-                        src: js_output_file_temp,
-                        dest: js_output_file_production
-                    }]
+                main: {
+                    files: [
+                        {
+                            src: js_output_file_temp,
+                            dest: js_output_file_production
+                        }
+
+                    ]
+                },
+                admin: {
+                    files: [
+                        {
+                            src: admin_js_input,
+                            dest: admin_js_output_file_production
+                        }
+                    ]
                 }
             },
             removelogging: {
-                production: {
+                main: {
                     src: [js_output_file_temp]
+                },
+                admin: {
+                    src: [admin_js_output_file_temp]
                 }
             },
             less: {
                 dev: {
                     files: [
                         {
-                            src: [lessInput],
+                            src: [less_input],
                             dest: less_output_file_dev
                         },
                         series_less
@@ -111,10 +153,32 @@ module.exports = function (grunt) {
                 production: {
                     files: [
                         {
-                            src: [lessInput],
+                            src: [less_input],
                             dest: less_output_file_production
                         },
                         series_less
+                    ],
+                    options: {
+                        compress: true
+                    }
+                },
+                admin_dev: {
+                    files: [
+                        {
+                            src: [admin_less_input],
+                            dest: admin_less_output_file_dev
+                        }
+                    ],
+                    options: {
+                        compress: false
+                    }
+                },
+                admin_production: {
+                    files: [
+                        {
+                            src: [admin_less_input],
+                            dest: admin_less_output_file_production
+                        }
                     ],
                     options: {
                         compress: true
@@ -129,7 +193,7 @@ module.exports = function (grunt) {
                     },
                     options: {
                         stylesheets: ['public/build/css/main.dev.css'],
-                        ignoreSheets : ['/fonts.googleapis/'],
+                        ignoreSheets: ['/fonts.googleapis/'],
                         urls: []
                     }
                 }
@@ -201,10 +265,12 @@ module.exports = function (grunt) {
                     options: {
                         replace: true,
                         scripts: {
-                            main: 'public/build/js/main.min.js'
+                            main: 'public/build/js/main/main.min.js',
+                            admin: 'public/build/js/admin/admin.min.js'
                         },
                         styles: {
-                            main: 'public/build/css/main.min.css'
+                            main: 'public/build/css/main.min.css',
+                            admin: 'public/build/css/admin.min.css'
                         }
                     }
                 }
@@ -231,6 +297,12 @@ module.exports = function (grunt) {
                 },
                 production: {
                     src: less_output_file_production
+                },
+                admin_dev: {
+                    src: admin_less_output_file_dev
+                },
+                admin_production: {
+                    src: admin_less_output_file_production
                 }
             },
             watch: {
@@ -238,9 +310,17 @@ module.exports = function (grunt) {
                     files: [less_src_dir + '/**/*.less', 'assets/fontello/**/*.*'],
                     tasks: ['_css_dev']
                 },
+                admin_css: {
+                    files: [admin_less_src_dir + '/**/*.less'],
+                    tasks: ['_admin_css_dev']
+                },
                 js: {
                     files: js_src_dir + '/**/*.js',
                     tasks: ['concat:js_dev']
+                },
+                admin_js: {
+                    files: admin_js_src_dir + '/**/*.js',
+                    tasks: ['concat:js_admin_dev']
                 },
                 svg: {
                     files: [src_root + '/**/*.svg'],
@@ -398,19 +478,23 @@ module.exports = function (grunt) {
     grunt.registerTask('build_dev', [
         '_build_common',
         '_css_dev',
-        'concat:js_dev'
+        'concat:js_dev',
+        '_css_admin_dev',
+        'concat:js_admin_dev'
     ]);
 
     grunt.registerTask('_build_production', [
         '_build_common',
         '_js_production',
-        '_css_production'
+        '_js_admin_production',
+        '_css_production',
+        '_css_admin_production'
     ]);
 
     grunt.registerTask('_js_production', [
         'concat:js_production',
-        'removelogging',
-        'uglify:production'
+        'removelogging:main',
+        'uglify:main'
     ]);
 
     grunt.registerTask('_css_production', [
@@ -425,7 +509,23 @@ module.exports = function (grunt) {
         'autoprefixer:dev'
     ]);
 
-    grunt.registerTask('load_sitemap_json', function() {
+    grunt.registerTask('_js_admin_production', [
+        'concat:js_admin_production',
+        'removelogging:admin',
+        'uglify:admin'
+    ]);
+
+    grunt.registerTask('_css_admin_production', [
+        'less:admin_production',
+        'autoprefixer:admin_production'
+    ]);
+
+    grunt.registerTask('_css_admin_dev', [
+        'less:admin_dev',
+        'autoprefixer:admin_dev'
+    ]);
+
+    grunt.registerTask('load_sitemap_json', function () {
         var sitemap_urls = grunt.file.readJSON('./public/build/sitemap.json');
         grunt.config.set('uncss.production.files', {'public/build/css/main.tidy.css': sitemap_urls});
     });

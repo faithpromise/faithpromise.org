@@ -169,7 +169,7 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         </script>
 
         <!-- build:script main -->
-        <script src="/build/js/main.dev.js"></script>
+        <script src="/build/js/main/main.dev.js"></script>
         <!-- /build -->
 
         <!-- http://dinbror.dk/blog/blazy/ -->
@@ -189,7 +189,7 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         </script>
 
         <!--[if gte IE 9]>
-        <script src="/build/js/svg4everybody.min.js"></script>
+        <script src="/build/js/main/svg4everybody.min.js"></script>
         <![endif]-->
 
     </body>

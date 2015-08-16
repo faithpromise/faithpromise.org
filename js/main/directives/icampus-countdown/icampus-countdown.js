@@ -6,7 +6,7 @@
         return {
             restrict: 'E',
             controller: Controller,
-            templateUrl: '/build/js/directives/icampus-countdown/icampus-countdown.html',
+            templateUrl: '/build/js/main/directives/icampus-countdown/icampus-countdown.html',
             replace: true
         };
     }
