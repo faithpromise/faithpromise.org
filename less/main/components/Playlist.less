@@ -10,7 +10,8 @@
 .Playlist {
 
   .to-rem(font-size, @playlist_root_font_size);
-  border-top: 1px solid #dedede;
+  border-top:   1px solid #dedede;
+  table-layout: fixed;
 
   th {
     .to-em(font-size, @playlist_font_size_headers, @playlist_root_font_size);
@@ -53,4 +54,35 @@
 .Playlist-listenIcon {
   &:extend(.icon all);
   &:extend(.icon-headphones all);
+}
+
+.Playlist-dateHeader {
+  .to-em(width, 140, @playlist_font_size_headers);
+  text-align: right;
+}
+
+.Playlist-titleColumn {
+  white-space:   nowrap;
+  text-overflow: ellipsis;
+  overflow:      hidden;
+}
+
+.Playlist-dateColumn {
+  text-align: right;
+}
+
+/* 379px */
+@media (max-width: 23.6875em) {
+  .Playlist-dateHeader,
+  .Playlist-dateColumn {
+    display: none;
+  }
+}
+
+/* 799px */
+@media (max-width: 49.9375em) {
+  .Playlist-speakerHeader,
+  .Playlist-speakerColumn {
+    display: none;
+  }
 }
