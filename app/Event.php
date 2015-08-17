@@ -39,6 +39,10 @@ class Event extends Model implements SluggableInterface {
         return 'images/general/default-wide.jpg';
     }
 
+    public function getOriginalUrlAttribute() {
+        return $this->getOriginal('url');
+    }
+
     public function getUrlAttribute() {
         $url = $this->getOriginal('url');
         return strlen($url) ? $url : route('event', ['event' => $this->slug]);

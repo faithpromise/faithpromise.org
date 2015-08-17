@@ -25,12 +25,17 @@ class EventsController extends BaseController {
 
     public function event($event) {
 
-        $events = Event::orderBy('sort', 'asc')->take(3)->get();
+        // If a the event has a (hard coded) URL, redirect to it
+        if (strlen($event->original_url)) {
+            return redirect($event->original_url);
+        }
 
         if (is_null($event)) {
             // LATER: Serve up another view that suggests events
             abort(404);
         }
+
+        $events = Event::orderBy('sort', 'asc')->take(3)->get();
 
         return view('event_detail', [
             'event'  => $event,
