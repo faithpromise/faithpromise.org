@@ -13,11 +13,6 @@
     @profilessection(['title' => 'Missionaries', 'class' => 'Section--lightGrey', 'profiles' => $missionaries])
     @endprofilessection
 
-    @textsection(['title' => 'Get Updates', 'class' => 'TextSection--center TextSection--compact', 'image' => ''])
-    <p>Sign up for email notifications and we'll let you know when new trips are planned.</p>
-    <a class="Button" target="_blank" href="http://faithpromise.us9.list-manage.com/subscribe?u=a2d18e426cb386730bf3010ca&id=37b27d5bb3&group[17705][64]=1">Sign Up</a>
-    @endtextsection
-
     @bgsection([
         'title' => 'Love Local',
         'class' => 'BackgroundSection--right',
