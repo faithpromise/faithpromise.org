@@ -48,7 +48,19 @@
     @endtextsection
     @endif
 
-    @profilessection(['title' => 'Meet the Rest of the Team', 'profiles' => $staff])
+    @profilessection(
+        [
+            'title' => 'My Teammates',
+            'profiles' => $staff,
+            'class' => 'Section--lightGrey',
+            'footer_buttons' => [
+                [
+                    'title' => 'Meet the Full Staff',
+                    'url' => route('staff')
+                ]
+            ]
+        ]
+    )
     @endprofilessection
 
 @endsection

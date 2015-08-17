@@ -11,10 +11,11 @@ if ($directive['execution_mode'] == 'start'):
 
     $args = array_merge(
         [
-            'title' => '',
-            'id' => '',
-            'class' => '',
-            'profiles' => []
+            'title'          => '',
+            'id'             => '',
+            'class'          => '',
+            'profiles'       => [],
+            'footer_buttons' => []
         ], $directive["args"]
     );
     $args['class'] = trim('ProfilesSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
@@ -41,6 +42,13 @@ if ($directive['execution_mode'] == 'start'):
             </li>
         <?php endforeach; ?>
     </ul>
+    <?php if (!empty($args['footer_buttons'])): ?>
+        <div class="ProfilesSection-footerButtons">
+            <?php foreach ($args['footer_buttons'] as $button): ?>
+                <a class="Button" href="<?= $button['url']; ?>"><?= $button['title']; ?></a>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
     </div><!-- // END .ProfilesSection-container -->
     </div><!-- // END .ProfilesSection -->
 <?php endif; ?>
