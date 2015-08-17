@@ -54,4 +54,44 @@ class RedirectController extends BaseController {
         return redirect()->route('localOutreachOrganization', ['organization' => 'kids-hope-usa']);
     }
 
+    public function allStaff() {
+        return redirect('http://www.faithpromiseweb.com/allstaff/');
+    }
+
+    public function campusPastors() {
+        return redirect('http://faithpromiseweb.com/campuspastors');
+    }
+
+    public function gMail() {
+        return redirect('http://gmail.google.com/a/faithpromise.org');
+    }
+
+    public function lessons() {
+        return redirect('http://blog.faithpromise.org/category/groups-ministry/discussion-questions/');
+    }
+
+    public function requests() {
+        return redirect('http://www.faithpromiseweb.com/request/');
+    }
+
+    public function feedback() {
+        return redirect('https://docs.google.com/forms/d/1laaJ_c7rl2Q_kiXb-PgdqQFI1emn2B7W7YMQeBXxSTQ/viewform');
+    }
+
+    public function icampus() {
+        return redirect('http://icampus.faithpromise.org');
+    }
+
+    public function app() {
+        return redirect('http://get.theapp.co/9749');
+    }
+
+    public function retirees() {
+        return redirect('https://docs.google.com/forms/d/1xw0_J0djgHZIr8NwBmiINzErY-e7Ond0LbCI6IfO-6s/viewform');
+    }
+
+    public function candidates() {
+        return redirect('https://docs.google.com/forms/d/1oqRSKaNPATyHhbWvKejL8udI74gJFgO73Qv7sUeEndU/viewform');
+    }
+
 }

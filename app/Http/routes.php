@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 Route::get('/', 'MainController@index');
 
 // Sermons
@@ -90,34 +91,9 @@ Route::get('/countdown.js', ['as' => 'countdown', 'uses' => 'InternetCampusContr
 // Sitemap JSON for UNCSS
 Route::get('/_sitemap.json', 'SiteMapController@index');
 
-// Redirects
-Route::get('/nextsteps', 'RedirectController@nextSteps');
-Route::get('/series', 'RedirectController@sermons');
-Route::get('/contact', 'RedirectController@locations');
-Route::get('/times-and-directions', 'RedirectController@locations');
-Route::get('/bibleplan', 'RedirectController@biblePlan');
-Route::get('/youngadults', 'RedirectController@youngAdults');
-Route::get('/newleader', 'RedirectController@newGroupLeader');
-Route::get('/groupleaders', 'RedirectController@groupLeaders');
-Route::get('/lovelocal', 'RedirectController@loveLocal');
-Route::get('/kidsteps', 'RedirectController@kidSteps');
-
-
+// Data migration from old site
 Route::get('/migrate', 'MigrateController@index');
 Route::get('/migrate/migrate', ['as' => 'migrate', 'uses' => 'MigrateController@migrate']);
 
-// Admin
-Route::get('/admin/login', ['as' => 'adminLogin', 'uses' => 'Auth\AuthController@getLogin']);
-Route::post('/admin/login', ['as' => 'adminLogin', 'uses' => 'Auth\AuthController@postLogin']);
-Route::get('/admin/logout', ['as' => 'adminLogout', 'uses' => 'Auth\AuthController@getLogout']);
-
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-    Route::get('/', ['as' => 'admin', 'uses' => 'Admin\AdminController@index']);
-    Route::get('/{catchall}', ['uses' => 'Admin\AdminController@index'])->where('catchall', '(.*)');
-});
-
-Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
-
-    Route::resource('events', 'Admin\EventsController');
-
-});
+require "routes_admin.php";
+require "routes_redirects.php";
