@@ -1,0 +1,82 @@
+@Album-font-size: 16;
+@Album-gutter: (@grid-gutter-base * 1.5);
+
+.AlbumSection {
+  &:extend(.Section all);
+  &:extend(.Section--center all);
+  background: @NavBackgroundColor url(http://subtlepatterns.com/patterns/pw_maze_black.png) repeat;
+  color:      #fff;
+}
+
+.AlbumSection-container {
+  &:extend(.Container all);
+
+  @media (min-width: 46.5rem) {
+    .to-rem(padding, 0 @Container-padding-mobile);
+  }
+}
+
+.AlbumSection-title {
+  &:extend(.Section-title all);
+  &:extend(.Section-title--push all);
+  text-align: center;
+  color:      inherit;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.Album-grid {
+  &:extend(.grid all);
+  .to-rem(margin-left, -@Album-gutter);
+  text-align: center;
+}
+
+.Album-item {
+  &:extend(.grid-item all);
+  .to-rem(padding-left, @Album-gutter);
+  .to-rem(font-size, @Album-font-size);
+
+  max-width: 360px;
+
+  @media (min-width: 42rem) {
+    width: 50%;
+  }
+
+  /* 1024 */
+  @media (min-width: 64rem) {
+    width: 33.3333333%;
+  }
+}
+
+.Album {
+  .to-em(margin-bottom, @Album-gutter*2, @Album-font-size);
+
+  @media (min-width: 42rem) {
+    .to-em(margin-bottom, @Album-gutter, @Album-font-size);
+  }
+}
+
+.Album-image {
+  display:         block;
+  width:           100%;
+  height:          0;
+  padding-top:     100%;
+  margin-bottom:   1.5em;
+  background-size: cover;
+}
+
+.Album-buyLabel {
+  display:        inline-block;
+  margin-right:   .5em;
+  vertical-align: middle;
+  color:          #c6c6c6;
+}
+
+.Album-buyLink {
+  .to-em(font-size, 22, @Album-font-size);
+  .link-color(#c6c6c6);
+  vertical-align: middle;
+  white-space:    nowrap;
+}
