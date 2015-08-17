@@ -6,6 +6,22 @@ use Illuminate\Routing\Controller as BaseController;
 
 class RedirectController extends BaseController {
 
+    public function care() {
+        return redirect()->route('care');
+    }
+
+    public function dedications() {
+        return redirect()->route('dedications');
+    }
+
+    public function h4h() {
+        return redirect()->route('h4h');
+    }
+
+    public function events() {
+        return redirect()->route('events');
+    }
+
     public function sermons() {
         return redirect()->route('sermons');
     }
@@ -20,6 +36,10 @@ class RedirectController extends BaseController {
 
     public function nextSteps() {
         return redirect()->route('nextSteps');
+    }
+
+    public function celebrate() {
+        return redirect()->route('celebrate');
     }
 
     public function locations() {
@@ -48,6 +68,14 @@ class RedirectController extends BaseController {
 
     public function kidSteps() {
         return redirect()->route('kidSteps');
+    }
+
+    public function fpKids() {
+        return redirect()->route('fpKids');
+    }
+
+    public function groups() {
+        return redirect()->route('groups');
     }
 
     public function kidsHope() {

@@ -12,6 +12,21 @@ Route::get('/newleader', 'RedirectController@newGroupLeader');
 Route::get('/groupleaders', 'RedirectController@groupLeaders');
 Route::get('/lovelocal', 'RedirectController@loveLocal');
 Route::get('/kidsteps', 'RedirectController@kidSteps');
+Route::get('/children', 'RedirectController@fpKids');
+Route::get('/kidknex', 'RedirectController@fpKids');
+Route::get('/promisekids', 'RedirectController@fpKids');
+Route::get('/promiseland', 'RedirectController@fpKids');
+Route::get('/business', 'RedirectController@groups');
+Route::get('/classes', 'RedirectController@nextSteps');
+Route::get('/cr', 'RedirectController@celebrate');
+Route::get('/devotions', 'RedirectController@sermons');
+Route::get('/media', 'RedirectController@sermons');
+Route::get('/holidays', 'RedirectController@locations');
+Route::get('/AndersonCampus', 'RedirectController@events');
+Route::get('/dedication', 'RedirectController@dedications');
+Route::get('/campus-expansion', 'RedirectController@h4h');
+Route::get('/counseling', 'RedirectController@care');
+
 
 // Shortcut redirects to external sites
 
