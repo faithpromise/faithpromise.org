@@ -361,6 +361,7 @@ EOT;
                 ,NewsDateCreated as created_at
                 ,NewsDateModified as updated_at
                 ,ministry as ministry_slug
+                ,IF(NewsLinkURL = '/events', NULL, NewsLinkURL) AS url
             FROM newsupdate;
 EOT;
 
