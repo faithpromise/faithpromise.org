@@ -81,7 +81,7 @@ $ways_to_give = collect([
         <p>Faith Promise is committed to helping our congregation grow in all areas of spiritual growth, including generosity.  Generosity begins with the biblical understanding that God owns everything.  Once we understand that nothing really belongs to us and that we are only managers or stewards, we can begin the generosity journey, allowing God to give us a heart that loves to give.</p>
         <p>Like many other areas of spiritual growth, generosity isn't something that comes naturally to most people. We must exercise our generosity to grow in the habit of giving.</p>
 
-        <p>There are several biblical reasons why we should cultivate generosityin our lives:</p>
+        <p>There are several biblical reasons why we should cultivate generosity in our lives:</p>
 
         <ul>
             <li>Generosity is the antidote to greed.</li>
