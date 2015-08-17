@@ -58,7 +58,7 @@ class MissionLocation extends Model implements SluggableInterface {
     }
 
     public function getCardUrlAttribute() {
-        return $this->getUrlAttribute();
+        return count($this->missiontrips) === 0 ? null : $this->getUrlAttribute();
     }
 
     public function scopeUpcoming($query) {
