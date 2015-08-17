@@ -23,9 +23,8 @@ class EventsController extends BaseController {
         ]);
     }
 
-    public function event($event_id) {
+    public function event($event) {
 
-        $event = Event::find($event_id);
         $events = Event::orderBy('sort', 'asc')->take(3)->get();
 
         if (is_null($event)) {
@@ -34,8 +33,8 @@ class EventsController extends BaseController {
         }
 
         return view('event_detail', [
-            'event'      => $event,
-            'events'      => $events
+            'event'  => $event,
+            'events' => $events
         ]);
 
 
@@ -70,6 +69,7 @@ class EventsController extends BaseController {
 
         if ($days->count() === 0 && $current_month->eq($beginning_of_month)) {
             $redirect_to_month = $beginning_of_month->addMonth(1);
+
             return redirect()->route('calendarMonth', ['year' => $redirect_to_month->year, 'month' => $redirect_to_month->month]);
         }
 
