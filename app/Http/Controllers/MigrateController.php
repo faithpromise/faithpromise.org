@@ -101,7 +101,7 @@ class MigrateController extends BaseController {
             unset($data['ministry_slug']);
 
             $ministry = Ministry::findBySlug($ministry_slug);
-            if (! is_null($ministry)) {
+            if (!is_null($ministry)) {
                 $data['ministry_id'] = $ministry->id;
             }
 
@@ -470,6 +470,7 @@ EOT;
             SELECT
                 ident as slug
                 ,title as name
+                ,is_continual
             FROM mission_locations
             WHERE export = 1;
 EOT;
@@ -490,9 +491,8 @@ EOT;
                 ,MissionContact as contact_email
                 ,MissionFull as is_full
                 ,MissionSort as sort
-                ,NULL as starts_at
-                ,NULL as ends_at
-                ,IF(MissionArchive = 1, NOW(), null) as ends_at
+                ,m.starts_at
+                ,COALESCE(m.ends_at, IF(MissionArchive = 1, NOW(), null)) AS ends_at
             FROM missions m
                 LEFT JOIN mission_locations l on m.MissionTitle = l.title and l.export = 1;
 EOT;
