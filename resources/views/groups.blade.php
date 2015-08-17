@@ -19,7 +19,7 @@ $young->card_title = 'Young Adult Groups';
 $young->card_text = 'Connect with other 18-30 year old adults.';
 $young->card_url = '/youngadults';
 $young->card_url_text = 'Learn more';
-$young->card_image = 'images/pages/youngadults-tall.jpg';
+$young->card_image = 'images/pages/young-adults-tall.jpg';
 
 $support = new stdClass();
 $support->card_title = 'Support Groups';
@@ -49,7 +49,7 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
     ================================================================================ --}}
 
     @introsection(['title' => 'Groups Ministry', 'class' => '', 'image' => ''])
-    <p>We believe that faith comes alive when people connect with God and others. Sustained life change occurs as we are growing in a relationship with Christ and we prioritize intentional relationships with others. Groups provide people with the opportunity to Encounter God, Embrace Others, Engage the World Around Us, and Expand God's Kingdom through their group.</p>
+    <p>We believe that faith comes alive when people connect with God and others. Sustained life change occurs as we are growing in a relationship with Christ and we prioritize intentional relationships with others. Groups provide people with the opportunity to encounter God, embrace others, engage the world around us, and expand God's Kingdom through their group.</p>
     @endintrosection
 
 
