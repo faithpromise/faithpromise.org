@@ -69,11 +69,16 @@
 
 .BackgroundSection-buttons {
   &:extend(.Section-buttons);
-  .to-em(max-width, 390, @Section-font-size);
-  text-align: left;
+  text-align: center;
 
-  .BackgroundSection--right & {
-    margin-left: ~"calc(100% - 390px)"; // LATER: Come up with something better
+  @media (min-width: @BackgroundSection-float-width) {
+
+    .to-em(max-width, 390, @Section-font-size);
+    text-align: left;
+
+    .BackgroundSection--right & {
+      margin-left: ~"calc(100% - 390px)"; // LATER: Come up with something better
+    }
   }
 }
 
