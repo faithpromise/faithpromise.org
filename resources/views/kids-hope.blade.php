@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => $kids_hope->name, 'hero_image' => 'images/pages/kids-hope-wide.jpg'])
+@extends('layouts.page', ['title' => $kids_hope->name, 'hero_image' => 'images/pages/kids-hope-usa-wide.jpg'])
 
 @section('page')
 
