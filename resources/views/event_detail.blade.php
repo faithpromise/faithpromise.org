@@ -3,7 +3,12 @@
 @section('page')
 
     @introsection(['title' => $event->title])
-        {!! $event->description !!}
+    @if(strlen($event->dates_text))
+        <p class="text-center">
+            <strong>{{ $event->dates_text }}</strong>
+        </p>
+    @endif
+    {!! $event->description !!}
     @endintrosection
 
     @cardsection(['title' => 'Other Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $events])
