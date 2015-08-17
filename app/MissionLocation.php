@@ -38,7 +38,7 @@ class MissionLocation extends Model implements SluggableInterface {
             $dates[] = $trip->date_range;
         }
 
-        return count($dates) ? implode('<br>&amp; ', $dates) : 'We\'re working on dates';;
+        return count($dates) ? implode('<br>&amp; ', $dates) : 'Dates TBD';
     }
 
     public function getCardTitleAttribute() {
