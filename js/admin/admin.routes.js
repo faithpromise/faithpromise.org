@@ -6,17 +6,16 @@
 
     function Config(routeProvider) {
 
-        routeProvider.when('/', {
-            template: 'dashboard',
-            bodyClass: 'home'
+        routeProvider.when('/admin', {
+            template: ''
         });
 
-        routeProvider.when('/events', {
-            template: 'view events'
+        routeProvider.when('/admin/events', {
+            template: '<view-events></view-events>'
         });
 
-        routeProvider.when('/events/:slug', {
-            template: 'edit event'
+        routeProvider.when('/admin/events/:id', {
+            template: '<view-event-edit></view-event-edit>'
         });
 
         routeProvider.otherwise({

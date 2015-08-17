@@ -351,6 +351,12 @@ module.exports = function (grunt) {
                     src: 'directives/**/*.html',
                     dest: js_output_dir
                 },
+                adminTemplates: {
+                    expand: true,
+                    cwd: admin_js_src_dir,
+                    src: '**/*.html',
+                    dest: admin_js_output_dir
+                },
                 release_files: {
                     expand: true,
                     src: [
@@ -473,6 +479,7 @@ module.exports = function (grunt) {
         'copy:fontello',
         'copy:svg4everybody',
         'copy:appTemplates',
+        'copy:adminTemplates',
         'html2js',
         'svgstore:default'
     ]);

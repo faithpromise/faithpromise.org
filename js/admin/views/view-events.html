@@ -1,0 +1,7 @@
+
+<h1>Events</h1>
+<ul>
+  <li ng-repeat="event in vm.events">
+    <a href="{{ vm.getUrl(event) }}">{{ event.title }}</a>
+  </li>
+</ul>
