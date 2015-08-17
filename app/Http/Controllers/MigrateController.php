@@ -95,8 +95,20 @@ class MigrateController extends BaseController {
         DB::table($table)->truncate();
 
         foreach ($items as $item) {
-            $model = new Event(get_object_vars($item));
+
+            $data = get_object_vars($item);
+            $ministry_slug = $data['ministry_slug'];
+            unset($data['ministry_slug']);
+
+            $ministry = Ministry::findBySlug($ministry_slug);
+            if (! is_null($ministry)) {
+                $data['ministry_id'] = $ministry->id;
+            }
+
+            $model = new Event($data);
+
             $model->save();
+
         }
     }
 
@@ -348,6 +360,7 @@ EOT;
                 ,NewsSort as sort
                 ,NewsDateCreated as created_at
                 ,NewsDateModified as updated_at
+                ,ministry as ministry_slug
             FROM newsupdate;
 EOT;
 
