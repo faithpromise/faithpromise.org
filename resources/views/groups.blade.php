@@ -68,10 +68,10 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
 
     {{--
     ================================================================================
-        Interest Groups
+        Specialized Groups
     ================================================================================ --}}
 
-    @cardsection(['title' => 'Interest Groups', 'class' => 'Section--lightGrey', 'cards' => $group_types])
+    @cardsection(['title' => 'Specialized Groups', 'class' => 'Section--lightGrey', 'cards' => $group_types])
     <p>You know how they say that no two snowflakes are alike? Groups are the same way. But to help you find a good match we've classified them into several categories</p>
     @endcardsection
 
