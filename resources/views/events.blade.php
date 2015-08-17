@@ -7,7 +7,7 @@
         'class' => 'Section--lightGrey GridSection--center',
         'cards' => $events
     ])
-    <p>There's lots going on across our campuses at Faith Promise.</p>
+    <p>There's a lot going on across our campuses at Faith Promise.</p>
     @endcardsection
 
     <div class="Section Section--center Section--lightGrey" style="padding-top: 0;">
