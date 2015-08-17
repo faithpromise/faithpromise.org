@@ -27,3 +27,8 @@
 .icon-pinterest-circled:before { content: '\e819'; } /* '' */
 .icon-share:before { content: '\e81a'; } /* '' */
 .icon-share-1:before { content: '\e81b'; } /* '' */
+.icon-apple:before { content: '\e81c'; } /* '' */
+.icon-googleplay:before { content: '\e81d'; } /* '' */
+.icon-amazon:before { content: '\e81e'; } /* '' */
+.icon-itunes:before { content: '\e81f'; } /* '' */
+.icon-spotify-1:before { content: '\e821'; } /* '' */

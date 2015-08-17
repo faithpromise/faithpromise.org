@@ -7,6 +7,12 @@
   "ascent": 850,
   "glyphs": [
     {
+      "uid": "e9fa538fd5913046497ac148e27cd8ea",
+      "css": "apple",
+      "code": 59420,
+      "src": "fontawesome"
+    },
+    {
       "uid": "e7cb72a17f3b21e3576f35c3f0a7639b",
       "css": "git",
       "code": 59395,
@@ -155,6 +161,30 @@
       "css": "instagram",
       "code": 59410,
       "src": "entypo"
+    },
+    {
+      "uid": "e4b799ca3860a8276dba05b11d7e13db",
+      "css": "spotify-1",
+      "code": 59425,
+      "src": "zocial"
+    },
+    {
+      "uid": "2f85c90013c0af641d18b167ec93d165",
+      "css": "amazon",
+      "code": 59422,
+      "src": "zocial"
+    },
+    {
+      "uid": "909f99f11c6b6551bf757b6e809f98f3",
+      "css": "googleplay",
+      "code": 59421,
+      "src": "zocial"
+    },
+    {
+      "uid": "d6096cb47cc4448ac68b6a2e2c52a81d",
+      "css": "itunes",
+      "code": 59423,
+      "src": "zocial"
     },
     {
       "uid": "d5937c5767642d0336ad599af0e9c992",
