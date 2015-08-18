@@ -20,7 +20,7 @@ $faq = [
                 'q' => 'Register for the Baptism Class',
                 'a' => '<p>Does your child still have questions about Salvation?  Are they telling you they\'re ready to be baptized?  All kids Kindergarten to 5th grade participate in our Salvation/Baptism Class prior to baptism.  We cover basics such as The Plan of Salvation, the Purpose of Baptism and other details.</p>'
                         . '<p>This class includes a Parent Connection where we connect with parents/guardians.  We want to help you look ahead at what you can do to help your child establish an active faith in Christ.'
-                        . ' Register at the '
+                        . ' Use the following links to register at the '
                         . '<a class="no-wrap" href="' . $baptism_registration['pellissippi'] . '" target="_blank">Pellissippi Campus</a>, '
                         . '<a class="no-wrap" href="' . $baptism_registration['blount'] . '" target="_blank">Blount Campus</a>, or '
                         . '<a class="no-wrap" href="' . $baptism_registration['north'] . '" target="_blank">North Knox Campus</a>'
@@ -44,7 +44,7 @@ $faq = [
     </ul>
     <p>When a child can accomplish these two things, parents can move toward scheduling their Baptism.</p>
     <p>When a child is unable to articulate these things, parents are provided a resource to help them as they take more time to explore the topic with their child.</p>
-    <p>To participate in the Baptism Class, click the 'Salvation/Baptism Class' link to the right.</p>
+    <p>To participate in the Baptism Class, please have a look at the section below titled, "Register for the Baptism Class," and use the appropriate link to register.</p>
     <p>For more about baptism, <a href="/baptism">click here</a>.</p>
     @endintrosection
 
