@@ -105,6 +105,15 @@ class AppServiceProvider extends ServiceProvider {
             return '<?php $dropdown_directive = []; $dropdown_directive["args"] = ' . ($expression ?: '[]') . '; include(base_path("resources/views/directives/dropdown.php")); ?>';
         });
 
+        // style
+        Blade::directive('inlinecss', function() {
+            return '<?php $directive = ["execution_mode" => "start"]; include(base_path("resources/views/directives/inline_css.php")); ?>';
+        });
+
+        // endstyle
+        Blade::directive('endinlinecss', function() {
+            return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/inline_css.php")); ?>';
+        });
     }
 
     /**

@@ -10,7 +10,8 @@
         </div>
     </div>
 
-    <style type="text/css" scoped>
+    @inlinecss
+    <style type="text/css">
 
         /* 569px */
         @media (max-width: 35.5625em) {
@@ -40,6 +41,7 @@
             }
         }
     </style>
+    @endinlinecss
 
     <div class="CurrentSeries">
         <div class="CurrentSeries-container">

@@ -6,7 +6,8 @@
 
 @section('content')
 
-<style type="text/css" scoped>
+@inlinecss
+<style type="text/css">
     /* small <= 320px */
     .hero_image { background-image: url({{ cdn_image('sm', 'full', $hero_image, 'tall') }}); }
 
@@ -30,6 +31,7 @@
         .hero_image { background-image: url({{ cdn_image('xl', 'full', $hero_image, 'wide') }}); }
     }
 </style>
+@endinlinecss
 
 <div class="Hero hero_image">
 

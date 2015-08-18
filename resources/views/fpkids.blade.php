@@ -71,12 +71,14 @@ $faq = [
         FAQ
         ========================================
     --}}
-    <style type="text/css" scoped>
+    @inlinecss
+    <style type="text/css">
         .kids_faq a:hover {
             background-color: #fff;
             color:            #4e2b57;
         }
     </style>
+    @endinlinecss
     @faqsection(['faq' => $faq, 'class' => 'has-background kids_faq', 'image' => cdn_image_raw('images/fpkids/pattern-optimized.png')])
     @endfaqsection
 
