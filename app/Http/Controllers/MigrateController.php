@@ -380,9 +380,12 @@ EOT;
                 ,s.SeriesDateCreated as created_at
                 ,s.SeriesDateModified as updated_at
             FROM series s
-                JOIN seriesMedia m ON s.SeriesID = m.SeriesID
+                LEFT JOIN seriesMedia m ON s.SeriesID = m.SeriesID
             WHERE s.SeriesDateCreated IS NOT NULL
-	            AND (m.MediaVimeoID IS NOT NULL OR m.MediaAudioURL IS NOT NULL)
+	            AND (
+	                (m.MediaVimeoID IS NOT NULL OR m.MediaAudioURL IS NOT NULL)
+	                OR begin_date >= '2015-08-22 00:00:00'
+                )
             GROUP BY s.SeriesID;
 EOT;
 
