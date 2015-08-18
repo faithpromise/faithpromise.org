@@ -94,6 +94,11 @@ Route::get('/_sitemap.json', 'SiteMapController@index');
 // Data migration from old site
 Route::get('/migrate', 'MigrateController@index');
 Route::get('/migrate/migrate', ['as' => 'migrate', 'uses' => 'MigrateController@migrate']);
+Route::get('/migrate/campuses', ['as' => 'migrateCampuses', 'uses' => 'MigrateController@migrateCampuses']);
+Route::get('/migrate/events', ['as' => 'migrateEvents', 'uses' => 'MigrateController@migrateEvents']);
+Route::get('/migrate/series', ['as' => 'migrateSeries', 'uses' => 'MigrateController@migrateSeries']);
+Route::get('/migrate/staff', ['as' => 'migrateStaff', 'uses' => 'MigrateController@migrateStaff']);
+Route::get('/migrate/missions', ['as' => 'migrateMissions', 'uses' => 'MigrateController@migrateMissions']);
 
 require "routes_admin.php";
 require "routes_redirects.php";

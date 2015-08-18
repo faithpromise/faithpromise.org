@@ -20,28 +20,59 @@ use Illuminate\Support\Facades\DB;
 class MigrateController extends BaseController {
 
     public function index() {
-        return '<a href="' . route('migrate') . '">migrate</a>';
+        return '
+            <a href="' . route('migrate') . '">migrate all</a><br>
+            <a href="' . route('migrateCampuses') . '">campuses</a><br>
+            <a href="' . route('migrateEvents') . '">events</a><br>
+            <a href="' . route('migrateSeries') . '">series</a><br>
+            <a href="' . route('migrateStaff') . '">staff</a><br>
+            <a href="' . route('migrateMissions') . '">missions</a><br>
+        ';
     }
 
     public function migrate() {
 
         $this->importBiblePlan();
+        $this->migrateCampuses();
+        $this->migrateEvents();
+        $this->migrateSeries();
+        $this->migrateStaff();
+        $this->migrateMissions();
+
+        return 'migrated all data';
+    }
+
+    public function migrateCampuses() {
         $this->importCampuses();
+        return 'migrated campuses';
+    }
+
+    public function migrateEvents() {
         $this->importEvents();
+        return 'migrated events';
+    }
+
+    public function migrateSeries() {
         $this->importSeries();
         $this->importVideos();
+        return 'migrated series and videos';
+    }
+
+    public function migrateStaff() {
         $this->importStaff();
         $this->importMinistries();
         $this->importTeams();
         $this->importStaffMinistries();
         $this->importStaffTeams();
+        return 'migrated staff, ministries, and teams';
+    }
+
+    public function migrateMissions() {
         $this->importMissionLocations();
         $this->importMissionTrips();
         $this->importMissionaries();
         $this->importOrganizations();
-
-        return 'done';
-
+        return 'migrated mission locations, trips, missionaries, and organizations';
     }
 
     private function importBiblePlan() {
