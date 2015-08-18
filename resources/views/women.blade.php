@@ -4,7 +4,7 @@
 
     <div class="TextSection">
         <div class="TextSection-container">
-            <h2 class="TextSection-title">Women's Ministry</h2>
+            <h2 class="TextSection-title">Women's Groups</h2>
 
             <div class="TextSection-text">
                 <p>fp Women's Groups exist to help women become who God created them to be in order that they can fulfill their destiny. We will equip and encourage women to connect with other women, grow into a deeper relationship with Jesus Christ, and serve one another, our community, and the world.</p>

@@ -4,7 +4,7 @@
 
     <div class="TextSection">
         <div class="TextSection-container">
-            <h2 class="TextSection-title">Men's Ministry</h2>
+            <h2 class="TextSection-title">Men's Groups</h2>
 
             <div class="TextSection-text">
                 <p>Men, are you experiencing the growth, significance, adventure, purpose, and blessings God has for you? fpMen helps us in the journey to be a man of God in today's world as we connect, serve our community, grow spiritually, and win the battle for our character, families, and legacy.</p>
