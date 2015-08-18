@@ -56,7 +56,7 @@
             ],
             (object)[
                     'q' => 'My child wants to be baptized. What should I do?',
-                    'a' => 'We\'ve provided some helpful resources to help you talk to your kids about <a href="/kidssteps">baptism and salvation</a>.'
+                    'a' => 'We\'ve provided some helpful resources to help you talk to your kids about <a href="' . route('kidSteps') . '">baptism and salvation</a>.'
             ]
         ]);
 
