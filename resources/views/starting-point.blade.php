@@ -11,9 +11,9 @@
         <p>If this sounds like you, then join us for this eight-week study. We will be waiting for you with some people who want to help you get started.</p>
         <p><strong>Starting Point Group Schedule at the Pellissippi Campus (Co-ed, unless noted otherwise)</strong></p>
         <ul>
-            <li>Thursday, April 9th at 6:30 pm, Room 223</li>
-            <li>Sunday, April 12th at 10:00 am, Room 223</li>
-            <li>Monday, April 13th at 6:30 pm, Room 209</li>
+            <li>Thursday, Sep 24th at 6:30 pm, Room 223</li>
+            <li>Sunday, Sept 27th at 10:00 am, Room 223</li>
+            <li>Monday, Sep 28th at 6:30 pm, Room 222</li>
         </ul>
     @endtextsection
 
