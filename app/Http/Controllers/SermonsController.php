@@ -12,7 +12,7 @@ class SermonsController extends BaseController {
 
         $latest_sermon = Video::where('type', '=', 'sermon')->orderBy('publish_at', 'desc')->first();
 
-        $series = Series::where('is_official', '=', 1)->orderBy('publish_at', 'desc')->get();
+        $series = Series::has('videos')->where('is_official', '=', 1)->orderBy('publish_at', 'desc')->get();
 
         return view('sermons', [
             'series'        => $series,
