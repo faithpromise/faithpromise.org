@@ -60,7 +60,7 @@ $cards = collect([
 
     @introsection(['title' => 'Next Steps', 'class' => ''])
     <p>One of the key things about our church is our obsession with spiritual growth. As a result, nearly every weekend experience will focus on one or more next steps.</p>
-    <p>On the right is a listing of key steps. Each of these buttons will take you to a page where you can learn more, take action or get involved.</p>
+    <p>Below is a listing of key steps. Each of these items will take you to a page where you can learn more, take action, or get involved.</p>
     @endintrosection
 
     @cardsection(['title' => 'Take the Next Step', 'class' => 'Section--lightGrey', 'cards' => $cards])
