@@ -54,8 +54,8 @@ class ImportEvents extends Command
             $record->{'id'} = $event->OccurrenceId;
             $record->{'event_number'} = $event->EventId;
             $record->{'title'} = $event->Name;
-            $record->{'starts_at'} = Carbon::createFromFormat('m/d/Y h:i:s A', $event->ResourceStartTime);
-            $record->{'ends_at'} = Carbon::createFromFormat('m/d/Y h:i:s A', $event->ResourceEndTime);
+            $record->{'starts_at'} = Carbon::createFromFormat('m/d/Y h:i:s A', $event->OccurrenceStartTime);
+            $record->{'ends_at'} = Carbon::createFromFormat('m/d/Y h:i:s A', $event->OccurrenceEndTime);
             $record->{'location'} = $event->LocationName;
             $record->{'address'} = $event->LocationAddress;
             $record->{'address2'} = $event->LocationAddress2;
