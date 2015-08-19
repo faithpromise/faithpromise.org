@@ -77,32 +77,37 @@ $ways_to_give = collect([
     <p>Through your financial contributions, you're partnering with Faith Promise Church in to the work of changing lives locally and worldwide.</p>
     @endvideosection
 
-    @textsection(['title' => 'Developing Heaven\'s Heart', 'class' => 'TextSection--lightGrey'])
-        <p>Faith Promise is committed to helping our congregation grow in all areas of spiritual growth, including generosity.  Generosity begins with the biblical understanding that God owns everything.  Once we understand that nothing really belongs to us and that we are only managers or stewards, we can begin the generosity journey, allowing God to give us a heart that loves to give.</p>
-        <p>Like many other areas of spiritual growth, generosity isn't something that comes naturally to most people. We must exercise our generosity to grow in the habit of giving.</p>
+    @bgsection([
+        'title' => 'International care and relief',
+        'image' => 'images/general/give-international.jpg'
+    ])
+    <p>Building orphanages and caring for children. Funding world missions to spread the gospel to the far reaches of the earth.</p>
+    @endbgsection
 
-        <p>There are several biblical reasons why we should cultivate generosity in our lives:</p>
+    @bgsection([
+        'title' => 'Local compassion efforts',
+        'image' => 'images/general/give-local.jpg',
+        'class' => 'BackgroundSection--right'
+    ])
+    <p>Providing for those who are in need and partnerships with area ministries – clothing the poor and providing shelter to the homeless.</p>
+    @endbgsection
 
-        <ul>
-            <li>Generosity is the antidote to greed.</li>
-            <li>Through generosity, we join with Jesus in furthering His work in the world, funding the life-changing ministry of the church.</li>
-            <li>Our generosity reminds us that this world is not our home.</li>
-            <li>Generosity helps us to live with meaning and purpose.</li>
-        </ul>
+    @bgsection([
+        'title' => 'Funding the church',
+        'image' => 'images/general/give-church.jpg'
+    ])
+    <p>The ministry impact of our church is completely funded through the generous gifts of our congregation.</p>
+    @endbgsection
 
-        <p>We realize that everybody is at a different place on their generosity journey, but our hope is that together we will move forward in giving:</p>
+    @bgsection([
+        'title' => 'Campus Expansion',
+        'image' => 'images/general/give-h4h.jpg',
+        'class' => 'BackgroundSection--right'
+    ])
+    <p>Your financial gifts to our yearly Heart for the Harvest Offering each are key in our effort to launch new campuses to see exponential growth and changed lives.</p>
+    @endbgsection
 
-        <ul>
-            <li><em>Beginners</em> are first-time givers or individuals who aren't yet committed to consistent giving. </li>
-            <li><em>Learners</em> have made the commitment to give, but they aren't yet tithing ten percent of their income. </li>
-            <li><em>Core Givers</em> are people who support the work of the church through ten percent of their income. </li>
-            <li><em>Lavish Givers</em> are those who give above and beyond the tithe.</li>
-        </ul>
-
-        <p>Since we hold generosity as one of our seven key values, we reinforce this value through weekend teaching, financial classes, and small groups. For further teaching on this subject, check out our <a href="/series/tapped-out">Tapped Out</a> sermon series.</p>
-
-        <p>Thank you for entrusting your resources to Faith Promise and assisting us in the ministry of reaching people for Jesus and growing them as His disciples.</p>
-    @endtextsection
+    
 
     @faqsection(['title' => 'Common Questions About Online Giving', 'faq' => $faq])
     @endfaqsection
