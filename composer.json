@@ -13,7 +13,8 @@
     "guzzlehttp/guzzle": "^6.0",
     "intervention/image": "^2.3",
     "intervention/imagecache": "^2.3",
-    "cviebrock/eloquent-sluggable": "^3.0"
+    "cviebrock/eloquent-sluggable": "^3.0",
+    "rtconner/laravel-tagging": "~1.1"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
