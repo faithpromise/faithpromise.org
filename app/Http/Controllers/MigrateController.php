@@ -340,7 +340,7 @@ class MigrateController extends BaseController {
             'slug'                => 'julie-rumph',
             'name'                => 'Julie Rumph',
             'mission_location_id' => MissionLocation::where('slug', '=', 'south-africa')->first()->id,
-            'url'                 => 'http://julierumph.org'
+            'url'                 => 'http://julierumph.com'
         ]);
         $missionary->save();
     }
