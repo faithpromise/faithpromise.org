@@ -9,11 +9,8 @@ class VolunteerController extends BaseController {
 
     public function index() {
 
-        $test = VolunteerPosition::first();
+        return view('serve');
 
-        $test->tag('evening');
-
-        return 'test';
     }
 
 }
