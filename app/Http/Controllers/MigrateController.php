@@ -12,8 +12,12 @@ use App\MissionTrip;
 use App\Organization;
 use App\Series;
 use App\Staff;
+use App\TagGroup;
 use App\Video;
 use App\Team;
+use App\VolunteerPosition;
+use App\VolunteerSkill;
+use Conner\Tagging\Tag;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 
@@ -27,6 +31,7 @@ class MigrateController extends BaseController {
             <a href="' . route('migrateSeries') . '">series</a><br>
             <a href="' . route('migrateStaff') . '">staff</a><br>
             <a href="' . route('migrateMissions') . '">missions</a><br>
+            <a href="' . route('migrateVolunteer') . '">volunteer positions</a><br>
         ';
     }
 
@@ -38,6 +43,7 @@ class MigrateController extends BaseController {
         $this->migrateSeries();
         $this->migrateStaff();
         $this->migrateMissions();
+        $this->migrateVolunteer();
 
         return 'migrated all data';
     }
@@ -73,6 +79,12 @@ class MigrateController extends BaseController {
         $this->importMissionaries();
         $this->importOrganizations();
         return 'migrated mission locations, trips, missionaries, and organizations';
+    }
+
+    public function migrateVolunteer() {
+        $this->importVolunteerTags();
+        $this->importVolunteerPositions();
+        return 'migrated volunteer positions';
     }
 
     private function importBiblePlan() {
@@ -343,6 +355,95 @@ class MigrateController extends BaseController {
             'url'                 => 'http://julierumph.com'
         ]);
         $missionary->save();
+    }
+
+    private function importVolunteerTags() {
+
+        VolunteerPosition::unguard();
+        VolunteerSkill::unguard();
+
+        DB::table('volunteer_positions')->truncate();
+        DB::table('volunteer_skills')->truncate();
+
+        $skills = [
+            [
+                'title' => 'Technical',
+                'description' => ''
+            ],
+            [
+                'title' => 'Administrative',
+                'description' => ''
+            ],
+            [
+                'title' => 'Crafty',
+                'description' => ''
+            ],
+            [
+                'title' => 'Musical',
+                'description' => ''
+            ],
+            [
+                'title' => 'Muscles',
+                'description' => ''
+            ],
+            [
+                'title' => 'Hospitality',
+                'description' => ''
+            ],
+            [
+                'title' => 'Discipleship',
+                'description' => ''
+            ],
+            [
+                'title' => 'Prayer',
+                'description' => ''
+            ],
+            [
+                'title' => 'Food',
+                'description' => ''
+            ]
+        ];
+
+        foreach($skills as $skill) {
+            VolunteerSkill::create($skill);
+        }
+
+        $positions = [
+            [
+                'ministry_id' => 0,
+                'skill_id' => 0,
+                'title' => 'Events Team',
+                'description' => 'From setting up and tearing down tables and chairs to researching and creating innovative table decorations, we need a variety of people on our Events team. Time commitments are flexible and vary from once a month to seasonal times of year.',
+                'availability' => '',
+                'commitment' => ''
+            ]
+        ];
+
+
+        $position = new VolunteerPosition([
+            'slug'                => 'beukemas',
+            'name'                => 'The Beukemas',
+            'mission_location_id' => MissionLocation::where('slug', '=', 'jamaica')->first()->id,
+            'url'                 => 'http://bkbeukema.org'
+        ]);
+        $position->save();
+    }
+
+    private function importVolunteerPositions() {
+
+        $table = 'volunteer_positions';
+
+        VolunteerPosition::unguard();
+
+        DB::table($table)->truncate();
+
+        $position = new VolunteerPosition([
+            'slug'                => 'beukemas',
+            'name'                => 'The Beukemas',
+            'mission_location_id' => MissionLocation::where('slug', '=', 'jamaica')->first()->id,
+            'url'                 => 'http://bkbeukema.org'
+        ]);
+        $position->save();
     }
 
     private function getBiblePlan() {

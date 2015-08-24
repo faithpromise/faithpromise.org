@@ -99,6 +99,7 @@ Route::get('/migrate/events', ['as' => 'migrateEvents', 'uses' => 'MigrateContro
 Route::get('/migrate/series', ['as' => 'migrateSeries', 'uses' => 'MigrateController@migrateSeries']);
 Route::get('/migrate/staff', ['as' => 'migrateStaff', 'uses' => 'MigrateController@migrateStaff']);
 Route::get('/migrate/missions', ['as' => 'migrateMissions', 'uses' => 'MigrateController@migrateMissions']);
+Route::get('/migrate/volunteer', ['as' => 'migrateVolunteer', 'uses' => 'MigrateController@migrateVolunteer']);
 
 require "routes_admin.php";
 require "routes_redirects.php";
