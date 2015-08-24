@@ -82,7 +82,7 @@ class MigrateController extends BaseController {
     }
 
     public function migrateVolunteer() {
-        $this->importVolunteerTags();
+        $this->importVolunteerSkills();
         $this->importVolunteerPositions();
         return 'migrated volunteer positions';
     }
@@ -357,13 +357,13 @@ class MigrateController extends BaseController {
         $missionary->save();
     }
 
-    private function importVolunteerTags() {
+    private function importVolunteerSkills() {
 
-        VolunteerPosition::unguard();
+        $table = 'volunteer_skills';
+
         VolunteerSkill::unguard();
 
-        DB::table('volunteer_positions')->truncate();
-        DB::table('volunteer_skills')->truncate();
+        DB::table($table)->truncate();
 
         $skills = [
             [
@@ -408,25 +408,6 @@ class MigrateController extends BaseController {
             VolunteerSkill::create($skill);
         }
 
-        $positions = [
-            [
-                'ministry_id' => 0,
-                'skill_id' => 0,
-                'title' => 'Events Team',
-                'description' => 'From setting up and tearing down tables and chairs to researching and creating innovative table decorations, we need a variety of people on our Events team. Time commitments are flexible and vary from once a month to seasonal times of year.',
-                'availability' => '',
-                'commitment' => ''
-            ]
-        ];
-
-
-        $position = new VolunteerPosition([
-            'slug'                => 'beukemas',
-            'name'                => 'The Beukemas',
-            'mission_location_id' => MissionLocation::where('slug', '=', 'jamaica')->first()->id,
-            'url'                 => 'http://bkbeukema.org'
-        ]);
-        $position->save();
     }
 
     private function importVolunteerPositions() {
@@ -437,13 +418,268 @@ class MigrateController extends BaseController {
 
         DB::table($table)->truncate();
 
-        $position = new VolunteerPosition([
-            'slug'                => 'beukemas',
-            'name'                => 'The Beukemas',
-            'mission_location_id' => MissionLocation::where('slug', '=', 'jamaica')->first()->id,
-            'url'                 => 'http://bkbeukema.org'
-        ]);
-        $position->save();
+        $positions = [
+            [
+                'ministry_id' => Ministry::findBySlug('administration')->id,
+                'skill_id' => VolunteerSkill::where('title', 'Administration')->first()->id,
+                'title' => 'Events Team',
+                'description' => 'From setting up and tearing down tables and chairs to researching and creating innovative table decorations, we need a variety of people on our Events team.',
+                'availability' => '',
+                'commitment' => 'From once a month to seasonal'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('administration')->id,
+                'skill_id' => VolunteerSkill::where('title', 'Administration')->first()->id,
+                'title' => 'Reception Team',
+                'description' => 'If you\'re a people person, we have just the job for you! We need willing volunteers to greet guests at our Pellissippi Campus reception desk throughout the week.',
+                'availability' => 'Mon-Thu 12-1pm, the 4th Tue of each month from 12-2pm, random fill-in for receptionist',
+                'commitment' => 'Time commitments are up to you!'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('administration')->id,
+                'skill_id' => VolunteerSkill::where('title', 'Administration')->first()->id,
+                'title' => 'Organizing/Shopping Team',
+                'description' => 'Love to be around town? We need volunteer shoppers to pick up various ministry orders and deliver them to the church. If you love to organize, we could use an expert organizer to keep our kitchen and copy rooms stocked and orderly on a monthly basis. Could be a great project for a group!',
+                'availability' => '',
+                'commitment' => 'Flexible'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('administration')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => '',
+                'description' => '',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('celebrate')->id,
+                'skill_id' => VolunteerSkill::where('title', 'Prayer')->first()->id,
+                'title' => 'Prayer Volunteer',
+                'description' => 'These teams meet at 6:30 on Monday nights in Satellite-1 at our Pellissippi Campus. Teams are needed to pray individually and corporately for people as needs arise. These teams will also participate in group prayer for overall protection and guidance during the service and prayer time.',
+                'availability' => 'Mondays at 6:30 PM',
+                'commitment' => '2-3 hours per week'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('celebrate')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Celebrate Recovery Group Leader',
+                'description' => 'These leaders provide people with a safe environment to navigate their road to recovery and grow in their walk with God.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('facilities')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Baptistry Prep',
+                'description' => 'This rotating team is responsible for filling and draining the baptistry as needed.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('facilities')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Coffee Kiosk',
+                'description' => 'This team of people serve one service per month and are responsible to keep the coffee kiosk area stocked so that our guests have an optimal coffee experience when they visit.',
+                'availability' => 'During weekend service',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('facilities')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Maintenance',
+                'description' => 'We need volunteers who are able to commit to weekly or monthly service in each of the following areas: room setup and tear down, cleaning, light bulb replacement (using the Faith Promise lift), moving our Pellissippi Campus street sign to the bottom of the hill (truck required), emptying our office recycle bins on Mondays and Wednesdays, and painting.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('first-impressions')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Greeter',
+                'description' => 'Help us provide a friendly first impression for all weekend attendees. Responsibilities include handing out worship guides, directing families to the Family Registration area, answering questions, shaking hands, and smiling..',
+                'availability' => '',
+                'commitment' => '1 hour per week'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('first-impressions')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Information (IFP)',
+                'description' => 'Provide information and guest services to visitors and members.  This is a team of people who are friendly, approachable, and welcoming. Serve at the Information Kiosk and answer general and ministry-specific questions about FPC.',
+                'availability' => '1 service per week or biweekly',
+                'commitment' => '30 min before and 20 min after service'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('first-impressions')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Parking Lot Ministry',
+                'description' => 'This team provides a friendly first-touch for all weekend attendees. Responsibilities include directing traffic and helping people get from their cars to the building.  If you have a friendly smile and a helpful attitude, we\'d love to talk with you about joining our team.',
+                'availability' => '',
+                'commitment' => '1 hour each weekend'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('first-impressions')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Usher',
+                'description' => 'Are you an outgoing, friendly, and helpful person?  We need you to help attendees find seats during the weekend services.',
+                'availability' => '',
+                'commitment' => ' 1 hour each weekend'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Birth-Preschool Small Group Leader',
+                'description' => 'Our fpKids Small Group Leaders connect with preschool children and their parents to provide a fun and safe atmosphere and teach prepared Bible-based lessons.  If you love small kids and want to make a difference in their lives, consider joining our team of volunteers.',
+                'availability' => '',
+                'commitment' => '1.5 hours either weekly or every other week'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'K-5th Large Group Greeter',
+                'description' => 'Give a big smile and say hello to the kids as they enter and help them find a seat.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'K-5th Large Group Greeter',
+                'description' => 'Give a big smile and say hello to the kids as they enter and help them find a seat.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'K-5th Large Group Host',
+                'description' => 'Larger-than-life onstage personality who isn\'t afraid to get a pie in the face.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Storyteller',
+                'description' => 'Engaging Bible Teacher.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'K-5th Small Group Leader',
+                'description' => 'This position is the heart of our grade-school ministry. Small Group Leaders connect relationally with kids in the small group setting through age-specific activities. Small Group Leaders thrive in making a difference in a child\'s life and in the life of their families as they see kids grow in the Lord.',
+                'availability' => '',
+                'commitment' => '1.5 hours either weekly or every other week'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Technical Team',
+                'description' => 'This team assists with audio and video equipment during our large group time. Work with our storytellers and worship leaders to enhance the large group experience.',
+                'availability' => '',
+                'commitment' => '30 minutes either weekly or every other week'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Service Coordinators',
+                'description' => 'These volunteers are organized and are "take charge" kind of people. The fpKiDS staff needs help during each service with coordinating volunteers, helping parents, restocking resources and other types of trouble-shooting.',
+                'availability' => '',
+                'commitment' => '1.5 hours weekly'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Security',
+                'description' => 'ou can help us make sure that fpKiDS is a safe environment for the children and that no one is in the kids area who isn\'t supposed to be there.',
+                'availability' => '',
+                'commitment' => '1.5 hours weekly or every other week'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Behind the Scenes',
+                'description' => 'It takes a lot of work to get ready for the weekend in fpKiDS. We need volunteers to help us gather materials, get everything ready and the rooms set.',
+                'availability' => 'Weekdays',
+                'commitment' => 'Flexible'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('fpkids')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Family Registration',
+                'description' => 'We want families to feel comfortable right away. We need warm, smiling faces to check in new families on the weekend and get them acquainted with our church. You can either work behind a computer or walk the family to their child\'s room. Both roles are important to a smooth check-in.',
+                'availability' => '',
+                'commitment' => '1 hour weekly or every other week'
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('groups')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Group Leader',
+                'description' => 'Someone who is good with people, who enjoys teaching, and loves watching people grow in their walk with God. This area of serving is very rewarding as well as fun!',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('groups')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Host Home',
+                'description' => 'Someone who serves in Groups Ministry as a host home offers their home as a meeting place for a small group to meet.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('groups')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Writers',
+                'description' => 'Help with curriculum for small groups. A person who is creative in their writing and is able to come up with different sets of questions would be perfect for this position.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('groups')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Event Setup',
+                'description' => 'Assist staff with setting up tables and chairs and placing decorations and materials on tables on designated weekends.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('groups')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Event Cleanup',
+                'description' => 'Assist staff with tearing down tables and chairs and cleaning up any decorations and materials that may have been used.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('groups')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Event Registration',
+                'description' => 'Assist staff with checking people in on designated weekends for specific events.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('groups')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => 'Administration and Phone Contacts',
+                'description' => 'Assist staff with making follow up phone calls with people who have attended different classes and or connection events. These calls will help others feel included and answer their questions.',
+                'availability' => '',
+                'commitment' => ''
+            ],
+            [
+                'ministry_id' => Ministry::findBySlug('')->id,
+                'skill_id' => VolunteerSkill::where('title', '')->first()->id,
+                'title' => '',
+                'description' => '',
+                'availability' => '',
+                'commitment' => ''
+            ]
+        ];
+
+        foreach($positions as $position) {
+            VolunteerPosition::create($position);
+        }
     }
 
     private function getBiblePlan() {
