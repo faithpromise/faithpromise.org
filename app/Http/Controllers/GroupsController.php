@@ -12,12 +12,19 @@ class GroupsController extends BaseController {
 
         $ministry_slug = 'groups';
 
-//        $courses = Course::has('coursetimes')->get();
-
         return view('groups', [
             'ministry' => Ministry::whereSlug($ministry_slug)->first()
         ]);
 
+    }
+
+    public function courses() {
+
+        $courses = Course::has('coursetimes')->get();
+
+        return view('courses', [
+            'courses' => $courses
+        ]);
     }
 
     public function leaders() {

@@ -25,4 +25,17 @@ class Course extends Model {
         }
     }
 
+    public function getCardTitleAttribute() {
+        return $this->name;
+    }
+
+    public function getCardImageAttribute() {
+        $image = $this->getOriginal('image');
+        return 'images/courses/' . (!empty($image) ? $image : ($this->slug . '-tall.jpg'));
+    }
+
+    public function getCardUrlAttribute() {
+        return 'groups/courses/' . $this->slug;
+    }
+
 }
