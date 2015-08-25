@@ -21,7 +21,7 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         <meta property="og:description" content="{{ isset($facebook_description) ? $facebook_description : isset($title) ? $title : $site['title'] }}">
         <meta property="og:locale" content="en_US">
         @if (isset($og_image))
-            <meta property="og:image" content="{!! $og_image !!}">
+            <meta property="og:image" content="{!! open_graph_url_filter($og_image) !!}">
         @endif
 
         <meta name="twitter:card" content="{{ isset($twitter_card) ? $twitter_card : 'summary' }}">

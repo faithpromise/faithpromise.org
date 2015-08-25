@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Log;
 
+function open_graph_url_filter($url) {
+    return 'http://' . preg_replace('/(http:)?\/\//', '', $url);
+}
+
 function asset_path($path) {
     return config('site.assets_path') . '/' . $path;
 }
