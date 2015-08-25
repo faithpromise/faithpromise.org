@@ -314,7 +314,7 @@ module.exports = function (grunt) {
                 },
                 admin_css: {
                     files: [admin_less_src_dir + '/**/*.less'],
-                    tasks: ['_admin_css_dev']
+                    tasks: ['_css_admin_dev']
                 },
                 js: {
                     files: js_src_dir + '/**/*.js',

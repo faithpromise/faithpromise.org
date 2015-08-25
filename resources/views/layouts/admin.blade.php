@@ -18,32 +18,45 @@
 
     <div class="Layout">
 
-        <ul class="Nav">
-            <li class="Nav-item">
-                <a class="Nav-link" href="/admin/events">Events</a>
-            </li>
-            <li class="Nav-item">
-                <a class="Nav-link" href="/admin/ministries">Ministries</a>
-            </li>
-            <li class="Nav-item">
-                <a class="Nav-link" href="/admin/missions">Missions</a>
-            </li>
-            <li class="Nav-item">
-                <a class="Nav-link" href="/admin/series">Series</a>
-            </li>
-            <li class="Nav-item">
-                <a class="Nav-link" href="/admin/staff">Staff</a>
-            </li>
-            <li class="Nav-item">
-                <a class="Nav-link" href="/admin/topics">Topics</a>
-            </li>
-            <li class="Nav-item">
-                <a class="Nav-link" href="/admin/campuses">Campuses</a>
-            </li>
-        </ul>
+        <div class="Layout-nav">
 
-        <ng-view></ng-view>
+            <div class="Nav">
+                <ul class="Nav-menu">
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/events">Events</a>
+                    </li>
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/ministries">Ministries</a>
+                    </li>
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/missions">Missions</a>
+                    </li>
+                    <li class="Nav-item is-active">
+                        <a class="Nav-link" href="/admin/series">Series</a>
+                    </li>
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/staff">Staff</a>
+                    </li>
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/topics">Topics</a>
+                    </li>
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/campuses">Campuses</a>
+                    </li>
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/courses">Courses</a>
+                    </li>
+                    <li class="Nav-item">
+                        <a class="Nav-link" href="/admin/volunteer-positions">Vol Positions</a>
+                    </li>
+                </ul>
+            </div>
 
+        </div>
+
+        <div class="Layout-content">
+            <ng-view></ng-view>
+        </div>
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
