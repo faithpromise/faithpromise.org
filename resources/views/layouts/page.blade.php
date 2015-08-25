@@ -1,5 +1,6 @@
 <?php
     $hero_image = isset($hero_image) ? $hero_image : 'images/pages/' . Request::path() . '-wide.jpg';
+    $og_image = isset($og_image) ? $og_image : cdn_image('lg', 'full', $hero_image, 'tall');
 ?>
 
 @extends('layouts.default')
