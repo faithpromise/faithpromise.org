@@ -2,15 +2,12 @@
 
 namespace App;
 
-use Conner\Tagging\TaggableTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class VolunteerPosition extends Model {
 
-    use TaggableTrait;
-
-    public function tags() {
-        return $this->morphToMany('App\Tag', 'taggable');
+    public function skills() {
+        return $this->belongsToMany('App\VolunteerSkill', 'volunteer_positions_skills');
     }
 
 }
