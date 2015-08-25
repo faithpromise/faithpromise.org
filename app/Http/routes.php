@@ -71,7 +71,7 @@ Route::get('/baptism', ['as' => 'baptism', 'uses' => 'MainController@defaultPage
 Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
 Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/salvation', ['as' => 'salvation', 'uses' => 'MainController@defaultPage']);
-Route::get('/serve', ['as' => 'serve', 'uses' => 'MainController@defaultPage']);
+Route::get('/serve', ['as' => 'serve', 'uses' => 'VolunteerController@index']);
 
 // General pages
 Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
@@ -100,6 +100,7 @@ Route::get('/migrate/events', ['as' => 'migrateEvents', 'uses' => 'MigrateContro
 Route::get('/migrate/series', ['as' => 'migrateSeries', 'uses' => 'MigrateController@migrateSeries']);
 Route::get('/migrate/staff', ['as' => 'migrateStaff', 'uses' => 'MigrateController@migrateStaff']);
 Route::get('/migrate/missions', ['as' => 'migrateMissions', 'uses' => 'MigrateController@migrateMissions']);
+Route::get('/migrate/volunteer', ['as' => 'migrateVolunteer', 'uses' => 'MigrateController@migrateVolunteer']);
 
 require "routes_admin.php";
 require "routes_redirects.php";
