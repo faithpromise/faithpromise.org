@@ -3,12 +3,23 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Course extends Model {
+class Course extends Model implements SluggableInterface {
+
+    use SluggableTrait;
 
     protected $dates = ['created_at', 'updated_at'];
 
-    public function coursetimes() {
+    protected $sluggable = [
+        'build_from'      => 'name',
+        'save_to'         => 'slug',
+        'unique'          => true,
+        'include_trashed' => true
+    ];
+
+    public function times() {
         return $this->hasMany('App\CourseTime');
     }
 
@@ -25,17 +36,25 @@ class Course extends Model {
         }
     }
 
+    public function getImageAttribute() {
+        $image = $this->getOriginal('image');
+        return 'images/courses/' . (!empty($image) ? $image : ($this->slug . '-tall.jpg'));
+    }
+
+    public function getUrlAttribute() {
+        return route('courseDetail', ['course' => $this->slug]);
+    }
+
     public function getCardTitleAttribute() {
         return $this->name;
     }
 
     public function getCardImageAttribute() {
-        $image = $this->getOriginal('image');
-        return 'images/courses/' . (!empty($image) ? $image : ($this->slug . '-tall.jpg'));
+        return $image = $this->getImageAttribute();
     }
 
     public function getCardUrlAttribute() {
-        return 'groups/courses/' . $this->slug;
+        return $this->url;
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\CourseTime;
 use App\Ministry;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -24,6 +25,16 @@ class GroupsController extends BaseController {
 
         return view('courses', [
             'courses' => $courses
+        ]);
+    }
+
+    public function courseDetail($course) {
+
+        $times = CourseTime::with('campus')->where('course_id', '=', $course->id)->get();
+
+        return view('course_detail', [
+            'course' => $course,
+            'times' => $times
         ]);
     }
 

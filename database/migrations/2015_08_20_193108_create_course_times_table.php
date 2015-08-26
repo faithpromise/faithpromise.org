@@ -14,9 +14,8 @@ class CreateCourseTimesTable extends Migration {
             $table->increments('id');
             $table->integer('course_id');
             $table->integer('campus_id');
-            $table->date('starts_at');
+            $table->datetime('starts_at');
             $table->date('ends_at')->nullable();
-            $table->time('meeting_time')->nullable();
             $table->string('room', 20)->nullable();
             $table->string('registration_url')->nullable();
             $table->timestamps();

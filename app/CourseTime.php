@@ -15,6 +15,10 @@ class CourseTime extends Model {
         return $this->belongsTo('App\Course');
     }
 
+    public function campus() {
+        return $this->belongsTo('App\Campus');
+    }
+
     public function getDateRangeAttribute() {
 
         if (is_null($this->starts_at) OR is_null($this->ends_at)) {
