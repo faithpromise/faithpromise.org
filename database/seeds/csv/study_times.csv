@@ -1,4 +1,4 @@
-"id","course_id","campus_id","starts_at","ends_at","room","registration_url","created_at","updated_at"
+"id","study_id","campus_id","starts_at","ends_at","room","registration_url","created_at","updated_at"
 1,1,1,"2015-09-20 10:00:00",NULL,NULL,"https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=Lq2xhrLL/ajJHAeCyJwUYQ==&cCode=RtKBDolfiPuZJp8o1+0ARA==","2015-08-20 20:27:24","2015-08-20 20:27:24"
 2,2,1,"2015-09-20 11:30:00",NULL,NULL,"https://fpctystn.infellowship.com/Forms/278561","2015-08-20 20:27:24","2015-08-20 20:27:24"
 3,3,1,"2015-09-20 16:00:00",NULL,NULL,"https://fpctystn.infellowship.com/Forms/284747","2015-08-20 20:27:24","2015-08-20 20:27:24"

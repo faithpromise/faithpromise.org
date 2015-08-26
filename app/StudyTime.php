@@ -5,14 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\EventEndsTrait;
 
-class CourseTime extends Model {
+class StudyTime extends Model {
 
     use EventEndsTrait;
 
     protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at'];
 
-    public function course() {
-        return $this->belongsTo('App\Course');
+    public function study() {
+        return $this->belongsTo('App\Study');
     }
 
     public function campus() {

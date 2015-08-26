@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Course extends Model implements SluggableInterface {
+class Study extends Model implements SluggableInterface {
 
     use SluggableTrait;
 
@@ -20,7 +20,7 @@ class Course extends Model implements SluggableInterface {
     ];
 
     public function times() {
-        return $this->hasMany('App\CourseTime');
+        return $this->hasMany('App\StudyTime');
     }
 
     public function getDateRangeAttribute() {
@@ -38,11 +38,19 @@ class Course extends Model implements SluggableInterface {
 
     public function getImageAttribute() {
         $image = $this->getOriginal('image');
-        return 'images/courses/' . (!empty($image) ? $image : ($this->slug . '-tall.jpg'));
+        return 'images/studies/' . (!empty($image) ? $image : ($this->slug . '-tall.jpg'));
     }
 
     public function getUrlAttribute() {
-        return route('courseDetail', ['course' => $this->slug]);
+        return route('studyDetail', ['study' => $this->slug]);
+    }
+
+    public function getDescriptionAttribute() {
+        $d = $this->getOriginal('description');
+        if (empty($d)) {
+            return 'We\'d love for you to join us as we grow in God\'s Word together.';
+        }
+        return $d;
     }
 
     public function getCardTitleAttribute() {

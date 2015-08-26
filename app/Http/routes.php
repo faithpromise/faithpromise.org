@@ -45,8 +45,8 @@ Route::get('/celebrate', ['as' => 'celebrate', 'uses' => 'MinistriesController@d
 
 // Groups
 Route::get('/groups', ['as' => 'groups', 'uses' => 'GroupsController@index']);
-Route::get('/groups/classes', ['as' => 'courses', 'uses' => 'GroupsController@courses']);
-Route::get('/groups/classes/{course}', ['as' => 'courseDetail', 'uses' => 'GroupsController@courseDetail']);
+Route::get('/studies', ['as' => 'studies', 'uses' => 'GroupsController@studies']);
+Route::get('/studies/{study}', ['as' => 'studyDetail', 'uses' => 'GroupsController@studyDetail']);
 Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'GroupsController@newLeader']);
 Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'GroupsController@leaders']);
 Route::get('/men', ['as' => 'men', 'uses' => 'MinistriesController@defaultMinistryPage']);

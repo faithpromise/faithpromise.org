@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
-use App\CourseTime;
+use App\Study;
+use App\StudyTime;
 use App\Ministry;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -19,22 +19,24 @@ class GroupsController extends BaseController {
 
     }
 
-    public function courses() {
+    public function studies() {
 
-        $courses = Course::has('coursetimes')->get();
+        $studies = Study::has('times')->get();
 
-        return view('courses', [
-            'courses' => $courses
+        return view('studies', [
+            'studies' => $studies
         ]);
     }
 
-    public function courseDetail($course) {
+    public function studyDetail($study) {
 
-        $times = CourseTime::with('campus')->where('course_id', '=', $course->id)->get();
+        $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get();
+        $studies = Study::where('id', '<>', $study->id)->take(3)->get();
 
-        return view('course_detail', [
-            'course' => $course,
-            'times' => $times
+        return view('study_detail', [
+            'study' => $study,
+            'times' => $times,
+            'studies' => $studies
         ]);
     }
 

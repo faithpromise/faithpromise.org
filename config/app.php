@@ -145,7 +145,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-        Conner\Tagging\TaggingServiceProvider::class,
 
     ],
 
