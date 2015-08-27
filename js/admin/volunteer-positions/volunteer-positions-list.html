@@ -1,0 +1,23 @@
+<div class="PageHeader">
+
+  <h1 class="PageHeader-heading">Volunteer Positions</h1>
+
+  <div class="PageHeader-actions">
+    <ul class="PageActions">
+      <li class="PageActions-item">
+        <a class="AddButton" href="/admin/volunteer-positions/new">Add Position</a>
+      </li>
+      <li class="PageActions-item">
+        <a class="AddButton" href="/admin/volunteer-skills">Manage Skills</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <tr ng-repeat="position in vm.positions">
+    <td><a href="{{ vm.get_edit_url(position) }}">{{ position.title }}</a></td>
+    <td>{{ position.ministry.title }}</td>
+    <td>{{ vm.build_skills_summary(position.skills) }}</td>
+  </tr>
+</table>

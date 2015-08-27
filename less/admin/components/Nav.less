@@ -1,0 +1,58 @@
+@Nav-font-size: 16;
+@Nav-bg-color: #252727;
+@Nav-bg-color-active: #50a3cc;
+@Nav-color: #fff;
+
+.Nav {
+  &:extend(.Container);
+  font-size: 0;
+  color:     #ccc;
+}
+
+.Nav-logoWrap,
+.Nav-menu {
+  .to-rem(font-size, @Nav-font-size);
+  display: inline-block;
+}
+
+.Nav-logoWrap {
+  margin-right: 2em;
+}
+
+.Nav-logo {
+  .to-em(height, 40, @Nav-font-size);
+  .to-em(width, 191, @Nav-font-size);
+  fill: @Nav-color;
+}
+
+.Nav-menu {
+  margin:     0;
+  padding:    0;
+  list-style: none;
+}
+
+.Nav-item {
+  position: relative;
+  display:  inline-block;
+  margin:   0;
+  padding:  0;
+}
+
+.Nav-link {
+  .link-color(@Nav-color);
+  .to-em(font-size, 13, @Nav-font-size);
+  display:         block;
+  padding:         0.3em 1.25em;
+  border-radius:   5em;
+  text-decoration: none;
+  text-transform:  uppercase;
+  cursor:          pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  .is-active > & {
+    background-color: @Nav-bg-color-active;
+  }
+}

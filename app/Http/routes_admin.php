@@ -18,5 +18,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
 
     Route::resource('events', 'Admin\EventsController');
+    Route::resource('volunteer-positions', 'Admin\VolunteerPositionsController');
+    Route::resource('volunteer-position-skills', 'Admin\VolunteerPositionSkillsController');
+    Route::resource('volunteer-skills', 'Admin\VolunteerSkillsController');
+    Route::resource('ministries', 'Admin\MinistriesController');
 
 });

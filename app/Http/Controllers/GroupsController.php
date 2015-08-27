@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Study;
 use App\StudyTime;
 use App\Ministry;
+use App\VolunteerPosition;
 use Illuminate\Routing\Controller as BaseController;
 
 class GroupsController extends BaseController {
 
     public function index() {
+
+        $position = VolunteerPosition::withDrafts()->withExpired()->find(1);
 
         $ministry_slug = 'groups';
 

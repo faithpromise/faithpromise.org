@@ -1,0 +1,19 @@
+<div class="PageHeader">
+  <h1 class="PageHeader-heading">{{ vm.page_title }}</h1>
+</div>
+
+<form name="volunteerPositionForm" ng-submit="vm.save(volunteerPositionForm.$invalid)">
+  <input class="form-input" type="text" ng-model="vm.position.title" required><br>
+  <textarea class="form-input" type="text" ng-model="vm.position.description"></textarea><br>
+  <select class="form-select" ng-model="vm.position.ministry_id" ng-options="ministry.id as ministry.title for ministry in vm.ministries"></select>
+  <div ng-if="vm.selected_skill_ids" ng-repeat="skill in vm.skills">
+    <label><input type="checkbox" ng-checked="vm.has_skill(skill.id)" ng-click="vm.toggle_skill(skill.id)"> {{ skill.title }}</label>
+  </div>
+  <input class="form-input" type="text" ng-model="vm.position.availability" placeholder="Availability (i.e. 'During service')"><br>
+  <input class="form-input" type="text" ng-model="vm.position.commitment" placeholder="Commitment (i.e. '1 hour / week')"><br>
+  <label>Publish on:</label>
+  <input class="form-input" name="publish_on" type="text" ng-model="vm.position.publish_at"><br>
+  <label>Expire on:</label>
+  <input class="form-input" name="expire_on" type="text" ng-model="vm.position.expire_at"><br>
+  <button type="submit">Save</button> <a href="/admin/volunteer-positions">cancel</a>
+</form>

@@ -1,60 +1,54 @@
 @import "cardinal";
 @import "../main/mixins/link-color";
 @import "../main/mixins/to-em";
+@import "components/Container";
+@import "components/Layout";
+@import "components/Nav";
+@import "components/NavDropdown";
+@import "components/Table";
+@import (less)"../../bower_components/angular-toastr/dist/angular-toastr.css";
 
-@Nav-font-size: 16;
-@Nav-width: 170;
-@Nav-width-em: @Nav-width/@Nav-font-size;
-@Nav-bg-color: #383d40;
-@Nav-bg-color-active: #2d3134;
-@Nav-color: #ccc;
+.u-link {
+  color:  @anchor-text-color;
+  cursor: pointer;
 
-.Layout {
-  font-size: 0;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--negative {
+    color: #f00;
+  }
 }
 
-.Layout-nav,
-.Layout-content {
-  .to-rem(font-size, @Nav-font-size);
-  display:        inline-block;
-  min-height:     100vh;
-  vertical-align: top;
+.toast-top-center {
+  top: .75em;
 }
 
-.Layout-content {
-  width:   ~"calc(100% - @{Nav-width-em}em)";
-  padding: 2em;
+.PageHeader {
+  .clearfix();
 }
 
-.Layout-nav {
-  width:            ~"@{Nav-width-em}em";
-  background-color: @Nav-bg-color;
+.PageHeader-heading {
+  .to-rem(font-size, 30);
+  float:       left;
+  font-weight: normal;
+  color:       #333;
 }
 
-.Nav {
-  color: #ccc;
+.PageHeader-actions {
+  float:      right;
+  text-align: right;
 }
 
-.Nav-menu {
+.PageActions {
   margin:     0;
   padding:    0;
   list-style: none;
 }
 
-.Nav-item {
-  display: block;
+.PageActions-item {
+  display: inline-block;
   margin:  0;
-  padding: 0;
-}
-
-.Nav-link {
-  .link-color(@Nav-color);
-  .to-em(font-size, 14, @Nav-font-size);
-  display:         block;
-  padding:         0.9em 1.25em;
-  text-decoration: none;
-
-  .is-active > & {
-    background-color: @Nav-bg-color-active;
-  }
+  padding: .5em .2em;
 }

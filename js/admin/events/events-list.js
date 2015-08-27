@@ -1,15 +1,17 @@
 (function (module) {
     'use strict';
 
-    module.directive('viewEvents', function () {
+    module.directive('eventsList', directive);
+
+    function directive() {
         return {
-            templateUrl: '/build/js/admin/views/view-events.html',
+            templateUrl: '/build/js/admin/events/events-list.html',
             restrict: 'E',
             controller: Controller,
             controllerAs: 'vm',
             scope: {}
         };
-    });
+    }
 
     Controller.$inject = ['eventsService'];
 
@@ -23,7 +25,7 @@
 
         function init() {
 
-            eventsService.list().then(function(response) {
+            eventsService.all().then(function(response) {
                 vm.events = response.data;
             });
 

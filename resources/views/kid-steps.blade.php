@@ -45,7 +45,7 @@ $faq = [
     <p>When a child can accomplish these two things, parents can move toward scheduling their Baptism.</p>
     <p>When a child is unable to articulate these things, parents are provided a resource to help them as they take more time to explore the topic with their child.</p>
     <p>To participate in the Baptism Class, please have a look at the section below titled, "Register for the Baptism Class," and use the appropriate link to register.</p>
-    <p>For more about baptism, <a href="/baptism">click here</a>.</p>
+    <p>If you're interested in learning more about baptism's role in the life of believers, please visit our <a href="/baptism">baptism page</a>.</p>
     @endintrosection
 
     @faqsection(['title' => 'Resources', 'faq' => $faq, 'class' => 'Section--lightGrey'])

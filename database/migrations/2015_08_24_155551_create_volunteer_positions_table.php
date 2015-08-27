@@ -13,13 +13,13 @@ class CreateVolunteerPositionsTable extends Migration {
         Schema::create('volunteer_positions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ministry_id')->nullable();
-            $table->integer('skill_id');
             $table->string('title', 100);
             $table->text('description')->nullable();
-            $table->string('availability');
-            $table->string('commitment');
+            $table->string('availability')->nullable();
+            $table->string('commitment')->nullable();
+            $table->datetime('publish_at')->nullable();
+            $table->datetime('expire_at')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

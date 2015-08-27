@@ -1,0 +1,23 @@
+<div class="PageHeader">
+  <h1 class="PageHeader-heading">Volunteer Skills</h1>
+</div>
+
+<form name="volunteerSkillForm" ng-submit="vm.save(volunteerSkillForm.$invalid)" style="margin-bottom: 2em;">
+  <strong ng-show="vm.is_new">Add a new skill</strong>
+  <strong ng-hide="vm.is_new">Editing: {{ ::vm.editing_skill.title }}</strong>
+  <br>
+  <input type="text" ng-model="vm.editing_skill.title" required><br>
+  <textarea ng-model="vm.editing_skill.description" style="width: 100%; height: 5em;"></textarea>
+  <button type="submit">Save</button>
+  <span ng-click="vm.cancel()">cancel</span>
+</form>
+
+<hr>
+
+<table class="table table-striped">
+  <tr ng-repeat="skill in vm.skills">
+    <td><span>{{ ::skill.title }}</span></td>
+    <td><span class="u-link" ng-click="vm.edit(skill)">edit</span></td>
+    <td><span class="u-link u-link--negative" ng-click="vm.remove(skill)">remove</span></td>
+  </tr>
+</table>

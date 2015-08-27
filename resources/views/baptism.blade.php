@@ -73,6 +73,7 @@
 
     @introsection(['title' => 'Baptism'])
     <p>The Bible teaches that once a person is <a href="/salvation">saved</a>, his or her next step is to make that commitment to Jesus public through baptism.  When you're ready to take this important next step, please <a href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=qFJ6O2MqmTrVoPevphdkew==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">register here</a>.</p>
+    <p>If you're interested in baptism for your child, please check out our <a href="{{ route('kidSteps') }}">Kid Steps page</a> for more information and registration.</p>
     <p><em>All baptisms must be scheduled by the Tuesday prior to the weekend you want to be baptized.</em></p>
     @endintrosection
 

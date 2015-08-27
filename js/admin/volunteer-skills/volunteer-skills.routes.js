@@ -6,12 +6,8 @@
 
     function Config(routeProvider) {
 
-        routeProvider.when('/admin', {
-            template: ''
-        });
-
-        routeProvider.otherwise({
-            template: 'no route'
+        routeProvider.when('/admin/volunteer-skills', {
+            template: '<volunteer-skills-list></volunteer-skills-list>'
         });
 
     }

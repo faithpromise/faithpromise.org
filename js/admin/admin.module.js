@@ -1,9 +1,11 @@
-(function(angular) {
+(function (angular) {
 
     angular.module('admin', [
         'ngRoute',
         'ngResource',
-        'ngAnimate'
+        'ngAnimate',
+        'ui.bootstrap.dropdown',
+        'toastr'
     ]);
 
 })(angular);

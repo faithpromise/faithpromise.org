@@ -9,7 +9,7 @@
 
         return {
 
-            list: function() {
+            all: function() {
                 return $http.get('/api/events');
             }
 

@@ -42,9 +42,13 @@ module.exports = function (grunt) {
     ];
 
     var admin_js_input = [
+        'bower_components/angular-ui-bootstrap/src/position/position.js',
+        'bower_components/angular-ui-bootstrap/src/dropdown/dropdown.js',
+        'bower_components/angular-toastr/dist/angular-toastr.tpls.js',
         admin_js_src_dir + '/admin.module.js',
         admin_js_src_dir + '/admin.config.js',
         admin_js_src_dir + '/admin.routes.js',
+        admin_js_src_dir + '/**/*.routes.js',
         admin_js_src_dir + '/**/*.js'
     ];
 
@@ -321,8 +325,8 @@ module.exports = function (grunt) {
                     tasks: ['concat:js_dev']
                 },
                 admin_js: {
-                    files: admin_js_src_dir + '/**/*.js',
-                    tasks: ['concat:js_admin_dev']
+                    files: admin_js_src_dir + '/**/*.*',
+                    tasks: ['concat:js_admin_dev','copy:adminTemplates']
                 },
                 svg: {
                     files: [src_root + '/**/*.svg'],
