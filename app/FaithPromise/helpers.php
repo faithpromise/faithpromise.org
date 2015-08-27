@@ -23,7 +23,9 @@ function asset_exists($path) {
 }
 
 function doc_url($file_name) {
-    return 'http:' . config('site.cdn_url') . '/docs/' . $file_name;
+
+    $doc_path = asset_path('/docs/' . $file_name);
+    return 'http:' . config('site.cdn_url') . '/docs/' . $file_name . '?v=' . filemtime($doc_path);
 }
 
 function cdn_image_raw($image_path, $format = null) {
