@@ -27,6 +27,7 @@
         Contact
         ========================================
     --}}
+    <!-- TODO: This doesn't make sense - limited to Pel -->
     @include('partials.have_questions', ['title' => 'Need more info?', 'email' => 'startingpointpellissippi@faithpromise.org', 'text' => 'For more information about Starting Point, group schedules, or to register for an upcoming Starting Point group, email us at #email#'])
 
 @endsection
