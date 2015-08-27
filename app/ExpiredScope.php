@@ -92,7 +92,7 @@ class ExpiredScope implements ScopeInterface {
 
         unset($bindings[$key]);
 
-        $query->setBindings($bindings);
+        $query->setBindings(array_values($bindings));
     }
 
     /**
