@@ -1,6 +1,10 @@
 <?php
 
+// http://softonsofa.com/laravel-5-eloquent-global-scope-how-to/
+
 namespace App;
+
+use Carbon\Carbon;
 
 trait PublishedTrait {
 
@@ -41,6 +45,39 @@ trait PublishedTrait {
      */
     public static function withDrafts()
     {
-        return with(new static)->newQueryWithoutScope(new PublishedScope);
+        $instance = (new static)->newQueryWithoutScope(new PublishedScope);
+        return $instance;
+    }
+
+    public function setPublishAtAttribute($date) {
+
+        $format = 'Y-m-d H:i:s';
+        $is_valid = false;
+
+        if ($date instanceof Carbon) {
+            return $date;
+        }
+
+        try {
+            $date = Carbon::createFromFormat($format, $date);
+            $is_valid = true;
+        } catch (\Exception $e) {
+        }
+
+        if (!$is_valid) {
+
+            try {
+                $date = Carbon::parse($date);
+                $is_valid = true;
+            } catch (\Exception $e) {
+            }
+        }
+
+        if (!$is_valid) {
+            $date = null;
+        }
+
+        $this->attributes['publish_at'] = $date;
+
     }
 }

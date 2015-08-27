@@ -1,5 +1,7 @@
 <?php
 
+// http://softonsofa.com/laravel-5-eloquent-global-scope-how-to/
+
 namespace App;
 
 trait ExpiredTrait {
@@ -41,6 +43,7 @@ trait ExpiredTrait {
      */
     public static function withExpired()
     {
-        return with(new static)->newQueryWithoutScope(new ExpiredScope);
+        $instance = (new static)->newQueryWithoutScope(new ExpiredScope);
+        return $instance;
     }
 }

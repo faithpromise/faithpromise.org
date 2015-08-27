@@ -1,5 +1,7 @@
 <?php
 
+// http://softonsofa.com/laravel-5-eloquent-global-scope-how-to/
+
 namespace App;
 
 use Illuminate\Database\Query\Builder as BaseBuilder;
@@ -102,8 +104,15 @@ class ExpiredScope implements ScopeInterface {
      */
     protected function isExpiredConstraint(array $where, $column)
     {
-        $now = Carbon::now();
-        return ($where['type'] == 'Basic' && $where['column'] == $column && $where['value'] > $now);
+        $test = ($where['type'] == 'Nested'
+            && $where['query']->wheres[0]['type'] == 'Null'
+            && $where['query']->wheres[0]['column'] == $column
+            && $where['query']->wheres[1]['type'] == 'Basic'
+            && $where['query']->wheres[1]['column'] == $column
+            && $where['query']->wheres[1]['operator'] == '>'
+            && $where['query']->wheres[1]['value'] instanceof Carbon);
+
+        return $test;
     }
 
     /**
