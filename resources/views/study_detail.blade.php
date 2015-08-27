@@ -2,32 +2,34 @@
 
 @section('page')
 
-    @introsection(['title' => $study->name])
+    @if (!empty($study->description))
+        @introsection(['title' => $study->name])
         {{ $study->description }}
-    @endintrosection
+        @endintrosection
+    @endif
 
     @textsection(['title' => 'Times &amp; Registration', 'class' => 'Section--lightGrey'])
 
-        <table class="StudiesTable">
-            <thead>
+    <table class="StudiesTable">
+        <thead>
+            <tr>
+                <th>Campus</th>
+                <th>Time</th>
+                <th>Starts on</th>
+                <th>Register</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($times as $time)
                 <tr>
-                    <th>Campus</th>
-                    <th>Time</th>
-                    <th>Starts on</th>
-                    <th>Register</th>
+                    <td>{{ $time->campus->name }}</td>
+                    <td>{{ $time->starts_at->format('l') }}s at {{ $time->starts_at->format('g:i A') }}</td>
+                    <td>{{ $time->starts_at->format('F j') }}</td>
+                    <td><a href="{{ $time->registration_url }}">Register here</a></td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach($times as $time)
-                    <tr>
-                        <td>{{ $time->campus->name }}</td>
-                        <td>{{ $time->starts_at->format('l') }}s at {{ $time->starts_at->format('g:i A') }}</td>
-                        <td>{{ $time->starts_at->format('F j') }}</td>
-                        <td><a href="{{ $time->registration_url }}">Register here</a></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+            @endforeach
+        </tbody>
+    </table>
 
     @endtextsection
 

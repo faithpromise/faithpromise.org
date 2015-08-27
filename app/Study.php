@@ -45,16 +45,21 @@ class Study extends Model implements SluggableInterface {
         return route('studyDetail', ['study' => $this->slug]);
     }
 
-    public function getDescriptionAttribute() {
-        $d = $this->getOriginal('description');
-        if (empty($d)) {
-            return 'We\'d love for you to join us as we grow in God\'s Word together.';
-        }
-        return $d;
+    public function getCardUrlTextAttribute() {
+        return 'Times &amp; Registration';
     }
 
     public function getCardTitleAttribute() {
         return $this->name;
+    }
+
+    public function getCardSubtitleAttribute() {
+        if ($this->gender === 'm') {
+            return "Men's Group Study";
+        } else if ($this->gender === 'f') {
+            return "Women's Group Study";
+        }
+        return '';
     }
 
     public function getCardImageAttribute() {

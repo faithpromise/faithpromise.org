@@ -31,7 +31,10 @@ class GroupsController extends BaseController {
     public function studyDetail($study) {
 
         $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get();
-        $studies = Study::where('id', '<>', $study->id)->take(3)->get();
+
+        $orderBy = "gender = '" . $study->gender . "' desc, RAND()";
+
+        $studies = Study::where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
 
         return view('study_detail', [
             'study' => $study,
