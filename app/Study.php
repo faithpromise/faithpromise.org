@@ -37,15 +37,16 @@ class Study extends Model implements SluggableInterface {
     }
 
     public function getHasDescriptionAttribute() {
-        return (
-            !empty($this->getOriginal('description'))
-            || !empty($this->getOriginal('cost'))
-            || !empty($this->getOriginal('weeks'))
-        );
+        return !empty($this->getOriginal('description'));
+    }
+
+    public function getHasMetaAttribute() {
+        return (!empty($this->getOriginal('cost')) || !empty($this->getOriginal('weeks')));
     }
 
     public function getImageAttribute() {
         $image = $this->getOriginal('image');
+
         return 'images/studies/' . (!empty($image) ? $image : ($this->slug . '-tall.jpg'));
     }
 
@@ -67,6 +68,7 @@ class Study extends Model implements SluggableInterface {
         } else if ($this->gender === 'f') {
             return "Women's Group Study";
         }
+
         return '';
     }
 
