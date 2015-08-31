@@ -41,7 +41,12 @@ class Study extends Model implements SluggableInterface {
     }
 
     public function getHasMetaAttribute() {
-        return (!empty($this->getOriginal('cost')) || !empty($this->getOriginal('weeks')));
+        return (
+            !empty($this->getOriginal('cost'))
+            || !empty($this->getOriginal('weeks'))
+            || !empty($this->getOriginal('gender'))
+
+        );
     }
 
     public function getImageAttribute() {

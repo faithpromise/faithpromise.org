@@ -6,6 +6,12 @@
         @introsection(['title' => 'About This Study'])
         @if ($study->has_meta)
             <ul class="StudyMeta">
+                @if ($study->gender == 'm')
+                    <li>Men's Study</li>
+                @endif
+                @if ($study->gender == 'f')
+                    <li>Women's Study</li>
+                @endif
                 @if (!empty($study->weeks))
                     <li>{{ $study->weeks }} weeks</li>
                 @endif
