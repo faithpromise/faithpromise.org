@@ -13,10 +13,6 @@ $faq = [
                 'a' => '<p><a href="' . doc_url('salvation.pdf') . '" target="_blank">Click here</a> for a series of questions you can ask to explore whether a child is ready for a decision of Salvation.</p>'
         ],
         (object)[
-                'q' => 'Talking to Your Child About Baptism',
-                'a' => '<p><a href="' . doc_url('Baptism.pdf') . '" target="_blank">Click here</a> for a series of questions you can ask to explore whether a child is ready for the step of Baptism</p>'
-        ],
-        (object)[
                 'q' => 'Register for the Baptism Class',
                 'a' => '<p>Does your child still have questions about Salvation?  Are they telling you they\'re ready to be baptized?  All kids Kindergarten to 5th grade participate in our Salvation/Baptism Class prior to baptism.  We cover basics such as The Plan of Salvation, the Purpose of Baptism and other details.</p>'
                         . '<p>This class includes a Parent Connection where we connect with parents/guardians.  We want to help you look ahead at what you can do to help your child establish an active faith in Christ.'
