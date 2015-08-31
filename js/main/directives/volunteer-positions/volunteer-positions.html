@@ -1,0 +1,22 @@
+<div class="Section">
+  <div class="Section-container">
+    <form>
+
+      <div ng-repeat="skill in vm.skills">
+        <h3>{{ skill.title }}</h3>
+        <p>{{ skill.description }}</p>
+        <ul>
+          <li ng-repeat="position in skill.positions">
+            <h5><input type="checkbox"> {{ position.title }}</h5>
+            <p>{{ position.description }}</p>
+            <p>
+              Availability: {{ position.availability }}
+              Time commitment: {{ position.commitment }}
+            </p>
+          </li>
+        </ul>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -73,6 +73,8 @@ Route::get('/give', ['as' => 'give', 'uses' => 'MainController@defaultPage']);
 Route::get('/next-steps', ['as' => 'nextSteps', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/salvation', ['as' => 'salvation', 'uses' => 'MainController@defaultPage']);
 Route::get('/serve', ['as' => 'serve', 'uses' => 'VolunteerController@index']);
+Route::get('/serve/opportunities', ['as' => 'volunteerPositions', 'uses' => 'VolunteerController@positions']);
+Route::get('/serve/opportunities.json', ['as' => 'volunteerPositions', 'uses' => 'VolunteerController@positionsJson']);
 
 // General pages
 Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);

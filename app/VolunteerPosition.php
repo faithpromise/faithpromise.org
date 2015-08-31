@@ -10,7 +10,7 @@ class VolunteerPosition extends Model {
     use ExpiredTrait;
 
     protected $dates = ['publish_at', 'expire_at', 'created_at', 'updated_at'];
-    protected $fillable = ['ministry_id', 'title', 'description', 'publish_at', 'expire_at'];
+    protected $fillable = ['ministry_id', 'title', 'description', 'availability', 'commitment', 'publish_at', 'expire_at'];
 
     public function skills() {
         return $this->belongsToMany('App\VolunteerSkill', 'volunteer_positions_skills');
