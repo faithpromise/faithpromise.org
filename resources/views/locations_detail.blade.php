@@ -27,7 +27,7 @@ $what_to_expect_cards = collect([
 
 ?>
 
-@extends('layouts.page', ['title' => 'Welcome to fpKids', 'hero_image' => $campus->image])
+@extends('layouts.page', ['title' => $campus->name . ' Campus', 'hero_image' => $campus->image])
 
 @section('page')
 
