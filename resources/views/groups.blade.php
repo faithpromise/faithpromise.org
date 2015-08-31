@@ -48,9 +48,9 @@ $group_types = collect([$men, $women, $young, $support, $starting]);
         Intro
     ================================================================================ --}}
 
-    @introsection(['title' => 'Groups Ministry', 'class' => '', 'image' => ''])
+    @videosection(['title' => 'Groups Ministry', 'class' => 'VideoSection--right', 'video' => '137534183'])
     <p>We believe that faith comes alive when people connect with God and others. Sustained life change occurs as we are growing in a relationship with Christ and we prioritize intentional relationships with others. Groups provide people with the opportunity to encounter God, embrace others, engage the world around us, and expand God's Kingdom through their group.</p>
-    @endintrosection
+    @endvideosection
 
 
     {{--
