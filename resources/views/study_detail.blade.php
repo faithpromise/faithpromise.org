@@ -3,7 +3,7 @@
 @section('page')
 
     @if (!empty($study->description))
-        @introsection(['title' => $study->name])
+        @introsection(['title' => 'About This Study'])
         {{ $study->description }}
         @endintrosection
     @endif
