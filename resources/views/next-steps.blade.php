@@ -5,8 +5,8 @@ $cards = collect([
                 'card_title'    => 'Next Steps Class',
                 'card_image'    => 'images/pages/next-steps-tall.jpg',
                 'card_text'     => 'Come meet some of our staff and learn about spiritual next steps as well as our vision and values. Childcare is available when you pre-register.',
-                'card_url_text' => 'Register',
-                'card_url'      => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=FwSjgirIem15IuwQ7IZo2w==&cCode=RtKBDolfiPuZJp8o1+0ARA=='
+                'card_url_text' => 'Times &amp; Register',
+                'card_url'      => '/events/next-steps-class',
         ],
         (object)[
                 'card_title'    => 'Salvation',
