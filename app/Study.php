@@ -36,6 +36,14 @@ class Study extends Model implements SluggableInterface {
         }
     }
 
+    public function getHasDescriptionAttribute() {
+        return (
+            !empty($this->getOriginal('description'))
+            || !empty($this->getOriginal('cost'))
+            || !empty($this->getOriginal('weeks'))
+        );
+    }
+
     public function getImageAttribute() {
         $image = $this->getOriginal('image');
         return 'images/studies/' . (!empty($image) ? $image : ($this->slug . '-tall.jpg'));

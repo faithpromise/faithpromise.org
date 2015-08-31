@@ -2,10 +2,18 @@
 
 @section('page')
 
-    @if (!empty($study->description))
-        @introsection(['title' => 'About This Study'])
-        {{ $study->description }}
-        @endintrosection
+    @if ($study->has_description)
+    @introsection(['title' => 'About This Study'])
+    <ul class="StudyMeta">
+        @if (!empty($study->weeks))
+            <li>{{ $study->weeks }} weeks</li>
+        @endif
+        @if (!empty($study->cost))
+            <li>{{ $study->cost }}</li>
+        @endif
+    </ul>
+    {{ $study->description }}
+    @endintrosection
     @endif
 
     @textsection(['title' => 'Times &amp; Registration', 'class' => 'Section--lightGrey'])
