@@ -31,4 +31,8 @@
 .icon-googleplay:before { content: '\e81d'; } /* '' */
 .icon-amazon:before { content: '\e81e'; } /* '' */
 .icon-itunes:before { content: '\e81f'; } /* '' */
+.icon-male:before { content: '\e820'; } /* '' */
 .icon-spotify-1:before { content: '\e821'; } /* '' */
+.icon-female:before { content: '\e822'; } /* '' */
+.icon-check:before { content: '\e823'; } /* '' */
+.icon-check-empty:before { content: '\e824'; } /* '' */
