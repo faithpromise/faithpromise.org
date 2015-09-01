@@ -2,7 +2,7 @@
 
 @section('page')
 
-    @introsection(['title' => 'Heart for the Harvest', 'buttons' => [
+    @videosection(['title' => 'Heart for the Harvest', 'video' => '137880687', 'buttons' => [
         [
             'title' => 'Give',
             'url' => route("give")
@@ -12,7 +12,7 @@
     <p>Heart for the Harvest is a special time each year when we prepare to give sacrificially to further the ministry of Faith Promise and ask God to use our church to make an eternal difference in the world. This offering is key in our effort to launch new campuses to see exponential growth and changed lives.</p>
     <p>We ask that you prayerfully considering giving above and beyond your regular tithes to the Harvest Offering weekend, Nov. 15-16, 2014. Contributions can be made online at any time.</p>
 
-    @endintrosection
+    @endvideosection
 
     @textsection(['title' => '2014 Areas of Focus', 'class' => 'Section--lightGrey'])
     <p>The following areas will be impacted through this year's offering:</p>
