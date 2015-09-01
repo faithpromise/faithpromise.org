@@ -122,4 +122,8 @@ class RedirectController extends BaseController {
         return redirect('https://docs.google.com/forms/d/1oqRSKaNPATyHhbWvKejL8udI74gJFgO73Qv7sUeEndU/viewform');
     }
 
+    public function rsvp() {
+        return redirect('https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=PJyvi4Gp7wW9IndW/tDB+A==&cCode=RtKBDolfiPuZJp8o1+0ARA==');
+    }
+
 }
