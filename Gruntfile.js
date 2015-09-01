@@ -334,7 +334,7 @@ module.exports = function (grunt) {
                 },
                 templates: {
                     files: js_src_dir + '/**/*.html',
-                    tasks: ['html2js:templates', 'concat:js_dev']
+                    tasks: ['copy:appTemplates']
                 }
             },
             copy: {
