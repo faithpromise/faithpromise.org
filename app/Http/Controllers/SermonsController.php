@@ -23,7 +23,7 @@ class SermonsController extends BaseController {
 
     public function series($series) {
 
-        $videos = Video::with('Series')->with('Speaker')->where('series_id', '=', $series->id)->get();
+        $videos = Video::with('Series')->with('Speaker')->where('series_id', '=', $series->id)->orderBy('sermon_date', 'asc')->get();
 
         return view('series', [
             'series' => $series,
