@@ -56,7 +56,7 @@ return [
                 'url' => '/prayer'
             ],
             [
-                'title' => 'Worship Ministry',
+                'title' => 'Worship',
                 'url' => '/worship'
             ],
             [
