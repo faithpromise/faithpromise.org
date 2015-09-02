@@ -73,6 +73,10 @@ class Staff extends Model implements SluggableInterface {
         return $this->display_name;
     }
 
+    public function getNameAttribute() {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
     public function getProfileTitleAttribute() {
         return $this->title;
     }
