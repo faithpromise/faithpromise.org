@@ -19,6 +19,9 @@
             },
             link: function (scope, elem) {
 
+                // First time - form may be visible because content (vol positions) hasn't loaded yet.
+                var timeout = 2000;
+
                 elem.on('click', function () {
                     scope.vm.connect_form_is_visible = true;
                     scope.$apply();
@@ -26,17 +29,17 @@
 
                 angular.element($window).on('scroll', function () {
 
-                    if (timer) return;
+                    if (timer || scope.vm.numChecked === 0) return;
 
                     timer = $timeout(function () {
                         console.log('timer', new Date());
                         scope.vm.connect_form_is_visible = is_form_in_view();
                         $timeout.cancel(timer);
                         timer = null;
-                    }, 300);
+                        timeout = 300;
+                    }, timeout);
 
                 });
-
 
             }
         };
