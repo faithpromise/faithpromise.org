@@ -106,4 +106,5 @@ Route::get('/migrate/missions', ['as' => 'migrateMissions', 'uses' => 'MigrateCo
 Route::get('/migrate/volunteer', ['as' => 'migrateVolunteer', 'uses' => 'MigrateController@migrateVolunteer']);
 
 require "routes_admin.php";
+require "routes_api.php";
 require "routes_redirects.php";
