@@ -21,7 +21,7 @@ class CampusesController extends Controller {
      */
     public function index() {
 
-        return Campus::all();
+        return Campus::orderBy('name')->get();
 
     }
 
