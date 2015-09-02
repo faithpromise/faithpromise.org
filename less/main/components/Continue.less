@@ -1,0 +1,77 @@
+.Continue {
+  .link-color(#fff);
+  .to-rem(font-size, 30);
+  display:          block;
+  position:         fixed;
+  bottom:           0;
+  left:             0;
+  width:            100%;
+  padding:          1em;
+  background-color: #489aeb;
+  text-align:       center;
+  font-weight:      bold;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  transform:        translate3d(0, 5.2em, 0);
+  transition:       transform .35s ease-in-out, opacity .4s linear;
+
+  &.ng-hide {
+    opacity: 0;
+  }
+
+  &.is-active {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.Continue-target {
+  text-decoration: underline;
+}
+
+.Form {
+  display:    inline-block;
+  max-width:  640px;
+  text-align: left;
+}
+
+.Form-group {
+  .clearfix();
+  margin-bottom: 1em;
+}
+
+.Form-label {
+  .to-rem(font-size, 16);
+  display:       block;
+  margin-bottom: .4em;
+}
+
+.Form-input {
+  padding:          .5em;
+  width:            100%;
+  margin-bottom:    0.5em;
+  border:           1px solid #ccc;
+  background-color: #f7f7f7;
+  border-radius:    .3em;
+
+  &:focus {
+    background-color: #fff;
+    outline:          none;
+  }
+}
+
+.Form-input--firstName,
+.Form-input--lastName {
+  float: left;
+  width: 48%;
+}
+
+.Form-input--firstName {
+  margin-right: 4%;
+}
+
+textarea.Form-input {
+  min-height: 8em;
+}
