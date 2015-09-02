@@ -13,9 +13,9 @@
         };
     }
 
-    Controller.$inject = ['$http'];
+    Controller.$inject = ['$http', 'campusesService'];
 
-    function Controller($http) {
+    function Controller($http, campusesService) {
 
         var vm = this;
         vm.user = {
@@ -24,19 +24,24 @@
             email: '',
             phone: '',
             message: '',
-            campus: '',
-            selected_positions: []
+            campus: ''
         };
+        vm.selected_positions = []
         vm.campuses = null;
         vm.skills = null;
         vm.toggle_position = toggle_position;
         vm.is_selected = is_selected;
+        vm.send_form = send_form;
 
         init();
 
         function init() {
             $http.get('/serve/opportunities.json').then(function (response) {
                 vm.skills = response.data;
+            });
+
+            campusesService.all().then(function(response) {
+                vm.campuses = response.data;
             });
         }
 
@@ -47,17 +52,17 @@
 
             position.is_selected = !position.is_selected;
 
-            for(i = 0; i < vm.user.selected_positions.length; i++) {
-                if (vm.user.selected_positions[i].id === position.id) {
+            for(i = 0; i < vm.selected_positions.length; i++) {
+                if (vm.selected_positions[i].id === position.id) {
                     idx = i;
                     break;
                 }
             }
 
             if (idx >= 0) {
-                vm.user.selected_positions.splice(idx, 1);
+                vm.selected_positions.splice(idx, 1);
             } else {
-                vm.user.selected_positions.push(position);
+                vm.selected_positions.push(position);
             }
 
             vm.user.message = build_description();
@@ -65,7 +70,7 @@
         }
 
         function is_selected(position_id) {
-            return vm.user.selected_positions.indexOf(position_id) >= 0;
+            return vm.selected_positions.indexOf(position_id) >= 0;
         }
 
         function build_description() {
@@ -73,12 +78,12 @@
                 areas = [],
                 areas_string = '';
 
-            if (vm.user.selected_positions.length === 0) {
+            if (vm.selected_positions.length === 0) {
                 return '';
             }
 
-            for(i = 0; i < vm.user.selected_positions.length; i++) {
-                areas.push(vm.user.selected_positions[i].title);
+            for(i = 0; i < vm.selected_positions.length; i++) {
+                areas.push(vm.selected_positions[i].title);
             }
 
             if (areas.length === 1) {
@@ -91,6 +96,17 @@
             }
 
             return 'Please contact me with more information about the ' + areas_string + ' opportunities.';
+
+        }
+
+        function send_form() {
+
+            vm.is_sending = true;
+
+            $http.post('/serve/opportunities', vm.user).then(function(response) {
+                vm.is_sending = false;
+                vm.is_sent = true;
+            });
 
         }
 

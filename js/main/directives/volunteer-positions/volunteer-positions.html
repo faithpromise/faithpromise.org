@@ -1,5 +1,4 @@
-
-<volunteer-connect-bar num-checked="vm.user.selected_positions.length"></volunteer-connect-bar>
+<volunteer-connect-bar num-checked="vm.selected_positions.length"></volunteer-connect-bar>
 
 <div class="GridSection GridSection--center GridSection--lightGrey" ng-repeat="skill in vm.skills">
   <div class="GridSection-container">
@@ -39,36 +38,46 @@
   </div>
 </div>
 
-<div id="connect" class="Section Section--center">
+<div class="Section Section--center" ng-show="vm.is_sent">
+  <div class="Section-container">
+    <h3 class="Section-title">Thank you!</h3>
+    <p>We're looking forward to talking with you! Your message was sent and we'll contact you soon with more information.</p>
+  </div>
+</div>
+
+<div id="connect" class="Section Section--center" ng-hide="vm.is_sent">
   <div class="Section-container">
     <h3 class="Section-title">I'm Ready to Volunteer</h3>
     <p>We're excited that you're interested in volunteering. Please complete the following form and we'll send you more information about getting started.</p>
 
-    <form class="Form">
+    <form class="Form" ng-submit="vm.send_form()">
       <div class="Form-group">
         <span class="Form-label">Your name</span>
 
-        <input class="Form-input Form-input--firstName" type="text" placeholder="First" ng-model="vm.user.first_name" required>
-        <input class="Form-input Form-input--lastName" type="text" placeholder="Last" ng-model="vm.user.last_name" required>
+        <input class="Form-input Form-input--firstName" name="first_name" type="text" placeholder="First" ng-model="vm.user.first_name" required>
+        <input class="Form-input Form-input--lastName" name="last_name" type="text" placeholder="Last" ng-model="vm.user.last_name" required>
 
       </div>
       <div class="Form-group">
         <span class="Form-label">Your email</span>
-        <input class="Form-input" type="text" placeholder="i.e. you@somewhere.com" ng-model="vm.user.email" required>
+        <input class="Form-input" name="email" type="text" placeholder="i.e. you@somewhere.com" ng-model="vm.user.email" required>
       </div>
       <div class="Form-group">
         <span class="Form-label">Your phone number (with area code)</span>
-        <input class="Form-input" type="text" placeholder="555-555-1234" ng-model="vm.user.phone" required>
+        <input class="Form-input" name="phone" type="text" placeholder="555-555-1234" ng-model="vm.user.phone" required>
       </div>
       <div class="Form-group">
         <span class="Form-label">I'd like someone to contact me about serving in the following ministry area(s):</span>
-        <textarea class="Form-input" ng-model="vm.user.message"></textarea>
+        <textarea class="Form-input" name="message" ng-model="vm.user.message"></textarea>
       </div>
       <div class="Form-group">
         <span class="Form-label">Please select your campus</span>
-        <select class="Form-input" ng-model="vm.user.campus" ng-options="campus.id as campus.name for campus in vm.campuses track by campus.id">
+        <select class="Form-input" name="campus" ng-model="vm.user.campus" ng-options="campus.id as campus.name for campus in vm.campuses track by campus.id" required>
           <option value=""></option>
         </select>
+      </div>
+      <div class="Form-actions">
+        <button class="Form-submit" type="submit" ng-disabled="vm.is_sending">{{ vm.is_sending ? 'Sending...' : 'Send' }}</button>
       </div>
     </form>
   </div>
