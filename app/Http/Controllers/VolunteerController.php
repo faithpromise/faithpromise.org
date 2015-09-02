@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\VolunteerPosition;
+use App\Campus;
+use App\Staff;
 use App\VolunteerSkill;
+use App\Http\Requests\VolunteerPositionRequest;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Mail;
 
 class VolunteerController extends BaseController {
 
@@ -23,6 +26,28 @@ class VolunteerController extends BaseController {
     public function positionsJson() {
 
         return $skills = VolunteerSkill::with('positions')->get();
+
+    }
+
+    public function sendMessage(VolunteerPositionRequest $request) {
+
+        $data = $request->all();
+        $data['campus'] = Campus::find($data['campus'])->name;
+
+//        $recipient = Staff::findBySlug('miles-creasman');
+//        $recipient2 = Staff::findBySlug('macy-deel');
+        $recipient = Staff::findBySlug('brad-roberts');
+        $recipient2 = Staff::findBySlug('brad-roberts');
+
+        Mail::send('emails.volunteer_request', $data, function($message) use ($data, $recipient, $recipient2) {
+
+            $full_name = $data['first_name'] . ' ' . $data['last_name'];
+
+            $message
+                ->subject('Volunteer Request: ' . $full_name)
+                ->to($recipient->email, $recipient->name)
+                ->cc($recipient2->email, $recipient2->name);
+        });
 
     }
 
