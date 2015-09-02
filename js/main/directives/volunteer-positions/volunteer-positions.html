@@ -66,7 +66,7 @@
       </div>
       <div class="Form-group">
         <span class="Form-label">Please select your campus</span>
-        <select class="Form-input" ng-model="vm.user.campus">
+        <select class="Form-input" ng-model="vm.user.campus" ng-options="campus.id as campus.name for campus in vm.campuses track by campus.id">
           <option value=""></option>
         </select>
       </div>
