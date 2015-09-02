@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Api;
 
 use App\VolunteerPosition;
 use Illuminate\Http\Request;
@@ -9,6 +9,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class VolunteerPositionSkillsController extends Controller {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
     /**
      * Store a newly created resource in storage.

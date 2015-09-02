@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Api;
 
 use App\VolunteerSkill;
 use Illuminate\Http\Request;
@@ -9,6 +9,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class VolunteerSkillsController extends Controller {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
