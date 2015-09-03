@@ -23,7 +23,7 @@
             last_name: '',
             email: '',
             phone: '',
-            message: '',
+            message_body: '',
             campus: ''
         };
         vm.selected_positions = []
@@ -65,7 +65,7 @@
                 vm.selected_positions.push(position);
             }
 
-            vm.user.message = build_description();
+            vm.user.message_body = build_description();
 
         }
 
