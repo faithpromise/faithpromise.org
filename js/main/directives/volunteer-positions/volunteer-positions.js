@@ -103,11 +103,19 @@
 
             vm.is_sending = true;
 
-            $http.post('/serve/opportunities', vm.user).then(function(response) {
-                vm.is_sending = false;
-                vm.is_sent = true;
-            });
+            $http.post('/serve/opportunities', vm.user).then(on_form_success, on_form_error);
 
+        }
+
+        function on_form_success() {
+            vm.is_sending = false;
+            vm.is_sent = true;
+        }
+
+        function on_form_error(response) {
+            console.log(response.data);
+            vm.is_sending = false;
+            vm.has_error = true;
         }
 
     }
