@@ -42,6 +42,4 @@ $group_types = collect([$opportunities, $love_local, $missions, $retirees]);
     <p>There is nothing more rewarding than using your time and skills to further the work of Jesus in the world. Check out the options below to find the best fit for you.</p>
     @endcardsection
 
-    There are many opportunities to serve at Faith Promise. We want you to find the one that best suits your passion, personality, and availability. If you have already joined Faith Promise and are ready to serve, select one of the ministries below to get started.
-
 @endsection
