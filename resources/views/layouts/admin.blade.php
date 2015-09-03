@@ -9,7 +9,7 @@
 
         <title>Admin</title>
 
-        <!-- build:style main -->
+        <!-- build:style admin -->
         <link rel="stylesheet" href="/build/css/admin.dev.css">
         <!-- /build -->
     </head>
