@@ -2,11 +2,9 @@
 
 $opportunities = new stdClass();
 $opportunities->card_title = 'Opportunities at Faith Promise';
-// $opportunities->card_text = 'Ready to take the next step and begin serving at Faith Promise? Check out these opportunities.';
-$opportunities->card_text = 'Ready to take the next step and begin serving at Faith Promise? Let us know!';
+$opportunities->card_text = 'Ready to take the next step and begin serving at Faith Promise? Check out these opportunities.';
 $opportunities->card_url = '/serve/opportunities';
-// $opportunities->card_url_text = 'View Opportunities';
-$opportunities->card_url_text = 'Contact Us';
+$opportunities->card_url_text = 'View Opportunities';
 $opportunities->card_image = 'images/pages/opportunities-tall.jpg';
 
 $love_local = new stdClass();

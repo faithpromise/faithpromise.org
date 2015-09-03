@@ -19,7 +19,7 @@ class VolunteerController extends BaseController {
 
     public function positions() {
 
-        return view('volunteer_positions');
+        return view('volunteer_positions_temp');
 
     }
 
@@ -39,14 +39,15 @@ class VolunteerController extends BaseController {
         $recipient = Staff::findBySlug('brad-roberts');
         $recipient2 = Staff::findBySlug('brad-roberts');
 
-        Mail::send('emails.volunteer_request', $data, function($message) use ($data, $recipient, $recipient2) {
+        Mail::queue('emails.volunteer_request', $data, function($message) use ($data, $recipient, $recipient2) {
 
             $full_name = $data['first_name'] . ' ' . $data['last_name'];
 
             $message
+                ->from('noreply@faithpromise.org', 'Faith Promise Website')
+                ->replyTo($data['email'], $full_name)
                 ->subject('Volunteer Request: ' . $full_name)
-                ->to($recipient->email, $recipient->name)
-                ->cc($recipient2->email, $recipient2->name);
+                ->to($recipient->email, $recipient->name);
         });
 
     }
