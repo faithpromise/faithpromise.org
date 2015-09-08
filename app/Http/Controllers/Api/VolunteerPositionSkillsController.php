@@ -44,7 +44,7 @@ class VolunteerPositionSkillsController extends Controller {
      */
     public function update(Request $request, $id) {
         $skill_ids = $request->input('skill_ids');
-        VolunteerPosition::find($id)->skills()->sync($skill_ids);
+        VolunteerPosition::withDrafts()->withExpired()->find($id)->skills()->sync($skill_ids);
     }
 
     /**
