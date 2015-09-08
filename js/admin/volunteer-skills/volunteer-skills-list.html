@@ -14,10 +14,12 @@
 
 <hr>
 
-<table class="table table-striped">
-  <tr ng-repeat="skill in vm.skills">
-    <td><span>{{ ::skill.title }}</span></td>
-    <td><span class="u-link" ng-click="vm.edit(skill)">edit</span></td>
-    <td><span class="u-link u-link--negative" ng-click="vm.remove(skill)">remove</span></td>
-  </tr>
+<table class="Table Table--striped">
+  <tbody>
+    <tr ng-repeat="skill in vm.skills">
+      <td><span>{{ ::skill.title }}</span></td>
+      <td><span class="u-link" ng-click="vm.edit(skill)">edit</span></td>
+      <td><span class="u-link u-link--negative" ng-click="vm.remove(skill)">remove</span></td>
+    </tr>
+  </tbody>
 </table>
