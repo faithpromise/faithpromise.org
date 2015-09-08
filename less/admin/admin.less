@@ -1,12 +1,52 @@
-@import "cardinal";
-@import "../main/mixins/link-color";
+@charset "UTF-8";
+//
+// Icon font
+//
+//@import (less)"../../build/fontello.css.tmp";
+//
+// Variables
+//
+@import "../../bower_components/cardinal/core/variables";
+//
+// Mixins
+//
+@import "../../bower_components/cardinal/core/mixins/clearing";
+@import "../../bower_components/cardinal/core/mixins/momentum-scrolling";
+@import "../../bower_components/cardinal/core/mixins/text-truncate";
+@import "../../bower_components/cardinal/core/mixins/to-rem";
+@import "../../bower_components/cardinal/core/mixins/vertically-centered";
+//
 @import "../main/mixins/to-em";
+@import "../main/mixins/link-color";
+//
+// Reset
+//
+@import "../../bower_components/cardinal/core/normalize";
+@import "../../bower_components/cardinal/core/reset";
+//
+// Core
+//
+@import "../../bower_components/cardinal/core/base/root";
+@import "base/root";
+@import "../../bower_components/cardinal/core/base/anchors";
+@import "../../bower_components/cardinal/core/base/lists";
+@import "../../bower_components/cardinal/core/base/print";
+@import "../../bower_components/cardinal/core/base/selections";
+@import "../../bower_components/cardinal/core/base/headings";
+@import "../../bower_components/cardinal/core/base/tables";
+//
+// Components
+//
 @import "components/Container";
 @import "components/Layout";
 @import "components/Nav";
 @import "components/NavDropdown";
 @import "components/Table";
 @import (less)"../../bower_components/angular-toastr/dist/angular-toastr.css";
+
+textarea {
+  height: auto;
+}
 
 .u-link {
   color:  @anchor-text-color;

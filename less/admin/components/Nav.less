@@ -1,4 +1,4 @@
-@Nav-font-size: 16;
+@Nav-font-size: 13;
 @Nav-bg-color: #252727;
 @Nav-bg-color-active: #50a3cc;
 @Nav-color: #fff;
@@ -11,8 +11,9 @@
 
 .Nav-logoWrap,
 .Nav-menu {
-  .to-rem(font-size, @Nav-font-size);
-  display: inline-block;
+  .to-rem(font-size, @font-size);
+  display:        inline-block;
+  vertical-align: middle;
 }
 
 .Nav-logoWrap {
@@ -20,8 +21,8 @@
 }
 
 .Nav-logo {
-  .to-em(height, 40, @Nav-font-size);
-  .to-em(width, 191, @Nav-font-size);
+  .to-em(height, 40, @font-size);
+  .to-em(width, 191, @font-size);
   fill: @Nav-color;
 }
 
@@ -40,7 +41,7 @@
 
 .Nav-link {
   .link-color(@Nav-color);
-  .to-em(font-size, 13, @Nav-font-size);
+  .to-em(font-size, @Nav-font-size, @font-size);
   display:         block;
   padding:         0.3em 1.25em;
   border-radius:   5em;
