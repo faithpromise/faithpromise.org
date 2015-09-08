@@ -35,6 +35,7 @@
         function edit(skill) {
             vm.is_new = 0;
             vm.editing_skill = skill;
+            vm.editing_title = skill.title;
         }
 
         function save() {
