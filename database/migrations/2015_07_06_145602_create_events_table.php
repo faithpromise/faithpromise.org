@@ -24,8 +24,8 @@ class CreateEventsTable extends Migration
             $table->text('description')->nullable();
             $table->boolean('is_featured');
             $table->string('url', 75)->nullable();
-            $table->dateTime('publish_at');
-            $table->dateTime('expire_at');
+            $table->dateTime('publish_at')->nullable();
+            $table->dateTime('expire_at')->nullable();
             $table->tinyInteger('sort')->unsigned();
             $table->timestamps();
         });
