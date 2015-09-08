@@ -22,7 +22,8 @@
     overflow:                    hidden;
     background-color:            #fff;
     transition:                  transform 350ms ease;
-    -webkit-transform:           translate3d(0, 0, 0);
+// Applying translate3d here messes up fixed positioned elements like the "Continue" bar on /serve/opportunities
+//    -webkit-transform:           translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
 
     body.is-navOpen & {
