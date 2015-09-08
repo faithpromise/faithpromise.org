@@ -55,4 +55,8 @@ class Video extends Model implements SluggableInterface {
         return ($this->type != 'sermon' || is_null($this->sermon_date)) ? '' : $this->sermon_date->format('M d, Y');
     }
 
+    public function getVideoDateAttribute() {
+        return ($this->type != 'sermon' || is_null($this->sermon_date)) ? $this->publish_at : $this->sermon_date;
+    }
+
 }

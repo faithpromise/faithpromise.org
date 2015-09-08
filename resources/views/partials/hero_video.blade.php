@@ -48,7 +48,7 @@
                         <span class="HeroVideo-speaker">{{ $video->speaker_display_name }}</span>
                         <span class="HeroVideo-metaSeparator">&middot;</span>
                     @endif
-                    <span class="HeroVideo-date">{{ $video->publish_at->format('M, j Y') }}</span>
+                    <span class="HeroVideo-date">{{ $video->video_date->format('M, j Y') }}</span>
                 </div>
 
                 <div class="HeroVideo-buttons">
