@@ -26,4 +26,8 @@ class Ministry extends Model implements SluggableInterface {
     public function events() {
         return $this->hasMany('App\Event')->orderBy('sort');
     }
+
+    public function volunteer_positions() {
+        return $this->hasMany('App\VolunteerPosition');
+    }
 }
