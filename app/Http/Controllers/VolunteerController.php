@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Campus;
+use App\Ministry;
 use App\Staff;
 use App\VolunteerSkill;
 use App\Http\Requests\VolunteerPositionRequest;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class VolunteerController extends BaseController {
@@ -19,13 +21,19 @@ class VolunteerController extends BaseController {
 
     public function positions() {
 
-        return view('volunteer_positions_temp');
+        return view('volunteer_positions');
 
     }
 
-    public function positionsJson() {
+    public function positionsJson(Request $request) {
 
-        return $skills = VolunteerSkill::with('positions')->get();
+        $by = $request->input('by', 'skill');
+
+        if ($by === 'skill') {
+            return $skills = VolunteerSkill::has('volunteer_positions')->with('volunteer_positions')->get();
+        } else {
+            return $skills = Ministry::has('volunteer_positions')->with('volunteer_positions')->orderBy('title')->get();
+        }
 
     }
 
@@ -39,7 +47,7 @@ class VolunteerController extends BaseController {
         $recipient = Staff::findBySlug('brad-roberts');
         $recipient2 = Staff::findBySlug('brad-roberts');
 
-        Mail::queue('emails.volunteer_request', $data, function($message) use ($data, $recipient, $recipient2) {
+        Mail::queue('emails.volunteer_request', $data, function ($message) use ($data, $recipient, $recipient2) {
 
             $full_name = $data['first_name'] . ' ' . $data['last_name'];
 
