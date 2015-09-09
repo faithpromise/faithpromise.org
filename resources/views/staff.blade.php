@@ -15,9 +15,7 @@
     @endforeach
 </div>
 
-<div class="Container Container--wide">
-    @include('partials.staff_nav', ['campuses' => $campuses, 'active' => 'ministry'])
-</div>
+@include('partials.staff_nav', ['campuses' => $campuses, 'active' => 'ministry'])
 
 @foreach ($teams as $team)
     <?php $staff_gallery_class = 'ProfilesSection--large ' . ((($grey_bg = 1-$grey_bg) === 0) ? 'Section--lightGrey' : ''); ?>

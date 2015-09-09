@@ -1,7 +1,28 @@
 .PageFilters {
   .to-rem(font-size, 14);
-  padding:       1rem 0;
-  border-bottom: 1px solid #eaeaea;
+}
+
+.PageFilters--lightGrey {
+  background-color: @Section-grey-bg-color;
+
+  .PageFilters-label {
+    color: @color-gray-dark;
+  }
+
+  .PageFilters-option {
+    color: @color-gray-darker;
+  }
+}
+
+.PageFilters-container {
+  &:extend(.Container);
+  &:extend(.Container--wide);
+}
+
+.PageFilters-content {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  border-bottom:  1px solid #cacaca;
 }
 
 .PageFilters-label {
