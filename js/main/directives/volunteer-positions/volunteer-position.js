@@ -18,17 +18,22 @@
         };
     }
 
-    Controller.$inject = [];
+    Controller.$inject = ['$sce'];
 
-    function Controller() {
+    function Controller($sce) {
 
         var vm = this;
         vm.toggle = toggle;
+        vm.get_description = get_description;
 
         function toggle() {
             vm.onToggle({
                 position: vm.position
             });
+        }
+
+        function get_description() {
+            return $sce.trustAsHtml(vm.position.description);
         }
 
     }
