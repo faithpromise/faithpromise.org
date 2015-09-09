@@ -112,8 +112,7 @@
 
         function send_form() {
             vm.is_sending = true;
-            //$http.post('/serve/opportunities', vm.user).then(on_form_success, on_form_error);
-            on_form_success();
+            $http.post('/serve/opportunities', vm.user).then(on_form_success, on_form_error);
         }
 
         function on_form_success() {
