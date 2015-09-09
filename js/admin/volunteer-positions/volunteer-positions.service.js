@@ -23,6 +23,10 @@
                 } else {
                     return $http.post('/api/volunteer-positions', model);
                 }
+            },
+
+            destroy: function(model) {
+                return $http.delete('/api/volunteer-positions/' + model.id, model);
             }
 
         };

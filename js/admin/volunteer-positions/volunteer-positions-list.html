@@ -19,5 +19,6 @@
     <td><a href="{{ vm.get_edit_url(position) }}">{{ position.title }}</a></td>
     <td>{{ position.ministry.title }}</td>
     <td>{{ vm.build_skills_summary(position.skills) }}</td>
+    <td><span class="u-link u-link--negative" ng-click="vm.remove(position)">remove</span></td>
   </tr>
 </table>
