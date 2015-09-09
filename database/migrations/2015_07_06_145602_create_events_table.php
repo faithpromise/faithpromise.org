@@ -19,11 +19,11 @@ class CreateEventsTable extends Migration
             $table->string('slug', 50);
             $table->string('title', 50);
             $table->string('dates_text', 35)->nullable();
-            $table->string('image', 35)->nullable();
+            $table->string('image', 255)->nullable();
             $table->text('excerpt')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_featured');
-            $table->string('url', 75)->nullable();
+            $table->string('url', 255)->nullable();
             $table->dateTime('publish_at')->nullable();
             $table->dateTime('expire_at')->nullable();
             $table->tinyInteger('sort')->unsigned();
