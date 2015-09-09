@@ -32,11 +32,11 @@ class Event extends Model implements SluggableInterface {
 
     public function getImageAttribute() {
 
-        if (strlen($this->getOriginal('image'))) {
+        if (empty($this->getOriginal('image'))) {
             return 'images/events/' . $this->slug . '-tall.jpg';
         }
 
-        return 'images/general/default-wide.jpg';
+        return $this->getOriginal('image');
     }
 
     public function getOriginalUrlAttribute() {
