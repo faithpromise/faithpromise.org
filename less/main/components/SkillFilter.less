@@ -1,0 +1,52 @@
+@SkillFilter-link-font-size: 14;
+
+.SkillFilter {
+  .to-em(padding, 50 0 40, @font-size);
+  text-align:       center;
+  background-color: @NavBackgroundColor;
+}
+
+.SkillFilter-container {
+  &:extend(.Container);
+  &:extend(.Container--wide);
+}
+
+.SkillFilter-title {
+  .to-em(font-size, @font-size-heading-5, @font-size);
+  .to-em(margin-bottom, 40, @font-size-heading-5);
+  display:     inline-block;
+  font-weight: normal;
+  color:       #fff;
+}
+
+.SkillFilter-menu {
+  &:extend(.grid all);
+}
+
+.SkillFilter-item {
+  &:extend(.grid-item all);
+  .to-em(max-width, 150, @font-size);
+  .to-em(padding-bottom, 20, @font-size);
+}
+
+.SkillFilter-link {
+  .to-em(font-size, @SkillFilter-link-font-size, @font-size);
+  .to-em(line-height, 34, @SkillFilter-link-font-size);
+  display:        block;
+  border:         2px solid #fff;
+  border-radius:  20px;
+  color:          #fff;
+  cursor:         pointer;
+  text-transform: lowercase;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.is-active {
+    border-color:     #1fa3ec;
+    background-color: #1fa3ec;
+    color:            #fff;
+  }
+}

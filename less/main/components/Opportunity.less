@@ -4,7 +4,7 @@
 .Opportunity-grid {
   &:extend(.grid all);
   .to-rem(margin-left, -@Opportunity-gutter);
-  text-align: left;
+  text-align: center;
 }
 
 .Opportunity-item {
@@ -23,9 +23,15 @@
 
 .Opportunity {
   .to-rem(margin-bottom, @Opportunity-gutter);
+  .box-shadow-helper(1);
   background-color: #fff;
   color:            #222;
   text-align:       left;
+}
+
+.Opportunity-header {
+  .to-rem(padding, 30 30 10);
+  background-color: #e2e2e2;
 }
 
 .Opportunity-body {
@@ -60,9 +66,9 @@
 .Opportunity-footer {
   .to-rem(padding, 20 30);
   .to-rem(font-size, 20);
-  display:          block;
-  background-color: #e2e2e2;
-  color:            #565656;
-  cursor:           pointer;
-  user-select:      none;
+  display:     block;
+  color:       #565656;
+  cursor:      pointer;
+  user-select: none;
+  border-top:  1px solid #eaeaea;
 }
