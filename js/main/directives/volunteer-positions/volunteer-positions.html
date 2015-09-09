@@ -1,40 +1,38 @@
 <volunteer-connect-bar num-checked="vm.selected_positions.length"></volunteer-connect-bar>
 
-<div class="PageFilters PageFilters--lightGrey">
-  <div class="PageFilters-container">
-      <div class="PageFilters-content">
-      <span class="PageFilters-label">Sort by:</span>
-      <span class="PageFilters-option" ng-class="{ 'is-active': vm.group_by === 'skill' }" ng-click="vm.group_by_skill()">Skill</span>
-      <span class="PageFilters-option" ng-class="{ 'is-active': vm.group_by === 'ministry' }" ng-click="vm.group_by_ministry()">Ministry</span>
-    </div>
+<div id="skills" class="SkillFilter">
+  <div class="SkillFilter-container">
+    <h3 class="SkillFilter-title">filter by skill</h3>
+    <ul class="SkillFilter-menu">
+      <li class="SkillFilter-item">
+        <a href="#skills" class="SkillFilter-link" ng-class="{ 'is-active' : !vm.selected_skill }" ng-click="vm.clear_selected_skill()">Any Skill</a>
+      </li>
+      <li class="SkillFilter-item" ng-repeat="skill in vm.skills">
+        <a href="#skills" class="SkillFilter-link" ng-class="{ 'is-active' : vm.selected_skill.id === skill.id }" ng-click="vm.select_skill(skill)">{{ skill.title }}</a>
+      </li>
+    </ul>
   </div>
 </div>
 
-<!-- Grouped by skill -->
-<div class="GridSection GridSection--center GridSection--lightGrey" ng-repeat="skill in vm.skills" ng-show="vm.group_by === 'skill'">
+<!-- Filtered by skill -->
+<div class="GridSection GridSection--lightGrey" ng-if="vm.selected_skill">
   <div class="GridSection-container">
-
-    <h3 class="GridSection-title">{{ skill.title }}</h3>
-
+    <h2 class="GridSection-title">{{ vm.selected_skill.title }} Opportunities</h2>
     <div class="GridSection-text">
-      <p>{{ skill.description }}</p>
+      <p>{{ vm.selected_skill.description }}</p>
     </div>
-
     <div class="GridSection-cardsWrap">
-
       <ul class="Opportunity-grid">
-        <li class="Opportunity-item" ng-repeat="position in skill.volunteer_positions">
+        <li class="Opportunity-item" ng-repeat="position in vm.selected_skill.volunteer_positions">
           <volunteer-position position="position" on-toggle="vm.toggle_position(position)" is-selected="vm.is_selected(position)"></volunteer-position>
         </li>
       </ul>
-
     </div>
-
   </div>
 </div>
 
 <!-- Grouped by ministry -->
-<div class="GridSection GridSection--center GridSection--lightGrey" ng-repeat="ministry in vm.ministries" ng-show="vm.group_by === 'ministry'">
+<div class="GridSection GridSection--center" ng-class="{ 'GridSection--lightGrey' : $odd }" ng-repeat="ministry in vm.ministries" ng-if="!vm.selected_skill">
   <div class="GridSection-container">
 
     <h3 class="GridSection-title">{{ ministry.title }}</h3>

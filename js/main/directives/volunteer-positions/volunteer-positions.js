@@ -25,6 +25,7 @@
             email: '',
             phone: '',
             message_body: '',
+            subject: '',
             campus: ''
         };
         vm.selected_positions = [];
@@ -33,32 +34,24 @@
         vm.toggle_position = toggle_position;
         vm.is_selected = is_selected;
         vm.send_form = send_form;
-        vm.group_by = 'skill';
-        vm.group_by_skill = group_by_skill;
-        vm.group_by_ministry = group_by_ministry;
+        vm.selected_skill = null;
+        vm.select_skill = select_skill;
+        vm.clear_selected_skill = clear_selected_skill;
 
         init();
 
         function init() {
 
-            group_by_skill();
-
-            campusesService.all().then(function(response) {
-                vm.campuses = response.data;
+            $http.get('/serve/opportunities.json').then(function (response) {
+                vm.ministries = response.data;
             });
-        }
 
-        function group_by_skill() {
-            vm.group_by = 'skill';
-            return $http.get('/serve/opportunities.json?by=skill').then(function (response) {
+            $http.get('/serve/opportunities.json?by=skill').then(function (response) {
                 vm.skills = response.data;
             });
-        }
 
-        function group_by_ministry() {
-            vm.group_by = 'ministry';
-            return $http.get('/serve/opportunities.json?by=ministry').then(function (response) {
-                vm.ministries = response.data;
+            campusesService.all().then(function (response) {
+                vm.campuses = response.data;
             });
         }
 
@@ -75,6 +68,7 @@
             }
 
             vm.user.message_body = build_description();
+            vm.user.subject = build_subject();
 
         }
 
@@ -83,6 +77,15 @@
         }
 
         function build_description() {
+            var areas_list = build_areas_list();
+            return 'Please contact me with more information about the ' + areas_list + ' opportunities.';
+        }
+
+        function build_subject() {
+            return build_areas_list();
+        }
+
+        function build_areas_list() {
             var i,
                 areas = [],
                 areas_string = '';
@@ -91,7 +94,7 @@
                 return '';
             }
 
-            for(i = 0; i < vm.selected_positions.length; i++) {
+            for (i = 0; i < vm.selected_positions.length; i++) {
                 areas.push(vm.selected_positions[i].title);
             }
 
@@ -104,27 +107,36 @@
                 areas_string = areas.join(', ');
             }
 
-            return 'Please contact me with more information about the ' + areas_string + ' opportunities.';
-
+            return areas_string;
         }
 
         function send_form() {
-
             vm.is_sending = true;
-
-            $http.post('/serve/opportunities', vm.user).then(on_form_success, on_form_error);
-
+            //$http.post('/serve/opportunities', vm.user).then(on_form_success, on_form_error);
+            on_form_success();
         }
 
         function on_form_success() {
             vm.is_sending = false;
             vm.is_sent = true;
+            vm.user.message_body = '';
+            vm.user.subject = '';
+            vm.selected_positions = [];
+            selected_position_ids = [];
         }
 
         function on_form_error(response) {
             console.log(response.data);
             vm.is_sending = false;
             vm.has_error = true;
+        }
+
+        function select_skill(skill) {
+            vm.selected_skill = skill;
+        }
+
+        function clear_selected_skill() {
+            vm.selected_skill = null;
         }
 
     }
