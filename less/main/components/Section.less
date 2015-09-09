@@ -2,6 +2,7 @@
 @Section-vertical-padding-top: 90;
 @Section-vertical-padding-bottom: (@Section-vertical-padding-top - @grid-gutter-base);
 @Section-title-font-size: @font-size-heading-3;
+@Section-grey-bg-color: #f2f2f2;
 
 .Section {
   .to-rem(font-size, @Section-font-size);
@@ -9,7 +10,7 @@
 
   background-color: #fff;
   &--lightGrey {
-    background-color: #f2f2f2;
+    background-color: @Section-grey-bg-color;
   }
 }
 
