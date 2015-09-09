@@ -1,6 +1,17 @@
 <volunteer-connect-bar num-checked="vm.selected_positions.length"></volunteer-connect-bar>
 
-<div class="GridSection GridSection--center GridSection--lightGrey" ng-repeat="skill in vm.skills">
+<div class="PageFilters PageFilters--lightGrey">
+  <div class="PageFilters-container">
+      <div class="PageFilters-content">
+      <span class="PageFilters-label">Sort by:</span>
+      <span class="PageFilters-option" ng-class="{ 'is-active': vm.group_by === 'skill' }" ng-click="vm.group_by_skill()">Skill</span>
+      <span class="PageFilters-option" ng-class="{ 'is-active': vm.group_by === 'ministry' }" ng-click="vm.group_by_ministry()">Ministry</span>
+    </div>
+  </div>
+</div>
+
+<!-- Grouped by skill -->
+<div class="GridSection GridSection--center GridSection--lightGrey" ng-repeat="skill in vm.skills" ng-show="vm.group_by === 'skill'">
   <div class="GridSection-container">
 
     <h3 class="GridSection-title">{{ skill.title }}</h3>
@@ -12,25 +23,28 @@
     <div class="GridSection-cardsWrap">
 
       <ul class="Opportunity-grid">
-
-        <li class="Opportunity-item" ng-repeat="position in skill.positions">
-
-          <div class="Opportunity">
-            <div class="Opportunity-body">
-              <h5 class="Opportunity-title">{{ position.title }}</h5>
-              <p class="Opportunity-description">{{ position.description }}</p>
-              <p class="Opportunity-data" ng-show="position.availability && position.commitment">
-                <span class="Opportunity-dataItem" ng-show="position.availability">Availability: {{ position.availability }}</span>
-                <span class="Opportunity-dataItem" ng-show="position.commitment">Commitment: {{ position.commitment }}</span>
-              </p>
-            </div>
-            <div class="Opportunity-footer" ng-click="vm.toggle_position(position)">
-              <i ng-class="{ 'icon-check' : position.is_selected, 'icon-check-empty' : !position.is_selected }"></i> This sounds interesting!
-            </div>
-          </div>
-
+        <li class="Opportunity-item" ng-repeat="position in skill.volunteer_positions">
+          <volunteer-position position="position" on-toggle="vm.toggle_position(position)" is-selected="vm.is_selected(position)"></volunteer-position>
         </li>
+      </ul>
 
+    </div>
+
+  </div>
+</div>
+
+<!-- Grouped by ministry -->
+<div class="GridSection GridSection--center GridSection--lightGrey" ng-repeat="ministry in vm.ministries" ng-show="vm.group_by === 'ministry'">
+  <div class="GridSection-container">
+
+    <h3 class="GridSection-title">{{ ministry.title }}</h3>
+
+    <div class="GridSection-cardsWrap">
+
+      <ul class="Opportunity-grid">
+        <li class="Opportunity-item" ng-repeat="position in ministry.volunteer_positions">
+          <volunteer-position position="position" on-toggle="vm.toggle_position(position)" is-selected="vm.is_selected(position)"></volunteer-position>
+        </li>
       </ul>
 
     </div>

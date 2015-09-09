@@ -1,0 +1,13 @@
+<div class="Opportunity">
+  <div class="Opportunity-body">
+    <h5 class="Opportunity-title">{{ vm.position.title }}</h5>
+    <p class="Opportunity-description">{{ vm.position.description }}</p>
+    <p class="Opportunity-data">
+      <span class="Opportunity-dataItem"><span ng-show="vm.position.availability">Availability:</span> {{ vm.position.availability }}</span>
+      <span class="Opportunity-dataItem"><span ng-show="vm.position.commitment">Commitment:</span> {{ vm.position.commitment }}</span>
+    </p>
+  </div>
+  <div class="Opportunity-footer" ng-click="vm.toggle()">
+    <i ng-class="{ 'icon-check' : vm.isSelected, 'icon-check-empty' : !vm.isSelected }"></i> This sounds interesting!
+  </div>
+</div>

@@ -17,7 +17,8 @@
 
     function Controller($http, campusesService) {
 
-        var vm = this;
+        var selected_position_ids = [],
+            vm = this;
         vm.user = {
             first_name: '',
             last_name: '',
@@ -26,42 +27,50 @@
             message_body: '',
             campus: ''
         };
-        vm.selected_positions = []
+        vm.selected_positions = [];
         vm.campuses = null;
         vm.skills = null;
         vm.toggle_position = toggle_position;
         vm.is_selected = is_selected;
         vm.send_form = send_form;
+        vm.group_by = 'skill';
+        vm.group_by_skill = group_by_skill;
+        vm.group_by_ministry = group_by_ministry;
 
         init();
 
         function init() {
-            $http.get('/serve/opportunities.json').then(function (response) {
-                vm.skills = response.data;
-            });
+
+            group_by_skill();
 
             campusesService.all().then(function(response) {
                 vm.campuses = response.data;
             });
         }
 
+        function group_by_skill() {
+            vm.group_by = 'skill';
+            return $http.get('/serve/opportunities.json?by=skill').then(function (response) {
+                vm.skills = response.data;
+            });
+        }
+
+        function group_by_ministry() {
+            vm.group_by = 'ministry';
+            return $http.get('/serve/opportunities.json?by=ministry').then(function (response) {
+                vm.ministries = response.data;
+            });
+        }
+
         function toggle_position(position) {
 
-            var i,
-                idx = -1;
-
-            position.is_selected = !position.is_selected;
-
-            for(i = 0; i < vm.selected_positions.length; i++) {
-                if (vm.selected_positions[i].id === position.id) {
-                    idx = i;
-                    break;
-                }
-            }
+            var idx = selected_position_ids.indexOf(position.id);
 
             if (idx >= 0) {
+                selected_position_ids.splice(idx, 1);
                 vm.selected_positions.splice(idx, 1);
             } else {
+                selected_position_ids.push(position.id);
                 vm.selected_positions.push(position);
             }
 
@@ -69,8 +78,8 @@
 
         }
 
-        function is_selected(position_id) {
-            return vm.selected_positions.indexOf(position_id) >= 0;
+        function is_selected(position) {
+            return selected_position_ids.indexOf(position.id) >= 0;
         }
 
         function build_description() {
