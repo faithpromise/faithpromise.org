@@ -64,7 +64,9 @@ class VolunteerPositionsController extends Controller {
      * @return Response
      */
     public function destroy($id) {
-        VolunteerPosition::find($id)->delete();
+        $record = $this->getItem($id);
+        $record->skills()->detach();
+        $record->delete();
     }
 
     private function getItem($id) {
