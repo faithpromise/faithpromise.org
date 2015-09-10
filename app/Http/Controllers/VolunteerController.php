@@ -31,7 +31,7 @@ class VolunteerController extends BaseController {
         $by = $request->input('by', 'ministry');
 
         if ($by === 'ministry') {
-            return Ministry::has('volunteer_positions')->with('volunteer_positions')->orderBy('title')->get();
+            return Ministry::has('volunteer_positions')->with('volunteer_positions.skills')->orderBy('title')->get();
         } else {
             return VolunteerSkill::has('volunteer_positions')->with('volunteer_positions')->get();
         }
