@@ -1,6 +1,6 @@
 .Continue {
   .link-color(#fff);
-  .to-rem(font-size, 30);
+  .to-rem(font-size, 20);
   display:          block;
   position:         fixed;
   bottom:           0;
@@ -11,12 +11,12 @@
   text-align:       center;
   font-weight:      bold;
 
+  transform:        translate3d(0, 6.5em, 0);
+  transition:       transform .35s ease-in-out, opacity .4s linear;
+
   &:hover {
     text-decoration: none;
   }
-
-  transform:        translate3d(0, 5.2em, 0);
-  transition:       transform .35s ease-in-out, opacity .4s linear;
 
   &.ng-hide {
     opacity: 0;
@@ -24,6 +24,14 @@
 
   &.is-active {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+// 420px
+@media (min-width: 26.25em) {
+  .Continue {
+    .to-rem(font-size, 30);
+    transform: translate3d(0, 5.2em, 0);
   }
 }
 
