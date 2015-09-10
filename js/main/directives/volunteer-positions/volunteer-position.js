@@ -48,7 +48,7 @@
             var i,
                 skills = [];
 
-            if (vm.position.skills.length === 0) {
+            if (typeof vm.position.skills === 'undefined' || vm.position.skills.length === 0) {
                 return null;
             }
 
