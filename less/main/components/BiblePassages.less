@@ -1,25 +1,27 @@
-@BiblePassages-font-size: @font-size;
+@BiblePassages-font-size: 20;
 
 .BiblePassages {
   .to-rem(font-size, @BiblePassages-font-size);
   .to-em(padding, @Section-vertical-padding-top 0 @Section-vertical-padding-bottom, @Section-font-size);
 
   .s {
-    .to-em(font-size, 20, @BiblePassages-font-size);
+    .to-em(font-size, 26, @BiblePassages-font-size);
     font-weight: @font-weight-light;
     color:       lighten(@root-text-color, 30);
   }
 
-  .p {
-    .to-em(font-size, 22, @BiblePassages-font-size);
-    line-height: 2;
+  sup.v {
+    .to-em(font-size, 13, @BiblePassages-font-size);
+    margin:  0 6px;
+    display: inline-block;
+    color:   #8a8a8a;
   }
+
 }
 
 .BiblePassages-container {
   &:extend(.Container all);
-  &:extend(.Container all);
-  max-width: @max-text-width;
+  max-width: 45em;
 }
 
 .BiblePassages-title {
