@@ -50,7 +50,7 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
 
     <body class="{{ $body_class }}" ng-controller="page">
 
-        <div class="Layout">
+        <div id="top" class="Layout">
 
             <div id="js-nav" class="Nav">
                 <div class="Nav-container">

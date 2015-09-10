@@ -3,13 +3,35 @@
 
     module.directive('volunteerPositions', directive);
 
-    function directive() {
+    directive.$inject = ['$window', '$timeout'];
+
+    function directive($window, $timeout) {
         return {
             templateUrl: '/build/js/main/directives/volunteer-positions/volunteer-positions.html',
             restrict: 'E',
             controller: Controller,
             controllerAs: 'vm',
-            scope: {}
+            scope: {},
+            link: function(scope, elem) {
+
+                var timer,
+                    // First time - form may be visible because content (vol positions) hasn't loaded yet.
+                    timeout = 2000;
+
+                angular.element($window).on('scroll', function () {
+
+                    if (timer) return;
+
+                    timer = $timeout(function () {
+                        scope.vm.is_form_in_view = is_form_in_view();
+                        $timeout.cancel(timer);
+                        timer = null;
+                        timeout = 300;
+                    }, timeout);
+
+                });
+
+            }
         };
     }
 
@@ -28,6 +50,7 @@
             subject: '',
             campus: ''
         };
+        vm.show_continue_bar = false;
         vm.selected_positions = [];
         vm.campuses = null;
         vm.skills = null;
@@ -36,7 +59,9 @@
         vm.send_form = send_form;
         vm.selected_skill = null;
         vm.select_skill = select_skill;
-        vm.clear_selected_skill = clear_selected_skill;
+        vm.deselect_skill = deselect_skill;
+        vm.close_form_confirmation = close_form_confirmation;
+        vm.is_form_in_view = false;
 
         init();
 
@@ -69,7 +94,6 @@
 
             vm.user.message_body = build_description();
             vm.user.subject = build_subject();
-
         }
 
         function is_selected(position) {
@@ -110,6 +134,14 @@
             return areas_string;
         }
 
+        function select_skill(skill) {
+            vm.selected_skill = skill;
+        }
+
+        function deselect_skill() {
+            vm.selected_skill = null;
+        }
+
         function send_form() {
             vm.is_sending = true;
             $http.post('/serve/opportunities', vm.user).then(on_form_success, on_form_error);
@@ -118,26 +150,36 @@
         function on_form_success() {
             vm.is_sending = false;
             vm.is_sent = true;
-            vm.user.message_body = '';
-            vm.user.subject = '';
-            vm.selected_positions = [];
-            selected_position_ids = [];
+            clear_selected_positions();
+            clear_form();
         }
 
         function on_form_error(response) {
-            console.log(response.data);
             vm.is_sending = false;
             vm.has_error = true;
         }
 
-        function select_skill(skill) {
-            vm.selected_skill = skill;
+        function close_form_confirmation() {
+            vm.is_sent = false;
         }
 
-        function clear_selected_skill() {
-            vm.selected_skill = null;
+        function clear_form() {
+            vm.user.message_body = '';
+            vm.user.subject = '';
         }
 
+        function clear_selected_positions() {
+            vm.selected_positions = [];
+            selected_position_ids = [];
+        }
+
+    }
+
+    function is_form_in_view() {
+        var form_elem = document.getElementById('continue');
+        var form_elem_top = form_elem.getBoundingClientRect().top;
+        console.log('form_elem_top', form_elem_top);
+        return (window.innerHeight - form_elem_top) > 240;
     }
 
 })(angular.module('app'));

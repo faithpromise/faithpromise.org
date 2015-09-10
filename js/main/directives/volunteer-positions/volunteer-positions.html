@@ -1,11 +1,14 @@
-<volunteer-connect-bar num-checked="vm.selected_positions.length"></volunteer-connect-bar>
+<a href="#continue" class="Continue" ng-class="{ 'is-active' : vm.selected_positions.length }" ng-hide="vm.is_form_in_view">
+  Awesome! You've selected {{ vm.selected_positions.length }} interest{{ vm.selected_positions.length === 1 ? '' : 's' }}. Scroll down and
+  <span class="Continue-target">let us know</span>.
+</a>
 
 <div id="skills" class="SkillFilter">
   <div class="SkillFilter-container">
     <h3 class="SkillFilter-title">filter by skill</h3>
     <ul class="SkillFilter-menu">
       <li class="SkillFilter-item">
-        <a href="#skills" class="SkillFilter-link" ng-class="{ 'is-active' : !vm.selected_skill }" ng-click="vm.clear_selected_skill()">Any Skill</a>
+        <a href="#skills" class="SkillFilter-link" ng-class="{ 'is-active' : !vm.selected_skill }" ng-click="vm.deselect_skill()">Any Skill</a>
       </li>
       <li class="SkillFilter-item" ng-repeat="skill in vm.skills">
         <a href="#skills" class="SkillFilter-link" ng-class="{ 'is-active' : vm.selected_skill.id === skill.id }" ng-click="vm.select_skill(skill)">{{ skill.title }}</a>
@@ -50,14 +53,17 @@
   </div>
 </div>
 
-<div class="Section Section--center" ng-show="vm.is_sent">
-  <div class="Section-container">
-    <h3 class="Section-title">Thank you!</h3>
+<div class="VolunteerSent" ng-show="vm.is_sent">
+  <div class="VolunteerSent-container">
+    <h3 class="VolunteerSent-title">Thank you!</h3>
     <p>We're looking forward to talking with you! Your message was sent and we'll contact you soon with more information.</p>
+    <p>
+      <a href="#top" class="Button" ng-click="vm.close_form_confirmation()">Close</a>
+    </p>
   </div>
 </div>
 
-<div id="connect" class="Section Section--center" ng-hide="vm.is_sent">
+<div id="continue" class="Section Section--center">
   <div class="Section-container">
     <h3 class="Section-title">I'm Ready to Volunteer</h3>
     <p>We're excited that you're interested in volunteering. Please complete the following form and we'll send you more information about getting started.</p>

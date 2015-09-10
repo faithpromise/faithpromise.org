@@ -1,0 +1,27 @@
+.VolunteerSent {
+  background-color: #fff;
+  position:         fixed;
+  top:              5vh;
+  left:             5vw;
+  width:            90vw;
+  height:           90vh;
+  box-shadow:       0 0 34px 6px rgba(0, 0, 0, 0.2);
+  display:          inline-block;
+  overflow:         hidden;
+  text-align:       center;
+
+  &:before {
+    content:        '';
+    display:        inline-block;
+    height:         100%;
+    width:          0;
+    vertical-align: middle;
+  }
+}
+
+.VolunteerSent-container {
+  display:    inline-block;
+  width:      68%;
+  max-width:  @max-text-width;
+  text-align: left;
+}
