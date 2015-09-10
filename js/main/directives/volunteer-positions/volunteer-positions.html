@@ -79,6 +79,7 @@
       <div class="Form-group">
         <span class="Form-label">Your email</span>
         <input class="Form-input" name="email" type="text" placeholder="i.e. you@somewhere.com" ng-model="vm.user.email" required>
+        <input class="Form-input Form-input--flytrap" name="email_repeat" type="text" placeholder="Repeat your email address" ng-model="vm.user.flytrap">
       </div>
       <div class="Form-group">
         <span class="Form-label">Your phone number (with area code)</span>
@@ -86,7 +87,7 @@
       </div>
       <div class="Form-group">
         <span class="Form-label">I'd like someone to contact me about serving in the following ministry area(s):</span>
-        <textarea class="Form-input" name="message_body" ng-model="vm.user.message_body"></textarea>
+        <textarea class="Form-input" name="message_body" ng-model="vm.user.message_body" required></textarea>
       </div>
       <div class="Form-group">
         <span class="Form-label">Please select your campus</span>

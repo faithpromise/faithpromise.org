@@ -45,10 +45,20 @@ class VolunteerController extends BaseController {
         $data['sent_at'] = Carbon::now()->format('D, M j, Y at g:i A');
         $data['phone'] = preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $data['phone']);
 
-        $recipient = Staff::findBySlug('miles-creasman');
-        $recipient2 = Staff::findBySlug('macy-deel');
+        $to = null;
+        $cc = [];
 
-        Mail::queue('emails.volunteer_request', $data, function ($message) use ($data, $recipient, $recipient2) {
+        // Hidden field probably means spam
+        if (isset($data['flytrap'])) {
+            $data['subject'] = 'SPAM? --' . $data['subject'];
+            $to = Staff::findBySlug('brad-roberts');
+        } else {
+            $to = Staff::findBySlug('miles-creasman');
+            $cc[] = Staff::findBySlug('macy-deel');
+            $cc[] = Staff::findBySlug('brad-roberts');
+        }
+
+        Mail::queue('emails.volunteer_request', $data, function ($message) use ($data, $to, $cc) {
 
             $full_name = $data['first_name'] . ' ' . $data['last_name'];
             $subject = 'Ministry Volunteer' . (empty($data['subject']) ? '' : (' - ' . $data['subject']));
@@ -57,8 +67,13 @@ class VolunteerController extends BaseController {
                 ->from('noreply@faithpromise.org', 'Faith Promise Website')
                 ->replyTo($data['email'], $full_name)
                 ->subject($subject)
-                ->to($recipient->email, $recipient->name)
-                ->cc($recipient2->email, $recipient2->name);
+                ->to($to->email, $to->name);
+
+            if (count($cc) > 0) {
+                foreach($cc as $recipient) {
+                    $message->cc($recipient->email, $recipient->name);
+                }
+            }
         });
 
     }
