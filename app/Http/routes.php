@@ -98,6 +98,9 @@ Route::get('/countdown.js', ['as' => 'countdown', 'uses' => 'InternetCampusContr
 // Sitemap JSON for UNCSS
 Route::get('/_sitemap.json', 'SiteMapController@index');
 
+// Health checks
+Route::get('/_healthcheck', 'HealthCheckController@index');
+
 // Data migration from old site
 Route::get('/migrate', 'MigrateController@index');
 Route::get('/migrate/migrate', ['as' => 'migrate', 'uses' => 'MigrateController@migrate']);
