@@ -8,14 +8,14 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
     <?php foreach ($cards as $card): ?>
     <li class="Card-item">
         <div class="Card" link-to="<?= isset($card->card_url) ? $card->card_url : ""; ?>">
-            <?php if (!empty($card->card_url)): ?>
+            <?php if (isset($card->card_image) && !empty($card->card_url)): ?>
             <a class="Card-image b-lazy"
                     href="<?= $card->card_url; ?>"
                     data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
                     data-src-md="<?= cdn_image('md', 'full', $card->card_image) ?>"
                     data-src-lg="<?= cdn_image('lg', 'full', $card->card_image) ?>"
                     data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></a>
-            <?php else: ?>
+            <?php elseif (isset($card->card_image)): ?>
             <span class="Card-image b-lazy"
                     data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
                     data-src-md="<?= cdn_image('md', 'full', $card->card_image) ?>"
