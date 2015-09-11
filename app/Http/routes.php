@@ -50,8 +50,8 @@ Route::get('/studies', ['as' => 'studies', 'uses' => 'GroupsController@studies']
 Route::get('/studies/{study}', ['as' => 'studyDetail', 'uses' => 'GroupsController@studyDetail']);
 Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'GroupsController@newLeader']);
 Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'GroupsController@leaders']);
-Route::get('/men', ['as' => 'men', 'uses' => 'MinistriesController@defaultMinistryPage']);
-Route::get('/women', ['as' => 'women', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/men', ['as' => 'men', 'uses' => 'GroupsController@men']);
+Route::get('/women', ['as' => 'women', 'uses' => 'GroupsController@women']);
 Route::get('/young-adults', ['as' => 'youngAdults', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/starting-point', ['as' => 'startingPoint', 'uses' => 'MainController@defaultPage']);
 

@@ -15,10 +15,10 @@
         </div>
     </div>
 
-    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
+    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $events])
     @endcardsection
 
-    <div class="TextSection TextSection--center {{ count($ministry->Events) === 0 ? 'Section--lightGrey' : '' }}">
+    <div class="TextSection TextSection--center {{ count($events) === 0 ? 'Section--lightGrey' : '' }}">
         <div class="TextSection-container">
             <h2 class="TextSection-title">Need Help?</h2>
             <div class="TextSection-text">

@@ -40,8 +40,8 @@ class GroupsController extends BaseController {
         $studies = Study::where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
 
         return view('study_detail', [
-            'study' => $study,
-            'times' => $times,
+            'study'   => $study,
+            'times'   => $times,
             'studies' => $studies
         ]);
     }
@@ -52,6 +52,31 @@ class GroupsController extends BaseController {
 
     public function newLeader() {
         return view('new-leader');
+    }
+
+    public function men() {
+
+        $ministry = Ministry::whereSlug('men')->first();
+        $studies = Study::where('gender', '=', 'm')->get();
+        $events = $ministry->Events->merge($studies);
+
+        return view('men', [
+            'ministry' => $ministry,
+            'events'   => $events
+        ]);
+    }
+
+    public function women() {
+
+        $ministry = Ministry::whereSlug('women')->first();
+        $studies = Study::where('gender', '=', 'f')->get();
+        $events = $ministry->Events;
+
+        return view('women', [
+            'ministry' => $ministry,
+            'events'   => $events,
+            'studies'   => $studies
+        ]);
     }
 
 }

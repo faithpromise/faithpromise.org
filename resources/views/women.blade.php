@@ -16,19 +16,11 @@
         </div>
     </div>
 
-    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
+    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $events])
     @endcardsection
 
-    <div class="TextSection">
-        <div class="TextSection-container">
-            <h2 class="TextSection-title">Bible Studies</h2>
-
-            <div class="TextSection-text">
-                <p>Spring Semester Bible Studies begin on April 8 at 10:00 am and April 9 at 6:30 pm at the Pellissippi Campus.</p>
-                <p class="text-center"><a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7077&weekday=&start_time=">Find a Group or Bible Study</a></p>
-            </div>
-        </div>
-    </div>
+    @cardsection(['title' => 'Bible Studies', 'cards' => $studies])
+    @endcardsection
 
     <div class="TextSection TextSection--center Section--lightGrey">
         <div class="TextSection-container">
