@@ -135,9 +135,9 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
                                     <li class="Footer-linkItem">
                                         <a class="Footer-link" href="http://blog.faithpromise.org/" target="_blank">Blog</a>
                                     </li>
-                                    {{--<li class="Footer-linkItem">--}}
-                                    {{--<a class="Footer-link" href="/jobs">Jobs</a>--}}
-                                    {{--</li>--}}
+                                    <li class="Footer-linkItem">
+                                    <a class="Footer-link" href="/jobs">Jobs</a>
+                                    </li>
                                     <li class="Footer-linkItem">
                                         <a class="Footer-link" href="/give">Give Online</a>
                                     </li>

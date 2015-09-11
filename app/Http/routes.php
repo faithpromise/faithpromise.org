@@ -86,6 +86,7 @@ Route::get('/weddings', ['as' => 'weddings', 'uses' => 'MainController@defaultPa
 Route::get('/stephen', ['as' => 'stephen', 'uses' => 'MainController@defaultPage']);
 Route::get('/summit', ['as' => 'summit', 'uses' => 'MainController@defaultPage']);
 Route::get('/updates', ['as' => 'updates', 'uses' => 'MainController@defaultPage']);
+Route::get('/jobs', ['as' => 'jobs', 'uses' => 'MainController@defaultPage']);
 
 // Bible plan
 Route::get('/bible-plan', ['as' => 'biblePlan', 'uses' => 'BiblePlanController@index']);
