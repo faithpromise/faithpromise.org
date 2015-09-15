@@ -14,7 +14,7 @@ class CreateBiblePlanTable extends Migration
     {
         Schema::create('bible_plan', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('day')->unsigned();
+            $table->smallInteger('day')->unsigned();
             $table->string('passage', 35);
             $table->text('passage_text');
             $table->tinyInteger('sort')->unsigned();
