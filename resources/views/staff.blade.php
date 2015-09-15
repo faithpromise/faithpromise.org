@@ -9,9 +9,7 @@
 
 <div class="Staff8bit">
     @foreach($staff_8bit as $i)
-        <a class="Staff8bit-item" href="{{ $i->url }}">
-            <img class="Staff8bit-image" src="{{ cdn_image('sm', 'quarter', $i->eight_bit_path) }}">
-        </a>
+        <a class="Staff8bit-item Staff8bit-{{ $i->slug }}" href="{{ $i->url }}"></a>
     @endforeach
 </div>
 

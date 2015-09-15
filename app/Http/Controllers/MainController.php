@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\FaithPromise\Stylesheet;
 use App\Series;
 use App\Team;
 use Illuminate\Routing\Controller as BaseController;
@@ -14,13 +15,12 @@ class MainController extends BaseController {
 
         $current_series = Series::currentSeries()->first();
         $events = Event::orderBy('sort', 'asc')->take(3)->get();
+        $stylesheet = new Stylesheet($current_series->home_css);
 
         return view('welcome', [
             'current_series' => $current_series,
             'events' => $events,
-            'stylesheets' => [
-                $current_series->home_css
-            ]
+            'stylesheets' => [$stylesheet]
         ]);
     }
 

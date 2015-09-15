@@ -1,21 +1,24 @@
 .Staff8bit {
   font-size: 0;
-  height:    45.3703704vw;
   overflow:  hidden;
 }
 
 .Staff8bit-item {
-  display: inline-block;
-  width:   9.090909091%
-}
+  display:         inline-block;
+  width:           9.090909091%;
+  padding-bottom:  9.090909091%;
+  height:          0;
+  background-size: 100%;
 
-@media (min-width: 80em) {
-  // 1280px
-  .Staff8bit {
-    height: 30.769230768vw;
+  // Only show 55
+  &:nth-child(n+56) {
+    display: none;
   }
 
-  .Staff8bit-item {
-    width: 7.692307692%;
+  // Wide format - only show 44
+  @media (min-width: 47.5rem) {
+    &:nth-child(n+45) {
+      display: none;
+    }
   }
 }

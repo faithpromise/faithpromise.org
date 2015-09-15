@@ -34,7 +34,11 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         @if (isset($stylesheets))
             <!-- Page stylesheets -->
             @foreach($stylesheets as $s)
-                <link rel="stylesheet" href="{{ $s }}">
+                @if ($s->hasMedia())
+                    <script>if (window.matchMedia('{{ $s->getMedia() }}').matches) { document.write('<link rel="stylesheet" type="text/css" href="{{ $s->getUrl() }}">') }</script>
+                @else
+                    <link rel="stylesheet" type="text/css" media="{{ $s->getMedia() }}" href="{{ $s->getUrl() }}">
+                @endif
             @endforeach
         @endif
 

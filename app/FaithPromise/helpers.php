@@ -13,7 +13,7 @@ function asset_path($path) {
 function asset_exists($path) {
 
     // LATER: Optimize for multiple calls to this method in a single request
-    $exists = file_exists(asset_path($path));
+    $exists = is_file(asset_path($path));
 
     if (! $exists) {
         Log::critical('Image not found: ' . $path . '. May need to upload it to assets.faithpromise.org');
