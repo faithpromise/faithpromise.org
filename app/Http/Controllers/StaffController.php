@@ -82,16 +82,6 @@ class StaffController extends BaseController {
         return response()->json($staff_8bit);
     }
 
-    public function eightBitCss() {
-        $staff_8bit = $this->getEightBit();
-        $content = View::make('staff_8bit_stylesheet', [
-            'staff' => $staff_8bit
-        ]);
-        $response = Response::make($content);
-
-        return $response->header('Content-Type', 'text/css');
-    }
-
     private function getEightBit() {
         $cache_key = 'staff_8bit_1';
         $staff_8bit = Cache::remember($cache_key, 0, function () {
