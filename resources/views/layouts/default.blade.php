@@ -22,6 +22,8 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         <meta property="og:locale" content="en_US">
         @if (isset($og_image))
             <meta property="og:image" content="{!! open_graph_url_filter($og_image) !!}">
+            <meta property="og:image:width" content="{{ isset($og_image_width) ? $og_image_width : '1200' }}">
+            <meta property="og:image:height" content="{{ isset($og_image_height) ? $og_image_height : '675' }}">
         @endif
 
         <meta name="twitter:card" content="{{ isset($twitter_card) ? $twitter_card : 'summary' }}">
