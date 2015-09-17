@@ -41,7 +41,13 @@
                     <td>{{ $time->campus->name }}</td>
                     <td>{{ $time->starts_at->format('l') }}s at {{ $time->starts_at->format('g:i A') }}</td>
                     <td>{{ $time->starts_at->format('F j') }}</td>
-                    <td><a href="{{ $time->registration_url }}">Register here</a></td>
+                    <td>
+                        @if ($time->is_full)
+                            Class is full
+                        @else
+                            <a href="{{ $time->registration_url }}">Register here</a>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </tbody>
