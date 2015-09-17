@@ -2,9 +2,11 @@
 
 // LATER: We need to use the calendar_events to show a list of classes and links to register
 $baptism_registration = [
-    'pellissippi' => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=CuW8qCXcQkRC4RD1J4j2Ng==&cCode=RtKBDolfiPuZJp8o1+0ARA==',
-    'blount'      => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=ateeORVo3265UHNI0demnQ==&cCode=RtKBDolfiPuZJp8o1+0ARA==',
-    'north'       => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=s80+rBCHQNgN+tQs82SjwA==&cCode=RtKBDolfiPuZJp8o1+0ARA=='
+        'pellissippi' => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=CuW8qCXcQkRC4RD1J4j2Ng==&cCode=RtKBDolfiPuZJp8o1+0ARA==',
+        'blount'      => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=ateeORVo3265UHNI0demnQ==&cCode=RtKBDolfiPuZJp8o1+0ARA==',
+        'north'       => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=s80+rBCHQNgN+tQs82SjwA==&cCode=RtKBDolfiPuZJp8o1+0ARA==',
+        'anderson'    => 'https://fpctystn.infellowship.com/Forms/191911',
+        'campbell'    => 'https://fpctystn.infellowship.com/Forms/191912'
 ];
 
 $faq = [
@@ -18,8 +20,10 @@ $faq = [
                         . '<p>This class includes a Parent Connection where we connect with parents/guardians.  We want to help you look ahead at what you can do to help your child establish an active faith in Christ.'
                         . ' Use the following links to register at the '
                         . '<a class="no-wrap" href="' . $baptism_registration['pellissippi'] . '" target="_blank">Pellissippi Campus</a>, '
-                        . '<a class="no-wrap" href="' . $baptism_registration['blount'] . '" target="_blank">Blount Campus</a>, or '
-                        . '<a class="no-wrap" href="' . $baptism_registration['north'] . '" target="_blank">North Knox Campus</a>'
+                        . '<a class="no-wrap" href="' . $baptism_registration['blount'] . '" target="_blank">Blount Campus</a>, '
+                        . '<a class="no-wrap" href="' . $baptism_registration['north'] . '" target="_blank">North Knox Campus</a>, '
+                        . '<a class="no-wrap" href="' . $baptism_registration['north'] . '" target="_blank">Anderson Campus</a>, or '
+                        . '<a class="no-wrap" href="' . $baptism_registration['north'] . '" target="_blank">Campbell Campus</a>'
                         . '.</p>'
         ]
 ];
