@@ -16,8 +16,10 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         <meta property="fb:app_id" content="{{ $site['facebook_app_id'] }}">
         @if (isset($og_type))
             <meta property="og:type" content="{{ $og_type }}">
+            @if ($og_type === 'article')
+                <meta property="article:author" content="{{ isset($article_author) ? $article_author : facebook_url(config('site.facebook_username')) }}">
+            @endif
         @endif
-        <meta property="article:author" content="{{ isset($article_author) ? $article_author : facebook_url(config('site.facebook_username')) }}">
         <meta property="og:description" content="{{ isset($facebook_description) ? $facebook_description : isset($title) ? $title : $site['title'] }}">
         <meta property="og:locale" content="en_US">
         @if (isset($og_image))
