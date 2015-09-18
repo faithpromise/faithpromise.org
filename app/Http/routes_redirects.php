@@ -13,6 +13,7 @@ Route::get('/groupleaders', 'RedirectController@groupLeaders');
 Route::get('/lovelocal', 'RedirectController@loveLocal');
 Route::get('/kidsteps', 'RedirectController@kidSteps');
 Route::get('/children', 'RedirectController@fpKids');
+Route::get('/students', 'RedirectController@fpStudents');
 Route::get('/kidknex', 'RedirectController@fpKids');
 Route::get('/promisekids', 'RedirectController@fpKids');
 Route::get('/promiseland', 'RedirectController@fpKids');

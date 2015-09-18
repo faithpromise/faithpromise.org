@@ -74,6 +74,10 @@ class RedirectController extends BaseController {
         return redirect()->route('fpKids');
     }
 
+    public function fpStudents() {
+        return redirect()->route('fpStudents');
+    }
+
     public function groups() {
         return redirect()->route('groups');
     }
