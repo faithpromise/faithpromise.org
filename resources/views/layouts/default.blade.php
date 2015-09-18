@@ -97,14 +97,16 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
 
             <div class="Layout-contentWrap">
                 <!--<div class="MobileBar-background"></div>-->
-                <div class="MobileBar">
-                    <a class="MobileBar-logoWrap" href="/">
-                        <svg class="MobileBar-logo" role="img" title="Faith Promise Logo">
-                            <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
-                        </svg>
-                    </a>
-                    <span class="MobileBar-navToggle"><i class="icon-menu" nav-toggle></i></span>
-                </div>
+                @if (!$in_app)
+                    <div class="MobileBar">
+                        <a class="MobileBar-logoWrap" href="/">
+                            <svg class="MobileBar-logo" role="img" title="Faith Promise Logo">
+                                <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+                            </svg>
+                        </a>
+                        <span class="MobileBar-navToggle"><i class="icon-menu" nav-toggle></i></span>
+                    </div>
+                @endif
                 <!--<div class="Hero-shim"></div>-->
                 @yield('content')
 
