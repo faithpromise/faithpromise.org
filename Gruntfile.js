@@ -353,7 +353,7 @@ module.exports = function (grunt) {
                 appTemplates: {
                     expand: true,
                     cwd: js_src_dir,
-                    src: 'directives/**/*.html',
+                    src: '**/*.html',
                     dest: js_output_dir
                 },
                 adminTemplates: {
