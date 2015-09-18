@@ -32,6 +32,7 @@ module.exports = function (grunt) {
 
     var js_input = [
         'bower_components/angular-ui-bootstrap/src/position/position.js',
+        'bower_components/angular-ui-bootstrap/src/stackedMap/stackedMap.js',
         'bower_components/angular-ui-bootstrap/src/dropdown/dropdown.js',
         'bower_components/angular-local-storage/dist/angular-local-storage.js',
         'bower_components/angular-ui-bootstrap/src/modal/modal.js',

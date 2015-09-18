@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -9,10 +10,13 @@ class AppServiceProvider extends ServiceProvider {
     /**
      * Bootstrap any application services.
      *
-     * @return void
+     * @param Request $request
      */
-    public function boot() {
+    public function boot(Request $request) {
 
+        $in_app = ($request->input('in_app') !== null);
+
+        view()->share('in_app', $in_app);
         view()->share('site', config('site'));
         view()->share('nav', config('nav'));
 

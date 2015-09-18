@@ -60,39 +60,40 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
 
         <div id="top" class="Layout">
 
-            <div id="js-nav" class="Nav">
-                <div class="Nav-container">
+            @if (!$in_app)
+                <div id="js-nav" class="Nav">
+                    <div class="Nav-container">
 
-                    <a class="Nav-logoWrap" href="/">
-                        <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
-                            <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
-                        </svg>
-                    </a>
+                        <a class="Nav-logoWrap" href="/">
+                            <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
+                                <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+                            </svg>
+                        </a>
 
-                    <ul class="Nav-menu">
-                        @foreach ($nav as $topnav)
-                            <li class="Nav-item" dropdown>
-                                @if (!isset($topnav['subnav']))
-                                    <a class="Nav-link" href="{{ $topnav['url'] }}">{{ $topnav['title'] }}</a>
-                                @else
-                                    <span class="Nav-link Nav-link--dropdown" dropdown-toggle>{{ $topnav['title'] }}</span>
-                                    <ul class="NavDropdown">
-                                        @foreach ($topnav['subnav'] as $subnav)
-                                            <li class="NavDropdown-item">
-                                                <a class="NavDropdown-link" href="{{ $subnav['url'] }}">{{ $subnav['title'] }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
+                        <ul class="Nav-menu">
+                            @foreach ($nav as $topnav)
+                                <li class="Nav-item" dropdown>
+                                    @if (!isset($topnav['subnav']))
+                                        <a class="Nav-link" href="{{ $topnav['url'] }}">{{ $topnav['title'] }}</a>
+                                    @else
+                                        <span class="Nav-link Nav-link--dropdown" dropdown-toggle>{{ $topnav['title'] }}</span>
+                                        <ul class="NavDropdown">
+                                            @foreach ($topnav['subnav'] as $subnav)
+                                                <li class="NavDropdown-item">
+                                                    <a class="NavDropdown-link" href="{{ $subnav['url'] }}">{{ $subnav['title'] }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
 
+                    </div>
                 </div>
-            </div>
-
-            <div class="MobileNav-background"></div>
-            <div class="MobileNav-dismiss" nav-toggle></div>
+                <div class="MobileNav-background"></div>
+                <div class="MobileNav-dismiss" nav-toggle></div>
+            @endif
 
             <div class="Layout-contentWrap">
                 <!--<div class="MobileBar-background"></div>-->
@@ -106,6 +107,8 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
                 </div>
                 <!--<div class="Hero-shim"></div>-->
                 @yield('content')
+
+                @if (!$in_app)
                 <div class="Footer">
                     <div class="Footer-container">
                         <div class="Footer-social">
@@ -162,6 +165,7 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
 
         </div>

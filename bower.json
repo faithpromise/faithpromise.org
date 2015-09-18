@@ -21,6 +21,7 @@
     "waypoints": "~3.1.1",
     "angular-local-storage": "~0.2.2",
     "svg4everybody": "~1.0.0",
-    "angular-google-maps": "~2.1.5"
+    "angular-google-maps": "~2.1.5",
+    "angular-toastr": "~1.5.0"
   }
 }
