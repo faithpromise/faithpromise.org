@@ -21,7 +21,14 @@ $resources->card_text = 'The fpResources Coordinator is responsible for coordina
 $resources->card_url = doc_url('jobs/fpresources-coordinator.pdf');
 $resources->card_url_text = 'Download PDF';
 
-$openings = collect([$facilities, $finance, $resources]);
+$fpkids = new stdClass();
+$fpkids->card_title = 'fpKids Global Adminstrative Assistant';
+$fpkids->card_subtitle = 'Part-time (25 hours per week)';
+$fpkids->card_text = 'The Global Administrative Assistant is responsible for supporting the global ministries of fpKIDS....';
+$fpkids->card_url = doc_url('jobs/fpkids-admin-assistant.pdf');
+$fpkids->card_url_text = 'Download PDF';
+
+$openings = collect([$facilities, $finance, $resources, $fpkids]);
 
 ?>
 
