@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider {
      */
     public function boot(Request $request) {
 
-        $in_app = ($request->input('in_app') !== null);
+        $in_app = ($request->input('in_app') !== null) || $request->cookie('in_app') !== null;
 
         view()->share('in_app', $in_app);
         view()->share('site', config('site'));
