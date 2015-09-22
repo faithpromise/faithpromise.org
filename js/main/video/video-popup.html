@@ -1,0 +1,19 @@
+
+<div class="VideoPopup-header">
+
+  <a class="VideoPopup-logoWrap" href="/">
+    <svg class="VideoPopup-logo" role="img" title="Faith Promise Church Logo">
+      <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+    </svg>
+  </a>
+
+  {{ title }} | {{ plays }} plays | id: {{ vimeo_id }}
+
+</div>
+
+<span class="modal-close" title="Close Video" ng-click="close();"></span>
+<div class="VideoPopup" style="background-color: #fff">
+  <div class="VideoPopup-container">
+    <vimeo id="{{ vimeo_id }}" autoplay="false"></vimeo>
+  </div>
+</div>
