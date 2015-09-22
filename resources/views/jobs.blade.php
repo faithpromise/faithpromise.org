@@ -28,7 +28,14 @@ $fpkids->card_text = 'The Global Administrative Assistant is responsible for sup
 $fpkids->card_url = doc_url('jobs/fpkids-admin-assistant.pdf');
 $fpkids->card_url_text = 'Download PDF';
 
-$openings = collect([$facilities, $finance, $resources, $fpkids]);
+$childcare = new stdClass();
+$childcare->card_title = 'Childcare Team Member';
+$childcare->card_subtitle = 'Part-time';
+$childcare->card_text = 'The Childcare Team Member provides support to other ministries of Faith Promise Church by providing...';
+$childcare->card_url = doc_url('jobs/childcare-team-member.pdf');
+$childcare->card_url_text = 'Download PDF';
+
+$openings = collect([$facilities, $finance, $resources, $fpkids, $childcare]);
 
 ?>
 
