@@ -56,7 +56,7 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         @include('includes.google_analytics')
     </head>
 
-    <body class="{{ $body_class }}" ng-controller="page">
+    <body class="{{ $body_class }}">
 
         <div id="top" class="Layout">
 

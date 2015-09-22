@@ -36,3 +36,5 @@
 .icon-female:before { content: '\e822'; } /* '' */
 .icon-check:before { content: '\e823'; } /* '' */
 .icon-check-empty:before { content: '\e824'; } /* '' */
+.icon-chart-line:before { content: '\e825'; } /* '' */
+.icon-chart-bar:before { content: '\e826'; } /* '' */

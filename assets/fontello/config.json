@@ -109,6 +109,12 @@
       "src": "entypo"
     },
     {
+      "uid": "7184d8171b6a9b18eabbace94cca21db",
+      "css": "chart-line",
+      "code": 59429,
+      "src": "entypo"
+    },
+    {
       "uid": "d94334f23acba022bfd68e49d76b31bb",
       "css": "github",
       "code": 59409,
@@ -173,6 +179,12 @@
       "css": "instagram",
       "code": 59410,
       "src": "entypo"
+    },
+    {
+      "uid": "c46c42ae95f46394bd2f9c9a9cc5f768",
+      "css": "chart-bar",
+      "code": 59430,
+      "src": "mfglabs"
     },
     {
       "uid": "e4b799ca3860a8276dba05b11d7e13db",

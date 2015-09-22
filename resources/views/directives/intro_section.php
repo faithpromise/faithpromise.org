@@ -35,9 +35,16 @@ if ($directive['execution_mode'] == 'end'):
             <?php if (count($args["buttons"])): ?>
                 <p class="IntroSection-buttons">
                     <?php foreach ($args["buttons"] as $button):
-                        $button['target'] = isset($button['target']) ? $button['target'] : '_self';
+
+                        $tag = isset($button['url']) ? 'a' : 'span';
+                        $button['attributes'] = isset($button['attributes']) ? $button['attributes'] : '';
+                        if (isset($button['url'])) {
+                            $button['attributes'] .= ' href="' . $button['url'] . '"';
+                            $button['attributes'] .= ' target="' . (isset($button['target']) ? $button['target'] : '_self') . '"';
+                        }
+
                         ?>
-                        <a class="Button IntroSection-button" href="<?= $button["url"]; ?>" target="<?= $button["target"]; ?>"><?= $button["title"]; ?></a>
+                        <<?= $tag ?> class="Button IntroSection-button" <?= $button['attributes']; ?>><?= $button["title"]; ?></<?= $tag ?>>
                     <?php endforeach; ?>
                 </p>
             <?php endif; ?>
