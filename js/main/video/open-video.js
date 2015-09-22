@@ -14,54 +14,72 @@
             },
             link: function(scope, elem) {
                 angular.element(elem).on('click', function() {
-                    console.log('clickity');
                     scope.vm.open_popup();
                 });
             }
         };
     }
 
-    Controller.$inject = ['$modal', '$http'];
+    Controller.$inject = ['$modal', 'videosService', 'vimeoService'];
 
-    function Controller($modal, $http) {
-
-        console.log('yay!');
+    function Controller($modal, videosService, vimeoService) {
 
         var vm = this;
         vm.open_popup = open_popup;
 
-        init();
+        function open_popup() {
 
-        function init() {
+            $modal.open({
+                animation: false,
+                backdrop: 'static',
+                controller: modalController,
+                controllerAs: 'vm',
+                templateUrl: '/build/js/main/video/video-popup.html',
+                windowClass: 'VideoPopup-modal',
+                backdropClass: 'VideoPopup-backdrop',
+                resolve: {
+                    video_id: function() {
+                        return vm.openVideo;
+                    },
+                    videoService: function() {
+                        return videosService;
+                    },
+                    vimeoService: function() {
+                        return vimeoService;
+                    }
+                }
+            });
 
         }
 
-        function open_popup() {
+    }
 
-            var endpoint = 'http://vimeo.com/api/v2/video/' + vm.openVideo + '.json?callback=JSON_CALLBACK';
+    modalController.$inject = ['$modalInstance', 'video_id', 'videosService', 'vimeoService'];
 
-            $http.jsonp(endpoint).then(function(result) {
+    function modalController($modalInstance, video_id, videoService, vimeoService) {
 
-                vm.video = result.data[0];
+        var vm = this;
 
-                $modal.open({
-                    animation: true,
-                    backdrop: 'static',
-                    controller: 'videoPopup',
-                    templateUrl: '/build/js/main/video/video-popup.html',
-                    resolve: {
-                        video: function() {
-                            return {
-                                vimeo_id: vm.openVideo,
-                                title: 'foo',
-                                plays: vm.video.stats_number_of_plays
-                            };
-                        }
-                    }
+        init();
+
+        vm.close = close;
+
+        function init() {
+
+            videoService.find(video_id).then(function(result) {
+
+                vm.video = result.data;
+
+                return vimeoService.find(vm.video.vimeo_id).then(function(data) {
+                    vm.vimeo = data;
                 });
 
             });
 
+        }
+
+        function close() {
+            $modalInstance.close();
         }
 
     }

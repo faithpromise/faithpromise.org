@@ -53,7 +53,7 @@
 
                 <div class="HeroVideo-buttons">
                     @if ($video->vimeo_id)
-                        <span class="HeroVideo-button" open-video="{{ $video->vimeo_id }}"><i class="icon-play"></i></span>
+                        <span class="HeroVideo-button" open-video="{{ $video->id }}"><i class="icon-play"></i></span>
                     @endif
                     @if ($video->audio_file)
                         <a class="HeroVideo-button" href="{{ $site['audio_url'] }}{{ $video->audio_file }}" target="_blank">
