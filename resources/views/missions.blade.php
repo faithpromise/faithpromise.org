@@ -2,7 +2,15 @@
 
 @section('page')
 
-    @introsection(['title' => 'Faith Promise Missions', 'class' => '', 'image' => ''])
+    @introsection([
+        'title' => 'Faith Promise Missions'
+        ,'buttons' => [
+            [
+                'title' => 'Missions Trip Application',
+                'url' => 'http://form.jotform.us/form/50203894266153'
+            ]
+        ]
+    ])
     <p>Each year our church plans multiple international mission trips. You can find contact information and details by selecting a trip below. All donations made to Faith Promise Church to support mission trips are fully tax deductible.</p>
     <p>We also engage the world around us, sharing the hope of Christ in tangible ways. Below you will find several opportunities to serve our community.</p>
     @endintrosection
