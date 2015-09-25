@@ -14,7 +14,8 @@
     "intervention/image": "^2.3",
     "intervention/imagecache": "^2.3",
     "cviebrock/eloquent-sluggable": "^3.0",
-    "doctrine/dbal": "~2.3"
+    "doctrine/dbal": "~2.3",
+    "vtalbot/markdown": "^2.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
