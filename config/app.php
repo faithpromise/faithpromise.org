@@ -145,6 +145,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        VTalbot\Markdown\MarkdownServiceProvider::class,
 
     ],
 
@@ -194,6 +195,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
+        'Markdown'  => VTalbot\Markdown\Facades\Markdown::class,
 
     ],
 
