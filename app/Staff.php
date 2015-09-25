@@ -44,7 +44,7 @@ class Staff extends Model implements SluggableInterface {
     }
 
     public function getBioAttribute() {
-        return Markdown::string($this->getOriginal('bio'));
+        return trim(Markdown::string($this->getOriginal('bio')));
     }
 
     public function getEightBitPathAttribute() {
