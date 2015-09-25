@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
+use VTalbot\Markdown\Facades\Markdown;
 
 class Staff extends Model implements SluggableInterface {
 
@@ -43,10 +44,7 @@ class Staff extends Model implements SluggableInterface {
     }
 
     public function getBioAttribute() {
-        $str = preg_replace('/\n(\s*\n)+/', '</p><p>', trim($this->getOriginal('bio')));
-        $str = preg_replace('/\n/', '<br>', $str);
-        $str = strlen($str) ? '<p>'.$str.'</p>' : '';
-        return $str;
+        return Markdown::string($this->getOriginal('bio'));
     }
 
     public function getEightBitPathAttribute() {
