@@ -35,7 +35,9 @@ return array(
     |--------------------------------------------------------------------------
     */
 
-    'add_routes' => true,
+    // At this time (9/25/15) routes cannot be compiled when this is true
+    // because they're using closures.
+    'add_routes' => false,
 
     /*
     |--------------------------------------------------------------------------
