@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -10,15 +9,9 @@ class AppServiceProvider extends ServiceProvider {
     /**
      * Bootstrap any application services.
      *
-     * @param Request $request
+     * return void
      */
-    public function boot(Request $request) {
-
-        $in_app = ($request->input('in_app') !== null) || $request->cookie('in_app') !== null;
-
-        view()->share('in_app', $in_app);
-        view()->share('site', config('site'));
-        view()->share('nav', config('nav'));
+    public function boot() {
 
         // BackgroundSection
         Blade::directive('bgsection', function ($expression) {

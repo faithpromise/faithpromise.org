@@ -143,6 +143,7 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         VTalbot\Markdown\MarkdownServiceProvider::class,
