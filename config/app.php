@@ -147,6 +147,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         VTalbot\Markdown\MarkdownServiceProvider::class,
+        Huddle\Zendesk\Providers\ZendeskServiceProvider::class,
 
     ],
 
@@ -161,7 +162,7 @@ return [
     |
     */
 
-    'aliases' => [
+    'aliases'         => [
 
         'App'       => Illuminate\Support\Facades\App::class,
         'Artisan'   => Illuminate\Support\Facades\Artisan::class,
@@ -197,6 +198,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Markdown'  => VTalbot\Markdown\Facades\Markdown::class,
+        'Zendesk'   => Huddle\Zendesk\Facades\Zendesk::class,
 
     ],
 
