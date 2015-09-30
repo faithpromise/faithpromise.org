@@ -47,3 +47,6 @@ Route::get('/retirees', 'RedirectController@retirees');
 Route::get('/candidate', 'RedirectController@candidates');
 Route::get('/candidates', 'RedirectController@candidates');
 Route::get('/rsvp', 'RedirectController@rsvp');
+
+// Staff
+Route::get('/staff/macy-deel', 'RedirectController@macyScarbrough');

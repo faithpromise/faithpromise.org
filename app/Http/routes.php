@@ -11,7 +11,10 @@
 |
 */
 
+require "routes_redirects.php";
+
 Route::get('/', 'MainController@index');
+Route::get('/support-requests', 'SupportRequestsController@index');
 
 // Sermons
 Route::get('/sermons', ['as' => 'sermons', 'uses' => 'SermonsController@index']);
@@ -114,4 +117,3 @@ Route::get('/migrate/volunteer', ['as' => 'migrateVolunteer', 'uses' => 'Migrate
 
 require "routes_admin.php";
 require "routes_api.php";
-require "routes_redirects.php";
