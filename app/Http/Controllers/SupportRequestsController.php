@@ -9,7 +9,9 @@ class SupportRequestsController extends BaseController {
 
     public function index() {
 
-        $tickets = Zendesk::tickets()->findAll();
+        $tickets = Zendesk::users()->search([
+            'query' => 'ginam@faithpromise.org'
+        ]);
         dd($tickets);
 
     }
