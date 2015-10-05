@@ -3,13 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\EventEndsTrait;
+use App\ExpiredTrait;
 
 class StudyTime extends Model {
 
-    use EventEndsTrait;
+    use ExpiredTrait;
 
-    protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at'];
+    protected $dates = ['starts_at', 'expire_at', 'created_at', 'updated_at'];
 
     public function study() {
         return $this->belongsTo('App\Study');
