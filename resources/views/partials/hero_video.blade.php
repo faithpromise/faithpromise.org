@@ -60,8 +60,8 @@
                             <i class="icon-headphones"></i>
                         </a>
                     @endif
-                    <span class="Dropdown-wrapper" dropdown>
-                    <span class="HeroVideo-button" dropdown-toggle>
+                    <span class="Dropdown-wrapper" uib-dropdown>
+                    <span class="HeroVideo-button" uib-dropdown-toggle>
                         <i class="icon-share"></i> Share
                     </span>
                     <div class="Dropdown Dropdown--light Dropdown--bottomLeft">

@@ -72,11 +72,11 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
 
                         <ul class="Nav-menu">
                             @foreach ($nav as $topnav)
-                                <li class="Nav-item" dropdown>
+                                <li class="Nav-item" uib-dropdown>
                                     @if (!isset($topnav['subnav']))
                                         <a class="Nav-link" href="{{ $topnav['url'] }}">{{ $topnav['title'] }}</a>
                                     @else
-                                        <span class="Nav-link Nav-link--dropdown" dropdown-toggle>{{ $topnav['title'] }}</span>
+                                        <span class="Nav-link Nav-link--dropdown" uib-dropdown-toggle>{{ $topnav['title'] }}</span>
                                         <ul class="NavDropdown">
                                             @foreach ($topnav['subnav'] as $subnav)
                                                 <li class="NavDropdown-item">

@@ -38,8 +38,8 @@
                         <li class="Nav-item">
                             <a nav-button class="Nav-link" href="/admin/staff">Staff</a>
                         </li>
-                        <li class="Nav-item" dropdown>
-                            <span nav-button class="Nav-link Nav-link--dropdown" dropdown-toggle>More</span>
+                        <li class="Nav-item" uib-dropdown>
+                            <span nav-button class="Nav-link Nav-link--dropdown" uib-dropdown-toggle>More</span>
                             <ul class="NavDropdown">
                                 <li class="NavDropdown-item">
                                     <a nav-button class="NavDropdown-link" href="/admin/ministries">Ministries</a>
