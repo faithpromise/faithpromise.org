@@ -369,6 +369,7 @@ module.exports = function (grunt) {
                         './**/*.*',
                         './artisan',
                         './storage/.gitkeep', // Note: keep storage dir or Envoyer will not create symlink
+                        './bootstrap/cache/.gitkeep', // Note: director required for Artisan when deploying
                         // Exclude
                         '!./**/*.log',
                         '!./assets/**/*',
