@@ -6,10 +6,32 @@ use App\Event;
 use App\FaithPromise\Stylesheet;
 use App\Series;
 use App\Team;
+use F1\API;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
 
 class MainController extends BaseController {
+
+    public function f1test() {
+
+        session_start();
+
+        $f1 = new API([
+            'key'     => env('F1_KEY'),
+            'secret'  => env('F1_SECRET'),
+            'baseUrl' => env('F1_API_URI')
+        ]);
+
+//        $f1->login2ndParty(env('F1_USERNAME'), env('F1_PASSWORD'));
+        $f1->login3rdParty($callback = "http://faithpromise.192.168.10.10.xip.io/f1-test");
+
+        $request = $f1->households()->search(array(
+            'lastUpdatedDate' => '2015-10-01',
+        ))->get();
+
+        dd($request);
+
+    }
 
     public function index() {
 

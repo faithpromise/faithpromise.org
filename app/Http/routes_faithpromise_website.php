@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/f1-test', 'MainController@f1test');
+
 Route::get('/', 'MainController@index');
 Route::get('/support-requests', 'SupportRequestsController@index');
 
