@@ -3,6 +3,8 @@
 .idea
 /_release/*
 !/_release/.gitkeep
+bootstrap/cache/*
+!bootstrap/cache/.gitkeep
 /vendor
 /node_modules
 /bower_components
