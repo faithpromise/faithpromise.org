@@ -9,10 +9,10 @@ class SupportRequestsController extends BaseController {
 
     public function index() {
 
-        $tickets = Zendesk::users()->search([
-            'query' => 'ginam@faithpromise.org'
-        ]);
-        dd($tickets);
+//        $tickets = Zendesk::users()->search([
+//            'query' => 'ginam@faithpromise.org'
+//        ]);
+        return view('support-requests');
 
     }
 
