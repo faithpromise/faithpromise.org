@@ -75,6 +75,7 @@ Route::post('/serve/opportunities', ['as' => 'sendVolunteerMessage', 'uses' => '
 Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
 Route::get('/beliefs-and-values', ['as' => 'beliefs', 'uses' => 'MainController@defaultPage']);
 Route::get('/h4h', ['as' => 'h4h', 'uses' => 'MainController@defaultPage']);
+Route::get('/fasting', ['as' => 'fasting', 'uses' => 'MainController@defaultPage']);
 Route::get('/weddings', ['as' => 'weddings', 'uses' => 'MainController@defaultPage']);
 Route::get('/stephen', ['as' => 'stephen', 'uses' => 'MainController@defaultPage']);
 Route::get('/summit', ['as' => 'summit', 'uses' => 'MainController@defaultPage']);
