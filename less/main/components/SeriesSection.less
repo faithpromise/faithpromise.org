@@ -1,6 +1,5 @@
 .SeriesSection {
   &:extend(.Section all);
-  &:extend(.Section--center all);
 }
 
 .SeriesSection-container {
@@ -15,10 +14,12 @@
 
 .SeriesSection-title {
   &:extend(.Section-title all);
-  &:extend(.Section-title--push all);
-  text-align: center;
 
   &:empty {
     display: none;
   }
+}
+
+.SeriesSection-podcastLink {
+  &:extend(.Section-title--push all);
 }

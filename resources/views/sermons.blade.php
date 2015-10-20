@@ -12,6 +12,7 @@
         <div class="SeriesSection">
             <div class="SeriesSection-container">
                 <h2 class="SeriesSection-title text-left">Past Sermon Series</h2>
+                <p class="SeriesSection-podcastLink">Watch past sermons here, or subscribe to our <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=75485008">podcast on iTunes</a>.</p>
                 <div class="SeriesGallery">
                     <ul class="SeriesGallery-list">
                         <?php $next_series_starts = null; ?>
