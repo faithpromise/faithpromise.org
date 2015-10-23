@@ -20,7 +20,7 @@
         'class' => 'BackgroundSection--right',
         'image' => 'images/missions/love-starts-here-offset-wide.jpg'
     ])
-    <p>Good things happen in groups that make serving together a priority. Leaders, download the <a class="no-wrap" href="{{ doc_url('love-starts-here/Love-Starts-Here-Leader-Prep.pdf') }}">Leader Guide</a> and <a class="no-wrap" href="{{ doc_url('love-starts-here/Love-Starts-Here-Group-Discussion.pdf') }}">Group Discussion Guide</a>. When you've decided how you'll serve, please take a moment and <a class="no-wrap" href="http://faithpromiseweb.com/forms/view.php?id=3344">let us know</a>.</p>
+    <p>Good things happen when groups make serving together a priority. Leaders, download the <a class="no-wrap" href="{{ doc_url('Love-Starts-Here-Toolkit.pdf') }}">Leader Toolkit</a> and check out these <a href="http://vols.pt/4MgN88">pre-planned opportunities</a>. Then, please take a moment and <a class="no-wrap" href="http://faithpromiseweb.com/forms/view.php?id=3344">let us know</a> how you're serving.</p>
     @endbgsection
 
     @cardsection(['title' => 'Upcoming Trips', 'class' => 'Section--lightGrey', 'cards' => $locations, 'no_text' => true])
