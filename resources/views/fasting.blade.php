@@ -33,7 +33,7 @@ $faq = [
 @section('page')
 
     @introsection(['title' => 'Thoughts on Fasting'])
-    <p>From time to time, Pastor Chris will call our church to a time of fasting. The specific reason may vary slightly for each instance, but in general our fasting always centers around Faith Promise doing our part in expanding God's kingdom, seeing people saved, and asking God to do works of restoration and healing in people's lives..</p>
+    <p>From time to time, Pastor Chris will call our church to a time of fasting. The specific reason may vary slightly for each instance, but in general our fasting always centers around Faith Promise doing our part in expanding God's kingdom, seeing people saved, and asking God to do works of restoration and healing in people's lives.</p>
     @endintrosection
 
     @faqsection(['title' => 'Common Questions', 'faq' => $faq, 'class' => 'Section--lightGrey'])
