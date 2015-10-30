@@ -6,7 +6,7 @@ $faq = [
                 'a' => '<p>In the life of the Christian, fasting is giving up something as an act of devotion to Jesus. Generally, fasting involves giving up all food and only drinking water or juice for the duration of the fast, but some people will choose a variation of this - eating no solid foods, eating only fruits and vegetables, or giving up a particular kind of food for the duration of the fast.</p><p>Fasting is a spiritual discipline that every believer should have in their lives. Jesus did not say "if you fast." He said "when you fast." (' . bible_verses('Matthew 6:16') . ')</p>'
         ],
         (object)[
-                'q' => 'How can i keep from thinking about food all the time?',
+                'q' => 'How can I keep from thinking about food all the time?',
                 'a' => '
                     <p>During the first few days of the fast, it\'s natural to think about food more often than normal. Your body will tell you that you\'re starving to death, but you\'re not. Instead, you\'re breaking the patterns of eating that your body is accustomed to. Try to use these hunger pains as an opportunity to focus your mind and attention back toward God.</p>
                     <p>Each time you find yourself absentmindedly thinking of food, make the conscious decision to remember God and pray to Him.</p>
