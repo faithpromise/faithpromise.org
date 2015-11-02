@@ -2,6 +2,8 @@
 
 @section('page')
 
+    <!-- Studies count: {{ count($studies) }} -->
+
     @if (empty($studies))
 
         @introsection(['title' => '', 'class' => '', 'image' => ''])
