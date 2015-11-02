@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFellowshiponeUserIdToUsers extends Migration {
+class AddFellowshipOneUserIdToUsers extends Migration {
     /**
      * Run the migrations.
      *
@@ -11,7 +11,7 @@ class AddFellowshiponeUserIdToUsers extends Migration {
      */
     public function up() {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('fellowshipone_user_id')->unsigned()->nullable()->after('remember_token');
+            $table->integer('fellowship_one_user_id')->unsigned()->nullable()->after('remember_token');
         });
     }
 
@@ -22,7 +22,7 @@ class AddFellowshiponeUserIdToUsers extends Migration {
      */
     public function down() {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('fellowshipone_user_id');
+            $table->dropColumn('fellowship_one_user_id');
         });
     }
 }
