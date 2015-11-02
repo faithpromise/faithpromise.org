@@ -2,9 +2,7 @@
 
 @section('page')
 
-    <!-- Studies count: {{ count($studies) }} -->
-
-    @if (empty($studies))
+    @if (count($studies) === 0)
 
         @introsection(['title' => '', 'class' => '', 'image' => ''])
         <p>There currently aren't any Bible studies scheduled. However, we plan new studies periodically throughout the year.</p>
