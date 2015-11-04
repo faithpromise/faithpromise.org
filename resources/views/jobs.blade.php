@@ -1,12 +1,5 @@
 <?php
 
-$finance = new stdClass();
-$finance->card_title = 'Finance Assistant';
-$finance->card_subtitle = 'Full Time';
-$finance->card_text = 'The Finance Assistant is responsible for the administrative functions of the Finance and Human Resources departments...';
-$finance->card_url = doc_url('jobs/finance-assistant.pdf');
-$finance->card_url_text = 'Download PDF';
-
 $childcare = new stdClass();
 $childcare->card_title = 'Childcare Team Member';
 $childcare->card_subtitle = 'Part-time';
@@ -14,7 +7,7 @@ $childcare->card_text = 'The Childcare Team Member provides support to other min
 $childcare->card_url = doc_url('jobs/childcare-team-member.pdf');
 $childcare->card_url_text = 'Download PDF';
 
-$openings = collect([$finance, $childcare]);
+$openings = collect([$childcare]);
 
 ?>
 
