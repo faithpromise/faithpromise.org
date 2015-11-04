@@ -39,18 +39,6 @@ $ways_to_give = collect([
         (object)[
                 'q' => 'Mail',
                 'a' => '<p>You can mail your offering check to the following address:</p><p>Faith Promise Church<br>10740 Faith Promise Lane<br>Knoxville, TN 37931</p>'
-        ],
-        (object)[
-                'q' => '',
-                'a' => ''
-        ],
-        (object)[
-                'q' => '',
-                'a' => ''
-        ],
-        (object)[
-                'q' => '',
-                'a' => ''
         ]
 ]);
 
