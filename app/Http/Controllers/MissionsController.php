@@ -15,11 +15,10 @@ class MissionsController extends BaseController {
     public function index() {
         $ministry = Ministry::whereSlug('missions')->first();
         $staff = $ministry->staff;
-        $events = Event::where('ministry_id', '=', $ministry->id)->get();
         $locations = MissionLocation::upcoming()->get();
         $missionaries = Missionary::with('missionlocation')->get();
 
-        return view('missions', ['events' => $events, 'missionaries' => $missionaries, 'staff' => $staff, 'locations' => $locations]);
+        return view('missions', ['ministry' => $ministry, 'missionaries' => $missionaries, 'staff' => $staff, 'locations' => $locations]);
     }
 
     public function location($location_slug) {
