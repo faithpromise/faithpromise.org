@@ -7,6 +7,12 @@
   ],
   "license": "MIT",
   "type": "project",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/faithpromise/fp-shared"
+    }
+  ],
   "require": {
     "php": ">=5.5.9",
     "laravel/framework": "5.1.*",
@@ -16,7 +22,8 @@
     "cviebrock/eloquent-sluggable": "^3.0",
     "doctrine/dbal": "~2.3",
     "vtalbot/markdown": "^2.0",
-    "huddledigital/zendesk-laravel": "~1.0"
+    "huddledigital/zendesk-laravel": "~1.0",
+    "faithpromise/fp-shared": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
@@ -60,5 +67,6 @@
   },
   "config": {
     "preferred-install": "dist"
-  }
+  },
+  "minimum-stability": "dev"
 }
