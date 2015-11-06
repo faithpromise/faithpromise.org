@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Ministry;
+use FaithPromise\Shared\Models\Ministry;
 use Illuminate\Support\Facades\Route;
 use View;
 use Illuminate\Routing\Controller as BaseController;

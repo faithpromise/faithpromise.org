@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Campus;
-use App\Event;
-use App\MissionLocation;
-use App\Series;
-use App\Staff;
-use App\Video;
+use FaithPromise\Shared\Models\Campus;
+use FaithPromise\Shared\Models\Event;
+use FaithPromise\Shared\Models\MissionLocation;
+use FaithPromise\Shared\Models\Series;
+use FaithPromise\Shared\Models\Staff;
+use FaithPromise\Shared\Models\Video;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
 

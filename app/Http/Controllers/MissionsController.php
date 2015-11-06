@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
-use App\Ministry;
-use App\Missionary;
-use App\MissionTrip;
-use App\MissionLocation;
-use App\Organization;
+use FaithPromise\Shared\Models\Event;
+use FaithPromise\Shared\Models\Ministry;
+use FaithPromise\Shared\Models\Missionary;
+use FaithPromise\Shared\Models\MissionTrip;
+use FaithPromise\Shared\Models\MissionLocation;
+use FaithPromise\Shared\Models\Organization;
 use Illuminate\Routing\Controller as BaseController;
 
 class MissionsController extends BaseController {

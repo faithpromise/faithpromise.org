@@ -1,6 +1,6 @@
 <?php
 
-use App\Campus;
+use FaithPromise\Shared\Models\Campus;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 

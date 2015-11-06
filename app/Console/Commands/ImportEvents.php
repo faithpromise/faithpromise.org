@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\CalendarEvent;
+use FaithPromise\Shared\Models\CalendarEvent;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use GuzzleHttp\Client;

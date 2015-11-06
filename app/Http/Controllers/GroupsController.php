@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Study;
-use App\StudyTime;
-use App\Ministry;
-use App\VolunteerPosition;
+use FaithPromise\Shared\Models\Study;
+use FaithPromise\Shared\Models\StudyTime;
+use FaithPromise\Shared\Models\Ministry;
+use FaithPromise\Shared\Models\VolunteerPosition;
 use Illuminate\Routing\Controller as BaseController;
 
 class GroupsController extends BaseController {

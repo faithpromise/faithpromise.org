@@ -8,8 +8,8 @@
 
 namespace App\Http\Controllers;
 
-use App\CalendarEvent;
-use App\Event;
+use FaithPromise\Shared\Models\CalendarEvent;
+use FaithPromise\Shared\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;
 

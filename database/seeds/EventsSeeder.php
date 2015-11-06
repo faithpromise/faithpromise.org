@@ -1,6 +1,6 @@
 <?php
 
-use App\Ministry;
+use FaithPromise\Shared\Models\Ministry;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 

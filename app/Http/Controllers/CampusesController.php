@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Campus;
+use FaithPromise\Shared\Models\Campus;
 use Illuminate\Routing\Controller as BaseController;
 
 class CampusesController extends BaseController {

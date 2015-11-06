@@ -1,6 +1,6 @@
 <?php
 
-use App\MissionLocation;
+use FaithPromise\Shared\Models\MissionLocation;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 

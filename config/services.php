@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => App\User::class,
+        'model'  => FaithPromise\Shared\Models\User::class,
         'key'    => '',
         'secret' => '',
     ],

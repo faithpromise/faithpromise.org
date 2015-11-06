@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Ministry;
+use FaithPromise\Shared\Models\Ministry;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

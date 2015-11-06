@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\BiblePlan;
-use App\Campus;
-use App\Event;
-use App\Ministry;
-use App\Missionary;
-use App\MissionLocation;
-use App\MissionTrip;
-use App\Organization;
-use App\Series;
-use App\Staff;
+use FaithPromise\Shared\Models\BiblePlan;
+use FaithPromise\Shared\Models\Campus;
+use FaithPromise\Shared\Models\Event;
+use FaithPromise\Shared\Models\Ministry;
+use FaithPromise\Shared\Models\Missionary;
+use FaithPromise\Shared\Models\MissionLocation;
+use FaithPromise\Shared\Models\MissionTrip;
+use FaithPromise\Shared\Models\Organization;
+use FaithPromise\Shared\Models\Series;
+use FaithPromise\Shared\Models\Staff;
 use App\TagGroup;
-use App\Video;
-use App\Team;
-use App\VolunteerPosition;
-use App\VolunteerSkill;
+use FaithPromise\Shared\Models\Video;
+use FaithPromise\Shared\Models\Team;
+use FaithPromise\Shared\Models\VolunteerPosition;
+use FaithPromise\Shared\Models\VolunteerSkill;
 use Conner\Tagging\Tag;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
