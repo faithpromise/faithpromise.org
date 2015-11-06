@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6168194b498f2b6cd718f9b50b3142b5",
-    "content-hash": "2543facecd167334619a503a68c034d4",
+    "hash": "280205c1a4369d37e2985a2706c3da71",
+    "content-hash": "35dbbc45e6a95b83afd87ea0e454c64b",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -736,8 +736,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "../fp-shared/.git",
+                "url": "https://github.com/faithpromise/fp-shared.git",
                 "reference": "5350a8305d79e32c30551aee6b9a2b0c380db7aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/5350a8305d79e32c30551aee6b9a2b0c380db7aa",
+                "reference": "5350a8305d79e32c30551aee6b9a2b0c380db7aa",
+                "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "^3.0",
@@ -757,6 +763,10 @@
                 }
             ],
             "description": "Shared application logic",
+            "support": {
+                "source": "https://github.com/faithpromise/fp-shared/tree/master",
+                "issues": "https://github.com/faithpromise/fp-shared/issues"
+            },
             "time": "2015-11-06 16:55:01"
         },
         {
