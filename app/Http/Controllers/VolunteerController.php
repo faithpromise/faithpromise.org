@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Campus;
-use App\Ministry;
-use App\Staff;
-use App\VolunteerSkill;
+use FaithPromise\Shared\Models\Campus;
+use FaithPromise\Shared\Models\Ministry;
+use FaithPromise\Shared\Models\Staff;
+use FaithPromise\Shared\Models\VolunteerSkill;
 use App\Http\Requests\VolunteerPositionRequest;
 use Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;

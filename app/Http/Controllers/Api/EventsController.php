@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Event;
+use FaithPromise\Shared\Models\Event;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

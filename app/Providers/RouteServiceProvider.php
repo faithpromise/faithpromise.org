@@ -26,15 +26,15 @@ class RouteServiceProvider extends ServiceProvider {
 
         parent::boot($router);
 
-        $router->model('campus', 'App\Campus');
-        $router->model('study', 'App\Study');
-        $router->model('event', 'App\Event');
-        $router->model('organization', 'App\Organization');
-        $router->model('staff', 'App\Staff');
-        $router->model('series', 'App\Series');
+        $router->model('campus', 'FaithPromise\Shared\Models\Campus');
+        $router->model('study', 'FaithPromise\Shared\Models\Study');
+        $router->model('event', 'FaithPromise\Shared\Models\Event');
+        $router->model('organization', 'FaithPromise\Shared\Models\Organization');
+        $router->model('staff', 'FaithPromise\Shared\Models\Staff');
+        $router->model('series', 'FaithPromise\Shared\Models\Series');
         $router->bind('series_video', function($value, $route) {
             $series = $route->parameter('series');
-            return \App\Video::where('series_id', '=', $series->id)->where('slug', '=', $value)->first();
+            return \FaithPromise\Shared\Models\Video::where('series_id', '=', $series->id)->where('slug', '=', $value)->first();
         });
     }
 

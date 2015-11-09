@@ -1,6 +1,6 @@
 <?php
 
-use App\Ministry;
+use FaithPromise\Shared\Models\Ministry;
 use Illuminate\Database\Seeder;
 
 class MinistriesSeeder extends Seeder {

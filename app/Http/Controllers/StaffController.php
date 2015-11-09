@@ -9,9 +9,9 @@
 namespace App\Http\Controllers;
 
 use App\FaithPromise\Stylesheet;
-use App\Staff;
-use App\Campus;
-use App\Team;
+use FaithPromise\Shared\Models\Staff;
+use FaithPromise\Shared\Models\Campus;
+use FaithPromise\Shared\Models\Team;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Response;

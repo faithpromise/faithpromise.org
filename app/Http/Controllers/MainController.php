@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use FaithPromise\Shared\Models\Event;
 use App\FaithPromise\Stylesheet;
-use App\Series;
-use App\Team;
+use FaithPromise\Shared\Models\Series;
+use FaithPromise\Shared\Models\Team;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Video;
+use FaithPromise\Shared\Models\Video;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

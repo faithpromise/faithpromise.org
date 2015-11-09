@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\BiblePlan;
+use FaithPromise\Shared\Models\BiblePlan;
 use App\FaithPromise\BibleApi;
 use Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;

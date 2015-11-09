@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\VolunteerPosition;
+use FaithPromise\Shared\Models\VolunteerPosition;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

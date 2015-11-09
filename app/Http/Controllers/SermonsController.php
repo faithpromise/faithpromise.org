@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Series;
-use App\Video;
+use FaithPromise\Shared\Models\Series;
+use FaithPromise\Shared\Models\Video;
 use Illuminate\Routing\Controller as BaseController;
 
 class SermonsController extends BaseController {

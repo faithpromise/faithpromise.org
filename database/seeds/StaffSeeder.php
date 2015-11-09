@@ -1,7 +1,7 @@
 <?php
 
-use App\Staff;
-use App\Campus;
+use FaithPromise\Shared\Models\Staff;
+use FaithPromise\Shared\Models\Campus;
 use Carbon\Carbon;
 use Flynsarmy\CsvSeeder\CsvSeeder;
 
@@ -40,7 +40,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'executive')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'executive')->first()->id);
 
 
         $staff_member = new Staff([
@@ -57,8 +57,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'executive')->first()->id);
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'executive')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -75,9 +75,9 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'executive')->first()->id);
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'executive')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -95,7 +95,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -113,7 +113,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -130,7 +130,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -148,8 +148,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -167,7 +167,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'pastors')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'pastors')->first()->id);
 
 
         $staff_member = new Staff([
@@ -185,8 +185,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -203,9 +203,9 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'missions')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'missions')->first()->id);
 
 
         $staff_member = new Staff([
@@ -223,8 +223,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -242,8 +242,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -260,7 +260,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -278,8 +278,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'pastors')->first()->id);
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'pastors')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -297,8 +297,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -316,8 +316,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -334,8 +334,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -353,8 +353,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'executive')->first()->id);
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'leadership')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'executive')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'leadership')->first()->id);
 
 
         $staff_member = new Staff([
@@ -371,7 +371,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -388,7 +388,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -405,8 +405,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -423,7 +423,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'leadership')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'leadership')->first()->id);
 
 
         $staff_member = new Staff([
@@ -441,9 +441,9 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -461,8 +461,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -479,7 +479,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -497,8 +497,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -516,8 +516,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -535,7 +535,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'pastors')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'pastors')->first()->id);
 
 
         $staff_member = new Staff([
@@ -553,8 +553,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -571,8 +571,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -590,8 +590,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -608,9 +608,9 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'missions')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'missions')->first()->id);
 
 
         $staff_member = new Staff([
@@ -628,7 +628,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -646,8 +646,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -665,8 +665,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -684,7 +684,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -701,8 +701,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'pastors')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'celebrate')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'pastors')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'celebrate')->first()->id);
 
 
         $staff_member = new Staff([
@@ -720,7 +720,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -737,8 +737,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'care')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'care')->first()->id);
 
 
         $staff_member = new Staff([
@@ -755,8 +755,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'care')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'care')->first()->id);
 
 
         $staff_member = new Staff([
@@ -774,9 +774,9 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'celebrate')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'celebrate')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -794,7 +794,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'pastors')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'pastors')->first()->id);
 
 
         $staff_member = new Staff([
@@ -811,8 +811,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -830,8 +830,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -848,8 +848,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -866,8 +866,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -885,8 +885,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -904,8 +904,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -922,8 +922,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -940,8 +940,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -958,8 +958,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -977,8 +977,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -995,8 +995,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1013,8 +1013,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1032,8 +1032,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpstudents')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1051,7 +1051,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1068,8 +1068,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1087,8 +1087,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpkids')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpkids')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpkids')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1106,8 +1106,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'groups')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'groups')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'groups')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'groups')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1125,8 +1125,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'worship')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'worship')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'worship')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'worship')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1143,7 +1143,7 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'administration')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'administration')->first()->id);
 
 
         $staff_member = new Staff([
@@ -1160,8 +1160,8 @@ class StaffSeeder extends CsvSeeder
             'updated_at' => Carbon::now(),
         ]);
         $staff_member->save();
-        $staff_member->teams()->attach(\App\Team::where('slug', '=', 'fpstudents')->first()->id);
-        $staff_member->ministries()->attach(\App\Ministry::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->teams()->attach(\FaithPromise\Shared\Models\Team::where('slug', '=', 'fpstudents')->first()->id);
+        $staff_member->ministries()->attach(\FaithPromise\Shared\Models\Ministry::where('slug', '=', 'fpstudents')->first()->id);
 
     }
 }
