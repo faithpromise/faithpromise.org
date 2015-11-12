@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Assets;
+namespace App\Http\Controllers;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Input;
