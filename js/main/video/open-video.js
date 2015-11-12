@@ -20,7 +20,7 @@
         };
     }
 
-    Controller.$inject = ['$modal', 'videosService', 'vimeoService'];
+    Controller.$inject = ['$uibModal', 'videosService', 'vimeoService'];
 
     function Controller($modal, videosService, vimeoService) {
 
