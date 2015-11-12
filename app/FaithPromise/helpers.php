@@ -16,7 +16,7 @@ function asset_exists($path) {
     $exists = is_file(asset_path($path));
 
     if (! $exists) {
-        Log::critical('Image not found: ' . $path . '. May need to upload it to assets.faithpromise.org');
+        Log::critical('Image not found: ' . $path . '. May need to upload it.');
     }
 
     return $exists;

@@ -233,7 +233,7 @@ module.exports = function (grunt) {
                     options: {
                         patterns: [
                             {
-                                match: 'assets.faithpromise.192.168.10.10.xip.io',
+                                match: 'faithpromise.192.168.10.10.xip.io',
                                 replacement: 'd3m6gouty6q7nm.cloudfront.net'
                             }
                         ],

@@ -57,7 +57,6 @@ Route::get('/love-local/{organization}', ['as' => 'localOutreachOrganization', '
 // Staff
 Route::get('/staff', ['as' => 'staff', 'uses' => 'StaffController@index']);
 Route::get('/staff/directory', ['as' => 'staffDirectory', 'uses' => 'StaffController@directory']);
-Route::get('/staff/8bit.json', 'StaffController@eightBitJson');
 Route::get('/staff/{staff}', ['as' => 'staffDetail', 'uses' => 'StaffController@detail']);
 
 // Next Steps
@@ -88,6 +87,13 @@ Route::get('/bible-plan/{month}-{day}', ['as' => 'biblePlanDay', 'uses' => 'Bibl
 
 // iCampus
 Route::get('/countdown.js', ['as' => 'countdown', 'uses' => 'InternetCampusController@countdown']);
+
+// Images
+Route::get('/staff-8bit.css', 'Assets\EightBitController@index');
+Route::get('/{display_size}/{image_size}/{image_path}', 'Assets\ImageResizeController@index')
+    ->where('display_size', '(sm|md|lg|xl)')
+    ->where('image_size', '(full|half|third|quarter)')
+    ->where('image_path', '.*');
 
 // Sitemap JSON for UNCSS
 Route::get('/_sitemap.json', 'SiteMapController@index');

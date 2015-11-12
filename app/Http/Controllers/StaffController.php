@@ -75,24 +75,4 @@ class StaffController extends BaseController {
         ]);
 
     }
-
-    public function eightBitJson() {
-        $staff_8bit = $this->getEightBit()->lists('slug')->toArray();
-
-        return response()->json($staff_8bit);
-    }
-
-    private function getEightBit() {
-        $cache_key = 'staff_8bit_1';
-        $staff_8bit = Cache::remember($cache_key, 0, function () {
-            $staff = Staff::select('slug')->get();
-            $result = $staff->filter(function ($item) {
-                return asset_exists($item->{"EightBitPath"});
-            });
-
-            return $result;
-        });
-
-        return $staff_8bit;
-    }
 }

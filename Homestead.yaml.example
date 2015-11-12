@@ -13,15 +13,9 @@ folders:
     - map: ~/websites/faithpromise.org
       to: /home/vagrant/faithpromise.org
 
-    - map: ~/websites/assets.faithpromise.org
-      to: /home/vagrant/assets.faithpromise.org
-
 sites:
     - map: faithpromise.192.168.10.10.xip.io
       to: /home/vagrant/faithpromise.org/public
-
-    - map: assets.faithpromise.192.168.10.10.xip.io
-      to: /home/vagrant/assets.faithpromise.org/public
 
     - map: fpstudents.192.168.10.10.xip.io
       to: /home/vagrant/faithpromise.org/public
