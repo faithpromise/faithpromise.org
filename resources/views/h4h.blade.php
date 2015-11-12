@@ -2,10 +2,14 @@
 
 @section('page')
 
-    @videosection(['title' => 'Heart for the Harvest', 'video' => '137880687', 'buttons' => [
+    @videosection(['title' => 'Heart for the Harvest', 'video' => '145143741', 'buttons' => [
         [
             'title' => 'Give Online',
             'url' => route("give")
+        ],
+        [
+            'title' => 'Noncash Donations',
+            'url' => 'https://give.idonate.com/nonprofit-donate/faith-promise-church/'
         ]
     ]])
 
