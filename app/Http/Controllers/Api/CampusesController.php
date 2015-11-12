@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Campus;
+use FaithPromise\Shared\Models\Campus;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
