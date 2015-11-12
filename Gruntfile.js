@@ -381,8 +381,13 @@ module.exports = function (grunt) {
                         '!./temp/**/*',
                         '!./vendor/**/*',
                         '!./bower.json',
+                        '!./Homestead.yaml.example',
                         '!./Gruntfile.js',
                         '!./package.json',
+                        '!./phpspec.yml',
+                        '!./phpunit.xml',
+                        '!./readme.md',
+                        '!./server.php',
                         '!./TODO.txt'
                     ],
                     //src: [
