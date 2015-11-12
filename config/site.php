@@ -1,8 +1,7 @@
 <?php
 
 return [
-    'domain'             => (env('APP_ENV', 'local') === 'production') ? 'faithpromise.org' : ('faithpromise.' . $_SERVER['SERVER_ADDR'] . '.xip.io'),
-    'fpstudents_domain'  => (env('APP_ENV', 'local') === 'production') ? 'fpstudents.org' : ('fpstudents.' . $_SERVER['SERVER_ADDR'] . '.xip.io'),
+    'fpstudents_domain'  => env('APP_STUDENTS_DOMAIN', 'fpstudents.org'),
     'title'              => 'Faith Promise Church',
     'description'        => 'A contemporary church with locations in Knoxville, Maryville, Clinton, and La Follette, TN',
     'url'                => 'http://faithpromise.org',
