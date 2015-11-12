@@ -111,7 +111,7 @@ class StaffController extends BaseController {
     }
 
     private function getEightBit() {
-        $cache_key = 'staff_8bit_2';
+        $cache_key = 'staff_8bit_3';
         $staff_8bit = Cache::remember($cache_key, 0, function () {
             $staff = Staff::select('slug')->get();
             $result = $staff->filter(function ($item) {
