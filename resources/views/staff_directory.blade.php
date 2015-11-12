@@ -1,6 +1,6 @@
-@extends('layouts.page', ['title' => 'Staff Directory', 'hero_image' => 'images/pages/staff-wide.jpg'])
+@extends('layouts.default', ['title' => 'Staff Directory'])
 
-@section('page')
+@section('content')
 
 <div class="Container Container--wide">
     @include('partials.staff_nav', ['campuses' => $campuses, 'active' => 'directory'])
