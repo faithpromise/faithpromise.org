@@ -54,7 +54,7 @@
 
     }
 
-    modalController.$inject = ['$modalInstance', 'video_id', 'videosService', 'vimeoService'];
+    modalController.$inject = ['$uibModalInstance', 'video_id', 'videosService', 'vimeoService'];
 
     function modalController($modalInstance, video_id, videoService, vimeoService) {
 

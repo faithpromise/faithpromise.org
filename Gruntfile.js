@@ -264,6 +264,24 @@ module.exports = function (grunt) {
                             dest: './'
                         }
                     ]
+                },
+                uib_from_angular_ui_templates: {
+                    options: {
+                        patterns: [
+                            {
+                                match: 'template/',
+                                replacement: 'uib/template/'
+                            }
+                        ],
+                        usePrefix: false
+                    },
+                    files: [
+                        {
+                            expand: false,
+                            src: temp_dir + '/angular-ui-template-cache.tmp',
+                            dest: './'
+                        }
+                    ]
                 }
             },
             htmlbuild: {
@@ -492,6 +510,7 @@ module.exports = function (grunt) {
         'copy:appTemplates',
         'copy:adminTemplates',
         'html2js',
+        'replace:uib_from_angular_ui_templates',
         'svgstore:default'
     ]);
 
