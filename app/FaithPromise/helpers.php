@@ -50,16 +50,14 @@ function cdn_image($display_width, $image_width, $image_path, $format = null) {
 
     $image_path_parts = parse_url($image_path);
     $image_path = $image_path_parts['path'];
-    $url_params = explode('&', empty($image_path_parts['query']) ? '' : $image_path_parts['query']);
-
+    $url_params = empty($image_path_parts['query']) ? [] : explode('&', $image_path_parts['query']);
     if ($format !== null) {
         $format_suffix = '-' . $format . '.${3}';
         $image_path = preg_replace('/(-(square|tall|wide))?\.(jpg|png)$/', $format_suffix, $image_path_parts['path']);
     }
 
-    if (asset_exists($image_path)) {
-        array_unshift($url_params, 'v=' . filemtime(asset_path($image_path)));
-    }
+    $v = asset_exists($image_path) ? filemtime(asset_path($image_path)) : 'not-found';
+    array_unshift($url_params, 'v=' . $v);
 
     $img_url = config('site.cdn_url') . '/' . $display_width . '/' . $image_width . '/' . $image_path . (count($url_params) ? '?' . implode('&', $url_params) : '');
 
