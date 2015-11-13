@@ -19,10 +19,7 @@
     "guzzlehttp/guzzle": "^6.0",
     "intervention/image": "^2.3",
     "intervention/imagecache": "^2.3",
-    "cviebrock/eloquent-sluggable": "^3.0",
     "doctrine/dbal": "~2.3",
-    "vtalbot/markdown": "^2.0",
-    "huddledigital/zendesk-laravel": "~1.0",
     "faithpromise/fp-shared": "dev-master"
   },
   "require-dev": {
