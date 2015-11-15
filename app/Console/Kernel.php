@@ -14,8 +14,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        Commands\ImportAssets::class,
         Commands\ImportEvents::class,
-        Commands\ToggleStaffHasImage::class,
+        Commands\SyncStaffPhotos::class,
     ];
 
     /**
