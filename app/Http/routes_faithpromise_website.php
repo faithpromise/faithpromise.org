@@ -90,10 +90,13 @@ Route::get('/countdown.js', ['as' => 'countdown', 'uses' => 'InternetCampusContr
 
 // Images
 Route::get('/staff-8bit.css', 'StaffController@eightBitCss');
-Route::get('/{display_size}/{image_size}/{image_path}', 'ImageResizeController@index')
+Route::get('/{display_size}/{image_size}/{image_path}', 'AssetsController@image')
     ->where('display_size', '(sm|md|lg|xl)')
     ->where('image_size', '(full|half|third|quarter)')
     ->where('image_path', '.*');
+
+// Docs
+Route::get('/docs/{doc_path}', 'AssetsController@doc')->where('doc_path', '.*');
 
 // Sitemap JSON for UNCSS
 Route::get('/_sitemap.json', 'SiteMapController@index');
