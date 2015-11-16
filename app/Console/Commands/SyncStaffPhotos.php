@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Asset;
+use FaithPromise\Shared\Models\Asset;
 use FaithPromise\Shared\Models\Staff;
 use Illuminate\Console\Command;
 
