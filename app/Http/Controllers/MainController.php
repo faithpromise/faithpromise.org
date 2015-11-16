@@ -14,7 +14,7 @@ class MainController extends BaseController {
     public function index() {
 
         $current_series = Series::currentSeries()->first();
-        $events = Event::orderBy('sort', 'asc')->take(3)->get();
+        $events = Event::featured()->get()->sortBy('sort');
         $stylesheet = new Stylesheet($current_series->home_css);
 
         return view('welcome', [
