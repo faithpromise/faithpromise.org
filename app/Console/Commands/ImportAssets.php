@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use FaithPromise\Shared\Models\Staff;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Cache;
 use Symfony\Component\Finder\Iterator\RecursiveDirectoryIterator;
 
 class ImportAssets extends Command {
@@ -48,11 +49,17 @@ class ImportAssets extends Command {
 
         foreach($iter as $path => $file) {
             if ($file->isFile() && !preg_match('/\.DS_Store$/', $path)) {
-// TODO: Only process if file updated within the last x minutes
-                $rel_path = str_replace($assets_root . '/', '', $path);
-                $asset = \App\Models\Asset::firstOrNew(['path' => $rel_path]);
-                $asset->file_last_modified = date('Y-m-d H:i:s', $file->getMTime());
-                $asset->save();
+
+                $key = 'asset_ts_' . md5($path);
+                $timestamp = Cache::get($key);
+
+                if ($timestamp !== $file->getMTime()) {
+                    $rel_path = str_replace($assets_root . '/', '', $path);
+                    $asset = \App\Models\Asset::firstOrNew(['path' => $rel_path]);
+                    $asset->file_last_modified = date('Y-m-d H:i:s', $file->getMTime());
+                    $asset->save();
+                    Cache::forever($key, $file->getMTime());
+                }
 
             }
         }
