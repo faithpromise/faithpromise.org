@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Response;
 
-class ImageResizeController extends BaseController {
+class AssetsController extends BaseController {
 
-    public function index($display_size, $image_size, $image_path) {
+    public function image($display_size, $image_size, $image_path) {
 
         $max_age_days = 30;
         $pixel_density = 2;
@@ -64,5 +64,17 @@ class ImageResizeController extends BaseController {
 
     }
 
+    public function doc($path) {
+
+        $file_path = asset_path('docs/' . $path);
+
+        $file_path_parts = explode('/', $file_path);
+
+        return Response::make(file_get_contents($file_path), 200, [
+            'Content-Type'        => 'application/pdf',
+            'Content-Disposition' => 'inline; ' . end($file_path_parts)
+        ]);
+
+    }
 
 }
