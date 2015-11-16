@@ -24,7 +24,7 @@ function asset_exists($path) {
 
 function doc_url($file_name) {
 
-    $doc_path = asset_path('/docs/' . $file_name);
+    $doc_path = asset_path('docs/' . $file_name);
     $v = file_exists($doc_path) ? filemtime($doc_path) : 'not-found';
     return 'http:' . config('site.cdn_url') . '/docs/' . $file_name . '?v=' . $v;
 }
