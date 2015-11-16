@@ -30,9 +30,15 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('events:import')->hourly()->thenPing(env('HEARTBEAT_EVENTS_UPDATED', 'http://127.0.0.1'));
 
-        $schedule->command('staff:toggle-has-image')->weekdays()->everyThirtyMinutes()->when(function() {
+        $schedule->command('assets:import')->weekdays()->everyFiveMinutes()->when(function() {
             $now = Carbon::now();
             return $now->hour >= 8 && $now->hour <= 18;
         });
+
+        $schedule->command('staff:sync-photos')->weekdays()->everyThirtyMinutes()->when(function() {
+            $now = Carbon::now();
+            return $now->hour >= 8 && $now->hour <= 18;
+        });
+
     }
 }
