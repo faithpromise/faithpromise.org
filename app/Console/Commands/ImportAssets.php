@@ -38,17 +38,15 @@ class ImportAssets extends Command {
      */
     public function handle() {
 
-        $paths = [];
-        $assets_root = storage_path('assets');
-        $assets_root = '/home/vagrant/assets.faithpromise.org/assets';
+        $assets_root = config('site.assets_path');
 
-        $iter = new \RecursiveIteratorIterator(
+        $iterator = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($assets_root, \RecursiveDirectoryIterator::SKIP_DOTS),
             \RecursiveIteratorIterator::SELF_FIRST,
             \RecursiveIteratorIterator::CATCH_GET_CHILD
         );
 
-        foreach($iter as $path => $file) {
+        foreach($iterator as $path => $file) {
             if ($file->isFile() && !preg_match('/\.DS_Store$/', $path)) {
 
                 $key = 'asset_ts_' . md5($path);
@@ -56,7 +54,7 @@ class ImportAssets extends Command {
 
                 if ($timestamp !== $file->getMTime()) {
                     $rel_path = str_replace($assets_root . '/', '', $path);
-                    $asset = \App\Models\Asset::firstOrNew(['path' => $rel_path]);
+                    $asset = Asset::firstOrNew(['path' => $rel_path]);
                     $asset->file_last_modified = date('Y-m-d H:i:s', $file->getMTime());
                     $asset->save();
                     Cache::forever($key, $file->getMTime());
