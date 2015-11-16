@@ -23,7 +23,7 @@ class StaffController extends BaseController {
     public function index() {
 
         $campuses = Campus::all();
-        $staff_by_teams = Team::with('Staff')->get();
+        $staff_by_teams = Team::with('Staff.photo')->get();
 
         $staff_8bit = $this->getEightBit();
         $staff_8bit_css_path = config('site.cdn_url') . '/staff-8bit.css?v=' . md5(serialize($staff_8bit->toArray()));
