@@ -48,7 +48,7 @@ class ImportAssets extends Command {
 
         foreach($iter as $path => $file) {
             if ($file->isFile() && !preg_match('/\.DS_Store$/', $path)) {
-
+// TODO: Only process if file updated within the last x minutes
                 $rel_path = str_replace($assets_root . '/', '', $path);
                 $asset = \App\Models\Asset::firstOrNew(['path' => $rel_path]);
                 $asset->file_last_modified = date('Y-m-d H:i:s', $file->getMTime());
