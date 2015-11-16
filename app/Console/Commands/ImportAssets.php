@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Asset;
 use FaithPromise\Shared\Models\Staff;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
@@ -63,6 +64,13 @@ class ImportAssets extends Command {
 
             }
         }
+
+        Asset::all()->each(function($asset) use ($assets_root) {
+            $path = $assets_root . '/' . $asset->path;
+            if (!file_exists($path)) {
+                $asset->delete();
+            }
+        });
 
     }
 }
