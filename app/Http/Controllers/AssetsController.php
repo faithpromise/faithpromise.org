@@ -64,6 +64,19 @@ class AssetsController extends BaseController {
 
     }
 
+    public function rawImage($path) {
+
+        $max_age_days = 30;
+        $src_path = config('site.assets_path') . '/images/' . $path;
+        $img = Image::make($src_path);
+
+        $response = $img->response();
+        $response->header('Cache-Control', 'max-age=' . ($max_age_days * 24 * 60 * 60) . ', public');
+
+        return $response;
+
+    }
+
     public function doc($path) {
 
         $file_path = asset_path('docs/' . $path);

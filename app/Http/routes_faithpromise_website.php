@@ -94,6 +94,7 @@ Route::get('/{display_size}/{image_size}/{image_path}', 'AssetsController@image'
     ->where('display_size', '(sm|md|lg|xl)')
     ->where('image_size', '(full|half|third|quarter)')
     ->where('image_path', '.*');
+Route::get('/images/{image_path}', 'AssetsController@rawImage')->where('image_path', '.*');
 
 // Docs
 Route::get('/docs/{doc_path}', 'AssetsController@doc')->where('doc_path', '.*');
