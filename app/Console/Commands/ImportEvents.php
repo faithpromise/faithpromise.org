@@ -7,8 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Console\Command;
 use GuzzleHttp\Client;
 
-class ImportEvents extends Command
-{
+class ImportEvents extends Command {
     /**
      * The name and signature of the console command.
      *
@@ -27,8 +26,7 @@ class ImportEvents extends Command
      * Create a new command instance.
      *
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
     }
 
@@ -37,17 +35,19 @@ class ImportEvents extends Command
      *
      * @return mixed
      */
-    public function handle()
-    {
+    public function handle() {
 
         $client = new Client();
         $end_point = 'http://api.serviceu.com/rest/events/occurrences?orgKey=b96cd642-acbb-4eb7-95a2-f18c0f01d5b1&format=json';
         $response = $client->get($end_point);
         $data = json_decode($response->getBody(true));
+        $active_records = [];
 
         CalendarEvent::unguard();
 
         foreach ($data as $event) {
+
+            array_push($active_records, $event->OccurrenceId);
 
             $record = CalendarEvent::withPast()->where('id', '=', $event->OccurrenceId)->first() ?: new CalendarEvent;
 
@@ -73,7 +73,11 @@ class ImportEvents extends Command
 
         CalendarEvent::reguard();
 
+        // Remove non-existing events
+        CalendarEvent::withPast()->whereNotIn('id', $active_records)->delete();
+
         // Purge old events
         CalendarEvent::where('ends_at', '<', Carbon::now()->subMonth(2))->delete();
+
     }
 }
