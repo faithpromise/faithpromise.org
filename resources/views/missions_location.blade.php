@@ -16,7 +16,6 @@
                 {!! $trip->description !!}
 
                 @if ($trip->cost)
-                <br>
                 <p class="text-left">The approximate cost is {{ $trip->cost }}</p>
                 @endif
 
