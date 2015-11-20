@@ -15,7 +15,10 @@
             <div class="TextSection-text">
                 {!! $trip->description !!}
 
+                @if ($trip->cost)
+                <br>
                 <p class="text-left">The approximate cost is {{ $trip->cost }}</p>
+                @endif
 
                 <p class="text-left">Please contact {{ $trip->contact }} (<a href="mailto:{{ $trip->contact_email }}">{{ $trip->contact_email }}</a>) for additional information.</p>
             </div>
