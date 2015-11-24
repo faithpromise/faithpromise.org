@@ -19,6 +19,7 @@ class CreateTicketTasksTable extends Migration {
             $table->dateTime('completed_at')->nullable();
             $table->integer('completed_by')->unsigned()->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
