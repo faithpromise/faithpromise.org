@@ -13,10 +13,12 @@ class CreateTicketRequirementsTable extends Migration {
     public function up() {
         Schema::create('ticket_requirements', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('zendesk_ticket_id')->unsigned();
             $table->string('title', 250);
             $table->text('body');
             $table->integer('created_by')->unsigned()->nullable();
+            $table->tinyInteger('sort')->unsigned()->default(99);
             $table->timestamps();
             $table->softDeletes();
         });
