@@ -16,7 +16,7 @@ class CreateTicketRequirementsTable extends Migration {
             $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('zendesk_ticket_id')->unsigned();
             $table->string('title', 250);
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->tinyInteger('sort')->unsigned()->default(99);
             $table->timestamps();
