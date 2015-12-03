@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use FaithPromise\Shared\Models\Campus;
 use FaithPromise\Shared\Models\Event;
 use App\FaithPromise\Stylesheet;
 use FaithPromise\Shared\Models\Series;
@@ -19,8 +20,8 @@ class MainController extends BaseController {
 
         return view('welcome', [
             'current_series' => $current_series,
-            'events' => $events,
-            'stylesheets' => [$stylesheet]
+            'events'         => $events,
+            'stylesheets'    => [$stylesheet]
         ]);
     }
 
@@ -35,7 +36,16 @@ class MainController extends BaseController {
 
     public function defaultPage() {
         $view = Route::getCurrentRoute()->getUri();
+
         return view($view);
+    }
+
+    public function stableBoy() {
+        $campuses = Campus::all();
+
+        return view('stable-boy', [
+            'campuses' => $campuses
+        ]);
     }
 
 }
