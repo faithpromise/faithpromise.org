@@ -53,7 +53,7 @@ return [
             'key'    => env('AWS_KEY'),
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION', 'us-west-2'),
-            'bucket' => 'backups.faithpromise.org',
+            'bucket' => env('AWS_BACKUP_BUCKET', 'dev.faithpromise.org'),
         ]
 
     ],
