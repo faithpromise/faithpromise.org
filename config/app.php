@@ -147,7 +147,6 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         VTalbot\Markdown\MarkdownServiceProvider::class,
-        Huddle\Zendesk\Providers\ZendeskServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
 
     ],
