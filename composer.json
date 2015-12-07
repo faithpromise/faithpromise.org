@@ -20,7 +20,8 @@
     "intervention/image": "^2.3",
     "intervention/imagecache": "^2.3",
     "doctrine/dbal": "~2.3",
-    "faithpromise/fp-shared": "dev-master"
+    "faithpromise/fp-shared": "dev-master",
+    "spatie/laravel-backup": "^2.8"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
