@@ -83,6 +83,6 @@ return [
          * If the dump of the db takes more seconds that the specified value,
          * it will abort the backup.
          */
-        'timeoutInSeconds' => 60,
+        'timeoutInSeconds' => 240,
     ],
 ];
