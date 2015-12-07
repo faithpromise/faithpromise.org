@@ -52,7 +52,7 @@ return [
             'driver' => 's3',
             'key'    => env('AWS_KEY'),
             'secret' => env('AWS_SECRET'),
-            'region' => env('AWS_REGION', 'oregon'),
+            'region' => env('AWS_REGION', 'us-west-2'),
             'bucket' => 'backups.faithpromise.org',
         ]
 
