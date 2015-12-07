@@ -34,7 +34,7 @@ return [
          * The filesystem(s) you on which the backups will be stored. Choose one or more
          * of the filesystems you configured in app/config/filesystems.php
          */
-        'filesystem' => ['local'],
+        'filesystem' => ['local', 'cloud-backup'],
 
         /*
          * The path where the backups will be saved. This path
