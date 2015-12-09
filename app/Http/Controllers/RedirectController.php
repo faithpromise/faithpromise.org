@@ -103,7 +103,7 @@ class RedirectController extends BaseController {
     }
 
     public function requests() {
-        return redirect('http://www.faithpromiseweb.com/request/');
+        return redirect('http://admin.faithpromise.org/requests/new');
     }
 
     public function feedback() {
