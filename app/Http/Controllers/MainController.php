@@ -40,12 +40,4 @@ class MainController extends BaseController {
         return view($view);
     }
 
-    public function stableBoy() {
-        $campuses = Campus::all();
-
-        return view('stable-boy', [
-            'campuses' => $campuses
-        ]);
-    }
-
 }

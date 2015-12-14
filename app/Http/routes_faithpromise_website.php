@@ -80,7 +80,7 @@ Route::get('/stephen', ['as' => 'stephen', 'uses' => 'MainController@defaultPage
 Route::get('/summit', ['as' => 'summit', 'uses' => 'MainController@defaultPage']);
 Route::get('/updates', ['as' => 'updates', 'uses' => 'MainController@defaultPage']);
 Route::get('/jobs', ['as' => 'jobs', 'uses' => 'MainController@defaultPage']);
-Route::get('/stable-boy', ['as' => 'stableBoy', 'uses' => 'MainController@stableBoy']);
+Route::get('/stable-boy', ['as' => 'stableBoy', 'uses' => 'MainController@defaultPage']);
 
 // Bible plan
 Route::get('/bible-plan', ['as' => 'biblePlan', 'uses' => 'BiblePlanController@index']);
