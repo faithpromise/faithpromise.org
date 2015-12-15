@@ -41,7 +41,7 @@ class HealthCheckController extends BaseController {
     }
 
     private function calendar_out_of_date() {
-        $threshold = Carbon::now()->subHours(24)->format('Y-m-d H:i:s');
+        $threshold = Carbon::now()->subHours(60)->format('Y-m-d H:i:s');
         return DB::table('calendar_events')->where('updated_at', '>', $threshold)->count() === 0;
     }
 
