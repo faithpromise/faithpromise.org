@@ -12,7 +12,7 @@ class AddZendeskUserIdToUsers extends Migration {
      */
     public function up() {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('zendesk_user_id')->nullable()->after('fellowship_one_user_id');
+            $table->integer('zendesk_user_id')->unsigned()->nullable()->after('fellowship_one_user_id');
         });
     }
 
