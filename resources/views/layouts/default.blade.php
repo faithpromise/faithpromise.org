@@ -2,6 +2,7 @@
 
 global $page_inline_css;
 $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style) ? 'navStyle--' . $nav_style : '');
+$og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/facebook-default.png'));
 
 ?><!DOCTYPE html>
 <html ng-app="app">
@@ -22,11 +23,9 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         @endif
         <meta property="og:description" content="{{ isset($facebook_description) ? $facebook_description : isset($title) ? $title : $site['title'] }}">
         <meta property="og:locale" content="en_US">
-        @if (isset($og_image))
-            <meta property="og:image" content="{!! open_graph_url_filter($og_image) !!}">
-            <meta property="og:image:width" content="{{ isset($og_image_width) ? $og_image_width : '1200' }}">
-            <meta property="og:image:height" content="{{ isset($og_image_height) ? $og_image_height : '675' }}">
-        @endif
+        <meta property="og:image" content="{!! open_graph_url_filter($og_image) !!}">
+        <meta property="og:image:width" content="{{ isset($og_image_width) ? $og_image_width : '1200' }}">
+        <meta property="og:image:height" content="{{ isset($og_image_height) ? $og_image_height : '675' }}">
 
         <meta name="twitter:card" content="{{ isset($twitter_card) ? $twitter_card : 'summary' }}">
         <meta name="twitter:site" content="{{ '@' . config('site.twitter_username') }}">
@@ -238,7 +237,6 @@ $body_class = (isset($body_class) ? $body_class : '') . ' ' . (isset($nav_style)
         <!--[if gte IE 9]>
         <script src="/build/js/main/svg4everybody.min.js"></script>
         <![endif]-->
-
     </body>
 
 </html>
