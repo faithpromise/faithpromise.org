@@ -41,7 +41,7 @@
                 <tr>
                     <td>{{ $time->campus->name }} @if (!empty($time->room)) / {{ $time->room }} @endif</td>
                     <td>{{ $time->leader }}</td>
-                    <td>{{ $time->starts_at->format('D') }}s at {{ $time->starts_at->format('g:i A') }}</td>
+                    <td>{{ $time->starts_at->format('D') }}s {{ $time->starts_at->format('g:i A') }}</td>
                     <td>{{ $time->starts_at->format('M j') }}</td>
                     <td>
                         @if ($time->is_full)
