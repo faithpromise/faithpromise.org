@@ -24,7 +24,7 @@ class GroupsController extends BaseController {
 
     public function studies() {
 
-        $studies = Study::has('times')->get();
+        $studies = Study::has('times')->orderBy('sort')->get();
 
         return view('studies', [
             'studies' => $studies
