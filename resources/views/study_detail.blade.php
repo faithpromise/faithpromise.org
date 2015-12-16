@@ -46,7 +46,7 @@
                     <td>
                         @if ($time->is_full)
                             Class is full
-                        @else
+                        @elseif ($time->registration_url)
                             <a href="{{ $time->registration_url }}">Register</a>
                         @endif
                     </td>
