@@ -55,18 +55,22 @@
 
     @endtextsection
 
-    @cardsection([
-        'title' => 'Looking for something else?',
-        'cards' => $studies
-    ])
-    <p class="text-center">Check out these other opportunities to plug into a small group study near you!</p>
-    @endcardsection
+    @if(count($studies))
 
-    <div class="Section Section--center" style="padding-top: 0;">
-        <div class="Section-container">
-            <a class="Button" href="{{ route('studies') }}">View All Studies</a>
+        @cardsection([
+            'title' => 'Looking for something else?',
+            'cards' => $studies
+        ])
+        <p class="text-center">Check out these other opportunities to plug into a small group study near you!</p>
+        @endcardsection
+
+        <div class="Section Section--center" style="padding-top: 0;">
+            <div class="Section-container">
+                <a class="Button" href="{{ route('studies') }}">View All Studies</a>
+            </div>
         </div>
-    </div>
+
+    @endif
 
     @include('partials.have_questions', ['email' => 'jenniferp@faithpromise.org', 'text' => 'If you have questions about a group or ways to get involved, please contact #email#', 'class' => 'Section--lightGrey'])
 
