@@ -47,7 +47,7 @@
                         @if ($time->is_full)
                             Class is full
                         @else
-                            <a href="{{ $time->registration_url }}">Register here</a>
+                            <a href="{{ $time->registration_url }}">Register</a>
                         @endif
                     </td>
                 </tr>
