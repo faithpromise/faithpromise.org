@@ -37,7 +37,7 @@ class GroupsController extends BaseController {
 
         $orderBy = "gender = '" . $study->gender . "' desc, RAND()";
 
-        $studies = Study::where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
+        $studies = Study::has('times')->where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
 
         return view('study_detail', [
             'study'   => $study,
