@@ -14,7 +14,7 @@
     @else
 
         @cardsection(['title' => 'New Short Term Studies', 'cards' => $studies])
-        <p class="text-center">Check out the new opportunities to plug into a short term study this fall!</p>
+        <p class="text-center">Check out these new opportunities to plug into a short term study!</p>
         @endcardsection
 
     @endif
