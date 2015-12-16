@@ -30,6 +30,7 @@
         <thead>
             <tr>
                 <th>Campus</th>
+                <th>Leader</th>
                 <th>Time</th>
                 <th>Starts on</th>
                 <th>Register</th>
@@ -39,8 +40,9 @@
             @foreach($times as $time)
                 <tr>
                     <td>{{ $time->campus->name }}</td>
-                    <td>{{ $time->starts_at->format('l') }}s at {{ $time->starts_at->format('g:i A') }}</td>
-                    <td>{{ $time->starts_at->format('F j') }}</td>
+                    <td>{{ $time->leader }}</td>
+                    <td>{{ $time->starts_at->format('D') }}s at {{ $time->starts_at->format('g:i A') }}</td>
+                    <td>{{ $time->starts_at->format('M j') }}</td>
                     <td>
                         @if ($time->is_full)
                             Class is full
