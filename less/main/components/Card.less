@@ -30,13 +30,21 @@
 
 .Card {
   .to-em(margin-bottom, @Card-gutter, @Card-font-size);
+  display:          block;
+  color:            inherit;
   background-color: #fff;
+  user-select:      none;
 
   .box-shadow-helper(1);
 
   &.clickable {
     transition: all 250ms;
     cursor:     pointer;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color:           inherit;
   }
 
 }
@@ -86,6 +94,7 @@
 .Card-link {
   .to-em(font-size, 22, @Card-font-size);
   font-weight: @font-weight-bold;
+  color:       @anchor-text-color;
 
   &:hover {
     text-decoration: none;

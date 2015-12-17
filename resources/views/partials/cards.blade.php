@@ -5,16 +5,18 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
 ?>
 
 <ul class="<?= $card_grid_class ?>" card-grid>
-    <?php foreach ($cards as $card): ?>
+    <?php
+        foreach ($cards as $card):
+        $card_tag = empty($card->card_url) ? 'div' : 'a';
+    ?>
     <li class="Card-item">
-        <div class="Card" link-to="<?= isset($card->card_url) ? $card->card_url : ""; ?>">
+        <{{ $card_tag }} class="Card" href="{{ $card->card_url }}">
             <?php if (isset($card->card_image) && !empty($card->card_url)): ?>
-            <a class="Card-image b-lazy"
-                    href="<?= $card->card_url; ?>"
+            <span class="Card-image b-lazy"
                     data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
                     data-src-md="<?= cdn_image('md', 'full', $card->card_image) ?>"
                     data-src-lg="<?= cdn_image('lg', 'full', $card->card_image) ?>"
-                    data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></a>
+                    data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></span>
             <?php elseif (isset($card->card_image)): ?>
             <span class="Card-image b-lazy"
                     data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
@@ -23,11 +25,7 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
                     data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></span>
             <?php endif; ?>
             <div class="Card-body">
-                <?php if (!empty($card->card_url)): ?>
-                <h3 class="Card-title"><a href="<?= $card->card_url ?>"><?= $card->card_title ?></a></h3>
-                <?php else: ?>
                 <h3 class="Card-title"><?= $card->card_title ?></h3>
-                <?php endif; ?>
                 <?php if (!empty($card->card_subtitle)): ?>
                 <h4 class="Card-subtitle"><?= $card->card_subtitle ?></h4>
                 <?php endif; ?>
@@ -37,15 +35,15 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
             </div>
             <div class="Card-footer">
                 <?php if (!empty($card->card_url)): ?>
-                <a class="Card-link" href="<?= $card->card_url; ?>"><?= (isset($card->card_url_text) && strlen($card->card_url_text)) ? $card->card_url_text : "More Details" ?>
+                <span class="Card-link"><?= (isset($card->card_url_text) && strlen($card->card_url_text)) ? $card->card_url_text : "More Details" ?>
                     <i class="icon-right-open-big"></i>
-                </a>
+                </span>
                 <?php else: ?>
                     <!-- LATER: Need a better solution for ensuring same height on cards. Handle this in card-grid directive. -->
                     <span class="Card-link">&nbsp;</span>
                 <?php endif; ?>
             </div>
-        </div>
+        </{{ $card_tag }}>
     </li>
     <?php endforeach; ?>
 </ul>
