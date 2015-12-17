@@ -51,11 +51,11 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         @endif
 
         <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current()  }}">
-
-        @include('includes.google_analytics')
     </head>
 
     <body class="{{ $body_class }}">
+
+        @include('includes.google_analytics')
 
         <div id="top" class="Layout">
 
