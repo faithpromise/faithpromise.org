@@ -24,19 +24,28 @@
 
                 addEvent(anchors[i], 'click', function (event) {
 
-                    var url = this.getAttribute('href');
+                    var url = this.getAttribute('href'),
+                        title = (this.getAttribute('data-stats-title') || this.getAttribute('title') || this.innerHTML).replace(/<[^>]*>/g, '').trim(),
+                        label = title ? ('[' + title + '] (' + url + ')') : url;
+
+                    console.log('title', title);
 
                     if (typeof ga === 'function') {
 
                         event.preventDefault();
 
-                        ga('send', 'event', 'Outbound', 'click', url, {
+                        ga('send', 'event', 'Outbound', 'click', label, {
                             'transport':      'beacon',
                             'hitCallback':    function () {
                                 window.document.location = url;
                             },
                             'nonInteraction': 1
                         });
+                    } else {
+                        // TODO: Remove dev test
+                        if (!confirm('Go to external link?')) {
+                            event.preventDefault();
+                        }
                     }
 
                 });
