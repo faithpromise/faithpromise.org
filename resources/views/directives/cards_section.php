@@ -14,7 +14,8 @@ if ($directive['execution_mode'] == 'start'):
             'title' => '',
             'class' => '',
             'cards' => [],
-            'buttons' => []
+            'buttons' => [],
+            'page' => null
         ], $directive["args"]
     );
     $args['class'] = trim('GridSection ' . (isset($args['class']) ? $args['class'] : ''));
@@ -47,7 +48,7 @@ if ($directive['execution_mode'] == 'start'):
     endif;
     ?>
     <div class="GridSection-cardsWrap">
-        <?= view('partials.cards', ['cards' => $args['cards']])->render(); ?>
+        <?= view('partials.cards', ['cards' => $args['cards'], 'page' => $args['page']])->render(); ?>
     </div>
     </div><!-- // END .GridSection-container -->
     </div><!-- // END .GridSection -->
