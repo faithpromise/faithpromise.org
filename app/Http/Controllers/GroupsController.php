@@ -57,7 +57,7 @@ class GroupsController extends BaseController {
     public function men() {
 
         $ministry = Ministry::whereSlug('men')->first();
-        $studies = Study::where('gender', '=', 'm')->get();
+        $studies = Study::has('times')->where('gender', '=', 'm')->get();
         $events = $ministry->Events->merge($studies);
 
         return view('men', [
@@ -69,7 +69,7 @@ class GroupsController extends BaseController {
     public function women() {
 
         $ministry = Ministry::whereSlug('women')->first();
-        $studies = Study::where('gender', '=', 'f')->get();
+        $studies = Study::has('times')->where('gender', '=', 'f')->get();
         $events = $ministry->Events;
 
         return view('women', [
