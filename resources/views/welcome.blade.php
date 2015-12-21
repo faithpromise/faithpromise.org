@@ -5,8 +5,8 @@
     <div class="WelcomeHero">
         {{--<h1 class="">Welcome to Faith Promise</h1>--}}
         <div class="WelcomeHero-buttons">
-            <a class="WelcomeHero-button" href="{{ route('locations') }}">Locations</a>
-            <a class="WelcomeHero-button" href="{{ route('whatToExpect') }}">Get to Know Us</a>
+            <a id="to_locations_from_home_welcome" class="WelcomeHero-button" href="{{ route('locations') }}">Locations</a>
+            <a id="to_whatToExpect_from_home_welcome" class="WelcomeHero-button" href="{{ route('whatToExpect') }}">Get to Know Us</a>
         </div>
     </div>
 
@@ -58,7 +58,7 @@
         <div class="HomeSection-container">
             @include('partials.cards', ['cards' => $events])
             <p class="text-center">
-                <a class="Button" href="{{ route('events') }}">See All Events</a>
+                <a id="to_events_from_home_featuredEvents" class="Button" href="{{ route('events') }}">See All Events</a>
             </p>
         </div>
     </div>

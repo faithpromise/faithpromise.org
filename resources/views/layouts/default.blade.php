@@ -63,7 +63,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                 <div id="js-nav" class="Nav">
                     <div class="Nav-container">
 
-                        <a class="Nav-logoWrap" href="/">
+                        <a id="to_home_from_headerLogo" class="Nav-logoWrap" href="/">
                             <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
                                 <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
                             </svg>
@@ -73,13 +73,13 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                             @foreach ($nav as $topnav)
                                 <li class="Nav-item" uib-dropdown>
                                     @if (!isset($topnav['subnav']))
-                                        <a class="Nav-link" href="{{ $topnav['url'] }}">{{ $topnav['title'] }}</a>
+                                        <a id="to_{{ $topnav['id'] }}_from_nav" class="Nav-link" href="{{ $topnav['url'] }}">{{ $topnav['title'] }}</a>
                                     @else
                                         <span class="Nav-link Nav-link--dropdown" uib-dropdown-toggle>{{ $topnav['title'] }}</span>
                                         <ul class="NavDropdown">
                                             @foreach ($topnav['subnav'] as $subnav)
                                                 <li class="NavDropdown-item">
-                                                    <a class="NavDropdown-link" href="{{ $subnav['url'] }}">{{ $subnav['title'] }}</a>
+                                                    <a id="to_{{ $subnav['id'] }}_from_nav" class="NavDropdown-link" href="{{ $subnav['url'] }}">{{ $subnav['title'] }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -98,7 +98,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                 <!--<div class="MobileBar-background"></div>-->
                 @if (!$in_app)
                     <div class="MobileBar">
-                        <a class="MobileBar-logoWrap" href="/">
+                        <a id="to_home_from_mobileLogo" class="MobileBar-logoWrap" href="/">
                             <svg class="MobileBar-logo" role="img" title="Faith Promise Logo">
                                 <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
                             </svg>
@@ -116,19 +116,19 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                             <h5 class="Footer-socialHeading">Connect with us</h5>
                             <ul class="Footer-socialList">
                                 <li class="Footer-socialItem">
-                                    <a class="Footer-socialLink" href="https://www.facebook.com/faithpromise"><i class="Footer-socialIcon icon-facebook-circled"></i></a>
+                                    <a id="to_facebook_from_footer" class="Footer-socialLink" href="https://www.facebook.com/faithpromise"><i class="Footer-socialIcon icon-facebook-circled"></i></a>
                                 </li>
                                 <li class="Footer-socialItem">
-                                    <a class="Footer-socialLink" href="https://twitter.com/faithpromise"><i class="Footer-socialIcon icon-twitter-circled"></i></a>
+                                    <a id="to_twitter_from_footer" class="Footer-socialLink" href="https://twitter.com/faithpromise"><i class="Footer-socialIcon icon-twitter-circled"></i></a>
                                 </li>
                                 <li class="Footer-socialItem">
-                                    <a class="Footer-socialLink" href="https://instagram.com/faithpromise"><i class="Footer-socialIcon icon-instagram"></i></a>
+                                    <a id="to_instagram_from_footer" class="Footer-socialLink" href="https://instagram.com/faithpromise"><i class="Footer-socialIcon icon-instagram"></i></a>
                                 </li>
                                 <li class="Footer-socialItem">
-                                    <a class="Footer-socialLink" href="https://vimeo.com/faithpromise"><i class="Footer-socialIcon icon-vimeo-circled"></i></a>
+                                    <a id="to_vimeo_from_footer" class="Footer-socialLink" href="https://vimeo.com/faithpromise"><i class="Footer-socialIcon icon-vimeo-circled"></i></a>
                                 </li>
                                 <li class="Footer-socialItem">
-                                    <a class="Footer-socialLink" href="https://www.pinterest.com/faithpromise/"><i class="Footer-socialIcon icon-pinterest-circled"></i></a>
+                                    <a id="to_pinterest_from_footer" class="Footer-socialLink" href="https://www.pinterest.com/faithpromise/"><i class="Footer-socialIcon icon-pinterest-circled"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -136,22 +136,22 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                             <div class="Footer-item">
                                 <ul class="Footer-linkList">
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="/locations">Times &amp; locations</a>
+                                        <a id="to_locations_from_footer" class="Footer-link" href="/locations">Times &amp; locations</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="/updates">Get updates</a>
+                                        <a id="to_updates_from_footer" class="Footer-link" href="/updates">Get updates</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="/events">Events</a>
+                                        <a id="to_events_from_footer" class="Footer-link" href="/events">Events</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="http://blog.faithpromise.org/" target="_blank">Blog</a>
+                                        <a id="to_blog_from_footer" class="Footer-link" href="http://blog.faithpromise.org/" target="_blank">Blog</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                    <a class="Footer-link" href="/jobs">Jobs</a>
+                                    <a id="to_jobs_from_footer" class="Footer-link" href="/jobs">Jobs</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a class="Footer-link" href="/give">Give Online</a>
+                                        <a id="to_give_from_footer" class="Footer-link" href="/give">Give Online</a>
                                     </li>
                                 </ul>
                             </div>
