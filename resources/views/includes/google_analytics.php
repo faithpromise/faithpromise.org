@@ -12,6 +12,7 @@ if (App::environment('production')):
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-6702229-1', 'auto');
+  ga('require', 'linkid');
   ga('send', 'pageview');
 </script>
 <?php
