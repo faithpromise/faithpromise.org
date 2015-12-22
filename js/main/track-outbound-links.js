@@ -1,6 +1,5 @@
-(function (ga) {
+(function () {
     'use strict';
-
 
     function addEvent(element, eventName, handler) {
         if (element.addEventListener) {
@@ -26,11 +25,11 @@
 
                     var url = this.getAttribute('href');
 
-                    if (typeof ga === 'function') {
+                    if (typeof window.ga === 'function') {
 
                         event.preventDefault();
 
-                        ga('send', 'event', 'Outbound', 'click', url, {
+                        window.ga('send', 'event', 'Outbound', 'click', url, {
                             'transport':      'beacon',
                             'hitCallback':    function () {
                                 window.document.location = url;
@@ -47,4 +46,4 @@
 
     }
 
-})(window.ga);
+})();
