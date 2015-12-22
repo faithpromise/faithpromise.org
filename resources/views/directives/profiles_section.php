@@ -30,7 +30,7 @@ if ($directive['execution_mode'] == 'start'):
     <ul class="ProfilesSection-grid">
         <?php foreach ($args['profiles'] as $profile): ?>
             <li class="ProfilesSection-item">
-                <a class="ProfilesSection-card" href="<?= $profile->profile_url ?>">
+                <a id="<?= $profile->profile_link_id ?>" class="ProfilesSection-card" href="<?= $profile->profile_url ?>">
                     <span class="ProfilesSection-photo b-lazy"
                         data-src-sm="<?= cdn_image('sm', 'half', $profile->image, 'square') ?>"
                         data-src-md="<?= cdn_image('md', 'half', $profile->image, 'square') ?>"

@@ -68,7 +68,7 @@
 
         <div class="Section Section--center" style="padding-top: 0;">
             <div class="Section-container">
-                <a class="Button" href="{{ route('studies') }}">View All Studies</a>
+                <a id="to_studies_from_studyDetail" class="Button" href="{{ route('studies') }}">View All Studies</a>
             </div>
         </div>
 

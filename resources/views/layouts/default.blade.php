@@ -136,22 +136,22 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                             <div class="Footer-item">
                                 <ul class="Footer-linkList">
                                     <li class="Footer-linkItem">
-                                        <a id="to_locations_from_footer" class="Footer-link" href="/locations">Times &amp; locations</a>
+                                        <a id="to_locations_from_footer" class="Footer-link" href="{{ route('locations') }}">Times &amp; locations</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a id="to_updates_from_footer" class="Footer-link" href="/updates">Get updates</a>
+                                        <a id="to_updates_from_footer" class="Footer-link" href="{{ route('updates') }}">Get updates</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a id="to_events_from_footer" class="Footer-link" href="/events">Events</a>
+                                        <a id="to_events_from_footer" class="Footer-link" href="{{ route('events') }}">Events</a>
                                     </li>
                                     <li class="Footer-linkItem">
                                         <a id="to_blog_from_footer" class="Footer-link" href="http://blog.faithpromise.org/" target="_blank">Blog</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                    <a id="to_jobs_from_footer" class="Footer-link" href="/jobs">Jobs</a>
+                                    <a id="to_jobs_from_footer" class="Footer-link" href="{{ route('jobs') }}">Jobs</a>
                                     </li>
                                     <li class="Footer-linkItem">
-                                        <a id="to_give_from_footer" class="Footer-link" href="/give">Give Online</a>
+                                        <a id="to_give_from_footer" class="Footer-link" href="{{ route('give') }}">Give Online</a>
                                     </li>
                                 </ul>
                             </div>

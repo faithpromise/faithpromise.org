@@ -18,7 +18,7 @@
                         <?php $next_series_starts = null; ?>
                         @foreach($series as $item)
                             <li class="SeriesGallery-item">
-                                <a class="SeriesGallery-link" href="{{ route('seriesVideo', $item->slug) }}/">
+                                <a id="to_series_{{ $item->slug }}_from_sermons" class="SeriesGallery-link" href="{{ route('series', $item->slug) }}">
                                     <img
                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                             class="SeriesGallery-thumb b-lazy"

@@ -8,6 +8,7 @@ $opportunities->card_url = '/serve/opportunities';
 // $opportunities->card_url_text = 'View Opportunities';
 $opportunities->card_url_text = 'Contact Us';
 $opportunities->card_image = 'images/pages/opportunities-tall.jpg';
+$opportunities->card_link_id = 'to_opportunities_from_card';
 
 $love_local = new stdClass();
 $love_local->card_title = 'Serve Our Community';
@@ -15,6 +16,7 @@ $love_local->card_text = 'Opportunities abound for us to lend a hand, say a pray
 $love_local->card_url = '/love-local';
 $love_local->card_url_text = 'Learn more';
 $love_local->card_image = 'images/pages/love-local-tall.jpg';
+$love_local->card_link_id = 'to_loveLocal_from_card';
 
 $missions = new stdClass();
 $missions->card_title = 'Short-Term Missions';
@@ -22,11 +24,12 @@ $missions->card_text = 'Each year our church plans multiple international missio
 $missions->card_url = '/missions';
 $missions->card_url_text = 'Upcoming Trips';
 $missions->card_image = 'images/pages/missions-tall.jpg';
+$missions->card_link_id = 'to_missions_from_card';
 
 $retirees = new stdClass();
 $retirees->card_title = 'Projects for Retirees';
 $retirees->card_text = 'We have ongoing, short-term opportunities for retirees with specialized skills.';
-$retirees->card_url = '/retirees';
+$retirees->card_url = 'https://docs.google.com/forms/d/1xw0_J0djgHZIr8NwBmiINzErY-e7Ond0LbCI6IfO-6s/viewform';
 $retirees->card_url_text = 'Contact Us';
 $retirees->card_image = 'images/general/retirees-tall.png';
 

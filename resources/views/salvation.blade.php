@@ -7,7 +7,7 @@
                 ],
                 (object)[
                         'q' => 'Once I commit my life to Jesus, what\'s the next step?',
-                        'a' => '<p>When you make this commitment in your life, we want to <a href="/contact">hear about it</a>, and we want to help you take the next steps spiritually.  You\'ll find several opportunities here on this website, but the most important next step is baptism.  You can read more about <a href="/baptism">baptism here</a>.</p>'
+                        'a' => '<p>When you make this commitment in your life, we want to <a id="to_contact_from_salvation" href="/contact">hear about it</a>, and we want to help you take the next steps spiritually.  You\'ll find several opportunities here on this website, but the most important next step is baptism.  You can read more about <a id="to_baptism_from_salvation" href="' . route('baptism') . '">baptism here</a>.</p>'
                 ],
                 (object)[
                         'q' => 'What is the Trinity?',

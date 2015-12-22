@@ -1,7 +1,6 @@
 <?php
 
 $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
-$page = isset($page) ? $page : null;
 
 ?>
 
@@ -11,7 +10,7 @@ $page = isset($page) ? $page : null;
         $card_tag = empty($card->card_url) ? 'div' : 'a';
     ?>
     <li class="Card-item">
-        <{{ $card_tag }} id="{{ $card->linkId($page) }}" class="Card" href="{{ $card->card_url }}">
+        <{{ $card_tag }} id="{{ $card->card_link_id }}" class="Card" href="{{ $card->card_url }}">
             <?php if (isset($card->card_image) && !empty($card->card_url)): ?>
             <span class="Card-image b-lazy"
                     data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
