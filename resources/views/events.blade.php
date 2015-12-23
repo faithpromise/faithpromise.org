@@ -12,7 +12,7 @@
 
     <div class="Section Section--center Section--lightGrey" style="padding-top: 0;">
         <div class="Section-container">
-            <a class="Button" href="{{ route('calendar') }}">View the Full Calendar</a>
+            <a id="to_calendar_from_events" class="Button" href="{{ route('calendar') }}">View the Full Calendar</a>
         </div>
     </div>
 

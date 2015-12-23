@@ -4,7 +4,7 @@
 
     @introsection(['title' => 'Care Ministries'])
     <p>At Faith Promise, the majority of care and ministry happens through
-        <a href="/groups">small groups</a>. However, we do have several ministries that exist outside of groups to help facilitate care to our congregation and community.
+        <a id="to_groups_from_care" href="{{ route('groups') }}">small groups</a>. However, we do have several ministries that exist outside of groups to help facilitate care to our congregation and community.
     </p>
     @endintrosection
 
@@ -22,13 +22,13 @@
 
     @textsection(['title' => 'fpCelebrate', 'class' => 'Section--lightGrey'])
     <p>fp Celebrate meets on Monday nights at the FPC Pellissippi Campus starting at 6:00 pm and is a time of helping people connect, heal, and grow.
-        <a href="/celebrate">More information</a></p>
+        <a id="to_celebrate_from_care" href="{{ route('celebrate') }}">More information</a></p>
     @endtextsection
 
     @textsection(['title' => 'Premarital Counseling'])
     <p>Premarital counseling is available through our staff counselor and pastors. The counseling typically requires an online inventory, four or five hour-long sessions, and homework. Requests for counseling must be received four months prior to your wedding date in order for our staff to accommodate your schedule.</p>
     <p>To schedule premarital counseling with a staff pastor, please
-        <a href="/staff">contact them directly</a>. If you prefer to schedule premarital counseling with our staff counselor, please contact the church office at 865-251-2590.
+        <a id="to_staff_from_care" href="{{ route('staff') }}">contact them directly</a>. If you prefer to schedule premarital counseling with our staff counselor, please contact the church office at 865-251-2590.
     </p>
     @endtextsection
 
@@ -45,7 +45,7 @@
 
     @textsection(['title' => 'Stephen Ministry'])
     <p>Stephen Ministry is a nationally recognized Christian care ministry which began in 1975 and is helping more than a million people in over 11,000 churches. The Faith Promise Stephen Ministry equips lay people to provide confidential, one-on-one, Christ-centered care and support to people experiencing difficult times in their lives such as loss of a loved one, job loss, terminal illness, and divorce. The ministry pairs individuals with a Stephen Minister who will come alongside them to provide emotional and spiritual care for as long as the need persists.
-        <a href="/stephen">More information</a></p>
+        <a id="to_stephen_from_care" href="{{ route('stephen') }}">More information</a></p>
     @endtextsection
 
 @endsection

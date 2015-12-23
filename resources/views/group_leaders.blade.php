@@ -24,7 +24,7 @@ $faq = collect([
     @introsection(['title' => 'Group Leaders'])
     <p>Group Leaders, the work you do to connect people, care for people, and challenge them to grow in Christ is the heart of the ministry of Faith Promise. Without you, our church would be ineffective, and we want you to know that we appreciate you.</p>
     <p>On this page you can find several resources for posting attendance, updating your group information online, and planning your group discussions.</p>
-    <p>Interested in leading a group at Faith Promise? <a href="{{ route('newGroupLeader') }}">Click here</a>.</p>
+    <p>Interested in leading a group at Faith Promise? <a id="to_newGroupLeader_from_groupLeaders" href="{{ route('newGroupLeader') }}">Click here</a>.</p>
     @endintrosection
 
     @faqsection(['title' => 'Resources', 'faq' => $faq, 'class' => 'Section--lightGrey'])

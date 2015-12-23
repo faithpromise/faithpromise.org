@@ -23,7 +23,11 @@
 
                 addEvent(anchors[i], 'click', function (event) {
 
-                    var url = this.getAttribute('href');
+                    var url = this.getAttribute('href'),
+                        title = (this.getAttribute('data-stats-title') || this.getAttribute('title') || this.innerHTML).replace(/<[^>]*>/g, '').trim(),
+                        label = title ? ('[' + title + '] (' + url + ')') : url;
+
+                    console.log('title', title);
 
                     if (typeof window.ga === 'function') {
 
@@ -36,6 +40,11 @@
                             },
                             'nonInteraction': 1
                         });
+                    } else {
+                        // TODO: Remove dev test
+                        if (!confirm('Go to external link?')) {
+                            event.preventDefault();
+                        }
                     }
 
                 });

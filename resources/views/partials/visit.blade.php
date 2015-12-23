@@ -4,7 +4,7 @@
         <div class="VisitSection-text">
             <p>We'd love to have you visit us this weekend.</p>
             <p>
-                <a class="Button" href="/locations/">Find a Location</a>
+                <a id="to_locations_from_visit" class="Button" href="{{ route('locations') }}">Find a Location</a>
             </p>
         </div>
     </div>

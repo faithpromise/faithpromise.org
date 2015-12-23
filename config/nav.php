@@ -7,25 +7,30 @@ return [
         'subnav' => [
             [
                 'title' => 'What to Expect',
-                'url' => '/what-to-expect'
+                'url' => '/what-to-expect',
+                'id' => 'whatToExpect'
             ],
             [
                 'title' => 'Meet Our Staff',
-                'url' => '/staff'
+                'url' => '/staff',
+                'id' => 'staff'
             ],
             [
                 'title' => 'Beliefs & Values',
-                'url' => '/beliefs-and-values'
+                'url' => '/beliefs-and-values',
+                'id' => 'beliefs'
             ],
             [
                 'title' => 'Heart for the Harvest',
-                'url' => '/h4h'
+                'url' => '/h4h',
+                'id' => 'h4h'
             ]
         ]
     ],
     [
         'title' => 'Locations',
-        'url' => '/locations'
+        'url' => '/locations',
+        'id' => 'locations'
     ],
 
     [
@@ -33,57 +38,70 @@ return [
         'subnav' => [
             [
                 'title' => 'Family Ministry',
-                'url' => '/family'
+                'url' => '/family',
+                'id' => 'family'
             ],
             [
                 'title' => 'Children',
-                'url' => '/fpkids'
+                'url' => '/fpkids',
+                'id' => 'fpkids'
             ],
             [
                 'title' => 'Students',
-                'url' => '/fpstudents'
+                'url' => '/fpstudents',
+                'id' => 'fpstudents'
             ],
             [
                 'title' => 'Groups',
-                'url' => '/groups'
+                'url' => '/groups',
+                'id' => 'groups'
             ],
             [
                 'title' => 'Missions',
-                'url' => '/missions'
+                'url' => '/missions',
+                'id' => 'missions'
             ],
             [
                 'title' => 'Prayer Ministry',
-                'url' => '/prayer'
+                'url' => '/prayer',
+                'id' => 'prayer'
             ],
             [
                 'title' => 'Worship',
-                'url' => '/worship'
+                'url' => '/worship',
+                'id' => 'worship'
             ],
             [
                 'title' => 'Care Ministries',
-                'url' => '/care'
+                'url' => '/care',
+                'id' => 'care'
             ],
             [
                 'title' => 'fp Celebrate',
-                'url' => '/celebrate'
+                'url' => '/celebrate',
+                'id' => 'celebrate'
             ]
         ]
     ],
     [
         'title' => 'Next Steps',
-        'url' => '/nextsteps'
+        'url' => '/nextsteps',
+        'id' => 'nextSteps'
     ],
     [
         'title' => 'Sermons',
-        'url' => '/sermons'
+        'url' => '/sermons',
+        'id' => 'sermons'
     ],
     [
         'title' => 'Events',
-        'url' => '/events'
+        'url' => '/events',
+        'id' => 'events'
     ],
     [
         'title' => 'Give',
-        'url' => '/give'
+        'url' => '/give',
+        'id' => 'give'
     ]
 
 ];

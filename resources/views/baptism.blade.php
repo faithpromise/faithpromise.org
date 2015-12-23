@@ -47,7 +47,7 @@
             ],
             (object)[
                     'q' => 'Where can I find a video of Pastor Chris teaching on baptism?',
-                    'a' => 'Pastor Chris has spoken on the subject of baptism many times, but one of our favorites is entitled <a href="/series/hereafter/not-ashamed">"Not Ashamed"</a>.'
+                    'a' => 'Pastor Chris has spoken on the subject of baptism many times, but one of our favorites is entitled <a href="' . route('seriesVideo', 'hereafter', 'not-ashamed') . '">"Not Ashamed"</a>.'
             ],
             (object)[
                     'q' => 'After my baptism has been scheduled through the office, what other information do I need to know?',
@@ -56,7 +56,7 @@
             ],
             (object)[
                     'q' => 'My child wants to be baptized. What should I do?',
-                    'a' => 'We\'ve provided some helpful resources to help you talk to your kids about <a href="' . route('kidSteps') . '">baptism and salvation</a>.'
+                    'a' => 'We\'ve provided some helpful resources to help you talk to your kids about <a id="to_kidSteps_from_faq" href="' . route('kidSteps') . '">baptism and salvation</a>.'
             ]
         ]);
 
@@ -72,8 +72,8 @@
     ================================================================================ --}}
 
     @introsection(['title' => 'Baptism'])
-    <p>The Bible teaches that once a person is <a href="/salvation">saved</a>, his or her next step is to make that commitment to Jesus public through baptism.  When you're ready to take this important next step, please <a href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=qFJ6O2MqmTrVoPevphdkew==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">register here</a>.</p>
-    <p>If you're interested in baptism for your child, please check out our <a href="{{ route('kidSteps') }}">Kid Steps page</a> for more information and registration.</p>
+    <p>The Bible teaches that once a person is <a id="to_salvation_from_baptism" href="{{ route('salvation') }}">saved</a>, his or her next step is to make that commitment to Jesus public through baptism.  When you're ready to take this important next step, please <a href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=qFJ6O2MqmTrVoPevphdkew==&cCode=RtKBDolfiPuZJp8o1+0ARA==" target="_blank">register here</a>.</p>
+    <p>If you're interested in baptism for your child, please check out our <a id="to_kidSteps_from_intro" href="{{ route('kidSteps') }}">Kid Steps page</a> for more information and registration.</p>
     <p><em>All baptisms must be scheduled by the Tuesday prior to the weekend you want to be baptized.</em></p>
     @endintrosection
 

@@ -3,11 +3,11 @@
 $faq = [
         (object)[
                 'q' => 'I\'m new. What do I do?',
-                'a' => '<p>First, we\'re so glad to have you join us. There\'s a special place at Faith Promise for your child to worship and grow in Christ. Please see our <a href="/fpkids/welcome/">welcome page</a> for an overview of what to expect when you visit.</p>'
+                'a' => '<p>First, we\'re so glad to have you join us. There\'s a special place at Faith Promise for your child to worship and grow in Christ. Please see our <a id="to_fpKidsWelcome_from_faq" href="' . route('fpKidsWelcome') . '">welcome page</a> for an overview of what to expect when you visit.</p>'
         ],
         (object)[
                 'q' => 'Where can I get more information about child dedications?',
-                'a' => '<p>Please visit out our <a href="/dedications/">child dedications</a> page for more information.</p>'
+                'a' => '<p>Please visit out our <a href="' . route('dedications') . '">child dedications</a> page for more information.</p>'
         ],
         (object)[
                 'q' => 'When will my child move from one room to the next?',
@@ -54,7 +54,7 @@ $faq = [
     --}}
     @bgsection(['title' => 'I\'m New', 'image' => 'images/fpkids/rocket-wide.jpg'])
     <p>We're so glad to have you as our guest at Faith Promise. We want your experience in fpKIDS to be one worth talking about. Please visit our welcome page designed just for you.</p>
-    <p><a class="Button" href="/fpkids/welcome/">Learn more</a></p>
+    <p><a id="to_fpKidsWelcome_from_imNew" class="Button" href="{{ route('fpKidsWelcome') }}">Learn more</a></p>
     @endbgsection
 
     {{--

@@ -16,7 +16,7 @@
 
     <div class="Section Section--center Section--lightGrey" style="padding-top: 0;">
         <div class="Section-container">
-            <a class="Button" href="{{ route('events') }}">View All Events</a>
+            <a id="to_events_from_eventDetail" class="Button" href="{{ route('events') }}">View All Events</a>
         </div>
     </div>
 

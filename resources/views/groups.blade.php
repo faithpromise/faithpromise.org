@@ -6,6 +6,7 @@ $men->card_text = 'Connect with other men for service or spiritual growth.';
 $men->card_url = '/men';
 $men->card_url_text = 'Learn more';
 $men->card_image = 'images/pages/men-tall.jpg';
+$men->card_link_id = 'to_men_from_card';
 
 $women = new stdClass();
 $women->card_title = 'Women\'s Groups';
@@ -13,6 +14,7 @@ $women->card_text = 'Join with other women as you grow in Christ.';
 $women->card_url = '/women';
 $women->card_url_text = 'Learn more';
 $women->card_image = 'images/pages/women-tall.jpg';
+$men->card_link_id = 'to_women_from_card';
 
 $young = new stdClass();
 $young->card_title = 'Young Adult Groups';
@@ -20,6 +22,7 @@ $young->card_text = 'Connect with other 18-30 year old adults.';
 $young->card_url = '/youngadults';
 $young->card_url_text = 'Learn more';
 $young->card_image = 'images/pages/young-adults-tall.jpg';
+$men->card_link_id = 'to_youngAdults_from_card';
 
 $support = new stdClass();
 $support->card_title = 'Support Groups';
@@ -27,6 +30,7 @@ $support->card_text = 'fp Celebrate meets on Monday nights at the FPC Pellissipp
 $support->card_url = '/celebrate';
 $support->card_url_text = 'Learn more';
 $support->card_image = 'images/pages/celebrate-tall.jpg';
+$men->card_link_id = 'to_celebrate_from_card';
 
 $starting = new stdClass();
 $starting->card_title = 'Starting Point Groups';
@@ -34,6 +38,7 @@ $starting->card_text = 'Starting Point helps participants explore the Bible and 
 $starting->card_url = '/starting-point';
 $starting->card_url_text = 'Learn more';
 $starting->card_image = 'images/pages/starting-point-tall.jpg';
+$men->card_link_id = 'to_startingPoint_from_card';
 
 $group_types = collect([$men, $women, $young, $support, $starting]);
 

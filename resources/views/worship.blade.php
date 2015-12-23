@@ -49,7 +49,7 @@ $albums = collect([$onlyYou, $gloryIsBorn, $alive]);
         Events
     ================================================================================ --}}
 
-    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
+    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events, 'page' => 'worship'])
     @endcardsection
 
     {{--

@@ -7,14 +7,16 @@ $what_to_expect_cards = collect([
                 'card_image'    => 'images/fpkids/logo-tall.jpg',
                 'card_text'     => 'Our children\'s ministry meets during each adult service. Children learn and grow through large group teaching, crafts, stories, drama, and small group interaction.',
                 'card_url_text' => 'About fpKids',
-                'card_url'      => '/fpkids/'
+                'card_url'      => '/fpkids/',
+                'card_link_id'  => 'to_fpKids_from_whatToExpect'
         ],
         (object)[
                 'card_title'    => 'Students',
                 'card_image'    => 'images/fpstudents/worship-tall.jpg',
                 'card_text'     => '6-12th grade students have a chance to grow closer to God and each other in a high-energy atmosphere that will change them each week.',
                 'card_url_text' => 'About fpStudents',
-                'card_url'      => '/fpstudents/'
+                'card_url'      => '/fpstudents/',
+                'card_link_id'  => 'to_fpstudents_from_whatToExpect'
         ]
 ]);
 
@@ -51,11 +53,21 @@ $faq = [
     <p>Family Ministry is focused on partnering with families to build great marriages and help parents disciple their children. From birth through high school, we create age-appropriate environments for children and students featuring relevant biblical teaching in a fun setting. In addition, we provide numerous marriage and parenting growth opportunities. Because families are our foundation, we are committed to providing the building blocks for a spiritually strong family.</p>
     <p>At the core of our ministry are five family values:</p>
     <ul>
-        <li><strong>Widen the Circle</strong> - Inviting others to invest in our children so they have other key influencers helping to shape their life.</li>
-        <li><strong>Imagine the End</strong> - Focusing our priorities on what matters most. Many things matter but only one thing matters the most - our relationship with Jesus.</li>
-        <li><strong>Fight for the Heart</strong> - Creating a culture of unconditional love within the home to fuel the emotional &amp; moral health of our children.</li>
-        <li><strong>Create a Rhythm</strong> - A sense of purpose around our everyday experiences. Increasing the quantity of quality time you spend together.</li>
-        <li><strong>Make it Personal</strong> - Parents modeling spiritual growth. As we grow in our faith we are better able to lead our children.</li>
+        <li>
+            <strong>Widen the Circle</strong> - Inviting others to invest in our children so they have other key influencers helping to shape their life.
+        </li>
+        <li>
+            <strong>Imagine the End</strong> - Focusing our priorities on what matters most. Many things matter but only one thing matters the most - our relationship with Jesus.
+        </li>
+        <li>
+            <strong>Fight for the Heart</strong> - Creating a culture of unconditional love within the home to fuel the emotional &amp; moral health of our children.
+        </li>
+        <li>
+            <strong>Create a Rhythm</strong> - A sense of purpose around our everyday experiences. Increasing the quantity of quality time you spend together.
+        </li>
+        <li>
+            <strong>Make it Personal</strong> - Parents modeling spiritual growth. As we grow in our faith we are better able to lead our children.
+        </li>
     </ul>
     @endintrosection
 

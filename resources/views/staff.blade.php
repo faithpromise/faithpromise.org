@@ -9,7 +9,7 @@
 
 <div class="Staff8bit">
     @foreach($staff_8bit as $i)
-        <a class="Staff8bit-item Staff8bit-{{ $i->slug }}" href="{{ $i->url }}"></a>
+        <a id="to_staff_{{ $i->slug }}_from_8bit" class="Staff8bit-item Staff8bit-{{ $i->slug }}" href="{{ $i->url }}"></a>
     @endforeach
 </div>
 
