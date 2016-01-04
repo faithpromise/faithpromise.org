@@ -6,6 +6,7 @@ $childcare->card_subtitle = 'Part-time';
 $childcare->card_text = 'The Childcare Team Member provides support to other ministries of Faith Promise Church by providing...';
 $childcare->card_url = doc_url('jobs/childcare-team-member.pdf');
 $childcare->card_url_text = 'Download PDF';
+$childcare->card_link_id = 'to_childcare_job_from_card';
 
 $openings = collect([$childcare]);
 
