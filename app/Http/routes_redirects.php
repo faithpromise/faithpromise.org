@@ -48,5 +48,8 @@ Route::get('/candidate', 'RedirectController@candidates');
 Route::get('/candidates', 'RedirectController@candidates');
 Route::get('/rsvp', 'RedirectController@rsvp');
 
+// Series
+Route::get('/series/fifteen-year-anniversary/anniversary-transformation', 'RedirectController@fifteenYearTransformation');
+
 // Staff
 Route::get('/staff/macy-deel', 'RedirectController@macyScarbrough');

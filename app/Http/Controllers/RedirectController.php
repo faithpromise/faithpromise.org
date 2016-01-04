@@ -134,4 +134,8 @@ class RedirectController extends BaseController {
         return redirect('/staff/macy-scarbrough');
     }
 
+    public function fifteenYearTransformation() {
+        return redirect('/series/fifteen-year-anniversary/transformation');
+    }
+
 }
