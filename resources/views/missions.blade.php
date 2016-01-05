@@ -23,28 +23,6 @@
     @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
     @endcardsection
 
-    @bgsection([
-        'title' => 'Love Starts Here',
-        'class' => 'BackgroundSection--right',
-        'image' => 'images/missions/love-starts-here-offset-wide.jpg'
-    ])
-    <p>Good things happen when groups make serving together a priority. Leaders, download the <a class="no-wrap" href="{{ doc_url('Love-Starts-Here-Toolkit.pdf') }}">Leader Toolkit</a> and check out these <a href="http://vols.pt/4MgN88">pre-planned opportunities</a>. Then, please take a moment and <a class="no-wrap" href="http://faithpromiseweb.com/forms/view.php?id=5666">let us know</a> how you're serving.</p>
-    @endbgsection
-
-    @bgsection([
-        'title' => 'Angel Tree',
-        'class' => 'BackgroundSection--left',
-        'image' => 'images/missions/angel-tree-wide.jpg',
-        'buttons' => [
-            [
-                'title' => 'Sign Up Today',
-                'url' => 'http://vols.pt/4MgN88'
-            ]
-        ]
-    ])
-    <p>Share the love of Jesus with a local family this Christmas season.</p>
-    @endbgsection
-
     @cardsection(['title' => 'Upcoming Trips', 'class' => 'Section--lightGrey', 'cards' => $locations, 'no_text' => true])
     @endcardsection
 
