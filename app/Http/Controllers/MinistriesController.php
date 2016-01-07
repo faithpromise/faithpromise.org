@@ -17,6 +17,10 @@ class MinistriesController extends BaseController {
         return view('fpkids-welcome');
     }
 
+    public function fpKidsCamp() {
+        return view('fpkids-camp');
+    }
+
     public function defaultMinistryPage() {
 
         $ministry_slug = Route::getCurrentRoute()->getUri();

@@ -138,4 +138,8 @@ class RedirectController extends BaseController {
         return redirect('/series/fifteen-year-anniversary/transformation');
     }
 
+    public function fpKidsCamp() {
+        return redirect('/fpkids/camp');
+    }
+
 }

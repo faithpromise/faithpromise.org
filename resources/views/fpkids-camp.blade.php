@@ -1,0 +1,94 @@
+<?php
+
+$faq = [
+        (object)[
+                'q' => 'What will my child do?',
+                'a' => '<p>There are a ton of fun things to do at summer camp.  We’ve got swimming, a 250’ water slide, putt-putt, water trampoline, the blob, wacky games, wet games, crazy games, late night activities….and more!</p>'
+        ],
+        (object)[
+                'q' => 'How will my child get there?',
+                'a' => '<p>We will transport kids to and from camp by bus.  We will depart from the Pellissippi Campus Monday morning, June 20th and return to the Pellissippi Campus the evening of Thursday, June 23rd.</p>'
+        ],
+        (object)[
+                'q' => 'Where will my child sleep?',
+                'a' => '<p>In cabins with kids in your child’s small group and small group leader.  There will be as many as 5 small groups &amp; their leaders bunking in a cabin together.</p>'
+        ],
+        (object)[
+                'q' => 'What will my child eat?',
+                'a' => '<p>Yummy camp food... like chicken and potatoes, eggs and bacon and of course, snacks!  You can send your camper with additional money to spend at the General Store.</p>'
+        ],
+        (object)[
+                'q' => 'How many leaders are going?',
+                'a' => 'Campers will be in small groups with other kids of their gender and grade with a group leader.  Ratio approx. 10 kids/1 leader.  Other support leaders will be attending as well to help with games, events, etc.</p>'
+        ],
+        (object)[
+                'q' => 'What if my child takes medication?',
+                'a' => 'All medications will be distributed by the camp nurse or child’s small group leader.</p>'
+        ],
+        (object)[
+                'q' => 'What if my child can’t swim?',
+                'a' => 'All swim activities include licensed life guards who monitor the safety of the group.  Leaders will be present with kids at all times. If your child is not a proficient swimmer, swim vests are available. We highly recommend packing a personal, clearly labeled swim vest for your child to ensure the best fit.</p>'
+        ],
+        (object)[
+                'q' => 'What if I need a scholarship?',
+                'a' => 'Partial scholarships may be available on a case by case basis.  Each child must be registered first, before a scholarship request can be completed.  Once the registration process is complete, please contact your fpKids Campus Director for more information on how to pursue additional assistance.</p>'
+        ],
+        (object)[
+                'q' => 'What will my child learn?',
+                'a' => 'We will use a variety of group & individual activities to creatively teach your child these practical truths to deepen their faith and relationship with God.  As a parent, you will receive a tool that unpacks the daily scripture focus during camp week, how it can apply to your life and how you can apply it to your relationship with your child after camp week.</p>'
+        ]
+];
+
+?>
+
+@extends('layouts.page', ['title' => 'fpKids Camp', 'hero_image' => 'images/events/kids-camp-2016-wide.jpg'])
+
+@section('page')
+
+    {{--
+        ========================================
+        Intro
+        ========================================
+    --}}
+    @introsection(['title' => 'fpKids Summer Camp 2016'])
+    <p class="text-center">
+        <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249</strong>
+    </p>
+    <p>Kids Camp is for rising 3rd to 6th grade (completed 2nd thru 5th grade) and will happen at the amazing <a href="http://fortbluff.com/" target="_blank">Fort Bluff Camp</a> in Dayton, Tennessee.</p>
+    <p class="text-center">
+        <a class="Button" href="https://fpctystn.infellowship.com/Forms/278337">Register Today!</a>
+    </p>
+    @endintrosection
+
+    {{--
+        ========================================
+        FAQ
+        ========================================
+    --}}
+    @inlinecss
+    <style type="text/css">
+        .kids_faq a:hover {
+            background-color: #fff;
+            color:            #4e2b57;
+        }
+    </style>
+    @endinlinecss
+    @faqsection(['faq' => $faq, 'class' => 'has-background kids_faq', 'image' => cdn_image_raw('images/fpkids/pattern-optimized.png')])
+    @endfaqsection
+
+    {{--
+        ========================================
+        Contact
+        ========================================
+    --}}
+    @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you have questions about fpKids, please contact #email#'])
+
+    {{--
+        ========================================
+        Staff
+        ========================================
+    --}}
+    {{--@profilessection(['title' => 'Meet the fpKids Staff', 'class' => 'Section--lightGrey', 'profiles' => $ministry->Staff])--}}
+    {{--@endprofilessection--}}
+
+@endsection
