@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use FaithPromise\Shared\Models\Study;
 use FaithPromise\Shared\Models\StudyTime;
 use FaithPromise\Shared\Models\Ministry;
@@ -33,10 +34,11 @@ class GroupsController extends BaseController {
 
     public function studyDetail($study) {
 
-        $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get();
+        $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get()->sortBy(function($studyTime) {
+            return $studyTime->campus->name . $studyTime->starts_at->format(Carbon::ISO8601);
+        });
 
         $orderBy = "gender = '" . $study->gender . "' desc, RAND()";
-
         $studies = Study::has('times')->where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
 
         return view('study_detail', [
