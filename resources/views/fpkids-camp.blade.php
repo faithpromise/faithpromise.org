@@ -66,38 +66,38 @@ $faq = [
     @endintrosection
 
     <style>
-        .Album {
+        .CampAlbum {
             font-size: 0;
         }
-        .Album-photo {
+        .CampAlbum-photo {
             width: 20%;
         }
         @media (max-width: 780px) {
-            .Album > img:nth-child(n+7) {
+            .CampAlbum > img:nth-child(n+7) {
                 display: none;
             }
-            .Album-photo {
+            .CampAlbum-photo {
                 width: 33.3333%;
             }
         }
     </style>
 
-    <div class="Album">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/boys.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/volunteer-3.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/campfire.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/water-slide.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/games.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/water-bounce.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/games-2.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/golf.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/group.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/girls.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/pool.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/ring.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/volunteer-2.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/games-3.jpg">
-        <img class="Album-photo" src="/images/fpkids/camp/2015/volunteer-4.jpg">
+    <div class="CampAlbum">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/boys.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/volunteer-3.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/campfire.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/water-slide.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/games.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/water-bounce.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/games-2.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/golf.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/group.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/girls.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/pool.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/ring.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/volunteer-2.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/games-3.jpg">
+        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/volunteer-4.jpg">
     </div>
 
     {{--
@@ -111,16 +111,17 @@ $faq = [
             background-color: #F47B1D; // Orange
             /*background-color: #0F3E38; // Turquoise*/
         }
-        .kids_faq a:hover {
+        .camp_faq a:hover {
             background-color: #0F3E38;
             color:            #fff;
         }
     </style>
     @endinlinecss
-    @faqsection(['faq' => $faq, 'class' => 'has-background camp_faq'])
+
+    @faqsection(['faq' => $faq, 'class' => 'has-background camp_faq', 'image' => cdn_image_raw('images/fpkids/camp/pattern-optimized.jpg')])
     @endfaqsection
 
-    @bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp-volunteer-tall.jpg'])
+    @bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp/volunteer-tall.jpg'])
     <p>We're so grateful to our amazing volunteers that make camp what it is. If you're volunteering for this year's camp, please apply here.</p>
     <p><a class="Button" href="https://fpctystn.infellowship.com/Forms/278342">Apply Online</a></p>
     @endbgsection
