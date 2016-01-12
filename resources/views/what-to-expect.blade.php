@@ -57,9 +57,12 @@ $faq = collect([
         Intro
     ================================================================================ --}}
 
-    @introsection(['title' => 'What To Expect', 'class' => 'IntroSection--compact'])
+    @videosection([
+        'title' => 'What To Expect',
+        'video' => '151410291'
+    ])
     <p>Faith Promise is a church with multiple locations, that exists to impact the unchurched of the world, starting with Knoxville, Tennessee, and the surrounding counties.</p>
-    @endintrosection
+    @endvideosection
 
     @cardsection(['cards' => $what_to_expect_cards, 'class' => 'Section--lightGrey'])
     @endcardsection
