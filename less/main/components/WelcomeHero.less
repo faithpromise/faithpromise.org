@@ -1,4 +1,84 @@
 // Square format - mobile
+.IndexHero {
+  position:        relative;
+  height:          100vw;
+  background:      #1f1f1f no-repeat center;
+  background-size: cover;
+}
+
+@media (max-width: 35.5625em) {
+  .IndexHero {
+    background-image: url(~"@{cdn_url}/sm/full/images/series/without-square.jpg");
+  }
+}
+
+// Tall format - 570px
+@media (min-width: 35.625em) {
+  .IndexHero {
+    height:           56.25vw;
+    background-image: url(~"@{cdn_url}/lg/full/images/series/without-tall.jpg");
+  }
+}
+
+// 600px
+@media (min-width: 37.5em) {
+  .IndexHero {
+    background-image: url(~"@{cdn_url}/xl/full/images/series/without-tall.jpg");
+  }
+}
+
+// Wide format - 1200px
+@media (min-width: 75rem) {
+  .IndexHero {
+    height:           36.4583333vw;
+    background-image: url(~"@{cdn_url}/xl/full/images/series/without-wide.jpg");
+  }
+}
+
+.IndexHero-buttons {
+  position:   absolute;
+  bottom:     1em;
+  width:      100%;
+  padding:    0 1.2em;
+  text-align: center;
+}
+
+.IndexHero-button {
+  &:extend(.Button all);
+  &:extend(.Button--light all);
+  min-width:        13em;
+  max-width:        40%;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size:        4.1vw;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+
+  @media (min-width: 390px) {
+    .to-rem(font-size, 16);
+  }
+}
+
+// Over 360px
+@media (min-width: 22.5em) {
+  .IndexHero-buttons {
+    bottom: 2em;
+  }
+}
+
+
+/*
+
+========================================================================
+
+*/
+
+
+
+
+
+// Square format - mobile
 .WelcomeHero {
   position:        relative;
   height:          100vw;
