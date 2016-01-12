@@ -8,7 +8,7 @@ use \Illuminate\Support\Facades\Route;
 class MainController extends BaseController {
 
     public function index() {
-        return 'fpStudents index';
+        return view('students/index');
     }
 
 }
