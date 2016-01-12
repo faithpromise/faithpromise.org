@@ -52,13 +52,53 @@ $faq = [
     --}}
     @introsection(['title' => 'fpKids Summer Camp 2016'])
     <p class="text-center">
-        <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249</strong>
+        <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249*</strong>
     </p>
     <p>Kids Camp is for rising 3rd to 6th grade (completed 2nd thru 5th grade) and will happen at the amazing <a href="http://fortbluff.com/" target="_blank">Fort Bluff Camp</a> in Dayton, Tennessee.</p>
     <p class="text-center">
         <a class="Button" href="https://fpctystn.infellowship.com/Forms/278337">Register Today!</a>
     </p>
+
+    <p class="text-center">
+        <em>* Payment plan available until April 30.</em>
+    </p>
+
     @endintrosection
+
+    <style>
+        .Album {
+            font-size: 0;
+        }
+        .Album-photo {
+            width: 20%;
+        }
+        @media (max-width: 780px) {
+            .Album > img:nth-child(n+7) {
+                display: none;
+            }
+            .Album-photo {
+                width: 33.3333%;
+            }
+        }
+    </style>
+
+    <div class="Album">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/boys.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/volunteer-3.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/campfire.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/water-slide.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/games.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/water-bounce.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/games-2.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/golf.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/group.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/girls.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/pool.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/ring.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/volunteer-2.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/games-3.jpg">
+        <img class="Album-photo" src="/images/fpkids/camp/2015/volunteer-4.jpg">
+    </div>
 
     {{--
         ========================================
@@ -67,21 +107,30 @@ $faq = [
     --}}
     @inlinecss
     <style type="text/css">
+        .camp_faq {
+            background-color: #F47B1D; // Orange
+            /*background-color: #0F3E38; // Turquoise*/
+        }
         .kids_faq a:hover {
-            background-color: #fff;
-            color:            #4e2b57;
+            background-color: #0F3E38;
+            color:            #fff;
         }
     </style>
     @endinlinecss
-    @faqsection(['faq' => $faq, 'class' => 'has-background kids_faq', 'image' => cdn_image_raw('images/fpkids/pattern-optimized.png')])
+    @faqsection(['faq' => $faq, 'class' => 'has-background camp_faq'])
     @endfaqsection
+
+    @bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp-volunteer-tall.jpg'])
+    <p>We're so grateful to our amazing volunteers that make camp what it is. If you're volunteering for this year's camp, please apply here.</p>
+    <p><a class="Button" href="https://fpctystn.infellowship.com/Forms/278342">Apply Online</a></p>
+    @endbgsection
 
     {{--
         ========================================
         Contact
         ========================================
     --}}
-    @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you have questions about fpKids, please contact #email#'])
+    @include('partials.have_questions', ['email' => 'fpkids@faithpromise.org', 'text' => 'If you have questions about fpKids Camp, please contact #email#'])
 
     {{--
         ========================================
