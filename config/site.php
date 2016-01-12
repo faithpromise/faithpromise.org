@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'fpstudents_domain'  => env('APP_STUDENTS_DOMAIN', 'fpstudents.org'),
+    'fpstudents_domain'  => env('STUDENTS_DOMAIN', 'fpstudents.org'),
     'title'              => 'Faith Promise Church',
     'description'        => 'A contemporary church with locations in Knoxville, Maryville, Clinton, and La Follette, TN',
     'url'                => 'http://faithpromise.org',
