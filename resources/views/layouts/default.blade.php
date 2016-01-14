@@ -57,7 +57,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                         </a>
 
                         <ul class="Nav-menu">
-                            @foreach ($nav as $topnav)
+                            @foreach ($site['nav'] as $topnav)
                                 <li class="Nav-item" uib-dropdown>
                                     @if (!isset($topnav['subnav']))
                                         <a id="to_{{ $topnav['id'] }}_from_nav" class="Nav-link" href="{{ $topnav['url'] }}">{{ $topnav['title'] }}</a>
