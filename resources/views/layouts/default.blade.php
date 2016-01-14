@@ -102,21 +102,13 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                         <div class="Footer-social">
                             <h5 class="Footer-socialHeading">Connect with us</h5>
                             <ul class="Footer-socialList">
-                                <li class="Footer-socialItem">
-                                    <a id="to_facebook_from_footer" class="Footer-socialLink" href="https://www.facebook.com/faithpromise"><i class="Footer-socialIcon icon-facebook-circled"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_twitter_from_footer" class="Footer-socialLink" href="https://twitter.com/faithpromise"><i class="Footer-socialIcon icon-twitter-circled"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_instagram_from_footer" class="Footer-socialLink" href="https://instagram.com/faithpromise"><i class="Footer-socialIcon icon-instagram"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_vimeo_from_footer" class="Footer-socialLink" href="https://vimeo.com/faithpromise"><i class="Footer-socialIcon icon-vimeo-circled"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_pinterest_from_footer" class="Footer-socialLink" href="https://www.pinterest.com/faithpromise/"><i class="Footer-socialIcon icon-pinterest-circled"></i></a>
-                                </li>
+                                @foreach($site['social_services'] as $s)
+                                    @if (array_key_exists($s, $site))
+                                        <li class="Footer-socialItem">
+                                            <a class="Footer-socialLink" href="{{ social_url($s, $site[$s]) }}"><i class="Footer-socialIcon icon-{{ $s }}-circled"></i></a>
+                                        </li>
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                         <div class="Footer-grid">
