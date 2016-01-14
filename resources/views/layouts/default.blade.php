@@ -52,7 +52,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
 
                         <a id="to_home_from_headerLogo" class="Nav-logoWrap" href="/">
                             <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
-                                <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+                                <use xlink:href="/build/svg/general.svg#{{ $site['logo'] }}"></use>
                             </svg>
                         </a>
 
