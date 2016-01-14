@@ -14,21 +14,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <meta name="description" content="{{ isset($description) ? $description : $site['description'] }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <meta property="fb:app_id" content="{{ $site['facebook_app_id'] }}">
-        @if (isset($og_type))
-            <meta property="og:type" content="{{ $og_type }}">
-            @if ($og_type === 'article')
-                <meta property="article:author" content="{{ isset($article_author) ? $article_author : facebook_url(config('site.facebook_username')) }}">
-            @endif
-        @endif
-        <meta property="og:description" content="{{ isset($facebook_description) ? $facebook_description : isset($title) ? $title : $site['title'] }}">
-        <meta property="og:locale" content="en_US">
-        <meta property="og:image" content="{!! open_graph_url_filter($og_image) !!}">
-        <meta property="og:image:width" content="{{ isset($og_image_width) ? $og_image_width : '1200' }}">
-        <meta property="og:image:height" content="{{ isset($og_image_height) ? $og_image_height : '675' }}">
 
-        <meta name="twitter:card" content="{{ isset($twitter_card) ? $twitter_card : 'summary' }}">
-        <meta name="twitter:site" content="{{ '@' . config('site.twitter_username') }}">
+        @include('includes._social_tags')
 
         <!-- build:style main -->
         <link rel="stylesheet" href="/build/css/main.dev.css">
