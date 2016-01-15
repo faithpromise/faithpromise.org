@@ -22,7 +22,6 @@ class ViewComposerServiceProvider extends ServiceProvider {
 
             $view->with('in_app', $in_app);
             $view->with('site', config('site'));
-            $view->with('nav', config('nav'));
 
         });
     }

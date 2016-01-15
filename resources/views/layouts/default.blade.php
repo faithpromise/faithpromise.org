@@ -14,21 +14,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <meta name="description" content="{{ isset($description) ? $description : $site['description'] }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <meta property="fb:app_id" content="{{ $site['facebook_app_id'] }}">
-        @if (isset($og_type))
-            <meta property="og:type" content="{{ $og_type }}">
-            @if ($og_type === 'article')
-                <meta property="article:author" content="{{ isset($article_author) ? $article_author : facebook_url(config('site.facebook_username')) }}">
-            @endif
-        @endif
-        <meta property="og:description" content="{{ isset($facebook_description) ? $facebook_description : isset($title) ? $title : $site['title'] }}">
-        <meta property="og:locale" content="en_US">
-        <meta property="og:image" content="{!! open_graph_url_filter($og_image) !!}">
-        <meta property="og:image:width" content="{{ isset($og_image_width) ? $og_image_width : '1200' }}">
-        <meta property="og:image:height" content="{{ isset($og_image_height) ? $og_image_height : '675' }}">
 
-        <meta name="twitter:card" content="{{ isset($twitter_card) ? $twitter_card : 'summary' }}">
-        <meta name="twitter:site" content="{{ '@' . config('site.twitter_username') }}">
+        @include('includes._social_tags')
 
         <!-- build:style main -->
         <link rel="stylesheet" href="/build/css/main.dev.css">
@@ -64,13 +51,13 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                     <div class="Nav-container">
 
                         <a id="to_home_from_headerLogo" class="Nav-logoWrap" href="/">
-                            <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
-                                <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+                            <svg class="Nav-logo" role="img" title="{{ $site['name'] }} Logo">
+                                <use xlink:href="/build/svg/general.svg#{{ $site['logo'] }}"></use>
                             </svg>
                         </a>
 
                         <ul class="Nav-menu">
-                            @foreach ($nav as $topnav)
+                            @foreach ($site['nav'] as $topnav)
                                 <li class="Nav-item" uib-dropdown>
                                     @if (!isset($topnav['subnav']))
                                         <a id="to_{{ $topnav['id'] }}_from_nav" class="Nav-link" href="{{ $topnav['url'] }}">{{ $topnav['title'] }}</a>
@@ -99,8 +86,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                 @if (!$in_app)
                     <div class="MobileBar">
                         <a id="to_home_from_mobileLogo" class="MobileBar-logoWrap" href="/">
-                            <svg class="MobileBar-logo" role="img" title="Faith Promise Logo">
-                                <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+                            <svg class="MobileBar-logo" role="img" title="{{ $site['name'] }} Logo">
+                                <use xlink:href="/build/svg/general.svg#{{ $site['logo'] }}"></use>
                             </svg>
                         </a>
                         <span class="MobileBar-navToggle"><i class="icon-menu" nav-toggle></i></span>
@@ -115,21 +102,13 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                         <div class="Footer-social">
                             <h5 class="Footer-socialHeading">Connect with us</h5>
                             <ul class="Footer-socialList">
-                                <li class="Footer-socialItem">
-                                    <a id="to_facebook_from_footer" class="Footer-socialLink" href="https://www.facebook.com/faithpromise"><i class="Footer-socialIcon icon-facebook-circled"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_twitter_from_footer" class="Footer-socialLink" href="https://twitter.com/faithpromise"><i class="Footer-socialIcon icon-twitter-circled"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_instagram_from_footer" class="Footer-socialLink" href="https://instagram.com/faithpromise"><i class="Footer-socialIcon icon-instagram"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_vimeo_from_footer" class="Footer-socialLink" href="https://vimeo.com/faithpromise"><i class="Footer-socialIcon icon-vimeo-circled"></i></a>
-                                </li>
-                                <li class="Footer-socialItem">
-                                    <a id="to_pinterest_from_footer" class="Footer-socialLink" href="https://www.pinterest.com/faithpromise/"><i class="Footer-socialIcon icon-pinterest-circled"></i></a>
-                                </li>
+                                @foreach($site['social_services'] as $s)
+                                    @if (array_key_exists($s, $site))
+                                        <li class="Footer-socialItem">
+                                            <a class="Footer-socialLink" href="{{ social_url($s, $site[$s]) }}"><i class="Footer-socialIcon icon-{{ $s }}-circled"></i></a>
+                                        </li>
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                         <div class="Footer-grid">

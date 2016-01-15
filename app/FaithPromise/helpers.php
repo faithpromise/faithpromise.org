@@ -120,6 +120,26 @@ function instagram_url($username) {
     return 'https://instagram.com/' . $username;
 }
 
+function pinterest_url($username) {
+    return 'https://www.pinterest.com/' . $username . '/';
+}
+
+function youtube_url($username) {
+    return 'https://www.youtube.com/user/' . $username;
+}
+
+function vimeo_url($username) {
+    return 'https://vimeo.com/' . $username;
+}
+
+function github_url($username) {
+    return 'https://github.com/' . $username;
+}
+
+function social_url($service, $username) {
+    return call_user_func($service . '_url', $username);
+}
+
 function excerpt($str, $desired_length, $ellipses = '...') {
     $parts = preg_split('/([\s\n\r]+)/', strip_tags($str), null, PREG_SPLIT_DELIM_CAPTURE);
     $parts_count = count($parts);
