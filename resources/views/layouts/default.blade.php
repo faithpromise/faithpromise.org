@@ -51,7 +51,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                     <div class="Nav-container">
 
                         <a id="to_home_from_headerLogo" class="Nav-logoWrap" href="/">
-                            <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
+                            <svg class="Nav-logo" role="img" title="{{ $site['name'] }} Logo">
                                 <use xlink:href="/build/svg/general.svg#{{ $site['logo'] }}"></use>
                             </svg>
                         </a>
@@ -86,8 +86,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                 @if (!$in_app)
                     <div class="MobileBar">
                         <a id="to_home_from_mobileLogo" class="MobileBar-logoWrap" href="/">
-                            <svg class="MobileBar-logo" role="img" title="Faith Promise Logo">
-                                <use xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+                            <svg class="MobileBar-logo" role="img" title="{{ $site['name'] }} Logo">
+                                <use xlink:href="/build/svg/general.svg#{{ $site['logo'] }}"></use>
                             </svg>
                         </a>
                         <span class="MobileBar-navToggle"><i class="icon-menu" nav-toggle></i></span>
