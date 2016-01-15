@@ -151,6 +151,7 @@
 
   .WelcomeBar-container {
     display:          flex;
+    width:            100%;
     background-color: @NavBackgroundColor;
   }
 
@@ -203,6 +204,10 @@
   .WelcomeBarItem-heading {
     .to-em(font-size, @WelcomeBar-heading-font-size, @WelcomeBar-font-size);
     .to-em(margin-bottom, 10, @WelcomeBar-heading-font-size);
+
+    & > .icon {
+      display: none;
+    }
   }
 
   .WelcomeBarItem-text {
