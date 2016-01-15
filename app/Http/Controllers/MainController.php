@@ -16,11 +16,13 @@ class MainController extends BaseController {
 
         $current_series = Series::currentSeries()->first();
         $events = Event::featured()->get()->sortBy('sort');
+        $icampus_times = Campus::findBySlug('online')->times;
         $stylesheet = new Stylesheet($current_series->home_css);
 
         return view('welcome', [
             'current_series' => $current_series,
             'events'         => $events,
+            'icampus_times'  => $icampus_times,
             'stylesheets'    => [$stylesheet]
         ]);
     }
