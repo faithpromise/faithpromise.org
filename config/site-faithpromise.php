@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'name' => 'Faith Promise Church',
     'title'           => 'Faith Promise Church',
     'description'     => 'A contemporary church with locations in Knoxville, Maryville, Clinton, and La Follette, TN',
     'facebook'        => 'faithpromise',
