@@ -12,7 +12,8 @@ class InternetCampusController extends BaseController {
 
     public function countdown() {
 
-        if (App::environment('local')) {
+        $is_local = App::environment('local');
+        if ($is_local) {
             \Debugbar::disable();
         }
 
@@ -23,13 +24,16 @@ class InternetCampusController extends BaseController {
         $countdown = Cache::get($key);
         $http_client = new HttpClient();
 
-//        $test_start = Carbon::now()->addSeconds(10);
-//        $test = [
-//            'start_utc' => ($test_start->timestamp * 1000),
-//            'start' => ($test_start->copy()->setTimezone('America/New_York')->timestamp * 1000),
-//            'is_live' => false
-//        ];
-//        return response(json_encode($test));
+        if ($is_local) {
+            $test_start = Carbon::now()->addMinutes(60);
+            $test = [
+                'start_utc' => ($test_start->timestamp * 1000),
+                'start'     => ($test_start->copy()->setTimezone('America/New_York')->timestamp * 1000),
+                'is_live'   => false
+            ];
+
+            return response(json_encode($test));
+        }
 
         if ($countdown === null OR App::environment('local')):
 
