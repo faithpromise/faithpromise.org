@@ -42,6 +42,9 @@
 
             if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
                 live_interval = $timeout(activate, 300000); /* 5 min = 300000 ms */
+                data.withinMinute = false;
+                data.withinHour = false;
+                data.future = false;
                 data.isLive = true;
                 data.isLoaded = true;
                 return;
@@ -53,11 +56,15 @@
 
             data.days = days;
             data.hours = hours;
-            data.minutes = minutes > 9 ? minutes : ('0' + minutes);
-            data.seconds = seconds > 9 ? seconds : ('0' + seconds);
+            data.minutes = minutes;
+            data.seconds = seconds;
 
             data.isLive = false;
             data.isLoaded = true;
+
+            data.withinMinute = secondsTill < 60;
+            data.withinHour = (secondsTill >= 60) && (secondsTill < (60*60));
+            data.future = secondsTill > (60*60);
 
             interval = $timeout(icampusTick, 1000);
         }

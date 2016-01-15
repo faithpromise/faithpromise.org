@@ -2,55 +2,37 @@
 
 @section('content')
 
-    <div class="WelcomeHero">
-        {{--<h1 class="">Welcome to Faith Promise</h1>--}}
-        <div class="WelcomeHero-buttons">
-            <a id="to_locations_from_hero" class="WelcomeHero-button" href="{{ route('locations') }}">Locations</a>
-            <a id="to_whatToExpect_from_hero" class="WelcomeHero-button" href="{{ route('whatToExpect') }}">Get to Know Us</a>
-        </div>
+    <div class="NewSeries">
+        <img src="{{ cdn_image('xl', 'full', 'images/series/without-wide.jpg') }}">
     </div>
 
-    @inlinecss
-    <style type="text/css">
-
-        /* 569px */
-        @media (max-width: 35.5625em) {
-            .CurrentSeries-thumb {
-                background-image: url(<?= cdn_image('md', 'full', $current_series->image, 'tall') ?>);
-            }
-        }
-
-        /* 570px */
-        @media (min-width: 35.625em) {
-            .CurrentSeries-thumb {
-                background-image: url(<?= cdn_image('lg', 'full', $current_series->image, 'wide') ?>);
-            }
-        }
-
-        /* 768px */
-        @media (min-width: 48em) {
-            .CurrentSeries-thumb {
-                background-image: url(<?= cdn_image('xl', 'quarter', $current_series->image, 'square') ?>);
-            }
-        }
-
-        /* 1024px */
-        @media (min-width: 64em) {
-            .CurrentSeries-thumb {
-                background-image: url(<?= cdn_image('xl', 'half', $current_series->image, 'tall') ?>);
-            }
-        }
-    </style>
-    @endinlinecss
-
-    <div class="CurrentSeries">
-        <div class="CurrentSeries-container">
-            <div class="CurrentSeries-thumbWrap">
-                <div class="CurrentSeries-thumb"></div>
-            </div>
-            <div class="CurrentSeries-countdownWrap">
-                <icampus-countdown></icampus-countdown>
-            </div>
+    <div class="WelcomeBar">
+        <div class="WelcomeBar-container">
+            <a class="WelcomeBarItem WelcomeBarItem--locations" href="{{ route('locations') }}">
+                <h2 class="WelcomeBarItem-heading">
+                    <span>Times &amp; Locations</span>
+                    <i class="icon icon-right-open"></i>
+                </h2>
+                <p class="WelcomeBarItem-text">Get times & directions to each of our campuses as well as online services. Join us this weekend. We'd love to see you there!</p>
+                <span class="WelcomeBarItem-action">Find a Campus<i class="icon icon-right-open"></i></span>
+            </a>
+            <a class="WelcomeBarItem WelcomeBarItem--new" href="{{ route('whatToExpect') }}">
+                <h2 class="WelcomeBarItem-heading">
+                    <span>New Here?</span>
+                    <i class="icon icon-right-open"></i>
+                </h2>
+                <p class="WelcomeBarItem-text">Get an overview of our weekend worship service, meet our staff, and learn about our students and kids ministries.</p>
+                <span class="WelcomeBarItem-action">Get to Know Us<i class="icon icon-right-open"></i></span>
+            </a>
+            <a
+                icampus-countdown
+                class="WelcomeBarItem WelcomeBarItem--parents WelcomeBarItem--withPhoto"
+                href="http://icampus.faithpromise.org"
+                series_title="{{ $current_series->title }}"
+                image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-tall.jpg') }}"
+                live_image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-2-tall.jpg') }}">
+                {!! $icampus_times !!}
+            </a>
         </div>
     </div>
 

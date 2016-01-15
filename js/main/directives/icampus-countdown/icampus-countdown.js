@@ -1,13 +1,22 @@
-(function(module) {
+(function (module) {
 
     module.directive('icampusCountdown', directive);
 
     function directive() {
         return {
-            restrict: 'E',
-            controller: Controller,
-            templateUrl: '/build/js/main/directives/icampus-countdown/icampus-countdown.html',
-            replace: true
+            templateUrl:      '/build/js/main/directives/icampus-countdown/icampus-countdown.html',
+            transclude:       true,
+            restrict:         'A',
+            controller:       Controller,
+            controllerAs:     'vm',
+            bindToController: true,
+            scope:            {
+                times:       '@',
+                image:       '@',
+                liveImage:   '@',
+                seriesTitle: '@'
+            }
+
         };
     }
 
