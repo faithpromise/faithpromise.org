@@ -1,0 +1,273 @@
+.Overlaylay {
+  position: relative;
+
+  &:before {
+    content:          '';
+    display:          block;
+    position:         absolute;
+    top:              0;
+    left:             0;
+    height:           100%;
+    width:            100%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+}
+
+@WelcomeBar-font-size: 16;
+@WelcomeBar-heading-font-size: 23;
+
+/*
+|--------------------------------------------------------------------------
+| All viewport sizes
+|--------------------------------------------------------------------------
+*/
+
+.WelcomeBarItem {
+
+  background-color: @NavBackgroundColor;
+
+  &, &:hover {
+    color:           @NavTextColor;
+    text-decoration: none;
+  }
+
+}
+
+.WelcomeBarItem-heading {
+  line-height:    1;
+  text-transform: uppercase;
+  white-space:    nowrap;
+  overflow:       hidden;
+  text-overflow:  ellipsis;
+  color:          inherit;
+}
+
+/*
+|--------------------------------------------------------------------------
+| 649px & Under
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 40.5625em) {
+
+  .WelcomeBar-container {
+    display:        flex;
+    flex-direction: column;
+    .to-em(padding, 5 0, @WelcomeBar-font-size);
+  }
+
+  .WelcomeBarItem {
+    display: flex;
+    .to-em(margin, 5 10, @WelcomeBar-font-size);
+    .to-em(padding, 20, @WelcomeBar-font-size);
+
+    &--new {
+      order: 1;
+    }
+    &--locations {
+      order: 2;
+    }
+    &--parents {
+      order: 3;
+    }
+  }
+
+  .WelcomeBarItem-contentWrap {
+    width: 100%;
+  }
+
+  .WelcomeBarItem-heading {
+    .to-em(font-size, 16, @WelcomeBar-font-size);
+    display: flex;
+    width:   100%;
+    margin:  0;
+
+    & > span {
+      flex-grow: 1;
+    }
+  }
+
+  .WelcomeBarItem-text,
+  .WelcomeBarItem-imageWrap,
+  .WelcomeBarItem-action {
+    display: none;
+  }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| 640 - 899px
+|--------------------------------------------------------------------------
+*/
+
+@media (min-width: 40em) AND (max-width: 56.1875em) {
+
+  .WelcomeBar-container {
+    display:        flex;
+    flex-direction: row;
+    .to-em(padding, 5 0, @WelcomeBar-font-size);
+  }
+
+  .WelcomeBarItem {
+    display:   flex;
+    flex-grow: 1;
+    .to-em(margin, 5 10, @WelcomeBar-font-size);
+    .to-em(padding, 20, @WelcomeBar-font-size);
+
+    &--new {
+      order: 1;
+    }
+    &--locations {
+      order: 2;
+    }
+    &--parents {
+      order: 3;
+    }
+  }
+
+  .WelcomeBarItem-contentWrap {
+    width: 100%;
+  }
+
+  .WelcomeBarItem-heading {
+    .to-em(font-size, 16, @WelcomeBar-font-size);
+    display: flex;
+    width:   100%;
+    margin:  0;
+
+    & > span {
+      flex-grow: 1;
+    }
+  }
+
+  .WelcomeBarItem-text,
+  .WelcomeBarItem-imageWrap,
+  .WelcomeBarItem-action {
+    display: none;
+  }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| 900px & Greater
+|--------------------------------------------------------------------------
+*/
+
+@media (min-width: 56.25em) {
+
+  .WelcomeBar {
+    .to-em(max-width, 1600, @WelcomeBar-font-size);
+    .to-em(margin, -40 auto @Card-gutter, @WelcomeBar-font-size);
+    .to-rem(padding, 0 @Card-gutter);
+    position: relative;
+  }
+
+  .WelcomeBar-container {
+    display:          flex;
+    background-color: @NavBackgroundColor;
+  }
+
+  .WelcomeBarItem {
+    position:       relative;
+    display:        flex;
+    flex-direction: column;
+    .to-em(padding, 35 30, @WelcomeBar-font-size);
+
+    &, &:hover {
+      color:           @NavTextColor;
+      text-decoration: none;
+    }
+
+    &:last-child {
+      &:after {
+        content: none; // Remove divider from last box
+      }
+    }
+
+    &:after {
+      content:          '';
+      position:         absolute;
+      top:              25%;
+      right:            0;
+      display:          block;
+      width:            1px;
+      height:           50%;
+      background-color: rgba(255, 255, 255, .18);
+      box-shadow:       1px 0 0 rgba(0, 0, 0, .8);
+    }
+  }
+
+  .WelcomeBarItem--withPhoto {
+    flex-direction: row;
+    width:          100%;
+  }
+
+  .WelcomeBarItem-contentWrap {
+    display:        flex;
+    flex-direction: column;
+    width:          50%;
+    .to-em(padding-right, 30, @WelcomeBar-font-size);
+  }
+
+  .WelcomeBarItem-imageWrap {
+    width: 50%;
+  }
+
+  .WelcomeBarItem-heading {
+    .to-em(font-size, @WelcomeBar-heading-font-size, @WelcomeBar-font-size);
+    .to-em(margin-bottom, 10, @WelcomeBar-heading-font-size);
+  }
+
+  .WelcomeBarItem-text {
+    flex-grow: 1;
+    color:     #b4b3b3;
+  }
+
+  .WelcomeBarItem-action {
+    font-weight:    @font-weight-bold;
+    text-transform: uppercase;
+  }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| 900 - 1279px
+|--------------------------------------------------------------------------
+*/
+
+@media (min-width: 56.25em) AND (max-width: 79.9375em) {
+
+  .WelcomeBarItem {
+    width: 33.33333%;
+  }
+
+  .WelcomeBarItem-contentWrap {
+    width: 100%;
+  }
+
+  .WelcomeBarItem-imageWrap {
+    display: none;
+  }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| 1280px & Greater
+|--------------------------------------------------------------------------
+*/
+
+@media (min-width: 80em) {
+
+  .WelcomeBarItem {
+    width: 25%;
+
+    &:last-child {
+      width: 50%;
+    }
+  }
+
+}
