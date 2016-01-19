@@ -12,28 +12,30 @@ class InternetCampusController extends BaseController {
 
     public function countdown() {
 
+        $api_uri = 'http://icampus.faithpromise.org/api/v1/events/current';
+        $key = 'icampus_countdown';
         $is_local = App::environment('local');
+
         if ($is_local) {
             \Debugbar::disable();
-        }
-
-        // LATER: Test out the cache
-
-        $api_uri = 'http://icampus.faithpromise.org/api/v1/events/current';
-        $key = 'icampus_countdown3';
-        $countdown = Cache::get($key);
-        $http_client = new HttpClient();
-
-        if ($is_local) {
-            $test_start = Carbon::now()->addMinutes(60);
+            $test_start = Carbon::now();
+            $test_start_local = $test_start->copy()->setTimezone('America/New_York');
+            $human_start_time_format = $test_start->minute == 0 ? 'ga' : 'g:ia';
+            $human_start_format = 'D ' . $human_start_time_format;
             $test = [
                 'start_utc' => ($test_start->timestamp * 1000),
-                'start'     => ($test_start->copy()->setTimezone('America/New_York')->timestamp * 1000),
-                'is_live'   => false
+                'start'     => ($test_start_local->timestamp * 1000),
+                'is_live'   => false,
+                "human_start" => $test_start_local->format($human_start_format),
+                "human_start_time" => $test_start_local->format($human_start_time_format)
             ];
 
             return response(json_encode($test));
         }
+
+        // LATER: Test out the cache
+        $countdown = Cache::get($key);
+        $http_client = new HttpClient();
 
         if ($countdown === null OR App::environment('local')):
 
@@ -57,10 +59,15 @@ class InternetCampusController extends BaseController {
             $countdown['start_local'] = $countdown['start_utc']->copy()->setTimezone('America/New_York');
             $countdown['expire_utc'] = $countdown['start_utc']->copy()->addMinutes(60);
 
+            $human_start_time_format = $countdown['start_local']->minute == 0 ? 'ga' : 'g:ia';
+            $human_start_format = 'D ' . $human_start_time_format;
+
             $countdown['json'] = json_encode(array(
-                "start_utc" => $countdown['start_utc']->timestamp * 1000,
-                "start"     => $countdown['start_local']->timestamp * 1000,
-                "is_live"   => $data->response->item->isLive
+                "start_utc"   => $countdown['start_utc']->timestamp * 1000,
+                "start"       => $countdown['start_local']->timestamp * 1000,
+                "is_live"     => $data->response->item->isLive,
+                "human_start" => $countdown['start_local']->format($human_start_format),
+                "human_start_time" => $countdown['start_local']->format($human_start_time_format)
             ));
 
             Cache::put($key, $countdown, $countdown['expire_utc']);
