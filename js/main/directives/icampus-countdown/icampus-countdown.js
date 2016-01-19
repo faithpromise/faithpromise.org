@@ -4,7 +4,7 @@
 
     function directive() {
         return {
-            templateUrl:      '/build/js/main/directives/icampus-countdown/icampus-countdown.html',
+            templateUrl:      '/build/js/main/directives/icampus-countdown/icampus-countdown.html?v=1',
             transclude:       true,
             restrict:         'A',
             controller:       Controller,
