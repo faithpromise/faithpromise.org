@@ -66,11 +66,20 @@ class AssetsController extends BaseController {
 
     public function rawImage($path) {
 
+        // http://s3browser.com/features-content-mime-types-editor.aspx
+        $content_types = [
+            'jpg' => 'image/jpeg',
+            'png' => 'image/png',
+            'gif' => 'image/gif',
+            'svg' => 'image/svg+xml'
+        ];
+
         $max_age_days = 30;
         $src_path = config('site.assets_path') . '/images/' . $path;
-        $img = Image::make($src_path);
+        $ext = pathinfo($src_path, PATHINFO_EXTENSION);
 
-        $response = $img->response();
+        $response = Response::make(file_get_contents($src_path));
+        $response->header('Content-type', $content_types[$ext] );
         $response->header('Cache-Control', 'max-age=' . ($max_age_days * 24 * 60 * 60) . ', public');
 
         return $response;
