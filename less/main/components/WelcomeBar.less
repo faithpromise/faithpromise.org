@@ -25,6 +25,10 @@
   overflow:       hidden;
   text-overflow:  ellipsis;
   color:          inherit;
+
+  &--live {
+    color: #00f81f;
+  }
 }
 
 /*
@@ -143,7 +147,7 @@
 @media (min-width: 56.25em) {
 
   .WelcomeBar {
-    .to-em(max-width, 1600, @WelcomeBar-font-size);
+    .to-em(max-width, 1680, @WelcomeBar-font-size);
     .to-em(margin, -40 auto @Card-gutter, @WelcomeBar-font-size);
     .to-rem(padding, 0 @Card-gutter);
     position: relative;
@@ -152,6 +156,7 @@
   .WelcomeBar-container {
     display:          flex;
     width:            100%;
+    border:           1px solid rgba(255, 255, 255, 0.2);
     background-color: @NavBackgroundColor;
   }
 

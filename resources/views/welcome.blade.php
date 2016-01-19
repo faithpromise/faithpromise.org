@@ -3,7 +3,15 @@
 @section('content')
 
     <div class="NewSeries">
-        <img src="{{ cdn_image('xl', 'full', 'images/series/without-wide.jpg') }}">
+        <img
+            src="{{ cdn_image('xl', 'full', 'images/series/without-wide.jpg') }}"
+            srcset="
+                http:{{ cdn_image('xl', 'full', 'images/series/without-home-wide.jpg') }} 1920w,
+                http:{{ cdn_image('lg', 'full', 'images/series/without-home-wide.jpg') }} 1200w,
+                http:{{ cdn_image('md', 'full', 'images/series/without-home-tall.jpg') }} 960w,
+                http:{{ cdn_image('sm', 'full', 'images/series/without-home-tall.jpg') }} 640w,
+            "
+        >
     </div>
 
     <div class="WelcomeBar">
