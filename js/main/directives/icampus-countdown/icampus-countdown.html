@@ -23,11 +23,8 @@
 <!--</div>-->
 
 <div class="WelcomeBarItem-contentWrap" ng-show="countdown.isLoaded">
-  <h2 class="WelcomeBarItem-heading">
-    <span ng-if="countdown.isLive" ng-cloak>We're Live!</span>
-    <span ng-if="countdown.withinMinute" ng-cloak>Live in {{ countdown.seconds }} Seconds!</span>
-    <span ng-if="countdown.withinHour" ng-cloak>Live in {{ countdown.minutes }} {{ countdown.minutes > 1 ? 'Minutes' : 'Minute' }}!</span>
-    <span ng-if="countdown.future" ng-cloak>Watch Online</span>
+  <h2 class="WelcomeBarItem-heading" ng-class="{ 'WelcomeBarItem-heading--live' : countdown.isLive }">
+    <span ng-cloak>{{ countdown.heading }}</span>
     <i class="icon icon-right-open"></i>
   </h2>
   <p class="WelcomeBarItem-text">
@@ -38,6 +35,5 @@
   <span class="WelcomeBarItem-action">Join Us Online<i class="icon icon-right-open"></i></span>
 </div>
 <div class="WelcomeBarItem-imageWrap">
-  <img ng-src="{{ vm.liveImage }}" ng-if="countdown.isLive">
-  <img ng-src="{{ vm.image }}" ng-if="!countdown.isLive">
+  <img ng-src="{{ vm.image }}">
 </div>

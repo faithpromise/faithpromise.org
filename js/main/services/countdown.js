@@ -30,6 +30,8 @@
         function icampusLoadCountdown(response) {
             data.next = response.data.start;
             data.start = new Date(response.data.start_utc);
+            data.human_start = response.data.human_start;
+            data.human_start_time = response.data.human_start_time;
             icampusTick();
         }
 
@@ -42,9 +44,7 @@
 
             if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
                 live_interval = $timeout(activate, 300000); /* 5 min = 300000 ms */
-                data.withinMinute = false;
-                data.withinHour = false;
-                data.future = false;
+                data.heading = "We're Live Online!";
                 data.isLive = true;
                 data.isLoaded = true;
                 return;
@@ -62,9 +62,15 @@
             data.isLive = false;
             data.isLoaded = true;
 
-            data.withinMinute = secondsTill < 60;
-            data.withinHour = (secondsTill >= 60) && (secondsTill < (60*60));
-            data.future = secondsTill > (60*60);
+            if (days >= 1) {
+                data.heading = 'Watch Online';
+            } else if (hours >= 1) {
+                data.heading = 'Live at ' + data.human_start_time;
+            } else if (minutes > 15) {
+                data.heading = 'Live in ' + minutes + ' Minute' + (minutes > 1 ? 's' : '');
+            } else {
+                data.heading = 'Live in ' + (minutes > 9 ? minutes : '0' + minutes)  + ':' + (seconds > 9 ? seconds : '0' + seconds);
+            }
 
             interval = $timeout(icampusTick, 1000);
         }
