@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <div class="Overlay">
+    <div class="StudentsWelcome Overlay">
+        <img class="StudentsWelcome-svg" src="/images/fpstudents/fpstudents-welcome.svg" title="Welcome to FP Students">
         <img src="{{ cdn_image('xl', 'full', 'images/fpstudents/home-wide.jpg') }}">
     </div>
 
