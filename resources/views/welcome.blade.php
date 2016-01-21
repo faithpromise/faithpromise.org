@@ -6,10 +6,10 @@
         <img
             src="{{ cdn_image('xl', 'full', 'images/series/without-wide.jpg') }}"
             srcset="
-                http:{{ cdn_image('xl', 'full', 'images/series/without-home-wide.jpg') }} 1920w,
-                http:{{ cdn_image('lg', 'full', 'images/series/without-home-wide.jpg') }} 1200w,
-                http:{{ cdn_image('md', 'full', 'images/series/without-home-tall.jpg') }} 960w,
-                http:{{ cdn_image('sm', 'full', 'images/series/without-home-tall.jpg') }} 640w,
+                http:{{ cdn_image('xl', 'full', $current_series->image, 'wide') }} 1920w,
+                http:{{ cdn_image('lg', 'full', $current_series->image, 'wide') }} 1200w,
+                http:{{ cdn_image('md', 'full', $current_series->image, 'tall') }} 960w,
+                http:{{ cdn_image('sm', 'full', $current_series->image, 'tall') }} 640w,
             "
         >
     </div>
