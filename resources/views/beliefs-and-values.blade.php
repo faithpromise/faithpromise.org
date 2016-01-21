@@ -18,17 +18,16 @@
     <p>Our strategy is to create relevant environments where people can meet with God, experience community with believers, and reach their potential.</p>
     @endintrosection
 
-    @textsection(['title' => '2015 Goals', 'class' => 'Section--lightGrey'])
-    <p>The Senior Staff of Faith Promise prayerfully consider goals for each year. Here are our goals for 2015:</p>
+    @textsection(['title' => '2016 Goals', 'class' => 'Section--lightGrey'])
+    <p>The Senior Staff of Faith Promise prayerfully consider goals for each year. Here are our goals for 2016:</p>
     <ul class="List">
-        <li>650 Baptisms</li>
+        <li>Launching a campus in Loudon County</li>
+        <li>Launch of our God Behind Bars Prison Campus</li>
+        <li>900 Baptisms</li>
         <li>One-Year Bible Reading Plan</li>
-        <li>Average Attendance of 6,000</li>
-        <li>15% Increase in Groups, 50 New Groups</li>
-        <li>2 Group Alignments</li>
-        <li>21-Day Fast Beginning 1/5/15</li>
-        <li>North Knox Campus Relocation</li>
-        <li>Campbell Campus Improvements</li>
+        <li>Average Attendance of 7,000</li>
+        <li>50 New Groups</li>
+        <li>Launch of our Elevate leadership development program</li>
     </ul>
     @endtextsection
 
