@@ -15,7 +15,7 @@ class SiteConfig {
     public function handle($request, Closure $next) {
 
         $config = app('config');
-        $is_student_site = $request->getHost() == $config->get('site.fpstudents_domain');
+        $is_student_site = $request->getHost() == $config->get('site.students_domain');
         $site = $is_student_site ? $config->get('site-students') : $config->get('site-faithpromise');
 
         $config->set('site', array_merge($config['site'], $site));

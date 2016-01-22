@@ -2,7 +2,7 @@
 
 use \Illuminate\Support\Facades\Route;
 
-Route::group(['domain' => config('site.fpstudents_domain')], function() {
+Route::group(['domain' => config('site.students_domain')], function() {
 
     Route::get('/', 'Students\MainController@index');
 

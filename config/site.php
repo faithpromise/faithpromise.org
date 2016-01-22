@@ -19,5 +19,5 @@ return [
     |
     */
 
-    'fpstudents_domain' => (env('APP_ENV', 'local') === 'production') ? 'fpstudents.org' : env('STUDENTS_DOMAIN', 'fpstudents.192.168.10.10.xip.io'),
+    'students_domain' => (env('APP_ENV', 'local') === 'production') ? 'fpstudents.org' : env('STUDENTS_DOMAIN', 'fpstudents.192.168.10.10.xip.io'),
 ];
