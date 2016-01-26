@@ -21,6 +21,7 @@ Route::get('/events/{event}', ['as' => 'event', 'uses' => 'EventsController@even
 
 // Campuses / Locations
 Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@index']);
+Route::get('/locations/loudon', ['as' => 'location', 'uses' => 'CampusesController@loudon']);
 Route::get('/locations/{campus}', ['as' => 'location', 'uses' => 'CampusesController@detail']);
 
 // Ministries
