@@ -8,7 +8,7 @@
             'buttons' => [
                 [
                     'title' => 'Ministry Overview (pdf)',
-                    'url' => 'http://blog.faithpromise.org/wp-content/uploads/2013/09/Information-welcome-letter.pdf'
+                    'url' => doc_url('kids-hope-information.pdf')
                 ]
             ]
         ]
