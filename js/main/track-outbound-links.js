@@ -27,7 +27,7 @@
                         title = (this.getAttribute('data-stats-title') || this.getAttribute('title') || this.innerHTML).replace(/<[^>]*>/g, '').trim(),
                         label = title ? ('[' + title + '] (' + url + ')') : url;
 
-                    if (typeof window.ga === 'function') {
+                    if (typeof window.ga === 'function' && window.ga.loaded) {
 
                         event.preventDefault();
 
