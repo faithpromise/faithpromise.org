@@ -20,7 +20,7 @@
                 @endif
             </ul>
         @endif
-        {{ $study->description }}
+        {!! $study->description !!}
         @endintrosection
     @endif
 
