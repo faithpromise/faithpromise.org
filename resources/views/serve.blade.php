@@ -32,6 +32,7 @@ $retirees->card_text = 'We have ongoing, short-term opportunities for retirees w
 $retirees->card_url = 'https://docs.google.com/forms/d/1xw0_J0djgHZIr8NwBmiINzErY-e7Ond0LbCI6IfO-6s/viewform';
 $retirees->card_url_text = 'Contact Us';
 $retirees->card_image = 'images/general/retirees-tall.png';
+$retirees->card_link_id = 'to_retirees_from_card';
 
 $group_types = collect([$opportunities, $love_local, $missions, $retirees]);
 
