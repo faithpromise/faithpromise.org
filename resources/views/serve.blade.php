@@ -46,4 +46,17 @@ $group_types = collect([$opportunities, $love_local, $missions, $retirees]);
     <p>There is nothing more rewarding than using your time and skills to further the work of Jesus in the world. Check out the options below to find the best fit for you.</p>
     @endcardsection
 
+    @textsection([
+        'title' => 'Spiritual Gifts',
+        'buttons' => [
+            [
+                'title' => 'Launch Gifts Inventory',
+                'url' => 'https://gifts.churchgrowth.org/cgi-cg/gifts.cgi?intro=1'
+            ]
+        ]
+    ])
+    <p>Interested in taking a spiritual gifts inventory to gain insight into the way that God has gifted you for service?</p>
+
+    @endtextsection
+
 @endsection
