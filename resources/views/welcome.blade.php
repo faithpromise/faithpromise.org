@@ -2,17 +2,10 @@
 
 @section('content')
 
-    <div class="NewSeries">
-        <img
-            src="{{ cdn_image('xl', 'full', 'images/series/without-wide.jpg') }}"
-            srcset="
-                http:{{ cdn_image('xl', 'full', $current_series->home_image, 'wide') }} 1920w,
-                http:{{ cdn_image('lg', 'full', $current_series->home_image, 'wide') }} 1200w,
-                http:{{ cdn_image('md', 'full', $current_series->home_image, 'tall') }} 960w,
-                http:{{ cdn_image('sm', 'full', $current_series->home_image, 'tall') }} 640w,
-            "
-        >
-    </div>
+    @heroimage ([
+        'image' => $current_series->home_image,
+        'title' => 'Current Sermon Series: ' . $current_series->title
+    ])
 
     <div class="WelcomeBar">
         <div class="WelcomeBar-container">

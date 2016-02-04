@@ -37,6 +37,9 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
             {!! $page_inline_css !!}
         @endif
 
+        <script>document.createElement( "picture" );</script>
+        <script src="//cdn.rawgit.com/scottjehl/picturefill/master/dist/picturefill.js" async></script>
+
         <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current()  }}">
     </head>
 
@@ -213,9 +216,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
             });
         </script>
 
-        <!--[if gte IE 9]>
         <script src="/build/js/main/svg4everybody.min.js"></script>
-        <![endif]-->
+
     </body>
 
 </html>

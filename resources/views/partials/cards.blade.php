@@ -11,19 +11,17 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
     ?>
     <li class="Card-item">
         <{{ $card_tag }} id="{{ $card->card_link_id }}" class="Card" href="{{ $card->card_url }}">
-            <?php if (isset($card->card_image) && !empty($card->card_url)): ?>
-            <span class="Card-image b-lazy"
-                    data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
-                    data-src-md="<?= cdn_image('md', 'full', $card->card_image) ?>"
-                    data-src-lg="<?= cdn_image('lg', 'full', $card->card_image) ?>"
-                    data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></span>
-            <?php elseif (isset($card->card_image)): ?>
-            <span class="Card-image b-lazy"
-                    data-src-sm="<?= cdn_image('sm', 'full', $card->card_image) ?>"
-                    data-src-md="<?= cdn_image('md', 'full', $card->card_image) ?>"
-                    data-src-lg="<?= cdn_image('lg', 'full', $card->card_image) ?>"
-                    data-src="<?= cdn_image('xl', 'half', $card->card_image) ?>"></span>
-            <?php endif; ?>
+
+            <!-- Remember to update Card.less if you change media queries here -->
+            <img srcset="
+                http:<?= resized_image_url($card->card_image, 800, 'tall') ?> 800w,
+                http:<?= resized_image_url($card->card_image, 480, 'tall') ?> 480w
+            " sizes="
+                (min-width: 65em) 33.3vw,
+                (min-width: 42em) 50vw,
+                100vw
+            ">
+
             <div class="Card-body">
                 <h3 class="Card-title"><?= $card->card_title ?></h3>
                 <?php if (!empty($card->card_subtitle)): ?>

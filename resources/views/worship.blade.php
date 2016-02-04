@@ -64,11 +64,7 @@ $albums = collect([$onlyYou, $gloryIsBorn, $alive]);
                 @foreach($albums as $album)
                     <li class="Album-item">
                         <div class="Album">
-                            <span class="Album-image b-lazy"
-                                    data-src-sm="<?= cdn_image('sm', 'full', $album->image) ?>"
-                                    data-src-md="<?= cdn_image('md', 'full', $album->image) ?>"
-                                    data-src-lg="<?= cdn_image('lg', 'full', $album->image) ?>"
-                                    data-src="<?= cdn_image('xl', 'half', $album->image) ?>"></span>
+                            <img class="Album-image" src="<?= resized_image_url($album->image, 800) ?>">
                             <div class="Album-buy">
                                 <span class="Album-buyLabel">Available on:</span>
                                 @if (!empty($album->itunes))

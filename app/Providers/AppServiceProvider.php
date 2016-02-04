@@ -13,6 +13,13 @@ class AppServiceProvider extends ServiceProvider {
      */
     public function boot() {
 
+        // Hero Image
+        Blade::directive('heroimage', function($expression) {
+            return '
+                <?php
+                    $hero_image = ' . $expression . '; include(base_path("resources/views/directives/hero_image.php")); ?>';
+        });
+
         // BackgroundSection
         Blade::directive('bgsection', function ($expression) {
             return '

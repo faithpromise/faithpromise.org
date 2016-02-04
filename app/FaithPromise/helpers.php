@@ -2,6 +2,25 @@
 
 use Illuminate\Support\Facades\Log;
 
+function resized_image_url($image_path, $width, $format = null) {
+
+    $image_path_parts = parse_url($image_path);
+    $image_path = $image_path_parts['path'];
+    $url_params = empty($image_path_parts['query']) ? [] : explode('&', $image_path_parts['query']);
+    if ($format !== null) {
+        $format_suffix = '-' . $format . '.${3}';
+        $image_path = preg_replace('/(-(square|tall|wide))?\.(jpg|png)$/', $format_suffix, $image_path_parts['path']);
+    }
+
+    $v = asset_exists($image_path) ? filemtime(asset_path($image_path)) : 'not-found';
+    array_unshift($url_params, 'v=' . $v);
+
+    $img_url = config('site.cdn_url') . '/resized/' . $width . '/' . $image_path . (count($url_params) ? '?' . implode('&', $url_params) : '');
+
+    return $img_url;
+
+}
+
 function open_graph_url_filter($url) {
     return 'http://' . preg_replace('/(http:)?\/\//', '', $url);
 }
@@ -15,7 +34,7 @@ function asset_exists($path) {
     // LATER: Optimize for multiple calls to this method in a single request
     $exists = is_file(asset_path($path));
 
-    if (! $exists) {
+    if (!$exists) {
         Log::critical('Image not found: ' . $path . '. May need to upload it.');
     }
 
@@ -26,6 +45,7 @@ function doc_url($file_name) {
 
     $doc_path = asset_path('docs/' . $file_name);
     $v = file_exists($doc_path) ? filemtime($doc_path) : 'not-found';
+
     return 'http:' . config('site.cdn_url') . '/docs/' . $file_name . '?v=' . $v;
 }
 
@@ -101,6 +121,7 @@ function bible_verses($scriptures) {
 function share_facebook($url, $redirect_url = null) {
     $app_id = config('site.facebook_app_id');
     $redirect_url = is_null($redirect_url) ? $url : $redirect_url;
+
     return 'https://www.facebook.com/dialog/share?app_id=' . $app_id . '&display=popup&href=' . $url . '&redirect_uri=' . $redirect_url;
 }
 
@@ -148,7 +169,9 @@ function excerpt($str, $desired_length, $ellipses = '...') {
 
     for ($last_part = 0; $last_part < $parts_count; ++$last_part) {
         $length += strlen($parts[$last_part]);
-        if ($length > $desired_length) { break; }
+        if ($length > $desired_length) {
+            break;
+        }
     }
 
     $new_str = trim(implode(array_slice($parts, 0, $last_part)));

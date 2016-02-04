@@ -4,7 +4,10 @@
 
     <div class="StudentsWelcome Overlay">
         <img class="StudentsWelcome-svg" src="/images/fpstudents/fpstudents-welcome.svg" title="Welcome to FP Students">
-        <img src="{{ cdn_image('xl', 'full', 'images/fpstudents/home-wide.jpg') }}">
+        @heroimage ([
+            'image' => 'images/fpstudents/home-wide.jpg',
+            'title' => 'Welcome to fpStudents'
+        ])
     </div>
 
     <div class="WelcomeBar">

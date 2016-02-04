@@ -9,6 +9,31 @@ use Illuminate\Support\Facades\Response;
 
 class AssetsController extends BaseController {
 
+    public function resize($width, $image_path) {
+
+        $src_path = config('site.assets_path') . '/' . $image_path;
+        $compression = 80;
+        $max_age_days = 30;
+
+        if (!file_exists($src_path)) {
+            return response('image not found', 404);
+        }
+
+        $img = Image::make($src_path);
+
+        $img->resize($width, null, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+
+        $response = Response::make($img->encode(null, $compression), 200);
+        $response->header('Content-Type', $img->mime());
+        $response->header('Cache-Control', 'max-age=' . ($max_age_days * 24 * 60 * 60) . ', public');
+
+        return $response;
+
+    }
+
     public function image($display_size, $image_size, $image_path) {
 
         $max_age_days = 30;
@@ -79,7 +104,7 @@ class AssetsController extends BaseController {
         $ext = pathinfo($src_path, PATHINFO_EXTENSION);
 
         $response = Response::make(file_get_contents($src_path));
-        $response->header('Content-type', $content_types[$ext] );
+        $response->header('Content-type', $content_types[$ext]);
         $response->header('Cache-Control', 'max-age=' . ($max_age_days * 24 * 60 * 60) . ', public');
 
         return $response;

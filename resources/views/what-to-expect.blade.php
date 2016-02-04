@@ -48,7 +48,7 @@ $faq = collect([
 ]);
 ?>
 
-@extends('layouts.page', ['title' => 'Worship Ministry', 'hero_image' => 'images/general/invite-cards-wide.jpg'])
+@extends('layouts.page', ['title' => 'What to Expect', 'hero_image' => 'images/general/invite-cards-wide.jpg'])
 
 @section('page')
 
