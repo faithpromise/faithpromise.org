@@ -13,17 +13,33 @@ if ($directive['execution_mode'] == 'start'):
             'buttons' => []
         ], $directive["args"]
     );
-    $args['class'] = trim('BackgroundSection b-lazy ' . (isset($args['class']) ? $args['class'] : '')); ?>
+    $args['class'] = trim('BackgroundSection ' . (isset($args['class']) ? $args['class'] : '')); ?>
+    <!--
+        1.  Even though we are displaying the background full width, we really don't need to load a
+            higher res on smaller viewports because there is a black overlay on top of the image.
+    -->
+    <div class="<?= $args['class'] ?>">
+        <div class="BackgroundSection-imageWrap">
+            <img
+                class="BackgroundSection-image"
+                srcset="
+                    <?= resized_image_url($args['image'], 1920, 'wide') ?> 1920w,
+                    <?= resized_image_url($args['image'], 1680, 'wide') ?> 1680w,
+                    <?= resized_image_url($args['image'], 1280, 'wide') ?> 1280w,
+                    <?= resized_image_url($args['image'], 800, 'wide') ?> 800w,
+                    <?= resized_image_url($args['image'], 480, 'wide') ?> 480w,
+                    <?= resized_image_url($args['image'], 320, 'wide') ?> 320w,
+                "
+                sizes="
+                    (max-width: 760px) 50vw,<? // 1. ?>
+                    100vw
+                "
+            >
+        </div>
 
-    <div
-    class="<?= $args['class'] ?>"
-    data-src-sm="<?= cdn_image('sm', 'full', $args["image"]) ?>"
-    data-src-md="<?= cdn_image('md', 'full', $args["image"]) ?>"
-    data-src-lg="<?= cdn_image('lg', 'full', $args["image"]) ?>"
-    data-src="<?= cdn_image('xl', 'full', $args["image"]) ?>">
-    <div class="BackgroundSection-container">
-    <div class="BackgroundSection-text">
-    <h2 class="BackgroundSection-title"><?= $args['title'] ?></h2>
+        <div class="BackgroundSection-container">
+            <div class="BackgroundSection-text">
+            <h2 class="BackgroundSection-title"><?= $args['title'] ?></h2>
 
 <?php endif; ?>
 

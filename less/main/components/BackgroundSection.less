@@ -54,6 +54,33 @@
   z-index:  1;
 }
 
+.BackgroundSection-imageWrap {
+  position: absolute;
+  top:      0;
+  left:     0;
+  height:   100%;
+  width:    100%;
+  overflow: hidden;
+}
+
+/*
+ 1. Browsers that do not support object-fit need to display image at it's full width
+ */
+.BackgroundSection-image {
+  position:  absolute;
+  top:       0;
+  left:      0;
+  height:    100%;
+  max-width: none; /* 1 */
+}
+
+@supports (object-fit: cover) {
+  .BackgroundSection-image {
+    max-width:  100%;
+    object-fit: cover;
+  }
+}
+
 .BackgroundSection-text {
 
   @media (min-width: @BackgroundSection-float-width) {
