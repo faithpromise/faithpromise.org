@@ -42,7 +42,6 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
                     <i class="icon-right-open-big"></i>
                 </span>
                 <?php else: ?>
-                    <!-- LATER: Need a better solution for ensuring same height on cards. Handle this in card-grid directive. -->
                     <span class="Card-link">&nbsp;</span>
                 <?php endif; ?>
             </div>
