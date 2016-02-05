@@ -2,18 +2,17 @@
 @Card-gutter: (@grid-gutter-base * 1.5);
 
 .Card-grid {
-  //.to-rem(margin-left, -@Card-gutter);
+  .to-rem(margin-left, -@Card-gutter);
   display:         flex;
   flex-wrap:       wrap;
   justify-content: center;
-  width:           100%;
 
   list-style:      none;
 }
 
 // Remember to update img sizes in cards.blade.php if you change media queries here
 .Card-item {
-  //.to-rem(padding-left, @Card-gutter);
+  .to-rem(padding-left, @Card-gutter);
   .to-em(margin-bottom, @Card-gutter, @Card-font-size);
 
   display:     flex;
@@ -25,15 +24,7 @@
   }
 
   @media (min-width: 65rem) {
-
-    width: ~"calc(33.3333333% - 20px)";
-
-    &:nth-child(3n+2) {
-      margin-left:  30px;
-      margin-right: 30px;
-      //.to-em(margin-left, 30);
-      //.to-em(margin-right, 30);
-    }
+    width: 33.3333333%;
   }
 }
 
