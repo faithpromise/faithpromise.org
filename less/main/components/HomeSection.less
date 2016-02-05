@@ -4,5 +4,10 @@
 
 .HomeSection-container {
   &:extend(.Container all);
-  .to-rem(padding, 0 @Card-gutter);
+  .to-rem(padding, 0 10);
+
+  @media (min-width: 56.25em) {
+    .to-rem(padding, 0 @Card-gutter);
+  }
+
 }
