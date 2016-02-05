@@ -4,7 +4,7 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
 
 ?>
 
-<ul class="<?= $card_grid_class ?>" card-grid>
+<ul class="<?= $card_grid_class ?>">
     <?php
         foreach ($cards as $card):
         $card_tag = empty($card->card_url) ? 'div' : 'a';
@@ -13,14 +13,19 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
         <{{ $card_tag }} id="{{ $card->card_link_id }}" class="Card" href="{{ $card->card_url }}">
 
             <!-- Remember to update Card.less if you change media queries here -->
-            <img srcset="
-                http:<?= resized_image_url($card->card_image, 800, 'tall') ?> 800w,
-                http:<?= resized_image_url($card->card_image, 480, 'tall') ?> 480w
-            " sizes="
-                (min-width: 65em) 33.3vw,
-                (min-width: 42em) 50vw,
-                100vw
-            ">
+            <!-- Image must be wrapped inside div, otherwise flex will make it grow -->
+            <div>
+                <img
+                    src="<?= resized_image_url($card->card_image, 480, 'tall') ?>"
+                    srcset="
+                        http:<?= resized_image_url($card->card_image, 800, 'tall') ?> 800w,
+                        http:<?= resized_image_url($card->card_image, 480, 'tall') ?> 480w
+                    " sizes="
+                        (min-width: 65em) 33.3vw,
+                        (min-width: 42em) 50vw,
+                        100vw
+                    ">
+            </div>
 
             <div class="Card-body">
                 <h3 class="Card-title"><?= $card->card_title ?></h3>
