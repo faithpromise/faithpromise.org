@@ -28,10 +28,14 @@
   }
 }
 
+/*
+ 1. Needed for IE 11
+ */
 .Card {
   .to-rem(font-size, @Card-font-size);
   display:          flex;
   flex-direction:   column;
+  width:            100%; /* 1 */
   background-color: #fff;
   color:            inherit;
   user-select:      none;
