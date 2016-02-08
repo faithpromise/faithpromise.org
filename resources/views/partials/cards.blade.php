@@ -16,7 +16,6 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
             <!-- Image must be wrapped inside div, otherwise flex will make it grow -->
             <div>
                 <img
-                    src="<?= resized_image_url($card->card_image, 480, 'tall') ?>"
                     srcset="
                         http:<?= resized_image_url($card->card_image, 800, 'tall') ?> 800w,
                         http:<?= resized_image_url($card->card_image, 480, 'tall') ?> 480w

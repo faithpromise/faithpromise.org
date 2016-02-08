@@ -83,21 +83,21 @@ $faq = [
     </style>
 
     <div class="CampAlbum">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/boys.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/volunteer-3.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/campfire.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/water-slide.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/games.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/water-bounce.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/games-2.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/golf.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/group.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/girls.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/pool.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/ring.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/volunteer-2.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/games-3.jpg">
-        <img class="CampAlbum-photo" src="/images/fpkids/camp/2015/volunteer-4.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/boys.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/volunteer-3.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/campfire.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/water-slide.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/games.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/water-bounce.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/games-2.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/golf.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/group.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/girls.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/pool.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/ring.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/volunteer-2.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/games-3.jpg">
+        <img class="CampAlbum-photo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/fpkids/camp/2015/volunteer-4.jpg">
     </div>
 
     {{--
@@ -118,7 +118,7 @@ $faq = [
     </style>
     @endinlinecss
 
-    @faqsection(['faq' => $faq, 'class' => 'has-background camp_faq', 'image' => cdn_image_raw('images/fpkids/camp/pattern-optimized.jpg')])
+    @faqsection(['faq' => $faq, 'class' => 'has-background camp_faq', 'image' => 'images/fpkids/camp/pattern-optimized.jpg'])
     @endfaqsection
 
     @bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp/volunteer-tall.jpg'])

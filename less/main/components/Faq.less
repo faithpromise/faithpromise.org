@@ -4,9 +4,42 @@
   .to-em(padding-bottom, (@Section-vertical-padding-top - (@grid-gutter-base * 4)), @Section-font-size);
 }
 
+.Faq {
+  position: relative;
+}
+
+.Faq-imageWrap {
+  position: absolute;
+  top:      0;
+  left:     0;
+  height:   100%;
+  width:    100%;
+  overflow: hidden;
+}
+
+/*
+ 1. Browsers that do not support object-fit need to display image at it's full width
+ */
+.Faq-image {
+  position:  absolute;
+  top:       0;
+  left:      0;
+  height:    100%;
+  max-width: none; /* 1 */
+}
+
+@supports (object-fit: cover) {
+  .Faq-image {
+    max-width:  100%;
+    object-fit: cover;
+  }
+}
+
 .Faq-container {
   &:extend(.Container all);
   &:extend(.Container--wide all);
+  position: relative;
+  z-index:  1;
 }
 
 .Faq-title {

@@ -13,6 +13,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <title>{{ isset($title) ? ($title . ' - '. $site['title']) : $site['title'] }}</title>
         <meta name="description" content="{{ isset($description) ? $description : $site['description'] }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current()  }}">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         @include('includes._social_tags')
@@ -39,8 +40,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
 
         <script>document.createElement( "picture" );</script>
         <script src="//cdn.rawgit.com/scottjehl/picturefill/master/dist/picturefill.js" async></script>
+        <script src="//cdn.rawgit.com/aFarkas/lazysizes/gh-pages/lazysizes.min.js" async></script>
 
-        <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current()  }}">
     </head>
 
     <body class="{{ $body_class }}">
@@ -176,45 +177,6 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <!-- build:script main -->
         <script src="/build/js/main/main.dev.js"></script>
         <!-- /build -->
-
-        <!-- http://dinbror.dk/blog/blazy/ -->
-        <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-        <script>
-            var fp = window.fp || {};
-            /*! contentloaded.min.js - https://github.com/dperini/ContentLoaded - Author: Diego Perini - License: MIT */
-            fp.contentLoaded = function (b, i) {
-                var j = false, k = true, a = b.document, l = a.documentElement, f = a.addEventListener, h = f ? 'addEventListener' : 'attachEvent', n = f ? 'removeEventListener' : 'detachEvent', g = f ? '' : 'on', c = function (d) {
-                    if (d.type == 'readystatechange' && a.readyState != 'complete')return;
-                    (d.type == 'load' ? b : a)[n](g + d.type, c, false);
-                    if (!j && (j = true))i.call(b, d.type || d)
-                }, m = function () {
-                    try {l.doScroll('left')} catch (e) {
-                        setTimeout(m, 50);
-                        return
-                    }
-                    c('poll')
-                };
-                if (a.readyState == 'complete')i.call(b, 'lazy'); else {
-                    if (!f && l.doScroll) {
-                        try {k = !b.frameElement} catch (e) {}
-                        if (k)m()
-                    }
-                    a[h](g + 'DOMContentLoaded', c, false);
-                    a[h](g + 'readystatechange', c, false);
-                    b[h](g + 'load', c, false)
-                }
-            };
-            fp.contentLoaded(window, function () {
-                new Blazy({
-                    breakpoints: [
-                        {width: 320, src: 'data-src-sm'},
-                        {width: 480, src: 'data-src-md'},
-                        {width: 600, src: 'data-src-lg'},
-                        {width: 960, src: 'data-src-xl'}
-                    ]
-                });
-            });
-        </script>
 
         <script src="/build/js/main/svg4everybody.min.js"></script>
 

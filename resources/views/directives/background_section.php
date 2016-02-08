@@ -21,8 +21,9 @@ if ($directive['execution_mode'] == 'start'):
     <div class="<?= $args['class'] ?>">
         <div class="BackgroundSection-imageWrap">
             <img
-                class="BackgroundSection-image"
-                srcset="
+                class="BackgroundSection-image lazyload"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                data-srcset="
                     <?= resized_image_url($args['image'], 1920, 'wide') ?> 1920w,
                     <?= resized_image_url($args['image'], 1680, 'wide') ?> 1680w,
                     <?= resized_image_url($args['image'], 1280, 'wide') ?> 1280w,
