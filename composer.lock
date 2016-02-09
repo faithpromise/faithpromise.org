@@ -815,12 +815,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/faithpromise/fp-shared.git",
-                "reference": "d0d4379ec65a3e5728ebeb67fe4e45d899aa36e1"
+                "reference": "8c18aa84c83f0f93dc07e5830038b38f596e0ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/d0d4379ec65a3e5728ebeb67fe4e45d899aa36e1",
-                "reference": "d0d4379ec65a3e5728ebeb67fe4e45d899aa36e1",
+                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/8c18aa84c83f0f93dc07e5830038b38f596e0ff1",
+                "reference": "8c18aa84c83f0f93dc07e5830038b38f596e0ff1",
                 "shasum": ""
             },
             "require": {
@@ -849,7 +849,7 @@
                 "source": "https://github.com/faithpromise/fp-shared/tree/master",
                 "issues": "https://github.com/faithpromise/fp-shared/issues"
             },
-            "time": "2016-02-02 20:28:55"
+            "time": "2016-02-09 19:45:18"
         },
         {
             "name": "guzzlehttp/guzzle",
