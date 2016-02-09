@@ -3,9 +3,9 @@
 @section('page')
 
     @introsection(['title' => $event->title])
-    @if(strlen($event->dates_text))
+    @if(strlen($event->subtitle))
         <p class="text-center">
-            <strong>{{ $event->dates_text }}</strong>
+            <strong>{{ $event->subtitle }}</strong>
         </p>
     @endif
     {!! $event->description !!}
