@@ -18,8 +18,7 @@
         <li>Lead the group by facilitating the group meeting; helping to create a safe and authentic environment, and promoting participation among group members.</li>
         <li>Commit to being open to multiplying your group and identifying new leaders within your group.</li>
         <li>Commit to engage in leadership development opportunities provided by the church and commit to attend Leaders' Gatherings. (Usually 2 per year)</li>
-        <li>Group Leaders are supported by a FPC Groups Coach. A Coaches role is to serve as a shepherd leader to a group of group leaders.</li>
-        <li>Commit to engage relationally with your Coach by attending Monthly group Leader Meetings led by your coach and One-On-One Meetings as needed with your Coach. The purpose of the monthly meetings is for leaders to gather together to encourage each other and learn from each other, as well as provide your Coach with an opportunity to know you and shepherd you as you shepherd your group members.</li>
+        <li>Group leaders are supported by a FPC groups coach. A coach's role is to serve as a shepherd leader to a group of group leaders. - Commit to engage relationally with your coach by attending monthly group leader meetings led by your coach and one-on-one meetings as needed with your coach. The purpose of the monthly meetings is for leaders to gather together to encourage each other and learn from each other, as well as provide your coach with an opportunity to know you and shepherd you as you shepherd your group members.</li>
         <li>Commit to input attendance weekly and contact new prospects in a timely manner.</li>
         <li>Commit to completing annual Group Assessments.</li>
     </ul>
