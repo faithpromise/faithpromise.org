@@ -28,7 +28,7 @@
                 <p class="WelcomeBarItem-text">Lorm ipsum means that its really importent for you to stay off drugs and stay in scool...</p>
                 <span class="WelcomeBarItem-action">Get to Know Us<i class="icon icon-right-open"></i></span>
             </a>
-            <a class="WelcomeBarItem WelcomeBarItem--parents WelcomeBarItem--withPhoto" href="<!-- TODO: add url -->">
+            <a class="WelcomeBarItem WelcomeBarItem--parents WelcomeBarItem--withPhoto" href="{{ route('fpStudents_parents') }}">
                 <div class="WelcomeBarItem-contentWrap">
                     <h2 class="WelcomeBarItem-heading">
                         <span>Parents Guide</span>
