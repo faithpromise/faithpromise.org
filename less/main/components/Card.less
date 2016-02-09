@@ -52,9 +52,10 @@
  1. Fixes a Chrome bug: https://code.google.com/p/chromium/issues/detail?id=580196
  */
 .Card-body {
+  .to-em(padding, 36 30 0, @Card-font-size);
   flex:       1 0 auto;
   min-height: 0; // 1.
-  .to-em(padding, 36 30 0, @Card-font-size);
+  text-align: center;
 }
 
 .Card-text {
