@@ -12,7 +12,7 @@ class MainController extends BaseController {
 
         $current_series = Series::currentSeries()->first();
 
-        return view('students/index', [
+        return view('students/home', [
             'current_series' => $current_series
         ]);
     }
