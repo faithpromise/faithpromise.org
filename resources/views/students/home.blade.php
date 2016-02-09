@@ -44,4 +44,13 @@
         </div>
     </div>
 
+    <div class="HomeSection">
+        <div class="HomeSection-container">
+            @include('partials.cards', ['cards' => $events])
+            <p class="text-center">
+                <a id="to_events_from_featuredEvents" class="Button" href="{{ route('events') }}">See All Updates</a>
+            </p>
+        </div>
+    </div>
+
 @endsection
