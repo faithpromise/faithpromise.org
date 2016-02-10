@@ -20,6 +20,11 @@
     @profilessection(['title' => 'Staff Counselors', 'profiles' => $ministry->Staff])
     @endprofilessection
 
+    @textsection(['title' => 'Stephen Ministry'])
+    <p>Stephen Ministry is a nationally recognized Christian care ministry which began in 1975 and is helping more than a million people in over 11,000 churches. The Faith Promise Stephen Ministry equips lay people to provide confidential, one-on-one, Christ-centered care and support to people experiencing difficult times in their lives such as loss of a loved one, job loss, terminal illness, and divorce. The ministry pairs individuals with a Stephen Minister who will come alongside them to provide emotional and spiritual care for as long as the need persists.
+        <a id="to_stephen_from_care" href="{{ route('stephen') }}">More information</a></p>
+    @endtextsection
+
     @textsection(['title' => 'fpCelebrate', 'class' => 'Section--lightGrey'])
     <p>fp Celebrate meets on Monday nights at the FPC Pellissippi Campus starting at 6:00 pm and is a time of helping people connect, heal, and grow.
         <a id="to_celebrate_from_care" href="{{ route('celebrate') }}">More information</a></p>
@@ -41,11 +46,6 @@
     <p>If you have further questions, call Don Truza, at 865-693-3193.</p>
     <p>If you're an employer and want to post a job listing,
         <a href="http://knoxworx.klf.org/jobs-2/add/" target="_blank">go here</a>.</p>
-    @endtextsection
-
-    @textsection(['title' => 'Stephen Ministry'])
-    <p>Stephen Ministry is a nationally recognized Christian care ministry which began in 1975 and is helping more than a million people in over 11,000 churches. The Faith Promise Stephen Ministry equips lay people to provide confidential, one-on-one, Christ-centered care and support to people experiencing difficult times in their lives such as loss of a loved one, job loss, terminal illness, and divorce. The ministry pairs individuals with a Stephen Minister who will come alongside them to provide emotional and spiritual care for as long as the need persists.
-        <a id="to_stephen_from_care" href="{{ route('stephen') }}">More information</a></p>
     @endtextsection
 
 @endsection
