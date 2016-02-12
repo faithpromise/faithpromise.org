@@ -13,14 +13,14 @@ return [
             'id'    => 'locations'
         ],
         [
-            'title' => 'Watch & Read',
+            'title' => 'Sermons',
             'url'   => '/sermons',
             'id'    => 'sermons'
         ],
         [
             'title' => 'Events',
-            'url'   => '/events',
-            'id'    => 'events'
+            'url'   => '/updates',
+            'id'    => 'updates'
         ]
     ]
 ];
