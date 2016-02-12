@@ -19,6 +19,7 @@ if ($directive['execution_mode'] == 'start'):
             higher res on smaller viewports because there is a black overlay on top of the image.
     -->
     <div class="<?= $args['class'] ?>">
+        <?php if($args['image']): ?>
         <div class="BackgroundSection-imageWrap">
             <img
                 class="BackgroundSection-image lazyload"
@@ -37,6 +38,7 @@ if ($directive['execution_mode'] == 'start'):
                 "
             >
         </div>
+        <?php endif; ?>
 
         <div class="BackgroundSection-container">
             <div class="BackgroundSection-text">
