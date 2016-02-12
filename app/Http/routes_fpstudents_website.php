@@ -15,11 +15,11 @@ Route::group(['domain' => config('site.students_domain')], function () {
     Route::get('/staff/{staff}', ['as' => 'fpStudents_staffDetail', 'uses' => 'Students\StaffController@detail']);
 
     Route::get('/locations', ['as' => 'fpStudents_locations', 'uses' => 'Students\CampusesController@index']);
-    Route::get('/locations/{campus}', ['as' => 'fpStudents_location', 'uses' => 'Students\CampusesController@detail']);
+    Route::get('/locations/{student_campus}', ['as' => 'fpStudents_location', 'uses' => 'Students\CampusesController@detail']);
 
     Route::get('/events', 'Students\UpdatesController@events');
     Route::get('/updates', ['as' => 'fpStudents_updates', 'uses' => 'Students\UpdatesController@index']);
-    Route::get('/updates/{event}', ['as' => 'fpStudents_update', 'uses' => 'Students\UpdatesController@detail']);
+    Route::get('/updates/{update}', ['as' => 'fpStudents_update', 'uses' => 'Students\UpdatesController@detail']);
 
 // Sermons
     Route::get('/sermons', ['as' => 'fpStudents_sermons', 'uses' => 'Students\SermonsController@index']);
