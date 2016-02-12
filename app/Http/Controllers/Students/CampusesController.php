@@ -40,17 +40,7 @@ class CampusesController extends BaseController {
 
     public function detail($campus) {
 
-        return view('locations_detail', [
-            'campus' => $campus
-        ]);
-
-    }
-
-    public function loudon() {
-
-        $campus = StudentCampus::whereSlug('loudon')->first();
-
-        return view('locations_loudon', [
+        return view('students/locations_detail', [
             'campus' => $campus
         ]);
 
