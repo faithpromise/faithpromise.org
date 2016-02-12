@@ -19,6 +19,7 @@ Route::group(['domain' => config('site.students_domain')], function () {
 
     Route::get('/events', 'Students\UpdatesController@events');
     Route::get('/updates', ['as' => 'fpStudents_updates', 'uses' => 'Students\UpdatesController@index']);
+    Route::get('/updates/{event}', ['as' => 'fpStudents_update', 'uses' => 'Students\UpdatesController@detail']);
 
 // Sermons
     Route::get('/sermons', ['as' => 'fpStudents_sermons', 'uses' => 'Students\SermonsController@index']);
