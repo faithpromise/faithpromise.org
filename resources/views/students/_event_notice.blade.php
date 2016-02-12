@@ -1,0 +1,1 @@
+<p>Please note: prior to participating in student ministry events, participants must complete the <a class="nowrap" href="{{ doc_url('fpstudents/fpstudents-release-form.pdf') }}">Student Ministry Release Form</a>. Feel free to stop by and we will notarize it in our student office (Pellissippi Campus).</p>
