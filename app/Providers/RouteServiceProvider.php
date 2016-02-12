@@ -27,8 +27,10 @@ class RouteServiceProvider extends ServiceProvider {
         parent::boot($router);
 
         $router->model('campus', 'FaithPromise\Shared\Models\Campus');
+        $router->model('student_campus', 'FaithPromise\Shared\Models\StudentCampus');
         $router->model('study', 'FaithPromise\Shared\Models\Study');
         $router->model('event', 'FaithPromise\Shared\Models\Event');
+        $router->model('update', 'FaithPromise\Shared\Models\Event');
         $router->model('organization', 'FaithPromise\Shared\Models\Organization');
         $router->model('staff', 'FaithPromise\Shared\Models\Staff');
         $router->model('series', 'FaithPromise\Shared\Models\Series');
