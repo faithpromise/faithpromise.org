@@ -12,3 +12,18 @@ https://static.pexels.com/photos/17663/pexels-photo.jpg
 
 light-bulb.jpg
 https://static.pexels.com/photos/19068/mirror-light-black-glass.jpg
+
+steps.jpg
+http://www.arthurweill.fr/Unsplash/picture-and-colors/425
+https://s3.amazonaws.com/ooomf-com-files/OSASuBX1SGu4kb3ozvne_IMG_1088.jpg
+
+graffiti.jpg
+https://static.pexels.com/photos/6739/art-graffiti-abstract-vintage.jpg
+
+converse.jpg
+http://www.arthurweill.fr/Unsplash/picture-and-colors/75
+http://unsplash.s3.amazonaws.com/batch%2011/converse-fields.jpg
+
+sparkler.jpg
+http://www.arthurweill.fr/Unsplash/picture-and-colors/695
+https://images.unsplash.com/photo-1421986527537-888d998adb74?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=432792baab1a121c60e95ac61a8f5d68
