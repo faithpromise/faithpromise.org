@@ -9,7 +9,7 @@
 
     <div class="WelcomeBar">
         <div class="WelcomeBar-container">
-            <a class="WelcomeBarItem WelcomeBarItem--locations" href="{{ route('locations') }}">
+            <a class="WelcomeBarItem WelcomeBarItem--locations" href="{{ route('locations') }}" title="Times &mp; Locations">
                 <h2 class="WelcomeBarItem-heading">
                     <span>Times &amp; Locations</span>
                     <i class="icon icon-right-open"></i>
@@ -17,7 +17,7 @@
                 <p class="WelcomeBarItem-text">Get times & directions to each of our campuses as well as online services. Join us this weekend. We'd love to see you there!</p>
                 <span class="WelcomeBarItem-action">Find a Campus<i class="icon icon-right-open"></i></span>
             </a>
-            <a class="WelcomeBarItem WelcomeBarItem--new" href="{{ route('whatToExpect') }}">
+            <a class="WelcomeBarItem WelcomeBarItem--new" href="{{ route('whatToExpect') }}" title="What to Expect">
                 <h2 class="WelcomeBarItem-heading">
                     <span>New Here?</span>
                     <i class="icon icon-right-open"></i>
@@ -31,7 +31,8 @@
                 href="http://icampus.faithpromise.org"
                 series_title="{{ $current_series->title }}"
                 image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-tall.jpg') }}"
-                live_image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-2-tall.jpg') }}">
+                live_image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-2-tall.jpg') }}"
+                title="Watch Online">
                 {!! $icampus_times !!}
             </a>
         </div>
