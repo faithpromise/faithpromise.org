@@ -38,7 +38,7 @@ class GroupsController extends BaseController {
             return $studyTime->campus->name . $studyTime->starts_at->format(Carbon::ISO8601);
         });
 
-        $orderBy = "gender = '" . $study->gender . "' desc, RAND()";
+        $orderBy = "gender = '" . $study->gender . "' desc, RANDOM()";
         $studies = Study::has('times')->where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
 
         return view('study_detail', [
