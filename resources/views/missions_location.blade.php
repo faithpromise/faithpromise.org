@@ -11,6 +11,9 @@
     <div class="TextSection TextSection--compact Section--lightGrey">
         <div class="TextSection-container">
             <h2 class="TextSection-title">{{ $trip->date_range }}</h2>
+            @if ($trip->is_full)
+                <h3 class="TextSection-subtitle" style="color: red;">This trip is full</h3>
+            @endif
 
             <div class="TextSection-text">
                 {!! $trip->description !!}
