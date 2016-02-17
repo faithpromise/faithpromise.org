@@ -4,7 +4,7 @@
 
     @profilessection(
         [
-            'title' => 'Meet the Other Staff',
+            'title' => 'Meet the Rest of the Team',
             'profiles' => $staff,
             'class' => 'Section--lightGrey'
         ]
