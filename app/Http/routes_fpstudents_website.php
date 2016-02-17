@@ -11,7 +11,7 @@ Route::group(['domain' => config('site.students_domain')], function () {
     Route::get('/parents', ['as' => 'fpStudents_parents', 'uses' => 'Students\ParentsController@index']);
     Route::get('/parents/resources', ['as' => 'fpStudents_parentResources', 'uses' => 'Students\ParentsController@resources']);
 
-    Route::get('/staff', ['as' => 'fpStudents_staff', 'uses' => 'Students\StaffController@staff']);
+    Route::get('/staff', ['as' => 'fpStudents_staff', 'uses' => 'Students\StaffController@index']);
     Route::get('/staff/{staff}', ['as' => 'fpStudents_staffDetail', 'uses' => 'Students\StaffController@detail']);
 
     Route::get('/locations', ['as' => 'fpStudents_locations', 'uses' => 'Students\CampusesController@index']);
