@@ -12,6 +12,7 @@
                 <blockquote class="BlockQuote">
                     "Therefore, as you received Christ Jesus the Lord, so walk in Him, rooted and built up in Him and established in the faith, just as you were taught, abounding in thanksgiving." - Colossians 2:6-7
                 </blockquote>
+                <p class="text-center"><a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7077&btn=Search">Find a Women's Group</a></p>
             </div>
         </div>
     </div>
