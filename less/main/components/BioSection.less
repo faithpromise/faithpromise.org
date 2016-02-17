@@ -1,0 +1,42 @@
+.BioSection {
+  .to-rem(font-size, 22);
+  display:          flex;
+  align-items:      center;
+  background-color: @NavBackgroundColor;
+  color:            #fff;
+}
+
+.BioSection-imageWrap {
+  .to-rem(padding, 70 0);
+  width:      35%;
+  text-align: right;
+}
+
+.BioSection-image {
+  width: 65%;
+}
+
+.BioSection-info {
+  .to-rem(max-width, 850);
+  .to-rem(padding, 0 70);
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  width:           65%;
+}
+
+.BioSection-name,
+.BioSection-title {
+  color: inherit;
+}
+
+.BioSection-name {
+  .to-rem(font-size, 37);
+  margin-bottom: 0;
+  font-weight:   normal;
+}
+
+.BioSection-title {
+  .to-rem(font-size, 22);
+  font-weight: normal;
+}
