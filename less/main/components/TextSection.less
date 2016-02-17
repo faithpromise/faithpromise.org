@@ -25,6 +25,10 @@
   text-align: center;
 }
 
+.TextSection-subtitle {
+  &:extend(.Section-subtitle all);
+}
+
 .TextSection-title--push {
   .to-em(margin-top, 10, @Section-title-font-size);
   .to-em(margin-bottom, 70, @Section-title-font-size);
