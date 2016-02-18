@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1bb8e62ce6e25745218439fe656b34dc",
-    "content-hash": "72b78658a473e0bcf59a4a7184637dbc",
+    "hash": "bcb8f1c52f916643a6777cb81a50a63d",
+    "content-hash": "da27ddddda17eed63619da3c96aecd63",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/faithpromise/fp-shared.git",
-                "reference": "27dbe493d76fdf84674e62f98a3ce5c8198aa82d"
+                "reference": "49032612ab7d13661c62bcc5b2eca7fa6100c51f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/27dbe493d76fdf84674e62f98a3ce5c8198aa82d",
-                "reference": "27dbe493d76fdf84674e62f98a3ce5c8198aa82d",
+                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/49032612ab7d13661c62bcc5b2eca7fa6100c51f",
+                "reference": "49032612ab7d13661c62bcc5b2eca7fa6100c51f",
                 "shasum": ""
             },
             "require": {
@@ -800,7 +800,105 @@
                 "source": "https://github.com/faithpromise/fp-shared/tree/master",
                 "issues": "https://github.com/faithpromise/fp-shared/issues"
             },
-            "time": "2016-02-18 15:29:38"
+            "time": "2016-02-18 21:42:16"
+        },
+        {
+            "name": "geo-io/interface",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geo-io/interface.git",
+                "reference": "cdbb55801e3f8d5485227c2031cc7a3c16ccd06a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geo-io/interface/zipball/cdbb55801e3f8d5485227c2031cc7a3c16ccd06a",
+                "reference": "cdbb55801e3f8d5485227c2031cc7a3c16ccd06a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeoIO\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "Geo I/O base interfaces.",
+            "keywords": [
+                "geo",
+                "geometry",
+                "io"
+            ],
+            "time": "2015-04-17 18:52:52"
+        },
+        {
+            "name": "geo-io/wkb-parser",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geo-io/wkb-parser.git",
+                "reference": "cceee8f4e8b2058f3f1a0372c930140f23fe1ee1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geo-io/wkb-parser/zipball/cceee8f4e8b2058f3f1a0372c930140f23fe1ee1",
+                "reference": "cceee8f4e8b2058f3f1a0372c930140f23fe1ee1",
+                "shasum": ""
+            },
+            "require": {
+                "geo-io/interface": "~1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeoIO\\WKB\\Parser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "Well-known binary (WKB) Parser.",
+            "keywords": [
+                "geo",
+                "geometry",
+                "io",
+                "parser",
+                "wkb"
+            ],
+            "time": "2015-06-30 04:19:13"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1232,6 +1330,59 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "jmikola/geojson",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmikola/geojson.git",
+                "reference": "6ec3016cc0215667b7775f6ead7bd0337ad66eee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmikola/geojson/zipball/6ec3016cc0215667b7775f6ead7bd0337ad66eee",
+                "reference": "6ec3016cc0215667b7775f6ead7bd0337ad66eee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "GeoJson\\": "src/"
+                },
+                "classmap": [
+                    "stubs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                }
+            ],
+            "description": "GeoJSON implementation for PHP",
+            "homepage": "https://github.com/jmikola/geojson",
+            "keywords": [
+                "geo",
+                "geojson",
+                "geospatial"
+            ],
+            "time": "2015-09-27 15:35:21"
         },
         {
             "name": "laravel/framework",
@@ -1866,6 +2017,115 @@
             "time": "2016-02-06 03:52:05"
         },
         {
+            "name": "phaza/laravel-postgis",
+            "version": "3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phaza/laravel-postgis.git",
+                "reference": "ee8a5a2975ccf0e67d6ea574852cb103fa1159f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phaza/laravel-postgis/zipball/ee8a5a2975ccf0e67d6ea574852cb103fa1159f7",
+                "reference": "ee8a5a2975ccf0e67d6ea574852cb103fa1159f7",
+                "shasum": ""
+            },
+            "require": {
+                "geo-io/wkb-parser": "^1.0",
+                "illuminate/database": "^5.2",
+                "jmikola/geojson": "^1.0",
+                "phoenixgao/laravel-postgres-extended-schema": "^0.14.0",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "illuminate/pagination": "~5.0",
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~4.5",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phaza\\LaravelPostgis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Haza",
+                    "email": "peter.haza@gmail.com"
+                }
+            ],
+            "description": "Postgis extensions for laravel. Aims to make it easy to work with geometries from laravel models",
+            "time": "2016-01-26 08:33:00"
+        },
+        {
+            "name": "phoenixgao/laravel-postgres-extended-schema",
+            "version": "0.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phoenixgao/laravel-postgres-extended-schema.git",
+                "reference": "232dbbfbbb590e0b4d2a1eeaec8c8ed0827887ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phoenixgao/laravel-postgres-extended-schema/zipball/232dbbfbbb590e0b4d2a1eeaec8c8ed0827887ac",
+                "reference": "232dbbfbbb590e0b4d2a1eeaec8c8ed0827887ac",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.0",
+                "php": ">=5.4",
+                "ramsey/uuid": "~2.8"
+            },
+            "require-dev": {
+                "doctrine/dbal": "~2.5",
+                "mockery/mockery": "0.9.*",
+                "php": ">=5.4",
+                "phpunit/phpunit": "~4.5",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": []
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bosnadev\\Database\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Mirza Pasic",
+                    "email": "mirza.pasic@edu.fit.ba"
+                },
+                {
+                    "name": "Peter Haza",
+                    "email": "peter.haza@gmail.com"
+                },
+                {
+                    "name": "Xiang Gao",
+                    "email": "phoenix.x.gao@gmail.com"
+                }
+            ],
+            "description": "Laravel database schema extended, added some PostgreSql features",
+            "keywords": [
+                "blueprint",
+                "database",
+                "eloquent",
+                "laravel",
+                "mysql",
+                "postgresql",
+                "schema"
+            ],
+            "time": "2016-01-25 02:37:51"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0",
             "source": {
@@ -2023,6 +2283,72 @@
                 "shell"
             ],
             "time": "2015-11-12 16:18:56"
+        },
+        {
+            "name": "ramsey/uuid",
+            "version": "2.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/uuid.git",
+                "reference": "805d8e1894c52e5b1582e75ca8803a8d85650df9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/805d8e1894c52e5b1582e75ca8803a8d85650df9",
+                "reference": "805d8e1894c52e5b1582e75ca8803a8d85650df9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "replace": {
+                "rhumsaa/uuid": "self.version"
+            },
+            "require-dev": {
+                "doctrine/dbal": ">=2.3",
+                "jakub-onderka/php-parallel-lint": "^0.9.0",
+                "moontoast/math": "~1.1",
+                "phpunit/phpunit": "~4.1|~5.0",
+                "satooshi/php-coveralls": "~0.6",
+                "squizlabs/php_codesniffer": "^2.3",
+                "symfony/console": "~2.3|~3.0"
+            },
+            "suggest": {
+                "doctrine/dbal": "Allow the use of a UUID as doctrine field type.",
+                "moontoast/math": "Support for converting UUID to 128-bit integer (in string form).",
+                "symfony/console": "Support for use of the bin/uuid command line tool."
+            },
+            "bin": [
+                "bin/uuid"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rhumsaa\\Uuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marijn Huizendveld",
+                    "email": "marijn.huizendveld@gmail.com"
+                },
+                {
+                    "name": "Ben Ramsey",
+                    "homepage": "http://benramsey.com"
+                }
+            ],
+            "description": "A PHP 5.3+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
+            "homepage": "https://github.com/ramsey/uuid",
+            "keywords": [
+                "guid",
+                "identifier",
+                "uuid"
+            ],
+            "time": "2015-12-17 16:54:24"
         },
         {
             "name": "spatie/laravel-backup",
