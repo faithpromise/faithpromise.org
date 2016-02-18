@@ -25,9 +25,9 @@ class Kernel extends ConsoleKernel {
      */
     protected function schedule(Schedule $schedule) {
 
-        $schedule->command('backup:run')->dailyAt('4:00')->thenPing(env('HEARTBEAT_BACKUP', 'http://127.0.0.1'));
+        $schedule->command('backup:run')->dailyAt('4:00')->thenPing(config('site.heartbeat_backup'));
 
-        $schedule->command('events:import')->hourly()->thenPing(env('HEARTBEAT_EVENTS_UPDATED', 'http://127.0.0.1'));
+        $schedule->command('events:import')->hourly()->thenPing(config('site.heartbeat_events_updated'));
 
         $schedule->command('staff:toggle-has-image')->weekdays()->everyThirtyMinutes()->when(function () {
             $now = Carbon::now();

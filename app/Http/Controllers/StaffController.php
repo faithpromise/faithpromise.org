@@ -80,7 +80,7 @@ class StaffController extends BaseController {
     public function eightBitCss(Request $request) {
 
         $css = [];
-        $staff = $this->getEightBit()->lists('slug')->toArray();
+        $staff = $this->getEightBit()->pluck('slug')->toArray();
         $size = $request->input('size', 'desktop');
         $icon_width = $this->getIconSize($size);
         $max_age_days = 30;

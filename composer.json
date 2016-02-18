@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.5.9",
-    "laravel/framework": "5.1.*",
+    "laravel/framework": "5.2.*",
     "guzzlehttp/guzzle": "^6.0",
     "intervention/image": "^2.3",
     "intervention/imagecache": "^2.3",
@@ -30,7 +30,9 @@
     "phpunit/phpunit": "~4.0",
     "phpspec/phpspec": "~2.1",
     "flynsarmy/csv-seeder": "1.0.*",
-    "barryvdh/laravel-debugbar": "^2.0"
+    "barryvdh/laravel-debugbar": "^2.0",
+    "symfony/dom-crawler": "~3.0",
+    "symfony/css-selector": "~3.0"
   },
   "autoload": {
     "classmap": [
