@@ -17,7 +17,7 @@ class SermonsController extends BaseController {
         return view('students/sermons', [
             'series'        => $series,
             'latest_sermon' => $latest_sermon,
-            'permalink'     => route('fpStudents_seriesVideo', $latest_sermon->Series->slug, $latest_sermon->slug)
+            'permalink'     => route('seriesVideo', ['series' => $latest_sermon->Series->slug, 'series_video' => $latest_sermon->slug])
         ]);
     }
 
