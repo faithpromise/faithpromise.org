@@ -13,12 +13,8 @@ class GroupsController extends BaseController {
 
     public function index() {
 
-        $position = VolunteerPosition::withDrafts()->withExpired()->find(1);
-
-        $ministry_slug = 'groups';
-
         return view('groups', [
-            'ministry' => Ministry::whereSlug($ministry_slug)->first()
+            'ministry' => Ministry::whereSlug('groups')->first()
         ]);
 
     }
