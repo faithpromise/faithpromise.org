@@ -9,7 +9,7 @@ class CampusesController extends BaseController {
 
     public function index() {
 
-        $campuses = Campus::all();
+        $campuses = Campus::orderBy('sort')->get();
 
         $campus_obj = [];
         foreach($campuses as $campus) {
