@@ -35,14 +35,14 @@ $what_to_expect_cards = collect([
 
 ?>
 
-@extends('layouts.page', ['title' => $campus->name . ' Campus', 'hero_image' => $campus->image])
+@extends('layouts.page', ['title' => $campus->full_name, 'hero_image' => $campus->image])
 
 @section('page')
 
     @if($campus->slug === 'online')
 
         @introsection([
-            'title' => $campus->name . ' Campus',
+            'title' => $campus->full_name,
             'class' => 'IntroSection--center',
             'buttons' => [
                 [
@@ -67,7 +67,7 @@ $what_to_expect_cards = collect([
     @else
 
         @introsection([
-            'title' => $campus->name . ' Campus',
+            'title' => $campus->full_name,
             'class' => 'IntroSection--center',
             'buttons' => [
                 [
@@ -77,7 +77,7 @@ $what_to_expect_cards = collect([
                 ]
             ]
         ])
-            <p>We'd love to see you this weekend at our {{ $campus->name }} Campus. You'll experience contemporary worship and an engaging message from our Senior Pastor Chris Stephens.</p>
+            <p>We'd love to see you this weekend at our {{ $campus->full_name }}. You'll experience contemporary worship and an engaging message from our Senior Pastor Chris Stephens.</p>
             <p>Located at {{ $campus->address }}, {{ $campus->city }}, {{ $campus->state }} {{ $campus->zip }}</p>
             <p>Contact us: (865) 251-2590</p>
             <strong>Regular service times are:</strong><br>
@@ -99,7 +99,7 @@ $what_to_expect_cards = collect([
             <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
             <div class="HolidayTimesSection-container">
                 <h2 class="HolidayTimesSection-title">Easter Service Times</h2>
-                <h3 class="HolidayTimesSection-campus">{{ $campus->name }}</h3>
+                <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
                 {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Easter Services.</p>--}}
                 <ul class="HolidayTimesSection-schedule">
                     @foreach($easter_times as $time)
@@ -121,7 +121,7 @@ $what_to_expect_cards = collect([
             <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
             <div class="HolidayTimesSection-container">
                 <h2 class="HolidayTimesSection-title">Christmas Service Times</h2>
-                <h3 class="HolidayTimesSection-campus">{{ $campus->name }}</h3>
+                <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
                 {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Christmas Services.</p>--}}
                 <ul class="HolidayTimesSection-schedule">
                     @foreach($christmas_times as $time)
@@ -139,7 +139,7 @@ $what_to_expect_cards = collect([
     <p>When you come, the only thing we ask of you is simple... relax. You're with friends. Whether you've never been to church before or you're a seasoned church veteran, you can anticipate an encouraging and enlightening experience.</p>
     @endcardsection
 
-    @profilessection(['id' => 'staff', 'title' => 'Meet the ' . $campus->name . ' Campus Team', 'profiles' => $campus->Staff])
+    @profilessection(['id' => 'staff', 'title' => 'Meet the ' . $campus->full_name . ' Team', 'profiles' => $campus->Staff])
     @endprofilessection
 
 @endsection
