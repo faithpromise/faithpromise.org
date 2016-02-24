@@ -10,8 +10,10 @@
 }
 
 .HolidayTimesSection-container {
-  .to-rem(max-width, 740);
+  .to-rem(max-width, 800);
+  .to-rem(padding, 0 30);
   margin: 0 auto;
+  text-align: left;
 }
 
 .HolidayTimesSection-campusPhoto {
@@ -20,6 +22,7 @@
   .to-rem(width, @HolidayTimesSection-campus-photo-height);
   .to-rem(height, @HolidayTimesSection-campus-photo-height);
   .to-rem(border-radius, @HolidayTimesSection-campus-photo-height/2);
+  border: 2px solid #fff;
 }
 
 .HolidayTimesSection-title {
@@ -41,9 +44,8 @@
 .HolidayTimesSection-schedule {
   .to-rem(padding-bottom, 30);
   columns:       300px 2;
-  column-gap:    40px;
+  column-gap:    10px;
   margin-bottom: 0;
-  text-align:    left;
   list-style:    none;
 }
 
