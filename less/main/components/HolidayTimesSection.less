@@ -1,0 +1,60 @@
+@HolidayTimesSection-campus-photo-height: 110;
+
+.HolidayTimesSection {
+  .to-rem(font-size, @Section-font-size);
+  .to-em(margin-top, @HolidayTimesSection-campus-photo-height/2, @Section-font-size);
+  .to-em(padding-bottom, @Section-vertical-padding-bottom, @Section-font-size);
+  background-color: @NavBackgroundColor;
+  color:            #fff;
+  text-align:       center;
+}
+
+.HolidayTimesSection-container {
+  .to-rem(max-width, 740);
+  margin: 0 auto;
+}
+
+.HolidayTimesSection-campusPhoto {
+  .to-rem(margin-top, -@HolidayTimesSection-campus-photo-height/2);
+  .to-rem(margin-bottom, 40);
+  .to-rem(width, @HolidayTimesSection-campus-photo-height);
+  .to-rem(height, @HolidayTimesSection-campus-photo-height);
+  .to-rem(border-radius, @HolidayTimesSection-campus-photo-height/2);
+}
+
+.HolidayTimesSection-title {
+  &:extend(.Section-title);
+  .to-rem(margin-bottom, 12);
+  color: inherit;
+}
+
+.HolidayTimesSection-campus {
+  .to-rem(padding-bottom, 30);
+  .to-rem(margin-bottom, 30);
+  .to-rem(font-size, 22);
+  border-bottom: 1px solid #494949;
+  font-weight:   normal;
+  color:         inherit;
+}
+
+/* 1. Margins not collapsing, so using padding */
+.HolidayTimesSection-schedule {
+  .to-rem(padding-bottom, 30);
+  columns:       300px 2;
+  column-gap:    40px;
+  margin-bottom: 0;
+  text-align:    left;
+  list-style:    none;
+}
+
+/* 1. Fixes an issue in Chrome where the second column is not top aligned */
+.HolidayTimesSection-service {
+  margin-left:    0;
+  break-inside:   avoid;
+  margin-bottom:  0; /* 1 */
+  padding-bottom: 40px; /* 1 */
+}
+
+.HolidayTimesSection-day {
+  font-weight: @font-weight-bold;
+}
