@@ -14,6 +14,7 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
 
             <!-- Remember to update Card.less if you change media queries here -->
             <!-- Image must be wrapped inside div, otherwise flex will make it grow -->
+            @if (isset($card->card_image))
             <div>
                 <img
                     srcset="
@@ -25,6 +26,7 @@ $card_grid_class = trim('Card-grid ' . (isset($class) ? $class : ''));
                         100vw
                     ">
             </div>
+            @endif
 
             <div class="Card-body">
                 <h3 class="Card-title"><?= $card->card_title ?></h3>
