@@ -142,4 +142,8 @@ class RedirectController extends BaseController {
         return redirect('/fpkids/camp');
     }
 
+    public function survey() {
+        return redirect('https://www.dropbox.com/request/usCGEgVjDxQBuGRxgoTW');
+    }
+
 }
