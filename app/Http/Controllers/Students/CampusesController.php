@@ -9,7 +9,7 @@ class CampusesController extends BaseController {
 
     public function index() {
 
-        $campuses = StudentCampus::all();
+        $campuses = StudentCampus::orderBy('sort')->get();
 
         $campus_obj = [];
         foreach($campuses as $campus) {
@@ -28,7 +28,7 @@ class CampusesController extends BaseController {
                 'directions_url' => $campus->directions_url,
                 'thumbnail' => cdn_image('sm', 'full', $campus->image, 'wide'),
                 'url' => $campus->url,
-                'times' => str_replace('; ', '<br>', $campus->times)
+                'times' => str_replace('; ', '<br>', $campus->formatted_student_times)
             ];
         }
 
