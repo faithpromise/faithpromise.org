@@ -14,7 +14,7 @@ class MainController extends BaseController {
 
         $current_series = Series::currentSeries()->first();
         $events = Event::featured()->get()->sortBy('sort');
-        $icampus_times = Campus::findBySlug('online')->times;
+        $icampus_times = Campus::findBySlug('online')->formatted_times;
 
         return view('home', [
             'current_series' => $current_series,
