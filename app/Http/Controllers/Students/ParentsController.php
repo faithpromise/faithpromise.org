@@ -17,7 +17,7 @@ class ParentsController extends BaseController {
 
     public function resources() {
         return view('students/parent-resources', [
-            'books' => Post::byLocation('books-for-parents-of-students')->whereType('book')->get()
+            'books' => Post::byLocation('books-for-parents-of-students')->whereType('book')->orderBy('sort')->get()
         ]);
     }
 
