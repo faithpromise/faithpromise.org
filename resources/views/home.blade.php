@@ -33,7 +33,7 @@
                 image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-tall.jpg') }}"
                 live_image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-2-tall.jpg') }}"
                 title="Watch Online">
-                {!! $icampus_times !!}
+                {!! $icampus_times !!}.
             </a>
         </div>
     </div>
