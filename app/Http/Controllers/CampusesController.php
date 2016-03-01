@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use FaithPromise\Shared\Models\Campus;
+use FaithPromise\Shared\Models\Post;
 use Illuminate\Routing\Controller as BaseController;
 
 class CampusesController extends BaseController {
@@ -41,7 +42,8 @@ class CampusesController extends BaseController {
     public function detail($campus) {
 
         return view('locations_detail', [
-            'campus' => $campus
+            'campus' => $campus,
+            'what_to_expect_cards' => Post::whereType('about_us')->orderBy('sort')->get()
         ]);
 
     }
