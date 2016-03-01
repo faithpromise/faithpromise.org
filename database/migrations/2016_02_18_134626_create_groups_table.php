@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-//use Phaza\LaravelPostgis\Schema\Blueprint;
-use Illuminate\Database\Schema\Blueprint;
+use Phaza\LaravelPostgis\Schema\Blueprint;
+//use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateGroupsTable extends Migration {
@@ -23,7 +23,7 @@ class CreateGroupsTable extends Migration {
             $table->tinyInteger('kids_max_age')->unsigned()->nullable();
             $table->boolean('kids_welcome')->default(false);
             $table->string('recurrence_rule', 100)->nullable();
-//            $table->point('location')->nullable();
+            $table->point('location')->nullable();
             $table->boolean('is_location_public')->default(false);
             $table->string('address', 50)->nullable();
             $table->string('city', 30)->nullable();
