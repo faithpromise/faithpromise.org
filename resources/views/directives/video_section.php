@@ -9,6 +9,7 @@ if ($directive['execution_mode'] == 'start'):
             'title' => '',
             'class' => '',
             'video' => '',
+            'youtube' => '',
             'buttons' => []
         ], $directive["args"]
     );
@@ -31,7 +32,14 @@ if ($directive['execution_mode'] == 'start'):
     <?php endif; ?>
     </div><!-- // END .VideoSection-text -->
     <div class="VideoSection-video">
+        <?php if ($args['video']): ?>
         <vimeo id="<?= $args['video']; ?>"></vimeo>
+        <?php endif; ?>
+        <?php if ($args['youtube']): ?>
+            <div class="VideoPlayer">
+                <iframe src="https://www.youtube.com/embed/<?= $args['youtube'] ?>" frameborder="0" allowfullscreen></iframe>
+            </div>
+        <?php endif; ?>
     </div><!-- // END .VideoSection-video -->
     </div><!-- // END .VideoSection-wrap -->
     </div><!-- // END .VideoSection-container -->
