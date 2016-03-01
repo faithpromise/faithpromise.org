@@ -47,7 +47,7 @@
             ],
             (object)[
                     'q' => 'Where can I find a video of Pastor Chris teaching on baptism?',
-                    'a' => 'Pastor Chris has spoken on the subject of baptism many times, but one of our favorites is entitled <a href="' . route('seriesVideo', 'hereafter', 'not-ashamed') . '">"Not Ashamed"</a>.'
+                    'a' => 'Pastor Chris has spoken on the subject of baptism many times, but one of our favorites is entitled <a href="' . route('seriesVideo', ['series' => 'hereafter', 'series_video' => 'not-ashamed']) . '">"Not Ashamed"</a>.'
             ],
             (object)[
                     'q' => 'After my baptism has been scheduled through the office, what other information do I need to know?',
