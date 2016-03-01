@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\Study;
 use FaithPromise\Shared\Models\StudyTime;
 use FaithPromise\Shared\Models\Ministry;
-use FaithPromise\Shared\Models\VolunteerPosition;
 use Illuminate\Routing\Controller as BaseController;
 
 class GroupsController extends BaseController {
@@ -14,7 +14,8 @@ class GroupsController extends BaseController {
     public function index() {
 
         return view('groups', [
-            'ministry' => Ministry::whereSlug('groups')->first()
+            'ministry' => Ministry::whereSlug('groups')->first(),
+            'group_types' => Post::whereType('group_type')->orderBy('sort')->get()
         ]);
 
     }
