@@ -157,6 +157,7 @@ return [
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         VTalbot\Markdown\MarkdownServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+        Phaza\LaravelPostgis\DatabaseServiceProvider::class,
 
     ],
 
