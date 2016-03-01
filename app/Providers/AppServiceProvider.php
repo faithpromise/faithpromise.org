@@ -56,6 +56,18 @@ class AppServiceProvider extends ServiceProvider {
             return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/video_section.php")); ?>';
         });
 
+        // PhotoSection
+        Blade::directive('photosection', function ($expression) {
+            return '
+                <?php
+                    $directive = ["execution_mode" => "start"];
+                    $directive["args"] = ' . ($expression ?: '[]') . ';
+                    include(base_path("resources/views/directives/photo_section.php")); ?>';
+        });
+        Blade::directive('endphotosection', function () {
+            return '<?php $directive["execution_mode"] = "end"; include(base_path("resources/views/directives/photo_section.php")); ?>';
+        });
+
         // TextSection
         Blade::directive('textsection', function ($expression) {
             return '
