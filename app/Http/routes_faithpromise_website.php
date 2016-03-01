@@ -26,7 +26,7 @@ Route::get('/locations/{campus}', ['as' => 'location', 'uses' => 'CampusesContro
 
 // Ministries
 Route::get('/care', ['as' => 'care', 'uses' => 'MinistriesController@defaultMinistryPage']);
-Route::get('/family', ['as' => 'family', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/family', ['as' => 'family', 'uses' => 'MinistriesController@family']);
 Route::get('/fpkids', ['as' => 'fpKids', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/fpkids/welcome', ['as' => 'fpKidsWelcome', 'uses' => 'MinistriesController@fpKidsWelcome']);
 Route::get('/fpkids/camp', ['as' => 'fpKidsCamp', 'uses' => 'MinistriesController@fpKidsCamp']);

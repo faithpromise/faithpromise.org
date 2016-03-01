@@ -1,25 +1,5 @@
 <?php
 
-// LATER: Put these in a central location. They're duplicated in other places. Search '$what_to_expect_cards'
-$what_to_expect_cards = collect([
-        (object)[
-                'card_title'    => 'Children',
-                'card_image'    => 'images/fpkids/logo-tall.jpg',
-                'card_text'     => 'Our children\'s ministry meets during each adult service. Children learn and grow through large group teaching, crafts, stories, drama, and small group interaction.',
-                'card_url_text' => 'About fpKids',
-                'card_url'      => '/fpkids/',
-                'card_link_id'  => 'to_fpKids_from_whatToExpect'
-        ],
-        (object)[
-                'card_title'    => 'Students',
-                'card_image'    => 'images/fpstudents/worship-tall.jpg',
-                'card_text'     => '6-12th grade students have a chance to grow closer to God and each other in a high-energy atmosphere that will change them each week.',
-                'card_url_text' => 'About fpStudents',
-                'card_url'      => '/fpstudents/',
-                'card_link_id'  => 'to_fpstudents_from_whatToExpect'
-        ]
-]);
-
 $faq = [
         (object)[
                 'q' => 'Marriage &amp; Parenting Summit',
