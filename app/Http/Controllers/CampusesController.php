@@ -53,7 +53,8 @@ class CampusesController extends BaseController {
         $campus = Campus::whereSlug('loudon')->first();
 
         return view('locations_loudon', [
-            'campus' => $campus
+            'campus' => $campus,
+            'what_to_expect_cards' => Post::whereType('about_us')->orderBy('sort')->get()
         ]);
 
     }
