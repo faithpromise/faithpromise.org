@@ -67,7 +67,7 @@ $christmas_times = $campus->christmas_times;
     @endif
 
     @if ($easter_times)
-        <div id="easter-times" class="HolidayTimesSection">
+        <div id="easter-times" class="HolidayTimesSection HolidayTimesSection--dark">
             <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
             <div class="HolidayTimesSection-container">
                 <h2 class="HolidayTimesSection-title">Easter Service Times</h2>

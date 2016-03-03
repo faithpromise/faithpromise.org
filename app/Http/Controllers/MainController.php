@@ -29,4 +29,14 @@ class MainController extends BaseController {
         return view($view);
     }
 
+    public function easter() {
+
+        $campuses = Campus::whereNotNull('opened_at')->orderBy('sort')->get();
+
+        return view('easter', [
+            'campuses' => $campuses
+        ]);
+
+    }
+
 }
