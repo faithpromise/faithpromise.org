@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use FaithPromise\Shared\Models\Campus;
 use FaithPromise\Shared\Models\Event;
+use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\Series;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,12 @@ class MainController extends BaseController {
         $view = Route::getCurrentRoute()->getUri();
 
         return view($view);
+    }
+
+    public function elevate() {
+        return view('elevate', [
+            'elevate_lessons' => Post::whereType('elevate_lesson')->orderBy('sort')->get()
+        ]);
     }
 
     public function easter() {
