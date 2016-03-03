@@ -3,7 +3,7 @@
 @section('page')
 
     @cardsection(['title' => 'Find a Location', 'cards' => $campuses, 'class' => 'GridSection--center'])
-    <p>Join us this at a location near you.</p>
+    <p>Join us at a location near you.</p>
     @endcardsection
 
     <div id="LocationsMap" class="LocationsMap"></div>
