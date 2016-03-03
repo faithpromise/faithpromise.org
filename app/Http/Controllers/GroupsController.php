@@ -78,4 +78,8 @@ class GroupsController extends BaseController {
         ]);
     }
 
+    public function search() {
+        return view('groups_search');
+    }
+
 }

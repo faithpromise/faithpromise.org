@@ -40,6 +40,7 @@ Route::get('/celebrate', ['as' => 'celebrate', 'uses' => 'MinistriesController@d
 
 // Groups
 Route::get('/groups', ['as' => 'groups', 'uses' => 'GroupsController@index']);
+Route::get('/groups/search', ['as' => 'groupSearch', 'uses' => 'GroupsController@search']);
 Route::get('/studies', ['as' => 'studies', 'uses' => 'GroupsController@studies']);
 Route::get('/studies/{study}', ['as' => 'studyDetail', 'uses' => 'GroupsController@studyDetail']);
 Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'GroupsController@newLeader']);

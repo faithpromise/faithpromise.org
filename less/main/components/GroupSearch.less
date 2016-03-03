@@ -1,0 +1,153 @@
+
+.GroupSearchForm {
+  .to-rem(min-height, 70);
+  .to-rem(margin-bottom, 30);
+  .to-rem(padding, 8 0);
+  display:          flex;
+  align-items:      center;
+  background-color: #2d3136;
+  color:            #fff;
+}
+
+.GroupSearchForm-field {
+  .to-rem(padding, 0 28);
+  flex-grow: 1;
+}
+
+.GroupSearchForm-label {
+  .to-rem(font-size, 18);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+/* =============== */
+
+.GroupSearchLayout {
+  display:          flex;
+  background-color: #d7d7d7;
+}
+
+.GroupSearchLayout-results {
+  .to-rem(max-width, 860);
+  .to-rem(padding, 30);
+}
+
+.GroupSearchCard-map {
+  flex-grow: 1;
+}
+
+.GroupSearchCard {
+  .to-rem(height, 200);
+  display:          flex;
+  background-color: #fff;
+}
+
+.GroupSearchCard-photoWrap {
+  .to-rem(width, 200);
+  .to-rem(height, 200);
+  flex-shrink: 0;
+}
+
+.GroupSearchCard-content {
+  .to-rem(max-width, 600);
+}
+
+/*
+  1. Hack to get text-overflow to work
+*/
+.GroupSearchCard-about {
+  .to-rem(padding, 0 25);
+  display:        flex;
+  flex-direction: column;
+  min-width:      0; /* 1 */
+}
+
+.GroupSearchCard-title {
+  .to-rem(width, 370);
+  .to-rem(font-size, 26);
+  flex-grow:     1;
+  margin:        0;
+  overflow:      hidden;
+  white-space:   nowrap;
+  text-overflow: ellipsis;
+}
+
+.GroupSearchCard-description {
+  .to-rem(height, 68);
+  .to-rem(width, 370);
+  display:            block;
+  display:            -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow:           hidden;
+  margin:             0;
+}
+
+.GroupSearchCard-main {
+  .to-rem(height, 140);
+  .to-rem(padding, 18 0);
+  display: flex;
+}
+
+.GroupSearchCard-actions {
+  .to-rem(width, 180);
+  display:        flex;
+  flex-direction: column;
+  flex-shrink:    0;
+  border-left:    1px solid #dadada;
+}
+
+.GroupSearchCard-action {
+  .to-rem(font-size, 16);
+  .to-rem(padding, 0 15);
+  .link-color(@anchor-text-color);
+  flex-grow:      1;
+  display:        flex;
+  align-items:    center;
+  text-transform: uppercase;
+  font-weight:    @font-weight-bold;
+  cursor:         pointer;
+  overflow:       hidden;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.GroupSearchCard-facts {
+  .to-rem(height, 60);
+  .to-rem(padding, 12 0);
+  display:          flex;
+  width:            100%;
+  border-top:       1px solid #dadada;
+  background-color: #f2f2f2;
+}
+
+.GroupSearchCard-fact {
+  .to-rem(padding, 0 25);
+  flex-grow:   1;
+  border-left: 1px solid #dadada;
+
+  &:first-child {
+    border-left: none;
+  }
+}
+
+.GroupSearchCard-factValue {
+  .to-rem(font-size, 16);
+  display:        block;
+  white-space:    nowrap;
+  overflow:       hidden;
+  text-overflow:  ellipsis;
+  text-transform: uppercase;
+  font-weight:    @font-weight-bold;
+  line-height:    1;
+}
+
+.GroupSearchCard-factLabel {
+  .to-rem(font-size, 14);
+  display:       block;
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+}
