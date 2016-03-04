@@ -4,11 +4,14 @@
     if (is_array($hero_image)) {
         $hero_image_path = $hero_image['image'];
         $hero_image_title = $hero_image['title'];
+        $url = array_key_exists('url', $hero_image) ? $hero_image['url'] : null;
     } else {
         $hero_image_path = $hero_image;
         $hero_image_title = '';
+        $url = null;
     }
 ?>
+<?php if($url): ?><a href="<?= $url ?>"><?php endif; ?>
 <picture>
     <source media="(min-width: 1200px)" srcset="
                 http:<?= resized_image_url($hero_image_path, 1920, 'wide') ?> 1920w,
@@ -22,3 +25,4 @@
             ">
     <img alt="<?= htmlentities($hero_image_title) ?>">
 </picture>
+<?php if($url): ?></a><?php endif; ?>
