@@ -15,6 +15,8 @@ class MainController extends BaseController {
 
     public function index() {
 
+        $show_easter_on = Carbon::create(2016, 3, 8);
+        $show_easter = Carbon::today()->gte($show_easter_on);
         $current_series = Series::currentSeries()->first();
         $events = Event::featured()->get()->sortBy('sort');
         $icampus_times = Campus::findBySlug('online')->formatted_times;
@@ -22,7 +24,8 @@ class MainController extends BaseController {
         return view('home', [
             'current_series' => $current_series,
             'events'         => $events,
-            'icampus_times'  => $icampus_times
+            'icampus_times'  => $icampus_times,
+            'show_easter'    => $show_easter
         ]);
     }
 

@@ -2,10 +2,18 @@
 
 @section('content')
 
-    @heroimage ([
+    @if ($show_easter)
+        @heroimage ([
+            'image' => 'images/pages/after-the-fall-2-tall.jpg',
+            'title' => 'Current Sermon Series: ' . $current_series->title,
+            'url' => '/easter'
+        ])
+    @else
+        @heroimage ([
         'image' => $current_series->home_image,
         'title' => 'Current Sermon Series: ' . $current_series->title
     ])
+    @endif
 
     <div class="WelcomeBar">
         <div class="WelcomeBar-container">
