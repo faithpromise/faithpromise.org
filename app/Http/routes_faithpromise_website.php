@@ -87,6 +87,7 @@ Route::get('/stable-boy', ['as' => 'stableBoy', 'uses' => 'MainController@defaul
 Route::get('/infuse', ['as' => 'infuse', 'uses' => 'MainController@defaultPage']);
 Route::get('/elevate', ['as' => 'elevate', 'uses' => 'MainController@elevate']);
 Route::get('/easter', ['as' => 'easter', 'uses' => 'MainController@easter']);
+Route::get('/easter/times.json', ['uses' => 'MainController@easterTimes']);
 
 // Bible plan
 Route::get('/bible-plan', ['as' => 'biblePlan', 'uses' => 'BiblePlanController@index']);
