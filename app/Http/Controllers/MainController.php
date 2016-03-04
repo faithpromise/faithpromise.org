@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use FaithPromise\Shared\Models\Campus;
+use FaithPromise\Shared\Models\EasterService;
 use FaithPromise\Shared\Models\Event;
 use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\Series;
@@ -37,13 +39,59 @@ class MainController extends BaseController {
     }
 
     public function easter() {
+        return view('easter');
+    }
 
-        $campuses = Campus::whereNotNull('opened_at')->orderBy('sort')->get();
+    public function easterTimes() {
 
-        return view('easter', [
-            'campuses' => $campuses
-        ]);
+        $days = [];
+        $today = Carbon::today();
+        $selected = 0;
+        $counter = 0;
 
+        $service_days = EasterService::all()
+            ->sortBy(function ($service) {
+                return $service->service_day->toDateString() . $service->campus->sort;
+            })
+            ->groupBy(function ($service) {
+                return $service->service_day->toDateString();
+            });
+
+        foreach ($service_days as $key => $day) {
+
+            $d = Carbon::parse($key);
+            $services = [];
+
+            if ($today->isSameDay($d)) {
+                $selected = $counter;
+            }
+
+            $counter++;
+
+            foreach ($day as $service) {
+                $services[] = (object)[
+                    'campus_name'      => $service->campus->name,
+                    'campus_full_name' => $service->campus->full_name,
+                    'campus_image'     => resized_image_url($service->campus->image, 800, 'tall'),
+                    'campus_url'       => $service->campus->url,
+                    'times'            => '<span class="no-wrap">' . implode('</span>, <span class="no-wrap">', $service->service_times) . '</span>'
+                ];
+            }
+
+            $days[] = (object)[
+                'timestamp'   => $d->timestamp,
+                'day_of_week' => $d->format('l'),
+                'month'       => $d->format('n'),
+                'month_name'  => $d->format('F'),
+                'day'         => $d->format('j'),
+                'services'    => $services
+            ];
+        }
+
+        return [
+            'days'     => $days,
+            'selected' => $selected
+        ];
     }
 
 }
