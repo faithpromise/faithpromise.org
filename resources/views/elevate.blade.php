@@ -14,7 +14,7 @@
 
     @photosection(['title' => $lesson->title, 'class' => $use_grey_bg ? 'Section--lightGrey' : '', 'image' => $lesson->image])
         <p>{{ $lesson->description }}</p>
-        <p><a class="Button" href="{{ $lesson->url }}">View Lesson</a></p>
+        <p><a class="Button" href="{{ $lesson->url }}" title="Elevate-{{ $lesson->slug }}">View Lesson</a></p>
     @endphotosection
 
     @endforeach
