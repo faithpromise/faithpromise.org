@@ -1,0 +1,107 @@
+
+.SpecialServicesTabs {
+  .to-rem(padding-top, 10);
+  .to-rem(margin-bottom, 40);
+  display:         flex;
+  justify-content: center;
+  list-style:      none;
+}
+
+.SpecialServicesTabs-tab {
+  .to-rem(padding, 0 12 3);
+  flex-shrink:   1;
+  margin:        0;
+  border-left:   1px solid #d4d4d4;
+  text-align:    center;
+  cursor:        pointer;
+  border-bottom: 2px solid transparent;
+  color:         @anchor-text-color;
+
+  &:first-child {
+    border-left: none;
+  }
+
+  &:hover {
+    border-bottom-color: @anchor-text-color;
+  }
+
+  &.selected {
+    color:               #dd4b39;
+    border-bottom-color: #dd4b39;
+  }
+}
+
+@media (max-width: 430px) {
+  .SpecialServicesTabs-tab {
+    flex-grow:     1;
+    flex-shrink:   0;
+    font-size:     4vw;
+    padding-left:  0;
+    padding-right: 0;
+  }
+}
+
+.SpecialServicesTabs-dow {
+  display:        block;
+  text-transform: uppercase;
+}
+
+.SpecialServicesTabs-day {
+  display:     block;
+  white-space: nowrap;
+}
+
+.SpecialServices-campuses {
+  display:     flex;
+  flex-wrap:   wrap;
+  margin-left: -30px;
+  list-style:  none;
+}
+
+.SpecialServices-campus {
+  display:        flex;
+  flex-direction: column;
+  padding-left:   30px;
+  margin:         0 0 30px;
+  width:          100%;
+
+  @media (min-width: 640px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1080px) {
+    width: 33.33333%;
+  }
+}
+
+@media (max-width: 639px) {
+  .SpecialServices-photo {
+    display: none;
+  }
+}
+
+.SpecialServices-content {
+  flex-grow:        1;
+  padding:          20px;
+  background-color: #fff;
+}
+
+.SpecialServices-campusName {
+  display:    block;
+  text-align: left;
+}
+
+.SpecialServices-times {
+  .to-rem(font-size, 18);
+  display:    block;
+  text-align: left;
+}
+
+.SpecialServices-day {
+  .to-rem(font-size, 22);
+  .to-rem(padding-bottom, 20);
+  margin:         0;
+  text-transform: uppercase;
+  font-weight:    @font-weight-bold;
+  text-align:     left;
+}

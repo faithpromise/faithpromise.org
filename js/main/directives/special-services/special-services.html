@@ -1,0 +1,24 @@
+<ul class="SpecialServicesTabs">
+  <li class="SpecialServicesTabs-tab" ng-repeat="(key, day) in vm.days" ng-class="{ 'selected': vm.selected == key }" ng-click="vm.selectDay(key)">
+    <span class="SpecialServicesTabs-dow">{{ day.day_of_week | limitTo: 3 }},</span>
+    <span class="SpecialServicesTabs-day">{{ day.month_name | limitTo: 3 }} {{ day.day }}</span>
+  </li>
+</ul>
+
+<div ng-repeat="(key, day) in vm.days" ng-show="vm.selected == key">
+
+  <h3 class="SpecialServices-day">{{ day.day_of_week }}, {{ day.month_name }} {{ day.day }}</h3>
+
+  <ul class="SpecialServices-campuses">
+    <li class="SpecialServices-campus" ng-repeat="service in day.services">
+      <a class="SpecialServices-photo" href="{{ service.campus_url }}">
+        <img ng-src="{{ service.campus_image }}">
+      </a>
+      <div class="SpecialServices-content">
+        <a class="SpecialServices-campusName" href="{{ service.campus_url }}">{{ service.campus_name }} - {{ day.month_name | limitTo: 3 }} {{ day.day }}</a>
+        <span class="SpecialServices-times" ng-bind-html="vm.timesHtml(service.times)"></span>
+      </div>
+    </li>
+  </ul>
+
+</div>
