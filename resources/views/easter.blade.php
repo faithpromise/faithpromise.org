@@ -10,7 +10,7 @@ function formatted_service_times($times) {
 
 @section('page')
 
-    @videosection(['title' => 'What would you risk to save a friend?', 'class' => '', 'youtube' => '5HRZ31jpWvA'])
+    @videosection(['title' => 'What would you risk to save a friend?', 'class' => '', 'video' => '157875912'])
     <p>Based on true events, After The Fall follows the story of a man who risks it all to save his friend when a hunting trip in Montana turns tragic. Degrees separating life and death, three families pray that God will show up to save these men from a deadly storm.</p>
     @endvideosection
 
