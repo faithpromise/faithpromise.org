@@ -3,11 +3,21 @@
 @section('content')
 
     @if ($show_easter)
-        @heroimage ([
-            'image' => 'images/pages/after-the-fall-2-tall.jpg',
-            'title' => 'Current Sermon Series: ' . $current_series->title,
-            'url' => '/easter'
-        ])
+        <a id="to_after_the_fall_from_hero" href="/easter" title="After the Fall">
+            <picture>
+                <source media="(min-width: 1200px)" srcset="
+                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1920, 'wide') ?> 1920w,
+                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1680, 'wide') ?> 1680w,
+                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1280, 'wide') ?> 1280w
+            ">
+                <source srcset="
+                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1280, 'tall') ?> 1280w,
+                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 800, 'tall') ?> 800w,
+                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 480, 'tall') ?> 480w
+            ">
+                <img alt="After the Fall">
+            </picture>
+        </a>
     @else
         @heroimage ([
         'image' => $current_series->home_image,
@@ -34,13 +44,13 @@
                 <span class="WelcomeBarItem-action">Get to Know Us<i class="icon icon-right-open"></i></span>
             </a>
             <a
-                icampus-countdown
-                class="WelcomeBarItem WelcomeBarItem--parents WelcomeBarItem--withPhoto"
-                href="http://icampus.faithpromise.org"
-                series_title="{{ $current_series->title }}"
-                image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-tall.jpg') }}"
-                live_image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-2-tall.jpg') }}"
-                title="Watch Online">
+                    icampus-countdown
+                    class="WelcomeBarItem WelcomeBarItem--parents WelcomeBarItem--withPhoto"
+                    href="http://icampus.faithpromise.org"
+                    series_title="{{ $current_series->title }}"
+                    image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-tall.jpg') }}"
+                    live_image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-2-tall.jpg') }}"
+                    title="Watch Online">
                 {!! $icampus_times !!}.
             </a>
         </div>

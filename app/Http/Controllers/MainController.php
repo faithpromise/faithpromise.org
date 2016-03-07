@@ -15,7 +15,7 @@ class MainController extends BaseController {
 
     public function index() {
 
-        $show_easter_on = Carbon::create(2016, 3, 8);
+        $show_easter_on = Carbon::create(2016, 3, 5);
         $show_easter = Carbon::today()->gte($show_easter_on);
         $current_series = Series::currentSeries()->first();
         $events = Event::featured()->get()->sortBy('sort');
