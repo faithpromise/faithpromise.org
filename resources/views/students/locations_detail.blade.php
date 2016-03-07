@@ -2,8 +2,8 @@
 
 /** @var \FaithPromise\Shared\Models\Campus $campus */
 
-$student_easter_times = $campus->easter_times;
-$student_christmas_times = $campus->christmas_times;
+$student_easter_times = $campus->student_easter_times;
+$student_christmas_times = $campus->student_christmas_times;
 
 ?>
 
