@@ -22,5 +22,23 @@ return [
             'url'   => '/updates',
             'id'    => 'updates'
         ]
+    ],
+
+    'footer_nav' => [
+        [
+            'title' => 'Times &amp; Locations',
+            'url'   => '/locations',
+            'id'    => 'to_locations_from_footer'
+        ],
+        [
+            'title' => 'Events &amp; Updates',
+            'url'   => '/updates',
+            'id'    => 'to_events_from_footer'
+        ],
+        [
+            'title' => 'Parent Blog',
+            'url'   => 'http://fpstudents.tumblr.com',
+            'id'    => 'to_blog_from_footer'
+        ]
     ]
 ];

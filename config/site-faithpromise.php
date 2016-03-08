@@ -116,5 +116,38 @@ return [
             'url'   => '/give',
             'id'    => 'give'
         ]
+    ],
+
+    'footer_nav' => [
+        [
+            'title' => 'Times &amp; Locations',
+            'url'   => '/locations',
+            'id'    => 'to_locations_from_footer'
+        ],
+        [
+            'title' => 'Get updates',
+            'url'   => '/updates',
+            'id'    => 'to_updates_from_footer'
+        ],
+        [
+            'title' => 'Events',
+            'url'   => '/events',
+            'id'    => 'to_events_from_footer'
+        ],
+        [
+            'title' => 'Blog',
+            'url'   => '/blog',
+            'id'    => 'to_blog_from_footer'
+        ],
+        [
+            'title' => 'Jobs',
+            'url'   => '/jobs',
+            'id'    => 'to_jobs_from_footer'
+        ],
+        [
+            'title' => 'Give Online',
+            'url'   => '/give',
+            'id'    => 'to_give_from_footer'
+        ]
     ]
 ];

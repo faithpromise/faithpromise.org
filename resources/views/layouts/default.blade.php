@@ -118,24 +118,11 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                         <div class="Footer-grid">
                             <div class="Footer-item">
                                 <ul class="Footer-linkList">
+                                    @foreach($site['footer_nav'] as $nav)
                                     <li class="Footer-linkItem">
-                                        <a id="to_locations_from_footer" class="Footer-link" href="{{ route('locations') }}">Times &amp; locations</a>
+                                        <a id="{{ $nav['id'] }}" class="Footer-link" href="{{ $nav['url'] }}">{{ $nav['title'] }}</a>
                                     </li>
-                                    <li class="Footer-linkItem">
-                                        <a id="to_updates_from_footer" class="Footer-link" href="{{ route('updates') }}">Get updates</a>
-                                    </li>
-                                    <li class="Footer-linkItem">
-                                        <a id="to_events_from_footer" class="Footer-link" href="{{ route('events') }}">Events</a>
-                                    </li>
-                                    <li class="Footer-linkItem">
-                                        <a id="to_blog_from_footer" class="Footer-link" href="http://blog.faithpromise.org/" target="_blank">Blog</a>
-                                    </li>
-                                    <li class="Footer-linkItem">
-                                    <a id="to_jobs_from_footer" class="Footer-link" href="{{ route('jobs') }}">Jobs</a>
-                                    </li>
-                                    <li class="Footer-linkItem">
-                                        <a id="to_give_from_footer" class="Footer-link" href="{{ route('give') }}">Give Online</a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <div class="Footer-item">
