@@ -12,11 +12,13 @@
 
         <?php $use_grey_bg = isset($use_grey_bg) ? !$use_grey_bg : true ; ?>
 
-    @photosection(['title' => $lesson->title, 'class' => $use_grey_bg ? 'Section--lightGrey' : '', 'image' => $lesson->image])
+    @photosection(['title' => $lesson->title, 'subtitle' => $lesson->subtitle, 'class' => $use_grey_bg ? 'Section--lightGrey' : '', 'image' => $lesson->image])
         <p>{{ $lesson->description }}</p>
         <p><a class="Button" href="{{ $lesson->url }}" title="Elevate-{{ $lesson->slug }}">View Lesson</a></p>
     @endphotosection
 
     @endforeach
+
+    @include('partials.have_questions', ['email' => 'JenniferR@faithpromise.org', 'text' => 'If you have questions about Elevate, please contact #email#'])
 
 @endsection

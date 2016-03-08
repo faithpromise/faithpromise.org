@@ -39,12 +39,24 @@
   }
 }
 
+.PhotoSection-titles {
+  &:extend(.Section-titles all);
+}
+
 .PhotoSection-title {
-  &:extend(.Section-title all);
+  .to-rem(margin, 0 0 10);
+  line-height: 1.3;
+  font-size:   7vw;
+  font-weight: @font-weight-bold;
 
   @media (min-width: @PhotoSection-float-width) {
-    .h4();
+    .to-rem(font-size, 33);
   }
+}
+
+.PhotoSection-subtitle {
+  .to-rem(font-size, 22);
+  color: #777;
 }
 
 // Change direction

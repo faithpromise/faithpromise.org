@@ -7,6 +7,7 @@ if ($directive['execution_mode'] == 'start'):
     $args = array_merge(
         [
             'title' => '',
+            'subtitle' => '',
             'class' => '',
             'image' => '',
             'buttons' => []
@@ -18,7 +19,10 @@ if ($directive['execution_mode'] == 'start'):
     <div class="PhotoSection-container">
     <div class="PhotoSection-wrap">
     <div class="PhotoSection-text">
-    <h2 class="PhotoSection-title"><?= $args['title'] ?></h2>
+    <div class="PhotoSection-titles">
+        <h2 class="PhotoSection-title"><?= $args['title'] ?></h2>
+        <?php if (!empty($args['subtitle'])): ?><h2 class="PhotoSection-subtitle"><?= $args['subtitle'] ?></h2><?php endif; ?>
+    </div>
 <?php endif; ?>
 
 <?php if ($directive['execution_mode'] == 'end'): ?>
