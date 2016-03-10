@@ -84,9 +84,10 @@ Route::get('/summit', ['as' => 'summit', 'uses' => 'MainController@defaultPage']
 Route::get('/updates', ['as' => 'updates', 'uses' => 'MainController@defaultPage']);
 Route::get('/jobs', ['as' => 'jobs', 'uses' => 'MainController@defaultPage']);
 Route::get('/stable-boy', ['as' => 'stableBoy', 'uses' => 'MainController@defaultPage']);
-Route::get('/infuse', ['as' => 'infuse', 'uses' => 'MainController@defaultPage']);
+Route::get('/infuse', ['as' => 'infuse', 'uses' => 'MainController@infuse']);
 Route::get('/elevate', ['as' => 'elevate', 'uses' => 'MainController@elevate']);
 Route::get('/easter', ['as' => 'easter', 'uses' => 'MainController@easter']);
+Route::get('/easter2', ['as' => 'easter2', 'uses' => 'MainController@easter2']);
 Route::get('/easter/times.json', ['uses' => 'MainController@easterTimes']);
 
 // Bible plan
