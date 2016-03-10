@@ -119,10 +119,10 @@ $faq = [
     @faqsection(['faq' => $faq, 'class' => 'has-background camp_faq', 'image' => 'images/fpkids/camp/pattern-optimized.jpg'])
     @endfaqsection
 
-    @bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp/volunteer-tall.jpg'])
-    <p>We're so grateful to our amazing volunteers that make camp what it is. If you're volunteering for this year's camp, please apply here.</p>
-    <p><a class="Button" href="https://fpctystn.infellowship.com/Forms/278342">Apply Online</a></p>
-    @endbgsection
+    {{--@bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp/volunteer-tall.jpg'])--}}
+    {{--<p>We're so grateful to our amazing volunteers that make camp what it is. If you're volunteering for this year's camp, please apply here.</p>--}}
+    {{--<p><a class="Button" href="https://fpctystn.infellowship.com/Forms/278342">Apply Online</a></p>--}}
+    {{--@endbgsection--}}
 
     {{--
         ========================================
