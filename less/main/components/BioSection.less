@@ -1,24 +1,30 @@
 .BioSection {
   .to-rem(font-size, 22);
-  display:          flex;
-  align-items:      center;
+  .to-rem(padding, @Section-vertical-padding-top 0 @Section-vertical-padding-bottom);
   background-color: @NavBackgroundColor;
   color:            #fff;
 }
 
+.BioSection-container {
+  .to-rem(max-width, @ContainerMaxWidth);
+  .to-rem(padding, 0 @Section-vertical-padding-bottom);
+  display: flex;
+}
+
 .BioSection-imageWrap {
-  .to-rem(padding, 70 0);
-  width:      35%;
+  //.to-rem(padding, 70 0);
+  width:      50%;
   text-align: right;
 }
 
 .BioSection-image {
-  width: 65%;
+  .to-rem(max-width, 300);
 }
 
 .BioSection-info {
-  .to-rem(max-width, 850);
   .to-rem(padding, 0 70);
+  width:           50%;
+  flex-grow:       1;
   display:         flex;
   flex-direction:  column;
   justify-content: center;
