@@ -6,14 +6,14 @@
         <a id="to_after_the_fall_from_hero" href="/easter" title="After the Fall">
             <picture>
                 <source media="(min-width: 1200px)" srcset="
-                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1920, 'wide') ?> 1920w,
-                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1680, 'wide') ?> 1680w,
-                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1280, 'wide') ?> 1280w
+                http:<?= resized_image_url('images/series/after-the-fall-home-wide.jpg', 1920, 'wide') ?> 1920w,
+                http:<?= resized_image_url('images/series/after-the-fall-home-wide.jpg', 1680, 'wide') ?> 1680w,
+                http:<?= resized_image_url('images/series/after-the-fall-home-wide.jpg', 1280, 'wide') ?> 1280w
             ">
                 <source srcset="
-                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 1280, 'tall') ?> 1280w,
-                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 800, 'tall') ?> 800w,
-                http:<?= resized_image_url('images/pages/after-the-fall-2-tall.jpg', 480, 'tall') ?> 480w
+                http:<?= resized_image_url('images/series/after-the-fall-home-tall.jpg', 1280, 'tall') ?> 1280w,
+                http:<?= resized_image_url('images/series/after-the-fall-home-tall.jpg', 800, 'tall') ?> 800w,
+                http:<?= resized_image_url('images/series/after-the-fall-home-tall.jpg', 480, 'tall') ?> 480w
             ">
                 <img alt="After the Fall">
             </picture>

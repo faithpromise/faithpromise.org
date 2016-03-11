@@ -1,21 +1,114 @@
-
-.AfterTheFall-bg {
+.AfterTheFall {
+  .to-rem(padding-top, 40);
+  background-image:      ~"url(@{cdn_url}/resized/800/images/easter/after-the-fall-bg.jpg?v=1457617927)";
   background-attachment: fixed;
   background-size:       cover;
+
+  @media(min-width: 800px) {
+    background-image:      ~"url(@{cdn_url}/resized/1280/images/easter/after-the-fall-bg.jpg?v=1457617927)";
+  }
+
+  @media(min-width: 1280px) {
+    background-image:      ~"url(@{cdn_url}/resized/1680/images/easter/after-the-fall-bg.jpg?v=1457617927)";
+  }
+
+  @media(min-width: 1680px) {
+    background-image:      ~"url(@{cdn_url}/resized/1920/images/easter/after-the-fall-bg.jpg?v=1457617927)";
+  }
+
 }
 
-.AfterTheFall {
-  .to-rem(padding, 50 20);
-  .to-rem(max-width, 640);
+/*
+|--------------------------------------------------------------------------
+| Video
+|--------------------------------------------------------------------------
+*/
+.AfterTheFall-videoContainer {
+  .to-rem(max-width, 742);
+  .to-rem(padding, 0 20);
+  margin: 0 auto;
+}
+
+.AfterTheFall-videosContainer {
+  .to-rem(max-width, 534);
+  .to-rem(padding, 42 20);
   margin: 0 auto;
 }
 
 .AfterTheFall-videos {
-  .to-rem(margin-left, 8);
+  .to-rem(margin-left, -12);
   display: flex;
 }
 
 .AfterTheFall-video {
-  .to-rem(padding-left, 8);
+  .to-rem(padding-left, 12);
   flex-shrink: 1;
+  font-size:   0;
+}
+
+.AfterTheFall-videoImage {
+  display: block;
+}
+
+.AfterTheFall-videoTitle {
+  .to-rem(font-size, 12);
+  .to-rem(line-height, 28);
+  text-align:       center;
+  text-transform:   uppercase;
+  background-color: #1e232e;
+  color:            #fff;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Sharing
+|--------------------------------------------------------------------------
+*/
+.AfterTheFall-shareContainer {
+  .to-rem(padding, 35 20);
+}
+
+.AfterTheFall-shareLinks {
+  .to-rem(line-height, 50);
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items:     center;
+}
+
+@media (min-width: 500px) {
+  .AfterTheFall-shareLinks {
+    flex-direction: row;
+  }
+}
+
+.AfterTheFall-shareLink {
+  .to-rem(width, 210);
+  .to-rem(margin, 0 10 10);
+  .to-rem(padding, 0 20 0 0);
+  .to-rem(border-radius, 8);
+  background-color: @NavBackgroundColor;
+  color:            #fff;
+  cursor:           pointer;
+  transition:       background-color .25s ease-in-out;
+  white-space:      nowrap;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #000;
+  }
+}
+
+.AfterTheFall-shareLink > .icon-twitter {
+  .to-rem(padding-left, 8);
+}
+
+.AfterTheFall-shareIcon {
+  .to-rem(font-size, 33);
+  display:        inline-block;
+  vertical-align: bottom;
 }
