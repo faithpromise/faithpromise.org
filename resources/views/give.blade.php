@@ -66,6 +66,7 @@ $ways_to_give = collect([
         Through your financial contributions, you're partnering with Faith Promise Church in to the work of changing lives locally and worldwide.<br>
         <a href="https://www.dropbox.com/sh/sx2egabgixvg0u4/AABmPJji1MEi8YCDBfHqET5Ka">Yearly audited statements</a> &nbsp;|&nbsp; <a href="https://www.dropbox.com/sh/zr8f9pzot60yor7/AABdL8h3kNFADDN9KHHi-1hoa">Financial Statement</a>
     </p>
+    <p>To access your Contribution Statement, please <a class="no-wrap" href="https://fpctystn.infellowship.com/onlinegiving/history">login to Fellowship One</a>.</p>
     @endvideosection
 
     @bgsection([
