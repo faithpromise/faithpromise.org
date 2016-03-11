@@ -1,0 +1,56 @@
+.Times {
+  .to-rem(font-size, 15);
+  .to-rem(margin-top, 40);
+}
+
+.Times-day {
+  .to-rem(margin-bottom, 40);
+}
+
+.Times-list {
+  margin: 0;
+}
+
+.Times-campus,
+.Times-times {
+  .to-rem(padding, 6 0);
+  border-bottom:  1px dotted #adadad;
+  vertical-align: top;
+}
+
+.Times-campus {
+  .to-rem(width, 120);
+  .to-rem(padding-right, 30);
+  white-space: nowrap;
+}
+
+.Times-heading {
+  .to-rem(font-size, 19);
+  .to-rem(margin-bottom, 10);
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .Times {
+    .to-rem(font-size, 18);
+  }
+  .Times-campus,
+  .Times-times {
+    .to-rem(padding-top, 11);
+    .to-rem(padding-bottom, 11);
+  }
+}
+
+@media (min-width: 840px) {
+  .Times {
+    .to-rem(font-size, @font-size);
+    .to-rem(margin-left, -30);
+    display: flex;
+  }
+
+  .Times-column {
+    .to-rem(padding-left, 30);
+    width: 50%;
+  }
+
+}

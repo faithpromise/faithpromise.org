@@ -6,47 +6,28 @@ function formatted_service_times($times) {
 
 ?>
 
-@inlinecss()
-<style type="text/css">
-    .AfterTheFall-bg {
-        background-image: url(<?= resized_image_url('images/easter/after-the-fall-bg.jpg', 1920) ?>);
-    }
-</style>
-@endinlinecss
-
-@extends('layouts.default', ['title' => 'Easter', 'body_class' => 'AfterTheFall-bg'])
+@extends('layouts.default', ['title' => 'Easter'])
 
 @section('content')
 
     <div class="AfterTheFall">
-
-        <div class="AfterTheFall-videosTab">
-
-            <div class="VideoPlayer"><iframe src="https://player.vimeo.com/video/157875912?title=0&byline=0&portrait=0&badge=0&autoplay=false" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
-
-            <div class="AfterTheFall-videos">
-                <div class="AfterTheFall-video">
-                    <img src="<?= resized_image_url('images/general/default-tall.jpg', 480, 'tall') ?>">
-                    <div class="AfterTheFall-videoTitle">
-                        Title Here
-                    </div>
-                </div>
-                <div class="AfterTheFall-video">
-                    <img src="<?= resized_image_url('images/general/default-tall.jpg', 480, 'tall') ?>">
-                    <div class="AfterTheFall-videoTitle">
-                        Title Here
-                    </div>
-                </div>
-                <div class="AfterTheFall-video">
-                    <img src="<?= resized_image_url('images/general/default-tall.jpg', 480, 'tall') ?>">
-                    <div class="AfterTheFall-videoTitle">
-                        Title Here
-                    </div>
+        <div class="AfterTheFall-content">
+            <div class="AfterTheFall-videoContainer">
+                <div class="VideoPlayer">
+                    <iframe src="https://player.vimeo.com/video/157875912?title=0&byline=0&portrait=0&badge=0&autoplay=false" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
-
+            <div class="AfterTheFall-shareContainer">
+                <div class="AfterTheFall-shareLinks">
+                    <span class="AfterTheFall-shareLink" facebook-share>
+                      <i class="AfterTheFall-shareIcon icon-facebook"></i> Share on Facebook
+                    </span>
+                    <a class="AfterTheFall-shareLink" href="https://twitter.com/intent/tweet?text=Sneak%20peak%20of%20%40faithpromise%20original%20movie%2C%20%22After%20the%20Fall.%22%20%23fpeaster&url=http://faithpromise.org/easter">
+                        <i class="AfterTheFall-shareIcon icon-twitter"></i> Share on Twitter
+                    </a>
+                </div>
+            </div>
         </div>
-
     </div>
 
     {{--@videosection(['title' => 'What would you risk to save a friend?', 'class' => '', 'video' => '157875912'])--}}
@@ -60,8 +41,33 @@ function formatted_service_times($times) {
     <div class="Section Section--lightGrey">
         <div class="Section-container">
             <h2 class="Section-title text-center">Find a Location</h2>
-            <p class="text-constrain">Our Faith Promise original film, &quot;After the Fall&quot; will be shown at all of our locations during the week leading up to Easter, and Easter weekend. Choose a day below for specific times and directions.</p>
-            <special-services type="easter"></special-services>
+            <p class="text-constrain">Our Faith Promise original film, &quot;After the Fall&quot; will be shown at all of our locations during the week leading up to Easter, and Easter weekend.</p>
+
+            <div class="Times">
+                <div class="Times-column">
+                    <?php $counter = 0; $break_at = intval(round($service_days->count() / 2)) + 1; ?>
+                    @foreach($service_days as $key => $day)
+                        @if (++$counter === $break_at)
+                </div>
+                <div class="Times-column">
+                    @endif
+                    <div class="Times-day">
+                        <h3 class="Times-heading">{{ \Carbon\Carbon::parse($key)->format('l, M j') }}</h3>
+                        <table class="Times-list">
+                            <tbody>
+                                @foreach($day as $d)
+                                    <tr>
+                                        <td class="Times-campus"><a href="{{ $d->campus->url }}">{{ $d->campus->name }}</a></td>
+                                        <td class="Times-times">{!! formatted_service_times($d->service_times) !!}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
         </div>
     </div>
 
