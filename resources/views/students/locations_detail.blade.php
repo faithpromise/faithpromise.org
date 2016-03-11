@@ -26,7 +26,8 @@ $student_christmas_times = $campus->student_christmas_times;
         <p>We'd love to see you this weekend on our Internet Campus. You'll experience dynamic worship, an engaging message, and live chat.</p>
         <strong>Regular service times are:</strong><br>
         @foreach($campus->student_times as $time)
-            <span class="ServiceTimes-day">{!! $time->day !!}</span> at <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
+            <span class="ServiceTimes-day">{!! $time->day !!}</span> at
+            <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
         @endforeach
         @if($student_christmas_times)
             <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
@@ -54,7 +55,8 @@ $student_christmas_times = $campus->student_christmas_times;
         <p>Contact us: (865) 251-2590</p>
         <strong>Regular service times are:</strong><br>
         @foreach($campus->student_times as $time)
-            <span class="ServiceTimes-day">{!! $time->day !!}</span> at <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
+            <span class="ServiceTimes-day">{!! $time->day !!}</span> at
+            <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
         @endforeach
         @if($student_christmas_times)
             <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
@@ -108,19 +110,21 @@ $student_christmas_times = $campus->student_christmas_times;
     @endif
 
     @if($studentPastor)
-    <div class="BioSection">
-        <div class="BioSection-imageWrap">
-            <img class="BioSection-image" src="{{ resized_image_url('images/staff/jeff-cochran-square.jpg', 1080) }}">
+        <div class="BioSection">
+            <div class="BioSection-container">
+                <div class="BioSection-imageWrap">
+                    <img class="BioSection-image" src="{{ resized_image_url('images/staff/jeff-cochran-square.jpg', 1080) }}">
+                </div>
+                <div class="BioSection-info">
+                    <h3 class="BioSection-name">{{ $studentPastor->name }}</h3>
+                    <h4 class="BioSection-title">{{ $studentPastor->title }}</h4>
+                    <p>{!! str_limit(strip_tags($studentPastor->bio), 200) !!}</p>
+                    <p>
+                        <a class="Button Button--light" href="{{ route('fpStudents_staffDetail', $studentPastor->slug) }}">Meet {{ $studentPastor->first_name }}</a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="BioSection-info">
-            <h3 class="BioSection-name">{{ $studentPastor->name }}</h3>
-            <h4 class="BioSection-title">{{ $studentPastor->title }}</h4>
-            <p>{!! str_limit(strip_tags($studentPastor->bio), 200) !!}</p>
-            <p>
-                <a class="Button Button--light" href="{{ route('fpStudents_staffDetail', $studentPastor->slug) }}">Meet {{ $studentPastor->first_name }}</a>
-            </p>
-        </div>
-    </div>
     @endif
 
 
