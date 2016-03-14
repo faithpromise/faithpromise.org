@@ -239,6 +239,12 @@
       "css": "check-empty",
       "code": 59428,
       "src": "elusive"
+    },
+    {
+      "uid": "10fdd98fb50c590b805a3ad6ff9c55f5",
+      "css": "asl",
+      "code": 59431,
+      "src": "elusive"
     }
   ]
 }
