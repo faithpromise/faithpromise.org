@@ -36,6 +36,7 @@ $og_image = url('images/series/after-the-fall-tall.jpg');
         <div class="Section-container">
             <h2 class="Section-title text-center">Find a Location</h2>
             <p class="text-constrain">Our Faith Promise original film, &quot;After the Fall&quot; will be shown at all of our locations during the week leading up to Easter, and Easter weekend.</p>
+            <p class="text-constrain"><i class="icon-asl"></i> Sign language available at our Pellissippi Campus on March 26 at 5:00 PM.</p>
 
             <div class="Times">
                 <div class="Times-column">
