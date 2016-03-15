@@ -1,0 +1,67 @@
+<div class="GroupSearchLayout">
+
+  <div class="GroupSearchLayout-results">
+
+    <form class="GroupSearchForm">
+      <div class="GroupSearchForm-field">
+        <span class="GroupSearchForm-label">Choose a Location</span>
+      </div>
+      <div class="GroupSearchForm-field">
+        <span class="GroupSearchForm-label">Group Type</span>
+      </div>
+      <div class="GroupSearchForm-field">
+        <span class="GroupSearchForm-label">Kids</span>
+      </div>
+      <div class="GroupSearchForm-field">
+        <input class="GroupSearchForm-byName" type="text">
+      </div>
+    </form>
+
+    <div class="GroupSearchCard" ng-repeat="group in vm.groups">
+      <div class="GroupSearchCard-photoWrap">
+        <img class="GroupSearchCard-photo" src="/resized/800/images/staff/kyle-gilbert-square.jpg">
+      </div>
+      <div class="GroupSearchCard-content">
+        <div class="GroupSearchCard-main">
+          <div class="GroupSearchCard-about">
+            <h2 class="GroupSearchCard-title">{{ group.name }}</h2>
+            <p class="GroupSearchCard-description">{{ group.description }}</p>
+          </div>
+          <div class="GroupSearchCard-actions">
+            <span class="GroupSearchCard-action">Details</span>
+            <span class="GroupSearchCard-action">Map</span>
+            <span class="GroupSearchCard-action">Hide This One</span>
+          </div>
+        </div>
+        <div class="GroupSearchCard-facts">
+          <div class="GroupSearchCard-fact">
+            <span class="GroupSearchCard-factValue">{{ group.city }}</span>
+            <span class="GroupSearchCard-factLabel">14 miles away</span>
+          </div>
+          <div class="GroupSearchCard-fact">
+            <span class="GroupSearchCard-factValue">{{ group.average_age }}</span>
+            <span class="GroupSearchCard-factLabel">avg age</span>
+          </div>
+          <div class="GroupSearchCard-fact">
+            <span class="GroupSearchCard-factValue">{{ group.kids_min_age }}-{{ group.kids_max_age }}</span>
+            <span class="GroupSearchCard-factLabel">kids ages</span>
+          </div>
+          <div class="GroupSearchCard-fact">
+            <span class="GroupSearchCard-factValue">Thurs</span>
+            <span class="GroupSearchCard-factLabel">weekly</span>
+          </div>
+          <div class="GroupSearchCard-fact">
+            <span class="GroupSearchCard-factValue">6:00PM</span>
+            <span class="GroupSearchCard-factLabel">start time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="GroupSearchLayout-map">
+    Map Here
+  </div>
+
+</div>
