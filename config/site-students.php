@@ -1,12 +1,13 @@
 <?php
 
 return [
-    'ident'       => 'fpstudents',
-    'name'        => 'fpStudents',
-    'title'       => 'fpStudents - Student Ministry of Faith Promise Church',
-    'description' => 'The student ministry of Faith Promise Church', // TODO: Update title
-    'logo'        => 'logo-fpstudents',
-    'nav'         => [
+    'ident'                 => 'fpstudents',
+    'name'                  => 'fpStudents',
+    'title'                 => 'fpStudents - Student Ministry of Faith Promise Church',
+    'description'           => 'The student ministry of Faith Promise Church', // TODO: Update title
+    'logo'                  => 'logo-fpstudents',
+    'google_tag_manager_id' => 'GTM-PK3SNW',
+    'nav'                   => [
         [
             'title' => 'Times & Locations',
             'url'   => '/locations',

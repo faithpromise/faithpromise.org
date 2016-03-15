@@ -1,18 +1,19 @@
 <?php
 
 return [
-    'ident'           => 'faithpromise',
-    'name'            => 'Faith Promise Church',
-    'title'           => 'Faith Promise Church',
-    'description'     => 'A contemporary church with locations in Knoxville, Maryville, Clinton, and La Follette, TN',
-    'facebook'        => 'faithpromise',
-    'instagram'       => 'faithpromise',
-    'twitter'         => 'faithpromise',
-    'pinterest'       => 'faithpromise',
-    'vimeo'           => 'faithpromise',
-    'github'          => 'faithpromise',
-    'facebook_app_id' => (env('APP_ENV', 'local') === 'production') ? '1592675454329086' : '1592691894327442',
-    'logo'            => 'logo-faith-promise',
+    'ident'                 => 'faithpromise',
+    'name'                  => 'Faith Promise Church',
+    'title'                 => 'Faith Promise Church',
+    'description'           => 'A contemporary church with locations in Knoxville, Maryville, Clinton, and La Follette, TN',
+    'facebook'              => 'faithpromise',
+    'instagram'             => 'faithpromise',
+    'twitter'               => 'faithpromise',
+    'pinterest'             => 'faithpromise',
+    'vimeo'                 => 'faithpromise',
+    'github'                => 'faithpromise',
+    'facebook_app_id'       => (env('APP_ENV', 'local') === 'production') ? '1592675454329086' : '1592691894327442',
+    'logo'                  => 'logo-faith-promise',
+    'google_tag_manager_id' => 'GTM-T6L864',
 
     'nav' => [
         [
