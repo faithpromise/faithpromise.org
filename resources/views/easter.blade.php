@@ -60,9 +60,20 @@ $og_image = url('images/series/after-the-fall-tall.jpg');
                         </table>
                     </div>
                     @endforeach
+                    <div class="Times-day">
+                        <h3 class="Times-heading">Theater Showings</h3>
+                        <p>Seating is limited. First come - first served.</p>
+                        <table class="Times-list">
+                            <tbody>
+                                <tr>
+                                    <td class="Times-campus"><a href="https://goo.gl/maps/D3aMJ6WA5iz">Regal Pinnacle at Turkey Creek</a></td>
+                                    <td class="Times-times">Sunday, Mar 27 at <span class="no-wrap">5:30 PM &amp; 7:00 PM</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 
