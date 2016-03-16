@@ -12,7 +12,7 @@
             ]
         ]
     ])
-    <p>Infuse is a very intentional process that is more than just equipping people with talent to be a part of fpWorship. It is an atmosphere that promotes growth opportunities for Infusers as well as current staff/volunteers. It is important for us to be reminded that Jesus is our ultimate source and without him, we cannot do this process or anything else. We are trying to in turn, remind Infusers and each other that it’s God’s anointing through our talent that connects and changes lives.</p>
+    <p>Infuse is designed to develop and train individuals through coaches and mentors from the time you show interest, to the moment you begin to actively serve in a Worship Experience. We want you to understand the culture of heart, excellence, and relationships behind fpWorship which enables us to equip and build effective team members.</p>
     @endvideosection
 
 @endsection
