@@ -5,6 +5,7 @@
   td {
     padding:     10px;
     cursor:      default;
+    white-space: nowrap;
     user-select: none;
   }
 
@@ -15,12 +16,30 @@
   }
 
   td {
-    padding:    .5em;
-    transition: .3s background-color ease-in-out;
-    border-top: 1px solid #d8d8d8;
+    padding:        .5em;
+    transition:     .3s background-color ease-in-out;
+    border-top:     1px solid #d8d8d8;
+    vertical-align: top;
   }
 
   tr:hover td {
     background-color: #d2d2d2;
+  }
+}
+
+.StudiesTable-meta {
+  font-size: .68em;
+  display:   block;
+}
+
+@media (max-width: 32.5em) {
+  .StudiesTable {
+    .to-rem(font-size, 15);
+  }
+}
+
+@media (max-width: 63.6875em) {
+  .StudiesTable-leader {
+    display: none;
   }
 }

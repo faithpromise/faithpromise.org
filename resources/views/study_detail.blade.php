@@ -30,19 +30,23 @@
         <thead>
             <tr>
                 <th>Campus</th>
-                <th>Leader</th>
+                <th class="StudiesTable-leader">Leader</th>
                 <th>Time</th>
-                <th>Starts on</th>
                 <th>Register</th>
             </tr>
         </thead>
         <tbody>
             @foreach($times as $time)
                 <tr>
-                    <td>{{ $time->campus->name }} @if (!empty($time->room)) / {{ $time->room }} @endif</td>
-                    <td>{{ $time->leader }}</td>
-                    <td>{{ $time->starts_at->format('D') }} {{ $time->starts_at->format('g:i A') }}</td>
-                    <td>{{ $time->starts_at->format('M j') }}</td>
+                    <td>
+                        {{ $time->campus->name }} @if (!empty($time->room))
+                            <span class="StudiesTable-meta">{{ $time->room }}</span>@endif
+                    </td>
+                    <td class="StudiesTable-leader">{{ $time->leader }}</td>
+                    <td>
+                        {{ $time->starts_at->format('D') }} {{ $time->starts_at->format('g:i A') }}
+                        <span class="StudiesTable-meta">Starts {{ $time->starts_at->format('M j') }}</span>
+                    </td>
                     <td>
                         @if ($time->is_full)
                             Class is full
