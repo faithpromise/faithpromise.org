@@ -1,17 +1,50 @@
-
 .SubHeader {
-  .to-rem(font-size, 24);
+  //.to-rem(font-size, 24);
   .to-rem(max-width, 1310);
-  .to-rem(margin, 0 60);
+  .to-rem(margin, 0 20);
   .to-rem(padding, 20 0);
   display:       flex;
+  flex-wrap:     wrap;
   border-bottom: 1px solid #d9d9d9;
   color:         #555;
+
+  // 1030px (above iPad - 1026 doesn't seem to trigger in Chrome inspector)
+  @media (min-width: 64.375em) {
+    .to-rem(margin, 0 60);
+  }
+}
+
+@media (min-width: 860px) {
+  .SubHeader {
+    .to-rem(font-size, 18);
+  }
+}
+
+@media (min-width: 1160px) {
+  .SubHeader {
+    .to-rem(font-size, 20);
+  }
+}
+
+@media (min-width: 1360px) {
+  .SubHeader {
+    .to-rem(font-size, 22);
+  }
+}
+
+.SubHeader-title {
+  padding-right: 2em;
+  white-space:   nowrap;
+  flex-grow:     1;
 }
 
 .SubHeader-share {
-  flex-grow:  1;
-  text-align: right;
+  flex-shrink:   1;
+  white-space: nowrap;
+}
+
+.SubHeader-shareLink {
+  &:extend(.link all);
 }
 
 .SeriesBlank {
@@ -25,19 +58,3 @@
   color: #555;
 }
 
-.SeriesList {
-  .to-rem(margin, 0 60);
-  color: #555;
-}
-
-.SeriesList-item {
-  .to-rem(font-size, 22);
-  .to-rem(max-width, 1310);
-  .to-rem(padding, 26 0);
-  display:       flex;
-  border-bottom: 1px solid #d9d9d9;
-}
-
-.SeriesList-imageWrap {
-  .to-rem(width, 380);
-}

@@ -23,6 +23,6 @@
                 http:<?= resized_image_url($hero_image_path, 800, 'tall') ?> 800w,
                 http:<?= resized_image_url($hero_image_path, 480, 'tall') ?> 480w
             ">
-    <img alt="<?= htmlentities($hero_image_title) ?>">
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?= htmlentities($hero_image_title) ?>">
 </picture>
 <?php if($url): ?></a><?php endif; ?>

@@ -1,3 +1,10 @@
+<?php
+    /** @var \FaithPromise\Shared\Models\Series $series */
+
+    $twitter_text = 'Check out this @' . config('site.twitter') . ' series: ' . $series->title;
+    $twitter_url = 'https://twitter.com/intent/tweet?text=' . urlencode($twitter_text) . '&url=' . $series->url;
+?>
+
 @extends('layouts.page', [
     'title' => $series->title,
     'hero_image' => $series->image,
@@ -9,43 +16,68 @@
 
     <div class="SubHeader">
         <div class="SubHeader-title">
-            &quot;Madness&quot; Sermon Series
+            Series - {{ $series->title }}
         </div>
         <div class="SubHeader-share">
-            Share &quot;Madness&quot; on: <a href="" facebook-share>Facebook</a> &amp;
-            <a href="https://twitter.com/intent/tweet?text=Sneak%20peak%20of%20%40faithpromise%20original%20movie%2C%20%22After%20the%20Fall.%22%20%23fpeaster&url=http://faithpromise.org/easter">Twitter</a>
+            Share series on: <span class="SubHeader-shareLink" facebook-share="{{ $series->url }}">Facebook</span> &amp;
+            <a class="SubHeader-shareLink" href="{{ $twitter_url }}">Twitter</a>
         </div>
     </div>
 
     <div class="SeriesList">
-        <div class="SeriesList-item">
-            <div class="SeriesList-imageWrap">
-                <img class="SeriesList-image" src="{{ resized_image_url('images/series/madness-tall.jpg', 800, 'tall') }}">
+        @foreach($videos as $v)
+            <div class="SeriesList-item">
+                <div class="SeriesList-imageWrap">
+                    <picture>
+                        <source
+                                media="(min-width: 1200px)"
+                                srcset="
+                                http:<?= resized_image_url($series->image, 1920, 'tall') ?> 1920w,
+                                http:<?= resized_image_url($series->image, 1680, 'tall') ?> 1680w,
+                                http:<?= resized_image_url($series->image, 1280, 'tall') ?> 1280w,
+                                http:<?= resized_image_url($series->image, 800, 'tall') ?> 800w,
+                                http:<?= resized_image_url($series->image, 480, 'tall') ?> 480w
+                            "
+                                sizes="30vw">
+                        <source
+                                srcset="
+                                http:<?= resized_image_url($series->image, 1280, 'square') ?> 1280w,
+                                http:<?= resized_image_url($series->image, 800, 'square') ?> 800w,
+                                http:<?= resized_image_url($series->image, 480, 'square') ?> 480w
+                            "
+                                sizes="30vw">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{{ $series->title }} Sermon Series Graphic">
+                    </picture>
+                </div>
+                <div class="SeriesList-info">
+                    <h3 class="SeriesList-title">{{ $v->title }}</h3>
+                    <p class="SeriesList-meta">
+                        @if ($v->speaker_display_name)
+                            <span class="SeriesList-speaker">{{ $v->speaker_display_name }}</span>
+                        @endif
+                        @if ($v->sermon_date)
+                            <span class="SeriesList-date">{{ $v->sermon_date_formatted }}</span>
+                        @endif
+                    </p>
+                    <p class="SeriesList-description">{{ $v->description }}</p>
+                </div>
+                <div class="SeriesList-actions">
+                    @if ($v->vimeo_id)
+                        <a class="SeriesList-action" open-video="{{ $v->id }}"><i class="icon-play"></i> Watch Video</a>
+                    @endif
+                    @if ($v->audio_file)
+                        <a class="SeriesList-action" href="{{ $site['audio_url'] }}{{ $v->audio_file }}" target="_blank"><i class="icon-headphones"></i> Listen to Audio</a>
+                    @endif
+                    <a class="SeriesList-action"><i class="icon-share"></i> Share Sermon</a>
+                    {{--<a class="SeriesList-action">Group Study</a>--}}
+                </div>
             </div>
-            <div class="SeriesList-info">
-                <h3 class="SeriesList-title">3. The Ultimate Fulfillment</h3>
-                <p class="SeriesList-meta">Dr. Chris Stephens <span class="SeriesList-metaDiv"></span> May 10, 2015</p>
-                <p class="SeriesList-description">Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
-            </div>
-            <div class="SeriesList-actions">
-                <a class="SeriesList-action">Watch Video</a>
-                <a class="SeriesList-action">Listen to Audio</a>
-                <a class="SeriesList-action">Share Sermon</a>
-                <a class="SeriesList-action">Group Study</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <div class="SeriesBlank">
         <h2 class="SeriesBlank-title">Series Begins April 2</h2><!-- TODO: Replace hard coded date -->
         <a class="Button" href="{{ route('locations') }}">Find a Location</a>
-    </div>
-
-    <div class="TableSection">
-        <div class="TableSection-container">
-            <h1 class="TableSection-title">Messages</h1>
-            @include ('partials.series_playlist', ['videos' => $videos])
-        </div>
     </div>
 
 @endsection
