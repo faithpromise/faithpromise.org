@@ -1,8 +1,31 @@
 <?php
-    /** @var \FaithPromise\Shared\Models\Series $series */
 
-    $twitter_text = 'Check out this @' . config('site.twitter') . ' series: ' . $series->title;
-    $twitter_url = 'https://twitter.com/intent/tweet?text=' . urlencode($twitter_text) . '&url=' . $series->url;
+use Carbon\Carbon;
+
+/**
+ * @param Carbon $starts_at
+ * @return string
+ */
+function series_begins_message(Carbon $starts_at) {
+
+    $today = Carbon::today()->startOfDay();
+    $diff_in_days = $today->diffInDays($starts_at, false);
+
+    // Series started today
+    if ($diff_in_days === 0) {
+        return 'Series Begins Today!';
+    }
+
+    // 6 days away (it's Sunday before it starts (on Saturday)
+    if ($diff_in_days < 6) {
+        return 'Series Begins This Weekend';
+    }
+
+    // More than a week away
+    return 'Series Begins ' . $starts_at->format('F j');
+
+}
+
 ?>
 
 @extends('layouts.page', [
@@ -15,12 +38,15 @@
 @section('page')
 
     <div class="SubHeader">
-        <div class="SubHeader-title">
-            Series - {{ $series->title }}
-        </div>
-        <div class="SubHeader-share">
-            Share series on: <span class="SubHeader-shareLink" facebook-share="{{ $series->url }}">Facebook</span> &amp;
-            <a class="SubHeader-shareLink" href="{{ $twitter_url }}">Twitter</a>
+        <div class="SubHeader-container">
+            <div class="SubHeader-title">
+                Series - {{ $series->title }}
+            </div>
+            <div class="SubHeader-share">
+                Share series on:
+                <span class="SubHeader-shareLink" facebook-share="{{ $series->url }}">Facebook</span> &amp;
+                <a class="SubHeader-shareLink" href="{{ $series->twitter_share_url }}">Twitter</a>
+            </div>
         </div>
     </div>
 
@@ -68,16 +94,59 @@
                     @if ($v->audio_file)
                         <a class="SeriesList-action" href="{{ $site['audio_url'] }}{{ $v->audio_file }}" target="_blank"><i class="icon-headphones"></i> Listen to Audio</a>
                     @endif
-                    <a class="SeriesList-action"><i class="icon-share"></i> Share Sermon</a>
+
+                    <a class="SeriesList-action" facebook-share="{{ $v->url }}"><i class="icon-facebook"></i> Post to Facebook</a>
+                    <a class="SeriesList-action" href="{{ $v->twitter_share_url }}"><i class="icon-twitter"></i> Tweet</a>
+
+                    {{--<a class="SeriesList-action"><i class="icon-share"></i> Share Sermon</a>--}}
                     {{--<a class="SeriesList-action">Group Study</a>--}}
                 </div>
             </div>
         @endforeach
     </div>
 
-    <div class="SeriesBlank">
-        <h2 class="SeriesBlank-title">Series Begins April 2</h2><!-- TODO: Replace hard coded date -->
-        <a class="Button" href="{{ route('locations') }}">Find a Location</a>
-    </div>
+    @if ($series->starts_at->isToday() || $series->starts_at->isFuture())
+        <div class="SeriesBlank">
+            <h2 class="SeriesBlank-title">{{ series_begins_message($series->starts_at) }}</h2>
+            <a class="Button" href="{{ route('locations') }}">Find a Location</a>
+        </div>
+    @endif
+
+    @if ($series->alignmentResources)
+
+        <div class="SeriesAlignment">
+            <div class="SeriesAlignment-container">
+                <div class="SeriesAlignment-content">
+                    <h2 class="SeriesAlignment-title">Group Alignment</h2>
+                    <p class="SeriesAlignment-text">
+                        Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.
+                        Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.
+                    </p>
+                    <p>
+                        <a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7079&weekday=&start_time=">Find a Group</a>
+                    </p>
+                </div>
+                <div class="SeriesAlignment-book">
+                    <img class="SeriesAlignment-image" src="{{ cdn_image_raw('images/series/madness-book.jpg') }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="SeriesResources">
+            <div class="SeriesResources-container">
+                <h2 class="SeriesResources-title">Group Resources</h2>
+                <p class="SeriesResources-text">Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
+                <div class="SeriesResourceList">
+                    @foreach($series->alignmentResources as $resource)
+                    <a class="SeriesResourceList-item" href="{{ $resource->url }}">
+                        <img class="SeriesResourceList-image" src="{{ resized_image_url($resource->image, 800, 'tall') }}">
+                        <span class="SeriesResourceList-title">{{ $resource->title }}</span>
+                    </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+    @endif
 
 @endsection

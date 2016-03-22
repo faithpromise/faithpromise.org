@@ -1,17 +1,26 @@
 .SubHeader {
   //.to-rem(font-size, 24);
-  .to-rem(max-width, 1310);
   .to-rem(margin, 0 20);
-  .to-rem(padding, 20 0);
-  display:       flex;
-  flex-wrap:     wrap;
-  border-bottom: 1px solid #d9d9d9;
-  color:         #555;
+  color: #555;
 
   // 1030px (above iPad - 1026 doesn't seem to trigger in Chrome inspector)
   @media (min-width: 64.375em) {
     .to-rem(margin, 0 60);
   }
+
+  // 1410px
+  @media (min-width: 1410px) {
+    margin: 0 auto;
+  }
+}
+
+.SubHeader-container {
+  .to-rem(max-width, 1310);
+  .to-rem(padding, 20 0);
+  display:       flex;
+  flex-wrap:     wrap;
+  margin:        0 auto;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 @media (min-width: 860px) {
@@ -19,6 +28,7 @@
     .to-rem(font-size, 18);
   }
 }
+
 //
 //@media (min-width: 1160px) {
 //  .SubHeader {
@@ -39,7 +49,7 @@
 }
 
 .SubHeader-share {
-  flex-shrink:   1;
+  flex-shrink: 1;
   white-space: nowrap;
 }
 
