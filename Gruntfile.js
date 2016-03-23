@@ -18,13 +18,13 @@ module.exports = function (grunt) {
     var release_root = '_release';
 
     // JS Paths
-    var js_src_dir = src_root + '/js/main';
+    var js_src_dir = src_root + '/app-website/js';
     var js_output_dir = build_root + '/js/main';
     var js_output_file_dev = js_output_dir + '/main.dev.js';
     var js_output_file_production = js_output_dir + '/main.min.js';
     var js_output_file_temp = temp_dir + '/main.tmp.js';
 
-    var admin_js_src_dir = src_root + '/js/admin';
+    var admin_js_src_dir = src_root + '/app-admin/js';
     var admin_js_output_dir = build_root + '/js/admin';
     var admin_js_output_file_dev = admin_js_output_dir + '/admin.dev.js';
     var admin_js_output_file_production = admin_js_output_dir + '/admin.min.js';
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
     ];
 
     // LESS Paths
-    var less_src_dir = src_root + '/less/main';
+    var less_src_dir = src_root + '/app-website/less';
     var less_output_dir = build_root + '/css';
     var less_output_file_dev = less_output_dir + '/main.dev.css';
     var less_output_file_production = less_output_dir + '/main.min.css';
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
         less_src_dir + '/main.less'
     ];
 
-    var admin_less_src_dir = src_root + '/less/admin';
+    var admin_less_src_dir = src_root + '/app-admin/less';
     var admin_less_output_file_dev = less_output_dir + '/admin.dev.css';
     var admin_less_output_file_production = less_output_dir + '/admin.min.css';
     var admin_less_input = [
