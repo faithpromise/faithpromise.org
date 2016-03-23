@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use FaithPromise\Shared\Models\Series;
-use FaithPromise\Shared\Models\Video;
+use App\Models\Series;
+use App\Models\Video;
 use Illuminate\Routing\Controller as BaseController;
 
 class SermonsController extends BaseController {
@@ -23,7 +23,8 @@ class SermonsController extends BaseController {
 
     public function series($series) {
 
-        $videos = Video::with('Series')->with('Speaker')->where('series_id', '=', $series->id)->orderBy('sermon_date', 'asc')->get();
+        $videos = Video::with('Series')->with('Speaker')->where('series_id', '=', $series->id)->orderBy('publish_at', 'desc')->get();
+        $alignment_resources = $series->alignmentResources;
 
         return view('series', [
             'series' => $series,

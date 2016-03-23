@@ -1,0 +1,69 @@
+.SubHeader {
+  //.to-rem(font-size, 24);
+  .to-rem(margin, 0 20);
+  color: #555;
+
+  // 1030px (above iPad - 1026 doesn't seem to trigger in Chrome inspector)
+  @media (min-width: 64.375em) {
+    .to-rem(margin, 0 60);
+  }
+
+  // 1410px
+  @media (min-width: 1410px) {
+    margin: 0 auto;
+  }
+}
+
+.SubHeader-container {
+  .to-rem(max-width, 1310);
+  .to-rem(padding, 20 0);
+  display:       flex;
+  flex-wrap:     wrap;
+  margin:        0 auto;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+@media (min-width: 860px) {
+  .SubHeader {
+    .to-rem(font-size, 18);
+  }
+}
+
+//
+//@media (min-width: 1160px) {
+//  .SubHeader {
+//    .to-rem(font-size, 20);
+//  }
+//}
+//
+//@media (min-width: 1360px) {
+//  .SubHeader {
+//    .to-rem(font-size, 22);
+//  }
+//}
+
+.SubHeader-title {
+  padding-right: 2em;
+  white-space:   nowrap;
+  flex-grow:     1;
+}
+
+.SubHeader-share {
+  flex-shrink: 1;
+  white-space: nowrap;
+}
+
+.SubHeader-shareLink {
+  &:extend(.link all);
+}
+
+.SeriesBlank {
+  .to-rem(padding, 190 40);
+  text-align: center;
+}
+
+.SeriesBlank-title {
+  .to-rem(font-size, 60);
+  .to-rem(margin-bottom, 70);
+  color: #555;
+}

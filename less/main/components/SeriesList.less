@@ -1,0 +1,33 @@
+.SeriesList {
+  .to-rem(padding-bottom, @Section-vertical-padding-bottom);
+}
+
+// Put a "dot" between speaker and date
+.SeriesList-meta {
+  .clearfix();
+  color: #232323;
+}
+
+.SeriesList-speaker,
+.SeriesList-date {
+  float:   left;
+  display: inline-block;
+}
+
+.SeriesList-speaker + .SeriesList-date {
+  &:before {
+    content:       '\00b7';
+    display:       inline-block;
+    float:         left;
+    padding-left:  .4em;
+    padding-right: .4em;
+  }
+}
+
+// Actions clickable
+.SeriesList-action {
+  cursor: pointer;
+}
+
+@import "SeriesList-mobile";
+@import "SeriesList-small";

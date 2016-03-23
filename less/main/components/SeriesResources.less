@@ -1,0 +1,45 @@
+.SeriesResources {
+  &:extend(.GridSection all);
+}
+
+.SeriesResources-container {
+  &:extend(.GridSection-container all);
+}
+
+.SeriesResources-title {
+  &:extend(.GridSection-title all);
+}
+
+.SeriesResources-text {
+  &:extend(.GridSection-text all);
+}
+
+.SeriesResourceList {
+  .to-rem(max-width, 1000);
+  display:   flex;
+  flex-wrap: wrap;
+  margin:    3em auto;
+}
+
+.SeriesResourceList-item {
+  .to-rem(padding, 25);
+  flex-shrink: 0;
+  width:       100%;
+
+  @media (min-width: 600px) {
+    width: 50%;
+  }
+
+  @media (min-width: 800px) {
+    width: 33%;
+  }
+}
+
+.SeriesResourceList-image {
+
+}
+
+.SeriesResourceList-title {
+  .to-rem(margin-top, 14);
+  display: block;
+}

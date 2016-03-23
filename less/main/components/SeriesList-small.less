@@ -1,0 +1,140 @@
+/*
+|--------------------------------------------------------------------------
+| Layout on small screens
+| - action links are positioned on the right
+| - the thumbnail is shown when viewport is wide enough
+|--------------------------------------------------------------------------
+*/
+
+@SeriesList-font-size: 22;
+
+@media (min-width: 600px) {
+
+  .SeriesList {
+    .to-rem(margin, 20);
+  }
+
+  .SeriesList-item {
+    .to-rem(max-width, 1310);
+    margin:         0 auto;
+    padding-top:    3%;
+    padding-bottom: 3%;
+    display:        flex;
+    border-bottom:  1px solid #d9d9d9;
+  }
+
+  .SeriesList-imageWrap {
+    flex-shrink: 0;
+  }
+
+  .SeriesList-info {
+    padding-right: 3%;
+    flex-grow:     1;
+  }
+
+  .SeriesList-actions {
+    padding-left: 3%;
+    border-left:  1px solid #d9d9d9;
+  }
+
+  .SeriesList-action {
+    display: block;
+  }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| Text
+|--------------------------------------------------------------------------
+*/
+@media (min-width: 600px) {
+
+  .SeriesList-title {
+    font-size:     1.54em;
+    margin-bottom: 0;
+  }
+
+  .SeriesList-meta {
+    margin-bottom: .6em;
+    font-size:     1.1em;
+    color:         #232323;
+  }
+
+  .SeriesList-description {
+    .to-rem(margin-bottom, 10);
+    line-height: 1.5;
+    color:       #555;
+  }
+
+  .SeriesList-action {
+    .to-rem(line-height, 36);
+    white-space: nowrap;
+    color:       #9e9e9e;
+  }
+
+}
+
+@media (max-width: 759px) {
+  .SeriesList-imageWrap {
+    display: none;
+  }
+}
+
+@media (min-width: 760px) {
+
+  .SeriesList-title {
+    margin-bottom: .4em;
+  }
+
+  .SeriesList-info {
+    padding-left: 3%;
+  }
+
+}
+
+//@media (min-width: 860px) {
+//  .SeriesList-item {
+//    .to-rem(font-size, 18);
+//  }
+//}
+//
+//@media (min-width: 1160px) {
+//  .SeriesList-item {
+//    .to-rem(font-size, 20);
+//  }
+//}
+//
+//@media (min-width: 1360px) {
+//  .SeriesList-item {
+//    .to-rem(font-size, 22);
+//  }
+//}
+
+// 1030px (above iPad - 1026 doesn't seem to trigger in Chrome inspector)
+@media (min-width: 64.375em) {
+  .SeriesList {
+    .to-rem(margin, 0 60);
+  }
+
+  .SeriesList-action {
+    .to-rem(line-height, 55);
+    white-space: nowrap;
+    color:       #9e9e9e;
+  }
+
+}
+
+// 1199px
+@media (max-width: 74.9375em) {
+  .SeriesList-imageWrap {
+    max-width: 20%;
+  }
+}
+
+// 1200px
+@media (min-width: 75em) {
+  .SeriesList-imageWrap {
+    width: 30%;
+  }
+}

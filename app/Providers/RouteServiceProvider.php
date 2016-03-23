@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Series;
+use App\Models\Video;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -33,10 +35,10 @@ class RouteServiceProvider extends ServiceProvider {
         $router->model('update', 'FaithPromise\Shared\Models\Event');
         $router->model('organization', 'FaithPromise\Shared\Models\Organization');
         $router->model('staff', 'FaithPromise\Shared\Models\Staff');
-        $router->model('series', 'FaithPromise\Shared\Models\Series');
+        $router->model('series', Series::class);
         $router->bind('series_video', function($value, $route) {
             $series = $route->parameter('series');
-            return \FaithPromise\Shared\Models\Video::where('series_id', '=', $series->id)->where('slug', '=', $value)->first();
+            return Video::where('series_id', '=', $series->id)->where('slug', '=', $value)->first();
         });
     }
 
