@@ -141,7 +141,7 @@
                             '<a class="LocationWindow-more" href="' + campus.url + '">More Details</a>' +
                             '</span>' +
                             '</div>' +
-                            '<span class="LocationWindow-close" onclick="fpMap.closeCampusWindow();"></span>' +
+                            '<span class="LocationWindow-close icon-cancel" onclick="fpMap.closeCampusWindow();"></span>' +
                             '<span class="LocationWindow-arrow"></span>'
                 '</div>';
                 return content;
