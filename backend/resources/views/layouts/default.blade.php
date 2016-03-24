@@ -22,7 +22,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <link rel="stylesheet" href="/build/website/fontello/css/fontello.css">
 
         @if (isset($stylesheets))
-                <!-- Page stylesheets -->
+        <!-- Page stylesheets -->
         @foreach($stylesheets as $s)
             @if ($s->hasMedia())
                 <script>if (window.matchMedia('{{ $s->getMedia() }}').matches) { document.write('<link rel="stylesheet" type="text/css" href="{{ $s->getUrl() }}">') }</script>
@@ -68,7 +68,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
 
                         <a id="to_home_from_headerLogo" class="Nav-logoWrap" href="/">
                             <svg class="Nav-logo" role="img" title="{{ $site['name'] }} Logo">
-                                <use xlink:href="/build/svg/general.svg#{{ $site['logo'] }}"></use>
+                                <use xlink:href="/build/website/svg/general.svg#{{ $site['logo'] }}"></use>
                             </svg>
                         </a>
 
@@ -103,7 +103,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                     <div class="MobileBar">
                         <a id="to_home_from_mobileLogo" class="MobileBar-logoWrap" href="/">
                             <svg class="MobileBar-logo" role="img" title="{{ $site['name'] }} Logo">
-                                <use xlink:href="/build/svg/general.svg#{{ $site['logo'] }}"></use>
+                                <use xlink:href="/build/website/svg/general.svg#{{ $site['logo'] }}"></use>
                             </svg>
                         </a>
                         <span class="MobileBar-navToggle"><i class="icon-menu" nav-toggle></i></span>

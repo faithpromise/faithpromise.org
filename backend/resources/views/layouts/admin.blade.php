@@ -24,7 +24,7 @@
 
                     <a class="Nav-logoWrap" href="">
                         <svg class="Nav-logo" role="img" title="Faith Promise Church Logo">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/build/svg/general.svg#logo-faith-promise"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/build/website/svg/general.svg#logo-faith-promise"></use>
                         </svg>
                     </a>
 
