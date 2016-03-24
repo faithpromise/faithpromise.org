@@ -21,7 +21,8 @@
     @else
         @heroimage ([
         'image' => $current_series->home_image,
-        'title' => 'Current Sermon Series: ' . $current_series->title
+        'title' => 'Current Sermon Series: ' . $current_series->title,
+        'url' => $current_series->url
     ])
     @endif
 

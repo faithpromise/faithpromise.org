@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 class MainController extends BaseController {
 
     public function index() {
-
-        $show_easter_on = Carbon::create(2016, 3, 5);
-        $show_easter = Carbon::today()->gte($show_easter_on);
+        $current_time = Carbon::now()->timezone('America/New_York');
+        $show_easter_start = Carbon::createFromDate(2016, 3, 5, 'America/New_York');
+        $show_easter_end = Carbon::createFromDate(2016, 3, 28, 'America/New_York')->startOfDay();
+        $show_easter = $current_time->between($show_easter_start, $show_easter_end);
         $current_series = Series::currentSeries()->first();
         $events = Event::featured()->get()->sortBy('sort');
         $icampus_times = Campus::findBySlug('online')->formatted_times;
