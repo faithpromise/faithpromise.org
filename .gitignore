@@ -10,6 +10,7 @@
 /bower_components
 /backend/temp
 /temp
-/public/build/*
+/public/build
+/public/main
 !/public/build/.gitkeep
 Homestead.yaml
