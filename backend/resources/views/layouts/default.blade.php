@@ -18,8 +18,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
 
         @include('includes._social_tags')
 
-                <!-- build:style main -->
-        <link rel="stylesheet" href="/build/website/css/main.dev.css">
+                <!-- build:style website -->
+        <link rel="stylesheet" href="/build/website/css/website.css">
         <!-- /build -->
         <link rel="stylesheet" href="/build/website/css/fontello.css">
 
@@ -176,8 +176,8 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
             })(angular, window.fp);
         </script>
 
-        <!-- build:script main -->
-        <script src="/build/website/js/main.dev.js"></script>
+        <!-- build:script website -->
+        <script src="/build/website/js/website.js"></script>
         <!-- /build -->
 
         <script src="/build/website/js/svg4everybody.min.js"></script>
