@@ -1,0 +1,54 @@
+@SocialButton-font-size: 26;
+@SocialButton-gutter-size: @grid-gutter-base;
+@SocialButton-width: 50;
+
+.SocialButtons {
+  &:extend(.grid all);
+  .to-rem(margin-left, -@grid-gutter-double);
+  text-align: center;
+}
+
+.SocialButtons-item {
+  &:extend(.grid-item all);
+  .to-rem(font-size, @SocialButton-font-size);
+  .to-em(padding-left, @SocialButton-gutter-size, @SocialButton-font-size);
+  .to-em(margin-bottom, @SocialButton-gutter-size, @SocialButton-font-size);
+  .to-em(max-width, (@SocialButton-width + @SocialButton-gutter-size), @SocialButton-font-size);
+}
+
+.SocialButtons-link {
+  .to-em(width, @SocialButton-width, @SocialButton-font-size);
+  .to-em(border-radius, @SocialButton-width, @SocialButton-font-size);
+  .to-em(height, @SocialButton-width, @SocialButton-font-size);
+  .to-em(line-height, @SocialButton-width, @SocialButton-font-size);
+  display: inline-block;
+  color:   #fff;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.SocialButtons-link--facebook {
+  background-color: #3b5998;
+}
+
+.SocialButtons-link--twitter {
+  background-color: #00aced;
+}
+
+.SocialButtons-link--instagram {
+  background-color: #517fa4;
+}
+
+.SocialButtons-link--youtube {
+  background-color: #bb0000;
+}
+
+.SocialButtons-link--pinterest {
+  background-color: #cb2027;
+}
+
+.SocialButtons-link--vimeo {
+  background-color: #aad450;
+}

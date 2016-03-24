@@ -1,0 +1,87 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.modal-open {
+  max-height: 100%;
+  overflow:   hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display:                    none;
+  overflow:                   hidden;
+  position:                   fixed;
+  top:                        0;
+  right:                      0;
+  bottom:                     0;
+  left:                       0;
+  z-index:                    @zindex-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline:                    0;
+
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+//  .to-rem(max-width, @ContainerMaxWidth);
+  width:     auto;
+//  margin:    2rem auto;
+}
+
+// Modal background
+.modal-backdrop {
+  position:         fixed;
+  top:              0;
+  right:            0;
+  bottom:           0;
+  left:             0;
+  z-index:          @zindex-modal-background;
+  background-color: @modal-backdrop-bg;
+  // Fade for backdrop
+
+//  transition: opacity .3s ease-in-out;
+
+  &.fade {
+    opacity: 0;
+  }
+  &.in {
+    opacity: @modal-backdrop-opacity;
+  }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top:      -9999px;
+  width:    50px;
+  height:   50px;
+  overflow: scroll;
+}
+
+.modal-close {
+  position:         absolute;
+  top:              1rem;
+  right:            0;
+  z-index:          @zindex-modal-close;
+  padding:          0 0.4rem;
+  border-radius:    10px 0 0 10px;
+  font-size:        2.2rem;
+  background-color: #0095e4;
+  color:            #fff;
+  cursor:           pointer;
+}
