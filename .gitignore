@@ -1,5 +1,5 @@
 .DS_Store
-/backend/.env
+/.env
 .idea
 /_release/*
 !/_release/.gitkeep
