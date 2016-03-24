@@ -34,7 +34,7 @@
                 backdrop: 'static',
                 controller: modalController,
                 controllerAs: 'vm',
-                templateUrl: '/build/js/main/video/video-popup.html',
+                templateUrl: '/build/website/js/video/video-popup.html',
                 windowClass: 'VideoPopup-modal',
                 backdropClass: 'VideoPopup-backdrop',
                 resolve: {

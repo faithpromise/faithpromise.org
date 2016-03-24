@@ -7,7 +7,7 @@
 
     function directive($window, $timeout) {
         return {
-            templateUrl: '/build/js/main/directives/volunteer-positions/volunteer-positions.html',
+            templateUrl: '/build/website/js/directives/volunteer-positions/volunteer-positions.html',
             restrict: 'E',
             controller: Controller,
             controllerAs: 'vm',

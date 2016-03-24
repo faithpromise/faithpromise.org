@@ -5,7 +5,7 @@
 
     function directive() {
         return {
-            templateUrl:      '/build/js/main/groups/groups-search.html',
+            templateUrl:      '/build/website/js/groups/groups-search.html',
             restrict:         'E',
             controller:       Controller,
             controllerAs:     'vm',

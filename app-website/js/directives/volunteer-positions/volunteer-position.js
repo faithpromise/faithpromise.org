@@ -5,7 +5,7 @@
 
     function directive() {
         return {
-            templateUrl: '/build/js/main/directives/volunteer-positions/volunteer-position.html',
+            templateUrl: '/build/website/js/directives/volunteer-positions/volunteer-position.html',
             restrict: 'E',
             controller: Controller,
             controllerAs: 'vm',
