@@ -11,6 +11,47 @@ $christmas_times = $campus->christmas_times;
 
 @section('page')
 
+    @if ($easter_times)
+        <div id="easter-times" class="HolidayTimesSection HolidayTimesSection--dark">
+            <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
+            <div class="HolidayTimesSection-container">
+                <h2 class="HolidayTimesSection-title">Easter Service Times at {{ $campus->name }}</h2>
+                <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
+                {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Easter Services.</p>--}}
+                <ul class="HolidayTimesSection-schedule">
+                    @foreach($easter_times as $time)
+                        <li class="HolidayTimesSection-service">
+                            <span class="HolidayTimesSection-day">{!! $time->day !!}</span><br>
+                            <span class="HolidayTimesSection-time">{!! $time->formatted_times !!}</span>
+                        </li>
+                    @endforeach
+                </ul>
+                {{--<p>--}}
+                {{--<a class="Button Button--light">More About Easter</a>--}}
+                {{--</p>--}}
+            </div>
+        </div>
+    @endif
+
+    @if ($christmas_times)
+        <div id="christmas-times" class="HolidayTimesSection">
+            <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
+            <div class="HolidayTimesSection-container">
+                <h2 class="HolidayTimesSection-title">Christmas Service Times</h2>
+                <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
+                {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Christmas Services.</p>--}}
+                <ul class="HolidayTimesSection-schedule">
+                    @foreach($christmas_times as $time)
+                        <li class="HolidayTimesSection-service">
+                            <span class="HolidayTimesSection-day">{!! $time->day !!}</span><br>
+                            <span class="HolidayTimesSection-time">{!! $time->formatted_times !!}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
+
     @if($campus->slug === 'online')
 
         @introsection([
@@ -64,47 +105,6 @@ $christmas_times = $campus->christmas_times;
             @endif
         @endintrosection
 
-    @endif
-
-    @if ($easter_times)
-        <div id="easter-times" class="HolidayTimesSection HolidayTimesSection--dark">
-            <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
-            <div class="HolidayTimesSection-container">
-                <h2 class="HolidayTimesSection-title">Easter Service Times</h2>
-                <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
-                {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Easter Services.</p>--}}
-                <ul class="HolidayTimesSection-schedule">
-                    @foreach($easter_times as $time)
-                        <li class="HolidayTimesSection-service">
-                            <span class="HolidayTimesSection-day">{!! $time->day !!}</span><br>
-                            <span class="HolidayTimesSection-time">{!! $time->formatted_times !!}</span>
-                        </li>
-                    @endforeach
-                </ul>
-                {{--<p>--}}
-                    {{--<a class="Button Button--light">More About Easter</a>--}}
-                {{--</p>--}}
-            </div>
-        </div>
-    @endif
-
-    @if ($christmas_times)
-        <div id="christmas-times" class="HolidayTimesSection">
-            <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
-            <div class="HolidayTimesSection-container">
-                <h2 class="HolidayTimesSection-title">Christmas Service Times</h2>
-                <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
-                {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Christmas Services.</p>--}}
-                <ul class="HolidayTimesSection-schedule">
-                    @foreach($christmas_times as $time)
-                        <li class="HolidayTimesSection-service">
-                            <span class="HolidayTimesSection-day">{!! $time->day !!}</span><br>
-                            <span class="HolidayTimesSection-time">{!! $time->formatted_times !!}</span>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
     @endif
 
     @cardsection(['title' => 'What to Expect', 'class' => 'Section--lightGrey', 'cards' => $what_to_expect_cards])
