@@ -112,15 +112,14 @@ function series_begins_message(Carbon $starts_at) {
         </div>
     @endif
 
-    @if ($series->alignmentResources)
+    @if ($alignment_resources->count())
 
         <div class="SeriesAlignment">
             <div class="SeriesAlignment-container">
                 <div class="SeriesAlignment-content">
                     <h2 class="SeriesAlignment-title">Group Alignment</h2>
                     <p class="SeriesAlignment-text">
-                        Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.
-                        Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.
+                        During an alignment, groups focus on studying and discussing the same topics presented in the weekend services. This allows our entire church to come together and grow in our relationship with Christ and with one another. It's a perfect time to get in a group if you aren't in one already. To learn more about groups, visit our <a class="no-wrap" href="{{ route('groups') }}">groups page</a> or get in touch with us after any service at our Next Steps area.
                     </p>
                     <p>
                         <a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7079&weekday=&start_time=">Find a Group</a>
@@ -135,7 +134,7 @@ function series_begins_message(Carbon $starts_at) {
         <div class="SeriesResources">
             <div class="SeriesResources-container">
                 <h2 class="SeriesResources-title">Group Resources</h2>
-                <p class="SeriesResources-text">Lorm ipsum means that its really importent for you to stay off drugs and stay in scool. You need to no things that will help you in life. Like MATHS and gym. You don't want to be dum.</p>
+                <p class="SeriesResources-text">We've created the following resources for you and your group to help guide discussion during this alignment.</p>
                 <div class="SeriesResourceList">
                     @foreach($series->alignmentResources as $resource)
                     <a class="SeriesResourceList-item" href="{{ $resource->url }}">
