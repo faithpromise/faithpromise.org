@@ -8,8 +8,8 @@ module.exports = function (grunt) {
             src:     website.js.src,
             dest:    website.js.dest,
             options: {
-                compress: grunt.option('production') || false,
-                mangle:   grunt.option('production') || false,
+                compress: false,
+                mangle:   false,
                 beautify: !grunt.option('production') || false,
                 screwIE8: true
             }

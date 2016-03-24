@@ -4,8 +4,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build_website', ['uglify:website', 'replace:angular_uib', 'copy_files', 'svgstore:website', 'less:website', 'autoprefixer:website']);
 
-    grunt.registerTask('build_release', ['clean:build', 'clean:release', 'build_website', 'copy:release_backend', 'copy:release_frontend', 'removelogging', 'cacheBust']);
+    grunt.registerTask('build_release', ['clean:build', 'clean:release', 'build_website', 'copy:release_backend', 'copy:release_frontend', 'removelogging:website', 'cacheBust']);
 
-    grunt.registerTask('deploy', ['build_release']); // TODO: Add git_deploy
+    grunt.registerTask('deploy', ['build_release', 'git_deploy']);
 
 };
