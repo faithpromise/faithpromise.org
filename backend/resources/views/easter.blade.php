@@ -62,7 +62,7 @@ $og_image = url('images/series/after-the-fall-tall.jpg');
                     @endforeach
                     <div class="Times-day">
                         <h3 class="Times-heading">Theater Showings</h3>
-                        <p>Seating is limited. First come, first served. Doors open 15 minutes before showtime.</p>
+                        <p>Seating is limited. First come, first served. Free admission. Doors open 15 minutes before showtime.</p>
                         <table class="Times-list">
                             <tbody>
                                 <tr>
