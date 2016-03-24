@@ -21,7 +21,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                 <!-- build:style website -->
         <link rel="stylesheet" href="/build/website/css/website.css">
         <!-- /build -->
-        <link rel="stylesheet" href="/build/website/css/fontello.css">
+        <link rel="stylesheet" href="/build/website/fontello/css/fontello.css">
 
         @if (isset($stylesheets))
                 <!-- Page stylesheets -->
