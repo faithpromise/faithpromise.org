@@ -66,12 +66,12 @@ $og_image = url('images/series/after-the-fall-tall.jpg');
                         <table class="Times-list">
                             <tbody>
                                 <tr>
-                                    <td class="Times-campus"><a href="https://goo.gl/maps/D3aMJ6WA5iz">Regal Pinnacle at Turkey Creek</a></td>
-                                    <td class="Times-times">Sunday, Mar 27 at <span class="no-wrap">5:30 PM, 7:00 PM, &amp; 8:15 PM</span></td>
+                                    <td class="Times-campus Times-campus--theater"><a href="https://goo.gl/maps/D3aMJ6WA5iz">Regal Pinnacle at Turkey Creek</a></td>
+                                    <td class="Times-times Times-times--theater">Sunday, Mar 27 at <span class="no-wrap">5:30 PM, 7:00 PM, &amp; 8:15 PM</span></td>
                                 </tr>
                                 <tr>
-                                    <td class="Times-campus"><a href="https://goo.gl/maps/Ra47qUNpnNJ2">Carmike Foothills 12 (Maryville)</a></td>
-                                    <td class="Times-times">Sunday, Mar 27 at <span class="no-wrap">5:30 PM &amp; 7:00 PM</span></td>
+                                    <td class="Times-campus Times-campus--theater"><a href="https://goo.gl/maps/Ra47qUNpnNJ2">Carmike Foothills 12 (Maryville)</a></td>
+                                    <td class="Times-times Times-times--theater">Sunday, Mar 27 at <span class="no-wrap">5:30 PM &amp; 7:00 PM</span></td>
                                 </tr>
                             </tbody>
                         </table>
