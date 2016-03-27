@@ -41,6 +41,7 @@ module.exports = function (grunt) {
                 '!database/seeds/**/*',
                 '!vendor/**/*',
                 '!storage/**/*',
+                'bootstrap/cache/.gitkeep',
                 'storage/.gitkeep'
             ]
         },
