@@ -16,7 +16,7 @@ $og_image = url('images/series/after-the-fall-tall.jpg');
         <div class="AfterTheFall-content">
             <div class="AfterTheFall-videoContainer">
                 <div class="VideoPlayer">
-                    <iframe src="https://www.youtube.com/embed/saBwWolA_eg?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/cdgaTG_mYmY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="AfterTheFall-shareContainer">
