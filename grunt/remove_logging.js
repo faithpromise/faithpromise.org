@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     grunt.config('removelogging', {
 
         website: {
-            src: website.src_dir + '/**/*.js'
+            src: website.output_dir + '/**/*.js'
         }
 
     });
