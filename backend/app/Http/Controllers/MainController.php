@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use FaithPromise\Shared\Models\Campus;
-use FaithPromise\Shared\Models\EasterService;
 use FaithPromise\Shared\Models\Event;
 use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\Series;
@@ -50,16 +49,10 @@ class MainController extends BaseController {
 
     public function easter() {
 
-        $service_days = EasterService::all()
-            ->sortBy(function ($service) {
-                return $service->service_day->toDateString() . $service->campus->sort;
-            })
-            ->groupBy(function ($service) {
-                return $service->service_day->toDateString();
-            });
+        $posts = Post::byLocation('easter-page')->get();
 
         return view('easter', [
-            'service_days' => $service_days
+            'posts' => $posts
         ]);
     }
 
