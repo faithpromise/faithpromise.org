@@ -20,9 +20,9 @@
         };
     }
 
-    Controller.$inject = ['$uibModal', 'videosService', 'vimeoService'];
+    Controller.$inject = ['$uibModal', 'videosService', 'vimeoService', 'site'];
 
-    function Controller($modal, videosService, vimeoService) {
+    function Controller($modal, videosService, vimeoService, site) {
 
         var vm = this;
         vm.open_popup = open_popup;
@@ -46,6 +46,9 @@
                     },
                     vimeoService: function() {
                         return vimeoService;
+                    },
+                    site: function() {
+                        return site;
                     }
                 }
             });
@@ -54,15 +57,16 @@
 
     }
 
-    modalController.$inject = ['$uibModalInstance', 'video_id', 'videosService', 'vimeoService'];
+    modalController.$inject = ['$uibModalInstance', 'video_id', 'videosService', 'vimeoService', 'site'];
 
-    function modalController($modalInstance, video_id, videoService, vimeoService) {
+    function modalController($modalInstance, video_id, videoService, vimeoService, site) {
 
         var vm = this;
 
         init();
 
         vm.close = close;
+        vm.logo_mark = site.logoMark;
 
         function init() {
 

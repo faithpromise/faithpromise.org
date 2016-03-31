@@ -2,9 +2,9 @@
 
   <div class="VideoPopup-header">
 
-    <a class="VideoPopup-logoWrap" href="/">
+    <a class="VideoPopup-logoWrap" href="/" ng-if="vm.logo_mark">
       <svg class="VideoPopup-logo" role="img" title="Faith Promise Church Logo">
-        <use xlink:href="/build/website/svg/general.svg#logo-fp"></use>
+        <use xlink:href="" ng-attr-xlink:href="{{ '/build/website/svg/general.svg#' + vm.logo_mark }}"></use>
       </svg>
     </a>
 

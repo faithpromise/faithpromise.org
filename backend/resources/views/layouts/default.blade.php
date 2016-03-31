@@ -22,7 +22,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <link rel="stylesheet" href="/build/website/fontello/css/fontello.css">
 
         @if (isset($stylesheets))
-        <!-- Page stylesheets -->
+                <!-- Page stylesheets -->
         @foreach($stylesheets as $s)
             @if ($s->hasMedia())
                 <script>if (window.matchMedia('{{ $s->getMedia() }}').matches) { document.write('<link rel="stylesheet" type="text/css" href="{{ $s->getUrl() }}">') }</script>
@@ -167,8 +167,9 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
             (function (angular, fp) {
                 var module = angular.module('siteConfig', []);
                 module.constant('site', {
-                            isMobile: fp.isMobile(),
-                            cdnUrl:   '<?= config('site.cdn_url') ?>'
+                            isMobile:   fp.isMobile(),
+                            cdnUrl:     '<?= config('site.cdn_url') ?>',
+                            'logoMark': '<?= config('site.logo_mark') ?>'
                         }
                 );
             })(angular, window.fp);
