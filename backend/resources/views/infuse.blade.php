@@ -4,7 +4,7 @@
 
     @videosection([
         'title' => 'Infuse',
-        'video' => '154897722',
+        'youtube' => '9AsGr5p4_bk',
         'buttons' => [
             [
                 'title' => 'I\'m Interested!',
