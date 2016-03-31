@@ -27,8 +27,8 @@ class SermonsController extends BaseController {
         $alignment_resources = $series->alignmentResources;
 
         return view('series', [
-            'series' => $series,
-            'videos' => $videos,
+            'series'              => $series,
+            'videos'              => $videos,
             'alignment_resources' => $alignment_resources
         ]);
 
@@ -40,7 +40,7 @@ class SermonsController extends BaseController {
 
         return view('series_video', [
             'series' => $series,
-            'video' => $video,
+            'video'  => $video,
             'videos' => $videos
         ]);
 
