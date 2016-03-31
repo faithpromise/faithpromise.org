@@ -14,6 +14,7 @@ return [
     'facebook_app_id'       => (env('APP_ENV', 'local') === 'production') ? '1592675454329086' : '1592691894327442',
     'logo'                  => 'logo-faith-promise',
     'google_tag_manager_id' => 'GTM-T6L864',
+    'podcast_url'           => 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=75485008',
 
     'nav' => [
         [
