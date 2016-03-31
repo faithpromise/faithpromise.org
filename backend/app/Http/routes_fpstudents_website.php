@@ -22,9 +22,9 @@ Route::group(['domain' => config('site.students_domain')], function () {
     Route::get('/updates/{update}', ['as' => 'fpStudents_update', 'uses' => 'Students\UpdatesController@detail']);
 
 // Sermons
-    Route::get('/sermons', ['as' => 'fpStudents_sermons', 'uses' => 'Students\SermonsController@index']);
-    Route::get('/series/{series}', ['as' => 'fpStudents_series', 'uses' => 'Students\SermonsController@series']);
-    Route::get('/series/{series}/{series_video}', ['as' => 'fpStudents_seriesVideo', 'uses' => 'Students\SermonsController@video']);
+    Route::get('/sermons', ['as' => 'fpStudents_sermons', 'uses' => 'SermonsController@index']);
+    Route::get('/series/{series}', ['as' => 'fpStudents_series', 'uses' => 'SermonsController@series']);
+    Route::get('/series/{series}/{series_video}', ['as' => 'fpStudents_seriesVideo', 'uses' => 'SermonsController@video']);
 
     Route::any('{all}', 'Students\MainController@index');
 
