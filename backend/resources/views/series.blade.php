@@ -99,7 +99,9 @@ function series_begins_message(Carbon $starts_at) {
                     <a class="SeriesList-action" href="{{ $v->twitter_share_url }}"><i class="icon-twitter"></i> Tweet</a>
 
                     {{--<a class="SeriesList-action"><i class="icon-share"></i> Share Sermon</a>--}}
-                    {{--<a class="SeriesList-action">Group Study</a>--}}
+                    @if ($v->has_resources)
+                        <a class="SeriesList-action" open-video-resources="{{ $v->id }}"><i class="icon-docs"></i> Resources</a>
+                    @endif
                 </div>
             </div>
         @endforeach

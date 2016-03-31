@@ -1,0 +1,101 @@
+@VideoResources-font-size: @font-size;
+@VideoResources-height: 46;
+@VideoResources-border: 1px solid #dcdcdc;
+
+.VideoResources {
+  .to-rem(font-size, @VideoResources-font-size);
+  .to-em(padding, 10 20 20 20, @VideoResources-font-size);
+}
+
+.VideoResources-header {
+  .clearfix();
+  .to-em(padding-bottom, 10, @VideoResources-font-size);
+  .to-em(margin-bottom, 20, @VideoResources-font-size);
+  border-bottom: @VideoResources-border;
+}
+
+.VideoResources-logoWrap {
+  .to-em(height, @VideoResources-height, @VideoResources-font-size);
+  .to-em(padding-right, 20, @VideoResources-font-size);
+  .to-em(margin-right, 20, @VideoResources-font-size);
+  float:        left;
+  border-right: @VideoResources-border;
+
+  // 479px
+  @media (max-width: 29.9375em) {
+    display: none;
+  }
+}
+
+.VideoResources-logo {
+  width:  40px;
+  height: 100%;
+  fill:   @NavBackgroundColor;
+}
+
+@VideoResources-meta-font-size: 14;
+.VideoResources-meta {
+  .to-em(font-size, 14, @VideoResources-font-size);
+  .to-em(padding, 6 30 0 0, 14);
+  float: left;
+
+  // 479px
+  @media (max-width: 29.9375em) {
+    padding-right: 0;
+  }
+}
+
+.VideoResources-title {
+  display:       block;
+  max-width:     65vw;
+  white-space:   nowrap;
+  text-overflow: ellipsis;
+  overflow:      hidden;
+  font-weight:   bold;
+}
+
+@VideoResources-speaker-font-size: 12;
+.VideoResources-speaker,
+.VideoResources-plays {
+  .to-em(font-size, @VideoResources-speaker-font-size, @VideoResources-meta-font-size);
+  .to-em(padding-right, 15, @VideoResources-meta-font-size);
+  display: inline-block;
+}
+
+// 479px
+@media (max-width: 29.9375em) {
+  .VideoResources-plays {
+    display: none;
+  }
+}
+
+.VideoResources-metaLabel {
+  color: #777;
+}
+
+@VideoResources-close-font-size: 42;
+.VideoResources-close {
+  .to-em(font-size, @VideoResources-close-font-size, @VideoResources-font-size);
+  .to-em(line-height, @VideoResources-height, @VideoResources-close-font-size);
+  float:  right;
+  color:  #989898;
+  cursor: pointer;
+
+  &:hover {
+    color: #d6d6d6;
+  }
+}
+
+.VideoResources-video {
+  .to-em(max-width, 1020, @VideoResources-font-size);
+  margin: 0 auto;
+}
+
+.VideoResources-backdrop {
+  background-color: #fff;
+}
+
+.VideoResources-content {
+  .to-rem(padding, 20 0);
+  .text-constrain();
+}
