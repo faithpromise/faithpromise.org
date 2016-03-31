@@ -245,6 +245,12 @@
       "css": "asl",
       "code": 59431,
       "src": "elusive"
+    },
+    {
+      "uid": "922ab2cb66943a83de969990289ef1dc",
+      "css": "docs",
+      "code": 59432,
+      "src": "entypo"
     }
   ]
 }
