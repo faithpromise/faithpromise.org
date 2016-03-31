@@ -13,7 +13,9 @@ class StaffController extends BaseController {
         ]);
     }
 
-    public function detail($member) {
+    public function detail($slug) {
+
+        $member = Staff::findBySlug($slug);
 
         $staff = Staff::student()->get()->filter(function ($item) use ($member) {
             return $item->id <> $member->id;
