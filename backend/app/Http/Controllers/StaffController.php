@@ -60,7 +60,13 @@ class StaffController extends BaseController {
         ]);
     }
 
-    public function detail($member) {
+    public function detail($slug) {
+
+        $member = Staff::findBySlug($slug);
+
+        if (!$member) {
+            abort(404);
+        }
 
         $teams = $member->teams;
         $team = $teams->last(); // LATER: Figure out what to do for multiple teams. Last because exec vs worship (ex. Michele)

@@ -34,7 +34,6 @@ class RouteServiceProvider extends ServiceProvider {
         $router->model('event', 'FaithPromise\Shared\Models\Event');
         $router->model('update', 'FaithPromise\Shared\Models\Event');
         $router->model('organization', 'FaithPromise\Shared\Models\Organization');
-        $router->model('staff', 'FaithPromise\Shared\Models\Staff');
         $router->model('series', Series::class);
         $router->bind('series_video', function($value, $route) {
             $series = $route->parameter('series');
