@@ -79,7 +79,7 @@ Route::get('/beliefs-and-values', ['as' => 'beliefs', 'uses' => 'MainController@
 Route::get('/h4h', ['as' => 'h4h', 'uses' => 'MainController@defaultPage']);
 Route::get('/fasting', ['as' => 'fasting', 'uses' => 'MainController@defaultPage']);
 Route::get('/weddings', ['as' => 'weddings', 'uses' => 'MainController@defaultPage']);
-Route::get('/stephen', ['as' => 'stephen', 'uses' => 'MainController@defaultPage']);
+Route::get('/stephen', ['as' => 'stephen', 'uses' => 'MainController@stephen']);
 Route::get('/summit', ['as' => 'summit', 'uses' => 'MainController@defaultPage']);
 Route::get('/updates', ['as' => 'updates', 'uses' => 'MainController@defaultPage']);
 Route::get('/jobs', ['as' => 'jobs', 'uses' => 'MainController@defaultPage']);

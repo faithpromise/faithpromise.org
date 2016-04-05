@@ -56,4 +56,13 @@ class MainController extends BaseController {
         ]);
     }
 
+    public function stephen() {
+
+        $ministers = Post::whereType('stephen_minister')->get();
+
+        return view('stephen', [
+            'ministers' => $ministers
+        ]);
+    }
+
 }

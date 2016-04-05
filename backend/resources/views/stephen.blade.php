@@ -24,11 +24,38 @@
     </ul>
     @endintrosection
 
+    @if ($ministers->count())
+        <div class="ProfilesSection Section--lightGrey">
+            <div class="ProfilesSection-container">
+                <h2 class="ProfilesSection-title">Stephen Ministers</h2>
+                <ul class="ProfilesSection-grid">
+                    <?php foreach ($ministers as $profile): ?>
+                    <li class="ProfilesSection-item">
+                <span class="ProfilesSection-card">
+                    <img
+                            class="ProfilesSection-photo lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-srcset="
+                            <?= resized_image_url($profile->image, 1280, 'square') ?> 1280w,
+                            <?= resized_image_url($profile->image, 800, 'square') ?> 800w,
+                            <?= resized_image_url($profile->image, 480, 'square') ?> 480w
+                        "
+                            sizes="25vw">
+                    <span class="ProfilesSection-name"><?= $profile->title ?></span>
+                    <span class="ProfilesSection-profileTitle"><?= $profile->subtitle ?></span>
+                </span>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    @endif
+
     {{--
         ========================================
         Contact
         ========================================
     --}}
-    @include('partials.have_questions', ['class' => 'Section--lightGrey', 'title' => 'Need more info?', 'email' => 'stephenministry@faithpromise.org', 'text' => 'If you have questions about Stephen Ministry, please contact #email#'])
+    @include('partials.have_questions', ['class' => '', 'title' => 'Need more info?', 'email' => 'stephenministry@faithpromise.org', 'text' => 'If you have questions about Stephen Ministry, please contact #email#'])
 
 @endsection
