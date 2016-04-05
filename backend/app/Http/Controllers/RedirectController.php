@@ -146,4 +146,8 @@ class RedirectController extends BaseController {
         return redirect('https://www.dropbox.com/request/usCGEgVjDxQBuGRxgoTW');
     }
 
+    public function operations() {
+        return redirect('/events/operations-team-appreciation');
+    }
+
 }
