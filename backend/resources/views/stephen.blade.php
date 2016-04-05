@@ -27,7 +27,7 @@
     @if ($ministers->count())
         <div class="ProfilesSection Section--lightGrey">
             <div class="ProfilesSection-container">
-                <h2 class="ProfilesSection-title">Stephen Ministers</h2>
+                <h2 class="ProfilesSection-title">Stephen Ministry Leaders</h2>
                 <ul class="ProfilesSection-grid">
                     <?php foreach ($ministers as $profile): ?>
                     <li class="ProfilesSection-item">
