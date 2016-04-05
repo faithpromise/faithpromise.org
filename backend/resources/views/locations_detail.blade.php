@@ -93,10 +93,12 @@ $christmas_times = $campus->christmas_times;
             <p>We'd love to see you this weekend at our {{ $campus->full_name }}. You'll experience contemporary worship and an engaging message from our Senior Pastor Chris Stephens.</p>
             <p>Located at {{ $campus->address }}, {{ $campus->city }}, {{ $campus->state }} {{ $campus->zip }}</p>
             <p>Contact us: (865) 251-2590</p>
+            <p>
             <strong>Regular service times are:</strong><br>
             @foreach($campus->times as $time)
                 <span class="ServiceTimes-day">{!! $time->day !!}</span> at <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
             @endforeach
+            </p>
             @if($christmas_times)
                 <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
             @endif
