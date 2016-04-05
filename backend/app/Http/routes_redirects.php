@@ -50,6 +50,7 @@ Route::get('/candidate', 'RedirectController@candidates');
 Route::get('/candidates', 'RedirectController@candidates');
 Route::get('/rsvp', 'RedirectController@rsvp');
 Route::get('/survey', 'RedirectController@survey');
+Route::get('/operations', 'RedirectController@operations');
 
 // Series
 Route::get('/series/fifteen-year-anniversary/anniversary-transformation', 'RedirectController@fifteenYearTransformation');
