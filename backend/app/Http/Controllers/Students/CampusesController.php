@@ -40,11 +40,8 @@ class CampusesController extends BaseController {
 
     public function detail($campus) {
 
-        $studentPastor = $campus->staff()->where('title', 'like', '%Student Pastor%')->first();
-
         return view('students/locations_detail', [
-            'campus' => $campus,
-            'studentPastor'  => $studentPastor
+            'campus' => $campus
         ]);
 
     }
