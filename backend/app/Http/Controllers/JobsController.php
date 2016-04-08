@@ -16,12 +16,14 @@ class JobsController extends BaseController {
         ]);
     }
 
-    public function detail($job_id) {
+    public function detail($job_slug) {
 
-        $job = Job::findBySlug($job_id);
+        $job = Job::withPrivate()->with('contact')->whereSlug($job_slug)->first();
+        $other_jobs_available = Job::count() > 0;
 
         return view('jobs_detail', [
-            'job' => $job
+            'job' => $job,
+            'other_jobs_available' => $other_jobs_available
         ]);
     }
 

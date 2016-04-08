@@ -10,6 +10,10 @@ module.exports = function (grunt) {
 
         website: {
             src: website.less.dest
+        },
+
+        job_page: {
+            src: 'public/build/website/css/job.css'
         }
 
     });

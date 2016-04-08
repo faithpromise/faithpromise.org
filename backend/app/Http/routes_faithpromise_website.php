@@ -83,7 +83,7 @@ Route::get('/stephen', ['as' => 'stephen', 'uses' => 'MainController@stephen']);
 Route::get('/summit', ['as' => 'summit', 'uses' => 'MainController@defaultPage']);
 Route::get('/updates', ['as' => 'updates', 'uses' => 'MainController@defaultPage']);
 Route::get('/jobs', ['as' => 'jobs', 'uses' => 'JobsController@index']);
-Route::get('/jobs/{job}', ['as' => 'jobDetail', 'uses' => 'JobsController@detail']);
+Route::get('/jobs/{job_slug}', ['as' => 'jobDetail', 'uses' => 'JobsController@detail']);
 Route::get('/stable-boy', ['as' => 'stableBoy', 'uses' => 'MainController@defaultPage']);
 Route::get('/infuse', ['as' => 'infuse', 'uses' => 'MainController@infuse']);
 Route::get('/elevate', ['as' => 'elevate', 'uses' => 'MainController@elevate']);
