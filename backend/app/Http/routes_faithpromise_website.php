@@ -37,6 +37,7 @@ Route::get('/fpstudents', ['as' => 'fpStudents', 'uses' => 'MinistriesController
 Route::get('/prayer', ['as' => 'prayer', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/worship', ['as' => 'worship', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/celebrate', ['as' => 'celebrate', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/creative', ['as' => 'creative', 'uses' => 'MinistriesController@creative']);
 
 // Groups
 Route::get('/groups', ['as' => 'groups', 'uses' => 'GroupsController@index']);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use FaithPromise\Shared\Models\Job;
 use FaithPromise\Shared\Models\Ministry;
 use FaithPromise\Shared\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,15 @@ class MinistriesController extends BaseController {
     public function family() {
         return view('family', [
             'what_to_expect_cards' => Post::byLocation('family_ministry_for_kids')->get()
+        ]);
+    }
+
+    public function creative() {
+
+        $jobs = Job::withPrivate()->whereDepartment('Creative')->get();
+
+        return view('creative', [
+            'jobs' => $jobs
         ]);
     }
 
