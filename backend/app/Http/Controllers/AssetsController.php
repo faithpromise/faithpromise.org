@@ -96,7 +96,8 @@ class AssetsController extends BaseController {
             'jpg' => 'image/jpeg',
             'png' => 'image/png',
             'gif' => 'image/gif',
-            'svg' => 'image/svg+xml'
+            'svg' => 'image/svg+xml',
+            'mp4' => 'video/mp4'
         ];
 
         $max_age_days = 30;
