@@ -56,7 +56,7 @@ $faq = [
             'links' => [
                 [
                     'title' => 'Anderson Campus',
-                    'url' => 'https://fpctystn.infellowship.com/Forms/305916'
+                    'url' => 'https://fpctystn.infellowship.com/Forms/318097'
                 ],
                 [
                     'title' => 'Blount Campus',
@@ -68,7 +68,7 @@ $faq = [
                 ],
                 [
                     'title' => 'North Knox Campus',
-                    'url' => 'https://fpctystn.infellowship.com/Forms/284720'
+                    'url' => 'https://fpctystn.infellowship.com/Forms/308115'
                 ],
                 [
                     'title' => 'Pellissippi Campus',
