@@ -2,12 +2,19 @@
 
 @section('content')
 
-    <div class="StudentsWelcome Overlay">
+    <div class="StudentsWelcome-mobile Overlay">
         <img class="StudentsWelcome-svg" src="/images/fpstudents/fpstudents-welcome.svg" title="Welcome to FP Students">
         @heroimage ([
             'image' => 'images/fpstudents/home-wide.jpg',
             'title' => 'Welcome to fpStudents'
         ])
+    </div>
+
+    <div class="StudentsWelcome">
+        <video class="StudentsWelcome-video" poster="{{ cdn_image('lg', 'full', 'images/fpstudents/welcome-wide.jpg') }}" autoplay loop>
+            <source src="{{ cdn_image_raw('images/fpstudents/welcome.mp4') }}" type="video/mp4">
+            {{--<source src="//s3.amazonaws.com/ns.video/newspring/promotions/homepage/headeralt.newspring.webm" type="video/webm">--}}
+        </video>
     </div>
 
     <div class="WelcomeBar">

@@ -1,6 +1,10 @@
-.StudentsWelcome {
+.StudentsWelcome-mobile {
   display:     flex;
   align-items: center;
+
+  @media (min-width: 50.0625em) {
+    display: none;
+  }
 }
 
 .StudentsWelcome-svg {
@@ -9,4 +13,28 @@
   left:      50%;
   width:     70%;
   transform: translate(-50%, -50%);
+}
+
+.StudentsWelcome {
+  position:         relative;
+  height:           0;
+  padding-top:      36.2882322%;
+  background-color: @NavBackgroundColor;
+
+  @media (max-width: 50em) {
+    display: none;
+  }
+}
+
+.StudentsWelcome-video {
+  position:   absolute;
+  top:        0;
+  bottom:     0;
+  left:       0;
+  right:      0;
+  display:    block;
+  height:     auto;
+  min-width:  100%;
+  min-height: 100%;
+  object-fit: cover;
 }
