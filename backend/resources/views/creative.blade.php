@@ -1,4 +1,4 @@
-@extends('layouts.page', ['title' => 'fpCreative', 'hero_image' => 'images/pages/creative-collective-tall.jpg'])
+@extends('layouts.page', ['title' => 'fpCreative'])
 
 @section('page')
 
