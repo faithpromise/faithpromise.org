@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'email'           => 'office@faithpromise.org',
     'phone'           => '(865) 251-2590',
     'audio_url'       => 'http://fpcresources.org/audio/',
     'cdn_url'         => (env('APP_ENV', 'local') === 'production') ? '//d16gqslxckkrrx.cloudfront.net' : '//faithpromise.192.168.10.10.xip.io',

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'email'                 => 'office@faithpromise.org',
     'ident'                 => 'faithpromise',
     'name'                  => 'Faith Promise Church',
     'title'                 => 'Faith Promise Church',

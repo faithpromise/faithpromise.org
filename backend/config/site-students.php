@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'email'                 => 'fpsglobal@faithpromise.org',
     'ident'                 => 'fpstudents',
     'name'                  => 'fpStudents',
     'title'                 => 'fpStudents - Student Ministry of Faith Promise Church',
