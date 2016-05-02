@@ -52,14 +52,11 @@ $faq = [
     --}}
     @videosection(['title' => 'fpKids Summer Camp 2016', 'video' => '155530629'])
     <p>
-        <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249*</strong>
+        <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249</strong>
     </p>
     <p>Kids Camp is for rising 3rd to 6th grade (completed 2nd thru 5th grade) and will happen at the amazing <a href="http://fortbluff.com/" target="_blank">Fort Bluff Camp</a> in Dayton, Tennessee.</p>
     <p>
         <a class="Button" href="https://fpctystn.infellowship.com/Forms/278337">Register Today!</a>
-    </p>
-    <p>
-        <em>* Payment plan available until April 30.</em>
     </p>
     @endvideosection
 
