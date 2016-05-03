@@ -22,7 +22,7 @@ $faq = [
         <strong>We all lead people and projects every day.</strong> Whether at church, school, work, or home, you are leading people and projects every day in a culture that is constantly changing and redefining itself. Leadership takes perseverance, dedication, and a commitment to stretch your mind, expand your heart, and use your God-given gifts to impact our world in real and powerful ways.
     </p>
 
-    <p>August 11-12, 2016, you're invited to gather with thousands of leaders across North America for The Global Leadership Summit. This annual event is designed to stretch, challenge, and inspire you with world-class speakers, interactive dialogue, and practical training. Faith Promise is hosting this live satellite event at both our Pellissippi Campus and Blount Campus.</p>
+    <p>August 11-12, 2016, you're invited to gather with thousands of leaders across North America for The Global Leadership Summit. This annual event is designed to stretch, challenge, and inspire you with world-class speakers, interactive dialogue, and practical training. Faith Promise is hosting this live satellite event at our Pellissippi, Blount, and North Knox Campuses.</p>
 
     <p>
         <a href="http://www.willowcreek.com/events/leadership/index.html##faculty" target="_blank">View the 2016 Speakers</a>
