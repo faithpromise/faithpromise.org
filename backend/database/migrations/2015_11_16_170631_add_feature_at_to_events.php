@@ -24,7 +24,7 @@ class AddFeatureAtToEvents extends Migration {
      */
     public function down() {
         Schema::table('events', function (Blueprint $table) {
-            $table->boolean('is_featured')->after('description');
+            $table->boolean('is_featured')->nullable()->after('description');
             $table->dropColumn('feature_at');
         });
     }

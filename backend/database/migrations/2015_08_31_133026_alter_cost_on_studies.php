@@ -20,9 +20,5 @@ class AlterCostOnStudies extends Migration {
      *
      * @return void
      */
-    public function down() {
-        Schema::table('studies', function (Blueprint $table) {
-            $table->decimal('cost', 6, 2)->change();
-        });
-    }
+    public function down() {}
 }

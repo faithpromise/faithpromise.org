@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use ShiftOneLabs\LaravelNomad\Extension\Database\Schema\Blueprint;
 
 class CreateOrganizationsTable extends Migration {
     /**
@@ -20,7 +20,7 @@ class CreateOrganizationsTable extends Migration {
             $table->string('excerpt', 255)->nullable();
             $table->text('description')->nullable();
             $table->string('contact', 50)->nullable();
-            $table->string('email', 75)->nullable();
+            $table->passthru('citext', 'email')->nullable();
             $table->string('phone', 20)->nullable();
             $table->string('website', 75)->nullable();
             $table->string('more_info', 255)->nullable();

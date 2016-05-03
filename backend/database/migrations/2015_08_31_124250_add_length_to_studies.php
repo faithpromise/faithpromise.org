@@ -27,7 +27,7 @@ class AddLengthToStudies extends Migration {
         Schema::table('studies', function (Blueprint $table) {
             $table->dropColumn('session_length');
             $table->dropColumn('weeks');
-            $table->string('length', 20);
+            $table->string('length', 20)->nullable();
         });
     }
 }

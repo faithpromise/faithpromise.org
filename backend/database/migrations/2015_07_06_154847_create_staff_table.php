@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
+use ShiftOneLabs\LaravelNomad\Extension\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateStaffTable extends Migration
@@ -21,7 +21,7 @@ class CreateStaffTable extends Migration
             $table->string('display_name', 50);
             $table->string('title', 100)->nullable();
             $table->text('bio')->nullable();
-            $table->string('email', 75)->nullable();
+            $table->passthru('citext', 'email')->nullable();
             $table->string('phone_ext', 10)->nullable();
             $table->string('blog', 75)->nullable();
             $table->string('facebook', 35)->nullable();

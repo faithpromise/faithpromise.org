@@ -21,9 +21,5 @@ class IncreaseTitleLengthOnPosts extends Migration {
      *
      * @return void
      */
-    public function down() {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('title', 50)->change();
-        });
-    }
+    public function down() {}
 }
