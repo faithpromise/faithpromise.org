@@ -23,7 +23,8 @@
     "faithpromise/fp-shared": "dev-master",
     "spatie/laravel-backup": "^2.8",
     "league/flysystem-aws-s3-v3": "^1.0",
-    "phaza/laravel-postgis": "^3.0"
+    "phaza/laravel-postgis": "^3.0",
+    "shiftonelabs/laravel-nomad": "^1.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

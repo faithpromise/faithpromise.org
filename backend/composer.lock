@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bcb8f1c52f916643a6777cb81a50a63d",
-    "content-hash": "da27ddddda17eed63619da3c96aecd63",
+    "hash": "47f0a5514ef59edc61acee29a1ffe3b6",
+    "content-hash": "da2649a4358d538b8e0250e6da229e9b",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/faithpromise/fp-shared.git",
-                "reference": "aa96b253651cdb2f1e5ce83ec32baf030b65cb4b"
+                "reference": "39dc65e239aa25e95b074abf77d4cb7434c680db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/aa96b253651cdb2f1e5ce83ec32baf030b65cb4b",
-                "reference": "aa96b253651cdb2f1e5ce83ec32baf030b65cb4b",
+                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/39dc65e239aa25e95b074abf77d4cb7434c680db",
+                "reference": "39dc65e239aa25e95b074abf77d4cb7434c680db",
                 "shasum": ""
             },
             "require": {
@@ -800,7 +800,7 @@
                 "source": "https://github.com/faithpromise/fp-shared/tree/master",
                 "issues": "https://github.com/faithpromise/fp-shared/issues"
             },
-            "time": "2016-04-08 20:21:55"
+            "time": "2016-04-14 15:16:26"
         },
         {
             "name": "geo-io/interface",
@@ -2348,6 +2348,56 @@
                 "uuid"
             ],
             "time": "2015-12-17 16:54:24"
+        },
+        {
+            "name": "shiftonelabs/laravel-nomad",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shiftonelabs/laravel-nomad.git",
+                "reference": "2a5f3665449a5eb37e21d3817ae4deeec7f81493"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shiftonelabs/laravel-nomad/zipball/2a5f3665449a5eb37e21d3817ae4deeec7f81493",
+                "reference": "2a5f3665449a5eb37e21d3817ae4deeec7f81493",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=4.1",
+                "illuminate/support": ">=4.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "laravel/framework": ">=4.1",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ShiftOneLabs\\LaravelNomad\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Carlo-Hickman",
+                    "email": "patrick@shiftonelabs.com"
+                }
+            ],
+            "description": "Add extra functionality to Laravel migrations.",
+            "homepage": "https://github.com/shiftonelabs/laravel-nomad",
+            "keywords": [
+                "custom",
+                "laravel",
+                "lumen",
+                "migration"
+            ],
+            "time": "2016-01-15 09:05:02"
         },
         {
             "name": "spatie/laravel-backup",
