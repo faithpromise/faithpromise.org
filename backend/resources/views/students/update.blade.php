@@ -21,7 +21,7 @@
 
     <div class="Section Section--center Section--lightGrey" style="padding-top: 0;">
         <div class="Section-container">
-            <a id="to_events_from_eventDetail" class="Button" href="{{ route('fpStudents_updates') }}">View All Events &amp; Updates</a>
+            <a id="to_events_from_eventDetail" class="Button" href="{{ route('events') }}">View All Events &amp; Updates</a>
         </div>
     </div>
 
@@ -30,6 +30,6 @@
         Contact
         ========================================
     --}}
-    @include('partials.have_questions', ['title' => 'Need More Info?', 'email' => 'fpsglobal@faithpromise.org', 'text' => 'If you have questions about an event, we\'d love to help. Drop us a line at #email#.'])
+    @include('partials.have_questions', ['title' => 'Need More Info?', 'email' => config('site.email'), 'text' => 'If you have questions about an event, we\'d love to help. Drop us a line at #email#.'])
 
 @endsection

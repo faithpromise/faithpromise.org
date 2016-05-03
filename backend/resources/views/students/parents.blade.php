@@ -50,7 +50,7 @@
             'buttons' => [
                 [
                     'title' => 'Contact Jeff',
-                    'url' => route('fpStudents_staff', 'jeff-cochran')
+                    'url' => route('staff', 'jeff-cochran')
                 ]
             ]
         ])

@@ -158,6 +158,7 @@ return [
         VTalbot\Markdown\MarkdownServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Phaza\LaravelPostgis\DatabaseServiceProvider::class,
+        ShiftOneLabs\LaravelNomad\LaravelNomadServiceProvider::class,
 
     ],
 

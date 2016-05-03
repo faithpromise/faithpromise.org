@@ -14,6 +14,15 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+// TODO: This is a hack - not the place for it
+// Has to be placed before autoload / laravel helpers
+// override route helper with absolute = false
+// allows us to use multiple domains with same
+// routes (faithpromise.org & fpstudents.org)
+function route($name, $parameters = [], $absolute = false, $route = null) {
+    return app('url')->route($name, $parameters, $absolute, $route);
+}
+
 require __DIR__.'/../vendor/autoload.php';
 
 /*

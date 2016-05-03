@@ -3,15 +3,15 @@
 @section('content')
 
     <div class="StudentsWelcome-mobile Overlay">
-        <img class="StudentsWelcome-svg" src="/images/fpstudents/fpstudents-welcome.svg" title="Welcome to FP Students">
+        <img class="StudentsWelcome-svg" src="{{ cdn_image_raw('/images/fpstudents/fpstudents-welcome.svg') }}" title="Welcome to FP Students">
         @heroimage ([
             'image' => 'images/fpstudents/home-wide.jpg',
             'title' => 'Welcome to fpStudents'
         ])
     </div>
 
-    <div class="StudentsWelcome">
-        <video class="StudentsWelcome-video" poster="{{ cdn_image('lg', 'full', 'images/fpstudents/welcome-wide.jpg') }}" autoplay loop>
+    <div class="StudentsWelcome" style="background-image:url({{ cdn_image('lg', 'full', 'images/fpstudents/welcome-wide.jpg') }}); background-size: cover;" >
+        <video class="StudentsWelcome-video" autoplay loop controls="true">
             <source src="{{ cdn_image_raw('images/fpstudents/welcome.mp4') }}" type="video/mp4">
             {{--<source src="//s3.amazonaws.com/ns.video/newspring/promotions/homepage/headeralt.newspring.webm" type="video/webm">--}}
         </video>
@@ -32,7 +32,7 @@
                     <span>New Here?</span>
                     <i class="icon icon-right-open"></i>
                 </h2>
-                <p class="WelcomeBarItem-text">Lorm ipsum means that its really importent for you to stay off drugs and stay in scool...</p>
+                <p class="WelcomeBarItem-text">Learn more about fpStudents, our weekly gathering of 6th-12th grade students.</p>
                 <span class="WelcomeBarItem-action">Get to Know Us<i class="icon icon-right-open"></i></span>
             </a>
             <a class="WelcomeBarItem WelcomeBarItem--parents WelcomeBarItem--withPhoto" href="{{ route('fpStudents_parents') }}">

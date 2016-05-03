@@ -75,7 +75,7 @@ Route::get('/serve/opportunities.json', ['as' => 'volunteerPositions', 'uses' =>
 Route::post('/serve/opportunities', ['as' => 'sendVolunteerMessage', 'uses' => 'VolunteerController@sendMessage']);
 
 // General pages
-Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@defaultPage']);
+Route::get('/what-to-expect', ['as' => 'whatToExpect', 'uses' => 'MainController@whatToExpect']);
 Route::get('/beliefs-and-values', ['as' => 'beliefs', 'uses' => 'MainController@defaultPage']);
 Route::get('/h4h', ['as' => 'h4h', 'uses' => 'MainController@defaultPage']);
 Route::get('/fasting', ['as' => 'fasting', 'uses' => 'MainController@defaultPage']);

@@ -1,6 +1,6 @@
-@extends('layouts.page', ['title' => 'Parent Resources', 'hero_image' => 'images/general/default-wide.jpg'])
+@extends('layouts.default', ['title' => 'Parent Resources'])
 
-@section('page')
+@section('content')
 
     {{--
     ================================================================================

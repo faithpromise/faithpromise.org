@@ -116,6 +116,7 @@ function series_begins_message(Carbon $starts_at) {
 
     @if ($alignment_resources->count())
 
+        @if (asset_exists('images/alignments/' . $series->slug . '/book-cover.jpg'))
         <div class="SeriesAlignment">
             <div class="SeriesAlignment-container">
                 <div class="SeriesAlignment-content">
@@ -128,10 +129,11 @@ function series_begins_message(Carbon $starts_at) {
                     </p>
                 </div>
                 <div class="SeriesAlignment-book">
-                    <img class="SeriesAlignment-image" src="{{ cdn_image_raw('images/series/madness-book.jpg') }}">
+                    <img class="SeriesAlignment-image" src="{{ cdn_image_raw('images/alignments/' . $series->slug . '/book-cover.jpg') }}">
                 </div>
             </div>
         </div>
+        @endif
 
         <div class="SeriesResources">
             <div class="SeriesResources-container">

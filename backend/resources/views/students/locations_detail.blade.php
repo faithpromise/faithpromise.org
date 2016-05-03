@@ -11,62 +11,33 @@ $student_christmas_times = $campus->student_christmas_times;
 
 @section('page')
 
-    @if($campus->slug === 'online')
 
-        @introsection([
-            'title' => $campus->full_name,
-            'class' => 'IntroSection--center',
-            'buttons' => [
-                [
-                    'title' => 'Watch Online',
-                    'url' => 'http://icampus.faithpromise.org'
-                ]
+    @introsection([
+        'title' => $campus->full_name,
+        'class' => 'IntroSection--center',
+        'buttons' => [
+            [
+                'title' => 'Get Directions',
+                'url' => $campus->directions_url,
+                'target' => '_blank'
             ]
-        ])
-        <p>We'd love to see you this weekend on our Internet Campus. You'll experience dynamic worship, an engaging message, and live chat.</p>
-        <strong>Regular service times are:</strong><br>
-        @foreach($campus->student_times as $time)
-            <span class="ServiceTimes-day">{!! $time->day !!}</span> at
-            <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
-        @endforeach
-        @if($student_christmas_times)
-            <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
-        @endif
-        @if($student_easter_times)
-            <p>(See below for special <a href="#easter-times">Easter times</a>)</p>
-        @endif
-        @endintrosection
-
-    @else
-
-        @introsection([
-            'title' => $campus->full_name,
-            'class' => 'IntroSection--center',
-            'buttons' => [
-                [
-                    'title' => 'Get Directions',
-                    'url' => $campus->directions_url,
-                    'target' => '_blank'
-                ]
-            ]
-        ])
-        <p>We'd love to see you this weekend at our {{ $campus->full_name }}. You'll experience contemporary worship and an engaging message from our Senior Pastor Chris Stephens.</p>
-        <p>Located at {{ $campus->address }}, {{ $campus->city }}, {{ $campus->state }} {{ $campus->zip }}</p>
-        <p>Contact us: (865) 251-2590</p>
-        <strong>Regular service times are:</strong><br>
-        @foreach($campus->student_times as $time)
-            <span class="ServiceTimes-day">{!! $time->day !!}</span> at
-            <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
-        @endforeach
-        @if($student_christmas_times)
-            <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
-        @endif
-        @if($student_easter_times)
-            <p>(See below for special <a href="#easter-times">Easter times</a>)</p>
-        @endif
-        @endintrosection
-
+        ]
+    ])
+    <p>We'd love to see you this weekend at our {{ $campus->full_name }}. You'll experience contemporary worship, an engaging message, and have a blast with friends.</p>
+    <p>Located at {{ $campus->address }}, {{ $campus->city }}, {{ $campus->state }} {{ $campus->zip }}</p>
+    <p>Contact us: (865) 251-2590</p>
+    <strong>Regular service times are:</strong><br>
+    @foreach($campus->student_times as $time)
+        <span class="ServiceTimes-day">{!! $time->day !!}</span> at
+        <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
+    @endforeach
+    @if($student_christmas_times)
+        <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
     @endif
+    @if($student_easter_times)
+        <p>(See below for special <a href="#easter-times">Easter times</a>)</p>
+    @endif
+    @endintrosection
 
     @if ($student_easter_times)
         <div id="easter-times" class="HolidayTimesSection">

@@ -7,10 +7,6 @@ use Illuminate\Routing\Controller as BaseController;
 
 class UpdatesController extends BaseController {
 
-    public function events() {
-        return redirect()->route('fpStudents_updates');
-    }
-
     public function index() {
         return view('students/updates', [
             'posts' => Event::orderBy('sort')->get()

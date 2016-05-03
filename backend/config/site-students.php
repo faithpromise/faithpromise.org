@@ -22,8 +22,8 @@ return [
         ],
         [
             'title' => 'Events',
-            'url'   => '/updates',
-            'id'    => 'updates'
+            'url'   => '/events',
+            'id'    => 'events'
         ]
     ],
 

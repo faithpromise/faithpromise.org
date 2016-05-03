@@ -142,7 +142,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
                                         <p class="Footer-addressLine">10740 Faith Promise Lane,
                                             <span class="no-wrap">Knoxville, TN 37931</span></p>
                                         <p class="Footer-addressLine">
-                                            <a href="mailto:office@faithpromise.org">office@faithpromise.org</a> &nbsp;|&nbsp;
+                                            <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a> &nbsp;|&nbsp;
                                             <a href="tel:1-865-251-2590" class="no-wrap">(865) 251-2590</a></p>
                                     </div>
                                 </div>

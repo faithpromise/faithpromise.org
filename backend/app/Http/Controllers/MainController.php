@@ -7,6 +7,7 @@ use FaithPromise\Shared\Models\Campus;
 use FaithPromise\Shared\Models\Event;
 use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\Series;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,13 @@ class MainController extends BaseController {
         return view('stephen', [
             'ministers' => $ministers
         ]);
+    }
+
+    public function whatToExpect(Request $request) {
+
+        $view = $request->getHost() == config('site.students_domain') ? 'students/what-to-expect' : 'what-to-expect';
+
+        return view($view);
     }
 
 }

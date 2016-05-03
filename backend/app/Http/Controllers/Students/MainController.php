@@ -10,10 +10,19 @@ class MainController extends BaseController {
 
     public function index() {
 
+        $events = Event::featured()->get()->sortBy('sort');
+        $current_series = Series::currentSeries()->first();
+        $current_series->description = 'Check out our latest series, "'. $current_series->title . '" and join us on Wednesday nights at fpStudents.';
+
+        $events->prepend($current_series);
+
         return view('students/home', [
-            'current_series' => Series::currentSeries()->first(),
-            'events'         => Event::featured()->get()->sortBy('sort')
+            'events' => $events
         ]);
+    }
+
+    public function whatToExpect() {
+        return view('students/what-to-expect');
     }
 
 }
