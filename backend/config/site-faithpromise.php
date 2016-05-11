@@ -140,7 +140,7 @@ return [
         ],
         [
             'title' => 'Blog',
-            'url'   => '/blog',
+            'url'   => 'http://blog.faithpromise.org',
             'id'    => 'to_blog_from_footer'
         ],
         [
