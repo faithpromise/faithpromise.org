@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 
         website_templates: {
             files: ['app-website/js/**/*.html'],
-            tasks: ['copy:angular_ui_templates']
+            tasks: ['copy:website_templates']
         }
 
     });
