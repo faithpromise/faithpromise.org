@@ -150,4 +150,8 @@ class RedirectController extends BaseController {
         return redirect('/events/operations-team-appreciation');
     }
 
+    public function share() {
+        return redirect('http://goo.gl/forms/BjWaj111d3');
+    }
+
 }
