@@ -11,39 +11,19 @@ $registration = [
 
 ?>
 
-        <!-- IMAGE: Need new header image -->
 @extends('layouts.page', ['title' => 'KidRAVE'])
 
 @section('page')
 
-    @introsection(['title' => 'Kids Leading Kids to Worship'])
-    <p>KidRAVE is designed for elementary age kids who like to move for God.</p>
-    <p>KidRAVE is vital to our belief that kids make great worshipers. KidRAVE provides kids the opportunity to lead worship during fpKIDS weekend services & special events during the year. Rehearsals are filled with fun, laughs, movement, and a focus on worship.</p>
-    <p>KidRAVE members are expected to attend rehearsals and one hour of fpKIDS each week. (Rehearsal times are specific to each campus.) KidRAVE members should wear their KidRAVE t-shirt each week and be ready with lots of energy.</p>
-    @endintrosection
-
-    @textsection(['title' => 'Registration', 'class' => 'Section--lightGrey'])
-    <p>The cost for your child to participate in KidRave is $10 per year. Your child will receive a KidRave t-shirt (annually), access to all of the worship songs / motions, weekly rehearsals and a party at the end of the school year to celebrate all that God has done.</p>
-    <p>To register, please use the link for your campus.</p>
-    <ul>
-        <li><a href="https://fpctystn.infellowship.com/Forms/281315">Anderson</a></li>
-        <li><a href="https://fpctystn.infellowship.com/Forms/281317">Blount</a></li>
-        <li><a href="https://fpctystn.infellowship.com/Forms/281403">Campbell</a></li>
-        <li><a href="https://fpctystn.infellowship.com/Forms/281322">North Knox</a></li>
-        <li><a href="https://fpctystn.infellowship.com/Forms/278377">Pellissippi</a></li>
-    </ul>
-    @endtextsection
-
-    @textsection([
-        'title' => 'Let\'s Practice',
+    @introsection([
+    'title' => 'Kids Leading Kids to Worship',
         'buttons' => [
             [
                 'title' => 'Practice Videos',
                 'url' => 'https://vimeo.com/album/3863224'
             ]
-        ]
-        ])
-
-    @endtextsection
+        ]])
+    <p>Hey Parents! We are so proud of our KidRavers. In efforts to make practice even easier for them (and you!) we are starting a new approach to practicing. Starting August 1st, physical copies of KidRave DVDs will only be made upon request. Instead a digital version will be offered. All you need to do is click the &quot;Practice Videos&quot; button below and enter the password: &quot;Kidrave16&quot; and that’s it! You will be taken to a playlist that contains all lyric videos and motions for your child to practice. It is important to note that registration for KidRave for the 2016-2017 school year will be available in July. On August 1st, the password for the digital practice videos will be reset to a new password that will be emailed to you once you register your child as a 2016-2017 KidRave participant. We are so excited for what we have planned for this upcoming year and we hope that you will be too! If you have any questions or need to request a physical copy, please contact your campus fpKIDS Director.</p>
+    @endintrosection
 
 @endsection
