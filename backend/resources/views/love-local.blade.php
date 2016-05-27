@@ -22,10 +22,6 @@
     <p>Our partnership with Kids Hope USA is making a huge impact in the lives of kids (and their mentors) through one-on-one mentoring.</p>
     @endbgsection
 
-    @textsection(['title' => 'Clothing Ministry', 'class' => '', 'image' => ''])
-    <p>Help provide clothes to people in Knoxville who are in need.  Our year-round donation container is located in the gravel area in the back parking lot of the Faith Promise Pellissippi Campus.  It is directly to the left of the main trailer door.  Clothing is collected every weekend, sorted and then distributed to a mixture of FP members and local ministries.  In-season clothes are most helpful - especially jeans,  tennis shoes, coats, socks, and underwear.  If you would like to donate or help serve in this ministry, please email <a href="mailto:fpclothes@gmail.com">fpclothes@gmail.com</a>.</p>
-    @endtextsection
-
     @cardsection(['title' => 'Additional Opportunities', 'cards' => $organizations, 'class' => 'Section--lightGrey', 'image' => ''])
 
     @endcardsection
