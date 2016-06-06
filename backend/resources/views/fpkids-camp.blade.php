@@ -54,11 +54,23 @@ $faq = [
     <p>
         <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249</strong>
     </p>
-    <p>Kids Camp is for rising 3rd to 6th grade (completed 2nd thru 5th grade) and will happen at the amazing <a href="http://fortbluff.com/" target="_blank">Fort Bluff Camp</a> in Dayton, Tennessee.</p>
+    <p>Kids Camp is currently full, but you can be added to the <a class="no-wrap" href="https://fpctystn.infellowship.com/Forms/323477">waiting list</a>.</p>
     <p>
-        <a class="Button" href="https://fpctystn.infellowship.com/Forms/278337">Register Today!</a>
+        <a class="Button" href="https://fpctystn.infellowship.com/Forms/323477">Waiting List</a>
+        <a class="Button" href="{{ doc_url('fpkids/Camp-Rally-Documents.pdf') }}">Camp Rally Documents</a>
     </p>
     @endvideosection
+
+    @bgsection([
+        'title' => 'Tracks',
+        'class' => 'BackgroundSection--right',
+        'image' => 'images/fpkids/camp/field.jpg'
+        ])
+        <p>Tracks is a new activity selection we are doing this year at Kids Camp. Tracks gives each child an opportunity to explore their interest in a safe environment. Each child will need to pick their first, second and third choice of available tracks.</p>
+        <p>
+            <a class="Button" href="http://goo.gl/forms/LI1PgixUDmOeBdJl1">Choose your Tracks</a>
+        </p>
+    @endbgsection
 
     <style>
         .CampAlbum {
