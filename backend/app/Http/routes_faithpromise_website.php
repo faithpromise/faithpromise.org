@@ -46,6 +46,8 @@ Route::get('/studies', ['as' => 'studies', 'uses' => 'GroupsController@studies']
 Route::get('/studies/{study}', ['as' => 'studyDetail', 'uses' => 'GroupsController@studyDetail']);
 Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'GroupsController@newLeader']);
 Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'GroupsController@leaders']);
+Route::get('/groups/training', ['as' => 'groupTraining', 'uses' => 'GroupsController@training']);
+Route::get('/groups/alignments', ['as' => 'groupAlignments', 'uses' => 'GroupsController@alignments']);
 Route::get('/men', ['as' => 'men', 'uses' => 'GroupsController@men']);
 Route::get('/women', ['as' => 'women', 'uses' => 'GroupsController@women']);
 Route::get('/young-adults', ['as' => 'youngAdults', 'uses' => 'MinistriesController@defaultMinistryPage']);

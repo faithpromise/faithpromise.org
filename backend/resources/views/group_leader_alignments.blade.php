@@ -17,26 +17,15 @@ $faq = collect([
 
 ?>
 
-@extends('layouts.page', ['title' => 'Group Leader Resources', 'hero_image' => 'images/pages/group-leaders-wide.jpg'])
+@extends('layouts.page', ['title' => 'Group Alignments', 'hero_image' => 'images/pages/group-alignments-wide.jpg'])
 
 @section('page')
 
-    @introsection(['title' => 'Group Leaders',
-        'buttons' => [
-            [
-                'title' => 'Become a Group Leader',
-                'url' => route('newGroupLeader')
-            ]
-    ]])
-    <p>Group Leaders, the work you do to connect people, care for people, and challenge them to grow in Christ is the heart of the ministry of Faith Promise. Without you, our church would be ineffective, and we want you to know that we appreciate you.</p>
-    <p>On this page you can find several resources for posting attendance, updating your group information online, and planning your group discussions.</p>
-    @endintrosection
-
-    @cardsection(['title' => 'Group Leader Resources', 'class' => 'Section--lightGrey', 'cards' => $resources])
-
+    @cardsection(['title' => 'Group Alignments', 'class' => '', 'cards' => $series])
+    <p>During an alignment, groups focus on studying and discussing the same topics presented in the weekend services. This allows our entire church to come together and grow in our relationship with Christ and with one another. We've made past alignments available here in case your group didn't have a chance to participate or you'd like to study the subject again.</p>
     @endcardsection
 
-    {{--@faqsection(['title' => 'Resources', 'faq' => $faq, 'class' => 'Section--lightGrey'])--}}
-    {{--@endfaqsection--}}
+    @cardsection(['title' => 'Additional Resources', 'class' => 'Section--lightGrey', 'cards' => $resources])
+    @endcardsection
 
 @endsection

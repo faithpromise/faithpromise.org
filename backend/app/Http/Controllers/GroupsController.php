@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Series;
 use Carbon\Carbon;
 use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\Study;
@@ -14,7 +15,7 @@ class GroupsController extends BaseController {
     public function index() {
 
         return view('groups', [
-            'ministry' => Ministry::whereSlug('groups')->first(),
+            'ministry'    => Ministry::whereSlug('groups')->first(),
             'group_types' => Post::whereType('group_type')->orderBy('sort')->get()
         ]);
 
@@ -31,7 +32,7 @@ class GroupsController extends BaseController {
 
     public function studyDetail($study) {
 
-        $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get()->sortBy(function($studyTime) {
+        $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get()->sortBy(function ($studyTime) {
             return $studyTime->campus->name . $studyTime->starts_at->format(Carbon::ISO8601);
         });
 
@@ -46,7 +47,34 @@ class GroupsController extends BaseController {
     }
 
     public function leaders() {
-        return view('group_leaders');
+
+        $resources = Post::where('type', '=', 'group_leader_resource')->orderBy('sort', 'asc')->get();
+
+        return view('group_leaders', [
+            'resources' => $resources
+        ]);
+    }
+
+    public function training() {
+
+        $videos = Post::where('type', '=', 'group_leader_video')->orderBy('sort', 'asc')->get();
+        $resources = Post::where('type', '=', 'group_leader_resource')->where('slug', '!=', 'group-leader-training')->orderBy('sort', 'asc')->get();
+
+        return view('group_leader_training', [
+            'videos'    => $videos,
+            'resources' => $resources
+        ]);
+    }
+
+    public function alignments() {
+
+        $series = Series::has('alignmentResources')->orderBy('publish_at', 'desc')->get();
+        $resources = Post::where('type', '=', 'group_leader_resource')->where('slug', '!=', 'group-leader-alignments')->orderBy('sort', 'asc')->get();
+
+        return view('group_leader_alignments', [
+            'series' => $series,
+            'resources' => $resources
+        ]);
     }
 
     public function newLeader() {
@@ -74,7 +102,7 @@ class GroupsController extends BaseController {
         return view('women', [
             'ministry' => $ministry,
             'events'   => $events,
-            'studies'   => $studies
+            'studies'  => $studies
         ]);
     }
 
