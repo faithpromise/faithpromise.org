@@ -13,7 +13,7 @@
             ]
         ]
     ])
-    <p>We’re very excited to see our Loudon Campus launch in August of 2016, and we’re in the process of working out details for this location!</p>
+    <p>We’re very excited to see our Loudon Campus launch, and we're in the process of working out details for this location!</p>
     @endvideosection
 
     @cardsection(['title' => 'What to Expect', 'class' => 'Section--lightGrey', 'cards' => $what_to_expect_cards])
