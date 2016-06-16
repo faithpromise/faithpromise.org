@@ -54,9 +54,11 @@ $faq = [
     <p>
         <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249</strong>
     </p>
-    <p>Kids Camp is currently full, but you can be added to the <a class="no-wrap" href="https://fpctystn.infellowship.com/Forms/323477">waiting list</a>.</p>
+    <p>Kids Camp is for rising 3rd to 6th grade (completed 2nd thru 5th grade) and will happen at the amazing <a href="http://fortbluff.com/" target="_blank">Fort Bluff Camp</a> in Dayton, Tennessee.</p>
+    {{--<p>Kids Camp is currently full, but you can be added to the <a class="no-wrap" href="https://fpctystn.infellowship.com/Forms/324435">waiting list</a>.</p>--}}
     <p>
-        <a class="Button" href="https://fpctystn.infellowship.com/Forms/323477">Waiting List</a>
+        <a class="Button" href="http://pix.sfly.com/Ubz7W7rb">Camp Photos</a>
+        {{--<a class="Button" href="https://fpctystn.infellowship.com/Forms/324435">Waiting List</a>--}}
         <a class="Button" href="{{ doc_url('fpkids/Camp-Rally-Documents.pdf') }}">Camp Rally Documents</a>
     </p>
     @endvideosection
