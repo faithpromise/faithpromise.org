@@ -111,7 +111,7 @@ class RedirectController extends BaseController {
     }
 
     public function feedback() {
-        return redirect('https://docs.google.com/forms/d/1laaJ_c7rl2Q_kiXb-PgdqQFI1emn2B7W7YMQeBXxSTQ/viewform');
+        return redirect('https://docs.google.com/forms/d/1Kvu9xsqKZwXtH2rpMSD849ykUssf-Yaupj9xr4q9NDo/viewform');
     }
 
     public function icampus() {
