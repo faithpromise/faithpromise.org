@@ -10,7 +10,12 @@
     @foreach ($trips as $trip)
     <div class="TextSection TextSection--compact Section--lightGrey">
         <div class="TextSection-container">
-            <h2 class="TextSection-title">{{ $trip->date_range }}</h2>
+            @if($trip->title != $location->name)
+                <h2 class="TextSection-title">{{ $trip->title }}</h2>
+                <h3 class="TextSection-subtitle">{{ $trip->date_range }}</h3>
+            @else
+                <h2 class="TextSection-title">{{ $trip->date_range }}</h2>
+            @endif
             @if ($trip->is_full)
                 <h3 class="TextSection-subtitle" style="color: red;">This trip is full</h3>
             @endif
