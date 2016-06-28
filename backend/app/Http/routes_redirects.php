@@ -30,6 +30,7 @@ Route::get('/dedication', 'RedirectController@dedications');
 Route::get('/campus-expansion', 'RedirectController@h4h');
 Route::get('/counseling', 'RedirectController@care');
 Route::get('/kidshope', 'RedirectController@kidsHope');
+Route::get('/kidrave', 'RedirectController@fpKidsWorship');
 
 
 // Shortcut redirects to external sites

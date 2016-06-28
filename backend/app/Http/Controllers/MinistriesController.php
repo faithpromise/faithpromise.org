@@ -6,7 +6,6 @@ use FaithPromise\Shared\Models\Job;
 use FaithPromise\Shared\Models\Ministry;
 use FaithPromise\Shared\Models\Post;
 use Illuminate\Support\Facades\Route;
-use View;
 use Illuminate\Routing\Controller as BaseController;
 
 class MinistriesController extends BaseController {
@@ -15,12 +14,30 @@ class MinistriesController extends BaseController {
         return view($ministry_slug);
     }
 
+    public function fpKids() {
+
+        $ministry = Ministry::whereSlug('fpkids')->first();
+
+        // Only relevant to fpkids page - don't want to appear on events page
+        $events = Post::whereType('fpkids-news')->get()->merge($ministry->events);
+
+        return view('fpkids', [
+            'events'   => $events,
+            'ministry' => Ministry::whereSlug('fpkids')->first()
+        ]);
+
+    }
+
     public function fpKidsWelcome() {
         return view('fpkids-welcome');
     }
 
     public function fpKidsCamp() {
         return view('fpkids-camp');
+    }
+
+    public function fpKidsWorship() {
+        return view('fpkids-worship');
     }
 
     public function family() {

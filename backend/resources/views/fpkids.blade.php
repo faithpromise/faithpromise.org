@@ -63,7 +63,7 @@ $faq = [
         ========================================
     --}}
 
-    @cardsection(['title' => 'Upcoming Events', 'cards' => $ministry->Events])
+    @cardsection(['title' => 'News &amp; Events', 'cards' => $events])
     @endcardsection
 
     {{--

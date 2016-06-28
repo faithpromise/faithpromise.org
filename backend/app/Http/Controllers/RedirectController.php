@@ -82,6 +82,10 @@ class RedirectController extends BaseController {
         return redirect()->route('groups');
     }
 
+    public function fpKidsWorship() {
+        return redirect()->route('fpKidsWorship');
+    }
+
     public function kidsHope() {
         return redirect()->route('localOutreachOrganization', ['organization' => 'kids-hope-usa']);
     }
