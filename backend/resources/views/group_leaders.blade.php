@@ -36,7 +36,7 @@ $faq = collect([
 
     @endcardsection
 
-    {{--@faqsection(['title' => 'Resources', 'faq' => $faq, 'class' => 'Section--lightGrey'])--}}
-    {{--@endfaqsection--}}
+    @faqsection(['title' => 'Additional Info', 'faq' => $faq, 'class' => 'Section--lightGrey'])
+    @endfaqsection
 
 @endsection
