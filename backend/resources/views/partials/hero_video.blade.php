@@ -67,12 +67,12 @@
                     <div class="Dropdown Dropdown--light Dropdown--bottomLeft">
                         <ul class="Dropdown-menu">
                             <li class="Dropdown-item">
-                                <a class="Dropdown-link" href="<?= share_facebook($video->url); ?>">
+                                <a class="Dropdown-link" facebook-share="<?= $video->url ?>">
                                     <i class="icon-facebook"></i> Share on Facebook
                                 </a>
                             </li>
                             <li class="Dropdown-item">
-                                <a class="Dropdown-link" href="<?= share_twitter($video->url); ?>">
+                                <a class="Dropdown-link" href="<?= $video->twitter_share_url; ?>">
                                     <i class="icon-twitter"></i> Share on Twitter
                                 </a>
                             </li>
