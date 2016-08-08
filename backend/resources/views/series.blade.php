@@ -91,8 +91,8 @@ function series_begins_message(Carbon $starts_at) {
                     @if ($v->vimeo_id)
                         <a class="SeriesList-action" open-video="{{ $v->id }}"><i class="icon-play"></i> Watch Video</a>
                     @endif
-                    @if ($v->audio_file)
-                        <a class="SeriesList-action" href="{{ $site['audio_url'] }}{{ $v->audio_file }}" target="_blank"><i class="icon-headphones"></i> Listen to Audio</a>
+                    @if ($v->audio_url)
+                        <a class="SeriesList-action" href="{{ $v->audio_url }}" target="_blank"><i class="icon-headphones"></i> Listen to Audio</a>
                     @endif
 
                     <a class="SeriesList-action" facebook-share="{{ $v->url }}"><i class="icon-facebook"></i> Post to Facebook</a>
