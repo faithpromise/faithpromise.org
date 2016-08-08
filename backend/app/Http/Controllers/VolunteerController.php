@@ -53,8 +53,7 @@ class VolunteerController extends BaseController {
             $data['subject'] = 'SPAM? --' . $data['subject'];
             $to = Staff::findBySlug('brad-roberts');
         } else {
-            $to = Staff::findBySlug('miles-creasman');
-            $cc[] = Staff::findBySlug('penny-spivey');
+            $to = Staff::findBySlug('penny-spivey');
             $cc[] = Staff::findBySlug('brad-roberts');
         }
 
