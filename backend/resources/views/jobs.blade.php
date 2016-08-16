@@ -15,6 +15,6 @@
     @cardsection(['title' => 'Current Opportunities', 'class' => 'Section--lightGrey', 'cards' => $jobs])
     @endcardsection
 
-    @include('partials.have_questions', ['email' => 'abbyz@faithpromise.org', 'contact' => 'Abby Ziegenfuss', 'text' => 'If you have questions about employment opportunities at Faith Promise, please contact #email#'])
+    @include('partials.have_questions', ['email' => 'abbyg@faithpromise.org', 'contact' => 'Abby Goodman', 'text' => 'If you have questions about employment opportunities at Faith Promise, please contact #email#'])
 
 @endsection
