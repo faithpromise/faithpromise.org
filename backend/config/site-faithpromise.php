@@ -16,7 +16,7 @@ return [
     'logo'                  => 'logo-faith-promise',
     'logo_mark'             => 'logo-fp',
     'google_tag_manager_id' => 'GTM-T6L864',
-    'podcast_url'           => 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=75485008',
+    'podcast_url'           => 'https://itun.es/us/tfmeeb.c',
 
     'nav' => [
         [
