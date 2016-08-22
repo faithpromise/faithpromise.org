@@ -13,6 +13,11 @@ Route::get('/series/{series_slug}/series-promo', 'RedirectController@seriesPromo
 Route::get('/series/{series_slug}/series-promo-2', 'RedirectController@seriesPromo2');
 Route::get('/series/{series}/{series_video}', ['as' => 'seriesVideo', 'uses' => 'SermonsController@video']);
 
+Route::get('/app-api/series.json', ['as' => 'app_api_series_list', 'uses' => 'AppApiController@seriesList']);
+Route::get('/app-api/series/{series}.json', ['as' => 'app_api_series', 'uses' => 'AppApiController@series']);
+Route::get('/app-api/series/{series}/{series_video}.json', ['as' => 'app_api_series_video', 'uses' => 'AppApiController@video']);
+
+
 // Events
 Route::get('/events', ['as' => 'events', 'uses' => 'EventsController@index']);
 Route::get('/events/calendar', ['as' => 'calendar', 'uses' => 'EventsController@calendar']);
