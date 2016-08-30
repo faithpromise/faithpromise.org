@@ -7,6 +7,7 @@ use FaithPromise\Shared\Models\Campus;
 use FaithPromise\Shared\Models\Event;
 use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\Series;
+use FaithPromise\Shared\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Route;
@@ -71,6 +72,42 @@ class MainController extends BaseController {
         $view = $request->getHost() == config('site.students_domain') ? 'students/what-to-expect' : 'what-to-expect';
 
         return view($view);
+    }
+
+    public function catchall(Request $request) {
+
+        $series = \App\Models\Series::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
+        if ($series) {
+            return redirect($series->url);
+        }
+
+        $series = \App\Models\Series::where('slug', '=', $request->path())->first();
+        if ($series) {
+            return redirect($series->url);
+        }
+
+        $staff = Staff::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
+        if ($staff) {
+            return redirect($staff->url);
+        }
+
+        $staff = Staff::where('slug', '=', $request->path())->first();
+        if ($staff) {
+            return redirect($staff->url);
+        }
+
+        $event = Event::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
+        if ($event) {
+            return redirect($event->url);
+        }
+
+        $event = Event::where('slug', '=', $request->path())->first();
+        if ($event) {
+            return redirect($event->url);
+        }
+
+        abort(404);
+
     }
 
 }
