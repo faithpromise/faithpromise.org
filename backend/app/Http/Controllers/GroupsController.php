@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Series;
+use App\Models\Study;
 use Carbon\Carbon;
 use FaithPromise\Shared\Models\Post;
-use FaithPromise\Shared\Models\Study;
 use FaithPromise\Shared\Models\StudyTime;
 use FaithPromise\Shared\Models\Ministry;
 use Illuminate\Routing\Controller as BaseController;
