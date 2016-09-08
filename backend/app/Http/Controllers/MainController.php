@@ -10,7 +10,9 @@ use FaithPromise\Shared\Models\Series;
 use FaithPromise\Shared\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 class MainController extends BaseController {
 
@@ -47,6 +49,11 @@ class MainController extends BaseController {
         return view('elevate', [
             'elevate_lessons' => Post::whereType('elevate_lesson')->orderBy('sort')->get()
         ]);
+    }
+
+    public function elevateRss() {
+        $content = View::make('elevate-rss');
+        return Response::make($content, '200')->header('Content-Type', 'text/xml');
     }
 
     public function easter() {
