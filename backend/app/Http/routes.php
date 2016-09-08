@@ -14,7 +14,7 @@
 */
 
 require "routes_redirects.php";
-require "routes_fpstudents_website.php";
-require "routes_faithpromise_website.php";
 require "routes_admin.php";
 require "routes_api.php";
+require "routes_fpstudents_website.php";
+require "routes_faithpromise_website.php";
