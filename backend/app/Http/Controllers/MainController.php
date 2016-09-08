@@ -74,8 +74,42 @@ class MainController extends BaseController {
         return view($view);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     *
+     * We're attempting to be smart about 404s. Some examples of what we'll
+     * try to catch:
+     *
+     * URL to a page without the dashes
+     * /nextsteps -> /next-steps
+     *
+     * Events, series, staff at the root level - with or without dashes
+     * /kylegilbert -> /staff/kyle-gilbert
+     * /big-event -> /events/big-event
+     *
+     */
     public function catchall(Request $request) {
 
+        // Is there a route (page)?
+        foreach (Route::getRoutes() as $route) {
+            if (strcmp($request->path(), str_replace('-', '', $route->getPath())) === 0) {
+                return redirect($route->getPath());
+            }
+        };
+
+        // Events
+        $event = Event::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
+        if ($event) {
+            return redirect($event->url);
+        }
+
+        $event = Event::where('slug', '=', $request->path())->first();
+        if ($event) {
+            return redirect($event->url);
+        }
+
+        // Series
         $series = \App\Models\Series::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
         if ($series) {
             return redirect($series->url);
@@ -86,6 +120,7 @@ class MainController extends BaseController {
             return redirect($series->url);
         }
 
+        // Staff
         $staff = Staff::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
         if ($staff) {
             return redirect($staff->url);
@@ -94,16 +129,6 @@ class MainController extends BaseController {
         $staff = Staff::where('slug', '=', $request->path())->first();
         if ($staff) {
             return redirect($staff->url);
-        }
-
-        $event = Event::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
-        if ($event) {
-            return redirect($event->url);
-        }
-
-        $event = Event::where('slug', '=', $request->path())->first();
-        if ($event) {
-            return redirect($event->url);
         }
 
         abort(404);

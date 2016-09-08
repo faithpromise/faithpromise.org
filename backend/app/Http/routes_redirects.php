@@ -2,16 +2,11 @@
 
 // Internal redirects
 
-Route::get('/nextsteps', 'RedirectController@nextSteps');
 Route::get('/series', 'RedirectController@sermons');
 Route::get('/contact', 'RedirectController@locations');
 Route::get('/times-and-directions', 'RedirectController@locations');
-Route::get('/bibleplan', 'RedirectController@biblePlan');
-Route::get('/youngadults', 'RedirectController@youngAdults');
 Route::get('/newleader', 'RedirectController@newGroupLeader');
 Route::get('/groupleaders', 'RedirectController@groupLeaders');
-Route::get('/lovelocal', 'RedirectController@loveLocal');
-Route::get('/kidsteps', 'RedirectController@kidSteps');
 Route::get('/children', 'RedirectController@fpKids');
 Route::get('/kidscamp', 'RedirectController@fpKidsCamp');
 Route::get('/fpkidscamp', 'RedirectController@fpKidsCamp');
