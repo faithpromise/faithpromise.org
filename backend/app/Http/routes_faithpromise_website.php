@@ -125,4 +125,6 @@ Route::get('/_sitemap.json', 'SiteMapController@index');
 Route::get('/_healthcheck', 'HealthCheckController@index');
 
 // Catchall
-Route::get('{path?}', ['uses' => 'MainController@catchall'])->where('path', '.+');
+if (!config('app.debug')) {
+    Route::get('{path?}', ['uses' => 'MainController@catchall'])->where('path', '.+');
+}
