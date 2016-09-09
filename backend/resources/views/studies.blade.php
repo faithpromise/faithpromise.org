@@ -20,6 +20,6 @@
 
     @endif
 
-    @include('partials.have_questions', ['title' => 'Need Help or Want to Lead a Group?', 'email' => 'jenniferp@faithpromise.org', 'text' => 'If you have questions about a short term group or ways to get involved, please contact #email#', 'class' => 'Section--lightGrey'])
+    @include('partials.have_questions', ['title' => 'Need Help or Want to Lead a Group?', 'contact' => 'Kerri Karel', 'email' => 'kerrik@faithpromise.org', 'text' => 'If you have questions about a short term group or ways to get involved, please contact #email#.', 'class' => 'Section--lightGrey'])
 
 @endsection
