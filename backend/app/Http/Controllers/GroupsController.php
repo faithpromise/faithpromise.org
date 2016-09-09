@@ -9,6 +9,9 @@ use FaithPromise\Shared\Models\Post;
 use FaithPromise\Shared\Models\StudyTime;
 use FaithPromise\Shared\Models\Ministry;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\View;
 
 class GroupsController extends BaseController {
 
@@ -23,27 +26,35 @@ class GroupsController extends BaseController {
 
     public function studies() {
 
-        $studies = Study::has('times')->orderBy('sort')->get();
+        $cache_key = 'short_term_groups_view_2';
+        $cache_time = App::environment('production') ? 15 : 0;
 
-        return view('studies', [
-            'studies' => $studies
-        ]);
+        // Cache the view because a lot of queries are required
+        return Cache::remember($cache_key, $cache_time, function() {
+            $studies = Study::has('times')->orderBy('sort')->get();
+            return View::make('studies')->with('studies', $studies)->render();
+        });
     }
 
     public function studyDetail($study) {
 
-        $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get()->sortBy(function ($studyTime) {
-            return $studyTime->campus->name . $studyTime->starts_at->format(Carbon::ISO8601);
+        $cache_key = 'short_term_group_view_6_' . $study->id;
+        $cache_time = App::environment('production') ? 15 : 0;
+
+        // Cache the view because a lot of queries are required
+        return Cache::remember($cache_key, $cache_time, function() use ($study) {
+
+            $times = StudyTime::with('campus')->where('study_id', '=', $study->id)->get()->sortBy(function ($studyTime) {
+                return $studyTime->campus->name . $studyTime->starts_at->format(Carbon::ISO8601);
+            });
+
+            $orderBy = "gender = '" . $study->gender . "' desc, RANDOM()";
+            $studies = Study::has('times')->where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
+
+            return View::make('study_detail')->with(['study'   => $study, 'times'   => $times, 'studies' => $studies])->render();
+
         });
 
-        $orderBy = "gender = '" . $study->gender . "' desc, RANDOM()";
-        $studies = Study::has('times')->where('id', '<>', $study->id)->orderByRaw($orderBy)->take(3)->get();
-
-        return view('study_detail', [
-            'study'   => $study,
-            'times'   => $times,
-            'studies' => $studies
-        ]);
     }
 
     public function leaders() {

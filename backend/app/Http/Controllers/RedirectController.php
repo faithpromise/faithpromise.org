@@ -6,6 +6,14 @@ use Illuminate\Routing\Controller as BaseController;
 
 class RedirectController extends BaseController {
 
+    public function shortTermGroups() {
+        return redirect()->route('studies');
+    }
+
+    public function shortTermGroup($study_slug) {
+        return redirect()->route('studyDetail', ['study' => $study_slug]);
+    }
+
     public function care() {
         return redirect()->route('care');
     }

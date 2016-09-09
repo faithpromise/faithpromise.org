@@ -47,8 +47,8 @@ Route::get('/creative', ['as' => 'creative', 'uses' => 'MinistriesController@cre
 // Groups
 Route::get('/groups', ['as' => 'groups', 'uses' => 'GroupsController@index']);
 Route::get('/groups/search', ['as' => 'groupSearch', 'uses' => 'GroupsController@search']);
-Route::get('/studies', ['as' => 'studies', 'uses' => 'GroupsController@studies']);
-Route::get('/studies/{study}', ['as' => 'studyDetail', 'uses' => 'GroupsController@studyDetail']);
+Route::get('/groups/short-term', ['as' => 'studies', 'uses' => 'GroupsController@studies']);
+Route::get('/groups/short-term/{study}', ['as' => 'studyDetail', 'uses' => 'GroupsController@studyDetail']);
 Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'GroupsController@newLeader']);
 Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'GroupsController@leaders']);
 Route::get('/groups/training', ['as' => 'groupTraining', 'uses' => 'GroupsController@training']);

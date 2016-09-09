@@ -26,6 +26,8 @@ Route::get('/campus-expansion', 'RedirectController@h4h');
 Route::get('/counseling', 'RedirectController@care');
 Route::get('/kidshope', 'RedirectController@kidsHope');
 Route::get('/kidrave', 'RedirectController@fpKidsWorship');
+Route::get('/studies', ['uses' => 'RedirectController@shortTermGroups']);
+Route::get('/studies/{study_slug}', ['uses' => 'RedirectController@shortTermGroup']);
 
 
 // Shortcut redirects to external sites

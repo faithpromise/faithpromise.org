@@ -21,6 +21,7 @@
             </ul>
         @endif
         {!! $study->description !!}
+        @if ($study->session_length)  Each group time will be approximately {{ $study->session_length == 1 ? '1 hour' : $study->session_length . ' hours' }}. @endif Check individual times for childcare info.
         @endintrosection
     @endif
 
@@ -32,6 +33,7 @@
                 <th>Campus</th>
                 <th class="StudiesTable-leader">Leader</th>
                 <th>Time</th>
+                <th>Childcare</th>
                 <th>Register</th>
             </tr>
         </thead>
@@ -42,11 +44,12 @@
                         {{ $time->campus->name }} @if (!empty($time->room))
                             <span class="StudiesTable-meta">{{ $time->room }}</span>@endif
                     </td>
-                    <td class="StudiesTable-leader">{{ $time->leader }}</td>
+                    <td class="StudiesTable-leader" title="{{ $time->leader }}">{{ $time->leader }}</td>
                     <td>
                         {{ $time->starts_at->format('D') }} {{ $time->starts_at->format('g:i A') }}
                         <span class="StudiesTable-meta">Starts {{ $time->starts_at->format('M j') }}</span>
                     </td>
+                    <td class="StudiesTable-childcare">{{ $time->has_childcare ? 'Provided' : 'None' }}</td>
                     <td>
                         @if ($time->is_full)
                             Class is full
