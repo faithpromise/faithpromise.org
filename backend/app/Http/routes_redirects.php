@@ -1,7 +1,7 @@
 <?php
 
 // Internal redirects
-
+Route::get('/series/the-power-to-change', 'RedirectController@alignments');
 Route::get('/series', 'RedirectController@sermons');
 Route::get('/contact', 'RedirectController@locations');
 Route::get('/times-and-directions', 'RedirectController@locations');

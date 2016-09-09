@@ -6,6 +6,10 @@ use Illuminate\Routing\Controller as BaseController;
 
 class RedirectController extends BaseController {
 
+    public function alignments() {
+        return redirect()->route('groupAlignments');
+    }
+
     public function shortTermGroups() {
         return redirect()->route('studies');
     }

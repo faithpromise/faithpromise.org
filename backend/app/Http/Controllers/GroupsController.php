@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alignment;
 use App\Models\Series;
 use App\Models\Study;
 use Carbon\Carbon;
@@ -26,7 +27,7 @@ class GroupsController extends BaseController {
 
     public function studies() {
 
-        $cache_key = 'short_term_groups_view_2';
+        $cache_key = 'short_term_groups_view_4';
         $cache_time = App::environment('production') ? 15 : 0;
 
         // Cache the view because a lot of queries are required
@@ -79,11 +80,12 @@ class GroupsController extends BaseController {
 
     public function alignments() {
 
-        $series = Series::has('alignmentResources')->orderBy('publish_at', 'desc')->get();
+        $alignments = Alignment::with('resources')->orderBy('publish_at', 'desc')->get();
+
         $resources = Post::where('type', '=', 'group_leader_resource')->where('slug', '!=', 'group-leader-alignments')->orderBy('sort', 'asc')->get();
 
         return view('group_leader_alignments', [
-            'series' => $series,
+            'alignments' => $alignments,
             'resources' => $resources
         ]);
     }
