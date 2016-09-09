@@ -14,6 +14,15 @@
 
     {{--
     ================================================================================
+        Events
+    ================================================================================ --}}
+
+    @cardsection(['title' => 'Groups News & Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->events])
+    @endcardsection
+
+
+    {{--
+    ================================================================================
         Community Groups
     ================================================================================ --}}
 
@@ -70,15 +79,6 @@
     ])
     <p>Interesting in leading a group? We want to help you as you help others grow in their relationship with Christ.</p>
     @endbgsection
-
-
-    {{--
-    ================================================================================
-        Events
-    ================================================================================ --}}
-
-    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
-    @endcardsection
 
 
     {{--
