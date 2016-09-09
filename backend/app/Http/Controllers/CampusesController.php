@@ -29,7 +29,7 @@ class CampusesController extends BaseController {
                 'directions_url' => $campus->directions_url,
                 'thumbnail' => cdn_image('sm', 'full', $campus->image, 'wide'),
                 'url' => $campus->url,
-                'times' => str_replace('; ', '<br>', $campus->formatted_times)
+                'times' => str_replace(', ', '<br>', $campus->formatted_times)
             ];
         }
 

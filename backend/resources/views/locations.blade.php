@@ -15,7 +15,7 @@
     </script>
 
     <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+    <script src="//cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox.js"></script>
 
     <script>
         var fpMap = (function (window, fp) {
