@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel {
     protected $commands = [
         Commands\ImportEvents::class,
         Commands\ToggleStaffHasImage::class,
+        Commands\UpdateNextStepsClass::class,
     ];
 
     /**
@@ -24,6 +25,8 @@ class Kernel extends ConsoleKernel {
      * @return void
      */
     protected function schedule(Schedule $schedule) {
+
+        $schedule->command('events:update-next-steps')->daily()->thenPing(config('site.heartbeat_next_steps_date'));
 
         $schedule->command('backup:run')->dailyAt('4:00')->thenPing(config('site.heartbeat_backup'));
 

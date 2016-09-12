@@ -76,8 +76,5 @@ $cards = collect([
     @cardsection(['title' => 'Upcoming Events', 'cards' => $ministry->Events])
     @endcardsection
 
-    @profilessection(['title' => 'Meet the Next Steps Staff', 'class' => '', 'profiles' => $ministry->Staff])
-    @endprofilessection
-
     <!-- LATER: Need contact info here? -->
 @endsection
