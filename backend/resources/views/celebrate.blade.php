@@ -7,9 +7,11 @@
         Intro
     ================================================================================ --}}
     @introsection(['title' => 'fpCelebrate'])
-    <p>fpCelebrate takes place each week on our Pellissippi Campus and fp Celebrate exists to create a culture where you can connect, heal, and grow at Faith Promise Church.  Celebrate meets on Mondays at the FPC Pellissippi Campus. You can always expect a challenging message from a variety of engaging speakers. Following our corporate time together, we provide a time for you to take  your journey and recovery to the next level in round table break out or small groups.  </p>
-    <p>Bring a friend, family member, neighbor, or co-worker. We can't wait to see you there!</p>
-    <p>Celebrate is a vital part of the Groups Ministry here at Faith Promise Church. As with all of our groups, we focus on creating environments where people encounter God, embrace others, and engage the world around us.</p>
+    <p>fpCelebrate provides Christ-centered support for addiction, hurts, habits & hang-ups. Together we fellowship, grow, and celebrate God's healing power in our lives. We provide a safe environment to share honestly with others walking a similar journey.</p>
+    <p>You can always expect a challenging message from a variety of engaging speakers. Following our corporate time together, we provide a time for you to take your journey and recovery to the next level in small groups.</p>
+    <p>Groups include Chemical Dependency; 12 Step Recovery; Co-Dependency; Anger Management; Men's Integrity; Family Recovery Support, Veterans Support & a variety of Growth Groups.</p>
+    <p>Join us Mondays at the Pellissippi Campus - Dinner at 6pm, Worship & Message at 7pm and Groups at 8pm.</p>
+    <p>Visit the <a href="http://blog.faithpromise.org/category/groups-ministry/fp-celebrate/">fpCelebrate blog</a> for additional information.</p>
     <p class="text-center">
         <a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7084&weekday=&start_time=" target="_blank">Find a Group</a>
         <a class="Button" href="http://blog.faithpromise.org/category/groups-ministry/fp-celebrate/" target="_blank">News &amp; Events</a>
@@ -26,15 +28,11 @@
             </tr>
             <tr class="Calendar-row">
                 <td class="Calendar-timeColumn">7:00 pm</td>
-                <td>Worship - a multi-media experience of praise to God for what He is doing in our lives</td>
-            </tr>
-            <tr class="Calendar-row">
-                <td class="Calendar-timeColumn">7:30 pm</td>
-                <td>Message - a challenging and uplifting message from our Celebrate pastor or other guest speaker</td>
+                <td>Worship &amp; Message - a time of praise to God for what He is doing in our lives followed by a challenging and uplifting message from our fpCelebrate pastor, Kerri Karel, or other guest speakers.</td>
             </tr>
             <tr class="Calendar-row">
                 <td class="Calendar-timeColumn">8:00 pm</td>
-                <td>Small Group Time - a time to gather with others that are seeking growth and healing in a number of specific areas. It's very likely we have a group that will meet your specific need.</td>
+                <td>Small Group Time - a time to gather with others that are seeking growth and healing in a number of specific areas.</td>
             </tr>
         </tbody>
     </table>
