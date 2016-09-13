@@ -62,12 +62,26 @@ $ways_to_give = collect([
             ]
         ]
     ])
-    <p>
-        Through your financial contributions, you're partnering with Faith Promise Church in to the work of changing lives locally and worldwide.<br>
-        <a href="https://www.dropbox.com/sh/sx2egabgixvg0u4/AABmPJji1MEi8YCDBfHqET5Ka">Yearly audited statements</a> &nbsp;|&nbsp; <a href="https://www.dropbox.com/sh/zr8f9pzot60yor7/AABdL8h3kNFADDN9KHHi-1hoa">Financial Statement</a>
-    </p>
-    <p>To access your Contribution Statement, please <a class="no-wrap" href="https://fpctystn.infellowship.com/onlinegiving/history">login to Fellowship One</a>.</p>
+    <p>Through your financial contributions, you're partnering with Faith Promise Church in to the work of changing lives locally and worldwide.</p>
+    <p>To access your Contribution Statement, please <a class="no-wrap" href="https://fpctystn.infellowship.com/onlinegiving/history">log-in to Fellowship One</a>.</p>
     @endvideosection
+
+    <div class="FinAccountability">
+        <div class="FinAccountability-container">
+            <div class="FinAccountability-seal">
+                <img class="FinAccountability-image" src="{{ cdn_image_raw('images/general/ecfa.png') }}">
+            </div>
+            <div class="FinAccountability-title">
+                Financial Accountability
+            </div>
+            <div class="FinAccountability-text">
+                <p class="FinAccountability-info">Faith Promise Church is accredited by the Evangelical Council for Financial Accountability. Founded in 1979, ECFA provides accreditation to leading Christian nonprofit organizations that faithfully demonstrate compliance with established standards for financial accountability, transparency, fundraising, and board governance.</p>
+                <a class="FinAccountability-link" href="https://www.dropbox.com/sh/sx2egabgixvg0u4/AABmPJji1MEi8YCDBfHqET5Ka">Yearly Audited Statements</a>
+                <span class="FinAccountability-linkDivider">&middot;</span>
+                <a class="FinAccountability-link" href="https://www.dropbox.com/sh/zr8f9pzot60yor7/AABdL8h3kNFADDN9KHHi-1hoa">Financial Statement</a>
+            </div>
+        </div>
+    </div>
 
     @bgsection([
         'title' => 'International care and relief',

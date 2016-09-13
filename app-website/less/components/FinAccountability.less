@@ -1,0 +1,79 @@
+.FinAccountability {
+  padding:          10px 0;
+  background-color: @Section-grey-bg-color;
+}
+
+.FinAccountability-container {
+  &:extend(.Container all);
+  display:     flex;
+  align-items: center;
+}
+
+.FinAccountability-seal {
+  flex-shrink: 0;
+  max-width:   70px;
+}
+
+.FinAccountability-image {
+  max-width: 100%;
+}
+
+.FinAccountability-title {
+  padding:        0 30px;
+  white-space:    nowrap;
+  text-transform: uppercase;
+  font-weight:    600;
+}
+
+.FinAccountability-text {
+  margin: 20px 0;
+}
+
+.FinAccountability-info {
+  margin-bottom: 10px;
+}
+
+.FinAccountability-link {
+  display: inline-block;
+}
+
+.FinAccountability-linkDivider {
+  display:        inline-block;
+  padding:        0 5px;
+  font-size:      30px;
+  line-height:    18px;
+  vertical-align: top;
+  color:          #676767;
+}
+
+@media (max-width: 460px) {
+  .FinAccountability-seal,
+  .FinAccountability-linkDivider {
+    display: none;
+  }
+
+  .FinAccountability-link {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .FinAccountability-title {
+    padding: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .FinAccountability {
+    padding: 30px 0;
+  }
+
+  .FinAccountability-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1200px) {
+  .FinAccountability-title {
+    white-space: normal;
+  }
+}
