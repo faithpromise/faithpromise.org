@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             options: {
                 compress: false,
                 mangle:   false,
-                beautify: !grunt.option('production') || false,
+                beautify: false,
                 screwIE8: true
             }
         }

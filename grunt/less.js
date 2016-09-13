@@ -7,13 +7,13 @@ module.exports = function (grunt) {
         website: {
             src:     website.less.src,
             dest:    website.less.dest,
-            options: { compress: grunt.option('production') || false }
+            options: { compress: true }
         },
 
         job_page: {
             src:     'app-website/less/job.less',
             dest:    'public/build/website/css/job.css',
-            options: { compress: grunt.option('production') || false }
+            options: { compress: true }
         }
 
     });
