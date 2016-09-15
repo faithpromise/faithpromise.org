@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $events])
+    @cardsection(['title' => 'Short Term Groups', 'class' => 'Section--lightGrey', 'cards' => $events])
     @endcardsection
 
     <div class="TextSection TextSection--center {{ count($events) === 0 ? 'Section--lightGrey' : '' }}">

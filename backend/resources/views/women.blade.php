@@ -20,7 +20,7 @@
     @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $events])
     @endcardsection
 
-    @cardsection(['title' => 'Bible Studies', 'cards' => $studies])
+    @cardsection(['title' => 'Short Term Groups', 'cards' => $studies])
     @endcardsection
 
     <div class="TextSection TextSection--center Section--lightGrey">
