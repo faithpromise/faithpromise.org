@@ -8,7 +8,7 @@ return [
     'social_services' => ['facebook', 'twitter', 'instagram', 'pinterest', 'youtube', 'vimeo', 'github'],
 
     'heartbeat_backup' => env('HEARTBEAT_BACKUP', 'http://127.0.0.1'),
-    'heartbeat_next_steps_date' => env('HEARTBEAT_BACKUP', 'http://127.0.0.1'),
+    'heartbeat_next_steps_date' => env('HEARTBEAT_NEXT_STEPS_DATE', 'http://127.0.0.1'),
     'heartbeat_events_updated' => env('HEARTBEAT_EVENTS_UPDATED', 'http://127.0.0.1'),
 
     'church_domain' => (env('APP_ENV', 'local') === 'production') ? env('DOMAIN', 'faithpromise.org') : env('DOMAIN', 'faithpromise.192.168.10.10.xip.io'),
