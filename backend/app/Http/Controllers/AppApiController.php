@@ -100,17 +100,18 @@ class AppApiController extends Controller {
 
         $media = [];
         $output = [
-            'header' => [
+            'header'         => [
                 'title' => 'Sermons'
             ],
-            'images' => [
+            'images'         => [
                 ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'tall'))],
                 ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'tall'))],
                 ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'tall'))],
                 ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'tall'))],
             ],
-            'title'  => $video->title,
-            'body'   => $video->description,
+            'title'          => $video->title,
+            'subtitle'       => ($video->speaker_display_name . ($video->description ? (' - ' . $video->description) : '')),
+            'extraSubtitles' => ($video->sermon_date ? $video->sermon_date_formatted : '')
         ];
 
         if ($video->audio_url) {
@@ -118,13 +119,23 @@ class AppApiController extends Controller {
                 // TODO: Add getMp3UrlAttribute() method to Video class and replace this concatenation
                 'url'          => 'http://feeds.soundcloud.com/stream/' . $video->soundcloud_track_id . '-faithpromise-' . $video->soundcloud_track_permalink . '.mp3',
                 'format'       => 'mp3',
-                'downloadable' => 'true',
-                'images'       => [
-                    ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'tall'))],
-                    ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'tall'))],
-                    ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'tall'))],
-                    ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'tall'))],
-                ]
+                'downloadable' => 'true'
+            ];
+        }
+
+        if ($video->vimeo_file_hd) {
+            $media[] = [
+                'url'          => $video->vimeo_file_hd,
+                'format'       => 'mp4',
+                'downloadable' => 'false'
+            ];
+        }
+
+        if ($video->vimeo_file_stream) {
+            $media[] = [
+                'url'          => $video->vimeo_file_stream,
+                'format'       => 'm3u8',
+                'downloadable' => 'false'
             ];
         }
 
