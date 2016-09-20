@@ -124,6 +124,9 @@ Route::get('/_sitemap.json', 'SiteMapController@index');
 // Health checks
 Route::get('/_healthcheck', 'HealthCheckController@index');
 
+// Updates Vimeo data
+Route::get('/vimeo', 'VideosController@updateVimeo');
+
 // Catchall
 if (!config('app.debug')) {
     Route::get('{path?}', ['uses' => 'MainController@catchall'])->where('path', '.+');

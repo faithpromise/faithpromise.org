@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "47f0a5514ef59edc61acee29a1ffe3b6",
-    "content-hash": "da2649a4358d538b8e0250e6da229e9b",
+    "hash": "26a78e1bf58ec94504824f38ddceab75",
+    "content-hash": "f9d10cf505228d31805539b04deecc76",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -3285,6 +3285,47 @@
                 "dump"
             ],
             "time": "2016-01-07 13:38:51"
+        },
+        {
+            "name": "vimeo/vimeo-api",
+            "version": "1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vimeo/vimeo.php.git",
+                "reference": "f7259f0ce21541f85d9f939e4a608cb275034f59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vimeo/vimeo.php/zipball/f7259f0ce21541f85d9f939e4a608cb275034f59",
+                "reference": "f7259f0ce21541f85d9f939e4a608cb275034f59",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vimeo\\": "src/Vimeo"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Vimeo",
+                    "homepage": "http://vimeo.com"
+                }
+            ],
+            "description": "Official PHP library for the Vimeo API.",
+            "homepage": "https://github.com/vimeo/vimeo.php",
+            "keywords": [
+                "video",
+                "vimeo"
+            ],
+            "time": "2016-09-13 14:46:47"
         },
         {
             "name": "vlucas/phpdotenv",
