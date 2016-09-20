@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Series;
 use App\Models\Video;
 
-use App\Http\Requests;
-
 class AppApiController extends Controller {
 
     public function seriesList() {
@@ -15,13 +13,24 @@ class AppApiController extends Controller {
         $series_collection = Series::has('videos')->where('is_official', '=', 1)->orderBy('publish_at', 'desc')->get();
         $output = [
             'header' => [
-                'title' => 'Sermons'
-            ],
-            'images' => [
-                ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 320, 'wide'))],
-                ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 640, 'wide'))],
-                ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 768, 'wide'))],
-                ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 1536, 'wide'))],
+                'title' => 'Sermons',
+                'style' => 'banner',
+                'items' => [
+                    [
+                        'actions' => [
+                            [
+                                'handler' => 'list',
+                                'url'     => url(route('app_api_series', $current_series->slug))
+                            ]
+                        ],
+                        'images'  => [
+                            ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 320, 'wide'))],
+                            ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 640, 'wide'))],
+                            ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 768, 'wide'))],
+                            ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($current_series->image, 1536, 'wide'))],
+                        ]
+                    ]
+                ]
             ],
             'items'  => []
         ];
@@ -34,6 +43,12 @@ class AppApiController extends Controller {
                         'handler' => 'list',
                         'url'     => url(route('app_api_series', $series->slug))
                     ]
+                ],
+                'images'  => [
+                    ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'square'))],
+                    ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'square'))],
+                    ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'square'))],
+                    ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'square'))],
                 ]
             ];
         }
@@ -49,12 +64,16 @@ class AppApiController extends Controller {
         $output = [
             'header' => [
                 'title' => $series->title,
-                'style' => 'banner',
+                'style' => 'featured',
                 'items' => [
-                    ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'wide'))],
-                    ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'wide'))],
-                    ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'wide'))],
-                    ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'wide'))],
+                    [
+                        'images' => [
+                            ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'tall'))],
+                            ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'tall'))],
+                            ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'tall'))],
+                            ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'tall'))]
+                        ]
+                    ]
                 ]
             ]
         ];
@@ -62,9 +81,6 @@ class AppApiController extends Controller {
         foreach ($video_collection as $video) {
             $videos[] = [
                 'title'   => $video->title,
-                'images'  => [
-
-                ],
                 'actions' => [
                     [
                         'handler' => 'mediaDetail',
@@ -88,10 +104,10 @@ class AppApiController extends Controller {
                 'title' => 'Sermons'
             ],
             'images' => [
-                ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'wide'))],
-                ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'wide'))],
-                ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'wide'))],
-                ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'wide'))],
+                ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'tall'))],
+                ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'tall'))],
+                ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'tall'))],
+                ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'tall'))],
             ],
             'title'  => $video->title,
             'body'   => $video->description,
@@ -104,10 +120,10 @@ class AppApiController extends Controller {
                 'format'       => 'mp3',
                 'downloadable' => 'true',
                 'images'       => [
-                    ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'wide'))],
-                    ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'wide'))],
-                    ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'wide'))],
-                    ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'wide'))],
+                    ['width' => 320, 'url' => open_graph_url_filter(resized_image_url($series->image, 320, 'tall'))],
+                    ['width' => 640, 'url' => open_graph_url_filter(resized_image_url($series->image, 640, 'tall'))],
+                    ['width' => 768, 'url' => open_graph_url_filter(resized_image_url($series->image, 768, 'tall'))],
+                    ['width' => 1536, 'url' => open_graph_url_filter(resized_image_url($series->image, 1536, 'tall'))],
                 ]
             ];
         }
