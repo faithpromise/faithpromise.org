@@ -58,7 +58,7 @@ $ways_to_give = collect([
             ],
             [
                 'title' => 'Noncash Donations',
-                'url' => 'https://give.idonate.com/nonprofit-donate/faith-promise-church/'
+                'url' => 'https://give.idonate.com/faith-promise-church/donate'
             ]
         ]
     ])
