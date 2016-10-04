@@ -70,11 +70,13 @@ class GroupsController extends BaseController {
     public function training() {
 
         $videos = Post::where('type', '=', 'group_leader_video')->orderBy('sort', 'asc')->get();
+        $new_leader_videos = Post::where('type', '=', 'new_group_leader_video')->orderBy('sort', 'asc')->get();
         $resources = Post::where('type', '=', 'group_leader_resource')->where('slug', '!=', 'group-leader-training')->orderBy('sort', 'asc')->get();
 
         return view('group_leader_training', [
-            'videos'    => $videos,
-            'resources' => $resources
+            'videos'            => $videos,
+            'new_leader_videos' => $new_leader_videos,
+            'resources'         => $resources
         ]);
     }
 
