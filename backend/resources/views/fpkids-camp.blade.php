@@ -1,5 +1,34 @@
 <?php
 
+use Carbon\Carbon;
+
+$camp_is_full = false;
+$camp_cost = 260;
+$early_bird_discount = 25;
+$early_bird_last_day = Carbon::create(2017, 10, 14, 23, 59, 59, 'America/New_York');
+$payment_plan_last_day = Carbon::create(2017, 4, 30, 23, 59, 59, 'America/New_York');
+
+$depart_at = Carbon::create(2017, 6, 19, 0, 0, 0, 'America/New_York');
+$return_at = Carbon::create($depart_at->year, $depart_at->month, 22, 18, 0, 0, 'America/New_York');
+
+$registration_url = 'https://fpctystn.infellowship.com/Forms/332206';
+$counselor_registration_url = 'https://fpctystn.infellowship.com/Forms/337126';
+$waiting_list_url = 'https://fpctystn.infellowship.com/Forms/323477';
+$photos_url = 'http://pix.sfly.com/PfRvGM3h';
+
+$location = 'Fort Bluff Camp';
+$location_city = 'Dayton, Tennessee';
+$location_url = 'http://fortbluff.com/';
+
+function camp_date_range(Carbon $depart_at, Carbon $return_at) {
+    $str = $depart_at->format('F j') . '-';
+    if ($depart_at->month !== $return_at->month) {
+        return $str . $return_at->format('F j');
+    }
+
+    return $str . $return_at->format('j');
+}
+
 $faq = [
         (object)[
                 'q' => 'What will my child do?',
@@ -7,7 +36,7 @@ $faq = [
         ],
         (object)[
                 'q' => 'How will my child get there?',
-                'a' => '<p>We will transport kids to and from camp by bus.  We will depart from the Pellissippi Campus Monday morning, June 20th and return to the Pellissippi Campus the evening of Thursday, June 23rd.</p>'
+                'a' => '<p>We will transport kids to and from camp by bus.  We will depart from the Pellissippi Campus ' . $depart_at->format('l') . ' morning, ' . $depart_at->format('F dS') . ' and return to the Pellissippi Campus the evening of Thursday, ' . $return_at->format('F dS') . '.</p>'
         ],
         (object)[
                 'q' => 'Where will my child sleep?',
@@ -41,7 +70,7 @@ $faq = [
 
 ?>
 
-@extends('layouts.page', ['title' => 'fpKids Camp', 'hero_image' => 'images/events/kids-camp-2016-wide.jpg'])
+@extends('layouts.page', ['title' => 'fpKids Camp', 'hero_image' => 'images/events/kids-camp-wide.jpg'])
 
 @section('page')
 
@@ -50,42 +79,52 @@ $faq = [
         Intro
         ========================================
     --}}
-    @videosection(['title' => 'fpKids Summer Camp 2016', 'video' => '155530629'])
+    @videosection(['title' => 'fpKids Summer Camp ' . $depart_at->format('Y'), 'video' => '155530629'])
+    @if ($depart_at->isFuture())
     <p>
-        <strong>June 20-23, 2016 &nbsp;|&nbsp; Cost is $249</strong>
+        <strong>{{ camp_date_range($depart_at, $return_at) }}</strong> &nbsp;|&nbsp; @if ($early_bird_last_day->isFuture()) <strong>${{ $camp_cost - $early_bird_discount }}</strong> (early bird) &nbsp;|&nbsp; <strong>${{ $camp_cost }}</strong> after {{ $early_bird_last_day->format('M j') }} @else <strong>${{ $camp_cost }}</strong> @endif
     </p>
-    <p>We return from Summer Camp on Thursday, June 23 at 6:00 PM. Please join us at that time for a final celebration. For regular updates, videos and pictures, follow us on Facebook <a href="http://facebook.com/fpkids">facebook.com/fpkids</a>.</p>
-    {{--<p>Kids Camp is for rising 3rd to 6th grade (completed 2nd thru 5th grade) and will happen at the amazing <a href="http://fortbluff.com/" target="_blank">Fort Bluff Camp</a> in Dayton, Tennessee.</p>--}}
-    {{--<p>Kids Camp is currently full, but you can be added to the <a class="no-wrap" href="https://fpctystn.infellowship.com/Forms/324435">waiting list</a>.</p>--}}
+    @endif
+    @if ($payment_plan_last_day->isFuture())
+        <p><em style="display:block; font-size: .85em;">Payment plan available until {{ $payment_plan_last_day->format('F j') }}.</em></p>
+    @endif
+    @if ($depart_at->isPast())
+        <p>We return from Summer Camp on {{ $return_at->format('l, F d ') }} at {{ $return_at->format('g:i A') }}. Please join us at that time for a final celebration. For regular updates, videos and pictures, follow us on Facebook
+            <a href="http://facebook.com/fpkids">facebook.com/fpkids</a>.</p>
+    @elseif ($camp_is_full)
+        <p>Kids Camp is currently full, but you can be added to the <a class="no-wrap" href="{{ $waiting_list_url }}">waiting list</a>.</p>
+    @else
+        <p>Kids Camp is for rising 3rd to 6th grade (completed 2nd through 5th grade) and will happen at the amazing
+            <a href="{{ $location_url }}" target="_blank">{{ $location }}</a> in {{ $location_city }}.</p>
+        <p>
+    @endif
+
     <p>
-        <a class="Button" href="http://pix.sfly.com/Ubz7W7rb">Camp Photos</a>
-        {{--<a class="Button" href="https://fpctystn.infellowship.com/Forms/324435">Waiting List</a>--}}
-        <a class="Button" href="{{ doc_url('fpkids/Camp-Rally-Documents.pdf') }}">Camp Rally Documents</a>
+        @if ($depart_at->isPast())
+            <a class="Button" href="{{ $photos_url }}">Camp Photos</a>
+        @elseif ($camp_is_full)
+            <a class="Button" href="{{ $waiting_list_url }}">Waiting List</a>
+        @else
+            <a class="Button" href="{{ $registration_url }}">Register Today!</a>
+            <a class="Button" href="{{ doc_url('fpkids/Camp-Rally-Documents.pdf') }}">Camper Documents</a>
+        @endif
     </p>
     @endvideosection
-
-    @bgsection([
-        'title' => 'Tracks',
-        'class' => 'BackgroundSection--right',
-        'image' => 'images/fpkids/camp/field.jpg'
-        ])
-        <p>Tracks is a new activity selection we are doing this year at Kids Camp. Tracks gives each child an opportunity to explore their interest in a safe environment. Each child will need to pick their first, second and third choice of available tracks.</p>
-        <p>
-            <a class="Button" href="http://goo.gl/forms/LI1PgixUDmOeBdJl1">Choose your Tracks</a>
-        </p>
-    @endbgsection
 
     <style>
         .CampAlbum {
             font-size: 0;
         }
+
         .CampAlbum-photo {
             width: 20%;
         }
+
         @media (max-width: 780px) {
             .CampAlbum > img:nth-child(n+7) {
                 display: none;
             }
+
             .CampAlbum-photo {
                 width: 33.3333%;
             }
@@ -118,9 +157,11 @@ $faq = [
     @inlinecss
     <style type="text/css">
         .camp_faq {
-            background-color: #F47B1D; // Orange
+            background-color: #F47B1D;
+        / / Orange
             /*background-color: #0F3E38; // Turquoise*/
         }
+
         .camp_faq a:hover {
             background-color: #0F3E38;
             color:            #fff;
@@ -131,10 +172,12 @@ $faq = [
     @faqsection(['faq' => $faq, 'class' => 'has-background camp_faq', 'image' => 'images/fpkids/camp/pattern-optimized.jpg'])
     @endfaqsection
 
-    {{--@bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp/volunteer-tall.jpg'])--}}
-    {{--<p>We're so grateful to our amazing volunteers that make camp what it is. If you're volunteering for this year's camp, please apply here.</p>--}}
-    {{--<p><a class="Button" href="https://fpctystn.infellowship.com/Forms/278342">Apply Online</a></p>--}}
-    {{--@endbgsection--}}
+    @if ($depart_at->isFuture())
+        @bgsection(['title' => 'Counselors &amp; Support Staff', 'image' => '/images/fpkids/camp/volunteer-tall.jpg'])
+        <p>We're so grateful to our amazing volunteers that make camp what it is. If you're volunteering for this year's camp, please apply here.</p>
+        <p><a class="Button" href="{{ $counselor_registration_url }}">Apply Online</a></p>
+        @endbgsection
+    @endif
 
     {{--
         ========================================
