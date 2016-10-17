@@ -11,7 +11,7 @@ module.exports = function (grunt) {
 
         website_js: {
             files: ['app-website/js/**/*.js'],
-            tasks: ['uglify:website']
+            tasks: ['uglify:website', 'replace:angular_uib']
         },
 
         website_templates: {
