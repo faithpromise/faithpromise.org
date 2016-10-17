@@ -57,7 +57,7 @@ $ways_to_give = collect([
                 'url' => 'https://fpctystn.infellowship.com/onlinegiving/history'
             ],
             [
-                'title' => 'Noncash Donations',
+                'title' => 'Item Donations',
                 'url' => 'https://give.idonate.com/faith-promise-church/donate'
             ]
         ]

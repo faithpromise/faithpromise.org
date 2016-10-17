@@ -8,7 +8,7 @@
             'url' => route("give")
         ],
         [
-            'title' => 'Noncash Donations',
+            'title' => 'Item Donations',
             'url' => 'https://give.idonate.com/faith-promise-church/donate'
         ]
     ]])
