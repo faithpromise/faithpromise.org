@@ -54,11 +54,11 @@ $ways_to_give = collect([
         'buttons' => [
             [
                 'title' => 'Give Online',
-                'url' => 'https://fpctystn.infellowship.com/onlinegiving/history'
+                'url' => config('site.give_url')
             ],
             [
                 'title' => 'Item Donations',
-                'url' => 'https://give.idonate.com/faith-promise-church/donate'
+                'url' => config('site.give_items_url')
             ]
         ]
     ])
