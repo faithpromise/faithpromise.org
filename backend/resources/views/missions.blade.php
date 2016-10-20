@@ -2,8 +2,9 @@
 
 @section('page')
 
-    @introsection([
+    @videosection([
         'title' => 'Faith Promise Missions'
+        ,'video' => '187719394'
         ,'buttons' => [
             [
                 'title' => 'Missions Trip Application',
@@ -13,17 +14,17 @@
     ])
     <p>Each year our church plans multiple international mission trips. You can find contact information and details by selecting a trip below. All donations made to Faith Promise Church to support mission trips are fully tax deductible.</p>
     <p>We also engage the world around us, sharing the hope of Christ in tangible ways. Below you will find several opportunities to serve our community.</p>
-    @endintrosection
+    @endvideosection
+
+    @cardsection(['title' => 'Upcoming Trips', 'class' => 'Section--lightGrey', 'cards' => $locations, 'no_text' => true])
+    @endcardsection
 
     {{--
     ================================================================================
         Events
     ================================================================================ --}}
 
-    @cardsection(['title' => 'Upcoming Events', 'class' => 'Section--lightGrey', 'cards' => $ministry->Events])
-    @endcardsection
-
-    @cardsection(['title' => 'Upcoming Trips', 'class' => 'Section--lightGrey', 'cards' => $locations, 'no_text' => true])
+    @cardsection(['title' => 'Upcoming Events', 'class' => '', 'cards' => $ministry->Events])
     @endcardsection
 
     @profilessection(['title' => 'Missionaries', 'class' => 'Section--lightGrey', 'profiles' => $missionaries])
