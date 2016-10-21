@@ -17,7 +17,7 @@ $baptism_registration = [
 @section('page')
 
     @introsection(['title' => 'Kid Steps', 'class' => '', 'image' => ''])
-        <p>We want to partner with you to help determine when your child is ready for salvation and baptism.</p>
+    <p>We want to partner with you to help determine when your child is ready for salvation and baptism.</p>
     @endintrosection
 
     @bgsection([
@@ -47,7 +47,46 @@ $baptism_registration = [
     <p>If your child has expressed a readiness to be baptized, we'll take some steps to ensure that your child understands both salvation and the purpose of baptism. You can participate in the online baptism workshop, or a baptism workshop at your campus.</p>
     @endbgsection
 
-    @textsection(['title' => 'Register for the Baptism Class', 'class' => '', 'id' => 'baptism'])
+    @videosection([
+        'title' => 'Online Baptism Workshop',
+        'class' => '',
+        'video' => '181801118',
+        'buttons' => [
+            [
+                'title' => 'Worksheet',
+                'url' => doc_url('fpkids/baptism-workshop.pdf')
+            ]
+        ]
+    ])
+    <p>This online workshop is a guided video you can use at home to help ensure your child understands salvation and the purpose of baptism. After completing the workshop, please @dropdown([
+        'text' => 'email',
+        'links' => [
+            [
+                'title' => 'Email the Anderson Campus',
+                'url' => 'mailto:fpKidsAnderson@faithpromise.org'
+            ],
+            [
+                'title' => 'Email the Blount Campus',
+                'url' => 'mailto:fpKidsBlount@faithpromise.org'
+            ],
+            [
+                'title' => 'Email the Campbell Campus',
+                'url' => 'mailto:fpKidsCampbell@faithpromise.org'
+            ],
+            [
+                'title' => 'Email the North Knox Campus',
+                'url' => 'mailto:fpKidsNorthKnox@faithpromise.org'
+            ],
+            [
+                'title' => 'Email the Anderson Campus',
+                'url' => 'mailto:fpKidsPellissippi@faithpromise.org'
+            ],
+        ]
+    ]) your campus kids director to a brief counseling session with an fpKids Baptism Counselor:</p>
+
+    @endvideosection
+
+    @textsection(['title' => 'Register for the Baptism Class', 'class' => 'Section--lightGrey', 'id' => 'baptism'])
     <p>Does your child still have questions about Salvation? Are they telling you they're ready to be baptized? All kids Kindergarten to 5th grade participate in our Salvation/Baptism Class prior to baptism. We cover basics such as the Plan of Salvation, the Purpose of Baptism and other details.</p>
     <p>This class includes a Parent Connection where we connect with parents/guardians. We want to help you look ahead at what you can do to help your child establish an active faith in Christ. Use the following links to register at the
         <a class="no-wrap" href="{{ $baptism_registration['pellissippi'] }}" target="_blank">Pellissippi Campus</a>,
@@ -56,27 +95,6 @@ $baptism_registration = [
         <a class="no-wrap" href="{{ $baptism_registration['north'] }}" target="_blank">Anderson Campus</a>, or
         <a class="no-wrap" href="{{ $baptism_registration['north'] }}" target="_blank">Campbell Campus</a>.</p>
     @endtextsection
-
-    @videosection([
-        'title' => 'Online Baptism Workshop',
-        'class' => 'Section--lightGrey',
-        'video' => '181801118',
-        'buttons' => [
-            [
-                'title' => 'Worksheet',
-                'url' => doc_url('baptism-workshop.pdf')
-            ],
-            [
-                'title' => 'Schedule Counseling',
-                'url' => '/'
-            ]
-        ]
-    ])
-    <p>This online workshop is a guided video you can use at home to help ensure your child understands salvation and the purpose of baptism. After completing the workshop, please schedule a brief counseling session with an fpKids Baptism Counselor at your campus.</p>
-    <p>
-        <a class="Button" open-form="baptism_appointment">Schedule Counseling</a>
-    </p>
-    @endvideosection
 
     {{--
         ========================================
