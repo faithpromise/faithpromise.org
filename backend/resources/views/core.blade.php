@@ -17,6 +17,6 @@
     </p>
     @endintrosection
 
-    @include('partials.have_questions', ['class' => 'Section--lightGrey', 'contact' => 'Miles Creasman', 'email' => 'milesc@faithpromise.org', 'text' => 'If you have questions about The Core or taking the next step, please contact #email#'])
+    @include('partials.have_questions', ['class' => 'Section--lightGrey', 'contact' => 'Penny Spivey', 'email' => 'pennys@faithpromise.org', 'text' => 'If you have questions about The Core or taking the next step, please contact #email#'])
 
 @endsection
