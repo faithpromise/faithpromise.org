@@ -44,7 +44,7 @@ class UpdateNextStepsClass extends Command {
         // siteAgnostic - Middleware isn't fired so config isn't merged. So, config('site.ident') will return NULL at this point.
         $event = Event::siteAgnostic()->where('slug', '=', 'next-steps-class')->first();
 
-        $event->subtitle = $second_sunday->format('l F n');
+        $event->subtitle = $second_sunday->format('l F j');
         $event->save();
 
     }
