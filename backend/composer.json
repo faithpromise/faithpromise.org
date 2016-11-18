@@ -11,7 +11,12 @@
     {
       "type": "vcs",
       "url": "https://github.com/faithpromise/fp-shared.git"
-    }
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.org"
+    },
+    { "packagist": false }
   ],
   "require": {
     "php": ">=5.5.9",
