@@ -39,7 +39,7 @@ $new_years_times = $campus->new_years_times;
         <div id="christmas-times" class="HolidayTimesSection HolidayTimesSection--christmas">
             <img class="HolidayTimesSection-campusPhoto" src="{{ resized_image_url($campus->image, 320, 'square') }}">
             <div class="HolidayTimesSection-container">
-                <h2 class="HolidayTimesSection-title">Christmas @if ($new_years_times) and New Years @endif Service Times</h2>
+                <h2 class="HolidayTimesSection-title">Christmas @if ($new_years_times) and New Year's @endif Service Times</h2>
                 <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
                 <p class="HolidayTimesSection-text">
                     * fpKids will serve Pre-K only during all Christmas service times.
