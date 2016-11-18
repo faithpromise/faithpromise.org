@@ -78,7 +78,7 @@ $baptism_registration = [
                 'url' => 'mailto:fpKidsNorthKnox@faithpromise.org'
             ],
             [
-                'title' => 'Email the Anderson Campus',
+                'title' => 'Email the Pellissippi Campus',
                 'url' => 'mailto:fpKidsPellissippi@faithpromise.org'
             ],
         ]
