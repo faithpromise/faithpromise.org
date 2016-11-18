@@ -14,7 +14,7 @@
 
     <p><strong>Hurting?</strong> <a href="https://docs.google.com/document/d/1ag_OAK7EdGplssIikEhePgqzDcTzzizlmOSvnbntFV4/edit?pli=1">Request a Stephen Minister</a></p>
 
-    <p><strong>Gifted to help others?</strong> <a href="https://docs.google.com/document/d/1h8cMdTQknSA1i66rX8YZt4Q9ISNxhfdJbYLb8XzI4aY/edit?pli=1">Become a Stephen Minister</a></p>
+    <p><strong>Gifted to help others?</strong> <a href="{{ doc_url('stephen-minister-interest-sheet.pdf') }}">Become a Stephen Minister</a></p>
 
     <h5>Additional Resources</h5>
     <ul>
