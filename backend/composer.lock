@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/faithpromise/fp-shared.git",
-                "reference": "1dba3b9800a48dee1b4235eefaab3d812b676f49"
+                "reference": "3c9d863033eac58fafb2811b3b53206ae7943351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/1dba3b9800a48dee1b4235eefaab3d812b676f49",
-                "reference": "1dba3b9800a48dee1b4235eefaab3d812b676f49",
+                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/3c9d863033eac58fafb2811b3b53206ae7943351",
+                "reference": "3c9d863033eac58fafb2811b3b53206ae7943351",
                 "shasum": ""
             },
             "require": {
@@ -800,7 +800,7 @@
                 "source": "https://github.com/faithpromise/fp-shared/tree/master",
                 "issues": "https://github.com/faithpromise/fp-shared/issues"
             },
-            "time": "2016-11-18 16:30:20"
+            "time": "2016-11-18 18:07:53"
         },
         {
             "name": "geo-io/interface",
