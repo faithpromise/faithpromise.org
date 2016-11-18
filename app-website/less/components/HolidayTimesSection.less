@@ -4,13 +4,13 @@
   .to-rem(font-size, @Section-font-size);
   //.to-em(margin-top, @HolidayTimesSection-campus-photo-height/2, @Section-font-size);
   .to-em(padding-bottom, @Section-vertical-padding-bottom, @Section-font-size);
-  text-align:       center;
+  text-align: center;
 }
 
 .HolidayTimesSection-container {
   .to-rem(max-width, 800);
   .to-rem(padding, 0 30);
-  margin: 0 auto;
+  margin:     0 auto;
   text-align: left;
 }
 
@@ -69,4 +69,14 @@
   .HolidayTimesSection-campus {
     border-bottom: 1px solid #494949;
   }
+}
+
+.HolidayTimesSection--christmas {
+  background:      #f7f8f2 url(~"@{cdn_url}/images/campuses/christmas-times-bg.jpg") no-repeat 50% 100%;
+  background-size: cover;
+  padding-bottom:  13vw;
+}
+
+.HolidayTimesSection-text {
+  font-size: 16px;
 }
