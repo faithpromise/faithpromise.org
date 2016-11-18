@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "26a78e1bf58ec94504824f38ddceab75",
-    "content-hash": "f9d10cf505228d31805539b04deecc76",
+    "hash": "1c9de55c9aa405dde8c87d74717a57bd",
+    "content-hash": "67bd77f1835ec20634ea9f841add34dc",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/faithpromise/fp-shared.git",
-                "reference": "aa6558adaef9208a4b715646312fafb52cfd20d5"
+                "reference": "1dba3b9800a48dee1b4235eefaab3d812b676f49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/aa6558adaef9208a4b715646312fafb52cfd20d5",
-                "reference": "aa6558adaef9208a4b715646312fafb52cfd20d5",
+                "url": "https://api.github.com/repos/faithpromise/fp-shared/zipball/1dba3b9800a48dee1b4235eefaab3d812b676f49",
+                "reference": "1dba3b9800a48dee1b4235eefaab3d812b676f49",
                 "shasum": ""
             },
             "require": {
@@ -800,7 +800,7 @@
                 "source": "https://github.com/faithpromise/fp-shared/tree/master",
                 "issues": "https://github.com/faithpromise/fp-shared/issues"
             },
-            "time": "2016-10-04 12:19:40"
+            "time": "2016-11-18 16:30:20"
         },
         {
             "name": "geo-io/interface",
