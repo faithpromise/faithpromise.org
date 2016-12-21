@@ -1,0 +1,91 @@
+.ChristmasSeries {
+  .to-rem(padding-top, 40);
+  background-image:      ~"url(@{cdn_url}/resized/800/images/pages/christmas-bg.jpg?v=1457617927)";
+  background-attachment: fixed;
+  background-size:       cover;
+
+  @media (min-width: 800px) {
+    background-image: ~"url(@{cdn_url}/resized/1280/images/pages/christmas-bg.jpg?v=1457617927)";
+  }
+
+  @media (min-width: 1280px) {
+    background-image: ~"url(@{cdn_url}/resized/1680/images/pages/christmas-bg.jpg?v=1457617927)";
+  }
+
+  @media (min-width: 1680px) {
+    background-image: ~"url(@{cdn_url}/resized/1920/images/pages/christmas-bg.jpg?v=1457617927)";
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Video
+|--------------------------------------------------------------------------
+*/
+.ChristmasSeries-videoContainer {
+  &:extend(.AfterTheFall-videoContainer all);
+}
+
+.ChristmasSeries-videosContainer {
+  &:extend(.AfterTheFall-videosContainer all);
+}
+
+.ChristmasSeries-videos {
+  &:extend(.AfterTheFall-videos all);
+}
+
+.ChristmasSeries-video {
+  &:extend(.AfterTheFall-video all);
+}
+
+.ChristmasSeries-videoImage {
+  display: block;
+}
+
+.ChristmasSeries-videoTitle {
+  &:extend(.AfterTheFall-videoTitle all);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Sharing
+|--------------------------------------------------------------------------
+*/
+.ChristmasSeries-shareContainer {
+  &:extend(.AfterTheFall-shareContainer all);
+}
+
+.ChristmasSeries-shareLinks {
+  &:extend(.AfterTheFall-shareLinks all);
+}
+
+@media (min-width: 500px) {
+  .ChristmasSeries-shareLinks {
+    flex-direction: row;
+  }
+}
+
+.ChristmasSeries-shareLink {
+  &:extend(.AfterTheFall-shareLink all);
+  background-color: #d20000;
+
+  &:hover {
+    background-color: darken(#d20000, 10%);
+  }
+}
+
+.ChristmasSeries-shareLink--twitter {
+  background-color: #618923;
+
+  &:hover {
+    background-color: darken(#618923, 10%);
+  }
+}
+
+.ChristmasSeries-shareLink > .icon-twitter {
+  .to-rem(padding-left, 8);
+}
+
+.ChristmasSeries-shareIcon {
+  &:extend(.AfterTheFall-shareIcon all);
+}
