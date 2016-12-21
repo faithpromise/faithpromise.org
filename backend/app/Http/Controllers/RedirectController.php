@@ -170,4 +170,8 @@ class RedirectController extends BaseController {
         return redirect('http://goo.gl/forms/BjWaj111d3');
     }
 
+    public function sermonPlanningDoc() {
+        return redirect('https://docs.google.com/spreadsheets/d/1RxpnSoGQFgNbGAJAY-1BiZINNcngTpEEn3aa0Nu9L1w/edit?usp=sharing');
+    }
+
 }

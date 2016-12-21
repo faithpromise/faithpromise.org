@@ -50,6 +50,7 @@ Route::get('/rsvp', 'RedirectController@rsvp');
 Route::get('/survey', 'RedirectController@survey');
 Route::get('/operations', 'RedirectController@operations');
 Route::get('/share', 'RedirectController@share');
+Route::get('/ssp', 'RedirectController@sermonPlanningDoc');
 
 // Series
 Route::get('/series/fifteen-year-anniversary/anniversary-transformation', 'RedirectController@fifteenYearTransformation');
