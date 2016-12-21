@@ -24,7 +24,15 @@ $gloryIsBorn = (object)[
         'image' => 'images/worship/glory-is-born-album-square.jpg'
 ];
 
-$albums = collect([$onlyYou, $gloryIsBorn, $alive]);
+$searchedTheSkies = (object)[
+        'title' => 'Searched the Skies - Christmas EP',
+        'itunes' => 'https://itunes.apple.com/us/album/searched-the-skies-ep/id1178372203',
+        'googleplay' => 'https://play.google.com/store/music/album/?id=B6zp5rk4uvlbkt6mxr2y4umhply',
+        'amazon' => 'https://www.amazon.com/dp/B01N65Y3X9/ref=cm_sw_r_cp_ep_dp_A5DpybP9STAWY',
+        'image' => 'images/worship/searched-the-skies-album-square.jpg'
+];
+
+$albums = collect([$searchedTheSkies, $onlyYou, $gloryIsBorn, $alive]);
 
 ?>
 
