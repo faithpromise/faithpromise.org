@@ -96,6 +96,7 @@ Route::get('/stable-boy', ['as' => 'stableBoy', 'uses' => 'MainController@defaul
 Route::get('/infuse', ['as' => 'infuse', 'uses' => 'MainController@infuse']);
 Route::get('/elevate', ['as' => 'elevate', 'uses' => 'MainController@elevate']);
 Route::get('/elevate.rss', ['as' => 'elevateRss', 'uses' => 'MainController@elevateRss']);
+Route::get('/christmas', ['as' => 'christmas', 'uses' => 'MainController@christmas']);
 Route::get('/easter', ['as' => 'easter', 'uses' => 'MainController@easter']);
 Route::get('/easter/times.json', ['uses' => 'MainController@easterTimes']);
 

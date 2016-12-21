@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use FaithPromise\Shared\Models\Campus;
 use FaithPromise\Shared\Models\Event;
 use FaithPromise\Shared\Models\Post;
@@ -17,10 +16,7 @@ use Illuminate\Support\Facades\View;
 class MainController extends BaseController {
 
     public function index() {
-        $current_time = Carbon::now()->timezone('America/New_York');
-        $show_easter_start = Carbon::createFromDate(2016, 3, 5, 'America/New_York');
-        $show_easter_end = Carbon::createFromDate(2016, 3, 28, 'America/New_York')->startOfDay();
-        $show_easter = $current_time->between($show_easter_start, $show_easter_end);
+
         $current_series = Series::currentSeries()->first();
         $events = Event::featured()->get()->sortBy('sort');
         $icampus_times = Campus::findBySlug('online')->formatted_times;
@@ -28,8 +24,7 @@ class MainController extends BaseController {
         return view('home', [
             'current_series' => $current_series,
             'events'         => $events,
-            'icampus_times'  => $icampus_times,
-            'show_easter'    => $show_easter
+            'icampus_times'  => $icampus_times
         ]);
     }
 
@@ -61,6 +56,15 @@ class MainController extends BaseController {
         $posts = Post::byLocation('easter-page')->get();
 
         return view('easter', [
+            'posts' => $posts
+        ]);
+    }
+
+    public function christmas() {
+
+        $posts = Post::byLocation('christmas-page')->get();
+
+        return view('christmas', [
             'posts' => $posts
         ]);
     }
