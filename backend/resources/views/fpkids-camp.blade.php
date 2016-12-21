@@ -79,7 +79,7 @@ $faq = [
         Intro
         ========================================
     --}}
-    @videosection(['title' => 'fpKids Summer Camp ' . $depart_at->format('Y'), 'video' => '155530629'])
+    @videosection(['title' => 'fpKids Summer Camp ' . $depart_at->format('Y'), 'video' => '195304413'])
     @if ($depart_at->isFuture())
     <p>
         <strong>{{ camp_date_range($depart_at, $return_at) }}</strong> &nbsp;|&nbsp; @if ($early_bird_last_day->isFuture()) <strong>${{ $camp_cost - $early_bird_discount }}</strong> (early bird) &nbsp;|&nbsp; <strong>${{ $camp_cost }}</strong> after {{ $early_bird_last_day->format('M j') }} @else <strong>${{ $camp_cost }}</strong> @endif
