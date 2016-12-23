@@ -21,8 +21,8 @@
                     <a class="Button Button--light BiblePlan-readButton" href="#passage-1">Read Today's Verses</a>
                 </div>
 
-                <p class="BiblePlan-more">Download the
-                    <a href="http://blog.faithpromise.org/wp-content/uploads/2015/01/fasting-booklet-inside-2015.pdf" target="_blank">21 Day Devotional</a>.<br>Also, check out
+                <p class="BiblePlan-more">Download Pastor Chris' new book,
+                    <a href="http://blog.faithpromise.org/wp-content/uploads/2016/12/Called-Out-Book-Full.pdf" target="_blank">&quot;Called Out&quot;</a> (PDF).<br>Also, check out
                     <a href="http://youversion.com" target="_blank">YouVersion</a>, a Bible app for your phone or tablet.
                 </p>
 
