@@ -41,9 +41,9 @@ $new_years_times = $campus->new_years_times;
             <div class="HolidayTimesSection-container">
                 <h2 class="HolidayTimesSection-title">Christmas @if ($new_years_times) and New Year's @endif Service Times</h2>
                 <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
-                <p class="HolidayTimesSection-text">
-                    * fpKids will serve Pre-K only during all Christmas service times.
-                </p>
+                {{--<p class="HolidayTimesSection-text">--}}
+                    {{--* fpKids will serve Pre-K only during all Christmas service times.--}}
+                {{--</p>--}}
                 {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Christmas Services.</p>--}}
                 <ul class="HolidayTimesSection-schedule">
                     @if ($christmas_times)
