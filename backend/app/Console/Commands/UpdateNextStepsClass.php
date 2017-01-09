@@ -37,7 +37,7 @@ class UpdateNextStepsClass extends Command {
     public function handle() {
 
         $second_sunday = new Carbon('second sunday of this month');
-        if ($second_sunday->isPast()) {
+        if ($second_sunday->endOfDay()->isPast()) {
             $second_sunday = new Carbon('second sunday of next month');
         }
 
