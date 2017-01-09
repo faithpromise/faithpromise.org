@@ -18,8 +18,10 @@ class CreateStudiesTable extends Migration {
             $table->text('description')->nullable();
             $table->char('gender', 1)->nullable();
             $table->string('image', 50)->nullable();
-            $table->string('length', 20)->nullable();
             $table->tinyInteger('sort')->unsigned()->default(255);
+            $table->string('cost', 30)->nullable();
+            $table->tinyInteger('weeks')->nullable();
+            $table->decimal('session_length', 2, 1)->nullable();
             $table->timestamps();
         });
     }
