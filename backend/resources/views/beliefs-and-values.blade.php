@@ -18,19 +18,6 @@
     <p>Our strategy is to create relevant environments where people can meet with God, experience community with believers, and reach their potential.</p>
     @endintrosection
 
-    @textsection(['title' => '2016 Goals', 'class' => 'Section--lightGrey'])
-    <p>The Senior Staff of Faith Promise prayerfully consider goals for each year. Here are our goals for 2016:</p>
-    <ul class="List">
-        <li>Launching a campus in Loudon County</li>
-        <li>Launch of our God Behind Bars Prison Campus</li>
-        <li>900 Baptisms</li>
-        <li>One-Year Bible Reading Plan</li>
-        <li>Average Attendance of 7,000</li>
-        <li>50 New Groups</li>
-        <li>Launch of our Elevate leadership development program</li>
-    </ul>
-    @endtextsection
-
     @textsection(['title' => 'Our Values', 'id' => 'values'])
     <h5>People are our priority:</h5>
     <p>We believe that the lost matter more! Jesus said, <em>"Leave the ninety-nine and go and find the one lost sheep."</em> His commission is clear to all Christ followers: <em>"Make disciples of all nations...."</em> We will do everything better in heaven except win the lost. Our focus is not buildings or programs, but people. Jesus died for people, and they are our priority. We will continue to add sites, seats, and services to make it hard to go to hell from East Tennessee.</p>
