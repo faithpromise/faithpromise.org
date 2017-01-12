@@ -81,6 +81,6 @@
 
     @endif
 
-    @include('partials.have_questions', ['email' => 'jenniferp@faithpromise.org', 'text' => 'If you have questions about a group or ways to get involved, please contact #email#', 'class' => 'Section--lightGrey'])
+    @include('partials.have_questions', ['email' => 'KellyC@faithpromise.org', 'text' => 'If you have questions about a group or ways to get involved, please contact #email#', 'class' => 'Section--lightGrey'])
 
 @endsection

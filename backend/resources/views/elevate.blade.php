@@ -20,6 +20,6 @@
 
     @endforeach
 
-    @include('partials.have_questions', ['email' => 'JenniferR@faithpromise.org', 'text' => 'If you have questions about Elevate, please contact #email#'])
+    @include('partials.have_questions', ['email' => 'ChuckC@faithpromise.org', 'text' => 'If you have questions about Elevate, please contact #email#'])
 
 @endsection

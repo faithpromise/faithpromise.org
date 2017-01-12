@@ -50,11 +50,7 @@
     ================================================================================ --}}
 
     {{--TODO: Change this to have_questions partial--}}
-    @textsection(['title' => 'Need Help?'])
-    <p>If none of the other options have been helpful to you, we'd be glad to help you find a group. Email Jennifer Patrick at
-        <a href="mailto:jenniferp@faithpromise.org">jenniferp@faithpromise.org</a> . Please include the nights that work best for you and a little about yourself (where you live, children, marital status, etc.).
-    </p>
-    @endtextsection
+    @include('partials.have_questions', ['email' => 'KellyC@faithpromise.org', 'text' => 'If none of the other options have been helpful to you, we\'d be glad to help you find a group. Please email #email# and include the nights that work best for you and a little about yourself (where you live, children, marital status, etc.).', 'class' => 'Section--lightGrey'])
 
 
     {{--
