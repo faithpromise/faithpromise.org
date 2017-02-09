@@ -20,7 +20,7 @@ class BiblePlanController extends BaseController {
         $selected_date = Carbon::createFromFormat('Y/F/j', $date_str)->startOfDay();
         $day_of_year = $selected_date->dayOfYear + 1; // Zero based
         $calendar_data = $this->getCalendarData($selected_date->month);
-        $passages = BiblePlan::where('day', '=', $day_of_year)->get();
+        $passages = BiblePlan::where('day', '=', $day_of_year)->orderBy('sort')->get();
 
         BibleApi::loadPassages($passages);
 
