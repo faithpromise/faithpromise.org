@@ -39,6 +39,7 @@ Route::get('/fpkids/worship', ['as' => 'fpKidsWorship', 'uses' => 'MinistriesCon
 Route::get('/kid-steps', ['as' => 'kidSteps', 'uses' => 'MainController@defaultPage']);
 Route::get('/dedications', ['as' => 'dedications', 'uses' => 'MainController@defaultPage']);
 Route::get('/fpstudents', ['as' => 'fpStudents', 'uses' => 'MinistriesController@defaultMinistryPage']);
+Route::get('/fpstudents/fusion', ['as' => 'fpStudentsFusion', 'uses' => 'MinistriesController@fusion']);
 Route::get('/prayer', ['as' => 'prayer', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/worship', ['as' => 'worship', 'uses' => 'MinistriesController@defaultMinistryPage']);
 Route::get('/celebrate', ['as' => 'celebrate', 'uses' => 'MinistriesController@defaultMinistryPage']);
@@ -94,6 +95,7 @@ Route::get('/jobs', ['as' => 'jobs', 'uses' => 'JobsController@index']);
 Route::get('/jobs/{job_slug}', ['as' => 'jobDetail', 'uses' => 'JobsController@detail']);
 Route::get('/stable-boy', ['as' => 'stableBoy', 'uses' => 'MainController@defaultPage']);
 Route::get('/infuse', ['as' => 'infuse', 'uses' => 'MainController@infuse']);
+Route::get('/infuse/training', ['as' => 'infuse', 'uses' => 'MainController@infuseTraining']);
 Route::get('/elevate', ['as' => 'elevate', 'uses' => 'MainController@elevate']);
 Route::get('/elevate.rss', ['as' => 'elevateRss', 'uses' => 'MainController@elevateRss']);
 Route::get('/christmas', ['as' => 'christmas', 'uses' => 'MainController@christmas']);

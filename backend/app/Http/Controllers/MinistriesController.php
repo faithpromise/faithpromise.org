@@ -46,6 +46,10 @@ class MinistriesController extends BaseController {
         ]);
     }
 
+    public function fusion() {
+        return view('fpstudents-fusion');
+    }
+
     public function creative() {
 
         $jobs = Job::withPrivate()->whereDepartment('Creative')->get();
