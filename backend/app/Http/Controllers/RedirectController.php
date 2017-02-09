@@ -174,4 +174,8 @@ class RedirectController extends BaseController {
         return redirect('https://docs.google.com/spreadsheets/d/1RxpnSoGQFgNbGAJAY-1BiZINNcngTpEEn3aa0Nu9L1w/edit?usp=sharing');
     }
 
+    public function fusion() {
+        return redirect('/fpstudents/fusion');
+    }
+
 }

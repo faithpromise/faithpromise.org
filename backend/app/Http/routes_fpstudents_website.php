@@ -18,4 +18,6 @@ Route::group(['domain' => config('site.students_domain')], function () {
     Route::get('/events', 'Students\UpdatesController@index');
     Route::get('/events/{event}', 'Students\UpdatesController@detail');
 
+    Route::get('/fusion', 'MinistriesController@fusion');
+
 });
