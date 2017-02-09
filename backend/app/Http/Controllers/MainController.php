@@ -40,6 +40,12 @@ class MainController extends BaseController {
         ]);
     }
 
+    public function infuseTraining() {
+        return view('infuse-training', [
+            'lessons' => Post::whereType('infuse_lesson')->orderBy('sort')->get()
+        ]);
+    }
+
     public function elevate() {
         return view('elevate', [
             'elevate_lessons' => Post::whereType('elevate_lesson')->orderBy('sort')->get()
