@@ -13,6 +13,7 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <title>{{ isset($title) ? ($title . ' - '. $site['title']) : $site['title'] }}</title>
         <meta name="description" content="{{ isset($description) ? $description : $site['description'] }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="hbqvrQMid1Tpy4mlqi-wtEVGpcZ-tlZ5P_28dOhUgQU">
         <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current()  }}">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
