@@ -76,9 +76,7 @@ $ways_to_give = collect([
             </div>
             <div class="FinAccountability-text">
                 <p class="FinAccountability-info">Faith Promise Church is accredited by the Evangelical Council for Financial Accountability. Founded in 1979, ECFA provides accreditation to leading Christian nonprofit organizations that faithfully demonstrate compliance with established standards for financial accountability, transparency, fundraising, and board governance.</p>
-                <a class="FinAccountability-link" href="https://www.dropbox.com/sh/sx2egabgixvg0u4/AABmPJji1MEi8YCDBfHqET5Ka">Yearly Audited Statements</a>
-                <span class="FinAccountability-linkDivider">&middot;</span>
-                <a class="FinAccountability-link" href="https://www.dropbox.com/sh/zr8f9pzot60yor7/AABdL8h3kNFADDN9KHHi-1hoa">Financial Statement</a>
+                <a class="FinAccountability-link" href="https://www.dropbox.com/sh/hxgbgmb1n90iiz0/AAAkE3UvzhexANAg3lcMBekfa?dl=0">Yearly Audited &amp; Financial Statements</a>
             </div>
         </div>
     </div>
