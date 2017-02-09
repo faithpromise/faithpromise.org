@@ -10,6 +10,7 @@ if ($directive['execution_mode'] == 'start'):
             'subtitle' => '',
             'class' => '',
             'image' => '',
+            'image_url' => '',
             'buttons' => []
         ], $directive["args"]
     );
@@ -34,7 +35,7 @@ if ($directive['execution_mode'] == 'start'):
         </p>
     <?php endif; ?>
     </div><!-- // END .PhotoSection-text -->
-    <div class="PhotoSection-photo">
+    <?php if($args['image_url']): ?><a class="PhotoSection-photo" href="<?= $args['image_url'] ?>"><?php else: ?><div class="PhotoSection-photo"><?php endif; ?>
         <img
             class="lazyload"
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -48,7 +49,7 @@ if ($directive['execution_mode'] == 'start'):
                 (min-width: 960px) 50vw,
                 100vw
             ">
-    </div><!-- // END .PhotoSection-video -->
+    <?php if(!$args['image_url']): ?></div>><?php else: ?></a><?php endif; ?><!-- // END .PhotoSection-video -->
     </div><!-- // END .PhotoSection-wrap -->
     </div><!-- // END .PhotoSection-container -->
     </div><!-- // END .PhotoSection -->
