@@ -10,7 +10,6 @@ Route::get('/groupleaders', 'RedirectController@groupLeaders');
 Route::get('/children', 'RedirectController@fpKids');
 Route::get('/kidscamp', 'RedirectController@fpKidsCamp');
 Route::get('/fpkidscamp', 'RedirectController@fpKidsCamp');
-Route::get('/fusion', 'RedirectController@fusion');
 Route::get('/students', 'RedirectController@fpStudents');
 Route::get('/kidknex', 'RedirectController@fpKids');
 Route::get('/promisekids', 'RedirectController@fpKids');

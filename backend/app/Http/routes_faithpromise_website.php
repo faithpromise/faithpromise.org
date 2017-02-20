@@ -102,6 +102,9 @@ Route::get('/christmas', ['as' => 'christmas', 'uses' => 'MainController@christm
 Route::get('/easter', ['as' => 'easter', 'uses' => 'MainController@easter']);
 Route::get('/easter/times.json', ['uses' => 'MainController@easterTimes']);
 
+// This redirect should only happen on the FP site, not the students site
+Route::get('/fusion', 'RedirectController@fusion');
+
 // Bible plan
 Route::get('/bible-plan', ['as' => 'biblePlan', 'uses' => 'BiblePlanController@index']);
 Route::get('/bible-plan/{month}-{day}', ['as' => 'biblePlanDay', 'uses' => 'BiblePlanController@day']);
