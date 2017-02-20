@@ -2,7 +2,7 @@
 
 use Carbon\Carbon;
 
-$event_is_full = false;
+$event_is_full = true;
 $event_cost = 50;
 
 $event_begin = Carbon::create(2017, 2, 24, 0, 0, 0, 'America/New_York');
@@ -53,7 +53,7 @@ function event_date_range(Carbon $event_begin, Carbon $event_end)
     @elseif ($event_begin->isPast())
         <p>We return from Fusion on {{ $event_end->format('l, F d ') }}.</p>
     @elseif ($event_is_full)
-        <p>Fusion registration is now full.</p>
+        <p>Fusion registration is now closed. If you have questions please contact us at <a href="mailto:fpsglobal@faithpromise.org">fpsglobal@faithpromise.org</a>.</p>
     @else
         <p>Fusion is an overnight event for ALL students <span class="no-wrap">6th - 12th</span> grade. At fpStudents we believe our true IDENTITY comes from God’s Word and not the world. We want to see this generation thrive in Christ. This weekend they will learn how to do that through community, live worship, and Biblical teaching.</p>
     @endif
