@@ -67,9 +67,9 @@ $faq = [
         <h5>Let's get you registered for the <span ng-show="answer == 'non-attender-pel'">Pellissippi</span><span ng-show="answer == 'non-attender-blount'">Blount</span> <span ng-show="answer == 'non-attender-north'">North Knox</span> Campus</h5>
         <p class="text-constrain-compact">
             If you're not a regular attender or part of the Core team at Faith Promise Church, please
-            <a ng-show="answer == 'non-attender-pel'" href="https://www.willowcreek.com/events/leadership/reg1.asp?event_id=EV-LSS1608-MAIN-269" target="_blank">register here</a>
-            <a ng-show="answer == 'non-attender-blount'" href="https://www.willowcreek.com/events/leadership/reg1.asp?event_id=EV-LSS1608-MAIN-343" target="_blank">register here</a>
-            <a ng-show="answer == 'non-attender-north'" href="https://www.willowcreek.com/events/leadership/reg1.asp?event_id=EV-LSS1608-MAIN-453" target="_blank">register here</a>.
+            <a ng-show="answer == 'non-attender-pel'" href="https://www.willowcreek.com/rega/#/reg/trans/one?invtID=EV-LSS1708-MAIN-269" target="_blank">register here</a>
+            <a ng-show="answer == 'non-attender-blount'" href="https://www.willowcreek.com/rega/#/reg/trans/one?invtID=EV-LSS1708-MAIN-343" target="_blank">register here</a>
+            <a ng-show="answer == 'non-attender-north'" href="https://www.willowcreek.com/rega/#/reg/trans/one?invtID=EV-LSS1708-MAIN-453" target="_blank">register here</a>.
         </p>
         <p><span class="link" ng-click="answer = null">Start Over</span></p>
     </div>
