@@ -54,11 +54,6 @@ return [
             'title'  => 'Ministries',
             'subnav' => [
                 [
-                    'title' => 'Family Ministry',
-                    'url'   => '/family',
-                    'id'    => 'family'
-                ],
-                [
                     'title' => 'Children',
                     'url'   => '/fpkids',
                     'id'    => 'fpkids'
