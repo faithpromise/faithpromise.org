@@ -41,7 +41,7 @@
     <p>If you're ready to commit your life to Jesus, you can do that in a couple of ways:</p>
     <ol>
         <li>You can pray where you are.  Tell God that you're sorry for the things you've done and for turning your back on Him.  Tell Him that you believe that He died and rose again because of your sins, and ask Him to save you.  Tell Him that you're turning away from your sins.  Tell Him that you need His presence to guide you through life.  Tell God that you're giving Him your whole life.  Thank Him for loving you and offering you salvation.</li>
-        <li>If you'd prefer to pray with someone about this, one of our staff would be glad to do that with you.  While we may not be able to respond immediately, we will do our best to contact you within one business day of receiving your request.  Please contact <a href="mailto:MilesC@faithpromise.org" class="nowrap">Miles Creasman</a>, and he will have someone get in touch with you.</li>
+        <li>If you'd prefer to pray with someone about this, one of our staff would be glad to do that with you.  While we may not be able to respond immediately, we will do our best to contact you within one business day of receiving your request.  Please email <a href="mailto:nextsteps@faithpromise.org" class="nowrap">nextsteps@faithpromise.org</a>, and we will have someone get in touch with you.</li>
     </ol>
     @endtextsection
 
