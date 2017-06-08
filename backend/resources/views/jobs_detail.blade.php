@@ -31,7 +31,7 @@
                 {!! $job->description !!}
                 <hr>
                 <h1>Interested?</h1>
-                <p>If you're interested in this opportunity we'd love to hear from you. Please take a moment and send us your contact information along with anything else you'd like us to know.</p>
+                <p>If you're interested in this opportunity we'd love to hear from you. Please take a moment and send us your resume and contact information along with anything else you'd like us to know.</p>
                 <a class="Job-button Button" href="mailto:{{ $job->contact->email }}?subject={{ 'Job Opportunity: ' . urlencode($job->title) }}">Contact {{ $job->contact->name }}</a>
                 @if (!$other_jobs_available)
                 &nbsp; <a class="Job-button Button" href="{{ route('jobs') }}">See Other Opportunities</a>
