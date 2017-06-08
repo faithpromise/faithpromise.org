@@ -178,4 +178,8 @@ class RedirectController extends BaseController {
         return redirect('/fpstudents/fusion');
     }
 
+    public function dinner() {
+        return redirect('https://www.cognitoforms.com/FaithPromiseChurch/NorthKnoxCoreMembersDinner');
+    }
+
 }
