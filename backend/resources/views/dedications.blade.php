@@ -60,7 +60,7 @@ $faq = [
                 ],
                 [
                     'title' => 'Blount Campus',
-                    'url' => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=VAbtZ3YvowGFSi/UiBQdkA==&cCode=RtKBDolfiPuZJp8o1+0ARA=='
+                    'url' => 'https://fpctystn.infellowship.com/Forms/360188'
                 ],
                 [
                     'title' => 'Campbell Campus',
@@ -68,7 +68,7 @@ $faq = [
                 ],
                 [
                     'title' => 'North Knox Campus',
-                    'url' => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=O3MuVsfv4zSsJalzVuPGag==&cCode=RtKBDolfiPuZJp8o1+0ARA=='
+                    'url' => 'https://fpctystn.infellowship.com/Forms/360149'
                 ],
                 [
                     'title' => 'Pellissippi Campus',
