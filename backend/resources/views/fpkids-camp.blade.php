@@ -2,10 +2,10 @@
 
 use Carbon\Carbon;
 
-$camp_is_full = false;
+$camp_is_full = true;
 $camp_cost = 260;
 $early_bird_discount = 25;
-$early_bird_last_day = Carbon::create(2017, 10, 14, 23, 59, 59, 'America/New_York');
+$early_bird_last_day = Carbon::create(2017, 03, 14, 23, 59, 59, 'America/New_York');
 $payment_plan_last_day = Carbon::create(2017, 4, 30, 23, 59, 59, 'America/New_York');
 
 $depart_at = Carbon::create(2017, 6, 19, 0, 0, 0, 'America/New_York');
@@ -92,7 +92,7 @@ $faq = [
         <p>We return from Summer Camp on {{ $return_at->format('l, F d ') }} at {{ $return_at->format('g:i A') }}. Please join us at that time for a final celebration. For regular updates, videos and pictures, follow us on Facebook
             <a href="http://facebook.com/fpkids">facebook.com/fpkids</a>.</p>
     @elseif ($camp_is_full)
-        <p>Kids Camp is currently full, but you can be added to the <a class="no-wrap" href="{{ $waiting_list_url }}">waiting list</a>.</p>
+        <p>If you have questions about camp registration please call the fpKIDS office at 865-251-2590.</p>
     @else
         <p>Kids Camp is for rising 3rd to 6th grade (completed 2nd through 5th grade) and will happen at the amazing
             <a href="{{ $location_url }}" target="_blank">{{ $location }}</a> in {{ $location_city }}.</p>
@@ -102,14 +102,28 @@ $faq = [
     <p>
         @if ($depart_at->isPast())
             <a class="Button" href="{{ $photos_url }}">Camp Photos</a>
-        @elseif ($camp_is_full)
-            <a class="Button" href="{{ $waiting_list_url }}">Waiting List</a>
         @else
+            @if (!$camp_is_full)
             <a class="Button" href="{{ $registration_url }}">Register Today!</a>
+            @endif
             <a class="Button" href="{{ doc_url('fpkids/Camp-Rally-Documents.pdf') }}">Camper Documents</a>
         @endif
     </p>
     @endvideosection
+
+    @bgsection([
+        'title' => 'Scholarship Donations',
+        'image' => 'images/fpkids/wall-signatures-tall.jpg',
+        'class' => 'BackgroundSection--right',
+        'buttons' => [
+            [
+                'title' => 'Donate Here',
+                'url' => 'https://fpctystn.infellowship.com/Forms/357507'
+            ]
+        ]
+    ])
+    <p>We want every single kid to have a chance to attend fpKids Summer Camp. By donating any amount for scholarships, you are making it possible for one more kid to experience Jesus in an amazing new way. You will be a part of their story that God is telling by simply helping them attend!</p>
+    @endbgsection
 
     <style>
         .CampAlbum {
