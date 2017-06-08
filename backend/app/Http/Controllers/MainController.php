@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use FaithPromise\Shared\Models\Campus;
 use FaithPromise\Shared\Models\Event;
 use FaithPromise\Shared\Models\Post;
@@ -17,6 +18,10 @@ class MainController extends BaseController {
 
     public function index() {
 
+        $current_time = Carbon::now()->timezone('America/New_York');
+        $show_easter_end = Carbon::createFromDate(2017, 4, 17, 'America/New_York')->startOfDay();
+        $show_easter = $current_time->lt($show_easter_end);
+
         $current_series = Series::currentSeries()->first();
         $events = Event::featured()->get()->sortBy('sort');
         $icampus_times = Campus::findBySlug('online')->formatted_times;
@@ -24,7 +29,8 @@ class MainController extends BaseController {
         return view('home', [
             'current_series' => $current_series,
             'events'         => $events,
-            'icampus_times'  => $icampus_times
+            'icampus_times'  => $icampus_times,
+            'show_easter'    => $show_easter,
         ]);
     }
 
@@ -36,24 +42,25 @@ class MainController extends BaseController {
 
     public function infuse() {
         return view('infuse', [
-            'signups' => Post::whereType('infuse_signup')->orderBy('sort')->get()
+            'signups' => Post::whereType('infuse_signup')->orderBy('sort')->get(),
         ]);
     }
 
     public function infuseTraining() {
         return view('infuse-training', [
-            'lessons' => Post::whereType('infuse_lesson')->orderBy('sort')->get()
+            'lessons' => Post::whereType('infuse_lesson')->orderBy('sort')->get(),
         ]);
     }
 
     public function elevate() {
         return view('elevate', [
-            'elevate_lessons' => Post::whereType('elevate_lesson')->orderBy('sort')->get()
+            'elevate_lessons' => Post::whereType('elevate_lesson')->orderBy('sort')->get(),
         ]);
     }
 
     public function elevateRss() {
         $content = View::make('elevate-rss');
+
         return Response::make($content, '200')->header('Content-Type', 'text/xml');
     }
 
@@ -62,7 +69,7 @@ class MainController extends BaseController {
         $posts = Post::byLocation('easter-page')->get();
 
         return view('easter', [
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 
@@ -71,7 +78,7 @@ class MainController extends BaseController {
         $posts = Post::byLocation('christmas-page')->get();
 
         return view('christmas', [
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 
@@ -80,7 +87,7 @@ class MainController extends BaseController {
         $ministers = Post::whereType('stephen_minister')->get();
 
         return view('stephen', [
-            'ministers' => $ministers
+            'ministers' => $ministers,
         ]);
     }
 
