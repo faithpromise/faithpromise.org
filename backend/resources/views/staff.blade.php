@@ -21,4 +21,6 @@
     @endprofilessection
 @endforeach
 
+<p style="text-align: center; margin: 2em;"><img style="width:6.25em" src="{{ cdn_image_raw('images/general/best-christian-workplace.png') }}"></p>
+
 @endsection
