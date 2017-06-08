@@ -10,6 +10,7 @@
     @else
         <p>There are currently no openings at this time, but check back again because we are always looking for great talent!</p>
     @endif
+    <p style="text-align: center"><img style="width:6.25em" src="{{ cdn_image_raw('images/general/best-christian-workplace.png') }}"></p>
     @endintrosection
 
     @cardsection(['title' => 'Current Opportunities', 'class' => 'Section--lightGrey', 'cards' => $jobs])
