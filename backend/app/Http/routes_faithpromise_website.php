@@ -102,6 +102,7 @@ Route::get('/elevate.rss', ['as' => 'elevateRss', 'uses' => 'MainController@elev
 Route::get('/christmas', ['as' => 'christmas', 'uses' => 'MainController@christmas']);
 Route::get('/easter', ['as' => 'easter', 'uses' => 'MainController@easter']);
 Route::get('/easter/times.json', ['uses' => 'MainController@easterTimes']);
+Route::get('/new-fam-gift', ['uses' => 'MainController@defaultPage']);
 
 // This redirect should only happen on the FP site, not the students site
 Route::get('/fusion', 'RedirectController@fusion');
