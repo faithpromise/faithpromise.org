@@ -122,6 +122,11 @@ class MainController extends BaseController {
             }
         };
 
+        // Locations
+        if ($campus = Campus::where('slug', '=', $request->path())->first())
+            return redirect($campus->url);;
+
+
         // Events
         $event = Event::whereRaw("replace(slug, '-', '') = '" . $request->path() . "'")->first();
         if ($event) {
