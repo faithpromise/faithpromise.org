@@ -18,19 +18,23 @@ $new_years_times = $campus->new_years_times;
             <div class="HolidayTimesSection-container">
                 <h2 class="HolidayTimesSection-title">Easter Service Times at {{ $campus->name }}</h2>
                 <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
-
-                {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Easter Services.</p>--}}
+                <p class="HolidayTimesSection-text">We're excited to have you visit Faith Promise this Easter. Be sure and check out our
+                    <a class="no-wrap" href="/easter">Easter page</a> for more about our original Easter short film, &quot;Wild Love.&quot;
+                </p>
                 <ul class="HolidayTimesSection-schedule">
                     @foreach($easter_times as $time)
                         <li class="HolidayTimesSection-service">
                             <span class="HolidayTimesSection-day">{!! $time->day !!}</span><br>
                             <span class="HolidayTimesSection-time">{!! $time->formatted_times !!}</span>
+                            @if (isset($time->egg_hunt))
+                                <p class="HolidayTimesSection-dayMessage">Egg Hunt after @if(count($time->times) > 1) each @endif {{ substr($time->day, 0, 3) }}. service!</p>
+                            @endif
                         </li>
                     @endforeach
                 </ul>
-                {{--<p>--}}
-                {{--<a class="Button Button--light">More About Easter</a>--}}
-                {{--</p>--}}
+                <p>
+                    <a class="Button Button--light" href="/easter">More About Easter</a>
+                </p>
             </div>
         </div>
     @endif
@@ -42,7 +46,7 @@ $new_years_times = $campus->new_years_times;
                 <h2 class="HolidayTimesSection-title">Christmas @if ($new_years_times) and New Year's @endif Service Times</h2>
                 <h3 class="HolidayTimesSection-campus">{{ $campus->full_name }}</h3>
                 {{--<p class="HolidayTimesSection-text">--}}
-                    {{--* fpKids will serve Pre-K only during all Christmas service times.--}}
+                {{--* fpKids will serve Pre-K only during all Christmas service times.--}}
                 {{--</p>--}}
                 {{--<p class="HolidayTimesSection-text">We're excited for you to visit one of our Christmas Services.</p>--}}
                 <ul class="HolidayTimesSection-schedule">
@@ -87,10 +91,10 @@ $new_years_times = $campus->new_years_times;
             <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
         @endforeach
         @if($christmas_times)
-            <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
+            <p>(See our special <a href="#christmas-times">Christmas times</a>)</p>
         @endif
         @if($easter_times)
-            <p>(See below for special <a href="#easter-times">Easter times</a>)</p>
+            <p>(See our special <a href="#easter-times">Easter times</a>)</p>
         @endif
         @endintrosection
 
@@ -118,10 +122,10 @@ $new_years_times = $campus->new_years_times;
             @endforeach
         </p>
         @if($christmas_times)
-            <p>(See below for special <a href="#christmas-times">Christmas times</a>)</p>
+            <p>(See our special <a href="#christmas-times">Christmas times</a>)</p>
         @endif
         @if($easter_times)
-            <p>(See below for special <a href="#easter-times">Easter times</a>)</p>
+            <p>(See our special <a href="#easter-times">Easter times</a>)</p>
         @endif
         @endintrosection
 

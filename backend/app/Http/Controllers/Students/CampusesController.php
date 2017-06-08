@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Students;
 
+use FaithPromise\Shared\Models\Campus;
 use FaithPromise\Shared\Models\StudentCampus;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -36,6 +37,16 @@ class CampusesController extends BaseController {
             'campuses' => $campuses,
             'campuses_json' => json_encode($campus_obj)
         ]);
+    }
+
+    public function farragut() {
+
+        $campus = Campus::withTrashed()->whereSlug('farragut')->first();
+
+        return view('locations_farragut', [
+            'campus' => $campus,
+        ]);
+
     }
 
     public function detail($campus) {
