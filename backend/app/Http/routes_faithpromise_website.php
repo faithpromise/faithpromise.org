@@ -58,7 +58,6 @@ Route::get('/groups/alignments', ['as' => 'groupAlignments', 'uses' => 'GroupsCo
 Route::get('/men', ['as' => 'men', 'uses' => 'GroupsController@men']);
 Route::get('/women', ['as' => 'women', 'uses' => 'GroupsController@women']);
 Route::get('/young-adults', ['as' => 'youngAdults', 'uses' => 'MinistriesController@defaultMinistryPage']);
-Route::get('/starting-point', ['as' => 'startingPoint', 'uses' => 'MainController@defaultPage']);
 
 // Missions
 Route::get('/missions', ['as' => 'missions', 'uses' => 'MissionsController@index']);
