@@ -2,11 +2,29 @@
 
 @section('content')
 
-    @heroimage ([
-        'image' => $current_series->home_image,
+    @if ($show_easter)
+        <a id="to_wild_love_from_hero" href="/easter" title="Wild Love">
+            <picture>
+                <source media="(min-width: 1200px)" srcset="
+                http:<?= resized_image_url('images/series/wild-love-wide.jpg', 1920, 'wide') ?> 1920w,
+                http:<?= resized_image_url('images/series/wild-love-wide.jpg', 1680, 'wide') ?> 1680w,
+                http:<?= resized_image_url('images/series/wild-love-wide.jpg', 1280, 'wide') ?> 1280w
+            ">
+                <source srcset="
+                http:<?= resized_image_url('images/series/wild-love-tall.jpg', 1280, 'tall') ?> 1280w,
+                http:<?= resized_image_url('images/series/wild-love-tall.jpg', 800, 'tall') ?> 800w,
+                http:<?= resized_image_url('images/series/wild-love-tall.jpg', 480, 'tall') ?> 480w
+            ">
+                <img alt="Wild Love">
+            </picture>
+        </a>
+    @else
+        @heroimage ([
+        'image' => $current_series->image,
         'title' => 'Current Sermon Series: ' . $current_series->title,
         'url' => $current_series->url
     ])
+    @endif
 
     <div class="WelcomeBar">
         <div class="WelcomeBar-container">
