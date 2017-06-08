@@ -26,7 +26,7 @@ Route::get('/events/{event}', ['as' => 'event', 'uses' => 'EventsController@even
 
 // Campuses / Locations
 Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@index']);
-Route::get('/locations/loudon', ['uses' => 'CampusesController@loudon']);
+Route::get('/locations/farragut', ['uses' => 'CampusesController@farragut']);
 Route::get('/locations/{campus}', ['as' => 'location', 'uses' => 'CampusesController@detail']);
 
 // Ministries
@@ -50,6 +50,7 @@ Route::get('/groups', ['as' => 'groups', 'uses' => 'GroupsController@index']);
 Route::get('/groups/search', ['as' => 'groupSearch', 'uses' => 'GroupsController@search']);
 Route::get('/groups/short-term', ['as' => 'studies', 'uses' => 'GroupsController@studies']);
 Route::get('/groups/short-term/{study}', ['as' => 'studyDetail', 'uses' => 'GroupsController@studyDetail']);
+Route::get('/starting-point', ['as' => 'startingPoint', 'uses' => 'GroupsController@startingPoint']);
 Route::get('/groups/new-leader', ['as' => 'newGroupLeader', 'uses' => 'GroupsController@newLeader']);
 Route::get('/groups/leaders', ['as' => 'groupLeaders', 'uses' => 'GroupsController@leaders']);
 Route::get('/groups/training', ['as' => 'groupTraining', 'uses' => 'GroupsController@training']);

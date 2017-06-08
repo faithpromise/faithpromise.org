@@ -58,6 +58,18 @@ class GroupsController extends BaseController {
 
     }
 
+    public function startingPoint() {
+
+        $times = StudyTime::with('campus')->where('study_id', '=', 13)->get()->sortBy(function ($studyTime) {
+            return $studyTime->campus->name . $studyTime->starts_at->format(Carbon::ISO8601);
+        });
+
+        return view('starting-point', [
+            'times' => $times
+        ]);
+
+    }
+
     public function leaders() {
 
         $resources = Post::where('type', '=', 'group_leader_resource')->orderBy('sort', 'asc')->get();
