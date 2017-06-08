@@ -50,7 +50,7 @@ $baptism_registration = [
     @videosection([
         'title' => 'Online Baptism Workshop',
         'class' => '',
-        'video' => '181801118',
+        'video' => '207319387',
         'buttons' => [
             [
                 'title' => 'Worksheet',
