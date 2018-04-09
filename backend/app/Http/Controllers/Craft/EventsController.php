@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Craft;
 use Carbon\Carbon;
 use FaithPromise\Shared\Models\Post;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class EventsController extends Controller {
 

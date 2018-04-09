@@ -80,16 +80,18 @@ $new_years_times = $campus->new_years_times;
             'buttons' => [
                 [
                     'title' => 'Watch Online',
-                    'url' => 'http://icampus.faithpromise.org'
+                    'url' => 'http://online.faithpromise.org'
                 ]
             ]
         ])
-        <p>We'd love to see you this weekend on our Internet Campus. You'll experience dynamic worship, an engaging message, and live chat.</p>
+        <p>We'd love to see you this weekend on our Online Campus. You'll experience dynamic worship, an engaging message, and live chat.</p>
         <strong>Regular service times are:</strong><br>
-        @foreach($campus->times as $time)
-            <span class="ServiceTimes-day">{!! $time->day !!}</span> at
-            <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
-        @endforeach
+        <p>
+            @foreach($campus->times as $time)
+                <span class="ServiceTimes-day">{!! $time->day !!}</span> at
+                <span class="ServiceTimes-time">{!! $time->formatted_times !!}</span><br>
+            @endforeach
+        </p>
         @if($christmas_times)
             <p>(See our special <a href="#christmas-times">Christmas times</a>)</p>
         @endif

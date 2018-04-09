@@ -2,16 +2,16 @@
 
 use Carbon\Carbon;
 
-$event_is_full = true;
+$event_is_full = false;
 $event_cost = 50;
 
-$event_begin = Carbon::create(2017, 2, 24, 0, 0, 0, 'America/New_York');
-$event_end = Carbon::create($event_begin->year, $event_begin->month, 26, 0, 0, 0, 'America/New_York');
+$event_begin = Carbon::create(2018, 2, 23, 0, 0, 0, 'America/New_York');
+$event_end = Carbon::create($event_begin->year, $event_begin->month, 25, 0, 0, 0, 'America/New_York');
 
-//$event_begin = Carbon::create(2017, 2, 8, 0, 0, 0, 'America/New_York');
+//$event_begin = Carbon::create(2018, 2, 8, 0, 0, 0, 'America/New_York');
 //$event_end = Carbon::create($event_begin->year, $event_begin->month, 10, 0, 0, 0, 'America/New_York');
 
-$registration_url = 'https://fpctystn.infellowship.com/Forms/344489';
+$registration_url = 'https://fpctystn.infellowship.com/Forms/364760';
 
 function event_date_range(Carbon $event_begin, Carbon $event_end)
 {
@@ -32,7 +32,7 @@ function event_date_range(Carbon $event_begin, Carbon $event_end)
 
 ?>
 
-@extends('layouts.page', ['title' => 'Fusion - fpStudents', 'hero_image' => 'images/pages/fusion-wide.jpg'])
+@extends('layouts.page', ['title' => 'Fusion - fpStudents', 'hero_image' => 'images/events/fusion-wide.jpg'])
 
 @section('page')
 
@@ -41,7 +41,7 @@ function event_date_range(Carbon $event_begin, Carbon $event_end)
         Intro
         ========================================
     --}}
-    @videosection(['title' => 'Fusion Weekend ' . $event_begin->format('Y'), 'video' => '201307587'])
+    @introsection(['title' => 'Fusion Weekend ' . $event_begin->format('Y'), 'video' => '201307587'])
     @if ($event_begin->isFuture())
         <p>
             <strong>{{ event_date_range($event_begin, $event_end) }}</strong> &nbsp;|&nbsp;
@@ -49,13 +49,13 @@ function event_date_range(Carbon $event_begin, Carbon $event_end)
         </p>
     @endif
     @if ($event_end->isPast())
-        <p>Fusion 2017 has come to an end, but the passion our students have for Christ is burning brighter than ever! We pray that the relationships formed, and newness of God's spirit will impact them in a meaningful, lasting way and that they will be a light to those around them. Next year will be just as amazing, but until then, we'll see you on Wednesday nights at fpStudents!</p>
+        <p>Fusion 2018 has come to an end, but the passion our students have for Christ is burning brighter than ever! We pray that the relationships formed, and newness of God's spirit will impact them in a meaningful, lasting way and that they will be a light to those around them. Next year will be just as amazing, but until then, we'll see you on Wednesday nights at fpStudents!</p>
     @elseif ($event_begin->isPast())
         <p>We return from Fusion on {{ $event_end->format('l, F d ') }}.</p>
     @elseif ($event_is_full)
         <p>Fusion registration is now closed. If you have questions please contact us at <a href="mailto:fpsglobal@faithpromise.org">fpsglobal@faithpromise.org</a>.</p>
     @else
-        <p>Fusion is an overnight event for ALL students <span class="no-wrap">6th - 12th</span> grade. At fpStudents we believe our true IDENTITY comes from God’s Word and not the world. We want to see this generation thrive in Christ. This weekend they will learn how to do that through community, live worship, and Biblical teaching.</p>
+        <p>Fusion is an overnight weekend retreat for ALL students <span class="no-wrap">6th - 12th</span> grade that begins on Friday evening and ends on Sunday afternoon. Your local Host Home experience will involve small group time with fellowship and lots of fun. We will have live worship each night and learn together what God has for 2018.</p>
     @endif
 
     @if ($event_begin->isFuture() && !$event_is_full)
@@ -68,7 +68,7 @@ function event_date_range(Carbon $event_begin, Carbon $event_end)
         @include('students/_event_notice')
     @endif
 
-    @endvideosection
+    @endintrosection
 
     <style>
         .CampAlbum {

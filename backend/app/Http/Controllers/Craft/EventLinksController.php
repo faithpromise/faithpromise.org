@@ -8,11 +8,16 @@ use App\Http\Controllers\Controller;
 
 class EventLinksController extends Controller {
 
-    public function index()
-    {
+    public function index() {
         $after = Carbon::create(2015, 1, 1);
         $result = [];
-        $items = Post::withExpired()->where('type', '=', 'event')->where('publish_at', '>=', $after)->whereNotNull('url')->where('site', '=', 'faithpromise')->get();
+        $items = Post::where('type', '=', 'event')
+            ->where('publish_at', '>=', $after)
+            ->whereNotNull('url')
+            ->where(function($query) {
+                $query->where('site', '=', 'faithpromise')->orWhereNull('site');
+            })
+            ->get();
 
         foreach ($items as $item) {
 

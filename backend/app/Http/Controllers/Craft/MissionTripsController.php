@@ -5,13 +5,22 @@ namespace App\Http\Controllers\Craft;
 use App\Http\Controllers\Controller;
 use FaithPromise\Shared\Models\MissionLocation;
 use FaithPromise\Shared\Models\MissionTrip;
+use Illuminate\Http\Request;
 
 class MissionTripsController extends Controller {
 
-    public function index()
-    {
+    public function index(Request $request) {
+
+        $limit = $request->get('limit', null);
+        $page = $request->get('page', null);
+        $offset = $limit ? ($page - 1) * $limit : 0;
+
         $result = [];
-        $items = MissionTrip::withPast()->get();
+        $items = MissionTrip::withPast()
+            ->orderBy('id', 'desc')
+            ->limit($limit)
+            ->offset($offset)
+            ->get();
 
         foreach ($items as $item) {
 
@@ -19,6 +28,7 @@ class MissionTripsController extends Controller {
 
             if ($location) {
                 $result[] = [
+                    'slug'               => $location->slug . '-' . $item->id,
                     'postDate'           => $item->created_at,
                     'expiryDate'         => $item->ends_at,
                     'title'              => $item->title,

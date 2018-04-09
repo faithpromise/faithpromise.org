@@ -20,5 +20,7 @@ Route::group(['prefix' => 'craft'], function () {
     Route::get('mission-trips', 'Craft\MissionTripsController@index');
     Route::get('missionaries', 'Craft\MissionariesController@index');
     Route::get('orgs', 'Craft\OrganizationsController@index');
+    Route::get('vols', 'Craft\VolunteerPositionsController@index');
+    Route::get('bible', 'Craft\BiblePlanController@index');
 
 });

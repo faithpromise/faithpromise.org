@@ -2,17 +2,17 @@
 
 use Carbon\Carbon;
 
-$camp_is_full = true;
-$camp_cost = 260;
+$camp_is_full = false;
+$camp_cost = 250;
 $early_bird_discount = 25;
 $early_bird_last_day = Carbon::create(2017, 03, 14, 23, 59, 59, 'America/New_York');
-$payment_plan_last_day = Carbon::create(2017, 4, 30, 23, 59, 59, 'America/New_York');
+$payment_plan_last_day = Carbon::create(2017, 6, 17, 23, 59, 59, 'America/New_York');
 
-$depart_at = Carbon::create(2017, 6, 19, 0, 0, 0, 'America/New_York');
-$return_at = Carbon::create($depart_at->year, $depart_at->month, 22, 18, 0, 0, 'America/New_York');
+$depart_at = Carbon::create(2018, 6, 18, 0, 0, 0, 'America/New_York');
+$return_at = Carbon::create($depart_at->year, $depart_at->month, 21, 18, 0, 0, 'America/New_York');
 
-$registration_url = 'https://fpctystn.infellowship.com/Forms/332206';
-$counselor_registration_url = 'https://fpctystn.infellowship.com/Forms/337126';
+$registration_url = 'https://fpctystn.infellowship.com/Forms/375446';
+$counselor_registration_url = 'https://fpctystn.infellowship.com/Forms/375513';
 $waiting_list_url = 'https://fpctystn.infellowship.com/Forms/323477';
 $photos_url = 'http://pix.sfly.com/PfRvGM3h';
 

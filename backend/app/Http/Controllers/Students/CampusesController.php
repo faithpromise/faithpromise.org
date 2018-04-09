@@ -33,7 +33,7 @@ class CampusesController extends BaseController {
             ];
         }
 
-        return view('locations', [
+        return view('students/locations', [
             'campuses' => $campuses,
             'campuses_json' => json_encode($campus_obj)
         ]);

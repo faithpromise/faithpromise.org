@@ -7,12 +7,14 @@ use FaithPromise\Shared\Models\Organization;
 
 class OrganizationsController extends Controller {
 
-    public function index()
-    {
+    public function index() {
         $result = [];
-        $items = Organization::all();
+        $items = Organization::withTrashed()->get();
 
         foreach ($items as $item) {
+
+            $first_name = substr($item->contact, 0, strpos($item->contact, ' '));
+            $last_name = substr($item->contact, strpos($item->contact, ' '));
 
             $result[] = [
                 'postDate'           => $item->created_at,
@@ -21,8 +23,8 @@ class OrganizationsController extends Controller {
                 'title'              => $item->name,
                 'area'               => $item->location,
                 'description'        => $item->description,
-                'contact_first_name' => substr($item->contact, 0, strpos($item->contact, ' ')),
-                'contact_last_name'  => substr($item->contact, strpos($item->contact, ' ')),
+                'contact_first_name' => $first_name ? $first_name : null,
+                'contact_last_name'  => $last_name ? $last_name : null,
                 'email'              => $item->email,
                 'phone'              => $item->phone,
                 'website'            => $item->website,

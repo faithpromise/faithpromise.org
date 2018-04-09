@@ -4,12 +4,18 @@ namespace App\Http\Controllers\Craft;
 
 use FaithPromise\Shared\Models\Staff;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class StaffController extends Controller {
-    public function index()
-    {
+
+    public function index(Request $request) {
+
+        $limit = $request->get('limit', null);
+        $page = $request->get('page', null);
+        $offset = $limit ? ($page - 1) * $limit : 0;
+
         $result = [];
-        $staff = Staff::withTrashed()->with('campus')->with('teams')->with('ministries')->get();
+        $staff = Staff::withTrashed()->with('campus')->with('teams')->with('ministries')->orderBy('id', 'desc')->limit($limit)->offset($offset)->get();
 
         $ministries_map = [
             'executive'      => 'executive',
@@ -39,8 +45,8 @@ class StaffController extends Controller {
 
             $result[] = [
                 'campus'         => $staffer->campus ? $staffer->campus->slug : null,
-                'postDate'       => $staffer->created_at,
-                'expiryDate'     => $staffer->deleted_at,
+                'postDate'       => $staffer->created_at->format('Y-m-d'),
+                'expiryDate'     => $staffer->deleted_at ? $staffer->deleted_at->format('Y-m-d') : '2050-01-01',
                 'slug'           => $staffer->slug,
                 'title'          => $staffer->display_name,
                 'firstName'      => $staffer->first_name,
@@ -53,10 +59,11 @@ class StaffController extends Controller {
                 'instagram'      => $staffer->instagram,
                 'twitter'        => $staffer->twitter,
                 'categories'     => ['ministries' => $ministries],
-                'staffPhoto'     => $staffer->has_image ? 'http://faithpromise.org/' . $staffer->image_path : null,
+                'staffPhoto'     => $staffer->has_image && !$staffer->deleted_at ? 'http://faithpromise.org/' . $staffer->image_path : null,
             ];
         }
 
         return $result;
     }
+
 }

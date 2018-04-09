@@ -12,7 +12,7 @@ class InternetCampusController extends BaseController {
 
     public function countdown() {
 
-        $api_uri = 'http://icampus.faithpromise.org/api/v1/events/current';
+        $api_uri = 'http://online.faithpromise.org/api/v1/events/current';
         $key = 'icampus_countdown';
         $is_local = App::environment('local');
 

@@ -26,7 +26,7 @@
         Community Groups
     ================================================================================ --}}
 
-    @bgsection(['title' => 'Community Groups', 'class' => '', 'image' => 'images/general/groups-wide.jpg'])
+    @bgsection(['title' => 'Join a Group', 'class' => '', 'image' => 'images/general/groups-wide.jpg'])
     <p>A group at Faith Promise is an environment where three or more people can connect to develop and grow in their relationship with Christ. We want to help you find a group that meets near your home or work.</p>
     <p>
         <a class="Button" href="https://fpctystn.infellowship.com/GroupSearch/Show?zipcode=&category=7079&weekday=&start_time=">Find a Group</a>

@@ -13,7 +13,6 @@ Route::group(['domain' => config('site.students_domain')], function () {
     Route::get('/staff/{staff}', 'Students\StaffController@detail');
 
     Route::get('/locations', 'Students\CampusesController@index');
-    Route::get('/locations/farragut', ['uses' => 'Students\CampusesController@farragut']);
     Route::get('/locations/{student_campus}', 'Students\CampusesController@detail');
 
     Route::get('/events', 'Students\UpdatesController@index');

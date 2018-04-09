@@ -32,7 +32,7 @@ class AlignmentsController extends Controller {
                 'title'     => $item->title,
                 'image'     => 'http://faithpromise.org/images/alignments/' . $item->slug . '.jpg',
                 'resources' => $resources,
-                'series'    => $item->series,
+                'series'    => $item->series->slug,
             ];
         }
 

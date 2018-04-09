@@ -6,7 +6,8 @@ $baptism_registration = [
         'blount'      => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=ateeORVo3265UHNI0demnQ==&cCode=RtKBDolfiPuZJp8o1+0ARA==',
         'north'       => 'https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=s80+rBCHQNgN+tQs82SjwA==&cCode=RtKBDolfiPuZJp8o1+0ARA==',
         'anderson'    => 'https://fpctystn.infellowship.com/Forms/191911',
-        'campbell'    => 'https://fpctystn.infellowship.com/Forms/191912'
+        'campbell'    => 'https://fpctystn.infellowship.com/Forms/191912',
+        'farragut'    => 'https://fpctystn.infellowship.com/Forms/371526',
 ];
 
 ?>
@@ -70,6 +71,10 @@ $baptism_registration = [
                 'url' => 'mailto:fpKidsBlount@faithpromise.org'
             ],
             [
+                'title' => 'Email the Farragut Campus',
+                'url' => 'mailto:fpKidsFarragut@faithpromise.org'
+            ],
+            [
                 'title' => 'Email the Campbell Campus',
                 'url' => 'mailto:fpKidsCampbell@faithpromise.org'
             ],
@@ -82,18 +87,20 @@ $baptism_registration = [
                 'url' => 'mailto:fpKidsPellissippi@faithpromise.org'
             ],
         ]
-    ]) your campus kids director to a brief counseling session with an fpKids Baptism Counselor:</p>
+    ]) your campus kids director to schedule a brief counseling session with an fpKids Baptism Counselor:</p>
 
     @endvideosection
 
     @textsection(['title' => 'Register for the Baptism Class', 'class' => 'Section--lightGrey', 'id' => 'baptism'])
     <p>Does your child still have questions about Salvation? Are they telling you they're ready to be baptized? All kids Kindergarten to 5th grade participate in our Salvation/Baptism Class prior to baptism. We cover basics such as the Plan of Salvation, the Purpose of Baptism and other details.</p>
     <p>This class includes a Parent Connection where we connect with parents/guardians. We want to help you look ahead at what you can do to help your child establish an active faith in Christ. Use the following links to register at the
-        <a class="no-wrap" href="{{ $baptism_registration['pellissippi'] }}" target="_blank">Pellissippi Campus</a>,
+        <a class="no-wrap" href="{{ $baptism_registration['anderson'] }}" target="_blank">Anderson Campus</a>,
+        <a class="no-wrap" href="{{ $baptism_registration['campbell'] }}" target="_blank">Campbell Campus</a>,
         <a class="no-wrap" href="{{ $baptism_registration['blount'] }}" target="_blank">Blount Campus</a>,
-        <a class="no-wrap" href="{{ $baptism_registration['north'] }}" target="_blank">North Knox Campus</a>,
-        <a class="no-wrap" href="{{ $baptism_registration['north'] }}" target="_blank">Anderson Campus</a>, or
-        <a class="no-wrap" href="{{ $baptism_registration['north'] }}" target="_blank">Campbell Campus</a>.</p>
+        <a class="no-wrap" href="{{ $baptism_registration['farragut'] }}" target="_blank">Farragut Campus</a>,
+        <a class="no-wrap" href="{{ $baptism_registration['north'] }}" target="_blank">North Knox Campus</a>, or
+        <a class="no-wrap" href="{{ $baptism_registration['pellissippi'] }}" target="_blank">Pellissippi Campus</a>.
+    </p>
     @endtextsection
 
     {{--

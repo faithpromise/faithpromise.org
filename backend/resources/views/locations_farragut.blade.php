@@ -3,7 +3,7 @@
 @section('page')
 
     @videosection([
-        'video' => '145143741',
+        'video' => '221007373',
         'title' => $campus->name . ' Campus',
         'class' => 'IntroSection--center',
     ])

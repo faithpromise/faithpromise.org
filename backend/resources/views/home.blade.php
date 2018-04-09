@@ -47,7 +47,7 @@
             <a
                     icampus-countdown
                     class="WelcomeBarItem WelcomeBarItem--parents WelcomeBarItem--withPhoto"
-                    href="http://icampus.faithpromise.org"
+                    href="http://online.faithpromise.org"
                     series_title="{{ $current_series->title }}"
                     image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-tall.jpg') }}"
                     live_image="{{ cdn_image('xl', 'quarter', 'images/worship/pellissippi-stage-2-tall.jpg') }}"

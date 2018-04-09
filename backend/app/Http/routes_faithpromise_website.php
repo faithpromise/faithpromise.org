@@ -26,7 +26,6 @@ Route::get('/events/{event}', ['as' => 'event', 'uses' => 'EventsController@even
 
 // Campuses / Locations
 Route::get('/locations', ['as' => 'locations', 'uses' => 'CampusesController@index']);
-Route::get('/locations/farragut', ['uses' => 'CampusesController@farragut']);
 Route::get('/locations/{campus}', ['as' => 'location', 'uses' => 'CampusesController@detail']);
 
 // Ministries
@@ -102,6 +101,7 @@ Route::get('/christmas', ['as' => 'christmas', 'uses' => 'MainController@christm
 Route::get('/easter', ['as' => 'easter', 'uses' => 'MainController@easter']);
 Route::get('/easter/times.json', ['uses' => 'MainController@easterTimes']);
 Route::get('/new-fam-gift', ['uses' => 'MainController@defaultPage']);
+Route::get('/gbb', ['uses' => 'MainController@defaultPage']);
 
 // This redirect should only happen on the FP site, not the students site
 Route::get('/fusion', 'RedirectController@fusion');

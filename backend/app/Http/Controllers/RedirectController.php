@@ -107,7 +107,7 @@ class RedirectController extends BaseController {
     }
 
     public function campusPastors() {
-        return redirect('http://faithpromiseweb.com/campuspastors');
+        return redirect('https://www.youtube.com/playlist?list=PL0Bp_DH7BS_kCR2hqcEieCMYmmZcau78m');
     }
 
     public function gMail() {
@@ -127,7 +127,7 @@ class RedirectController extends BaseController {
     }
 
     public function icampus() {
-        return redirect('http://icampus.faithpromise.org');
+        return redirect('http://online.faithpromise.org');
     }
 
     public function app() {
