@@ -2,7 +2,6 @@
 
 namespace App\Console;
 
-use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,9 +12,7 @@ class Kernel extends ConsoleKernel {
      * @var array
      */
     protected $commands = [
-        Commands\ImportEvents::class,
-        Commands\ToggleStaffHasImage::class,
-        Commands\UpdateNextStepsClass::class,
+        Commands\ImportStudentEvents::class,
     ];
 
     /**
@@ -26,16 +23,7 @@ class Kernel extends ConsoleKernel {
      */
     protected function schedule(Schedule $schedule) {
 
-        $schedule->command('events:update-next-steps')->daily()->thenPing(config('site.heartbeat_next_steps_date'));
+        $schedule->command('students:import-events')->hourly()->thenPing('http://beats.envoyer.io/heartbeat/y6hJbJpVq6raadG');
 
-        $schedule->command('backup:run')->dailyAt('4:00')->thenPing(config('site.heartbeat_backup'));
-
-        $schedule->command('events:import')->hourly()->thenPing(config('site.heartbeat_events_updated'));
-
-        $schedule->command('staff:toggle-has-image')->weekdays()->everyThirtyMinutes()->when(function () {
-            $now = Carbon::now();
-
-            return $now->hour >= 8 && $now->hour <= 18;
-        });
     }
 }
