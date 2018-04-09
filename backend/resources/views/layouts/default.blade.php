@@ -11,6 +11,9 @@ $og_image = (isset($og_image) ? $og_image : url('/xl/full/images/general/faceboo
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ isset($title) ? ($title . ' - '. $site['title']) : $site['title'] }}</title>
+        @if (config('site.ident') === 'faithpromise')
+        <meta name="robots" content="noindex">
+        @endif
         <meta name="description" content="{{ isset($description) ? $description : $site['description'] }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="hbqvrQMid1Tpy4mlqi-wtEVGpcZ-tlZ5P_28dOhUgQU">
