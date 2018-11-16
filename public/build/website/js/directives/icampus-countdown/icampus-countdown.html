@@ -1,0 +1,39 @@
+<!--<div class="CurrentSeries-countdown" ng-show="countdown.isLoaded">-->
+
+<!--<div ng-if="!countdown.isLive" ng-cloak>-->
+<!--<h3 class="CurrentSeries-title">Join Us Online In</h3>-->
+
+<!--<div class="CurrentSeries-digits">-->
+<!--<span class="CurrentSeries-digit" ng-class="{ 'is-disabled' : !countdown.has_days }">{{ countdown.days }} days, </span>-->
+<!--<span class="CurrentSeries-digit" ng-class="{ 'is-disabled' : !countdown.has_hours }">{{ countdown.hours }} hrs, </span>-->
+<!--<span class="CurrentSeries-digit" ng-class="{ 'is-disabled' : !countdown.has_minutes }">{{ countdown.minutes }} min, </span>-->
+<!--<span class="CurrentSeries-digit">{{ countdown.seconds }} sec </span>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div ng-if="countdown.isLive">-->
+<!--<h3 class="CurrentSeries-title">We're live!</h3>-->
+<!--</div>-->
+
+<!--<div class="CurrentSeries-buttons">-->
+<!--<a class="CurrentSeries-button" href="http://icampus.faithpromise.org">Watch Online</a>-->
+<!--<a id="to_sermons_from_currentSeries" class="CurrentSeries-button" href="/sermons">Past Sermons</a>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<div class="WelcomeBarItem-contentWrap" ng-show="countdown.isLoaded">
+  <h2 class="WelcomeBarItem-heading" ng-class="{ 'WelcomeBarItem-heading--live' : countdown.isLive }">
+    <span ng-cloak>{{ countdown.heading }}</span>
+    <i class="icon icon-right-open"></i>
+  </h2>
+  <p class="WelcomeBarItem-text">
+    <span ng-if="countdown.isLive">Join us now online for worship, chat, and a new message from our series, &quot;{{ vm.seriesTitle }}&quot;. Or, join us for another online service </span>
+    <span ng-if="!countdown.isLive">Join us online for worship, chat, and a new message from our series, &quot;{{ vm.seriesTitle }}&quot; on </span>
+    <span ng-transclude></span>
+  </p>
+  <span class="WelcomeBarItem-action">Join Us Online<i class="icon icon-right-open"></i></span>
+</div>
+<div class="WelcomeBarItem-imageWrap">
+  <img ng-src="{{ vm.image }}">
+</div>

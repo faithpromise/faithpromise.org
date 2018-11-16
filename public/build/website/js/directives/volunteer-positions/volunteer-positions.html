@@ -1,0 +1,103 @@
+<a href="#continue" class="Continue" ng-class="{ 'is-active' : vm.selected_positions.length }" ng-hide="vm.is_form_in_view">
+  Awesome! You've selected {{ vm.selected_positions.length }} interest{{ vm.selected_positions.length === 1 ? '' : 's' }}. Scroll down and
+  <span class="Continue-target">let us know</span>.
+</a>
+
+<div id="skills" class="SkillFilter">
+  <div class="SkillFilter-container">
+    <h3 class="SkillFilter-title">filter by skill</h3>
+    <ul class="SkillFilter-menu">
+      <li class="SkillFilter-item">
+        <a href="#skills" class="SkillFilter-link" ng-class="{ 'is-active' : !vm.selected_skill }" ng-click="vm.deselect_skill()">Any Skill</a>
+      </li>
+      <li class="SkillFilter-item" ng-repeat="skill in vm.skills">
+        <a href="#skills" class="SkillFilter-link" ng-class="{ 'is-active' : vm.selected_skill.id === skill.id }" ng-click="vm.select_skill(skill)">{{ skill.title }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Filtered by skill -->
+<div class="GridSection GridSection--lightGrey" ng-if="vm.selected_skill">
+  <div class="GridSection-container">
+    <h2 class="GridSection-title">{{ vm.selected_skill.title }} Opportunities</h2>
+    <div class="GridSection-text">
+      <p>{{ vm.selected_skill.description }}</p>
+    </div>
+    <div class="GridSection-cardsWrap">
+      <ul class="Opportunity-grid">
+        <li class="Opportunity-item" ng-repeat="position in vm.selected_skill.volunteer_positions">
+          <volunteer-position position="position" on-toggle="vm.toggle_position(position)" is-selected="vm.is_selected(position)"></volunteer-position>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Grouped by ministry -->
+<div class="GridSection GridSection--center" ng-class="{ 'GridSection--lightGrey' : $odd }" ng-repeat="ministry in vm.ministries" ng-if="!vm.selected_skill">
+  <div class="GridSection-container">
+
+    <h3 class="GridSection-title">{{ ministry.title }}</h3>
+
+    <div class="GridSection-cardsWrap">
+
+      <ul class="Opportunity-grid">
+        <li class="Opportunity-item" ng-repeat="position in ministry.volunteer_positions">
+          <volunteer-position position="position" on-toggle="vm.toggle_position(position)" is-selected="vm.is_selected(position)"></volunteer-position>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="VolunteerSent" ng-show="vm.is_sent">
+  <div class="VolunteerSent-container">
+    <h3 class="VolunteerSent-title">Thank you!</h3>
+    <p>We're looking forward to talking with you! Your message was sent and we'll contact you soon with more information.</p>
+    <p>
+      <a href="#top" class="Button" ng-click="vm.close_form_confirmation()">Close</a>
+    </p>
+  </div>
+</div>
+
+<div id="continue" class="Section Section--center">
+  <div class="Section-container">
+    <h3 class="Section-title">I'm Ready to Volunteer</h3>
+    <p>We're excited that you're interested in volunteering. Please complete the following form and we'll send you more information about getting started.</p>
+
+    <form class="Form" ng-submit="vm.send_form()">
+      <div class="Form-group">
+        <span class="Form-label">Your name</span>
+
+        <input class="Form-input Form-input--firstName" name="first_name" type="text" placeholder="First" ng-model="vm.user.first_name" focus-in-view="80" required>
+        <input class="Form-input Form-input--lastName" name="last_name" type="text" placeholder="Last" ng-model="vm.user.last_name" required>
+
+      </div>
+      <div class="Form-group">
+        <span class="Form-label">Your email</span>
+        <input class="Form-input" name="email" type="text" placeholder="i.e. you@somewhere.com" ng-model="vm.user.email" required>
+        <input class="Form-input Form-input--flytrap" name="email_repeat" type="text" placeholder="Repeat your email address" ng-model="vm.user.flytrap">
+      </div>
+      <div class="Form-group">
+        <span class="Form-label">Your phone number (with area code)</span>
+        <input class="Form-input" name="phone" type="text" placeholder="555-555-1234" ng-model="vm.user.phone" required>
+      </div>
+      <div class="Form-group">
+        <span class="Form-label">I'd like someone to contact me about serving in the following ministry area(s):</span>
+        <textarea class="Form-input" name="message_body" ng-model="vm.user.message_body" required></textarea>
+      </div>
+      <div class="Form-group">
+        <span class="Form-label">Please select your campus</span>
+        <select class="Form-input" name="campus" ng-model="vm.user.campus" ng-options="campus.id as campus.name for campus in vm.campuses track by campus.id" required>
+          <option value=""></option>
+        </select>
+      </div>
+      <div class="Form-actions">
+        <button class="Form-submit" type="submit" ng-disabled="vm.is_sending">{{ vm.is_sending ? 'Sending...' : 'Send' }}</button>
+      </div>
+    </form>
+  </div>
+</div>

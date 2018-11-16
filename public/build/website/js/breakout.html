@@ -1,0 +1,384 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Wire Transfer</title>
+    <style>
+      body {
+        font-family:      Helvetica;
+        background-color: #e2e2e2;
+        color:            #7e7e7e;
+        text-align:       center;
+        padding:          0;
+        margin:           0;
+      }
+
+      .wrapper {
+        display:             flex;
+        flex-direction:      row;
+        justify-content:     center;
+        align-items:         center;
+        height:              100vh;
+        -webkit-user-select: none;
+        cursor:              default;
+      }
+
+      .content {
+        flex-grow: 1;
+      }
+
+      .title {
+        font-size: 60px;
+        margin:    11px 0 40px;
+      }
+
+      .title {
+        display:   block;
+        font-size: 28px;
+      }
+
+      .money {
+        display:     block;
+        font-size:   76px;
+        color:       #31b1db;
+        font-weight: bold;
+      }
+
+      .card {
+        max-width:        600px;
+        margin:           0 auto;
+        border-radius:    20px;
+        background-color: #fff;
+        box-shadow:       0 3px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        padding: 60px 60px 0;
+      }
+
+      .buttons {
+        display:          flex;
+        background-color: #ccc;
+        border-radius:    0 0 20px 20px;
+      }
+
+      .button {
+        width:            50%;
+        padding:          20px 40px;
+        font-size:        30px;
+        margin:           2px 1px 0;
+        cursor:           pointer;
+        background-color: #f7f8fa;
+        transition:       background-color .2s ease-in-out, color .2s ease-in-out;
+      }
+
+      .button:hover {
+        background-color: #a1a2a3;
+        color:            #fff;
+      }
+
+      .button-title {
+        text-transform: uppercase;
+      }
+
+      .button-sub {
+        display:   block;
+        font-size: 20px;
+      }
+
+      .positive {
+        border-radius: 0 0 0 20px;
+      }
+
+      .negative {
+        border-radius: 0 0 20px 0;
+      }
+
+      .logo {
+        width: 260px;
+      }
+
+      #loader {
+        position:   relative;
+        width:      240px;
+        height:     29px;
+        margin:     22px auto 40px;
+        visibility: hidden;
+      }
+
+      #loader.is-visible {
+        visibility: visible;
+      }
+
+      .loader {
+        position:                          absolute;
+        top:                               0;
+        background-color:                  #b02a30;
+        width:                             29px;
+        height:                            29px;
+        -moz-animation-name:               bounce_loader;
+        -moz-animation-duration:           1.4s;
+        -moz-animation-iteration-count:    infinite;
+        -moz-animation-direction:          linear;
+        -moz-transform:                    scale(.3);
+        -webkit-animation-name:            bounce_loader;
+        -webkit-animation-duration:        1.4s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction:       linear;
+        -webkit-transform:                 scale(.3);
+        -ms-animation-name:                bounce_loader;
+        -ms-animation-duration:            1.4s;
+        -ms-animation-iteration-count:     infinite;
+        -ms-animation-direction:           linear;
+        -ms-transform:                     scale(.3);
+        -o-animation-name:                 bounce_loader;
+        -o-animation-duration:             1.4s;
+        -o-animation-iteration-count:      infinite;
+        -o-animation-direction:            linear;
+        -o-transform:                      scale(.3);
+        animation-name:                    bounce_loader;
+        animation-duration:                1.4s;
+        animation-iteration-count:         infinite;
+        animation-direction:               linear;
+        transform:                         scale(.3);
+      }
+
+      #loader_1 {
+        left:                    0;
+        -moz-animation-delay:    0.56s;
+        -webkit-animation-delay: 0.56s;
+        -ms-animation-delay:     0.56s;
+        -o-animation-delay:      0.56s;
+        animation-delay:         0.56s;
+      }
+
+      #loader_2 {
+        left:                    30px;
+        -moz-animation-delay:    0.7s;
+        -webkit-animation-delay: 0.7s;
+        -ms-animation-delay:     0.7s;
+        -o-animation-delay:      0.7s;
+        animation-delay:         0.7s;
+      }
+
+      #loader_3 {
+        left:                    60px;
+        -moz-animation-delay:    0.84s;
+        -webkit-animation-delay: 0.84s;
+        -ms-animation-delay:     0.84s;
+        -o-animation-delay:      0.84s;
+        animation-delay:         0.84s;
+      }
+
+      #loader_4 {
+        left:                    90px;
+        -moz-animation-delay:    0.98s;
+        -webkit-animation-delay: 0.98s;
+        -ms-animation-delay:     0.98s;
+        -o-animation-delay:      0.98s;
+        animation-delay:         0.98s;
+      }
+
+      #loader_5 {
+        left:                    120px;
+        -moz-animation-delay:    1.12s;
+        -webkit-animation-delay: 1.12s;
+        -ms-animation-delay:     1.12s;
+        -o-animation-delay:      1.12s;
+        animation-delay:         1.12s;
+      }
+
+      #loader_6 {
+        left:                    150px;
+        -moz-animation-delay:    1.26s;
+        -webkit-animation-delay: 1.26s;
+        -ms-animation-delay:     1.26s;
+        -o-animation-delay:      1.26s;
+        animation-delay:         1.26s;
+      }
+
+      #loader_7 {
+        left:                    180px;
+        -moz-animation-delay:    1.4s;
+        -webkit-animation-delay: 1.4s;
+        -ms-animation-delay:     1.4s;
+        -o-animation-delay:      1.4s;
+        animation-delay:         1.4s;
+      }
+
+      #loader_8 {
+        left:                    210px;
+        -moz-animation-delay:    1.54s;
+        -webkit-animation-delay: 1.54s;
+        -ms-animation-delay:     1.54s;
+        -o-animation-delay:      1.54s;
+        animation-delay:         1.54s;
+      }
+
+      @-moz-keyframes bounce_loader {
+        0% {
+          -moz-transform:   scale(1);
+          background-color: #b02a30;
+        }
+        100% {
+          -moz-transform:   scale(.3);
+          background-color: #f99d27;
+        }
+      }
+
+      @-webkit-keyframes bounce_loader {
+        0% {
+          -webkit-transform: scale(1);
+          background-color:  #878787;
+        }
+        100% {
+          -webkit-transform: scale(.3);
+          background-color:  #f99d27;
+        }
+      }
+
+      @-ms-keyframes bounce_loader {
+        0% {
+          -ms-transform:    scale(1);
+          background-color: #878787;
+        }
+        100% {
+          -ms-transform:    scale(.3);
+          background-color: #f99d27;
+        }
+      }
+
+      @-o-keyframes bounce_loader {
+        0% {
+          -o-transform:     scale(1);
+          background-color: #878787;
+        }
+        100% {
+          -o-transform:     scale(.3);
+          background-color: #f99d27;
+        }
+      }
+
+      @keyframes bounce_loader {
+        0% {
+          transform:        scale(1);
+          background-color: #b02a30;
+        }
+        100% {
+          transform:        scale(.3);
+          background-color: #f99d27;
+        }
+      }
+
+      .message {
+        text-align:  center;
+        display:     block;
+        font-size:   24px;
+        line-height: 1;
+        height:      29px;
+        margin:      22px auto 40px;
+        overflow:    hidden;
+      }
+
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body ng-app="app">
+
+    <div class="wrapper" ng-controller="main">
+      <div class="content">
+
+        <div class="card">
+
+          <div class="header">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/2000px-ICICI_Bank_Logo.svg.png">
+            <span class="title">Wire Transfer</span>
+
+            <span class="money" ng-hide="game_over">$10,000,000</span>
+            <span class="money" ng-show="game_over">You Win!</span>
+          </div>
+
+          <span class="message" ng-show="john_saved">Great job! John thanks you for saving his life!</span>
+          <span class="message" ng-show="john_toast">And, John just got a big face full of silly string!</span>
+
+          <div id="loader" ng-class="{ 'is-visible': transferring }" ng-hide="game_over">
+            <div id="loader_1" class="loader"></div>
+            <div id="loader_2" class="loader"></div>
+            <div id="loader_3" class="loader"></div>
+            <div id="loader_4" class="loader"></div>
+            <div id="loader_5" class="loader"></div>
+            <div id="loader_6" class="loader"></div>
+            <div id="loader_7" class="loader"></div>
+            <div id="loader_8" class="loader"></div>
+          </div>
+
+          <div class="buttons" ng-class="{ 'hidden': game_over }">
+
+            <div class="button positive" ng-click="sendToKidnapper()">
+              <span class="button-sub">Send to the</span>
+              <span class="button-title">Kidnapper</span>
+            </div>
+
+            <div class="button negative" ng-click="sentToTeam()">
+              <span class="button-sub">Split Among</span>
+              <span class="button-title">Our Team</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular-animate.min.js"></script>
+
+    <script>
+      (function (angular) {
+
+        var app = angular.module('app', [
+          'ngAnimate'
+        ]);
+
+        app.controller('main', function ($scope, $timeout) {
+
+          $scope.transferring = false;
+
+          $scope.sendToKidnapper = function () {
+
+            if ($scope.transferring || $scope.game_over) {
+              return;
+            }
+
+            $scope.transferring = true;
+
+            $timeout(function () {
+              $scope.transferring = false;
+              $scope.game_over    = true;
+              $scope.john_saved   = true;
+            }, 4000);
+
+          };
+
+          $scope.sentToTeam = function () {
+
+            if ($scope.transferring || $scope.game_over) {
+              return;
+            }
+
+            $scope.transferring = true;
+
+            $timeout(function () {
+              $scope.transferring = false;
+              $scope.game_over    = true;
+              $scope.john_toast   = true;
+            }, 4000);
+
+          };
+
+        });
+
+      })(angular);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<div class="Opportunity">
+  <div class="Opportunity-header">
+    <h5 class="Opportunity-title">{{ ::vm.position.title }}</h5>
+  </div>
+  <div class="Opportunity-body">
+    <p class="Opportunity-description" ng-bind-html="vm.get_description()"></p>
+    <p class="Opportunity-data">
+      <span class="Opportunity-dataItem"><span ng-show="vm.position.availability">Availability:</span> {{ ::vm.position.availability }}</span>
+      <span class="Opportunity-dataItem"><span ng-show="vm.position.commitment">Commitment:</span> {{ ::vm.position.commitment }}</span>
+      <span class="Opportunity-dataItem"><span ng-show="vm.skills">Skills:</span> {{ ::vm.skills }}</span>
+    </p>
+  </div>
+  <div class="Opportunity-footer" ng-click="vm.toggle()">
+    <i ng-class="{ 'icon-check' : vm.isSelected, 'icon-check-empty' : !vm.isSelected }"></i> This sounds interesting!
+  </div>
+</div>

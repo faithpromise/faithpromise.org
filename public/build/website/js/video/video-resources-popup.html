@@ -1,0 +1,25 @@
+<div class="VideoResources">
+
+  <div class="VideoResources-header">
+
+    <a class="VideoResources-logoWrap" href="/" ng-if="vm.logo_mark">
+      <svg class="VideoResources-logo" role="img" title="Faith Promise Church Logo">
+        <use xlink:href="" ng-attr-xlink:href="{{ '/build/website/svg/general.svg#' + vm.logo_mark }}"></use>
+      </svg>
+    </a>
+
+    <div class="VideoResources-meta">
+      <span class="VideoResources-title">{{ vm.video.title }}</span>
+      <span class="VideoResources-speaker" ng-show="vm.video.speaker.display_name">
+        <span class="VideoResources-metaLabel">by</span>
+        {{ vm.video.speaker.display_name }}
+      </span>
+    </div>
+
+    <span class="VideoResources-close icon-cancel" title="Close Video" ng-click="vm.close();"></span>
+
+  </div>
+
+  <div class="VideoResources-content" ng-bind-html="vm.get_resources()"></div>
+
+</div>

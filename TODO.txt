@@ -1,0 +1,1 @@
+LATER: Implement responsive font sizes per component

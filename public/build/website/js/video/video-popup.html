@@ -1,0 +1,31 @@
+<div class="VideoPopup">
+
+  <div class="VideoPopup-header">
+
+    <a class="VideoPopup-logoWrap" href="/" ng-if="vm.logo_mark">
+      <svg class="VideoPopup-logo" role="img" title="Faith Promise Church Logo">
+        <use xlink:href="" ng-attr-xlink:href="{{ '/build/website/svg/general.svg#' + vm.logo_mark }}"></use>
+      </svg>
+    </a>
+
+    <div class="VideoPopup-meta">
+      <span class="VideoPopup-title">{{ vm.video.title }}</span>
+      <span class="VideoPopup-speaker" ng-show="vm.video.speaker.display_name">
+        <span class="VideoPopup-metaLabel">by</span>
+        {{ vm.video.speaker.display_name }}
+      </span>
+      <span class="VideoPopup-plays" ng-show="vm.vimeo">
+        <span class="VideoPopup-metaLabel"><i class="icon-chart-bar"></i></span>
+        {{ vm.vimeo.stats_number_of_plays }} plays
+      </span>
+    </div>
+
+    <span class="VideoPopup-close icon-cancel" title="Close Video" ng-click="vm.close();"></span>
+
+  </div>
+
+  <div class="VideoPopup-video">
+      <vimeo id="{{ vm.video.vimeo_id }}" autoplay="true" ng-if="vm.video.vimeo_id"></vimeo>
+  </div>
+
+</div>
