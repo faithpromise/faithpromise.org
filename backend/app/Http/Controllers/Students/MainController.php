@@ -11,10 +11,6 @@ class MainController extends BaseController {
     public function index() {
 
         $events = Event::all()->sortBy('sort');
-        $current_series = Series::currentSeries()->first();
-        $current_series->description = 'Check out our latest series, "'. $current_series->title . '" and join us on Wednesday nights at fpStudents.';
-
-        $events->prepend($current_series);
 
         return view('students/home', [
             'events' => $events
